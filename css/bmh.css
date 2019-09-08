@@ -217,7 +217,7 @@ nav > span:active{ color:#f00;  }
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent rgba(33,33,33,0.9) transparent;
+  border-color: transparent transparent rgba(33,33,33,0.5) transparent;
 }
 .Hello > ul{
 	display:block;
@@ -265,7 +265,7 @@ nav > span:active{ color:#f00;  }
 	margin-left: -5px;
 	border-width: 5px;
 	border-style: solid;
-	border-color:  rgb(255, 226, 133) transparent transparent transparent;
+	border-color: rgb(255, 255, 255) transparent transparent transparent;
 }
 .tt > ul li.agree{
 	position: relative; 
