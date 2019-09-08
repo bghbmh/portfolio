@@ -261,11 +261,11 @@ nav > span:active{ color:#f00;  }
 	content: "";
 	position: absolute;
 	top: 100%;
-	left: 50%;
+	left: 90%;
 	margin-left: -5px;
 	border-width: 5px;
 	border-style: solid;
-	border-color: rgb(255, 255, 255) transparent transparent transparent;
+	border-color: rgb(255, 255, 255) rgb(255, 255, 255) transparent transparent;
 }
 .tt > ul li.agree{
 	position: relative; 
