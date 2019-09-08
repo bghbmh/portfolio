@@ -322,19 +322,19 @@ a.btn_tel{
 	font-size:1.5rem;
 	font-weight:bold;
 	text-align:center;
-	color:rgba(33,33,33,0.9);
+	color:#fff;
 	padding: 0 0 2rem;
 	margin:1rem auto;
 	border-radius:3rem;
 	box-shadow:0 0 9px rgba(25, 25, 11, 0.4);
-	background:rgb(126,216,205);
+	background:rgb(73,206,197);
 } 
 a.btn_tel:hover, a.btn_tel:active{ background:rgb(126,216,205);  }
 a.btn_tel > span{
 	position:relative;
 	border-radius:50%;
 	margin-left: 1rem;
-	color:rgba(33,33,33,0.9);
+	color:#fff;
 	/* background: #fff;*/
 	padding: 0.1rem 0.4rem 0 0.1rem;
 	font-size: 1.2rem;
@@ -389,7 +389,7 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	margin:0.4rem 0.03rem;
 	cursor: pointer;
 }
-.button:nth-child(1){ background: #fff; color: rgba(33,33,33,0.9); border:1px solid rgb(126,216,205); }
+.button:nth-child(1){ background: #fff; color: rgba(33,33,33,0.9); border:1px solid rgb(73,206,197); }
 .button:hover, .button:active{ background:rgb(126,216,205);  border:1px solid rgb(126,216,205);}
 
 .popWarnning{ 
@@ -474,7 +474,7 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	overflow:hidden;
 	border-radius:3rem;
 	box-shadow:0 0 9px rgba(25, 25, 11, 0.4);
-	background:rgb(126,216,205);
+	background:rgb(73,206,197);
 	-webkit-transition: width 0.5s linear;
 	transition: width 0.5s linear;
 	cursor:pointer;
