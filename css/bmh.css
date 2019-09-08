@@ -217,7 +217,7 @@ nav > span:active{ color:#f00;  }
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent rgba(33,33,33,0.5) transparent;
+  border-color: transparent transparent rgba(33,33,33,0.8) transparent;
 }
 .Hello > ul{
 	display:block;
