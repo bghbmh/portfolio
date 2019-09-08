@@ -27,7 +27,7 @@
 
     $outputstring =  $whatDay.",".$name.",".$tel.",".$story.",".$agree."\n";
 
-    $fp = fopen("askMe.txt", 'a');
+    $fp = fopen("bghbmh.dothome.co.kr/data/askMe.txt", 'a');
 
     flock($fp, LOCK_EX);
     if (!$fp) {
@@ -39,7 +39,7 @@
     flock($fp, LOCK_UN);
     fclose($fp);
 
-    header("location:../index.html");
+    header("location: https://bghbmh.github.io/main/");
   }
   else if($file_name == "admin_php")
   {
@@ -47,7 +47,7 @@
 
     echo $allData;
 
-    $fileopen = @fopen("askMe.txt",'w') or exit("파일을 읽을 수 없습니다."); 
+    $fileopen = @fopen("bghbmh.dothome.co.kr/data/askMe.txt",'w') or exit("파일을 읽을 수 없습니다."); 
 
     flock($fileopen, LOCK_EX);
     if (!$fileopen) {
@@ -59,7 +59,7 @@
     flock($fileopen, LOCK_UN);
     fclose($fileopen);
     
-    header("location: admin.php");
+    header("location: bghbmh.dothome.co.kr/data/admin.php");
   }
 
 ?>
