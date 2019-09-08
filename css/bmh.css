@@ -322,14 +322,14 @@ a.btn_tel{
 	font-size:1.5rem;
 	font-weight:bold;
 	text-align:center;
-	color:#f0f8ff;
+	color:rgba(33,33,33,0.9);
 	padding: 0 0 2rem;
 	margin:1rem auto;
 	border-radius:3rem;
 	box-shadow:0 0 9px rgba(25, 25, 11, 0.4);
 	background:rgb(126,216,205);
 } 
-a.btn_tel:hover, a.btn_tel:active{ background:rgb(126,216,205); color:#333; }
+a.btn_tel:hover, a.btn_tel:active{ background:rgb(126,216,205);  }
 a.btn_tel > span{
 	position:relative;
 	border-radius:50%;
@@ -380,7 +380,7 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	border:none;
 	border-radius:0.5rem;
 	border:1px solid rgb(73,206,197);/* */
-	color: white;
+	color: rgba(33,33,33,0.9);
 	padding: 2rem 3.2rem;
 	text-align: center;
 	text-decoration: none;
@@ -389,8 +389,8 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	margin:0.4rem 0.03rem;
 	cursor: pointer;
 }
-.button:nth-child(1){ background: #fff; color:#666; border:1px solid #c1c1c1; }
-.button:hover, .button:active{ color:#fff;  background:rgb(126,216,205);  border:1px solid rgb(126,216,205);}
+.button:nth-child(1){ background: #fff; color: rgba(33,33,33,0.9); border:1px solid rgb(126,216,205); }
+.button:hover, .button:active{ background:rgb(126,216,205);  border:1px solid rgb(126,216,205);}
 
 .popWarnning{ 
 	
