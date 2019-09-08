@@ -328,7 +328,8 @@ a.btn_tel{
 	border-radius:3rem;
 	box-shadow:0 0 9px rgba(25, 25, 11, 0.4);
 	background:lightseagreen;
-}
+} 
+a.btn_tel:hover, a.btn_tel:active{ background:#73d5cf;  }
 a.btn_tel > span{
 	position:relative;
 	border-radius:50%;
@@ -375,10 +376,10 @@ textarea::-webkit-input-placeholder{color:#999; vertical-align: baseline;}
 textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 .button {
 	width: 48.8%;
-	background: #4CAF50;
+	background: #20b2aa;
 	border:none;
 	border-radius:0.5rem;
-	border:1px solid #4CAF50;/* */
+	border:1px solid #20b2aa;/* */
 	color: white;
 	padding: 2rem 3.2rem;
 	text-align: center;
@@ -389,7 +390,7 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	cursor: pointer;
 }
 .button:nth-child(1){ background: #fff; color:#666; border:1px solid #c1c1c1; }
-.button:hover, .button:active{ color:#fff;  background: #c1c1c1;  border:1px solid #c1c1c1;}
+.button:hover, .button:active{ color:#fff;  background: #73d5cf;  border:1px solid #73d5cf;}
 
 .popWarnning{ 
 	
