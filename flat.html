@@ -1,0 +1,269 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>카야니</title>
+  <!--[if lt IE 9]>
+	<link type="text/css" rel="stylesheet" href="include/css/mainIe9.css" />
+  <![endif]-->
+  
+
+ <link type="text/css" rel="stylesheet" href="css/platform_mainstyle.css">
+ <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.css">
+ <link rel="stylesheet" href="css/swiper.min.css" type="text/css">
+</head>
+
+<body>
+
+  	<!--wrapper-->
+	<div class="wrapper_platform">
+		<!--header-->
+		<!--header-->
+		<div class="header">
+			<div class="headerInner">
+            
+              <div class="header_left">
+				<div class="logo_img"><a href="javascript:gotoMain();"><span id="main_title">LOGO<!--img src="img/kyani_logo.jpg" --></span></a></div>
+              </div>
+              
+              <div class="header_right">
+				
+				<div class="search">
+					<input type="text" id="keyword" data-role="none" onkeypress="if(event.keyCode==13) {search(); return false;}">
+					<a href="javascript:search();" class="iconSearch"><img src="img/iconSearch.png" alt="검색"></a>
+				</div>
+
+				<!---->
+				<div class="lnb">
+					<h2 class="del">메인메뉴</h2>
+					
+					<div id="lnb">
+						<ul class="menuStep3" id="category_list">
+
+							<li>
+								<a href="javascript:gotoSubmain(0);">플랫폼</a>  <!-- 
+								<ul class="menuStep4 clearfix">
+									<li>
+										<a href="sub01_01.html?siteid=57eb48fea007e4d01e88070c&num=&lang=&big=&middle=&small=">고랭지배추소개</a>
+										<ul class="menuStep5">
+											<li><a href="javascript:gotoContents(97376,692,1,1);">강원 고랭지배추</a>	</li>
+										</ul>
+									</li>
+									<li>
+										<a href="sub01_02.html?siteid=57eb48fea007e4d01e88070c&num=&lang=&big=&middle=&small=">주변환경</a>
+										<ul class="menuStep5">
+											<li><a href="javascript:gotoContents(97377,692,1,3);">강릉시</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="sub01_03.html?siteid=57eb48fea007e4d01e88070c&num=&lang=&big=&middle=&small=">생산지</a>
+										<ul class="menuStep5">
+											<li><a href="javascript:gotoContents(97377,692,1,3);">강릉시</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="sub01_04.html?siteid=57eb48fea007e4d01e88070c&num=&lang=&big=&middle=&small=">생산과정</a>
+										<ul class="menuStep5">
+											<li><a href="javascript:gotoContents(97378,692,1,4);">배추생산과정</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="sub01_05.html?siteid=57eb48fea007e4d01e88070c&num=&lang=&big=&middle=&small=">생산품</a>
+										<ul class="menuStep5">
+											<li><a href="javascript:gotoContents(97379,692,1,5);">절임배추 (10kg ~ 100kg)</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="sub01_05.html?siteid=57eb48fea007e4d01e88070c&num=&lang=&big=&middle=&small=">생산품</a>
+										<ul class="menuStep5">
+											<li><a href="javascript:gotoContents(97379,692,1,5);">절임배추 (10kg ~ 100kg)</a></li>
+										</ul>
+									</li>                                                               
+								</ul> -->
+							</li>
+							<li><a href="javascript:gotoSubmain(1);">상품지도</a></li>
+							<li><a href="javascript:gotoSubmain(2);">퀴즈여행</a></li>
+							<li><a href="javascript:gotoSubmain(3);">협력파트너</a></li>
+							<li><a href="javascript:gotoSubmain(4);">플랫폼소개</a></li>
+							<li><a href="javascript:gotoSubmain(0);">직거래장터</a></li>
+							<li><a href="javascript:gotoSubmain(4);">센터/매니저</a></li>
+							<li><a href="javascript:gotoSubmain(0);">고객센터</a></li>
+
+						</ul>
+					</div>
+
+				</div>
+                
+              </div>
+
+			</div>
+
+		</div>
+        <div class="header_line"></div>
+		<!--//header-->
+		<!--//header-->
+        
+        
+        
+        
+        <!--컨테이터 모음-->
+        <div class="container_platform">
+            <!--container_line1  이미지 슬라이드/신규입점 소개-->
+            <div class="Line1">
+                <div class="platform-slide1">     
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><img src="img/mainslide1.jpg" alt="플랫폼소개"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/mainslide2.jpg" alt="플랫폼소개"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/mainslide3.jpg" alt="플랫폼소개"></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/mainslide4.jpg" alt="플랫폼소개"></a></div>
+                        </div>
+              
+                        <div class="swiper-pagination" style="bottom: 3%;"></div>
+                        <!--
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        --> 
+
+                        <script src="js/swiper.min.js"></script>              
+                        <script>
+                        var swiper = new Swiper('.swiper-container', {
+                            pagination: '.swiper-pagination',
+                            nextButton: '.swiper-button-next',
+                            prevButton: '.swiper-button-prev',
+                            paginationClickable: true,
+                            spaceBetween: 0,
+                            centeredSlides: true,
+                            autoplay: 3000,
+                            autoplayDisableOnInteraction: false,
+                            loop:true
+                        });
+                        </script>   
+                      </div><!--swiper-container 마지막 부분-->
+                </div>  <!--platform-slide1 마지막 부분-->
+
+                <div class="platform-slide2">
+                    <div class="swiper-container swiper-container-h">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="https://www.naver.com/"><img src="img/subslide1-1.jpg" alt="플랫폼소개"><div class="plt-btn">자세히보기</div></a></div>
+                            <div class="swiper-slide"><a href="http://www.daum.net/"><img src="img/subslide1-1.jpg" alt="플랫폼소개"><div class="plt-btn">자세히보기</div></a></div>
+                        </div>
+                        <!-- Add Pagination --> 
+                        <div class="swiper-pagination swiper-pagination-h" style=" top:10px; left: 0px; width:100px; height: 20px"></div>                       
+                    </div>
+
+                </div> <!--platform-slide2 마지막 부분-->
+              
+                <div class="platform-slide3">
+                    <div class="swiper-container swiper-container-h">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><img src="img/subslide2-1.jpg" alt="플랫폼소개"><div class="plt-btn">자세히보기</div></a></div>
+                            <div class="swiper-slide"><a href="#"><img src="img/subslide2-1.jpg" alt="플랫폼소개"><div class="plt-btn">자세히보기</div></a></div>
+                        </div>
+                        <!-- Add Pagination --> 
+                        <div class="swiper-pagination swiper-pagination-h" style=" top:10px; left: 0px; width:100px; height: 20px"></div>                       
+                    </div>
+                </div> <!--platform-slide3 마지막 부분-->    
+            </div><!--Line1 마지막 부분--> 
+    <!--     -->
+        
+
+            <div class="Line2">
+            	<div class="Line2-icon"><a href="#"></a>
+            		<div class="Line2-title">전국방방곡곡</div>
+            		<div class="Line2-ic"><img src="img/icon_map.png"></div>
+            		<div class="Line2-btn">상품검색하기</div>
+            	</div>
+            	<div class="Line2-icon Line2-bg"><a class="bg-color" href="#"></a>
+            		<div class="Line2-title">어디까지 풀어봤니?</div>
+            		<div class="Line2-ic"><img src="img/icon_quiz.png"></div>
+            		<div class="Line2-btn">퀴즈여행</div>
+            	</div>
+                <div class="newShop">
+                    <div class="newShop_icon" ><span class="nstt">신규입점</span></div>
+                    <div class="swiper-container swiper-container-h">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#">
+                                <img src="img/subslide3-1.jpg" alt="플랫폼소개"><div class="newShop_btn">플랫폼 바로가기</div></a>
+                            </div>
+                            <div class="swiper-slide"><a href="#">
+                                <img src="img/subslide3-1.jpg" alt="플랫폼소개"><div class="newShop_btn">플랫폼 바로가기</div></a>
+                            </div>
+                        </div>
+                        <!-- Add Pagination background-color: #f00;--> 
+                        <div class="swiper-pagination swiper-pagination-h" style=" top:10px; margin-left:520px; width:100px; height: 20px"></div> 
+                        <!-- Swiper JS -->
+                        <script src="js/swiper.min.js"></script>
+
+                        <!-- Initialize Swiper -->
+                        <script>
+                        var swiperH = new Swiper('.swiper-container-h', {
+                            pagination: '.swiper-pagination-h',
+                            paginationClickable: true,
+                            spaceBetween: 0,
+                            loop:true
+                        });
+
+                        </script>
+                    </div>
+                </div> <!--newShop 마지막 부분-->
+            </div><!--Line2 마지막 부분-->
+        
+
+            <div class="Line3">   
+            	<div class="Line3-icon"><a href="#"></a>
+            		<div class="Line3-title">센터</div>
+            		<div class="Line3-ic"><img src="img/icon_center.png"></div>
+            		<div class="Line3-btn"><span class="L3bt">바로가기</span></div>
+            	</div>  
+            	<div class="Line3-icon"><a href="#"></a>
+            		<div class="Line3-title">매니저</div>
+            		<div class="Line3-ic"><img src="img/icon_headphone.png"></div>
+            		<div class="Line3-btn"><span class="L3bt">바로가기</span></div>
+            	</div> 
+            	<div class="Line3-icon"><a href="#"></a>
+            		<div class="Line3-title">직거래 장터</div>
+            		<div class="Line3-ic"><img src="img/icon_shop.png"></div>
+            		<div class="Line3-btn"><span class="L3bt">바로가기</span></div>
+            	</div> 
+            	<div class="Line3-customer">
+            		<div class="Line3-tt">고객센터</div>
+            		<div class="Line3-tel">02-732-8837</div>
+            		<pre class="Line3-time"><span style=" font-weight: bold; ">평       일</span>	  09:00 ~ 18:00<p><span style=" font-weight: bold; ">점심시간</span>	  12:30 ~ 13:30</p></pre>
+            	</div>       
+    
+                
+            </div>  
+        
+        </div><!--컨테이너 모음 마지막 부분-->
+        
+        
+        
+    
+        
+        
+        <!--footer-->
+		<div class="footer-bg">
+            <div class="footer_platform">
+              <div class="copyright">서울특별시 영등포구 여의대방로 379 제일빌딩 613호&nbsp;&nbsp;&nbsp;사업자등록번호 226-81-34891&nbsp;&nbsp;&nbsp;&nbsp;대표이사 최영환&nbsp;&nbsp;&nbsp;&nbsp;Tel 02-732-8837&nbsp;&nbsp;&nbsp;&nbsp;Fax 02-785-8837<br>© Korea Tourism Cooperative. All rights reserved.
+              </div>
+
+              <div class="footTopRight">
+                  <div class="footSite">관련사이트 바로가기<span>▼</span></div>
+       <!--           <ul>
+                      <li><a href="#">관련사이트</a></li>
+                      <li><a href="#">관련사이트</a></li>
+                      <li><a href="#">관련사이트</a></li>
+                  </ul>-->
+              </div> 
+            </div> 
+          
+		</div>
+		<!--//footer-->
+               
+  
+
+  </div><!--wrap마지막 부분-->  
+
+</body>
+</html>
