@@ -1,0 +1,4 @@
+User-Agent:*
+Disallow:
+
+Sitemap: https://bghbmh.github.io/main/sitemap.xml
