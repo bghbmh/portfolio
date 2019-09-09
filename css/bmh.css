@@ -417,6 +417,7 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	width:50%; 
 	
 	display:block;
+margin:auto;
 	/*position:absolute;
 	top:0;
 	left:0; */
