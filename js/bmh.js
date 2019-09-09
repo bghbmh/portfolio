@@ -96,8 +96,12 @@
 		oh = show.clientHeight;
 		//show.style.height = oh;
 		
-		alert(h+'/'+show.src);
-		alert( show.clientHeight + '/'+ obj.height);
+		//alert(h+'/'+show.src);
+		//alert( show.clientHeight + '/'+ obj.height);
+    if( oh == 0 )
+  { alert(oh);
+     oh = obj.height;
+  }
 
 
 if( ow > oh || h > oh )
