@@ -97,8 +97,10 @@
 		//show.style.height = oh;
 		
 		//alert(w);
-		// alert( show.clientHeight + '/'+ show.height);	
-		if( ow > oh || h > oh )
+		alert( show.clientHeight + '/'+ show.height);
+
+
+if( ow > oh || h > oh )
 		{
 			
 			//oh = oh * (0.9*w/ow);
