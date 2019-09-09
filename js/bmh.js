@@ -113,16 +113,16 @@ if( ow > oh || h > oh )
 			//show.clientWidth = ow + "px";
 			
 			alert(oh);	
-			show.style.top = (h - oh)/2 +"px";
+			show.style.marginTop = (h - oh)/2 +"px";
 			//alert(show.style.top);
 		}
 		else
 		{ 
-			show.style.top = 20 +"px";
+			show.style.marginTop = 20 +"px";
 			
 		}
 		
-		show.style.left = (w - ow)/2+ "px";	
+		show.style.marginLeft = (w - ow)/2+ "px";	
 		//alert(show.style.left);
 		
 		var ctn = document.getElementById("contents");
