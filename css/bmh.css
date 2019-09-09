@@ -417,12 +417,12 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	width:50%; 
 	
 	display:block;
-	position:absolute;
-	top:0;
-	left:0;
+	//position:absolute;
+	//top:0;
+	//left:0;
 	transition: all 2s;
 	-webkit-transition: all 2s;
-	z-index:777;
+	//z-index:777;
 	}
 .private{
 	display:block;
