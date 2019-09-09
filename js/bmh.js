@@ -96,7 +96,7 @@
 		oh = show.clientHeight;
 		//show.style.height = oh;
 		
-		//alert(w);
+		alert(h+'/'+show.src);
 		alert( show.clientHeight + '/'+ show.height);
 
 
