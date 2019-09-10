@@ -416,8 +416,8 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 .popImg{  
 	width:50%; 
 	
-	display:block;
-margin:auto;
+	display:block !important;
+	margin:auto;
 	/*position:absolute;
 	top:0;
 	left:0; */
