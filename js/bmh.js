@@ -96,15 +96,16 @@
 		oh = show.clientHeight;
 		//show.style.height = oh;
 		
-		//alert(h+'/'+show.src);
+		alert(show.style.display);
+		alert(show.style.overflow);
 		//alert( show.clientHeight + '/'+ obj.height);
-    if( oh == 0 )
-  { alert(oh);
-     oh = obj.height;
-  }
+		if( oh == 0 )
+		{ alert('oh == 0'+oh);
+			oh = obj.height;
+		}
 
 
-if( ow > oh || h > oh )
+		if( ow > oh || h > oh )
 		{
 			
 			//oh = oh * (0.9*w/ow);
