@@ -104,7 +104,7 @@
 		if( show.style.overflow != "auto") alert("auto");
 		//alert( show.clientHeight + '/'+ obj.height);
 		if( oh == 0 )
-		{ alert('oh == 0'+oh);
+		{ alert('oh == 0'+oh + '/' +obj.height);
 			oh = obj.height;
 		}
 
