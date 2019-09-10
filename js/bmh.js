@@ -96,7 +96,10 @@
 		oh = show.clientHeight;
 		//show.style.height = oh;
 		
-		if( show.style.display = "fixed") alert("fixed");
+		if( show.style.display = "fixed") 
+		{alert("fixed");
+		 	show.style.display = "block";
+		}
 		
 		if( show.style.overflow = "auto") alert("auto");
 		//alert( show.clientHeight + '/'+ obj.height);
