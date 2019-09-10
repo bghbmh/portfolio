@@ -101,7 +101,7 @@
 		if( show.style.position == "fixed") alert("fixed");
 		if( show.style.position == "inherit") alert("inherit");
 		
-		if( show.style.overflow == "hidden") alert("hidden");
+		if( show.style.overflow != "auto") alert("auto");
 		//alert( show.clientHeight + '/'+ obj.height);
 		if( oh == 0 )
 		{ alert('oh == 0'+oh);
