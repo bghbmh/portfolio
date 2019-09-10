@@ -418,8 +418,8 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	
 	display:block !important;
 	margin:auto;
-	position:relative;
-	/*top:0;
+	/*position:relative;
+	top:0;
 	left:0; */
 	transition: all 2s;
 	-webkit-transition: all 2s;
