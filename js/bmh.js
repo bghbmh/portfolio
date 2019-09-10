@@ -100,12 +100,14 @@
 		oh = show.clientHeight;
 		//show.style.height = oh;
 		
-		if( show.style.position != "static" && show.style.position != "initial" && show.style.position != "inherit") alert("no static");
+		//if( show.style.position != "static") alert("no static");
 		
-		if( show.style.position != "fixed") alert("no fixed");
+		//if( show.style.position != "fixed") alert("no fixed");
 		//if( ) alert("no inherit");
+
+                show.style.position = "absolute";
 		
-		if( show.style.overflow != "auto") alert("auto");
+		//if( show.style.overflow != "auto") alert("auto");
 		//alert( show.clientHeight + '/'+ obj.height);
 		if( oh == 0 )
 		{ alert('oh == 0'+oh + '/' +obj.height);
@@ -133,12 +135,6 @@
 		
 		show.style.marginLeft = (w - ow)/2+ "px";	
 		//alert(show.style.left);
-		
-		var ctn = document.getElementById("contents");
-		var area = ctn.getElementsByTagName("div");
-		var imgH = document.getElementsByClassName("pi");
-		//alert(imgH[0].clientHeight);
-		
 		
 		
 		
