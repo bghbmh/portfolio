@@ -411,6 +411,7 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	top:0;	left :0;	
 	z-index:666;
 	overflow: auto;
+	overflow-y:scroll;
 	-webkit-overflow-scrolling:touch;
 	}
 .popImg{  
