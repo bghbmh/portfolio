@@ -83,7 +83,7 @@
 		
 		var show = document.getElementById("imgBig");
 		
-		document.body.style.overflow = "hidden";
+		//document.body.style.overflow = "hidden";
 		
 	//	show.style.width = 0.9*w + "px";	
 		show.src = obj.src;		
@@ -206,8 +206,8 @@
 				var show = document.getElementById("imgBig");
 
 				show.src = "";	
-				show.style.top = 0;
-				show.style.left = 0;
+				show.style.marginTop = 0;
+				show.style.marginLeft = 0;
 
 			}
 			
