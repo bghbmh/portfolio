@@ -98,7 +98,7 @@
 		
 		if( show.style.display = "fixed") 
 		{alert("fixed");
-		 	show.style.display = "block";
+		 	//show.style.display = "block";
 		}
 		
 		if( show.style.overflow = "auto") alert("auto");
