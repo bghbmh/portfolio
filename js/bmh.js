@@ -105,7 +105,7 @@
 		//if( show.style.position != "fixed") alert("no fixed");
 		//if( ) alert("no inherit");
 
-                show.style.position = "absolute";
+                //show.style.position = "absolute";
 		
 		//if( show.style.overflow != "auto") alert("auto");
 		//alert( show.clientHeight + '/'+ obj.height);
@@ -124,16 +124,16 @@
 			//show.clientWidth = ow + "px";
 			
 			alert(oh);	
-			show.style.marginTop = (h - oh)/2 +"px";
+			//show.style.marginTop = (h - oh)/2 +"px";
 			//alert(show.style.top);
 		}
 		else
 		{ 
-			show.style.marginTop = 20 +"px";
+			//show.style.marginTop = 20 +"px";
 			
 		}
 		
-		show.style.marginLeft = (w - ow)/2+ "px";	
+		//show.style.marginLeft = (w - ow)/2+ "px";	
 		//alert(show.style.left);
 		
 		
