@@ -96,10 +96,10 @@
 		oh = show.clientHeight;
 		//show.style.height = oh;
 		
-		if( show.style.position == "static") alert("static");
-		if( show.style.position == "initial") alert("initial");
-		if( show.style.position == "fixed") alert("fixed");
-		if( show.style.position == "inherit") alert("inherit");
+		if( show.style.position != "static" && show.style.position != "initial" && show.style.position != "inherit") alert("no static");
+		
+		if( show.style.position != "fixed") alert("no fixed");
+		//if( ) alert("no inherit");
 		
 		if( show.style.overflow != "auto") alert("auto");
 		//alert( show.clientHeight + '/'+ obj.height);
