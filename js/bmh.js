@@ -83,6 +83,7 @@
 		
 		var show = document.getElementById("imgBig");
 		
+		document.body.style.overflow = "hidden";
 		
 	//	show.style.width = 0.9*w + "px";	
 		show.src = obj.src;		
@@ -201,6 +202,7 @@
 			}
 			else if( className == "imgArea")
 			{
+				document.body.style.overflow = "auto";
 				var show = document.getElementById("imgBig");
 
 				show.src = "";	
