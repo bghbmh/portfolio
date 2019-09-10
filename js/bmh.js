@@ -80,6 +80,7 @@
 	function bigShow(obj){ 
 		document.getElementById("popBg").style.display = "block";
 		document.getElementsByClassName("imgArea")[0].style.display = "block";
+		document.getElementsByClassName("imgArea")[0].style.overflow = "auto";
 		
 		var w = window.innerWidth;	
 		var h = window.innerHeight;	
