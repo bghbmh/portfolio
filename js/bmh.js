@@ -81,6 +81,8 @@
 		document.getElementById("popBg").style.display = "block";
 		document.getElementsByClassName("imgArea")[0].style.display = "block";
 		
+		var w = window.innerWidth;	
+		var h = window.innerHeight;	
 		var show = document.getElementById("imgBig");
 		
 		//document.body.style.overflow = "hidden";
@@ -160,7 +162,8 @@
 	
 	
 	function openPop(className, num){ 
-		
+		var w = window.innerWidth;	
+		var h = window.innerHeight;	
 		var popObject = document.getElementsByClassName(className)[num];
 		
 		popObject.style.display = "block";
