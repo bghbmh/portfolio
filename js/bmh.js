@@ -209,7 +209,7 @@
 			
 			document.forms["question"]["whatDay"].value = d.getFullYear() + "년" + ( d.getMonth() + 1) +"월" +d.getDate() +"일 \t" + d.getHours() +"시"+ d.getMinutes() +"분";				
 			//alert(story);	
-			document.getElementById("ok").method = "post";
+			//document.getElementById("ok").method = "post";
 			document.getElementById("ok").action = "http://bghbmh.dothome.co.kr/data/save.php";
 			document.getElementById("ok").submit();	
 		}
