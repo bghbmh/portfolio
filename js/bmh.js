@@ -85,7 +85,7 @@
 		document.getElementById("popBg").style.display = "block";
 		document.getElementsByClassName("imgArea")[0].style.display = "block";
 		document.getElementsByClassName("imgArea")[0].style.height = h +"px";
-		
+		document.body.style.overflow = "hidden";
 		//document.body.style.overflow = "hidden";
 		
 	//	show.style.width = 0.9*w + "px";	
@@ -202,6 +202,7 @@
 			}
 			else if( className == "imgArea")
 			{
+				document.body.style.overflow = "auto";
 				var show = document.getElementById("imgBig");
 
 				show.src = "";	
