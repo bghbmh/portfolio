@@ -181,16 +181,13 @@
 			}
 			else if( className == "watchingArea")
 			{
-				
 				document.getElementById(className).style.display = "none";
-
-				//show.src = "";	
-				//show.style.marginTop = 0;
-				//show.style.marginLeft = 0;
-
 			}
-			
-			document.getElementsByClassName(className)[num].style.display = "none";
+			else
+                        {
+			     document.getElementsByClassName(className)[num].style.display = "none";
+                        }
+
 			if( document.getElementById("popBg").style.display != "none" )			
 				document.getElementById("popBg").style.display = "none";
 			
