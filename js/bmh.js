@@ -83,9 +83,10 @@
 		var show = document.getElementById("imgBig");
 		
 		document.getElementById("popBg").style.display = "block";
-		document.getElementsByClassName("imgArea")[0].style.display = "block";
-		document.getElementsByClassName("imgArea")[0].style.height = h +"px";
-		
+		document.getElementById("watchingArea").style.display = "block";
+		document.getElementById("watchingArea").style.height = h +"px";
+		document.getElementById("watchingArea").scrollTop = 0;
+
 		show.src = obj.src;	
 		
 		var ow = 0;
@@ -181,7 +182,7 @@
 			else if( className == "imgArea")
 			{
 				
-				document.getElementsByClassName(className)[num].style.scrollTop = 0;
+				document.getElementById(className).style.display = "none";
 
 				//show.src = "";	
 				//show.style.marginTop = 0;
