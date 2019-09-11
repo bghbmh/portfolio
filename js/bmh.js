@@ -179,7 +179,7 @@
 				document.forms["question"]["tel"].value = "";
 				document.forms["question"]["story"].value = "";
 			}
-			else if( className == "imgArea")
+			else if( className == "watchingArea")
 			{
 				
 				document.getElementById(className).style.display = "none";
