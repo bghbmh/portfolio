@@ -181,9 +181,9 @@
 			else if( className == "imgArea")
 			{
 				
-				var show = document.getElementById("imgBig");
+				document.getElementsByClassName(className)[num].style.scrollTop = 0;
 
-				show.src = "";	
+				//show.src = "";	
 				//show.style.marginTop = 0;
 				//show.style.marginLeft = 0;
 
