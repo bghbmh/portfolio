@@ -415,10 +415,8 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	-webkit-overflow-scrolling:touch;
 	}
 .popImg{  
-	width:50%; 
-	
-	display:block !important;
-	//margin:auto;
+	width:50%; 	
+	display:block;	
 	position:absolute;
 	top:0;
 	left:0; 
