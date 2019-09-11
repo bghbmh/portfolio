@@ -86,31 +86,15 @@
 		document.getElementsByClassName("imgArea")[0].style.display = "block";
 		document.getElementsByClassName("imgArea")[0].style.height = h +"px";
 		
-		//document.body.style.overflow = "hidden";
+		show.src = obj.src;	
 		
-	//	show.style.width = 0.9*w + "px";	
-		show.src = obj.src;		
-	 	//show.style.display = "block";	
-			
 		var ow = 0;
 		var oh = 0;
-	 	//ow = obj.width;
-		//oh = obj.height; 
 		ow = show.clientWidth;
 		oh = show.clientHeight;
-		//show.style.height = oh;
 		
-		//if( show.style.position != "static") alert("no static");
-		
-		//if( show.style.position != "fixed") alert("no fixed");
-		//if( ) alert("no inherit");
-
-                //show.style.position = "absolute";
-		
-		//if( show.style.overflow != "auto") alert("auto");
-		//alert( show.clientHeight + '/'+ obj.height);
 		if( oh == 0 )
-		{ alert('oh == 0'+oh + '/' +obj.height);
+		{ //alert('oh == 0'+oh + '/' +obj.height);
 			oh = obj.height;
 		}
 
@@ -125,7 +109,6 @@
 			
 			alert(oh);	
 			show.style.top = (h - oh)/2 +"px";
-			//alert(show.style.top);
 		}
 		else
 		{ 
@@ -133,12 +116,7 @@
 			
 		}
 		
-		show.style.marginLeft = (w - ow)/2+ "px";	
-		//alert(show.style.left);
-		
-		
-		
-		
+		show.style.marginLeft = (w - ow)/2+ "px";			
 	}	
 	
 	
@@ -231,6 +209,7 @@
 			
 			document.forms["question"]["whatDay"].value = d.getFullYear() + "년" + ( d.getMonth() + 1) +"월" +d.getDate() +"일 \t" + d.getHours() +"시"+ d.getMinutes() +"분";				
 			//alert(story);	
+			document.getElementById("ok").method = "post";
 			document.getElementById("ok").action = "http://bghbmh.dothome.co.kr/data/save.php";
 			document.getElementById("ok").submit();	
 		}
