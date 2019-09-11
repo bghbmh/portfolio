@@ -78,13 +78,13 @@
 	}
 	
 	function bigShow(obj){ 
-		document.getElementById("popBg").style.display = "block";
-		document.getElementsByClassName("imgArea")[0].style.display = "block";
-		document.getElementsByClassName("imgArea")[0].style.overflow = "auto";
-		
 		var w = window.innerWidth;	
 		var h = window.innerHeight;	
 		var show = document.getElementById("imgBig");
+		
+		document.getElementById("popBg").style.display = "block";
+		document.getElementsByClassName("imgArea")[0].style.display = "block";
+		document.getElementsByClassName("imgArea")[0].style.height = h +"px";
 		
 		//document.body.style.overflow = "hidden";
 		
@@ -202,7 +202,6 @@
 			}
 			else if( className == "imgArea")
 			{
-				document.body.style.overflow = "auto";
 				var show = document.getElementById("imgBig");
 
 				show.src = "";	
