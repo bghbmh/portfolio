@@ -404,7 +404,7 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	
 	-webkit-overflow-scrolling:touch;	 
 	}
-#imgArea{
+#watchingArea{
 	display:none;
 	position:fixed;
 	width:100%; height:100%;
