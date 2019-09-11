@@ -178,6 +178,7 @@
 				document.forms["question"]["name"].value = "";
 				document.forms["question"]["tel"].value = "";
 				document.forms["question"]["story"].value = "";
+                                document.getElementsByClassName(className)[num].style.display = "none";
 			}
 			else if( className == "watchingArea")
 			{
