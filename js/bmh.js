@@ -107,7 +107,7 @@
 			//show.clientHeight = oh + "px";
 			//show.clientWidth = ow + "px";
 			
-			alert(oh);	
+			//alert(oh);	
 			show.style.top = (h - oh)/2 +"px";
 		}
 		else
