@@ -521,9 +521,9 @@ textarea::-ms-input-placeholder{color:#999; vertical-align: baseline;}
 	}
 	.tt{ top:7rem; }
 	.tt::after {
-		  left: 93%;
+		  left: 90%;
 		  margin-left: -5px;
-		  border-color: black black transparent transparent;
+		  border-color: white white transparent transparent;
 	}
 	#talk{ right:2rem;  }
 	.private{ width:85%; height:80%;  }
