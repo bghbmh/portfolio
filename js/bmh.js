@@ -85,7 +85,7 @@
 		document.getElementById("popBg").style.display = "block";
 		document.getElementsByClassName("imgArea")[0].style.display = "block";
 		document.getElementsByClassName("imgArea")[0].style.height = h +"px";
-		document.body.style.overflow = "hidden";
+		
 		//document.body.style.overflow = "hidden";
 		
 	//	show.style.width = 0.9*w + "px";	
@@ -124,16 +124,16 @@
 			//show.clientWidth = ow + "px";
 			
 			alert(oh);	
-			//show.style.marginTop = (h - oh)/2 +"px";
+			show.style.top = (h - oh)/2 +"px";
 			//alert(show.style.top);
 		}
 		else
 		{ 
-			//show.style.marginTop = 20 +"px";
+			show.style.top = 20 +"px";
 			
 		}
 		
-		//show.style.marginLeft = (w - ow)/2+ "px";	
+		show.style.marginLeft = (w - ow)/2+ "px";	
 		//alert(show.style.left);
 		
 		
@@ -202,12 +202,12 @@
 			}
 			else if( className == "imgArea")
 			{
-				document.body.style.overflow = "auto";
+				
 				var show = document.getElementById("imgBig");
 
 				show.src = "";	
-				show.style.marginTop = 0;
-				show.style.marginLeft = 0;
+				//show.style.marginTop = 0;
+				//show.style.marginLeft = 0;
 
 			}
 			
