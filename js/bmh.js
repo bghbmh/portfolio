@@ -110,12 +110,7 @@
 				show.style.width = ow + "px";
 				//alert(w +'/'+ show.style.width);
 			}
-			//oh = oh * (0.9*w/ow);
-			//ow = 0.9*w;
-			//show.clientHeight = oh + "px";
-			//show.clientWidth = ow + "px";
 			
-			//alert(oh);	
 			show.style.top = (h - oh)/2 +"px";
 		}
 		else
