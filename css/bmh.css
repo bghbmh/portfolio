@@ -129,6 +129,7 @@ nav > span:active{ color:#f00;  }
 	background:rgba(255, 255, 255, 0.7);
 	}
 #contents > div span.web::before{ content:"web";}
+#contents > div span.webPublishing::before{ content:"webPublishing";}
 #contents > div span.print::before{ content:"print";}
 #contents > div span.package::before{ content:"package";}
 #contents > div span.event::before{ content:"event";}
