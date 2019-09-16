@@ -102,7 +102,13 @@
 
 		if( ow > oh || h > oh )
 		{
-			
+			if( ow > oh && w > 768)
+			{
+				ow = 0.9*w;
+				oh = oh * (0.9*w/ow);
+				show.clientHeight = oh + "px";
+				show.clientWidth = ow + "px";
+			}
 			//oh = oh * (0.9*w/ow);
 			//ow = 0.9*w;
 			//show.clientHeight = oh + "px";
