@@ -107,7 +107,7 @@
 				ow = ow * (0.9*h/oh);
 				oh = 0.9*h;
 				show.clientHeight = oh + "px";
-				show.style.width = ow + "px";
+				show.clientWidth = ow + "px";
 				//alert(w +'/'+ show.style.width);
 			}
 			
@@ -185,8 +185,8 @@
 			else if( className == "watchingArea")
 			{
 				document.getElementById(className).style.display = "none";
-				var show = document.getElementById("imgBig");
-				show.style.width = 50 + "%";
+				//var show = document.getElementById("imgBig");
+				//show.style.width = 50 + "%";
 			}
 			else
                         {
