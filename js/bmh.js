@@ -107,7 +107,7 @@
 				ow = 0.9*w;
 				oh = oh * (0.9*w/ow);
 				show.clientHeight = oh + "px";
-				show.clientWidth = ow + "px";
+				show.style.width = ow + "px";
 				alert(w +'/'+ show.clientWidth);
 			}
 			//oh = oh * (0.9*w/ow);
