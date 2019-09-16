@@ -104,11 +104,11 @@
 		{
 			if( ow > oh && w > 768)
 			{
-				ow = 0.9*w;
-				oh = oh * (0.9*w/ow);
+				ow = ow * (0.9*h/oh);
+				oh = 0.9*h;
 				show.clientHeight = oh + "px";
 				show.style.width = ow + "px";
-				alert(w +'/'+ show.clientWidth);
+				alert(w +'/'+ show.style.width);
 			}
 			//oh = oh * (0.9*w/ow);
 			//ow = 0.9*w;
