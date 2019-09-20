@@ -101,16 +101,16 @@
 
 
 		if( ow > oh || h > oh )
-		{/*
+		{/*  */
 			if( ow > oh && w > 768)
 			{
-				ow = ow * (0.9*h/oh);
-				oh = 0.9*h;
+				ow = ow * (0.7*h/oh);
+				oh = 0.7*h;
 				show.clientHeight = oh + "px";
 				show.clientWidth = ow + "px";
 				//alert(w +'/'+ show.style.width);
 			}
-*/
+
 			show.style.top = (h - oh)/2 +"px";
 		}
 		else
