@@ -185,8 +185,7 @@
 			else if( className == "watchingArea")
 			{
 				document.getElementById(className).style.display = "none";
-				//var show = document.getElementById("imgBig");
-				//show.style.width = 50 + "%";
+				document.getElementById("imgBig").src = "";
 			}
 			else
                         {
