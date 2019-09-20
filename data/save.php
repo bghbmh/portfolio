@@ -17,17 +17,17 @@
 
   if($file_name == "index_html")
   {
-	$agree = $_POST['agree'];
-	$whatDay = $_POST['whatDay'];
-	$name = $_POST['name'];
-	$tel = $_POST['tel'];
-	$story = $_POST['story'];	
-	
-	 echo $whatDay;
+    $agree = $_POST['agree'];
+    $whatDay = $_POST['whatDay'];
+    $name = $_POST['name'];
+    $tel = $_POST['tel'];
+    $story = $_POST['story'];	
+
+     echo $whatDay;
 
     $outputstring =  $whatDay.",".$name.",".$tel.",".$story.",".$agree."\n";
 
-    $fp = fopen("bghbmh.dothome.co.kr/data/askMe.txt", 'a');
+    $fp = fopen("askMe.txt", 'a');
 
     flock($fp, LOCK_EX);
     if (!$fp) {
@@ -47,7 +47,7 @@
 
     echo $allData;
 
-    $fileopen = @fopen("bghbmh.dothome.co.kr/data/askMe.txt",'w') or exit("파일을 읽을 수 없습니다."); 
+    $fileopen = @fopen("askMe.txt",'w') or exit("파일을 읽을 수 없습니다."); 
 
     flock($fileopen, LOCK_EX);
     if (!$fileopen) {
@@ -59,7 +59,7 @@
     flock($fileopen, LOCK_UN);
     fclose($fileopen);
     
-    header("location: bghbmh.dothome.co.kr/data/admin.php");
+    header("location: admin.php");
   }
 
 ?>
