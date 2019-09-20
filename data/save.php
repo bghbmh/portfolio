@@ -1,8 +1,8 @@
 <?php
   // create short variable names
-  
+
   $file_name = $_POST['file_name'];
-  
+
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -13,7 +13,7 @@
 <body>
 
 <?php
- 
+
 
   if($file_name == "index_html")
   {
@@ -21,7 +21,7 @@
     $whatDay = $_POST['whatDay'];
     $name = $_POST['name'];
     $tel = $_POST['tel'];
-    $story = $_POST['story'];	
+    $story = $_POST['story'];
 
      echo $whatDay;
 
@@ -34,7 +34,7 @@
       echo "no";
       exit;
     }
-    
+
     fwrite($fp, $outputstring, strlen($outputstring));
     flock($fp, LOCK_UN);
     fclose($fp);
@@ -47,19 +47,19 @@
 
     echo $allData;
 
-    $fileopen = @fopen("askMe.txt",'w') or exit("파일을 읽을 수 없습니다."); 
+    $fileopen = @fopen("askMe.txt",'w') or exit("파일을 읽을 수 없습니다.");
 
     flock($fileopen, LOCK_EX);
     if (!$fileopen) {
       echo "no";
       exit;
     }
-    
+
     fwrite($fileopen, $allData);
     flock($fileopen, LOCK_UN);
     fclose($fileopen);
-    
-    header("location: admin.php");
+
+    header("location: http://bghbmh.dothome.co.kr/data/admin.php");
   }
 
 ?>
