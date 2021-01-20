@@ -33,16 +33,16 @@ button{
 
 }
 @media (min-width:1024px) {
-    header, nav, section, footer{ width: 50%;  }
-}
-@media (min-width:1440px) {
-    header, nav, section, footer{ width: 45%;  }
-}
-@media( min-width:1920px){
     header, nav, section, footer{ width: 40%;  }
 }
-@media( min-width:2400px){
+@media (min-width:1440px) {
     header, nav, section, footer{ width: 35%;  }
+}
+@media( min-width:1920px){
+    header, nav, section, footer{ width: 35%;  }
+}
+@media( min-width:2400px){
+    header, nav, section, footer{ width: 30%;  }
 }
 
 .work, .job{
