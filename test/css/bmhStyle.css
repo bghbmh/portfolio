@@ -163,7 +163,7 @@ button{
 }
 @media (max-width:767px) {
     .firstWord { margin-top:1em; padding-left: 2em; padding-right: 2em;}
-    .theRest{ padding-left: 2em;padding-right: 2em; }
+    .theRest{ padding-left: 1.7em;padding-right: 1.7em; }
 }
 .firstWord li{
     /*font-size: 30em;*/
