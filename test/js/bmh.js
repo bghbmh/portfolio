@@ -73,6 +73,7 @@
         } 
         else
         {
+            mainBody.style.height = window.innerHeight + "px";
             //버튼 연결
             document.getElementById("openSubPage").addEventListener("click", openPage);
             document.getElementById("closeSubPage").addEventListener("click", closePage);        
