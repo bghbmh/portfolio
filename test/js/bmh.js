@@ -1,4 +1,4 @@
-    'use strict';
+    //'use strict';
     console.log(checkMobile());
 
     class CheckTagwithClassName{
