@@ -539,7 +539,7 @@ footer span{
 }
 .item ul li:last-child{ text-align: center; }
 @media (max-width:767px) {
-    .item ul li:last-child{ margin-bottom: 4em; }
+    .item ul li:last-child{ margin-bottom: 8em; }
 }
 .item ul li:after{
     content: '';
