@@ -163,7 +163,7 @@ button{
 }
 @media (max-width:767px) {
     .firstWord { margin-top:1em; padding-left: 2em; padding-right: 2em;}
-    .theRest{ padding-left: 1.7em;padding-right: 1.7em; }
+    .theRest{ padding-left: 1.7em; padding-right: 1.7em; }
 }
 .firstWord li{
     /*font-size: 30em;*/
@@ -274,9 +274,12 @@ footer span{
 .subHeader{
     position: relative;
     display: block;
-    padding-top: 10em ; /*12.6%*/
+    padding-top: 10em ; /*10*/
     /*! top: 0; */
     /*! width: 100%; */
+}
+@media (max-width:767px) {
+    .subHeader{  padding-top: 7.5em ; }
 }
 .closeSubPage{
     float: left;
@@ -342,6 +345,10 @@ footer span{
     text-align: center;
     cursor: pointer;
 }
+@media (max-width:767px) {
+    .content .goShow{ width: 70%; }
+    .content .goShow li{ width: 40%; }
+}
 .content .goShow li:nth-child(2n+1){
     /*top:0;
     left: 0;*/
@@ -362,6 +369,9 @@ footer span{
     padding:1em 0 2.5em;
     font-size: 1.5em;
     text-align: center;
+}
+@media (max-width:767px) {
+    .content .goShow li div{  padding-bottom: 1.8em; }
 }
 .content .goShow li div span{
     display: block;
