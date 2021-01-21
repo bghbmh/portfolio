@@ -346,7 +346,7 @@ footer span{
     cursor: pointer;
 }
 @media (max-width:767px) {
-    .content .goShow{ width: 70%; }
+    .content .goShow{ width: 70%; margin-top: 2em; }
     .content .goShow li{ width: 40%; }
 }
 .content .goShow li:nth-child(2n+1){
