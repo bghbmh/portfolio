@@ -471,6 +471,21 @@ section{
     bottom:0;
     background: rgba(0,0,0,.8);
 }
+
+.popupBg{
+    position : fixed;
+    z-index: 99;
+    display : block;
+    width : 100%;
+    height : 100%;
+    top : 0;
+    left : 0;
+    bottom : 0;
+    right : 0;
+    background-color: rgba(0,0,0,.6);
+    cursor : default;
+}
+
 #nameCard, #talkTo, #connectList{ 
     position: fixed;
     z-index: 9999;
@@ -499,7 +514,10 @@ section{
 #connectList{
     padding-bottom: 3vh;
 }
+
 /*== 팝업_명함 전달  ================================= */
+
+
 
 #nameCard .ncQuit{
     position: absolute;
@@ -652,18 +670,18 @@ section{
 
 
 /*== 팝업_상담 신청하기  ================================= */
-#talkTo .time{
+.time{
     position: relative;
 
 }
-#talkTo .time:after{
+.time:after{
     content: ' (필수)';
     display: inline;
     color: #b11616;
     font-size: .8em;
     
 }
-#talkTo .time .downtriangle{
+.time .downtriangle{
     position: absolute;
     bottom: -2.65em;
     right: 1em;
@@ -674,7 +692,7 @@ section{
     border-width: 8px 5px 0 5px;
     border-color: #999 transparent transparent transparent;
 }
-#talkTo .hours{
+.hours{
     display: block;
     width:100%;
     padding:.5em;
@@ -691,7 +709,7 @@ section{
     color: #777;
 }
 
-#story{
+/*#story{
     display:block;
     width:100%;
     height:10em;
@@ -705,7 +723,7 @@ section{
     font-size: 1em;
     font-family: 'Noto Sans KR', sans-serif;
     
-}
+}*/
 #story::-webkit-input-placeholder { /* Edge */
   font-size: .9em;
 }
