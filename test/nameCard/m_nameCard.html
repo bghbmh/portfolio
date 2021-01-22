@@ -17,9 +17,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/popup_style.css">
     <link rel="stylesheet" href="css/nameCard_style.css">
 
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="js/basic.js"></script>
+    <script src="js/popup.js"></script>
     <script src="js/nameCard.js"></script> <!-- -->
 
     <script>
@@ -117,7 +120,7 @@
         	</ul>
         	
         </section>
-<!--         <section class="connect">
+        <!-- <section class="connect">
             <a id="kakao-link-btn" href="javascript:sendLink()">
                 <img src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
             </a>
@@ -140,14 +143,11 @@
 
 
 
-<!-- 팝업=======================================
-
-<-- 공용배경 -->
-<div id="popBg"></div>
+<!-- 팝업=======================================  -->
 
 <!--팝업__ 명함 전달 및 연락처에 저장을.. 할 수 있겠지?  -->
 <div id="nameCard">    
-    <div class="closePopUp ncQuit"><span class="crossShape"></span></div>
+    <div class="closePopup ncQuit"><span class="crossShape"></span></div>
 
     <!--=================-->
     <div class="tab">
@@ -162,7 +162,7 @@
             문자로 보내기<span class="icons checking smaller"></span>
         </div>
         <div id="gotoKakao" class="goto">            
-            <a href="javascript:void(0);" onclick="sendLink()">톡으로 보내기<span class="icons checking smaller"></span></a>
+            <a href="#"><!-- <a href="javascript:void(0);" onclick="sendLink()"> -->톡으로 보내기<span class="icons checking smaller"></span></a>
         </div>
         <div class="tcnt">
             <label class="guide">명함 받을 분의 번호를 적어주세요</label>
@@ -173,10 +173,10 @@
 
     <div class="tabcontent">
         <div class="goto" >  
-            xxx
+          <!--   xxx -->
         </div>
         <div class="goto">
-            톡으로 보내기<span class="icons checking smaller"></span>
+         <!--    톡으로 보내기<span class="icons checking smaller"></span> -->
 
         </div>
     </div>
@@ -260,11 +260,11 @@
  
 	</ul>
 
-    <div class="closePopUp"><span class="crossShape"></span></div>        	
+    <div class="closePopup"><span class="crossShape"></span></div>        	
 </div>
 
 <!--팝업__ 상담신청  -->
-<div id="talkTo">
+<!-- <div id="talkTo">
 	<div class="time">상담 가능 시간<span class="downtriangle"></span></div>
 	<select class="hours" name="hours">
         <option selected="selected">선택하기 </option>
@@ -285,10 +285,53 @@
 
 
 	<label for="story">문의 내용</label>
+    <label class="guide txtarea">상담하고 싶은 내용을 간단하게 적어주세요</label>
 	<textarea id="story" name="story" placeholder="상담하고 싶은 내용을 간단하게 적어주세요"></textarea>
 	
-	<div class="closePopUp cancel">취소하기</div>
+	<div class="closePopup cancel">취소하기</div>
 	<div class="submit">신청하기</div>
+</div> -->
+
+<div class="writePopup hello">
+    <ul>
+        <form name="question" method="post" id="ok">
+        <li>  
+            <div class="time">상담 가능 시간<span class="downtriangle"></span></div>
+            <select class="hours" name="hours">
+                <option selected="selected">선택하기 </option>
+                <option value="espresso">오전 9 ~ 10시</option>
+                <option value="espresso">오전 10 ~ 11시</option>
+                <option value="espresso">오전 11 ~ 12시</option>
+                <option value="espresso">오후 12 ~ 13시</option>
+                <option value="espresso">오후 13 ~ 14시</option>
+                <option value="espresso">오후 14 ~ 15시</option>
+                <option value="espresso">오후 15 ~ 16시</option>
+                <option value="espresso">오후 16 ~ 17시</option>
+                <option value="espresso">오후 17 ~ 18시</option>
+                <option value="espresso">오후 18 ~ 19시</option>
+                <option value="espresso">오후 19 ~ 20시</option>
+                <option value="espresso">오후 20 ~ 21시</option>
+
+            </select>
+        </li>
+       <!--  <li>
+            <label class="guide">전화번호를(숫자만) 적어주세요</label>       
+            <input type="tel" id="tel" name="tel" value="">  
+        </li> -->
+        <li><label for="story">문의 내용</label></li>
+        <li>            
+            <label class="guide txtarea">상담 내용을 간단하게 적어주세요</label>
+            <textarea id="story" name="story"></textarea>
+        </li>
+        <!-- <li>
+            <div class="agreeBox" id="agreeBox">동의</div>
+            <div class="agreeGuide">개인정보수집 및 이용동의</div>
+            <div class="agreeStory">보기</div>            
+        </li> -->
+        </form>
+    </ul>
+    <div class="closePopup btn w50 cancel">취소하기</div>
+    <div class="submit btn w50 floatRight">신청하기</div>
 </div>
 
 <!--팝업 ===================================  -->   
