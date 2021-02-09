@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Cache-Control" content="No-Cache">
+	<meta http-equiv="Pragma" content="No-Cache">
+	<meta name="format-detection" content="telephone=no, address=no, email=no" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+	<meta name="apple-mobile-web-app-title" content="박민희">
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="안녕하세요 박민희입니다">
+	<meta name="keyword" content="bghbmh, bmh, design, web design, web publisher, 박민희">
+	<meta name="author" content="Bak Min Hui_BMH_박민희">
+	<meta name="copyright" content="박민희">
+
+	<meta property="og:title" content="안녕하세요 박민희입니다" />
+	<meta property="og:url" content="http://bghbmh.dothome.co.kr/index.html" />
+	<meta property="og:image" content="img/icon192.jpg" />
+	<meta property="og:description" content="디자인/퍼블리셔" />
+
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/icon144.jpg">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/icon72.jpg">
+	<link rel="icon" type="image/jpg" sizes="192x192" href="img/icon192.jpg">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="manifest" href="manifest.json">  
+
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icon72.jpg" />
+	<link rel="apple-touch-icon-precomposed" sizes="96x96" href="img/icon96.jpg" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/icon144.jpg" />
+	<link rel="apple-touch-icon-precomposed" sizes="192x192" href="img/icon192.jpg" />
+
+	<title>박민희</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/basic.css">
+	<link rel="stylesheet" href="css/icons_style.css">
+	<link rel="stylesheet" href="css/popup_style.css">
+	<link rel="stylesheet" href="css/bmhStyle2.css">
+
+	<!-- -->
+	<script src="js/basic.js"></script> 
+	<script src="js/popup.js"></script>
+	<script src="js/topNameSlide.js"></script> 
+	<!-- <script src="js/bmh.js"></script>  -->
+	<script src="js/loadFile.js"></script> 
+   
+
+</head>
+
+<body>
+
+	<div class="wrap">
+		<header>
+			<ul id="work" class="work">
+				<li>Web</li>
+				<li>Print</li>
+				<li>BrandinG</li>
+				<li>Content</li>
+			</ul>
+			<ul id="job" class="job">
+				<li>DesiGner</li>
+				<li>박민희</li>
+			</ul>
+		</header>
+		<section><div class="illust"> <img src="img/icons_myFace.svg"> <!-- --> </div></section> 
+		<nav class="contact">
+			<button class="write">글남기기</button>
+			<button class="calltxt">어플쓰기</button>        	
+		</nav>
+
+		<section>
+			<div class="HiEveryone">
+				주로 인쇄, 웹 등의 디자인을 하지만<Br>코딩도 조금씩 하고 있습니다.
+
+				<span>코딩은 주로 javascript와 약간의 php 를 사용하지요</span>
+
+
+				<!-- 묻힌 없이 패, 사랑과 내 가슴속에 비둘기, 북간도에 남은 까닭입니다. 아스라히 그리워 내린없이 하나에 헤는 가득 별 나는 피어나듯이 않은 하나에 별 이국 까닭입니다. 계절이 별빛이 별 나는 피어나듯이 않은 하나에 별 이국 까닭입니다. -->
+			</div>
+
+		</section>
+
+		<!-- <section>
+			<ul class="myName firstWord">
+				<li><img class="ctx" src="img/b.svg"></li>
+				<li><img class="ctx" src="img/m.svg"></li>
+				<li><img class="ctx" src="img/h.svg"></li>                
+			</ul>
+			<ul class="myName theRest">
+				<li><span>ㅏ, ㄱ</span></li>
+				<li><span>ㅣ, ㄴ</span></li>
+				<li><span>ㅡ, ㅣ</span></li>                
+			</ul>
+
+		</section> -->
+		<footer>
+			<!-- <span>화면 바닥의 검정 버튼을 클릭하면 작업물을 볼 수 있습니다</span> -->
+			<button id="openSubPage" class="openSubPage"><span class="icons leftTopArrow size60per"></span></button>
+		</footer>
+
+
+		<!-- subpage --> 
+		<div id="subpage_cnt" class="subpage">
+			<button id="closeSubPage" class="closeSubPage">
+				<span class="icons rightBottomArrow size60per"></span>
+			</button>
+			<div class="subillust">
+				<img src="img/icons_myFace.svg"> <!-- --> 
+			</div>
+			<button id="allItemSubPage" class="allItemSubPage">
+				<span class="icons allItems"></span>
+			</button>
+
+			<div class="contact subcnt">
+				<button class="write">글남기기</button>
+				<button class="calltxt">어플쓰기</button>          	
+			</div>
+
+			<div class="contents">
+				<ul class="category">
+					<li data-category="웹">
+						<img src="img/icons_pf-21.svg">
+						<div>웹</div>
+						<span>Web / UI / UX</span>						
+					</li>
+					<li data-category="인쇄">
+						<img src="img/icons_pf-22.svg">
+						<div>인쇄</div>
+						<span>Print / Illust</span>						
+					</li>
+					<li data-category="브랜딩">
+						<img src="img/icons_pf-23.svg">
+						<div>브랜딩</div>
+						<span>Branding / CI / BI</span>						
+					</li>
+					<li data-category="콘텐츠">
+						<img src="img/icons_pf-24.svg">
+						<div>콘텐츠</div>
+						<span>Content / Illust</span>						
+					</li>
+				</ul>
+
+			</div>
+
+	        <!-- 최근 작업 또는 대표 작업 모음 --> 
+	        <!-- 웹 Web / UI / UX --> 
+			<div class="mainContents">
+				<button class="backPage">
+					<span class="icons leftArrowSide"></span>
+				</button>
+				<button class="selectedItemSubPage">
+					<span class="icons allItems"><span class="selected"></span></span>
+				</button>				
+				<div class="subsubTitle"></div>				
+
+				<div class="cntList"></div>		
+
+			</div> <!--end  maincontents --> 
+			<!-- 작업물 상세 설명 --> 
+			<div class="subDetail">
+				<button class="closeDetail circle">
+					<span class="icons crossShape"></span>
+				</button>
+				<button class="selectedItemSubPage circle">
+					<span class="icons allItems"><span class="selected"></span></span>
+				</button>
+				<div class="item">
+				
+				</div>
+			</div>
+			
+
+		</div><!-- end subpage-->
+
+		<div class="workResult">
+			<button class="closeSelectedPage">
+				<span class="icons leftArrowSide"></span>
+			</button>
+			<div class="faceLogo">
+				<img src="img/icons_myFace.svg"> <!-- -->
+			</div>	
+			<ul>
+				<!-- <li>
+					<img src="img/pic/paper03.png">
+					<div><span>aaa</span><span>bbb</span></div>
+				</li> -->
+			</ul>
+		</div>
+
+
+	</div><!-- end wrap-->
+
+
+
+
+
+
+<!-- 팝업======================================= -->
+
+<div class="writePopup hello">
+    <ul>
+        <form name="question" method="post" id="ok">
+        <li>  
+        	<label class="guide">이름을 적어주세요</label>      	
+        	<input type="text" id="name" name="name" value=""> 
+        </li>
+        <li>
+        	<label class="guide">전화번호를(숫자만) 적어주세요</label>      	
+        	<input type="tel" id="tel" name="tel" value="">  
+        </li>
+        <li>
+        	<label class="guide txtarea">궁금한 내용을 적어주세요</label>
+        	<textarea id="story" name="story"></textarea>  
+        </li>
+        <li>
+            <div class="agreeBox" id="agreeBox">동의</div> <!--  on    -->
+            <div class="agreeGuide">개인정보수집 및 이용동의</div>
+            <div class="agreeStory">보기</div>            
+        </li>
+        </form>
+    </ul>
+    <div class="closePopup btn w50 cancel">취소하기</div>
+    <div class="submit btn w50 floatRight">문의하기</div>
+</div>
+<div class="calltxtPopup hello">
+	<div class="closePopup btn nope"><span class="icons crossShape"></span></div>
+    <div class="call btn yep">전화하기</div>    
+    <div class="message btn yep floatRight">문자보내기</div>
+</div>
+
+
+
+
+
+<script src="js/bmh2.js"></script> 
+
+</body>
+
+</html>
