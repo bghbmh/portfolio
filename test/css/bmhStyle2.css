@@ -837,3 +837,22 @@ float: right;
 	text-align: center;
 	background: #fadf34;
 }
+.notYet{
+    width: 100%;
+    text-align:center !important;
+    /* background: #f9f9f9 !important;*/
+    font-size: 1.5em !important;
+    padding: 7em 0em !important;
+    border-radius: .2em !important;
+}
+
+.notYet img{
+	display: block !important;
+	width: 25% !important;
+	margin:0 auto !important;
+
+}
+
+.notYet span{
+	display:none !important;
+}
