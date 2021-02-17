@@ -1,0 +1,143 @@
+
+		/*
+				
+		{
+			"src" : "img/pic/w.jpg", 
+			"category" : "웹",
+			"hashtag" : [ "모바일", "명함", "html/css", "javascript" ]
+		
+		},
+		{
+			"src" : "img/pic/paper02.png",
+			"category" : "웹",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ]
+		},
+		{
+			"src" : "img/pic/paper02.png",
+			"category" : "웹",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ]
+		},
+		{
+			"src" : "img/pic/paper02.png",
+			"category" : "인쇄",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ],
+			"detail" : {
+					"bg" : "img/web111_bg.png",
+					"img" : "img/web111.png",
+					"이름" : "Molecule Man",
+					"타깃층" : 29,
+					"콘셉트" : "Dan Jukes",
+					"주 사용색" : [ "#f00", "#0f0" ],
+					"링크" : "www.naver.com",
+					"디자인" : "누구누구",
+					"코딩" : "누구누구",
+					"이야기" : "추가 설명 있으면 적기, 추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기 "
+				}
+		},
+		{
+			"src" : "img/pic/paper02.png",
+			"category" : "인쇄",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ]
+		},
+		{
+			"src" : "img/pic/paper02.png",
+			"category" : "브랜딩",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ]
+			
+		},
+		{
+			"src" : "img/pic/paper02.png",
+			"category" : "콘텐츠",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ],
+			"detail" : {
+					"bg" : "img/web111_bg.png",
+					"img" : "img/web111.png",
+					"이름" : "Molecule Man",
+					"타깃층" : 29,
+					"콘셉트" : "Dan Jukes",
+					"주 사용색" : [ "#f00", "#0f0" ],
+					"링크" : "www.naver.com",
+					"디자인" : "누구누구",
+					"코딩" : "누구누구",
+					"이야기" : "추가 설명 있으면 적기, 추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기 "
+				}
+		},
+		{
+			"src" : "img/pic/paper02.png",
+			"category" : "콘텐츠",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ],
+			"detail" : {
+					"bg" : "img/web112_bg.png",
+					"img" : "img/web112.png",
+					"이름" : "Molecule Man",
+					"타깃층" : 29,
+					"콘셉트" : "Dan Jukes",
+					"주 사용색" : [ "#f00", "#0f0" ],
+					"링크" : "www.naver.com",
+					"디자인" : "누구누구",
+					"코딩" : "누구누구",
+					"이야기" : "추가 설명 있으면 적기, 추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기 "
+				}
+		},
+		{
+			"src" : "img/pic/paper02.png",
+			"category" : "인쇄",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ]
+		},
+		{
+			"src" : "img/pic/paper02.png",
+			"category" : "콘텐츠",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ]
+		},
+		{
+			"src" : "img/pic/paper14.png",
+			"category" : "인쇄",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ],
+			"detail" : {
+					"bg" : "img/web111_bg.png",
+					"img" : "img/web111.png",
+					"이름" : "Molecule Man",
+					"타깃층" : 29,
+					"콘셉트" : "Dan Jukes",
+					"주 사용색" : [ "#f00", "#0f0" ],
+					"링크" : "www.naver.com",
+					"디자인" : "누구누구",
+					"코딩" : "누구누구",
+					"이야기" : "추가 설명 있으면 적기, 추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기 "
+				}
+		},
+		{
+			"src" : "img/pic/paper02.png",
+			"category" : "웹",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ],
+			"detail" : {
+					"bg" : "img/web112_bg.png",
+					"img" : "img/web112.png",
+					"이름" : "Molecule Man",
+					"타깃층" : 29,
+					"콘셉트" : "Dan Jukes",
+					"주 사용색" : [ "#f00", "#0f0" ],
+					"링크" : "www.naver.com",
+					"디자인" : "누구누구",
+					"코딩" : "누구누구",
+					"이야기" : "추가 설명 있으면 적기, 추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기 "
+				}
+		},
+		{
+			"src" : "img/pic/paper15.png",
+			"category" : "웹",
+			"hashtag" : [ "aaa" , "bbb", "ccc" ],
+			"detail" : {
+					"bg" : "img/web113_bg.png",
+					"img" : "img/web113.png",
+					"이름" : "Molecule Man",
+					"타깃층" : 29,
+					"콘셉트" : "Dan Jukes",
+					"주 사용색" : [ "#f00", "#0f0" ],
+					"링크" : "www.naver.com",
+					"디자인" : "누구누구",
+					"코딩" : "누구누구",
+					"이야기" : "추가 설명 있으면 적기, 추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기추가 설명 있으면 적기 "
+				}
+		}
+	*/
