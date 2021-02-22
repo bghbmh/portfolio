@@ -140,7 +140,7 @@
     color: #777;
     cursor: pointer;
 }
-.hello .agreeBox.on{
+.hello .agreeBox.ok{
     background: #fadf34;
     color: #000;
 }
