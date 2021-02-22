@@ -29,6 +29,8 @@ function loadBody(mainBody){
 		guide.classList.remove("off");
 		guide.classList.remove("warning");
 	}
+	
+	mainBody.style.height = window.innerHeight + "px";//높이가 오류나고 있음 확인하기
 
 	document.getElementById("openSubPage").addEventListener("click", openPage);//버튼 연결	
 	topsmallSlides(false);// 상단, 하는 일 수직 슬라이드 설정
