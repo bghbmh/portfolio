@@ -4,7 +4,7 @@
 	[
 		
 		{
-			"src" : "img/pic/p13.jpg", 
+			"src" : "", 
 			"category" : "웹",
 			"hashtag" : [ "모바일", "명함", "html/css", "javascript" ],
 			"detail" : {
@@ -32,12 +32,12 @@
 			"hashtag" : [ "엽서", "일러스트" ]			
 		},
 		{
-			"src" : "img/pic/p13.jpg",
+			"src" : "",
 			"category" : "웹",
 			"hashtag" : [ "모바일", "마케팅" ]			
 		},
 		{
-			"src" : "img/pic/p13.jpg", 
+			"src" : "", 
 			"category" : "웹",
 			"hashtag" : [ "pc", "모바일", "마케팅" ]			
 		},
