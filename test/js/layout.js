@@ -8,7 +8,7 @@ item : [ string : name, array : list ]
 
 
 	var template = {
-		rawData : [],
+		'rawData' : [],
 		items : [],   //[ name, list ]
 		selectedItem : [],
 
@@ -70,7 +70,15 @@ item : [ string : name, array : list ]
 
 			for( let i=0; i<this.selectedItem.length; i++ )
 			{
-				list = list + `<li><img src="${this.selectedItem[i].src}"><div>`;
+				if( this.selectedItem[i].src === '' )
+				{
+					list = list + `<li class="notYet"><img src="img/icons_myFace.svg"><br>준비중입니다<div>`; 
+				}
+				else
+				{
+					list = list + `<li><img src="${this.selectedItem[i].src}"><div>`;
+				}
+				
 
 				for( let j=0; j<this.selectedItem[i].hashtag.length; j++ )
 				{
@@ -109,7 +117,15 @@ item : [ string : name, array : list ]
 
 			for( let i=0; i<arr.length; i++ )
 			{
-				list = list + `<li><img src="${arr[i].src}"><div>`;
+				if( arr[i].src === '' )
+				{
+					list = list + `<li class="notYet"><img src="img/icons_myFace.svg"><br>준비중입니다<div>`; 
+				}
+				else
+				{
+					list = list + `<li><img src="${arr[i].src}"><div>`;
+				}
+				
 
 				for( let j=0; j<arr[i].hashtag.length; j++ )
 				{
@@ -144,7 +160,7 @@ item : [ string : name, array : list ]
 								arr.push(this.rawData[j]);
 								idx.push(j);
 
-								console.log( this.rawData[j].hashtag);
+								//console.log( this.rawData[j].hashtag);
 							}
 						}
 					}
@@ -157,7 +173,7 @@ item : [ string : name, array : list ]
 						let isThere = false;
 						for( let k=0; k<idx.length; k++ )
 						{
-							console.log( ' j === idx[k]  : ', j , idx[k]  );
+							//console.log( ' j === idx[k]  : ', j , idx[k]  );
 							if( j === idx[k] )
 								isThere = true;
 						}
@@ -182,7 +198,14 @@ item : [ string : name, array : list ]
 
 			for( let i=0; i<arr.length; i++ )
 			{
-				list = list + `<li><img src="${arr[i].src}"><div>`;
+				if( arr[i].src === '' )
+				{
+					list = list + `<li class="notYet"><img src="img/icons_myFace.svg"><br>준비중입니다<div>`; 
+				}
+				else
+				{
+					list = list + `<li><img src="${arr[i].src}"><div>`;
+				}
 
 				for( let j=0; j<arr[i].hashtag.length; j++ )
 				{
