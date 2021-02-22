@@ -1,43 +1,38 @@
 'use strict';
 
-function loadmain(mainBody){
+function loadBody(mainBody){
 
-	const url = new URL('https://developer.mozilla.org/ko/docs/Web/API/URL/href#aa#Bb#ccc');
-	console.log('hash : ',url.hash); // Logs: '#예제'
+	// let aa = new Date(2021, 1, 0);
+	// let lastday = aa.getDate();
 
-	//파일 가져오기
-	
+	// console.log('last day : ', lastday);
+
+
+	// const url = new URL('https://developer.mozilla.org/ko/docs/Web/API/URL/href#aa#Bb#ccc');
+	// console.log('hash : ',url.hash); // Logs: '#예제'
+
+	//파일 가져오기	
 	loadFile._json('./json/bmh.json', arrangedFile);
 	
-	const btn_write = document.getElementsByClassName("write"); // 글남기기 버튼
+	// saveFile._json('./json/test.json');
+
 	const btn_calltxt = document.getElementsByClassName("calltxt");
-	const writePopup = document.querySelector(".writePopup");
-	const calltxtPopup = document.querySelector(".calltxtPopup");
+	const btn_write = document.querySelector(".write"); // 글남기기 버튼
+	btn_write.addEventListener("click", openPopup);
 
 	//입력창 모두 빈칸으로 만들기
-	const input = document.querySelectorAll("input");
-	for( let i=0; i<input.length; i++ )
-		input[i].value = "";
-
-	const txtarea = document.querySelectorAll("textarea");
-	for( let i=0; i<txtarea.length; i++ )
-		txtarea[i].value = "";
-
-
-	if( mainBody.className === "subwrap")
+	let txtBox = document.getElementsByClassName("txtBox");	
+	for( let i=0; i<txtBox.length; i++ )
 	{
-		console.log(" btn_write.length : " + btn_write.length ); 
-		loadsub(mainBody);
-	} 
-	else
-	{
-		mainBody.style.height = window.innerHeight + "px";
-		//버튼 연결
-		document.getElementById("openSubPage").addEventListener("click", openPage);
-
-		// 상단, 하는 일 수직 슬라이드 설정
-		topsmallSlides(false);
+		let guide = txtBox[i].previousElementSibling;
+		txtBox[i].value === "";
+		guide.classList.remove("off");
+		guide.classList.remove("warning");
 	}
+
+	document.getElementById("openSubPage").addEventListener("click", openPage);//버튼 연결	
+	topsmallSlides(false);// 상단, 하는 일 수직 슬라이드 설정
+
 }
 
 
@@ -72,6 +67,29 @@ function openPage(e){
 	for( let i=0; i<categorise.length; i++)
 		categorise[i].addEventListener('click', showCategoryPage);
 
+	// let categorise = document.querySelector('.contents .category');
+	// categorise.addEventListener('click', ttttt);
+
+}
+
+function ttttt(e){
+
+	if( e.target.nodeName === this.nodeName )
+	{
+		console.log("mmmm == ", e.target.nodeName, this.nodeName);
+		return;
+	}
+
+	let nowTarget = e.target;
+
+	let category = e.target.getAttribute('data-category'); // 무슨 카테고리인지 가져와서 제목넣고
+	console.log( e.target);
+	// let mainContents = document.querySelector(".mainContents");
+	// mainContents.classList.add('on'); //리스트 페이지 열고
+	// mainContents.setAttribute('data-category', category);
+	// mainContents.querySelector('.subsubTitle').textContent = category + ' - ' + e.currentTarget.querySelector('span').innerHTML;
+
+	// mainContents.querySelector('.cntList').innerHTML = setCategoryList(category);//안에 리스트 설정하고
 }
 
 function showCategoryPage(e){	
@@ -263,12 +281,12 @@ function loadWindow(){
 	{  	//파일 가져오기
 	
 	    
-	    loadmain(wrap);
+	    loadBody(wrap);
 	}
 	else if( subwrap != null )
 	{
 	    console.log("subwrap");
-	    loadmain(subwrap);
+	    loadBody(subwrap);
 
 	}
 }
