@@ -203,32 +203,32 @@
 
 <!-- 팝업======================================= -->
 
-<div class="writePopup hello">
+<div class="writepopup hello">
     <ul>
-        <form name="question" method="post" id="ok">
-        <li>  
-        	<label class="guide">이름을 적어주세요</label>      	
-        	<input type="text" id="name" name="name" value=""> 
-        </li>
-        <li>
-        	<label class="guide">전화번호를(숫자만) 적어주세요</label>      	
-        	<input type="tel" id="tel" name="tel" value="">  
-        </li>
-        <li>
-        	<label class="guide txtarea">궁금한 내용을 적어주세요</label>
-        	<textarea id="story" name="story"></textarea>  
-        </li>
-        <li>
-            <div class="agreeBox" id="agreeBox">동의</div> <!--  on    -->
-            <div class="agreeGuide">개인정보수집 및 이용동의</div>
-            <div class="agreeStory">보기</div>            
-        </li>
+		<form name="question" method="post" id="ok">
+		<li>  
+			<label class="guide">이름을 적어주세요</label>      	
+			<input type="text" id="name" class="txtBox" name="" value=""> 
+		</li>
+		<li>
+			<label class="guide">전화번호를(숫자만) 적어주세요</label>      	
+			<input type="tel" id="tel" class="txtBox" name="" value="">  
+		</li>
+		<li>
+			<label class="guide">궁금한 내용을 적어주세요</label>
+			<textarea id="story" class="txtBox" name="" ></textarea>  
+		</li>		
         </form>
     </ul>
+    <div>
+		<div class="agreeBox" id="agreeBox">동의</div> <!--  on    -->
+		<div class="agreeGuide">개인정보수집 및 이용동의</div>
+		<div class="agreeStory">보기</div>            
+	</div>
     <div class="closePopup btn w50 cancel">취소하기</div>
     <div class="submit btn w50 floatRight">문의하기</div>
 </div>
-<div class="calltxtPopup hello">
+<div class="calltxtpopup hello">
 	<div class="closePopup btn nope"><span class="icons crossShape"></span></div>
     <div class="call btn yep">전화하기</div>    
     <div class="message btn yep floatRight">문자보내기</div>
