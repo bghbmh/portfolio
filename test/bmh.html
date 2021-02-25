@@ -107,15 +107,18 @@
 
 		<!-- subpage --> 
 		<div id="subpage_cnt" class="subpage">
-			<button id="closeSubPage" class="closeSubPage">
-				<span class="icons rightBottomArrow size60per"></span>
-			</button>
+			<div class="btnSet">
+				<button id="closeSubPage" class="closeSubPage">
+					<span class="icons rightBottomArrow size60per"></span>
+				</button>
+				
+				<button id="allItemSubPage" class="allItemsPage">
+					<span class="icons allItems"></span>
+				</button>
+			</div>
 			<div class="subillust">
 				<img src="img/icons_myFace.svg"> <!-- --> 
 			</div>
-			<button id="allItemSubPage" class="allItemSubPage">
-				<span class="icons allItems"></span>
-			</button>
 
 			<!-- <div class="contact subcnt">
 				<button class="write">글남기기</button>
@@ -151,12 +154,14 @@
 	        <!-- 최근 작업 또는 대표 작업 모음 --> 
 	        <!-- 웹 Web / UI / UX --> 
 			<div class="mainContents">
-				<button class="backPage">
-					<span class="icons leftArrowSide"></span>
-				</button>
-				<button class="selectedItemSubPage">
-					<span class="icons allItems"><span class="selected"></span></span>
-				</button>				
+				<div class="btnSet">
+					<button class="closePage">
+						<span class="icons leftArrowSide"></span>
+					</button>
+					<button class="categoryItemPage">
+						<span class="icons allItems"><span class="selected"></span></span>
+					</button>	
+				</div>			
 				<div class="subsubTitle"></div>				
 
 				<div class="cntList"></div>		
@@ -164,12 +169,14 @@
 			</div> <!--end  maincontents --> 
 			<!-- 작업물 상세 설명 --> 
 			<div class="subDetail">
-				<button class="closeDetail circle">
-					<span class="icons crossShape"></span>
-				</button>
-				<button class="selectedItemSubPage circle">
-					<span class="icons allItems"><span class="selected"></span></span>
-				</button>
+				<div class="btnSet">
+					<button class="closePage circle">
+						<span class="icons crossShape"></span>
+					</button>
+					<button class="hashtagItemPage circle">
+						<span class="icons allItems"><span class="selected"></span></span>
+					</button>
+				</div>
 				<div class="item">
 				
 				</div>
@@ -179,12 +186,14 @@
 		</div><!-- end subpage-->
 
 		<div class="workResult">
-			<button class="closeSelectedPage">
-				<span class="icons leftArrowSide"></span>
-			</button>
-			<div class="faceLogo">
-				<img src="img/icons_myFace.svg"> <!-- -->
-			</div>	
+			<div class="btnSet">
+				<button class="closePage">
+					<span class="icons leftArrowSide"></span>
+				</button>
+				<div class="faceLogo">
+					<img src="img/icons_myFace.svg"> <!-- -->
+				</div>	
+			</div>
 			<ul>
 				<!-- <li>
 					<img src="img/pic/paper03.png">
