@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="함께택시와 즐거운 여행하세요"/>
+<meta property="og:image" content="img/taxi_192.png">
+<meta name="format-detection" content="telephone=no, address=no, email=no" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/taxi_72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="96x96" href="img/taxi_96.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/taxi_144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="192x192" href="img/taxi_192.png" />
+
+<title>함께택시 </title>
+<link rel="stylesheet" type="text/css" href="../font/nanumsquare.css">
+<!--link rel="stylesheet" type="text/css" href="css/taxi-style.css"-->
+<link rel="stylesheet" type="text/css" href="css/taxi-style.css" />
+
+
+<script>
+	
+	var name = "";
+	var tel = "";
+	var date = "";
+	var way = "";
+	var wc = "";
+	var start = "";
+	var finish = "";
+	var people = "";
+	var pc = "";
+	var agree = 0;	
+  	var d = new Date();
+	
+	//alert(finish);	
+	function ask(n){
+	    agree = agree + n;
+
+		if( agree%2 == 1 )
+			document.getElementsByClassName("CheckBox")[0].style.backgroundColor = "#fae683";		
+		else if( agree%2 == 0 )
+			document.getElementsByClassName("CheckBox")[0].style.backgroundColor = "#fff";
+	}
+	
+	function checkingDB(){
+		//alert(finish);
+		//alert(date("Y.m.d"));
+		name = document.forms["DB"]["name"].value;
+		tel = document.forms["DB"]["tel"].value;
+		date = document.forms["DB"]["date"].value;
+		wc = document.forms["DB"]["way"];
+		start = document.forms["DB"]["start"].value;
+		finish = document.forms["DB"]["finish"].value;
+		pc = document.forms["DB"]["people"];	 
+		
+	  //alert(start);
+	  
+		if (name == "") { 
+			openAlert(1, "이름을 입력해주세요", "확인");
+			return;
+		}
+		else if(tel == ""){
+			openAlert(1, "전화번호를 입력해주세요", "확인");
+			return;
+		}
+		else if(date == ""){
+			openAlert(1, "여행날짜를 입력해주세요", "확인");
+			return;
+		}
+		//else if(way == ""){
+		//	openAlert("여행길을 선택해주세요", "확인");
+		//	return;
+		//}	  
+		//else if(people == ""){
+		//	openAlert("여행자수를 선택해주세요", "확인");
+		//	return;
+		//}
+		else if(agree%2 == 0){
+			openAlert(1, "개인정보 수집 및 이용에 동의해주세요", "확인");
+			return;
+		}
+		else if(start == "" || finish == ""){
+			if(start == "") start = "기본-고속버스터미널";			  			
+			if(finish == "") finish = "기본-고속버스터미널";
+		}
+
+		var i;
+		for(i=0; i < wc.length; i++)
+			if(wc[i].checked) way = wc[i].value;
+
+		for(i=0; i < pc.length; i++)
+			if(pc[i].checked) people = pc[i].value;
+	  
+	  	//alert(way);
+		
+		document.forms["checking"]["name"].value = name;
+		document.forms["checking"]["tel"].value = tel;
+		document.forms["checking"]["date"].value = date;
+		document.forms["checking"]["way"].value = way;
+		document.forms["checking"]["start"].value = start;
+		document.forms["checking"]["finish"].value = finish;
+		document.forms["checking"]["people"].value = people;
+		document.forms["checking"]["bookingTrip"].value = "예약진행";
+		document.forms["checking"]["file_name"].value = "index_html";
+    	document.forms["checking"]["whatDay"].value = d.getFullYear() + "년" + ( d.getMonth() + 1) +"월" +d.getDate() +"일 \t" + d.getHours() +"시"+ d.getMinutes() +"분";
+		
+		if( agree%2 == 1 ) document.forms["checking"]["agree"].value = "yes";
+		document.getElementsByClassName("checkingBG")[0].style.display="block";
+	
+	}
+	
+	function tryAgain(){
+		document.getElementsByClassName("checkingBG")[0].style.display="none";
+	}
+	
+	function inDB(){
+	//alert("inDB");
+		var a="예약이 완료되었습니다<br>최종확인을 위해 빠른 시간 안에<br>연락드리겠습니다";
+		
+		document.getElementsByClassName("checkingBG")[0].style.display="none";
+		openAlert(2, a,"닫기");
+	}
+
+	
+	function openAlert(n, str1, str2){ 
+		var popup = document.getElementsByClassName("popAlert")[n];
+		var popBg = document.getElementsByClassName("popBg")[0];
+		var popTxt = "";
+		//alert(n);
+		if( n>0){  popTxt = document.getElementsByClassName("popTxt")[n-1]; }
+		var popBtn = document.getElementsByClassName("popBtn")[n];
+		
+		var w = window.innerWidth/10;
+		var h = window. innerHeight/10;
+		
+		var popw = popup.style.width;		
+			popw = popw.replace("rem", " ");
+			popw = Number(popw);
+		var poph = popup.style.height; 
+			poph = poph.replace("rem", " ");
+			poph = Number(poph);			
+		
+		popTxt.innerHTML = str1;
+		popBtn.innerHTML = str2;		
+		
+		popup.style.top = (h-poph)/2 + "rem";
+		popup.style.left = (w-popw)/2 + "rem";
+		
+		popup.style.display = "block";
+		popBg.style.display = "block";	
+		
+	} 
+	
+	function closePop(i, n){
+		document.getElementsByClassName("popAlert")[i].style.display = "none";
+		document.getElementsByClassName("popBg")[0].style.display = "none";
+		
+		//if( n == "privacy" ){  alert("개인정보 닫힘");  }
+		//else 
+		if ( n == "alert" ){
+			
+			if (name == "") document.getElementById("fname").focus(); 
+			else if(tel == "") document.getElementById("ftel").focus(); 
+			else if(date == "") document.getElementById("fdate").focus();
+								
+		}
+		else if ( n == "go" ){  
+			document.getElementById("ok_DB").action = "taxi_datasave.php";
+			document.getElementById("ok_DB").submit();
+		}
+	}
+		
+	
+</script>
+
+</head>
+<body>
+
+  <div class="wrap">
+
+
+
+    <div class="header">
+      <div>
+        <a class="logo" href="index.html"><img src="img/logo.png" alt="택시함께 로고"> </a>
+        <a class="telnum" href="tel:010-3511-9320"><img src="img/tel.png" alt="전화번호 01135119320"> </a>
+      </div>
+      <div class="top-title">
+        안녕하신교<br />
+        박정태시니더<br />
+        경주오시는교<br />
+        무엇을 도와드릴까예?
+      </div>
+      <img class="top-bg" src="img/bg01.png" alt="배경이미지">
+
+    </div>
+    <div class="trip-route">
+      <ul class="title">
+        <li class="t_color"><span class="hidden">hi</span></li>
+        <li class="t_word">여행길 알아보기</li>
+        <li class="t_img"><img src="img/t_img1.png" alt="타이틀 이미지"></li>
+      </ul>
+      <ul class="detail">
+        <li>
+          <span class="route">가</span><span class="money"> 기본 6곳/16만원(1~2인)</span>
+          <img src="img/route1.png" alt="[가] 여행길">
+        </li>
+        <li>
+          <span class="route">나</span><span class="money"> 기본 3곳/10만원(1~2인)</span>
+          <img src="img/route2.png" alt="[나] 여행길">
+        </li>
+      </ul>
+      <div class="btn" > <a href="">경주지도 보기</a></div>
+    </div>
+    <div class="trip-check">
+      <ul class="title">
+        <li class="t_color"><span class="hidden">hi</span></li>
+        <li class="t_word">여행 안내</li>
+        <li class="t_img"><img src="img/t_img2.png" alt="타이틀 이미지"></li>
+      </ul>
+      <ul class="story">
+        <li><span class="ss">출발지/도착지 모두 고속버스터미널입니다. 변경하시려면 여행 신청 시 장소를 입력 또는 전화통화 시 전달해주세요.</span></li>
+        <li><span class="ss">중간 여행지 변경/추가는 입력 또는 전화로 전달해주시면 됩니다.</span> </li>
+        <li><span class="ss">비용은 1~2인 기준으로 [가] 16만원, [나] 10만원 입니다.(자세히보기 참고)</span> </li>
+        <li><span class="ss nb" >인터넷 신청 후 24시간 내에 최종 확인을 위한 전화통화가 이뤄지고 통화 후 계좌이체를 하시면 됩니다.</span> </li>
+      </ul>
+      <div class="btn" > <a href="">자세히 보기</a></div>
+    </div>
+ 
+    <div class="trip-in">
+      <ul class="title">
+        <li class="white t_color"><span class="hidden">hi</span></li>
+        <li class="t_word">여행 준비</li>
+        <li class="t_img"><img src="img/t_img3.png" alt="타이틀 이미지"></li>
+      </ul>
+      <form name="DB" method="post">
+        <ul class="db">
+          <li>
+            <label>이름</label>
+            <input type="text" id="fname" name="name" placeholder="이름" >
+          </li>
+          <li>
+            <label>전화번호</label>
+            <input type="tel" id="ftel" pattern="\d*" name="tel" placeholder="숫자만 입력">
+          </li>
+          <li>
+            <label>여행날짜</label>
+            <input type="tel" id="fdate" name="date" placeholder="출발날짜 예) 0815">
+          </li>
+          <li class="no_line">
+            <label>여행길</label>
+              <div class="way">
+                <input type="radio" id="w3" name="way" value="3" checked="checked"> 
+                <label for="w3">가 (3곳)</label> 
+              </div>      
+              <div class="way">
+                <input type="radio" id="w6" name="way" value="6"> 
+                <label for="w6">가 (6곳)</label> 
+              </div>
+              <div class="taxi_clear"></div>
+          </li> 
+          <li>
+            <label>출발지</label>
+            <input type="text" name="start" placeholder="출발지(기본-고속버스터미널)">
+          </li>
+          <li>
+            <label>도착지</label>
+            <input type="text" name="finish" placeholder="도착지(기본-고속버스터미널)">
+          </li>
+          <li class="no_line">
+            <label>여행자수</label>
+              <div class="people">
+                <input type="radio" id="p1" name="people" value="1"> 
+                <label for="p1">1명</label> 
+              </div>      
+              <div class="people">
+                <input type="radio" id="p2" name="people" value="2" checked="checked"> 
+                <label for="p2">2명</label> 
+              </div>
+              <div class="people">
+                <input type="radio" id="p3" name="people" value="3"> 
+                <label for="p3">3명</label> 
+              </div>      
+              <div class="people">
+                <input type="radio" id="p4" name="people" value="4"> 
+                <label for="p4">4명</label> 
+              </div>
+              <div class="taxi_clear"></div>
+          </li>                    
+          <li class="agree">
+            	<div class="CheckBox" onClick="ask(1)" id="fagree">동의</div>
+	        	<span>개인정보 수집 및 이용동의 &nbsp; </span> 
+	        	<a class="btn_show" onClick="openAlert(0, '', '닫기')">[보기]</a>            
+          </li>
+          <li class="btn_db"><div class="booking" onClick="checkingDB()">여행예약하기</div><!--input type="submit" value="여행예약하기" --></li>
+        </ul>
+      </form>
+    </div>
+    <div class="trip-warning">
+      <ul class="title">
+        <li class="t_color"><span class="hidden">hi</span></li>
+        <li class="t_word">확인하기</li>
+        <li class="t_img"><img src="img/t_img4.png" alt="타이틀 이미지"></li>
+      </ul>
+      <ul class="story b_grey">
+        <li><span class="ss">예약 취소 수수료
+          <table>
+            <tr class="he">
+              <td>취소</td>
+              <td>수수료</td>
+            </tr>
+            <tr>
+              <td>여행 날짜 3일 전</td>
+              <td>없음</td>
+            </tr>
+            <tr>
+              <td>2일 전</td>
+              <td>여행비의 10%</td>
+            </tr>
+            <tr>
+              <td>1일 전</td>
+              <td>여행비의 30%</td>
+            </tr>  
+            <tr>
+              <td>당일</td>
+              <td>여행비의 100%</td>
+            </tr>
+          </span>          
+          </table>
+        </li>
+        <li><span class="ss">택한 여행 날짜에 다른 고객의 여행예약이 먼저 잡혀있는 경우, 날짜 변경을 요청드릴  수 있음을 이해해주시길 바랍니다</span> </li>
+        <li><span class="ss">입금계좌  어디 은행  000-000-000 ( 예금주: 박정태 )</span> </li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>즐거운 여행하시길 바랍니다</p>
+      <p>ⓒ 2019 택시함께. All Rights Reserved.</p>
+    </div>
+    
+    
+    <div class="checkingBG">
+		<div class="check_trip">
+            <form id="ok_DB" name="checking" method="post" target="_self">
+                <input type="hidden" name="agree" value="">
+                <input type="hidden" name="file_name" value="">
+                <input type="hidden" name="bookingTrip" value="">
+                <input type="hidden" name="whatDay" value="">
+                <span class="check_title">여행예약 확인하기</span>
+                <ul class="check_list">
+                    <li><span>이름</span><input type="text" name="name" value="" readonly></li>
+                    <li><span>전화번호</span><input type="text" name="tel" value="" readonly></li>
+                    <li><span>여행날짜</span><input type="text" name="date" value="" readonly></li>
+                    <li><span>여행길</span><input type="text" name="way" value="" readonly></li>
+                    <li><span>출발지</span><input type="text" name="start" value="" readonly></li>
+                    <li><span>도착지</span><input type="text" name="finish" value="" readonly></li>
+                    <li><span>여행자수</span><input type="text" name="people" value="" readonly></li>            
+                </ul>
+                <ul class="btn_check_trip">
+                    <li onClick="tryAgain()">수정하기</li>
+                    <li onClick="inDB()">예약하기</li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    
+    
+
+    <div class="popBg">        
+       <ul class="popAlert" style="width:30rem; height: 50rem;">  
+          <li class="agree_txt">
+          	   <h3>개인정보수집 및 이용동의 </h3>
+                '함께택시'는 고객님의 개인정보처리방침을 중요시하며, 『정보통신망 이용촉진 및 정보보호에 관한 법률』상의 개인정보보호 규정 및 행정안전부가 제정한 『개인정보보호법』을 준수하고 있습니다. 
+당사는 개인정보취급(처리)방침을 통하여 귀하께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다. 
+*개인정보의 수집,제공 및 활용에 동의하지 않을 권리가 있으며 동의하지 않을시 여행 서비스의 제공이 제한됩니다. <br>
+<span class="atlt">■ 개인정보의 수집방법 및 항목</span>
+당사는 여행 서비스 제공을 위해 필요한 최소한의 개인정보만을 수집합니다. <br>
+- 여행예약 시<br>
+수집/이용 항목: 성명, 연락처<br>
+수집/이용 목적: 여행예약 확인 및 상담<br>
+
+<span class="atlt">■ 개인정보 수집방법</span>
+함께택시에서 운영하는 홈페이지를 통해 개인정보를 수집합니다.
+<span class="atlt">■ 개인정보의 수집 및 이용목적</span>
+함께택시는 수집한 개인정보를 다음의 목적을 위해 활용합니다. <br>
+1. 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산<br>(여행 예약내역의 확인 및 상담, 안내, 요금 결제 등)<br>
+2.고객 관리<br>
+고객관리 및 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지, 여행 의사 확인, 이용 및 연령확인, 분쟁조정을 위한 기록보존, 불만처리 등 민원처리, 고지사항 전달 등 <br>
+
+<span class="atlt">■개인정보 보유기간 </span>
+개인정보 보관 기간: 동의한 날로부터 2개월<br>
+
+<span class="atlt">■ 개인정보의 열람, 정정, 동의 철회</span>
+당사의 고객님 개인정보 열람 및 정정은 전화통화로 요청하실 수 있습니다. 당사는 개인정보에 대한 열람증명 또는 정정을 요구하는 경우 성실하게 대응합니다. <br>
+
+<span class="atlt">■ 만14세 미만이용자 및 법정대리인의 권리와 그 행사 방법</span>
+만14세 미만 아동의 경우 (법정대리인 포함)는 언제든지 개인정보에 대한 열람, 정정을 요구하시거나 개인정보의 수집과 이용, 위탁에 대한 동의를 철회 하실 수 있습니다. <br>
+
+<span class="atlt">■ 미성년자의 거래에 관한 계약 체결 및 취소</span>
+당사는 미성년자와 재화 등의 거래에 관한 계약을 체결하고자 하는 경우에는 법정 대리 인이 그 계약에 대해서 동의를 하지 아니하면 미성년자 본인 또는 법정대리인이 그 계약을 취소할 수 있습니다. <br>
+
+<span class="atlt">■ 개인정보보호를 위한 관리대책</span>
+당사는 회원님의 개인정보에 대한 접근권한을 최소한의 인원으로 제한하고 있습니다. 그 최소한의 인원에 해당하는 자는 다음과 같습니다<br>
+- 개인정보관리책임자 및 담당자 등 개인정보관리업무를 수행하는 자<br>
+- 기타 업무상 개인정보의 취급이 불가피한 자<br>
+- 당사는 이용자 고객님의 실수나 기본적인 인터넷의 위험성 때문에 일어나는 일들에 대해 책임을 지지 않습니다. <br>
+- 그 외 내부 관리자의 실수나 기술관리 상의 사고로 인해 개인정보의 상실, 유 출, 변조, 훼손이 유발될 경우 당사는 즉각 고객님께 사실을 알리고 적절한 대책과 보상을 강구할 것입니다. <br>
+
+<span class="atlt">■ 개인정보에 관한 민원서비스</span>
+당사는 고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 아래와 같이 관련 부서 및 개인정보관리책임자를 지정하고 있습니다. <br>
+개인정보 보호책임자 <br>
+이름: 박민희<br>
+메일: bghbmh@daum.net <br><br>
+
+고객님께서는 당사의 서비스를 이용하시며 발생하는 모든 개인정보보호 관련 민원을 개인정보관리책임자 혹은 담당부서로 신고하실 수 있습니다. 당사는 고객님들의 신고사항에 대 해 신속하게 충분한 답변을 드릴 것입니다<br> <br>
+
+그 외 개인정보에 관한 상담이 필요한 경우에는 한국정보보호진흥원(KISA)에서 운영하 는 개인정보 침해신고센터 (전화 : 118)으로 문의하실 수 있습니다.
+개인정보에 관련한 상담은 개인정보 침해신고센터, 개인정보 분쟁조정위원회, 대검찰청 사이버수사과, 경찰청 사이버안전국 등으로 문의하실 수 있습니다. <br> <br>
+
+개인정보 침해신고센터(한국인터넷 진흥원 운영) <br>
+- 전화 : (국번없이)118 <br>
+- URL : http://privacy.kisa.or.kr <br>
+<br>
+개인정보 분쟁조정위원회(개인정보보호위원회 운영) <br>
+- 전화 : 02-1833-6972 <br>
+- URL : http://www.kopico.go.kr <br> <br>
+
+대검찰청 사이버수사과<br>
+- 전화 : (국번없이)1301 <br>
+- URL : http://www.spo.go.kr <br> <br>
+
+경찰청 사이버안전국<br>
+- 전화 : (국번없이)182 <br>
+- URL : http://cyberbureau.police.go.kr <br> <br>
+
+<span class="atlt">■ 고지의 의무</span>
+당사는 개인정보처리방침을 개정하는 경우 웹사이트 ‘공지사항’을 통해 고지하겠습니다<br>
+공고일자 : 2019년 08월 22일<br>
+시행일자 : 2019년 08월 22일<br>                                  
+          </li> 
+          <li onClick="closePop(0, 'privacy')" class="popBtn" ontouchstart="">txt</li>            
+       </ul> 
+	
+		<ul class="popAlert" style="width:28rem; height: 15rem;">
+			<li class="popTxt">txt</li>
+			<li onClick="closePop(1, 'alert')" class="popBtn" ontouchstart="">txt</li>
+		</ul>
+		<ul class="popAlert" style="width:28rem; height: 15rem;">
+			<li class="popTxt" style='padding:2rem; line-height:2rem;'>txt</li>
+			<li onClick="closePop(2, 'go')" class="popBtn" ontouchstart="">txt</li>
+		</ul>
+		
+	</div>
+
+
+
+
+  </div>
+
+
+
+</body>
+
+</html>
