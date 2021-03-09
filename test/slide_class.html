@@ -8,7 +8,7 @@
 <style>
 	section{
 		position: relative;
-		width: 80%;
+		width: 95%;
 		height: 300px;
 	}
 	
@@ -353,29 +353,27 @@ class mySlide{
 		switch( className )
 		{
 			case "next":
+				this.speed = 8;
 				this.checkAutoPlay();				
 				this.move(1);
-				if(  this.pause === "on" )
-				{
-					this.autoPlay =  setInterval( () => { this.move(1); }, 2000);
-					this.pause = "off"
-				}
+				// if(  this.pause === "on" )
+				// {
+				// 	console.log("12345678 ",this.speed);
+				// 	this.autoPlay =  setInterval( () => { this.move(1); }, 5000);
+				// 	this.pause = "off"
+				// }
 				break;
 
 			case "prev":
+				this.speed = 8;
 				this.checkAutoPlay();
-				this.move(-1);
-				if(  this.pause === "on" )
-				{
-					this.autoPlay =  setInterval( () => { this.move(1); }, 2000);
-					this.pause = "off"
-				}			
+				this.move(-1);		
 				break;
 
 			case "play":
 				elem.classList.add("stop");	
 				elem.classList.remove("play");
-				this.autoPlay =  setInterval( () => { this.move(1); }, 2000);
+				this.autoPlay =  setInterval( () => { this.move(1); }, 6000);
 				break;
 
 			case "stop":
@@ -386,7 +384,9 @@ class mySlide{
 				break;		
 
 			case "locate":
+				this.checkAutoPlay();
 				this.findLocation(elem);
+				//console.log("12345678 ",this.speed);
 				break;	
 
 		}
@@ -411,20 +411,52 @@ class mySlide{
 		var speed = this.speed;
 		var items = this.items;
 
+		console.log("9999 move ",this.speed);
+		
 		nextLeft = this.items.offsetWidth * order;
 
 		setMovement = setInterval( () => {
 
-			nextLeft -= (speed * order);
+			// nextLeft -= (speed * order);
 
-			if( order > 0 && nextLeft <= 0 ) //next
+			// if( order > 0 && nextLeft <= 0 ) //next
+			// {
+			// 	nextLeft = 0;
+			// 	console.log("11 ", nextLeft);
+			// 	clearInterval(setMovement);
+			// }
+			// else if( order < 0 && nextLeft >= 0 )//prev
+			// {
+			// 	console.log("22 ", nextLeft);
+			// 	nextLeft = 0;
+			// 	//nextLeft = this.items.offsetWidth;
+			// 	clearInterval(setMovement);
+			// }
+
+			// prevLeft -= (speed * order);
+			if( order > 0 ) //next
 			{
-				nextLeft = 0;
-				clearInterval(setMovement);
+				nextLeft -= speed;
+
+				if( nextLeft <= 0 )
+				{
+					nextLeft = 0;
+					clearInterval(setMovement);
+				}
+
+				//prevLeft -= speed;
 			}
-			else if( order < 0 && nextLeft >= 0 )//prev
+			else //prev
 			{
-				clearInterval(setMovement);
+				nextLeft += speed;
+
+				if( nextLeft >= 0 )
+				{
+					nextLeft = 0;
+					clearInterval(setMovement);
+				}
+
+				//prevLeft += speed;
 			}
 
 			prevLeft -= (speed * order);
@@ -432,7 +464,7 @@ class mySlide{
 			items.children[after].style.left = nextLeft + 'px';
 			items.children[now].style.left = prevLeft + 'px';
 
-		});
+		}, 0);
 
 		items.children[after].classList.add('on');
 		items.children[now].classList.remove('on');			
@@ -448,9 +480,15 @@ class mySlide{
 		{
 			clearInterval(this.autoPlay);
 			this.autoPlay = "stop";
-			this.pause = "on";
-		}
+			//this.pause = "on";
 
+			this.autoPlay =  setInterval( () => { this.move(1); }, 6000);
+
+			// let x = this.map.children.length;
+
+			// this.map.children[x-1].classList.add("play");
+			// this.map.children[x-1].classList.remove("stop");
+		}
 	}
 
 	findLocation(elem){
@@ -460,6 +498,7 @@ class mySlide{
 			now : null, 
 			gap : null, 
 			direction : null,
+			tempauto : null,
 			width : this.items.offsetWidth };
 
 		let slideMap = elem;
@@ -471,21 +510,19 @@ class mySlide{
 		init.now = click.findClassName(this.items, "on");
 		init.gap = init.after - init.now;
 
-		console.log("locate ",init);
 
 		if( init.gap > 0 ) init.direction = 1;
 		else init.direction = -1;
 
-
+		let end = false;
 		if( Math.abs(init.gap) > 1 ||  Math.abs(init.gap) == this.items.children.length-1 ) //next 이미지 로드
 		{
 			const t = this.move;
 			const tempMove = t.bind(this);
+			this.speed = 4;
 
 			setTimeout( function go(){
-
-				console.log("11 locate ",init.after, init.now);
-
+			
 				let a, n;
 
 				if( init.direction > 0 )
@@ -501,20 +538,32 @@ class mySlide{
 
 				if( a > n )
 				{
-					console.log("33 locate ",init.after, init.now);
+					
 					tempMove(init.direction);
 					setTimeout(go, init.width);
 				}
+				// else
+				// {console.log("33 locate ",this.speed);
+				// 	end = true;
+				// }
 
 				init.now += init.direction;
 
-			});
+			}, 0);
+
+			console.log("22 locate ",this.speed);
 		}
 		else
 		{
-			console.log("22 locate ",init.after, init.now, init.direction);
+			this.speed = 8;
 			this.move(init.direction);
 		}
+
+		// if( end ) 
+		// {
+		// 	this.speed = init.speed; 
+		// 	console.log("end end",this.speed, init.speed);
+		// }
 
 	}
 }
@@ -531,7 +580,7 @@ function slideInit(){
 	{
 		for( let i=0; i<slide.length; i++ )
 		{
-			arr =new mySlide(slide[i], 4);
+			arr =new mySlide(slide[i], 8);
 		}
 	}
 
