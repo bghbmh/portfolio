@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+
+<style>
+	section{
+		position: relative;
+		width: 80%;
+		height: 300px;
+	}
+	
+.slide {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	/*left: 370px;*/
+}
+
+.slide .items > li {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 30px;
+	line-height: 300px;
+	color: #fff;
+	list-style: none;
+}
+
+.slide .items > li:nth-child(1) {
+	background-color: red;
+}
+
+.slide .items > li:nth-child(2) {
+	background-color: orange;
+}
+
+.slide .items > li:nth-child(3) {
+	background-color: green;
+}
+
+.slide .items > li:nth-child(4) {
+	background-color: blue;
+}
+
+.slide .btn{ display: none; }
+
+.slide .btn > button {
+    position: absolute;
+    width: 6em;
+    height: 6em;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+}
+
+.slide .btn .prev {
+    left: 0px;
+}
+
+.slide .btn .next {
+    right: 0px;
+}
+
+
+.slide .slideMap {
+    position: absolute;
+    display: flex;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+        padding: 0;
+}
+
+.slide .slideMap:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.slide .slideMap > button {
+	position: relative;
+   /* float: left;*/
+    margin-left: 5px;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    opacity: .5;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    border: none;
+}
+
+.slide .slideMap > button.on {
+    opacity: 1
+}
+
+.slide .slideMap > button:first-child {
+    margin-left: 0
+}
+
+button.play, button.stop {
+     
+    width: 1.5em !important;
+    height: 1.5em !important;
+	background: rgba(0,0,0,.2) !important;
+	margin-top: -.3em;
+}
+
+.play:before{
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-40%, -50%);
+	width: 0px;
+	height: 0px;
+	border-top: .35em solid transparent;
+	border-left: 0.5em solid rgba(255,255,255,.9);
+	border-bottom: .35em solid transparent;
+}
+
+.stop:before{
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: .1em;
+	height: .6em;
+	border-left: .2em solid #fff;
+	border-right: 0.2em solid #fff;
+}
+
+.icons{
+	position:relative;
+	z-index: 33;
+	display:inline-block;
+	width:100%;
+	height: 100%;
+	background: rgba(0,0,0,.2);
+
+}
+
+.arrowLeft:before{
+	content: '';
+	position: absolute;
+	top:50%;
+	left:50%;
+	width: 2em;
+	height: 2em;
+	border-top:2px solid #fff;
+	border-left:2px solid #fff;
+	background: none;
+	transform: translateX(-25%) translateY(-50%) rotate(-45deg) ;
+}
+
+.arrowRight:before{
+	content: '';
+	position: absolute;
+	top:50%;
+	right:35%;
+	width: 2em;
+	height: 2em;
+	border-bottom:2px solid #fff;
+	border-right:2px solid #fff;
+	background: none;
+	transform: translateX(-25%) translateY(-50%) rotate(-45deg) ;
+}
+
+
+
+.bgTransparent{
+	background: rgba(0,0,0,.2);
+	border-radius: 1em;
+}
+</style>
+<body>
+
+	<section>
+		<div class="slide">
+			<ul class="items">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+			<div class="btn">
+				<button type="button" class="prev"><span class="icons arrowLeft"></span></button>
+				<button type="button" class="next"><span class="icons arrowRight"></span></button>
+			</div>
+			<!-- <div class="auto">
+				<button type="button" class="play"></button>
+			</div> -->
+		</div>
+	</section>
+	<section>
+		<div class="slide">
+			<ul class="items">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+			<div class="btn">
+				<button type="button" class="prev"><span class="icons arrowLeft"></span></button>
+				<button type="button" class="next"><span class="icons arrowRight"></span></button>
+			</div>
+			<!-- <div class="auto">
+				<button type="button" class="play"></button>
+			</div> -->
+		</div>
+	</section>
+	
+
+<script>
+
+'use strict';
+
+let myArray = ["zero", "one", "two"];
+myArray.myMethod = function (sProperty) {
+	console.log(arguments, arguments.length);
+    console.log(arguments.length > 0 ? this[sProperty] : this);
+};
+
+myArray.myMethod(); // prints "zero,one,two"
+myArray.myMethod(2); // prints "one"
+
+
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+  // Getter
+  get area() {
+    return this.calcArea();
+  }
+  // 메서드
+  calcArea() {
+    return this.height * this.width;
+  }
+}
+
+const square = new Rectangle(10, 10);
+
+console.log(square.area);
+
+var click = {
+
+	findTagName : function(elem, tagName){
+
+		let elemName = elem.nodeName;
+
+		while( elemName !== tagName )
+		{
+			elem = elem.parentNode;
+
+			if( elem === document ) 
+				return null;
+
+			elemName = elem.nodeName;
+			//
+		}	// console.log( 'while : ', elemName);
+		return elem;
+	},
+
+	findClassName : function(items, className){
+
+		for( let k = 0; k < items.children.length; k++ )
+		{
+			if( items.children[k].classList.contains(className) )
+			{
+				return k;
+			}
+		}
+		return false;
+	}
+
+}
+
+class mySlide{
+
+	constructor(body, speed){
+		this.body = body;
+		this.items = null;
+		this.map = null;		
+		this.speed = speed;
+		this.after = null;
+		this.now = null;
+		this.pause = "off";
+		this.autoPlay = "stop";
+		this.init();
+	}
+
+	init(){
+		console.log("makeInit");
+
+		if( this.body.querySelector('.slideMap') != null )
+			return;
+
+		this.items = this.body.querySelector('.items');
+		this.items.children[0].style.left  = 0;
+		this.items.children[0].classList.add('on');
+
+		var slideMap = document.createElement('div'); //페이지네이션 생성
+
+		for( var i = 0; i < this.items.children.length; i++ )//슬라이드 수만큼 만들
+			slideMap.innerHTML += '<button class="locate"></button>';
+
+		slideMap.innerHTML += '<button class="play"></button>';//자동 재생 버튼 설정
+
+		slideMap.classList.add('slideMap');
+		slideMap.children[0].classList.add('on');
+		this.body.append(slideMap); // 페이지네이션 붙임
+
+		this.map = this.body.querySelector('.slideMap');
+
+		this.body.addEventListener("click", (e) => { this.clickOnButton(e); });
+		this.body.addEventListener("mouseover", () => {
+			this.body.querySelector(".btn").style.display = "block";
+		});
+		this.body.addEventListener("mouseout", () => {
+			this.body.querySelector(".btn").style.display = "none";
+		});
+
+	}
+
+	clickOnButton(e){
+		
+		let elem = click.findTagName(e.target, "BUTTON");
+
+		if( elem === null ) return;
+
+		let className;
+		if( elem.classList.length > 1 )
+			className = elem.classList[0];
+		else
+			className = elem.className;
+
+
+		switch( className )
+		{
+			case "next":
+				this.checkAutoPlay();				
+				this.move(1);
+				if(  this.pause === "on" )
+				{
+					this.autoPlay =  setInterval( () => { this.move(1); }, 2000);
+					this.pause = "off"
+				}
+				break;
+
+			case "prev":
+				this.checkAutoPlay();
+				this.move(-1);
+				if(  this.pause === "on" )
+				{
+					this.autoPlay =  setInterval( () => { this.move(1); }, 2000);
+					this.pause = "off"
+				}			
+				break;
+
+			case "play":
+				elem.classList.add("stop");	
+				elem.classList.remove("play");
+				this.autoPlay =  setInterval( () => { this.move(1); }, 2000);
+				break;
+
+			case "stop":
+				clearInterval(this.autoPlay);
+				this.autoPlay = "stop";//console.log("stop ",this);
+				elem.classList.add("play");
+				elem.classList.remove("stop");
+				break;		
+
+			case "locate":
+				this.findLocation(elem);
+				break;	
+
+		}
+	}
+
+	move(order){
+
+		this.now = click.findClassName(this.items, "on");
+
+		if( order > 0 && this.now >= this.items.children.length - 1 )
+			this.after = 0;
+		else if( order < 0 && this.now < 1  )
+			this.after = this.items.children.length - 1;					
+		else
+			this.after = this.now + order;	
+
+		var prevLeft = 0;
+		var nextLeft;
+		var setMovement = null;
+		var after = this.after;
+		var now = this.now;
+		var speed = this.speed;
+		var items = this.items;
+
+		nextLeft = this.items.offsetWidth * order;
+
+		setMovement = setInterval( () => {
+
+			nextLeft -= (speed * order);
+
+			if( order > 0 && nextLeft <= 0 ) //next
+			{
+				nextLeft = 0;
+				clearInterval(setMovement);
+			}
+			else if( order < 0 && nextLeft >= 0 )//prev
+			{
+				clearInterval(setMovement);
+			}
+
+			prevLeft -= (speed * order);
+
+			items.children[after].style.left = nextLeft + 'px';
+			items.children[now].style.left = prevLeft + 'px';
+
+		});
+
+		items.children[after].classList.add('on');
+		items.children[now].classList.remove('on');			
+
+		this.map.children[after].classList.add('on');
+		this.map.children[now].classList.remove('on');
+	}
+
+
+	checkAutoPlay(){
+
+		if( this.autoPlay !== "stop" && this.pause === "off" )
+		{
+			clearInterval(this.autoPlay);
+			this.autoPlay = "stop";
+			this.pause = "on";
+		}
+
+	}
+
+	findLocation(elem){
+
+		let init = { 
+			after : -1, 
+			now : null, 
+			gap : null, 
+			direction : null,
+			width : this.items.offsetWidth };
+
+		let slideMap = elem;
+		while( slideMap != null )
+		{
+			slideMap = slideMap.previousElementSibling;
+			init.after++;
+		}
+		init.now = click.findClassName(this.items, "on");
+		init.gap = init.after - init.now;
+
+		console.log("locate ",init);
+
+		if( init.gap > 0 ) init.direction = 1;
+		else init.direction = -1;
+
+
+		if( Math.abs(init.gap) > 1 ||  Math.abs(init.gap) == this.items.children.length-1 ) //next 이미지 로드
+		{
+			const t = this.move;
+			const tempMove = t.bind(this);
+
+			setTimeout( function go(){
+
+				console.log("11 locate ",init.after, init.now);
+
+				let a, n;
+
+				if( init.direction > 0 )
+				{
+					a = init.after;
+					n = init.now;
+				}
+				else
+				{
+					a = init.now;
+					n = init.after;
+				}
+
+				if( a > n )
+				{
+					console.log("33 locate ",init.after, init.now);
+					tempMove(init.direction);
+					setTimeout(go, init.width);
+				}
+
+				init.now += init.direction;
+
+			});
+		}
+		else
+		{
+			console.log("22 locate ",init.after, init.now, init.direction);
+			this.move(init.direction);
+		}
+
+	}
+}
+
+
+
+
+function slideInit(){
+
+	let slide = document.querySelectorAll('.slide');
+	let arr;
+
+	if( slide !== null )
+	{
+		for( let i=0; i<slide.length; i++ )
+		{
+			arr =new mySlide(slide[i], 4);
+		}
+	}
+
+}
+
+
+slideInit();
+window.addEventListener('resize', slideInit);
+
+
+</script>
+
+</body>
+</html>
