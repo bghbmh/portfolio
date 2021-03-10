@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <title></title>
 </head>
-
+<link rel="stylesheet" href="basic.css">
 <style>
 	section{
 		position: relative;
 		width: 95%;
-		height: 300px;
+		height: 60vh;
 	}
 	
 .slide {
@@ -301,6 +301,7 @@ class mySlide{
 		this.now = null;
 		this.pause = "off";
 		this.autoPlay = "stop";
+		this.touchPoint = null;
 		this.init();
 	}
 
@@ -327,7 +328,9 @@ class mySlide{
 
 		this.map = this.body.querySelector('.slideMap');
 
-		this.body.addEventListener("click", (e) => { this.clickOnButton(e); });
+		this.body.addEventListener("click", (e) => { this.clickMouse(e); });
+		this.body.addEventListener("mousedown", (e) => { this.clickMouse(e); });
+		this.body.addEventListener("mouseup", (e) => { this.clickMouse(e); });
 		this.body.addEventListener("mouseover", () => {
 			this.body.querySelector(".btn").style.display = "block";
 		});
@@ -335,15 +338,90 @@ class mySlide{
 			this.body.querySelector(".btn").style.display = "none";
 		});
 
+		this.body.addEventListener("touchstart", (e) => { 
+			this.body.querySelector(".btn").style.display = "block";
+			this.touchDevice(e); 
+
+			setTimeout(() => { this.body.querySelector(".btn").style.display = "none"; }, 6000);
+		});
+
+		this.body.addEventListener("touchend", (e) => { this.touchDevice(e); });
+
 	}
 
-	clickOnButton(e){
-		
-		let elem = click.findTagName(e.target, "BUTTON");
+	touchDevice(e){
 
-		if( elem === null ) return;
+		switch ( e.type )
+		{
+			case "touchstart":
+				e.preventDefault();
+
+				var t = e.changedTouches;
+				this.touchPoint = t[0].pageX;
+				console.log( "touchstart ", t[0].pageX);
+
+				break;
+			case "touchend":
+				e.preventDefault();
+				var t = e.changedTouches;
+
+				let elem = click.findTagName(e.target, "BUTTON");
+
+				if( this.touchPoint - t[0].pageX === 0 &&  elem === null )
+				{
+					console.log("22 touchDevice");
+					return;
+				}
+				else if( this.touchPoint - t[0].pageX === 0 &&  elem !== null )
+				{
+					console.log("22 touchDevice");
+					this.executeSlide(elem, "next");
+					return;
+				}
+				else if( this.touchPoint - t[0].pageX > 0 )
+				{
+					this.executeSlide(null, "next");
+				}
+				else
+					this.executeSlide(null, "prev");
+				
+
+				break;
+
+
+		}
+
+	}
+
+	clickMouse(e){
 
 		let className;
+
+		let elem = click.findTagName(e.target, "BUTTON");
+
+		if( elem === null )
+		{
+			console.log( "22 clickMouse ", e.type);
+
+			if( e.type === "mousedown" )
+			{
+				this.touchPoint = e.x;
+			}
+			else if( e.type === "mouseup" )
+			{
+				if( this.touchPoint - e.x === 0 ) return;
+				else if( this.touchPoint - e.x > 0 ) this.move(1);
+				else this.move(-1);
+			}
+			return;		 
+		}
+		else
+		{
+			if( e.type === "mousedown" ||  e.type === "mouseup" ) return;
+		}
+
+		console.log( "11 clickMouse ", e.type);
+
 		if( elem.classList.length > 1 )
 			className = elem.classList[0];
 		else
@@ -353,19 +431,11 @@ class mySlide{
 		switch( className )
 		{
 			case "next":
-				this.speed = 8;
 				this.checkAutoPlay();				
 				this.move(1);
-				// if(  this.pause === "on" )
-				// {
-				// 	console.log("12345678 ",this.speed);
-				// 	this.autoPlay =  setInterval( () => { this.move(1); }, 5000);
-				// 	this.pause = "off"
-				// }
 				break;
 
 			case "prev":
-				this.speed = 8;
 				this.checkAutoPlay();
 				this.move(-1);		
 				break;
@@ -385,11 +455,108 @@ class mySlide{
 
 			case "locate":
 				this.checkAutoPlay();
-				this.findLocation(elem);
-				//console.log("12345678 ",this.speed);
+
+				let init = { after : -1,  now : null, direction : null, width : this.items.offsetWidth};
+				let slideMap = elem;
+
+				while( slideMap != null ) 
+				{
+					slideMap = slideMap.previousElementSibling;
+					init.after++; // 클릭한 페이지네이션 번호
+				}
+				init.now = click.findClassName(this.items, "on");
+
+				if( init.after - init.now > 0 ) init.direction = 1;
+				else init.direction = -1;
+
+				if( Math.abs(init.after - init.now) == 1 ) 
+				{
+					this.move(init.direction);
+				}
+				else if( Math.abs(init.after - init.now) > 1 ) // 간격이 2이상인 경우
+				{ console.log("12345678 ",init.after - init.now);
+					
+					setTimeout(() => { this.quickLocate(init.width, init.now, init.after, init.direction) }, init.width/5);
+				}
+
 				break;	
 
 		}
+	}
+
+	executeSlide(elem, str){
+
+		let exe;
+
+		if( elem !== null )
+		{
+			if( elem.classList.length > 1 )
+				exe = elem.classList[0];
+			else
+				exe = elem.className;
+		}
+		else
+		{
+			exe = str;
+		}
+
+		
+
+		switch( exe )
+		{
+			case "next":
+				this.checkAutoPlay();				
+				this.move(1);
+				break;
+
+			case "prev":
+				this.checkAutoPlay();
+				this.move(-1);		
+				break;
+
+			case "play":
+				elem.classList.add("stop");	
+				elem.classList.remove("play");
+				this.autoPlay =  setInterval( () => { this.move(1); }, 6000);
+				break;
+
+			case "stop":
+				clearInterval(this.autoPlay);
+				this.autoPlay = "stop";//console.log("stop ",this);
+				elem.classList.add("play");
+				elem.classList.remove("stop");
+				break;		
+
+			case "locate":
+				this.checkAutoPlay();
+
+				let init = { after : -1,  now : null, direction : null, width : this.items.offsetWidth};
+				let slideMap = elem;
+
+				while( slideMap != null ) 
+				{
+					slideMap = slideMap.previousElementSibling;
+					init.after++; // 클릭한 페이지네이션 번호
+				}
+				init.now = click.findClassName(this.items, "on");
+
+				if( init.after - init.now > 0 ) init.direction = 1;
+				else init.direction = -1;
+
+				if( Math.abs(init.after - init.now) == 1 ) 
+				{
+					this.move(init.direction);
+				}
+				else if( Math.abs(init.after - init.now) > 1 ) // 간격이 2이상인 경우
+				{ console.log("12345678 ",init.after - init.now);
+					
+					setTimeout(() => { this.quickLocate(init.width, init.now, init.after, init.direction) }, init.width/5);
+				}
+
+				break;	
+
+		}
+
 	}
 
 	move(order){
@@ -483,87 +650,20 @@ class mySlide{
 			//this.pause = "on";
 
 			this.autoPlay =  setInterval( () => { this.move(1); }, 6000);
-
-			// let x = this.map.children.length;
-
-			// this.map.children[x-1].classList.add("play");
-			// this.map.children[x-1].classList.remove("stop");
 		}
 	}
 
-	findLocation(elem){
+	quickLocate(w, now, after, dir){
 
-		let init = { 
-			after : -1, 
-			now : null, 
-			gap : null, 
-			direction : null,
-			tempauto : null,
-			width : this.items.offsetWidth };
+		//console.log("00 quickLocate ", w);
 
-		let slideMap = elem;
-		while( slideMap != null )
-		{
-			slideMap = slideMap.previousElementSibling;
-			init.after++;
-		}
-		init.now = click.findClassName(this.items, "on");
-		init.gap = init.after - init.now;
+		this.move(dir);
 
+		if( Math.abs( after-now ) == 1 )
+			return;
 
-		if( init.gap > 0 ) init.direction = 1;
-		else init.direction = -1;
-
-		let end = false;
-		if( Math.abs(init.gap) > 1 ||  Math.abs(init.gap) == this.items.children.length-1 ) //next 이미지 로드
-		{
-			const t = this.move;
-			const tempMove = t.bind(this);
-			this.speed = 4;
-
-			setTimeout( function go(){
-			
-				let a, n;
-
-				if( init.direction > 0 )
-				{
-					a = init.after;
-					n = init.now;
-				}
-				else
-				{
-					a = init.now;
-					n = init.after;
-				}
-
-				if( a > n )
-				{
-					
-					tempMove(init.direction);
-					setTimeout(go, init.width);
-				}
-				// else
-				// {console.log("33 locate ",this.speed);
-				// 	end = true;
-				// }
-
-				init.now += init.direction;
-
-			}, 0);
-
-			console.log("22 locate ",this.speed);
-		}
-		else
-		{
-			this.speed = 8;
-			this.move(init.direction);
-		}
-
-		// if( end ) 
-		// {
-		// 	this.speed = init.speed; 
-		// 	console.log("end end",this.speed, init.speed);
-		// }
+		now += dir;
+		setTimeout(() => { this.quickLocate(w, now, after, dir) }, w/2);
 
 	}
 }
