@@ -338,10 +338,9 @@ class mySlide{
 			this.body.querySelector(".btn").style.display = "none";
 		});
 
+		this.body.addEventListener("touchstart", (e) => { this.touchDevice(e); });
 		this.body.addEventListener("touchstart", (e) => { 
 			this.body.querySelector(".btn").style.display = "block";
-			this.touchDevice(e); 
-
 			setTimeout(() => { this.body.querySelector(".btn").style.display = "none"; }, 6000);
 		});
 
