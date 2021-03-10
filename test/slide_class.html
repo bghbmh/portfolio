@@ -4,13 +4,20 @@
 <meta charset="utf-8">
 <title></title>
 </head>
-<link rel="stylesheet" href="basic.css">
+<!-- <link rel="stylesheet" href="basic.css"> -->
 <style>
 	section{
 		position: relative;
-		width: 95%;
+		width: 100%;
 		height: 60vh;
 	}
+
+button{
+	-webkit-appearance:button;
+	-moz-appearance:button;
+	border-radius:0;
+	border: 0;
+}
 	
 .slide {
 	position: relative;
@@ -26,11 +33,8 @@
 	left: 100%;
 	width: 100%;
 	height: 100%;
-	text-align: center;
-	font-size: 30px;
-	line-height: 300px;
-	color: #fff;
 	list-style: none;
+	overflow: hidden;
 }
 
 .slide .items > li:nth-child(1) {
@@ -49,74 +53,69 @@
 	background-color: blue;
 }
 
-.slide .btn{ display: none; }
-
 .slide .btn > button {
-    position: absolute;
-    width: 6em;
-    height: 6em;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    background: transparent;
+	
+	position: absolute;
+	width: 96px;
+	height: 96px;
+	top: 50%;
+	transform: translateY(-50%);
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
 }
 
-.slide .btn .prev {
-    left: 0px;
-}
 
-.slide .btn .next {
-    right: 0px;
-}
+.slide .btn .prev { left: 0px; }
+.slide .btn .next {  right: 0px; }
 
+@media (min-width: 1025px){
+	.slide .btn .prev { left: 15%; }
+	.slide .btn .next { 	right: 15%; 	}
+}/**/
+.slide .btn{ display: none; }
 
 .slide .slideMap {
     position: absolute;
-    display: flex;
-    bottom: 10px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
-        padding: 0;
-}
-
-.slide .slideMap:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.slide .slideMap > button {
-	position: relative;
-   /* float: left;*/
-    margin-left: 5px;
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
-    cursor: pointer;
-    opacity: .5;
-    background-color: #fff;
-    list-style: none;
     padding: 0;
-    border: none;
 }
 
-.slide .slideMap > button.on {
-    opacity: 1
+.slide .slideMap button {
+	position: relative;
+	display: inline-block;
+    vertical-align: middle;
+	width: 10px;
+	height: 10px;
+	margin: 0 3px;
+	padding: 0;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	background-color: transparent;
+	cursor: pointer;
+
+}
+@media ( max-width: 414px ){
+	.slide .slideMap button {
+		width: 1.87vw;
+		height: 1.87vw;
+	}
+}
+.slide .slideMap .locate.on {
+	background-color: #fff;
 }
 
-.slide .slideMap > button:first-child {
-    margin-left: 0
-}
-
-button.play, button.stop {
-     
-    width: 1.5em !important;
-    height: 1.5em !important;
+button.play, button.stop { 
+    width: 16px !important;
+    height: 16px !important;
+    border: none !important;
 	background: rgba(0,0,0,.2) !important;
-	margin-top: -.3em;
 }
+
+
 
 .play:before{
 	content: '';
@@ -126,9 +125,9 @@ button.play, button.stop {
 	transform: translate(-40%, -50%);
 	width: 0px;
 	height: 0px;
-	border-top: .35em solid transparent;
-	border-left: 0.5em solid rgba(255,255,255,.9);
-	border-bottom: .35em solid transparent;
+	border-top: .3em solid transparent;
+	border-left: 0.45em solid rgba(255,255,255,.7);
+	border-bottom: .3em solid transparent;
 }
 
 .stop:before{
@@ -138,9 +137,9 @@ button.play, button.stop {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	width: .1em;
-	height: .6em;
-	border-left: .2em solid #fff;
-	border-right: 0.2em solid #fff;
+	height: .5em;
+	border-left: .15em solid #fff;
+	border-right: 0.15em solid #fff;
 }
 
 .icons{
@@ -163,7 +162,7 @@ button.play, button.stop {
 	border-top:2px solid #fff;
 	border-left:2px solid #fff;
 	background: none;
-	transform: translateX(-25%) translateY(-50%) rotate(-45deg) ;
+	transform: translateX(-25%) translateY(-50%) rotate(-45deg);
 }
 
 .arrowRight:before{
@@ -176,14 +175,7 @@ button.play, button.stop {
 	border-bottom:2px solid #fff;
 	border-right:2px solid #fff;
 	background: none;
-	transform: translateX(-25%) translateY(-50%) rotate(-45deg) ;
-}
-
-
-
-.bgTransparent{
-	background: rgba(0,0,0,.2);
-	border-radius: 1em;
+	transform: translateX(-25%) translateY(-50%) rotate(-45deg);
 }
 </style>
 <body>
@@ -191,10 +183,16 @@ button.play, button.stop {
 	<section>
 		<div class="slide">
 			<ul class="items">
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>
+				<li>
+					<!-- <img src="김다온.png"> -->
+					<!-- <button class="moreLink">자세히보기</button> -->
+				</li>
+				<li><!--<img src="main-master/img/test.png">
+					 <button class="moreLink">자세히보기</button> --></li>
+				<li><!--<img src="김다온.png">
+					 <button class="moreLink">자세히보기</button> --></li>
+				<li><!--<img src="김다온.png">
+					 <button class="moreLink">자세히보기</button> --></li>
 			</ul>
 			<div class="btn">
 				<button type="button" class="prev"><span class="icons arrowLeft"></span></button>
@@ -341,7 +339,7 @@ class mySlide{
 		this.body.addEventListener("touchstart", (e) => { this.touchDevice(e); });
 		this.body.addEventListener("touchstart", (e) => { 
 			this.body.querySelector(".btn").style.display = "block";
-			setTimeout(() => { this.body.querySelector(".btn").style.display = "none"; }, 6000);
+			//setTimeout(() => { this.body.querySelector(".btn").style.display = "none"; }, 6000);
 		});
 
 		this.body.addEventListener("touchend", (e) => { this.touchDevice(e); });
@@ -396,17 +394,18 @@ class mySlide{
 
 		let className;
 
-		let elem = click.findTagName(e.target, "BUTTON");
+		let elem = click.findTagName(e.target, "BUTTON");console.log( "22 clickMouse ", e.type, elem);
 
 		if( elem === null )
 		{
-			console.log( "22 clickMouse ", e.type);
+			
 
 			if( e.type === "mousedown" )
 			{
 				this.touchPoint = e.x;
 			}
-			else if( e.type === "mouseup" )
+			
+			if( e.type === "mouseup" )
 			{
 				if( this.touchPoint - e.x === 0 ) return;
 				else if( this.touchPoint - e.x > 0 ) this.move(1);
