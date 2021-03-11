@@ -143,8 +143,8 @@ function closePopup(popup){
 	let scroll_top_holder = mainbody.style.top.replace(/[^0-9]/g, "");
 
 	mainbody.style.top = "initial";
-	document.body.scrollTop = scroll_top_holder;
-	document.documentElement.scrollTop = scroll_top_holder;
+	document.querySelector('html').scrollTop = scroll_top_holder;
+	//document.documentElement.scrollTop = scroll_top_holder;
 
 	// //입력폼 초기화
 	// let txtBox = popup.getElementsByClassName("txtBox");
