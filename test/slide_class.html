@@ -7,6 +7,7 @@
 </head>
 <!-- <link rel="stylesheet" href="basic.css"> -->
 <style>
+	body{margin:0; padding: 0}
 	section{
 		position: relative;
 		width: 100%;
@@ -188,13 +189,14 @@ button.play, button.stop {
 }
 </style>
 <body>
+	<section style="background: #f5f5f5"></section>
 
 	<section>
 		<div class="slide">
 			<ul class="items">
 				<li>
 					<!-- <img src="김다온.png"> -->
-					<!-- <button class="moreLink">자세히보기</button> -->
+					<button class="moreLink">자세히보기</button> <!-- -->
 				</li>
 				<li><!--<img src="main-master/img/test.png">
 					 <button class="moreLink">자세히보기</button> --></li>
@@ -224,17 +226,19 @@ button.play, button.stop {
 -->
 		</div>
 	</section> -->
+	<!-- --><section style="background: #f5f5f5"></section>
 	<section style="background: #f5f5f5"></section>
 	<section style="background: #f5f5f5"></section>
 	<section style="background: #f5f5f5"></section>
-	<section style="background: #f5f5f5"></section>
-	<section style="background: #ff0"></section>
+	<section style="background: #ff0"></section> 
 <h1 style="position: fixed; top: 2em; left: 2em; background: #000; color: #fff; padding: .5em 1em;"></h1>
 <h1 style="position: fixed; top: 7em; left: 2em; background: #000; color: #fff; padding: .5em 1em;"></h1>
 <h1 style="position: fixed; top: 12em; left: 2em; background: #000; color: #fff; padding: .5em 1em;"></h1>
 <script>
 
 'use strict';
+
+
 
 
 let myArray = ["zero", "one", "two"];
@@ -310,7 +314,7 @@ class mySlide{
 		this.now = null;
 		this.pause = "off";
 		this.autoPlay = "stop";
-		this.touchPoint = null;
+		this.ongoingTouches = null;
 		this.init();
 	}
 
@@ -359,117 +363,150 @@ class mySlide{
 	}
 
 	touchDevice(e){
+		e.preventDefault();
 
-		if( this.touchPoint === null || !Array.isArray(this.touchPoint) )
-		{
-			this.touchPoint = [];
+		if( this.ongoingTouches === null || !Array.isArray(this.ongoingTouches) )
+		{ console.log("11 ongoingTouches reset");
+			this.ongoingTouches = [];
 		}
 
 		switch ( e.type )
 		{
 			case "touchstart":
-				e.preventDefault();
-
-				if( e.changedTouches.length > 0 )
-				{
-					for( let idx=0; idx<e.changedTouches.length; idx++ )
-					{
-						this.touchPoint.push({});
-						this.touchPoint[idx].px = e.changedTouches[idx].pageX;
-						this.touchPoint[idx].py = e.changedTouches[idx].pageY;
-						this.touchPoint[idx].sx = e.changedTouches[idx].screenX;
-						this.touchPoint[idx].sy = e.changedTouches[idx].screenY;
-						this.touchPoint[idx].cx = e.changedTouches[idx].clientX;
-						this.touchPoint[idx].cy = e.changedTouches[idx].clientY;
-						this.touchPoint[idx].force = e.changedTouches[idx].force;
-						this.touchPoint[idx].id = e.changedTouches[idx].identifier;
-
-					}
+				if( Array.isArray(this.ongoingTouches) || this.ongoingTouches.length > 1 )
+				{console.log("22 ongoingTouches reset");
+					this.ongoingTouches.length = 0;
 				}
 
-				console.log("touchstart", this.touchPoint[0].sy, e.changedTouches[0].screenY);
+				
+				for( let i=0; i<e.touches.length; i++ )
+				{
+					this.ongoingTouches.push(this.copyTouch(e.touches[i]));
+					console.log("touchstart", this.ongoingTouches[i].pageY, e.changedTouches[i].pageY);
+
+				}
+				
+
+				
 			
 				break;
 			case "touchmove":
-				//e.preventDefault();
-				var t = e.changedTouches;
+				//document.querySelector('html').scrollHeight
+				let idx;
+				for( let i=0; i<e.changedTouches.length; i++ )
+				{
+					idx = this.ongoingTouchIndexById(e.changedTouches[i].identifier);
+					//console.log("idx", idx);
 
-				if( Math.abs( this.touchPoint[0].cy - e.changedTouches[0].clientY ) > 0 )
-				{					
-					document.querySelector('html').scrollTop = this.touchPoint[0].sy - e.changedTouches[0].screenY;
-					
+					if (idx < 0) 
+					{
+						console.log("can't figure out which touch to continue");
+						return;
+					}					
+
+					document.querySelectorAll("h1")[2].innerHTML = document.querySelector('html').scrollTop + " / " + (e.changedTouches[i].pageY- e.changedTouches[i].clientY);
+
+					// Math.abs( this.ongoingTouches[0].screenY - e.changedTouches[0].screenY )
+					if( Math.abs( this.ongoingTouches[0].pageY - e.changedTouches[0].pageY ) > 0)
+					{
+						
+						document.querySelector('html').scrollTop += (this.ongoingTouches[0].pageY - e.changedTouches[0].pageY);
+
+					}
+					// if( Math.abs( this.ongoingTouches[0].screenY - e.changedTouches[0].screenY ) > 0 )
+					// {
+						
+					// 	document.querySelector('html').scrollTop = e.changedTouches[0].pageY- e.changedTouches[0].clientY;
+
+					// }
+
 				}
 
 				break;
 			case "touchend":
-				e.preventDefault();
 				var t = e.changedTouches;
 
-				document.querySelector("h1").innerHTML = "touchend : " + this.touchPoint[0].force+", "+e.changedTouches[0].force;
+				document.querySelector("h1").innerHTML = "touchend : " + this.ongoingTouches[0].force+", "+e.changedTouches[0].force + "//";
 
-				let elem = click.findTagName(e.target, "BUTTON");
+				let touchMovingX = this.ongoingTouches[0].screenX - e.changedTouches[0].screenX;
+				let touchMovingY = this.ongoingTouches[0].screenY - e.changedTouches[0].screenY;
 
-				let touchMoving = this.touchPoint[0].sy - e.changedTouches[0].screenY;
-				if( Math.abs( touchMoving ) > 48 )//let sliding = 16; // font-size 16px 기준
+				console.log("touchMovingY ",window.innerHeight/7," > ",Math.abs( touchMovingY ), " > ", window.innerHeight/10);
+
+				if( window.innerHeight/7 > Math.abs( touchMovingY ) && Math.abs( touchMovingY ) > window.innerHeight/10 )
 				{	
 					let slidingID = null;
-					let next;
+					let next=1;
 					let st = document.querySelector('html').scrollTop;
 
-					console.log("22 touchend", st, touchMoving);
-					if( touchMoving > 0 ) next = 1;
-					else next = -1;
+					console.log("setInterval__touchMoving ");
+					if( touchMovingY < 0 ) next = -1;
 					
 					slidingID = setInterval(function(){
 
-						if(document.querySelector('html').scrollTop === 0 || Math.abs( st - document.querySelector('html').scrollTop ) > 320 )
+						if(document.querySelector('html').scrollTop === 0 || Math.abs( st - document.querySelector('html').scrollTop ) > 320 )// font-size 16px 기준
 						{
-							console.log("setInterval");
+							console.log("end setInterval__touchMoving");
 							clearInterval(slidingID);
 						}
 						document.querySelector('html').scrollTop += (8*next);
 
-						console.log("setInterval", document.querySelector('html').scrollTop);
-
 					 }, 10);
 				}
-				else
-				{
-					if( this.touchPoint[0].sx - e.changedTouches[0].screenX === 0 &&  elem === null )
-					{
-						console.log("22 touchDevice");
-						return;
-					}
-					else if( this.touchPoint[0].sx - e.changedTouches[0].screenX === 0 &&  elem !== null )
-					{
-						console.log("22 touchDevice");
-						this.executeSlide(elem, "next");
-						return;
-					}
-					else if( this.touchPoint[0].sx - e.changedTouches[0].screenX > 0 )
-					{
-						this.executeSlide(null, "next");
-					}
-					else
-						this.executeSlide(null, "prev");
-				}
+				// else
+				// {	
+					console.log("innerWidth ", window.innerWidth);
+					let elem = click.findTagName(e.target, "BUTTON");				
+					
+					
 
-				
-				
+					// if( touchMovingX === 0 &&  elem === null )
+					// {
+					// 	console.log("1 touchDevice");
+					// 	return;
+					// }
+					// else 
+						if( touchMovingX === 0 &&  elem !== null )
+					{
+						console.log("2 touchDevice");
+						this.executeSlide(elem, "next");
+					}
+					else if( Math.abs( touchMovingX ) > window.innerWidth/10 )
+					{
+						if( touchMovingX > 0 ) this.executeSlide(null, "next");
+						else this.executeSlide(null, "prev");
+					}					
+				//}
 
 				break;
-
-
 		}
 				
 	}
 
+	copyTouch({ identifier, pageX, pageY, screenX, screenY }) {
+		return { identifier, pageX, pageY, screenX, screenY };
+	}
+
+	ongoingTouchIndexById(idToFind) {
+		for (var i = 0; i < this.ongoingTouches.length; i++)
+		{
+			var id = this.ongoingTouches[i].identifier;
+
+			if (id == idToFind)
+			{
+				return i;
+			}
+		}
+		return -1;    // not found
+	}
+
+
 	clickMouse(e){
 		console.log("clickMouse");
 
-		if( this.touchPoint === null || Array.isArray(this.touchPoint) )
+		if( this.ongoingTouches === null || Array.isArray(this.ongoingTouches) )
 		{console.log( "touchDevice  isArray", this);
-			this.touchPoint = {};
+			this.ongoingTouches = {};
 		}
 
 		let className;
@@ -482,14 +519,14 @@ class mySlide{
 
 			if( e.type === "mousedown" )
 			{
-				this.touchPoint.x = e.x;
-				console.log( "11 clickMouse ", this.touchPoint);
+				this.ongoingTouches.x = e.x;
+				console.log( "11 clickMouse ", this.ongoingTouches);
 			}
 			
 			if( e.type === "mouseup" )
 			{
-				if( this.touchPoint.x - e.x === 0 ) return;
-				else if( this.touchPoint.x - e.x > 0 ) this.move(1);
+				if( this.ongoingTouches.x - e.x === 0 ) return;
+				else if( this.ongoingTouches.x - e.x > 0 ) this.move(1);
 				else this.move(-1);
 			}
 			return;		 
@@ -579,8 +616,6 @@ class mySlide{
 			exe = str;
 		}
 
-		
-
 		switch( exe )
 		{
 			case "next":
@@ -657,7 +692,7 @@ class mySlide{
 		var speed = this.speed;
 		var items = this.items;
 
-		console.log("9999 move ",this.speed);
+		console.log("\n 9999 move ",this.speed,"\n");
 		
 		nextLeft = this.items.offsetWidth * order;
 
@@ -770,8 +805,44 @@ console.log("load, resize");
 
 slideInit();
 window.addEventListener('resize', slideInit);
+document.querySelector(".moreLink").addEventListener("touchstart", mySlide.touchDevice);
 
+// document.querySelector('html').addEventListener('touchmove', function(e){
+// 	let st = document.querySelector('html').scrollTop;
 
+// 	let temp = st + e.touches[0].clientY;
+// 	document.querySelectorAll("h1")[2].innerHTML = document.querySelector('html').scrollHeight +"<br> scrollTop : "+ document.querySelector('html').scrollTop + " / "+
+// 	"<br>"+e.touches[0].clientX + "," + e.touches[0].clientY;
+// });
+
+// var src = document.querySelector('html');
+// var clientX, clientY, pageY;
+
+// src.addEventListener('touchstart', function(e) {
+//   // Cache the client X/Y coordinates
+//   clientX = e.touches[0].clientX;
+//   clientY = e.touches[0].screenY;
+//   pageY = e.touches[0].pageY;
+// }, false);
+
+// src.addEventListener('touchend', function(e) {
+//   var deltaX, deltaY, deltapageY;
+
+//   // Compute the change in X and Y coordinates.
+//   // The first touch point in the changedTouches
+//   // list is the touch point that was just removed from the surface.
+//   deltaX = e.changedTouches[0].clientX - clientX;
+//   deltaY = e.changedTouches[0].screenY - clientY;
+//   deltapageY = e.changedTouches[0].pageY - pageY ;
+
+//   let st = document.querySelector('html').scrollTop;
+
+// 	let temp = st + deltapageY;
+
+//   console.log("\n clientX : ", clientX, "clientY : ",clientY, "\n deltaX : ", deltaX, "deltaY : ",deltaY, "\n scrollTop : ", temp,"\n ",pageY,e.changedTouches[0].pageY, deltapageY );
+
+//   // Process the data ...
+// }, false);
 </script>
 
 </body>
