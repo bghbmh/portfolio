@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title></title>
 </head>
 <!-- <link rel="stylesheet" href="basic.css"> -->
@@ -9,14 +10,22 @@
 	section{
 		position: relative;
 		width: 100%;
-		height: 60vh;
+		height: 90vh;
+	}
+	h1{
+		font-size: 15px;
 	}
 
 button{
-	-webkit-appearance:button;
-	-moz-appearance:button;
+	    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+     outline: none;
+
+/*	-webkit-appearance:button;
+	-moz-appearance:button;*/
 	border-radius:0;
-	border: 0;
+	border: none;
 }
 	
 .slide {
@@ -198,12 +207,9 @@ button.play, button.stop {
 				<button type="button" class="prev"><span class="icons arrowLeft"></span></button>
 				<button type="button" class="next"><span class="icons arrowRight"></span></button>
 			</div>
-			<!-- <div class="auto">
-				<button type="button" class="play"></button>
-			</div> -->
 		</div>
 	</section>
-	<section>
+<!-- 	<section>
 		<div class="slide">
 			<ul class="items">
 				<li>1</li>
@@ -215,16 +221,21 @@ button.play, button.stop {
 				<button type="button" class="prev"><span class="icons arrowLeft"></span></button>
 				<button type="button" class="next"><span class="icons arrowRight"></span></button>
 			</div>
-			<!-- <div class="auto">
-				<button type="button" class="play"></button>
-			</div> -->
+-->
 		</div>
-	</section>
-	
-
+	</section> -->
+	<section style="background: #f5f5f5"></section>
+	<section style="background: #f5f5f5"></section>
+	<section style="background: #f5f5f5"></section>
+	<section style="background: #f5f5f5"></section>
+	<section style="background: #ff0"></section>
+<h1 style="position: fixed; top: 2em; left: 2em; background: #000; color: #fff; padding: .5em 1em;"></h1>
+<h1 style="position: fixed; top: 7em; left: 2em; background: #000; color: #fff; padding: .5em 1em;"></h1>
+<h1 style="position: fixed; top: 12em; left: 2em; background: #000; color: #fff; padding: .5em 1em;"></h1>
 <script>
 
 'use strict';
+
 
 let myArray = ["zero", "one", "two"];
 myArray.myMethod = function (sProperty) {
@@ -304,7 +315,7 @@ class mySlide{
 	}
 
 	init(){
-		console.log("makeInit");
+		console.log("makeInit", this);
 
 		if( this.body.querySelector('.slideMap') != null )
 			return;
@@ -342,59 +353,128 @@ class mySlide{
 			//setTimeout(() => { this.body.querySelector(".btn").style.display = "none"; }, 6000);
 		});
 
+		this.body.addEventListener("touchmove", (e) => { this.touchDevice(e); });
 		this.body.addEventListener("touchend", (e) => { this.touchDevice(e); });
 
 	}
 
 	touchDevice(e){
 
+		if( this.touchPoint === null || !Array.isArray(this.touchPoint) )
+		{
+			this.touchPoint = [];
+		}
+
 		switch ( e.type )
 		{
 			case "touchstart":
 				e.preventDefault();
 
+				if( e.changedTouches.length > 0 )
+				{
+					for( let idx=0; idx<e.changedTouches.length; idx++ )
+					{
+						this.touchPoint.push({});
+						this.touchPoint[idx].px = e.changedTouches[idx].pageX;
+						this.touchPoint[idx].py = e.changedTouches[idx].pageY;
+						this.touchPoint[idx].sx = e.changedTouches[idx].screenX;
+						this.touchPoint[idx].sy = e.changedTouches[idx].screenY;
+						this.touchPoint[idx].cx = e.changedTouches[idx].clientX;
+						this.touchPoint[idx].cy = e.changedTouches[idx].clientY;
+						this.touchPoint[idx].force = e.changedTouches[idx].force;
+						this.touchPoint[idx].id = e.changedTouches[idx].identifier;
+
+					}
+				}
+
+				console.log("touchstart", this.touchPoint[0].sy, e.changedTouches[0].screenY);
+			
+				break;
+			case "touchmove":
+				//e.preventDefault();
 				var t = e.changedTouches;
-				this.touchPoint = t[0].pageX;
-				console.log( "touchstart ", t[0].pageX);
+
+				if( Math.abs( this.touchPoint[0].cy - e.changedTouches[0].clientY ) > 0 )
+				{					
+					document.querySelector('html').scrollTop = this.touchPoint[0].sy - e.changedTouches[0].screenY;
+					
+				}
 
 				break;
 			case "touchend":
 				e.preventDefault();
 				var t = e.changedTouches;
 
+				document.querySelector("h1").innerHTML = "touchend : " + this.touchPoint[0].force+", "+e.changedTouches[0].force;
+
 				let elem = click.findTagName(e.target, "BUTTON");
 
-				if( this.touchPoint - t[0].pageX === 0 &&  elem === null )
-				{
-					console.log("22 touchDevice");
-					return;
-				}
-				else if( this.touchPoint - t[0].pageX === 0 &&  elem !== null )
-				{
-					console.log("22 touchDevice");
-					this.executeSlide(elem, "next");
-					return;
-				}
-				else if( this.touchPoint - t[0].pageX > 0 )
-				{
-					this.executeSlide(null, "next");
+				let touchMoving = this.touchPoint[0].sy - e.changedTouches[0].screenY;
+				if( Math.abs( touchMoving ) > 48 )//let sliding = 16; // font-size 16px 기준
+				{	
+					let slidingID = null;
+					let next;
+					let st = document.querySelector('html').scrollTop;
+
+					console.log("22 touchend", st, touchMoving);
+					if( touchMoving > 0 ) next = 1;
+					else next = -1;
+					
+					slidingID = setInterval(function(){
+
+						if(document.querySelector('html').scrollTop === 0 || Math.abs( st - document.querySelector('html').scrollTop ) > 320 )
+						{
+							console.log("setInterval");
+							clearInterval(slidingID);
+						}
+						document.querySelector('html').scrollTop += (8*next);
+
+						console.log("setInterval", document.querySelector('html').scrollTop);
+
+					 }, 10);
 				}
 				else
-					this.executeSlide(null, "prev");
+				{
+					if( this.touchPoint[0].sx - e.changedTouches[0].screenX === 0 &&  elem === null )
+					{
+						console.log("22 touchDevice");
+						return;
+					}
+					else if( this.touchPoint[0].sx - e.changedTouches[0].screenX === 0 &&  elem !== null )
+					{
+						console.log("22 touchDevice");
+						this.executeSlide(elem, "next");
+						return;
+					}
+					else if( this.touchPoint[0].sx - e.changedTouches[0].screenX > 0 )
+					{
+						this.executeSlide(null, "next");
+					}
+					else
+						this.executeSlide(null, "prev");
+				}
+
+				
 				
 
 				break;
 
 
 		}
-
+				
 	}
 
 	clickMouse(e){
+		console.log("clickMouse");
+
+		if( this.touchPoint === null || Array.isArray(this.touchPoint) )
+		{console.log( "touchDevice  isArray", this);
+			this.touchPoint = {};
+		}
 
 		let className;
 
-		let elem = click.findTagName(e.target, "BUTTON");console.log( "22 clickMouse ", e.type, elem);
+		let elem = click.findTagName(e.target, "BUTTON");
 
 		if( elem === null )
 		{
@@ -402,13 +482,14 @@ class mySlide{
 
 			if( e.type === "mousedown" )
 			{
-				this.touchPoint = e.x;
+				this.touchPoint.x = e.x;
+				console.log( "11 clickMouse ", this.touchPoint);
 			}
 			
 			if( e.type === "mouseup" )
 			{
-				if( this.touchPoint - e.x === 0 ) return;
-				else if( this.touchPoint - e.x > 0 ) this.move(1);
+				if( this.touchPoint.x - e.x === 0 ) return;
+				else if( this.touchPoint.x - e.x > 0 ) this.move(1);
 				else this.move(-1);
 			}
 			return;		 
@@ -681,6 +762,8 @@ function slideInit(){
 			arr =new mySlide(slide[i], 8);
 		}
 	}
+
+console.log("load, resize");
 
 }
 
