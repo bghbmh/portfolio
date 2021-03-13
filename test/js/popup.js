@@ -74,7 +74,7 @@ function set_input(popup){
 
 	//버튼 활성화
 	popup.querySelector(".submit").addEventListener("click", function(){
-		alert("곧 열릴거에요.");
+		alert("준비 중이에요.");
 	});
 	topsmallSlides(true);
 
