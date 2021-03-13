@@ -74,7 +74,7 @@ function set_input(popup){
 
 	//버튼 활성화
 	popup.querySelector(".submit").addEventListener("click", function(){
-		alert("죄송합니다.\n 아직 준비가 안 됐어요.");
+		alert("죄송합니다.\n아직 준비가 안 됐어요.");
 	});
 	topsmallSlides(true);
 
