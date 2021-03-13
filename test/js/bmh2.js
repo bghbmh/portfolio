@@ -25,7 +25,7 @@ function loadBody(mainBody){
 	btn_write.addEventListener("click", openPopup);
 
 	btn_calltxt[0].addEventListener("click", function(){
-		alert("죄송합니다.\n아직 준비가 안 됐어요.");
+		alert("준비 중이에요.");
 	});
 
 	//입력창 모두 빈칸으로 만들기
