@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 105 105" style="enable-background:new 0 0 105 105;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:none;stroke:#2DF1FD;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#2DF1FD;stroke-width:3;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#444444;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{fill:#2DF1FD;}
+	.st5{fill:none;stroke:#444444;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st7{fill:none;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#444444;stroke-width:3;stroke-miterlimit:10;}
+	.st9{fill:#444444;}
+	.st10{fill:#FFFFFF;}
+</style>
+<g>
+	<path class="st0" d="M3,3h99v99H3V3z"/>
+	<g>
+		<path class="st3" d="M33.5,78.7H47c3.7,0,6.7-3.4,6.7-7.6v-23c0-12.5-9.1-21.9-20.2-21.9s-20.2,9.4-20.2,21.9v15.4
+			c0,4.2,3,7.6,6.7,7.6h4.5V55.5h-11"/>
+		<polyline class="st3" points="53.4,55.5 42.5,55.5 42.5,71.2 53.1,71.2 		"/>
+		<line class="st5" x1="62.1" y1="32" x2="91.7" y2="32"/>
+		<line class="st5" x1="62.1" y1="46.6" x2="91.7" y2="46.6"/>
+		<line class="st5" x1="62.1" y1="61.2" x2="91.7" y2="61.2"/>
+		<line class="st5" x1="62.1" y1="75.8" x2="79.1" y2="75.8"/>
+	</g>
+</g>
+</svg>
