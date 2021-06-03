@@ -199,7 +199,7 @@ nav button:active{
 }
 
 nav button:active span{
-	top: calc(100% - 3px);
+	top: calc(100% - 4px);
 }
 
 
@@ -259,7 +259,7 @@ nav button:nth-child(1) span:nth-of-type(4){  animation-delay: 1.7s; }
 	display: inline-block;
 	width: 4px;
 	height: 30%;
-	top: calc(35% + 4px);
+	bottom: calc(35% - 4px);
 	left: calc(50% - 2px);
 	background-color: #555;
 	border-radius: 3px;
@@ -270,14 +270,12 @@ nav button:nth-child(1) span:nth-of-type(4){  animation-delay: 1.7s; }
 }
 
 nav:hover .bar{
-	height: 50%;
-	top: unset;
+/*	height: 50%;*/
 	bottom: -4px;
 }
 
 nav:active .bar{
-	height: calc(50% - 5px);
-	top: unset;
+
 	bottom: -8px;
 }
 
