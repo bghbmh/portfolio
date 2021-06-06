@@ -755,14 +755,18 @@ document.querySelector(".microSite").addEventListener("click", function(e){
 
 	console.log('puzzle ',e.target);
 
-	if( e.target.naturalWidth/e.target.naturalHeight > 1 ){
+	let nw = e.target.naturalWidth;
+	let nh = e.target.naturalHeight;
+
+	if( nw/nh > 1 ){
 		console.log("puzzle width", this.innerWidth)
-		size = (this.offsetWidth*0.85)/e.target.naturalWidth;
+		size = (this.offsetWidth*0.75)/nw;
 
 
 	} else {
-		console.log("puzzle Height",e.target.naturalHeight, this.offsetHeight*0.85)
-		size = (this.offsetHeight*0.85)/e.target.naturalHeight;
+		console.log("puzzle Height",e.target.naturalHeight, this.offsetHeight*0.7)
+		//if(  )
+		size = (this.offsetHeight*0.75)/nh;
 
 	}
 
