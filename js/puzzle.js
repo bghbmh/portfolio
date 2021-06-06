@@ -17,7 +17,7 @@ function settingPuzzle(imgObj){
 			cellHeight : re*imgObj.naturalHeight/h,
 			wholeWidth : re*imgObj.naturalWidth,
 			wholeHeight : re*imgObj.naturalHeight,				
-			piece : [], //{ self : null, neighbor : [], dock : [], clicked : false, starttop : 0, startleft : 0}
+			piece : [], //{ self : null, neighbor : [], dock : [], clicked : false, ongoingTouches : [], starttop : 0, startleft : 0}
 			connectSide : 0, // 접촉면
 			connected : []
 		};
@@ -32,8 +32,9 @@ function settingPuzzle(imgObj){
 			arr.piece[x].neighbor = [x-w, x+1, x+w, x-1];
 			arr.piece[x].dock = [x-w, x+1, x+w, x-1];//false, false, false, false
 			arr.piece[x].clicked = false;
-			arr.piece[x].startTop = 0;
-			arr.piece[x].startLeft = 0;
+			arr.piece[x].ongoingTouches = [];
+			arr.piece[x].startTop = null;
+			arr.piece[x].startLeft = null;
 			//console.log(arr.neighbor[x]);
 			x++;
 		}
@@ -148,10 +149,14 @@ function startPuzzle(puzzle){
 	board = document.createElement("section");
 
 	board.setAttribute("id", "board");
-	board.addEventListener("mousedown", moveEvent);
-	board.addEventListener("mousemove", moveEvent);
-	board.addEventListener("mouseup", moveEvent);
-	board.addEventListener("mouseout", moveEvent);
+	board.addEventListener("mousedown", mouseEvent);
+	board.addEventListener("mousemove", mouseEvent);
+	board.addEventListener("mouseup", mouseEvent);
+	board.addEventListener("mouseout", mouseEvent);
+
+	board.addEventListener("touchstart", touchEvent);
+	board.addEventListener("touchmove", touchEvent);
+	board.addEventListener("touchend", touchEvent);
 
 	//console.log("startPuzzle : ", board)
 
@@ -175,18 +180,19 @@ function showPiece(board, puzzle){
 	//화면에 퍼즐 뿌려놓기
 	console.log('showPiece  ', board.offsetWidth)
 	let cnt = puzzle.widthCount;
-	for( let i=0; i<puzzle.piece.length; i++ )
-	{
+
+	for( let i=0; i<puzzle.piece.length; i++ ) {
+
 		let span = document.createElement("span");
 		let rnd = parseInt( Math.random()*puzzle.cellWidth );
 
-		if( i%2 !== 1 )
+		if( i%2 !== 1 ) {
 			rnd = board.offsetWidth - puzzle.cellWidth*1.15 - rnd;
+		}
 
 		// 배경 이미지 위치 설정
 		let top, left;
-		switch ( parseInt(i/cnt) )
-		{
+		switch ( parseInt(i/cnt) ) {
 			case 0: // 첫 번째 줄
 				top = 0;
 				break;
@@ -199,16 +205,15 @@ function showPiece(board, puzzle){
 		}
 
 		left = puzzle.cellWidth * ( i%cnt ) * -1;
-		
 
-		span.style.width = puzzle.cellWidth + "px";
-		span.style.height = puzzle.cellHeight + "px";
-		span.style.top = 20*i + "px";
-		span.style.left = rnd+ "px";
-		span.style.zIndex = i;
-		span.style.backgroundImage = `url(${puzzle.src})`;
-		span.style.backgroundSize = puzzle.wholeWidth + "px";
-		span.style.backgroundPosition = `${left}px ${top}px`;
+		span.style.cssText = `  width: ${puzzle.cellWidth}px;
+								height: ${puzzle.cellHeight}px;
+								top: ${20*i}px;
+								left: ${rnd}px;
+								z-index: ${i}px;
+								background-image: url("${puzzle.src}");
+								background-size: ${puzzle.wholeWidth}px;
+								background-position: ${left}px ${top}px; `;
 
 		span.dataset.puzzle = i;
 		puzzle.piece[i].self = span;
@@ -218,7 +223,133 @@ function showPiece(board, puzzle){
 
 }
 
-function moveEvent(e){
+
+function touchEvent(e){
+
+	e.preventDefault();
+
+	if( e.target.tagName != "SPAN" ) return;
+
+	//console.log(settingPuzzle);
+
+	let mainBoard = settingPuzzle.prototype.puzzle;
+	let idx = e.target.dataset.puzzle;
+
+	switch ( e.type ) {
+		case "touchstart":
+			mainBoard.piece[idx].startTop = [];
+			mainBoard.piece[idx].startLeft = [];
+
+			//console.log("  !!!touchstart!!!!  ",e.target, e)
+			for( let i=0; i<e.touches.length; i++ )	{
+				mainBoard.piece[idx].ongoingTouches.push(copyTouch(e.touches[i]));
+				mainBoard.piece[idx].startTop.push(e.touches[i].pageY);
+				mainBoard.piece[idx].startLeft.push(e.touches[i].pageX);
+				console.log("touchstart", mainBoard.piece[idx].ongoingTouches, "\naa  ", mainBoard.piece[idx]);
+			}				
+
+			e.target.style.zIndex = mainBoard.cells;
+			e.target.classList.add("moving");
+			
+			pieceZindex(e.target.parentNode, idx);//zIndex 설정하기	
+
+			break;
+
+		case "touchend":
+			console.log("  !!!touchend!!!!  ")
+			mainBoard.piece[idx].ongoingTouches = [];
+
+			e.target.classList.remove("moving");
+
+			docking(e.target, mainBoard, idx); 	
+
+			if( dockingList(mainBoard, -1, -1) === mainBoard.cells )
+			{
+				console.log("  !!!done!!!!  ")
+				playDone(this, mainBoard);
+			}
+
+			break;
+
+		case "touchmove":
+			//console.log("  !!!touchmove!!!!  ", e.changedTouches)
+
+			let touchIdx, mp, dx, dy;
+			let isThere = false;
+
+			for( let i=0; i<e.changedTouches.length; i++ ) {
+
+				touchIdx = ongoingTouchIndexById(e.changedTouches[i].identifier, mainBoard.piece[idx]);
+
+				if (touchIdx < 0) {
+					console.log("can't figure out which touch to continue");
+					return;
+				}
+
+				mp = mainBoard.piece[idx];
+
+				//console.log(" touchmove -  ", mp.ongoingTouches[touchIdx].pageX,   mp.startLeft)
+
+				dx = e.changedTouches[touchIdx].pageX - mp.startLeft;
+				dy = e.changedTouches[touchIdx].pageY - mp.startTop;	
+
+				//console.log(" touchmove -  ", dx, dy)	
+
+				for( let j=0; j<mainBoard.connected.length; j++ ){
+					if( mainBoard.connected[j].dataset.puzzle === idx )	{
+						isThere = true;
+						break;
+					}
+				}
+
+				if( isThere ) {
+					for( let i=0; i<mainBoard.connected.length; i++ ) {
+						let o = mainBoard.connected[i];
+						o.style.top = parseInt(o.style.top) + dy + "px";
+						o.style.left = parseInt(o.style.left) + dx + "px";
+					}
+				} else {
+					e.target.style.top = e.target.offsetTop + dy + "px";
+					e.target.style.left = e.target.offsetLeft + dx + "px";
+				}	
+
+				mainBoard.piece[idx].startTop = e.changedTouches[touchIdx].pageY;
+				mainBoard.piece[idx].startLeft = e.changedTouches[touchIdx].pageX;		
+
+			}
+
+
+			break;
+
+		case "":				
+			break;
+
+	}
+
+}
+
+function copyTouch({ identifier, pageX, pageY, screenX, screenY }) {
+	return { identifier, pageX, pageY, screenX, screenY };
+}
+
+// function copyTouch(obj) {
+// 	return { obj.identifier, obj.pageX, obj.pageY, obj.screenX, obj.screenY };
+// }
+
+function ongoingTouchIndexById(idToFind, obj) {
+	for (var i = 0; i < obj.ongoingTouches.length; i++)
+	{
+		var id = obj.ongoingTouches[i].identifier;
+
+		if (id == idToFind)
+		{
+			return i;
+		}
+	}
+	return -1;    // not found
+}
+
+function mouseEvent(e){
 
 	if( e.target.tagName != "SPAN" ) return;
 
@@ -333,13 +464,14 @@ function playDone(area, mainBoard){
 
 function msgPop(msg){
 
+	console.log("msgPop")
+
 	let m = document.querySelector("#madeBoard");
 
 	//console.log(window.getComputedStyle(m))
 
 	let div = document.createElement("div");
 	div.setAttribute("id", "puzzleBtnSet");
-	//div.style.bottom = .getBoundingClientRect().top + 100 + "px";
 
 	let btnRestart = document.createElement("button");
 	let btnClose = document.createElement("button");
@@ -349,6 +481,7 @@ function msgPop(msg){
 
 	btnRestart.addEventListener("click", reStart);
 	btnClose.addEventListener("click", stopThis);
+	btnClose.addEventListener("touchend", stopThis);
 
 	div.appendChild(btnRestart);
 	div.appendChild(btnClose);
@@ -361,18 +494,15 @@ function resetBoard(board){
 	console.log("resetBoard", board.children)
 
 	let i = board.children.length-1;
-	while( i >= 0 )
-	{
+	while( i >= 0 ) {
 		console.log("resetBoard", i, board.children[i])
 		board.removeChild(board.children[i]);
 
 		i--;
 	}
 
-	if( board.children.length == 0 )
-		return true;
-	else
-		return false;
+	if( board.children.length == 0 ) return true;
+	else return false;
 }
 
 
@@ -407,7 +537,7 @@ function stopThis(){
 	delete settingPuzzle.prototype.puzzle;
 	delete settingPuzzle.prototype.imgObj;
 
-	console.log(settingPuzzle);
+	console.log("stopThis", settingPuzzle);
 }
 
 function docking(now, mainBoard, idx){  console.log("docking" );	
@@ -479,6 +609,8 @@ function docking(now, mainBoard, idx){  console.log("docking" );
 }
 
 function resetDocking(now, mainBoard, idx, i, neighbor, top, left){
+
+	console.log("resetDocking")
 
 	let puzzle = mainBoard.piece;
 
@@ -613,7 +745,7 @@ function pieceZindex(board, idx){
 
 // 시작하기
 
-document.querySelector(".microSite").addEventListener("click", (e) => {
+document.querySelector(".microSite").addEventListener("click", function(e){
 
 	if( e.target.tagName !== "IMG") return;
 
@@ -621,19 +753,31 @@ document.querySelector(".microSite").addEventListener("click", (e) => {
 	let matrix = {};
 	let size = 1;
 
-	console.log('puzzle load ', e.target)
-	if( e.target.attributes.src.nodeValue === "img/puzzle.JPG" )
-	{			
+	console.log('puzzle ',e.target);
 
+	if( e.target.naturalWidth/e.target.naturalHeight > 1 ){
+		console.log("puzzle width", this.innerWidth)
+		size = (this.offsetWidth*0.85)/e.target.naturalWidth;
+
+
+	} else {
+		console.log("puzzle Height",e.target.naturalHeight, this.offsetHeight*0.85)
+		size = (this.offsetHeight*0.85)/e.target.naturalHeight;
+
+	}
+
+	console.log('puzzle size ', size)
+	if( e.target.attributes.src.nodeValue === "img/puzzle.JPG" )
+	{
 		matrix.x = 2;
 		matrix.y = 2;
-		size = 0.7;
+		// size = 0.7;
 	}
 	else
 	{
-		matrix.x = 6;
+		matrix.x = 5;
 		matrix.y = 3;
-		size = 0.85;
+		// size = 0.85;
 	}
 
 	puzzleLoad(e.target, matrix, size);

@@ -12,7 +12,17 @@ function loadBody(mainBody){
 
 	mainBody.style.height = window.innerHeight + "px";//높이가 오류나고 있음 확인하기
 
+	console.log("navigator  ",navigator.userAgent);
 
+	let device = navigator.userAgent.split(' ');
+
+	let d = navigator.userAgent.toLowerCase();
+
+	console.log("navigator  ",device, d);
+
+	var regExp = /[^a-zA-Z]/;
+
+	console.log(navigator.userAgent.toLowerCase(), device[1].split(regExp)[1], navigator.maxTouchPoints)
 
 	document.querySelector("nav").addEventListener("click", openPage);//버튼 연결	
 	//topsmallSlides(false);// 상단, 하는 일 수직 슬라이드 설정
@@ -23,7 +33,7 @@ let timerID = null;
 function openPage(e){ 	
 
 	//서브페이지 연결
-	console.log(e.target.dataset)
+	console.log("openpage ", e)
 	let pageNum = -1;
 	let sp = document.querySelectorAll(".subpage");
 
@@ -195,8 +205,6 @@ function showMicroSite(e){
 
 		}
 		
-		
-
 	}
 
 }

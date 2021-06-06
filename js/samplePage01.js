@@ -12,15 +12,11 @@
 
 (function() {
 
+	if (navigator.maxTouchPoints > 1) {
+		// browser supports multi-touch
+	}
+
 	
-	// let script = loadFile._script('js/samplePage01_data.js');
-	// script.addEventListener("load", () => { 
-	// 	// let motherBoard = document.querySelector(".microSite");
-	// 	// loadSite(motherBoard); 
-	// });
-	
-let aaaaa = "11";
-console.log( "aaaa ", aaaaa, aaaaa.length)
 
 })();
 
@@ -84,8 +80,7 @@ function loadSite(motherBoard){
 
 	let sampleSvg = document.createElementNS(ns, "svg");	
 
-	for( let key in sample )
-	{
+	for( let key in sample ) {
 		for( let i=0; i<sample[key].length; i++ )
 			sampleSvg.innerHTML += sample[key][i];
 	}
@@ -109,10 +104,8 @@ function loadSite(motherBoard){
 
 	console.log('111  ',motherBoard.offsetHeight	)
 
-	for( let j=0; j<loopRow; j++ )// loopRow
-	{
-		for( let k=0; k<loopColumn; k++ ) 
-		{
+	for( let j=0; j<loopRow; j++ ) {// loopRow
+		for( let k=0; k<loopColumn; k++ ) {
 			let li = document.createElement("li");
 			li.style.cssText = `width : ${pc_size}px;
 								height : ${pc_size}px;	`;
