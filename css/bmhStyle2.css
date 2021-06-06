@@ -66,7 +66,8 @@ header, nav, section, footer{
 /* 소개글 */
 .HiEveryone{
 	position: relative;
-	width: 380px;
+	width: 100%;
+	max-width: 380px;
 	height: auto;
 	font-size: 2em;
 	line-height: 1.6;
@@ -120,14 +121,16 @@ header, nav, section, footer{
 
 /* btnSet */
 nav{
-	position: absolute;
+	position: relative;  /*  absolute  */
 	display: flex;
 	width: 380px;
 	height: 50px;
 
-	top: 50%;
+	margin-top: 1.5em;
+
+/*	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);*/
 
 }
 
@@ -265,7 +268,7 @@ nav button:nth-child(1) span:nth-of-type(4){  animation-delay: 1.7s; }
 	border-radius: 3px;
 	
 	margin: auto;
-	transition: height 0.1s ease;
+	transition: bottom 0.1s ease;/*   */
 	animation: bar 1s ease ;
 }
 
@@ -280,13 +283,21 @@ nav:active .bar{
 }
 
 @keyframes bar {
+	0% { transform: translateY(0) rotate(0deg);}
+	30% { transform: translateY(-30%) rotate(0deg);	}
+	70% { transform: translateY(-30%) rotate(180deg);}
+	95% { transform: translateY(0) rotate(180deg);}
+	100% { transform: translateY(0) rotate(180deg);}
+}
+/*
+@keyframes bar {
 	0% { transform: translate3d(0, 0, 0px) scaleY(1.0) rotate(0deg);}
 	30% { transform: translate3d(0, 0, 0px) scaleY(10) rotate(0deg);	}
 	70% { transform: translate3d(0, 0, 0px) scaleY(10) rotate(180deg);}
 	95% { transform: translate3d(0, 0, 0px) scaleY(0.1) rotate(180deg);}
 	100% { transform: translate3d(0, 0, 0px) scaleY(0.5) rotate(180deg);}
 }
-/*@keyframes bar {
+@keyframes bar {
 	0% {height:0; top:0; transform: rotate(0deg);}
 	30% {height:300%; top:-100%; transform: rotate(0deg);	}
 	70% {height:300%; top:-100%; transform: rotate(180deg);}
@@ -299,7 +310,8 @@ nav:active .bar{
 	70% {height:300%; transform: translateY(-30%) rotate(180deg);}
 	95% {height:10%; transform: translateY(0) rotate(180deg);}
 	100% {height:50%; transform: translateY(0) rotate(180deg);}
-}*/
+}
+*/
 
 /*서브_버튼 설정 */
 .btnSet{
@@ -415,6 +427,14 @@ nav:active .bar{
 
 .subpage.on{ display: block;  }
 
+@media(max-width: 414px){
+	.subpage{
+		top: 10%;
+		left: 5%;
+		transform: unset;
+	}
+}
+
 .contents{
 	position: relative;
 	width: 100%;
@@ -500,11 +520,14 @@ nav:active .bar{
 
 
 .subsubTitle{
-	position: relative;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	
 	font-size: 1.3em;
 	color: #aaa;                    
 	text-align: center;
-	padding: 4em 0;                 
+	padding: 2em 0 1em;                 
 }
 
 .cntList{
@@ -514,6 +537,9 @@ nav:active .bar{
 	justify-content: center;
 	width: 60%;
 	height: 88%;
+
+	top: calc(50% + 1.3em);
+	transform: translateY(-50%);
 	margin: 0 auto;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -850,7 +876,7 @@ div.hashtag span:before{
 
 /*서브_퍼블리셔_목록_상세페이지*/
 .microSite{     background: #fff;
-	position: fixed;
+	position: absolute; /* fixed  */
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -867,6 +893,8 @@ div.hashtag span:before{
 	transition: all 2s ease-in-out;
 }
 .microSite.on{ display: block; }
+
+.microSite .btnSet{ z-index: 44; }
 
 .microSite .game{
 	width: 65%;
