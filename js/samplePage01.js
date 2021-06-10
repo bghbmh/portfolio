@@ -25,6 +25,7 @@ let expandSize = 30;
 
 let ns = "http://www.w3.org/2000/svg";
 
+
 function makeSvg(state, reSize, hrefNum, fillColor, faceNum, classname){
 
 	let svg = document.createElementNS(ns, "svg");
@@ -94,7 +95,7 @@ function loadSite(motherBoard){
 	intro.setAttribute("class", "intro");
 
 	let mb = window.getComputedStyle(motherBoard);
-	console.log(mb.height, mb);
+	console.log(mb.height, mb.width);
 	
 	let fillColor = [ '#ffd500', '#916aef', '#00d199', '#ffa47f', '#ff5050', '#5e5fef', '#bccd50'];
 	let loopRow = parseInt(mb.height)/(pc_size + 30);// 마진값 더해줬음
@@ -222,8 +223,7 @@ function moveToCube(obj, firstCubePiece){
 	// 마지막을 남은 얼굴, 복사본 만들기
 	let lastPerson = document.createElement("div");
 	lastPerson.setAttribute("class", "lastPerson");
-	lastPerson.style.top = obj.offsetTop + "px";
-	lastPerson.style.left = obj.offsetLeft + "px";		
+	lastPerson.style.cssText = `top : ${obj.offsetTop}px; left: ${obj.offsetLeft}px;`;
 
 	lastPerson.appendChild( makeSvg("shape", 
 									0, 
@@ -238,6 +238,7 @@ function moveToCube(obj, firstCubePiece){
 	//blindness 첫번째 섹션 만들기
 	let firstSection = document.createElement("section");
 	firstSection.setAttribute("class", "pageIntro");
+	firstSection.style.cssText = ` height: ${loadSite.prototype.motherBoard.offsetHeight}px;`;
 
 	// 얼굴 담을 3X3 박스 만들기	
 	let cubeAllFace = document.createElement("ul");
@@ -410,9 +411,9 @@ function nextSection(){
 
 	for( let key in layout_blindness){
 
-		//console.log( key);
 		let sec = document.createElement("section");
 		sec.setAttribute("class", key);
+		sec.style.cssText = ` height: ${loadSite.prototype.motherBoard.offsetHeight}px;`;
 		sec.innerHTML = layout_blindness[key];
 
 		blindness.appendChild(sec);
@@ -440,7 +441,10 @@ function nextSection(){
 		article[i].style.zIndex = article.length - 1 - i;
 	}
 	
-	document.querySelector(".microSite").addEventListener("wheel", onScroll);
+	//document.querySelector(".microSite").addEventListener("wheel", onScroll);
+	document.querySelector(".microSite").addEventListener("scroll", testScroll( debounce, 700, document.querySelector(".microSite") ) );
+
+
 }
 
 function goDown(/* timerID, */board, speaker, they, interval){
@@ -466,14 +470,99 @@ function goDown(/* timerID, */board, speaker, they, interval){
 }
 
 
+let initScrollTop = null;
 
-let hold_scrolltop;
-let timer = null;
-let first = 0;
+function debounce( e, microsite){
+
+	if( microsite.dataset.myScroll == 'false' ) {
+		console.log('의도한 스크롤이 아님')
+		initScrollTop = null;
+		microsite.dataset.myScroll = true;
+		return;
+	}
+	
+	console.log("debounce start..\n" )
+
+	let another = microsite.querySelector(".another");
+	let page = another.parentNode;
+	let article = another.querySelectorAll("article");
+	let broken = microsite.querySelector(".brokenShape");
+	let paths = microsite.querySelectorAll(".brokenShape svg path");
+
+
+	if( page.classList.contains("pause") ){			
+		microsite.scrollTop =  microsite.querySelector(".another").offsetTop;
+
+		console.log("pause..next = ", microsite.dataset.next , "\n", article, page)
+		let timer = setTimeout(function(){
+			resetSlide(article, page, parseInt(microsite.dataset.next), microsite);
+			clearTimeout(timer);
+		}, 600);		
+		return;			 
+	}
+
+	if( initScrollTop - microsite.scrollTop < 0 ) {  console.log( "stop scroll 위 -> 아래 ")
+
+		if( findIndex(article, "on") === 0 && microsite.scrollTop >= another.offsetTop ){
+			resetMicroSite(microsite, page, microsite.querySelector(".another").offsetTop, 1);
+				// microsite.querySelector(".another").offsetHeight,
+		}
+
+		if( microsite.scrollTop >= broken.offsetTop ){
+			brokenShape(paths, broken);
+		}
+		
+	} else {   console.log( "stop scroll 아래 -> 위 ")	
+
+		if( findIndex(article, "on") === article.length - 1 && microsite.scrollTop <= another.offsetTop ){	
+			resetMicroSite(microsite, page, microsite.querySelector(".another").offsetTop, -1); 
+				// microsite.querySelector(".another").offsetHeight, 
+		}		
+	}
+
+	initScrollTop = null;
+	
+}
+
+function resetMicroSite(microsite, page, lockTop, next){ // lockBottom, 
+console.log("start pause   ")
+	microsite.scrollTop = lockTop;
+	page.style.top = -lockTop + "px";
+	// page.style.bottom = -lockBottom + "px";
+	page.classList.add("pause");	
+	microsite.dataset.next = next;	
+	microsite.dataset.myScroll = "false";
+}
+
+
+function testScroll(callback, delay, microsite){
+
+	let testId = null;	
+	
+	console.log("testScroll 모르겠지만..")
+
+	return e => {
+		//console.log("11 closure", myScroll)
+
+		if( testId != null ){
+			clearTimeout( testId );
+		}
+
+		if( initScrollTop == null )	{
+			initScrollTop = microsite.scrollTop;
+		}	
+
+		testId = setTimeout( callback, delay, e, microsite);
+	};
+
+	//console.log("급하다 급해")
+
+}
 
 function onScroll(e){
 
-	//console.log(this.scrollTop)
+	console.log("wheel PC")
+
 	let another = document.querySelector(".another")
 	let page = another.parentNode;
 	let article = another.querySelectorAll("article");
@@ -543,13 +632,9 @@ function onScroll(e){
 
 }
 
-function resetSlide(first, article, page, updown){
+function resetSlide(article, page, updown, microsite){
 
-	clearTimeout(timer);
-
-	timer = null;
-
-	if( first == 1 ) return;
+	console.log("!!! resetSlide !!!")
 
 	let now = findIndex(article, "on");
 	let next = now + updown;
@@ -567,29 +652,32 @@ function resetSlide(first, article, page, updown){
 
 	if( next === article.length-1 || next === 0)  //  idx+1 === article.length-1
 	{
-		console.log("11 nextSlide last", zIndexTimer)
-
-		page.parentNode.scrollTop = hold_scrolltop;
+		microsite.scrollTop =  microsite.querySelector(".another").offsetTop;
 		page.style.top = "";
 		page.classList.remove("pause");			
 		
 		let t1 = setTimeout(function(){
 
 			for( let i=0; i<article.length; i++ )
-			{
 				article[i].classList.remove("off");
-				console.log("22 nextSlide last", article[i])
-			}
 
 			clearTimeout(t1);
+			console.log("22 nextSlide last",t1, article)
+			microsite.dataset.myScroll = "false";
 
-		}, 2000);
+		}, 600);
 		
 	}
 	
 	console.log( "우선 멈춤 on on pause ", article)
 
 }
+
+function scrollCheck(){
+
+
+}
+
 
 function findIndex(obj, className){
 
@@ -650,7 +738,7 @@ function brokenShape(paths, people){
 		}
 
 
-	}, 1500);
+	}, 900);
 
 }
 

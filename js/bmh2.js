@@ -188,7 +188,7 @@ function showMicroSite(e){
 
 		console.log("showMicroSite 랜딩페이지");
 
-		motherBoard.style.cssText = " width : 110%; height : 110%; top : -5%; left : -5%;";
+		motherBoard.style.cssText = " width : 110%; height : 100%; top : 0%; left : -5%;";
 		
 		let isCss = loadFile._css('css/samplePage01_blindness.css');
 		let isScript = loadFile._script('js/samplePage01.js');
