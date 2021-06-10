@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
+/* 고정값 변수 설정 */
+:root {
+	--blindness-height: #fff; /* #fadf34 #fde278;  */
 
+}
 
 section.microSite{
 	position: fixed;
@@ -667,6 +671,7 @@ section.microSite{
 
 .pause{
 	position: sticky;/*  fixed  */
+	
 }
 
 .brokenShape{
