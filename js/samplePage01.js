@@ -9,6 +9,9 @@
 /* 파란+보라 사이색 #5e5fef  rgba(94, 95, 239, 1 )  // 파란색 #378eff  rgba(55,142,255,1) */
 /* 연두색 #bccd50   rgba(188,205,80,1) */	
 
+let boxSize;//임시값 
+let expandSize = 30;
+let ns = "http://www.w3.org/2000/svg";
 
 (function() {
 
@@ -16,25 +19,35 @@
 		// browser supports multi-touch
 	}
 
-	
+	checkScreen();
 
 })();
 
-let pc_size = 90;//임시값 
-let expandSize = 30;
-
-
-let ns = "http://www.w3.org/2000/svg";
+function checkScreen(){
+	
+	if( window.innerHeight <= 834 ){
+		console.log("11 checkScreen ", window.innerHeight);
+		boxSize = 55;
+	}
+	else if( window.innerHeight <= 1024 && window.innerHeight > 834 ){
+		console.log("22 checkScreen ", window.innerHeight);
+		boxSize = 73;
+	}
+	else if( window.innerHeight > 1024 ){
+		console.log("33 checkScreen ", window.innerHeight);
+		boxSize = 90;
+	}
+}
 
 
 function makeSvg(state, reSize, hrefNum, fillColor, faceNum, classname){
 
 	let svg = document.createElementNS(ns, "svg");
-	svg.setAttributeNS( ns, 'viewBox', `0 0 ${pc_size+reSize} ${pc_size+reSize}`);
-	// svg.setAttribute("width", pc_size );
-	// svg.setAttribute("height", pc_size );
-	svg.setAttributeNS( ns, "width", pc_size );
-	svg.setAttributeNS( ns, "height", pc_size );
+	svg.setAttributeNS( ns, 'viewBox', `0 0 ${boxSize+reSize} ${boxSize+reSize}`);
+	// svg.setAttribute("width", boxSize );
+	// svg.setAttribute("height", boxSize );
+	svg.setAttributeNS( ns, "width", boxSize );
+	svg.setAttributeNS( ns, "height", boxSize );
 	// svg.setAttributeNS( ns, 'viewBox', `0 0 160 160`);
 
 	// 모양 설정
@@ -99,18 +112,18 @@ function loadSite(motherBoard){
 	console.log(mb.height, mb.width);
 	
 	let fillColor = [ '#ffd500', '#916aef', '#00d199', '#ffa47f', '#ff5050', '#5e5fef', '#bccd50'];
-	let loopRow = parseInt( parseInt(mb.height)/(pc_size + 30) );// 마진값 더해줬음
-	let loopColumn = parseInt( parseInt(mb.width)/(pc_size + 30) );	
-	// let loopRow = parseInt(motherBoard.offsetHeight/(pc_size + 30));// 마진값 더해줬음
-	// let loopColumn = parseInt(motherBoard.offsetWidth/(pc_size + 30));	
+	let loopRow = parseInt( parseInt(mb.height)/(boxSize + 30) );// 마진값 더해줬음
+	let loopColumn = parseInt( parseInt(mb.width)/(boxSize + 30) );	
+	// let loopRow = parseInt(motherBoard.offsetHeight/(boxSize + 30));// 마진값 더해줬음
+	// let loopColumn = parseInt(motherBoard.offsetWidth/(boxSize + 30));	
 
 	console.log("loadSite ", loopRow, loopColumn);
 
 	for( let j=0; j<loopRow; j++ ) {// loopRow
 		for( let k=0; k<loopColumn; k++ ) {
 			let li = document.createElement("li");
-			li.style.cssText = `width : ${pc_size}px;
-								height : ${pc_size}px;	`;
+			li.style.cssText = `width : ${boxSize}px;
+								height : ${boxSize}px;	`;
 
 			li.appendChild( makeSvg("shape", 
 									0, 
@@ -220,9 +233,11 @@ function closeIntro(){
 function moveToCube(obj, firstCubePiece){		
 
 	// 마지막을 남은 얼굴, 복사본 만들기
+
+	console.log(obj.offsetLeft)
 	let lastPerson = document.createElement("div");
 	lastPerson.setAttribute("class", "lastPerson");
-	lastPerson.style.cssText = `top : ${obj.offsetTop}px; left: ${obj.offsetLeft}px;`;
+	lastPerson.style.cssText = `width: ${boxSize}px; height: ${boxSize}px; top : ${obj.offsetTop}px; left: ${obj.offsetLeft+10}px;`;
 
 	lastPerson.appendChild( makeSvg("shape", 
 									0, 
@@ -246,8 +261,8 @@ function moveToCube(obj, firstCubePiece){
 	for( let i=0; i<9; i++ )
 	{
 		let li = document.createElement("li");
-		li.style.cssText = `width : ${pc_size}px;
-							height : ${pc_size}px;	`;
+		li.style.cssText = `width : ${boxSize}px;
+							height : ${boxSize}px;	`;
 		cubeAllFace.appendChild(li);
 	}
 

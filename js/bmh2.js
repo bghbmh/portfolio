@@ -33,7 +33,7 @@ let timerID = null;
 function openPage(e){ 	
 
 	//서브페이지 연결
-	console.log("openpage ", e)
+	console.log("openpage ")
 	let pageNum = -1;
 	let sp = document.querySelectorAll(".subpage");
 
@@ -198,9 +198,7 @@ function showMicroSite(e){
 		} else {
 			isScript.addEventListener("load", function(){
 				loadFile._script('js/samplePage01_data.js').addEventListener("load", () => { 
-					checkScreen();
-					loadSite(motherBoard); 
-					
+					loadSite(motherBoard); 					
 				});
 			});
 
@@ -209,11 +207,6 @@ function showMicroSite(e){
 	}
 
 }
-
-function checkScreen(){
-	
-}
-
 
 
 function showCategoryPage(e){

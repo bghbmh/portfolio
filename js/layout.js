@@ -239,7 +239,7 @@ class layout{
 				}
 			}
 
-			console.log('arrangedFile : ', template);
+			//console.log('arrangedFile : ', template);
 		}
 	}
 

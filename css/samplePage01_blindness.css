@@ -111,8 +111,24 @@ section.microSite{
 	height: 100%;*/
 	transform: scale(0.8);
 }	
-.blindness .intro li svg use.reFace{ transform: translate(25px,40px) scale(0.7); }
-.blindness .intro li svg use.rewithMouth{ transform: translate(17px,40px) scale(0.6); }
+.blindness .intro li svg use.reFace{ transform: translate(25px,36px) scale(0.7); }
+.blindness .intro li svg use.rewithMouth{ transform: translate(19px,30px) scale(0.6); }
+
+@media(max-height: 1024px){
+	.blindness .intro li svg use.reShape{ transform: scale(0.73); }	
+	.blindness .intro li svg use.reFace{ transform: translate(23px,30px) scale(0.63) }
+	.blindness .intro li svg use.rewithMouth{ transform: translate(18px,27px) scale(0.53) }
+
+}
+
+@media(max-height: 834px){
+	.blindness .intro li svg use.reShape{ transform: scale(0.55); }	
+	.blindness .intro li svg use.reFace{ transform: translate(16px,25px) scale(0.50);}
+	.blindness .intro li svg use.rewithMouth{ transform: translate(12px,24px) scale(0.43); }
+
+}
+
+
 
 @-webkit-keyframes introOff { 
 	0% { opacity: 1; } 		
@@ -188,7 +204,7 @@ section.microSite{
 	width: 330px;
 	height: 330px;
 	top: 50%;
-	left: 50%;
+	left: calc(50% - 1em);
 	transform: translate(-50%, -50%);
 	    z-index: 3;
 
@@ -196,6 +212,20 @@ section.microSite{
 
 	transition: opacity .5s ease-in-out;
 	/*transition-delay: 1s;*/
+}
+
+@media(max-height: 1024px){
+	.allFace {
+		width: 280px;
+		height: 280px;
+	}
+}
+
+@media(max-height: 834px){
+	.allFace {
+		width: 200px;
+		height: 200px;
+	}
 }
 
 .allFace.on{
@@ -249,15 +279,42 @@ section.microSite{
 	transform: rotate(-45deg);
 }
 
+@media(max-height: 1024px){
+	.allFace .btnbox:before{		
+		font-size: 1em;		
+		top: calc( 50% - 0.5em);
+		right: -100%;
+	}
+
+	.allFace .btnbox:after{
+		width: 7px;		
+		top: calc(50% + 0.55em);
+		right: calc(-100% + 2.39em );		
+	}
+}
+
 .large{
 	transform : scale(1.1);/*  translate(-7px, -5px) */
 }
 .sampleTranslate{ 
 	transform : translate(7px, 5px) scale(0.9);
 }
-.allFace li svg use.reShape{ transform : translate(7px, 5px) scale(0.8); }
-.allFace li svg use.reFace{ transform : translate(32px, 45px) scale(0.7); }
-.allFace li svg use.rewithMouth{ transform : translate(24px, 45px) scale(0.6); }
+.allFace li > svg use.reShape{ transform : translate(7px, 5px) scale(0.8); }
+.allFace li > svg use.reFace{ transform : translate(30px, 36px) scale(0.7); }
+.allFace li > svg use.rewithMouth{ transform : translate(22px, 32px) scale(0.65); }
+
+@media(max-height: 1024px){
+	.allFace li > svg use.reShape{ transform: scale(0.73); }	
+	.allFace li > svg use.reFace{ transform: translate(23px,30px) scale(0.63) }
+	.allFace li > svg use.rewithMouth{ transform: translate(18px,27px) scale(0.53) }
+
+}
+
+@media(max-height: 834px){
+	.allFace li > svg use.reShape{ transform : translate(7px, 5px) scale(0.53); }	
+	.allFace li > svg use.reFace{ transform: translate(22px,30px) scale(0.43); }
+	.allFace li > svg use.rewithMouth{ transform: translate(18px,27px) scale(0.43); }
+}
 
 .btnbox{
 	position: absolute;
@@ -279,7 +336,15 @@ section.microSite{
 	opacity : 0.4;
 	stroke-dasharray : 1,3;
 	stroke-linecap : round;
-	transform: translate(1px, 0px) scale(0.9) !important;  /*  translate(-5px, -7px) scale(1.2)  */
+	transform: translate(1px, 0px) scale(0.9);  /*  translate(-5px, -7px) scale(1.2)  */
+}
+
+@media(max-height: 1024px){
+	.btnbox .reShape{ transform : translate(-2px, -4px) scale(0.8); }
+}
+
+@media(max-height: 834px){
+	.btnbox .reShape{ transform : translate(2px, 0px) scale(0.6); }
 }
 
 /*
@@ -394,20 +459,28 @@ section.microSite{
 .lastPerson{
 	position: absolute;
 	display: inline-block;
-	width: 120px;
-	height: 120px;
+	/*width: 120px;
+	height: 120px;*/
 	z-index: 1;
 	
 	opacity: 1;
-	transform: scale(0.8);
+	/*transform: scale(1);*/
 	transition:top 1.5s ease-in-out, 
 				left 1.5s ease-in-out, 
 				transform 1.5s ease-in-out, 
 				opacity 1.5s ease-in-out 1.5s;
 }
+.lastPerson svg use.reShape{ transform : scale(0.8); }
+.lastPerson svg use.reFace{ transform : translate(27px, 45px) scale(0.7); }
+.lastPerson svg use.rewithMouth{ transform : translate(22px, 45px) scale(0.7); }
 
-.lastPerson svg use.reFace{ transform : translate(32px, 45px) scale(0.7); }
-.lastPerson svg use.rewithMouth{ transform : translate(24px, 45px) scale(0.6); }
+
+@media(max-height: 834px){
+	.lastPerson svg use.reShape{ transform: scale(0.55); }	
+	.lastPerson svg use.reFace{ transform: translate(17px,25px) scale(0.5);}
+	.lastPerson svg use.rewithMouth{ transform: translate(12px,22px) scale(0.45); }
+
+}
 
 .lastPerson.moving{
 	z-index: 5;
@@ -416,29 +489,8 @@ section.microSite{
 
 .lastPerson.end{
 	opacity: 0;/**/
-	transform: scale(0.8);
+	transform: scale(0.9);
 }
-
-/*.lastPerson.moving.tstep1{
-	transition: all 3s ease-in-out;
-	transform: scale(1.3) translate(-10%, -30%);
-}
-
-.lastPerson.moving.tstep1.tstep2{
-	transition: all 3s ease-in-out;
-	transform: scale(1.3) translate(-10%, -80%);
-}
-
-.lastPerson.moving.bstep1{
-	transition: all 3s ease-in-out;
-	transform: scale(1.3) translate(-10%, 30%);
-}
-
-.lastPerson.moving.bstep1.bstep2{
-	transition: all 3s ease-in-out;
-	transform: scale(1.3) translate(-10%, 80%);
-}*/
-
 
 
 @-webkit-keyframes movingPerson { 
@@ -468,50 +520,52 @@ section.microSite{
 	transform: translateY(-50%);
 	margin: 0 auto;
 
+	font-size: 94px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+
 }
 .they .person{
-	position: relative;
-	
+	position: relative;	
 	display: inline-block;
-    left: 430px;
-	top: 46px;
+	left: calc(50% - 2.5em);
+	top: calc(50% - 2.5em);
 
 	z-index: 3;
 }
-.they .person span{
-	display: inline-block;
-}
-.they .person span:nth-child(1){
-	font-family: 'Roboto', sans-serif;
-	font-size: 94px;
-	font-weight: 100;
-}
-.they .person span:nth-child(2){
-	display: block;
-	font-size: 44px;
-	font-weight: 100;
-}
+.they .person span{ display: block; }
+.they .person span:nth-child(1){ font-size: 1em; }
+.they .person span:nth-child(2){  font-size: 0.468085em; }
 
 .they .wording{
 	position: absolute;
-	width: 600px;
+	width: 19.148659em;
 	top: 269px;
 	left: calc( 50% - 65px );
-	font-size: 30px;
-	font-weight: 100;
+	font-size: 0.333333em;
 	line-height: 1.35135;
 	color: #fff;
 
 	z-index: 3;
 
 }
+
 .they figure{
 	position:absolute;
 	width: 50%;
 	height: 638px;
-	top:0;
+	top: -1em;
 	left:0;
 }
+
+@media(max-height: 834px){
+	.they figure{
+		height: 400px;
+		top: calc(50% - 1em);
+		transform: translateY(-50%);
+	}
+}
+
 .they figure svg{
 	width: 100%;
 	height: 100%;
@@ -523,8 +577,7 @@ section.microSite{
 	width: 65px;
 	height: auto;
 
-	top: unset;
-	bottom: 9em;
+	top: calc(50% + 7em);
 	left: calc( 50% - 65px );
 
 	font-size: 16px;
@@ -533,6 +586,12 @@ section.microSite{
 	background: none;
 	cursor: pointer;
 	padding: 0;
+}
+
+@media(max-height: 834px){
+	.they article{ font-size: 60px; }
+
+	.they .btnbox{ top: calc(50% + 3em);}
 }
 
 .asistNote{ display: none; }
@@ -552,7 +611,11 @@ section.microSite{
 .another article{
 	position: absolute;
 	width:100%;
-	height: 100%;			
+	height: 100%;
+
+	font-family: 'Roboto', sans-serif;
+	font-size: 94px;
+	font-weight: 100;			
 }
 
 .another article .person{
@@ -564,31 +627,23 @@ section.microSite{
     transition: opacity 1s ease-in-out;
 }
 .another article:nth-of-type(odd) .person{
-	top: calc( 50% + 100px );
-	right: calc( 50% + 100px );
+	top: calc( 50% + 1em );
+	right: calc( 50% + 1em );
 }
 
 .another article:nth-of-type(even) .person{
-	top: calc( 50% - 300px);
+	top: calc( 50% - 3em );
 	left: calc( 50% );
 }
 
 .another article .person span{ display: inline-block; }
-.another article .person span:nth-child(1){
-	font-family: 'Roboto', sans-serif;
-	font-size: 94px;
-	font-weight: 100;
-}
-.another article .person span:nth-child(2){
-	display: block;
-	font-size: 44px;
-	font-weight: 100;
-}
+.another article .person span:nth-child(1){ font-size: 1em; }
+.another article .person span:nth-child(2){ display: block; font-size: 0.468085em; }
 
 .another article .wording{
 	position: absolute;
-	width: 600px;	
-	font-size: 22px;
+	width: 27.272727em;	
+	font-size: 0.234042em;
 	font-weight: 100;
 	line-height: 1.5555;
 	color: #fff;
@@ -599,13 +654,27 @@ section.microSite{
 }
 
 .another article:nth-of-type(odd) .wording{
-	top: calc( 50% - 250px );
-	right: calc( 50% - 600px );
+	top: calc( 50% - 8em );
+	right: calc( 50% - 27em );
 }
 
 .another article:nth-of-type(even) .wording{
 	top: calc( 50% );
-	left: calc( 50% - 600px );
+	left: calc( 50% - 27em );
+}
+
+@media(max-height: 834px){
+	.another article{ font-size: 60px; }
+/*	.another article:nth-of-type(odd) .person{ top: calc( 50% + 70px ); }
+
+	.another article:nth-of-type(even) .person{ 	}
+
+	.another article:nth-of-type(odd) .wording{ top: calc( 50% - 200px ); right: calc( 50% - 400px ); }
+
+	.another article:nth-of-type(even) .wording{
+		top: calc( 50% );
+		left: calc( 50% - 600px );
+	}*/
 }
 
 .another article.on .person, .another article.on .wording{ 	opacity: 1; }
@@ -732,6 +801,9 @@ section.microSite{
 
 	margin: 0 auto;
 
+}
+@media(max-height: 834px){
+	.brokenShape .wording{ font-size: 20px;	}
 }
 
 .brokenShape .wording.on{
