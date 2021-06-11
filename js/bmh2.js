@@ -191,7 +191,7 @@ function showMicroSite(e){
 		motherBoard.style.cssText = " width : 110%; height : 100%; top : 0%; left : -5%;";
 		
 		let isCss = loadFile._css('css/samplePage01_blindness.css');
-		let isScript = loadFile._script('js/samplePage01.js');
+		let isScript = loadFile._script('js/samplePage01.js'); //  samplePage01.js
 
 		if( isCss && isScript ){
 			loadSite(motherBoard); 

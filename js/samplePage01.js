@@ -125,7 +125,6 @@ function loadSite(motherBoard){
 	blindness.appendChild(intro);
 	motherBoard.appendChild(blindness);
 
-
 	//들어가기 버튼 붙이기
 	let btn = document.createElement("button");
 	btn.setAttribute("class", "enter");
@@ -136,10 +135,9 @@ function loadSite(motherBoard){
 	motherBoard.appendChild(btn);
 
 	loadSite.prototype.motherBoard = motherBoard;
-
 	loadSite.prototype.introIndex = resetIndexList(motherBoard.querySelector(".intro").children, [], null);
 
-	console.log(loadSite.prototype.introIndex)
+	//console.log(loadSite.prototype.introIndex)
 
 }
 
@@ -402,12 +400,7 @@ function makelastPerson(){
 
 }
 
-function nextSection(){	
-
-	console.log('nextSection ', document.querySelector(".allFace"))
-
-	// let af = document.querySelector(".allFace");
-	let blindness = loadSite.prototype.motherBoard.querySelector(".blindness");
+function nextSection(){	 console.log('nextSection ')
 
 	for( let key in layout_blindness){
 
@@ -416,18 +409,15 @@ function nextSection(){
 		sec.style.cssText = ` height: ${loadSite.prototype.motherBoard.offsetHeight}px;`;
 		sec.innerHTML = layout_blindness[key];
 
-		blindness.appendChild(sec);
+		loadSite.prototype.motherBoard.querySelector(".blindness").appendChild(sec);
 	}
 
 	//이동하기
-	let microSite = loadSite.prototype.motherBoard;
+	let t = setTimeout(function(){
+		loadSite.prototype.motherBoard.scrollTop 
+		= loadSite.prototype.motherBoard.querySelector(".they").offsetTop;
 
-	console.log("1 scroll nextSection " ,microSite.scrollTop)
-
-	setTimeout(function(){
-		microSite.scrollTop = loadSite.prototype.motherBoard.querySelector(".they").offsetTop;
-
-		console.log("2 scroll nextSection " ,microSite.scrollTop)
+		clearTimeout(t); console.log("nextSection_ scrollTop clearTimeout")
 
 	}, 1000);
 
@@ -441,86 +431,39 @@ function nextSection(){
 		article[i].style.zIndex = article.length - 1 - i;
 	}
 	
-	//document.querySelector(".microSite").addEventListener("wheel", onScroll);
-	document.querySelector(".microSite").addEventListener("scroll", testScroll( debounce, 700, document.querySelector(".microSite") ) );
+	//document.querySelector(".microSite").addEventListener("wheel", testScroll);
+	document.querySelector(".microSite").addEventListener("scroll", onScroll( debounce, 700, document.querySelector(".microSite") ) );
 
 
 }
-
-function goDown(/* timerID, */board, speaker, they, interval){
-
-	
-	if( interval >= they.offsetTop )
-	{
-		//clearTimeout(timerID);
-		return;
-	}
-
-	let temp = parseInt(speaker.style.top);	
-
-	//speaker.style.top = `${ temp + interval }px)`;
-	speaker.style.transform = `translate(50px, ${interval}px)`;
-	console.log("goDown ", speaker.style.transform, board.scrollTop, interval);
-
-	interval = interval + 100;//interval * interval;
-
-	setTimeout(goDown, 500, board, speaker, they, interval);
-
-
-}
-
-
-let initScrollTop = null;
 
 function debounce( e, microsite){
 
 	if( microsite.dataset.myScroll == 'false' ) {
 		console.log('의도한 스크롤이 아님')
-		initScrollTop = null;
 		microsite.dataset.myScroll = true;
 		return;
 	}
 	
-	console.log("debounce start..\n" )
+	console.log("debounce start..\n", microsite.dataset.myScroll )
 
-	let another = microsite.querySelector(".another");
-	let page = another.parentNode;
-	let article = another.querySelectorAll("article");
-	let broken = microsite.querySelector(".brokenShape");
-	let paths = microsite.querySelectorAll(".brokenShape svg path");
-
-
-	if( page.classList.contains("pause") ){			
+	if( microsite.querySelector(".blindness").classList.contains("pause") ){			
 		microsite.scrollTop =  microsite.querySelector(".another").offsetTop;
 
-		console.log("pause..next = ", microsite.dataset.next , "\n", article, page)
+		console.log("pause..next = ", microsite.dataset.next )
 		let timer = setTimeout(function(){
-			resetSlide(article, page, parseInt(microsite.dataset.next), microsite);
+			resetSlide( microsite.querySelectorAll(".another article"), 
+						microsite.querySelector(".blindness"), 
+						findIndex(microsite.querySelectorAll(".another article"), "on"),
+						parseInt(microsite.dataset.next), 
+						microsite);
 			clearTimeout(timer);
 		}, 600);		
 		return;			 
 	}
 
-	if( initScrollTop - microsite.scrollTop < 0 ) {  console.log( "stop scroll 위 -> 아래 ")
-
-		if( findIndex(article, "on") === 0 && microsite.scrollTop >= another.offsetTop ){
-			resetMicroSite(microsite, page, microsite.querySelector(".another").offsetTop, 1);
-				// microsite.querySelector(".another").offsetHeight,
-		}
-
-		if( microsite.scrollTop >= broken.offsetTop ){
-			brokenShape(paths, broken);
-		}
-		
-	} else {   console.log( "stop scroll 아래 -> 위 ")	
-
-		if( findIndex(article, "on") === article.length - 1 && microsite.scrollTop <= another.offsetTop ){	
-			resetMicroSite(microsite, page, microsite.querySelector(".another").offsetTop, -1); 
-				// microsite.querySelector(".another").offsetHeight, 
-		}		
-	}
-
-	initScrollTop = null;
+	//initScrollTop = null;
+	onScroll.prototype.initTop = null;
 	
 }
 
@@ -531,126 +474,88 @@ console.log("start pause   ")
 	// page.style.bottom = -lockBottom + "px";
 	page.classList.add("pause");	
 	microsite.dataset.next = next;	
-	microsite.dataset.myScroll = "false";
+
+	if( microsite.dataset.myScroll == undefined ){
+		console.log("resetMicroSite -------------")
+		microsite.dataset.myScroll = "false";
+	}
+	
 }
 
 
-function testScroll(callback, delay, microsite){
+function onScroll(callback, delay, microsite){
 
-	let testId = null;	
-	
-	console.log("testScroll 모르겠지만..")
+	let scrollId = null;	
 
 	return e => {
 		//console.log("11 closure", myScroll)
 
-		if( testId != null ){
-			clearTimeout( testId );
+		if( scrollId != null ) clearTimeout( scrollId );
+
+		if( onScroll.prototype.initTop == null ||  onScroll.prototype.initTop == undefined )	{	
+		console.log("onScroll prototype ", onScroll.prototype.initTop)		
+			//initScrollTop = microsite.scrollTop;
+			onScroll.prototype.initTop = microsite.scrollTop;
+			console.log("onScroll prototype ", onScroll.prototype.initTop)
 		}
 
-		if( initScrollTop == null )	{
-			initScrollTop = microsite.scrollTop;
+		if( onScroll.prototype.initTop - microsite.scrollTop < 0 ) {  console.log( "stop scroll 위 -> 아래 ")
+
+			if( findIndex( microsite.querySelectorAll(".another article"), "on" ) === 0 
+				&& microsite.scrollTop >= microsite.querySelector(".another").offsetTop ){
+				resetMicroSite( microsite, 
+								microsite.querySelector(".blindness"), 
+								microsite.querySelector(".another").offsetTop, 
+								1 );
+			}
+
+			if( microsite.scrollTop >=  microsite.querySelector(".brokenShape").offsetTop ){
+				brokenShape(microsite.querySelectorAll(".brokenShape svg path"), microsite.querySelector(".brokenShape"), 1);
+			}
+
+		} else {   console.log( "stop scroll 아래 -> 위 ")	
+
+			if( findIndex( microsite.querySelectorAll(".another article"), "on" ) === microsite.querySelectorAll(".another article").length - 1 
+				&& microsite.scrollTop <= microsite.querySelector(".another").offsetTop ){	
+				resetMicroSite( microsite, 
+								microsite.querySelector(".blindness"), 
+								microsite.querySelector(".another").offsetTop,
+								 -1); 
+			}
+
+			let num = microsite.querySelector(".brokenShape").offsetTop - microsite.querySelector(".brokenShape").offsetHeight/2;
+			let num2 = microsite.querySelector(".brokenShape").offsetTop - microsite.querySelector(".brokenShape").offsetHeight/2;
+
+			if( microsite.scrollTop > num && microsite.scrollTop < num + 50 ){
+				console.log(microsite.scrollTop, num, microsite.querySelector(".brokenShape").offsetTop )
+				brokenShape(microsite.querySelectorAll(".brokenShape svg path"), microsite.querySelector(".brokenShape"), -1);
+			}	
 		}	
 
-		testId = setTimeout( callback, delay, e, microsite);
+		scrollId = setTimeout( callback, delay, e, microsite);
 	};
 
 	//console.log("급하다 급해")
 
 }
 
-function onScroll(e){
 
-	console.log("wheel PC")
-
-	let another = document.querySelector(".another")
-	let page = another.parentNode;
-	let article = another.querySelectorAll("article");
-	let broken = document.querySelector(".brokenShape");
-	let paths = document.querySelectorAll(".brokenShape svg path");
-
-	if( e.deltaY > 0 ){
-
-		//console.log(page.parentNode.scrollTop, this.scrollTop)
-
-		if( page.classList.contains("pause") ){
-			page.parentNode.scrollTop = hold_scrolltop;
-
-			if( timer == null )
-				timer = setTimeout(resetSlide, 1500, ++first, article, page, 1);
-				
-		}
-		else{
-
-			//시작점, 위 -> 아
-			//console.log( "stop scroll 위 -> 아래 ", this.scrollTop)
-			if( article[0].classList.contains("on") && this.scrollTop >= another.offsetTop ){
-
-				console.log("start pause   ", window.scrollY, "\n  html  ",document.querySelector('html').scrollTop)
-				hold_scrolltop = another.offsetTop;
-				page.style.top = -another.offsetTop + "px";
-				page.classList.add("pause");					
-	
-			}
-
-			if( this.scrollTop >= broken.offsetTop ){
-
-				//console.log("시작점 people.offsetTop  ", people.offsetTop)
-				brokenShape(paths, broken);
-			}
-		}
-
-	}
-	else{
-
-		if( page.classList.contains("pause") ){
-
-			page.parentNode.scrollTop = hold_scrolltop;
-
-			if( timer == null )
-				timer = setTimeout(resetSlide, 1500, ++first, article, page, -1);
-				
-		}
-		else{	
-			//시작점, 아래 -> 위
-			console.log( "stop scroll 아래 -> 위 ")
-			if( article[ article.length-1 ].classList.contains("on") 
-				&& this.scrollTop < another.offsetTop )
-			{
-				first = 0;
-				console.log("아래 -> 위 ", another.offsetTop, this.scrollTop)
-				hold_scrolltop = another.offsetTop;
-				page.style.top = -another.offsetTop + "px";
-				page.classList.add("pause");
-
-				console.log("시작점 hold_scrolltop  ", window.pageYOffset)	
-
-			}
-		}
-
-	}
-
-}
-
-function resetSlide(article, page, updown, microsite){
+function resetSlide(article, page, now, updown, microsite){
 
 	console.log("!!! resetSlide !!!")
-
-	let now = findIndex(article, "on");
-	let next = now + updown;
 	
 	article[ now ].classList.add("off");	
 
 	let zIndexTimer = setTimeout(function(){ 
 
 		article[ now ].classList.remove("on");
-		article[ next ].classList.add("on");	
-		resetZindex(article, now, next);
+		article[ now + updown ].classList.add("on");	
+		resetZindex(article, now, now + updown);
 		clearTimeout(zIndexTimer);
 
 	}, 450); // 애니메이션 duration 2000, 45%일때 제일 오른쪽으로 이동하니까, 1000()*0.45
 
-	if( next === article.length-1 || next === 0)  //  idx+1 === article.length-1
+	if( now + updown === article.length-1 || now + updown === 0)  //  idx+1 === article.length-1
 	{
 		microsite.scrollTop =  microsite.querySelector(".another").offsetTop;
 		page.style.top = "";
@@ -663,19 +568,12 @@ function resetSlide(article, page, updown, microsite){
 
 			clearTimeout(t1);
 			console.log("22 nextSlide last",t1, article)
-			microsite.dataset.myScroll = "false";
+			//microsite.dataset.myScroll = "false";
+			delete microsite.dataset.myScroll;
 
 		}, 600);
 		
-	}
-	
-	console.log( "우선 멈춤 on on pause ", article)
-
-}
-
-function scrollCheck(){
-
-
+	}  	//console.log( "우선 멈춤 on on pause ", article)
 }
 
 
@@ -693,52 +591,81 @@ function findIndex(obj, className){
 	return idx;
 }
 
-function resetZindex(obj, now, next){		
+function resetZindex(obj, prev, now){		
 
-	obj[ next ].style.zIndex = obj.length-1; // on 붙은 객체
-	obj[ now ].style.zIndex = 0; // 바로 전에 on이 붙어 있던 객체
+	obj[ now ].style.zIndex = obj.length-1; // on 붙은 객체
+	obj[ prev ].style.zIndex = 0; // 바로 전에 on이 붙어 있던 객체
 
 	for( let i=0; i<obj.length; i++ )
 	{
-		if( now === i ||  next === i ) continue;
+		if( prev === i ||  now === i ) continue;
 
 		obj[i].style.zIndex = parseInt(obj[i].style.zIndex)+1;
 	}
 
 }
 
-function brokenShape(paths, people){
+function brokenShape(paths, shape, dir){
 
-	console.log('aaaaa')
+	console.log('brokenShape')
+	if( dir == 1 ){
+		shape.classList.add("on");
 
-	people.classList.add("on");
+		let n=1;
+		let shapeTimer = setTimeout(function broken(){
 
-	let n=1;
-	let peopleTimer = setTimeout(function broken(){
+			//console.log('splitePiece  ', n)
 
-		//console.log('splitePiece  ', n)
+			for( let i=0; i<paths.length; i++ )	{  
 
-		for( let i=0; i<paths.length; i++ )	{  
+				if( paths[i].classList.contains("step" + (n-1)) )
+					paths[i].classList.remove("step" + (n-1))
 
-			if( paths[i].classList.contains("step" + (n-1)) )
-				paths[i].classList.remove("step" + (n-1))
+				paths[i].classList.add("step" + n);
+			}
+			
+			if( n == 3 ){
+				console.log('splitePiece clearTimeout ', n)
+				clearTimeout(shapeTimer);
+				shape.querySelector(".wording").classList.add("on");
+				return;
 
-			paths[i].classList.add("step" + n);
-		}
-		
+			} else {
+				setTimeout( broken, 100, n++ );
+			}
 
-		if( n == 3 ){
-			console.log('splitePiece clearTimeout ', n)
-			clearTimeout(peopleTimer);
-			people.querySelector(".wording").classList.add("on");
-			return;
+		}, 900);
 
-		} else {
-			setTimeout( broken, 100, n++ );
-		}
+	} else{
+		shape.querySelector(".wording").classList.remove("on");
+
+		let n=3;
+		let shapeTimer = setTimeout(function broken(){
+
+			//console.log('splitePiece  ', n)
+
+			for( let i=0; i<paths.length; i++ )	{  
+
+				if( paths[i].classList.contains("step" + n ) )
+					paths[i].classList.remove("step" + n );
+
+				if( n > 1 ) paths[i].classList.add("step" + (n-1) );
+			}
+			
+			if( n == 1 ){
+				console.log('splitePiece clearTimeout ', n)
+				clearTimeout(shapeTimer);
+				shape.classList.remove("on");
+				return;
+
+			} else {
+				setTimeout( broken, 100, n-- );
+			}
+
+		}, 900);		
+	}
 
 
-	}, 900);
 
 }
 
