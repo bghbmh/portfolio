@@ -90,7 +90,7 @@ function loadSite(motherBoard){
 	blindness.appendChild(sampleDIV);
 
 	//인트로페이지 생성
-	console.log("loadSite ", motherBoard );
+	//console.log("loadSite ", motherBoard );
 	let intro = document.createElement("ul");
 	intro.setAttribute("class", "intro");
 
@@ -98,12 +98,12 @@ function loadSite(motherBoard){
 	console.log(mb.height, mb.width);
 	
 	let fillColor = [ '#ffd500', '#916aef', '#00d199', '#ffa47f', '#ff5050', '#5e5fef', '#bccd50'];
-	let loopRow = parseInt(mb.height)/(pc_size + 30);// 마진값 더해줬음
-	let loopColumn = parseInt(mb.width)/(pc_size + 30);	
+	let loopRow = parseInt( parseInt(mb.height)/(pc_size + 30) );// 마진값 더해줬음
+	let loopColumn = parseInt( parseInt(mb.width)/(pc_size + 30) );	
 	// let loopRow = parseInt(motherBoard.offsetHeight/(pc_size + 30));// 마진값 더해줬음
 	// let loopColumn = parseInt(motherBoard.offsetWidth/(pc_size + 30));	
 
-	console.log('111  ',motherBoard.offsetHeight	)
+	console.log("loadSite ", loopRow, loopColumn);
 
 	for( let j=0; j<loopRow; j++ ) {// loopRow
 		for( let k=0; k<loopColumn; k++ ) {
