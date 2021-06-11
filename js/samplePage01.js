@@ -20,8 +20,9 @@
 
 })();
 
-let pc_size = 100;//임시값 
+let pc_size = 90;//임시값 
 let expandSize = 30;
+
 
 let ns = "http://www.w3.org/2000/svg";
 

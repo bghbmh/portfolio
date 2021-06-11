@@ -165,22 +165,22 @@ function showMicroSite(e){
 
 		let ul = document.createElement("ul");
 		ul.setAttribute("class", "game");
-		ul.innerHTML = `
-					<li>
-						<img src="img/puzzle.JPG" alt="안녕하세요 일러스트" />
-						<dl>
-							<dt>HELLO GOODBYE</dt>
-							<dd>© Ze Cardoso</dd>
-						</dl>
-					</li>
-					<li>
-						<img src="img/driving.gif" alt="아랍뉴스 처음 운전하는 여성 일러스트" />
-						<dl>
-							<dt>start your engines</dt>
-							<dd>© Malika Favre</dd>
-						</dl>
-						
-					</li>`;
+		ul.innerHTML = `<li>
+							<img src="img/puzzle.JPG" alt="안녕하세요 일러스트" />
+							<dl>
+								<dt>HELLO GOODBYE</dt>
+								<dd>© Ze Cardoso</dd>
+							</dl>
+						</li>
+						<li>
+							<img src="img/driving.gif" alt="아랍뉴스 처음 운전하는 여성 일러스트" />
+							<dl>
+								<dt>start your engines</dt>
+								<dd>© Malika Favre</dd>
+							</dl>
+							
+						</li>`;
+					
 		motherBoard.appendChild(ul);
 		loadFile._script('js/puzzle.js');
 
@@ -188,7 +188,7 @@ function showMicroSite(e){
 
 		console.log("showMicroSite 랜딩페이지");
 
-		motherBoard.style.cssText = " width : 110%; height : 100%; top : 0%; left : -5%;";
+		motherBoard.style.cssText = " width : 110%; height : calc(100% + 8px); top : -4px; left : -5%;";
 		
 		let isCss = loadFile._css('css/samplePage01_blindness.css');
 		let isScript = loadFile._script('js/samplePage01.js'); //  samplePage01.js
@@ -198,6 +198,7 @@ function showMicroSite(e){
 		} else {
 			isScript.addEventListener("load", function(){
 				loadFile._script('js/samplePage01_data.js').addEventListener("load", () => { 
+					checkScreen();
 					loadSite(motherBoard); 
 					
 				});
@@ -207,6 +208,10 @@ function showMicroSite(e){
 		
 	}
 
+}
+
+function checkScreen(){
+	
 }
 
 
