@@ -68,8 +68,6 @@ let loadFile = {
 					console.log(XMLHttpRequest.DONE, ' ggg(complete) - (request에 대한 처리가 끝났으며 응답할 준비가 완료됨) ')
 					//data = httpRequest.response;
 					callback(JSON.parse(httpRequest.response));
-
-					
 				}
 				else
 				{
@@ -84,52 +82,53 @@ let loadFile = {
 		
 	},
 
-	_html : function(url, callback){	
+	_html : function(url, request){	
+		return fetch(url, request);
 
-		if(!window.XMLHttpRequest) 
-		{
-			window.setTimeout( function() { callback(false); }, 0 );
-			return;
-		}			
+		// if(!window.XMLHttpRequest) 
+		// {
+		// 	window.setTimeout( function() { callback(false); }, 0 );
+		// 	return;
+		// }			
 
-		var done = false;
-		var xhr = new window.XMLHttpRequest();
+		// var done = false;
+		// var xhr = new window.XMLHttpRequest();
 
-		xhr.onreadystatechange = function() 
-		{
-			if (this.readyState == 4 && !done) 
-			{
-				done = true;
-				console.log("_html", this.response );
-				// callback(!!(this.responseXML && this.responseXML.title && this.responseXML.title == "&&<"));
-				callback(this.response);
-			}
-		}
+		// xhr.onreadystatechange = function() 
+		// {
+		// 	if (this.readyState == 4 && !done) 
+		// 	{
+		// 		done = true;
+		// 		console.log("_html", this.response );
+		// 		// callback(!!(this.responseXML && this.responseXML.title && this.responseXML.title == "&&<"));
+		// 		callback(this.response);
+		// 	}
+		// }
 
-		xhr.onabort = xhr.onerror = function() {
+		// xhr.onabort = xhr.onerror = function() {
 
-			if (!done) 
-			{
-				done = true;
-				callback(false);
-			}
-		}
+		// 	if (!done) 
+		// 	{
+		// 		done = true;
+		// 		callback(false);
+		// 	}
+		// }
 
-		try 
-		{
-			xhr.open("GET", url);
-			xhr.responseType = "document";
-			xhr.send();
-		} 
-		catch (e) 
-		{
-			window.setTimeout(function() {
-				if (!done) 
-				{
-					done = true;
-					callback(false);
-				} }, 0);
-		}
+		// try 
+		// {
+		// 	xhr.open("GET", url);
+		// 	xhr.responseType = "document";
+		// 	xhr.send();
+		// } 
+		// catch (e) 
+		// {
+		// 	window.setTimeout(function() {
+		// 		if (!done) 
+		// 		{
+		// 			done = true;
+		// 			callback(false);
+		// 		} }, 0);
+		// }
 		
 	},
 	

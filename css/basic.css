@@ -83,6 +83,7 @@ p{
 }
 input{
 	vertical-align:middle; 
+	border: 1px solid #eee;
 }
 input[type="text"], input[type="tel"], input[type="password"], input[type="number"]{
 	height: auto; /* 높이 초기화 */ 
@@ -112,14 +113,19 @@ input[type="radio"]{
 	-moz-appearance:none; 
 	appearance:none;
 }
-button{  cursor: pointer; }
+
 button,input[type="button"],input[type="submit"],input[type="reset"],input[type="file"]{
+	appearance: button;
 	-webkit-appearance:button;
 	-moz-appearance:button;
+	 -webkit-border-radius:0;
 	border-radius:0;
 	border: 0;
+	padding: 0;
+	margin: 0;
 
-
+	background:none;
+	cursor: pointer; 
 }
 textarea{
 	-webkit-appearance:none; 

@@ -31,22 +31,19 @@ function loadBody(mainBody){
 
 let timerID = null;
 function openPage(e){ 	
-
 	//서브페이지 연결
 	console.log("openpage ")
 	let pageNum = -1;
-	let sp = document.querySelectorAll(".subpage");
+	let callback = null;
 
 	switch (e.target.dataset.btn) {
 		case "퍼블리싱":
 			pageNum = 0;
-			sp[0].classList.add("on");
-			sp[0].querySelector('.contents .category').addEventListener('click', showMicroSite);
+			callback = showMicroSite;
 			break;
 		case "디자인":
 			pageNum = 1;
-			sp[1].classList.add("on");
-			sp[1].querySelector('.contents .category').addEventListener('click', showCategoryPage);
+			callback = showCategoryPage;
 			break;
 		default:
 			// statements_def
@@ -54,10 +51,9 @@ function openPage(e){
 	}
 
 	//버튼
-	sp[pageNum].querySelector(".btnSet").addEventListener("click", buttonToDoList);
-
-
-	// console.log("openPage");
+	document.querySelectorAll(".subpage")[pageNum].classList.add("on");
+	document.querySelectorAll(".subpage")[pageNum].querySelector('.contents .category').addEventListener('click', callback);
+	document.querySelectorAll(".subpage")[pageNum].querySelector(".btnSet").addEventListener("click", buttonToDoList);
 
 }
 
@@ -128,7 +124,6 @@ function buttonToDoList(e){
 			break;
 	}
 
-
 }
 
 function showMicroSite(e){
@@ -160,7 +155,6 @@ function showMicroSite(e){
 		console.log("showMicroSite 퍼즐");
 
 		loadFile._css('css/puzzle.css');
-
 		motherBoard.style.cssText = "";
 
 		let ul = document.createElement("ul");
@@ -185,7 +179,6 @@ function showMicroSite(e){
 		loadFile._script('js/puzzle.js');
 
 	} else if( category == "랜딩페이지" ){
-
 		console.log("showMicroSite 랜딩페이지");
 
 		motherBoard.style.cssText = " width : 110%; height : calc(100% + 8px); top : -4px; left : -5%;";
@@ -197,14 +190,73 @@ function showMicroSite(e){
 			loadSite(motherBoard); 
 		} else {
 			isScript.addEventListener("load", function(){
-				loadFile._script('js/samplePage01_data.js').addEventListener("load", () => { 
+				loadFile._script('./js/samplePage01_data.js').addEventListener("load", () => { 
 					loadSite(motherBoard); 					
 				});
 			});
 
 		}
 		
+	} else if( category == "uiComponents" ){
+		console.log("showMicroSite uiComponents");
+		loadFile._css('css/uiComponents.css');		
+		loadFile._json('./json/uiComponents.json', uiTemplate);
+		loadFile._script('js/uiComponents.js'); 
+
 	}
+
+}
+
+function uiTemplate(jsonObj){
+
+	console.log(jsonObj);
+	const rawData = jsonObj;
+
+	let ul = document.createElement("ul");
+	ul.setAttribute("class", "components");
+
+	for( let i=0; i<jsonObj.length; i++) 
+	{
+		let li = document.createElement("li");
+	
+		for( let key in jsonObj[i] ){
+
+			if( key === "link" ){
+				li.dataset.linkFile = jsonObj[i][key];
+				continue;
+			}
+			
+			li.textContent = jsonObj[i][key];
+		}		
+		
+		ul.appendChild(li);
+		ul.addEventListener("click", showComponent);
+	}
+
+	let div = document.createElement("div");
+	div.setAttribute("class", "componentBoard");
+
+	document.querySelector(".microSite").appendChild(ul);
+	document.querySelector(".microSite").appendChild(div);
+
+}
+
+
+function showComponent(e){
+
+	if( e.target.tagName !== "LI" ) return;
+
+	console.log("showComponent", e.target.dataset.linkFile)
+
+	let request = { method : "get", headers : { "content-type" : "text/html"} };
+	let site = "http://localhost/~bghbmh/%e1%84%82%e1%85%a2%e1%84%91%e1%85%a9%e1%84%91%e1%85%a9%e1%86%af/%e1%84%82%e1%85%a2%e1%84%81%e1%85%b3%e1%84%8b%e1%85%ad/html_200525/ui/";
+
+	let ui = loadFile._html(site + e.target.dataset.linkFile, request);
+	console.log("showComponent", ui)
+	ui.then(response => response.text()).then(html => { 
+		document.querySelector(".componentBoard").innerHTML = html; 
+		UIHandler(document.querySelector(".componentBoard"), e.target.dataset.linkFile);
+	});
 
 }
 

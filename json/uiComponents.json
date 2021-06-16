@@ -1,0 +1,28 @@
+
+	
+
+	[
+		{
+			"name" : "UI Components",
+			"link" : ""	
+		},
+		{
+			"name" : "팝업1",
+			"link" : "alert"	
+		},
+		{
+			"name" : "팝업2",
+			"link" : "addInfo"	
+		},
+		{
+			"name" : "버튼1(요소 펼침)",
+			"link" : "spread1"	
+		},
+		{
+			"name" : "버튼2(요소 펼침)",
+			"link" : "spread2"	
+		}	
+	]
+
+	
+
