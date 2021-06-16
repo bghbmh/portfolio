@@ -249,10 +249,10 @@ function showComponent(e){
 	console.log("showComponent", e.target.dataset.linkFile)
 
 	let request = { method : "get", headers : { "content-type" : "text/html"} };
-	let site = "http://localhost/~bghbmh/%e1%84%82%e1%85%a2%e1%84%91%e1%85%a9%e1%84%91%e1%85%a9%e1%86%af/%e1%84%82%e1%85%a2%e1%84%81%e1%85%b3%e1%84%8b%e1%85%ad/html_200525/ui/";
+	let site = "./ui/";
 
 	let ui = loadFile._html(site + e.target.dataset.linkFile, request);
-	console.log("showComponent", ui)
+	console.log("showComponent", site, ui)
 	ui.then(response => response.text()).then(html => { 
 		document.querySelector(".componentBoard").innerHTML = html; 
 		UIHandler(document.querySelector(".componentBoard"), e.target.dataset.linkFile);
