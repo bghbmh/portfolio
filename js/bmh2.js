@@ -253,11 +253,35 @@ function showComponent(e){
 
 	let ui = loadFile._html(site + e.target.dataset.linkFile, request);
 	console.log("showComponent", site, ui)
-	ui.then(response => response.text()).then(html => { 
+	ui.then(response => { 
+		
+		if( !response.ok ){
+			console.log(response.status)
+			throw response.status;
+		}
+
+		return response.text();
+
+	})
+	.then(html => { 
+		console.log("aaaaa")
 		document.querySelector(".componentBoard").innerHTML = html; 
-		UIHandler(document.querySelector(".componentBoard"), e.target.dataset.linkFile);
+		UIHandler(document.querySelector(".componentBoard"), e.target.dataset.linkFile); 
+	})
+	.catch( err => {
+		if( err === 404 )
+			preparePage(document.querySelector(".componentBoard"));
 	});
 
+}
+
+function preparePage(board){
+	console.log("preparePage")
+
+	board.innerHTML = `<div class="prepare">
+							<img src="img/icons_myFace.svg">
+							준비 중입니다
+						</div> `;
 }
 
 

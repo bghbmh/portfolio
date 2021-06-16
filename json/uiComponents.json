@@ -21,7 +21,15 @@
 		{
 			"name" : "버튼2(요소 펼침)",
 			"link" : "spread2"	
-		}	
+		},
+		{
+			"name" : "스크롤1",
+			"link" : "spread2"	
+		},
+		{
+			"name" : "스크롤2",
+			"link" : "spread2"	
+		}
 	]
 
 	
