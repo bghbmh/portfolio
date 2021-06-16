@@ -338,26 +338,20 @@ nav:active .bar{
 }
 .closeSubPage, .closePage, .allItemsPage, .categoryItemPage, .hashtagItemPage{
 	position: absolute;
-	width: 4em;
-	height: 4em;
+	width: 10em;
+	height: 10em;
 
+	font-size: 4.4px;
 	border-radius: 100%;
 
 	background: #fff;
 }
 
-/*.closeSubPage, */.closePage{
-	left: 1em;
-	top: 1em;
-	
-}
+/*.closeSubPage, */.closePage{ left: 4em; top: 4em; }
 .leftArrowSide{ top: 2.5px; }
 .leftArrowSide:before{    border-color: #000;    }
 .leftArrowSide:after{    border-color: #000;    }
 
-.circumference_outline {
-	font-size: 4.4px;
-}
 
 /*.closeSubPage:hover, .closePage:hover, 
 .allItemsPage:hover, .categoryItemPage:hover, .hashtagItemPage:hover
@@ -367,13 +361,13 @@ nav:active .bar{
 .allItems:before{    border-color: #eee;    }
 .allItems:after{    border-color: #eee;    }
 
-.allItemsPage{ right: 1em; top: 1em; }
+.allItemsPage{ right: 4em; top: 4em; }
 /*.allItemsPage:hover{  background: var(--main-bg-color); border: 1px solid #000; }*/
 .allItemsPage:hover .allItems{    background: #d5d5d5; }
 .allItemsPage:hover .allItems:before{    border-color:var(--main-bg-color);   }
 .allItemsPage:hover .allItems:after{    border-color:var(--main-bg-color);   }
 
-.categoryItemPage, .hashtagItemPage{ right: 1em; top: 1em; }
+.categoryItemPage, .hashtagItemPage{ right: 4em; top: 4em; }
 .categoryItemPage:hover{ background:var(--main-bg-color); }
 .categoryItemPage:hover .allItems{	background: #fff; }
 .categoryItemPage:hover .allItems:before,
@@ -435,10 +429,10 @@ nav:active .bar{
 	content: '';
 	position: absolute;
 	width: 100%;
-	height: 8px;
+	height: 4px;
 	top: calc(100% + 4px);
 	left: 0;
-	background: repeating-linear-gradient(-45deg, #ccc, #ccc 1px, transparent 0, transparent 5px);
+	background: repeating-linear-gradient(-45deg, #ccc, #ccc 1px, transparent 0, transparent 3px);
 }
 
 .subpage.on{ display: block;  }

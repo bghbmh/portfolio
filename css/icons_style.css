@@ -98,7 +98,7 @@
     position: relative;
     display: inline-block;
     width: 1px;
-    height: 1.8em;
+    height: 4em;
     transform: rotate(-45deg);
     /*margin-top: 1em;*/
     background: #000;
@@ -108,7 +108,7 @@
     position: relative;
     display: inline-block;
     width: 1px;
-    height: 1.8em;
+    height: 4em;
     transform: rotate(90deg);
     background: #000;
 }
@@ -182,8 +182,8 @@
 
 .allItems{
     background: #999;
-    width: 1.8em;
-    height: 1.8em;
+    width: 4em;
+    height: 4em;
 }
 /*.allItems:hover { background:#fadf34; }*/
 .allItems:before{
@@ -262,8 +262,8 @@
 .leftArrowSide{
     background: none;
     
-    width: 1.8em;
-    height: 1.8em;
+    width: 4em;
+    height: 4em;
 }
 
 
@@ -274,7 +274,7 @@
     width: 100%;
     height: 3px;
 
-    top:calc(50% - 1.5px );
+    top:calc(50% - 2px );
     
     border-radius: 3px;
     background: #555;
@@ -283,10 +283,10 @@
     content: '';
     position: absolute;
     display: block;
-    width: 45%;
+    width: 50%;
     height: 3px;
 
-    top:calc(50% - 4.5px );
+    top:calc(50% - 5px );
     left:-1px;
     
     border-radius: 3px;
