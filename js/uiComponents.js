@@ -1,31 +1,40 @@
 
 
 
-function UIHandler(board, linkFileName){		console.log("UIHandler, body 임시")
+//=====================================================================================================================
+// 팝업 1 ==============================================================================================================
+function openAlert(board, addName, msg, btnStr){ // board, target, msg, btnStr
 
-	if( document.querySelector(".popup") ) return;
+	//target.disabled = true;
 
-	switch( linkFileName ){
-		case "alert":
-			openAlert(board, linkFileName, "알림 내용을 입력해주세요", "확인");
+	let modal = document.createElement("div");
+	modal.setAttribute("class", "popup " + addName);
 
-			break;
-		case "addInfo":
-			let template = [`<label for="userName">이름</label><input id="userName" type="text" aria-label = "이름을 입력하세요" >`,
-							`<label for="userName">이메일</label><input id="userName" type="text" aria-label = "이메일을 입력하세요">`];
-			let btns = [{ txt : "취소", type : "reset" }, { txt : "신청", type : "submit" } ]
+	let contentsArea = document.createElement("div");
+	contentsArea.setAttribute("class", "contentsArea");
+	contentsArea.textContent = msg;
+	modal.appendChild(contentsArea);
 
-			openAddInfo(board, linkFileName, template, btns);
-			break;
-			case "spread1":
-			//document.querySelector(".button--hamburger").addEventListener("click", showSpreadItem);		
-			showSpreadItem();
+	let btn = document.createElement("button");
+	btn.textContent = btnStr;
 
-			break;
-	}
+	btn.addEventListener("click", function btnhandler(){
+		modal.classList.add("off");
+		let tId = setTimeout(() => {
+			// target.disabled = false;
+			btn.removeEventListener("click", btnhandler);
+			board.removeChild(modal);
+			clearTimeout(tId);
+		}, 400);
+	});
+
+	modal.appendChild(btn);
+	board.appendChild(modal);
 
 }
 
+//=====================================================================================================================
+// 팝업 2 ==============================================================================================================
 function addInfoHandler(e){ //폼에 붙일 핸들러
 
 	if( e.target.tagName !== "INPUT" && e.target.tagName !== "BUTTON") return;
@@ -132,38 +141,9 @@ function openAddInfo(board, addName, template, btns = {}){
 
 }
 
-function openAlert(board, addName, msg, btnStr){ // board, target, msg, btnStr
 
-	//target.disabled = true;
-
-	let modal = document.createElement("div");
-	modal.setAttribute("class", "popup " + addName);
-
-	let contentsArea = document.createElement("div");
-	contentsArea.setAttribute("class", "contentsArea");
-	contentsArea.textContent = msg;
-	modal.appendChild(contentsArea);
-
-	let btn = document.createElement("button");
-	btn.textContent = btnStr;
-
-	btn.addEventListener("click", function btnhandler(){
-		modal.classList.add("off");
-		let tId = setTimeout(() => {
-			// target.disabled = false;
-			btn.removeEventListener("click", btnhandler);
-			board.removeChild(modal);
-			clearTimeout(tId);
-		}, 400);
-	});
-
-	modal.appendChild(btn);
-	board.appendChild(modal);
-
-}
-
-
-// 펼침
+//=====================================================================================================================
+// 펼침 1 ==============================================================================================================
 function showSpreadItem(){
 
 	if( document.querySelector('.cmpt').classList.contains('on') ){
@@ -177,3 +157,128 @@ function showSpreadItem(){
 	}
 
 }
+
+//=====================================================================================================================
+// 펼침 2 ==============================================================================================================
+function clickedItem(callback, delay){
+	console.log("clickedItem")
+	let tId = null;
+	let elem = null;
+	let top = 0;
+	let height = 0;
+	let scrollTop = 0;
+
+	return function(e){
+
+		console.log("return clickedItem")
+
+		if( tId !== null ) clearTimeout(tId);
+
+		if( this.querySelector('.spread') != null ){
+			clickEvent(e, top, height, tId, this.querySelector('.spread'));
+			return;
+		}
+
+		this.classList.add("on");
+		this.children[2].classList.remove("mainSample"); //임시
+
+		if( e.target.tagName === "DIV" ) elem = e.target.parentNode;
+		else if( e.target.tagName === "IMG" ) elem = e.target.parentNode.parentNode;
+		else elem = e.target;
+
+		top = elem.offsetTop; //
+		height = elem.offsetHeight; 
+		scrollTop = this.scrollTop;
+
+		console.log(e,  top, height, scrollTop)
+
+		//복사본 만들기
+		let spread = document.createElement("article");
+		spread.setAttribute("class", "spread");
+		spread.style.cssText = `top : ${elem.offsetTop}px;
+								height : ${elem.offsetHeight}px;`;
+		spread.innerHTML = elem.innerHTML;
+
+		let btn = document.createElement("button");
+		btn.setAttribute("class", "btn_close");
+		spread.appendChild(btn);
+
+		this.appendChild(spread);
+
+		tId = setTimeout(callback, delay, this.querySelector('.spread'), `top : ${this.scrollTop}px; height : 100%;`);
+
+	};
+
+}
+
+function setFullScreen(spread, cssStyle){
+
+	spread.style.cssText = cssStyle;
+
+	if( spread.classList.contains("fullScreen") ){
+		spread.classList.remove("fullScreen");
+		
+
+		let t = setTimeout(() => {
+			spread.classList.remove("spread");	
+			spread.parentNode.classList.remove("on");	
+			spread.parentNode.removeChild(spread);
+		}, 400);
+	}
+	else {
+		spread.classList.add("fullScreen");
+	}		
+
+}
+
+function clickEvent(e, top, height, tId, spread){	
+
+	console.log("clickEvent")	
+
+	if( e.target.tagName !== "BUTTON") return;		
+	tId = setTimeout(setFullScreen, 100, spread, `top : ${top}px; height : ${height}px;`);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

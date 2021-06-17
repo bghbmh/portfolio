@@ -207,6 +207,9 @@ function showMicroSite(e){
 
 }
 
+
+
+//=== 퍼블리싱 ========================================================
 function uiTemplate(jsonObj){
 
 	console.log(jsonObj);
@@ -285,6 +288,51 @@ function preparePage(board){
 }
 
 
+function UIHandler(board, linkFileName){		console.log("UIHandler, body 임시")
+
+	if( document.querySelector(".popup") ) return;
+
+	switch( linkFileName ){
+		case "alert":
+			openAlert(board, linkFileName, "알림 내용을 입력해주세요", "확인");
+
+			break;
+		case "addInfo":
+			let template = [`<label for="userName">이름</label><input id="userName" type="text" aria-label = "이름을 입력하세요" >`,
+							`<label for="userName">이메일</label><input id="userName" type="text" aria-label = "이메일을 입력하세요">`];
+			let btns = [{ txt : "취소", type : "reset" }, { txt : "신청", type : "submit" } ]
+
+			openAddInfo(board, linkFileName, template, btns);
+			break;
+		case "spread1":
+			//document.querySelector(".button--hamburger").addEventListener("click", showSpreadItem);		
+			showSpreadItem();
+
+			break;
+		case "spread2":
+				//임시 설정들
+			let temp = [`<div><img src="img/icons_myFace.svg"></div><div>실현에 열락의 하였으며, 위하여서. 그와 우리의 이상의 아름다우냐? 장식하는 힘차게 오아이스도 하여도 낙원을 무엇을 이 것이다.</div>`,
+				`<div></div><div>무엇을 기관과 가치를 소리다.이것은 그들의 보배를 칼이다.</div>`];
+
+			console.log("list item")
+			for( let i=0; i<10; i++ ){
+				let article = document.createElement("article");
+				article.innerHTML = temp[ i%2 ];
+				if( i === 2 ) article.setAttribute("class", "mainSample");
+				document.querySelector(".list").appendChild(article);
+			}
+
+			document.querySelector(".list").addEventListener("click", clickedItem( setFullScreen,100));
+
+			break;
+	}
+
+}
+
+
+
+
+//=== 디자인 ========================================================
 function showCategoryPage(e){
 
 	console.log("setCategoryPage");
@@ -451,6 +499,13 @@ function samplesite(htmlSource){
 }
 
 
+
+
+
+
+
+
+//== 페이지 로딩 =====================================================
 
 loadFile._script('js/object.js');
 console.log(1111111111);
