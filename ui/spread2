@@ -16,6 +16,13 @@
 		overflow: scroll;
 	}
 
+	/* 임시 미디어 쿼리 */
+	@media(max-height: 768px){
+		.list{
+			max-height: 400px;
+		}	
+	}
+
 	.list.on{ overflow: hidden; }
 
 	.list article{
