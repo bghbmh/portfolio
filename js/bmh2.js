@@ -27,6 +27,14 @@ function loadBody(mainBody){
 	document.querySelector("nav").addEventListener("click", openPage);//버튼 연결	
 	//topsmallSlides(false);// 상단, 하는 일 수직 슬라이드 설정
 
+	// border-width + 중앙으로 이동값 = 2px + 2px + 2px
+	let tt = document.querySelector(".bar").offsetTop + document.querySelector("nav").offsetTop + 6; 
+	let ll = document.querySelector(".bar").offsetLeft + document.querySelector("nav").offsetLeft - 6;
+
+	let rootDoc = document.documentElement;
+	rootDoc.style.setProperty('--subpage-top', tt + "px" );
+	rootDoc.style.setProperty('--subpage-left', ll + "px" );
+
 }
 
 let timerID = null;
@@ -59,23 +67,17 @@ function openPage(e){
 
 function buttonToDoList(e){
 
-	//console.log("111buttonToDoList", e);
 
 	let elem = clickElement.find(e.target, "BUTTON");
 
-	if( elem === null ) 
-		return;
-
-	//console.log('sub', elem.classList, e, elem.parentNode);
+	if( elem === null ) return;
 
 	let className;
 
-	if( elem.classList.length > 1 )
-	{
+	if( elem.classList.length > 1 )	{
 		className = elem.classList[0];
 	}
-	else
-	{
+	else{
 		className = elem.className;
 	}
 
@@ -93,6 +95,15 @@ function buttonToDoList(e){
 			node = elem.parentNode.parentNode;
 			node.classList.remove("on");
 			node.querySelector('.btnSet').removeEventListener("click", buttonToDoList);
+
+			if( node.classList.contains("subpage") ){
+				console.log("ofofofofofo")
+				node.classList.add("off");
+				let t = setTimeout(() => {
+					node.classList.remove("off");
+					clearTimeout(t);
+				}, 4000);
+			}
 			
 			break;
 

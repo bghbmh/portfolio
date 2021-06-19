@@ -6,7 +6,9 @@
 :root {
 	--main-bg-color: #fff; /* #fadf34 #fde278;  */
 	--key-color : #fadf34;	/*     */
-
+/*	--subpage-top : 0;
+	--subpage-left : 0;
+*/
 }
 
 @media( orientation: portrait ){
@@ -294,7 +296,7 @@ nav:hover .bar{
 }
 
 nav:active .bar{
-
+	height: 15%;
 	bottom: -8px;
 }
 
@@ -405,19 +407,17 @@ nav:active .bar{
 
 
 /*서브_디자인_목록*/
-.subpage{
+/*.subpage{
 	position: absolute;
 	z-index: 555;
 	display: none;
-	/*max-width: 1500px;*/
-	width: 100%; /* calc(45% + 2em) */
+	width: 100%; 
 	height: 100%;
 
-	top: 0;  /*calc(50% + 1.9em);*/
-	left: 0; /*50%;
-	transform: translate(-50%, -50%);*/
-/*
-	overflow: hidden;*/
+	top: 0; 
+	left: 0;
+	transform: translate(-50%, -50%);
+
 	border-radius: 4px;
 	border:  4px solid #555;
 	background: rgba(255,255,255,1);
@@ -435,7 +435,124 @@ nav:active .bar{
 	background: repeating-linear-gradient(-45deg, #ccc, #ccc 1px, transparent 0, transparent 3px);
 }
 
-.subpage.on{ display: block;  }
+.subpage.on{ display: block;  }*/
+
+
+
+.subpage{
+	position: absolute;
+	z-index: 555;
+	display: block;
+	/*max-width: 1500px;*/
+	width: 15px; /* calc(45% + 2em) */
+	height: 0;
+
+	top: var(--subpage-top);
+	left:  var(--subpage-left);
+/*	top: calc(50% - 2px);
+	left: calc(50% - 7.5px); */
+
+	overflow: hidden;
+	border-radius: 4px;
+	border: 2px solid #555;	
+
+	background: rgba(255,255,255,1);
+	opacity: 0;
+
+	font-size:10px;
+	z-index: 3;
+
+	transform: rotate(-90deg);
+	transition:all .3s;
+}
+
+.subpage.on{ 
+
+	opacity: 1;		
+	transform: rotate(0deg);
+
+	box-shadow: 0 10px 0 20px #fff;
+	-webkit-box-shadow: 0 10px 0 20px #fff;
+
+	animation: fullScreen .7s forwards;
+	animation-delay: .3s;
+
+}
+
+.subpage.off{
+	-webkit-box-shadow: 0 10px 0 20px #fff;
+	animation: miniScreen 1s forwards;
+	
+} 
+
+@keyframes fullScreen{
+	20%{
+		width: 100%; 		
+		height: 0; 
+		left: 0;
+		top:var(--subpage-top);
+		border-width: 2px;	
+	}
+	100%{ 
+		width: 100%; 		
+		height: 100%; 
+		left: 0;
+		top: 0; 
+		border-width: 4px;	
+		
+	}
+}
+
+@keyframes miniScreen{
+	0%{
+		width: 100%; 		
+		height: 100%; 
+		left: 0;
+		top: 0; 
+		border-width: 2px;	
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+	20%{
+		width: 100%; 		
+		height: 0; 
+		left: 0;
+		top: var(--subpage-top);
+		border-width: 2px;	
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+	90%{ 
+		width: 15px; 		
+		height: 0; 
+		top: var(--subpage-top);
+		left: var(--subpage-left);
+		border-width: 2px;	
+		transform: rotate(0deg);
+		opacity: 1;
+		
+	}
+	95%{ 
+		width: 15px; 		
+		height: 0; 
+		top: var(--subpage-top);
+		left: var(--subpage-left);
+		border-width: 2px;	
+		transform: rotate(-90deg);
+		opacity: 1;
+	}
+	100%{ 
+		width: 15px; 		
+		height: 0; 
+		top: var(--subpage-top);
+		left: var(--subpage-left);
+		border-width: 2px;	
+		transform: rotate(-90deg);
+		opacity: 0;
+	}
+}
+
+
 
 @media(max-width: 414px){
 	.subpage{
