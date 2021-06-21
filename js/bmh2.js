@@ -336,6 +336,10 @@ function UIHandler(board, linkFileName){		console.log("UIHandler, body 임시")
 			document.querySelector(".list").addEventListener("click", clickedItem( setFullScreen,100));
 
 			break;
+		case "scroll1":
+
+			document.querySelector(".scroll").addEventListener("scroll", scrolling(testTemp, 100));
+			break;
 	}
 
 }

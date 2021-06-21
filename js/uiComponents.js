@@ -241,8 +241,115 @@ function clickEvent(e, top, height, tId, spread){
 }
 
 
+//=====================================================================================================================
+// 스크롤 1 =============================================================================================================
+function scrolling(callback, delay){
+
+	let iniScrollTop = null;
+	let iniRectTop = null;
+	let iniRectLeft = null;
+	let pageHeight = null;
+	let pageWidth = null;
+	let scrollAreaHeight = null;
+	let breakPoint = { state :false, dx : 0, initleft : 0, dir : 1 };
 
 
+	let rect1 = document.querySelector(".rect1");
+	let rect2 = document.querySelector(".rect2");
+	let rect3 = document.querySelector(".rect3");
+
+	let dy = rect3.offsetTop - rect1.offsetTop;
+	let dx = rect3.offsetLeft - 20;
+
+
+	return function(e){		
+
+		if( iniScrollTop === null ){
+			iniRectTop = rect1.offsetTop;
+			iniRectLeft = rect1.offsetLeft;
+			pageHeight = this.scrollHeight;
+			pageWidth = dx;  // this.offsetWidth;  		
+			pageOuterHeight = this.scrollHeight - this.offsetHeight; //this.offsetHeight
+
+			iniScrollTop = this.scrollTop;
+		}
+
+		document.querySelector(".scroll p").textContent = this.scrollTop;
+		let scrollpercent = this.scrollTop/pageOuterHeight;
+		let interval = iniScrollTop - this.scrollTop;
+
+		//고정
+		rect3.style.top = rect3.offsetTop - interval  + `px`; 
+		document.querySelector(".rectfill").style.top = document.querySelector(".rectfill").offsetTop - interval  + `px`;
+		document.querySelector(".rectstroke").style.top = document.querySelector(".rectstroke").offsetTop - interval  + `px`;
+		document.querySelector(".cards").style.top = document.querySelector(".cards").offsetTop - interval  + `px`; 
+
+		if( scrollpercent < 0.25 ){
+
+			document.querySelector(".card").classList.remove("off");
+			document.querySelector(".rectfill").classList.remove("on");
+			document.querySelector(".rectstroke").classList.remove("on");
+
+		} else {
+			document.querySelector(".card").classList.add("off");
+			document.querySelector(".rectfill").classList.add("on");
+			document.querySelector(".rectstroke").classList.add("on");
+		}		
+
+		if( scrollpercent > 0.75 ){
+			document.querySelector(".cards").classList.add("on");
+		} else {
+			document.querySelector(".cards").classList.remove("on");
+		}
+
+		if( scrollpercent > 0.48 ){
+			//console.log("111  - ",scrollpercent*100, "%")
+			breakPoint.state = true;
+			if( breakPoint.initleft === 0 ){
+				breakPoint.initleft = rect1.offsetLeft;
+				breakPoint.dx = rect3.offsetLeft - rect1.offsetLeft;			
+			}
+
+		} else {
+			//console.log("222  - ",breakPoint.state)
+			breakPoint.state = false;
+			if( breakPoint.dx !== 0 ) breakPoint.dx = 0;
+			if( breakPoint.initleft !== 0 ) breakPoint.initleft = 0;
+
+		}
+	
+
+		if( breakPoint.state ) {
+
+			rect1.style.top = rect3.offsetTop + `px`;	
+
+			if( rect1.offsetLeft >= 0 && rect1.offsetLeft < 20 ) {
+				rect1.style.left = "20px";
+
+			// } else if ( rect1.offsetLeft > iniRectLeft ) {
+
+			// 	console.log(" 222222 ", iniRectLeft-50)
+
+			// 	rect1.style.left = iniRectLeft - 60 +"px";
+
+			} else {
+				if ( scrollpercent > 0.95 ) rect1.style.left = iniRectLeft - 60 +"px";
+				else rect1.style.left = breakPoint.initleft + parseInt(2*breakPoint.dx*(scrollpercent - 0.48))  + `px`;
+			}					
+
+		} else {	
+			rect1.style.top = iniRectTop + parseInt(dy*scrollpercent)+ parseInt(pageHeight*scrollpercent) + `px`;
+			rect1.style.left = iniRectLeft  - parseInt(2*pageWidth*scrollpercent) + `px`;
+		}
+
+		iniScrollTop = this.scrollTop;
+	};
+
+}
+
+function testTemp(){
+
+}
 
 
 
