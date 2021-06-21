@@ -303,6 +303,9 @@ function UIHandler(board, linkFileName){		console.log("UIHandler, body 임시")
 
 	if( document.querySelector(".popup") ) return;
 
+	// document.querySelector(".scroll").removeEventListener("scroll", scrolling(testTemp, 100));
+	// document.querySelector(".list").removeEventListener("click", clickedItem);
+
 	switch( linkFileName ){
 		case "alert":
 			openAlert(board, linkFileName, "알림 내용을 입력해주세요", "확인");

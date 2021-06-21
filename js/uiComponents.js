@@ -278,11 +278,16 @@ function scrolling(callback, delay){
 		let scrollpercent = this.scrollTop/pageOuterHeight;
 		let interval = iniScrollTop - this.scrollTop;
 
-		//고정
+		//고정, 임시값들
 		rect3.style.top = rect3.offsetTop - interval  + `px`; 
 		document.querySelector(".rectfill").style.top = document.querySelector(".rectfill").offsetTop - interval  + `px`;
 		document.querySelector(".rectstroke").style.top = document.querySelector(".rectstroke").offsetTop - interval  + `px`;
-		document.querySelector(".cards").style.top = document.querySelector(".cards").offsetTop - interval  + `px`; 
+		document.querySelector(".cards").style.top = document.querySelector(".cards").offsetTop - interval  + `px`;
+		document.querySelector(".scroll .dir").style.top = document.querySelector(".scroll .dir").offsetTop - interval  + `px`; 
+		document.querySelector(".scroll .scrollCount").style.top = document.querySelector(".scroll .scrollCount").offsetTop - interval  + `px`; 
+		
+
+
 
 		if( scrollpercent < 0.25 ){
 
