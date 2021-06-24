@@ -341,7 +341,10 @@ function UIHandler(board, linkFileName){		console.log("UIHandler, body 임시")
 			break;
 		case "scroll1":
 
-			document.querySelector(".scroll").addEventListener("scroll", scrolling(testTemp, 100));
+			let onScroll = scrolling();
+			document.querySelector(".scroll").addEventListener("scroll", onScroll);
+
+			//document.querySelector(".scroll").addEventListener("scroll", scrolling(testTemp, 100));
 			break;
 	}
 

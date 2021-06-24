@@ -243,8 +243,9 @@ function clickEvent(e, top, height, tId, spread){
 
 //=====================================================================================================================
 // 스크롤 1 =============================================================================================================
-function scrolling(callback, delay){
-
+//function scrolling(callback, delay){
+function scrolling(){
+	
 	let iniScrollTop = null;
 	let iniRectTop = null;
 	let iniRectLeft = null;
@@ -286,8 +287,6 @@ function scrolling(callback, delay){
 		document.querySelector(".scroll .dir").style.top = document.querySelector(".scroll .dir").offsetTop - interval  + `px`; 
 		document.querySelector(".scroll .scrollCount").style.top = document.querySelector(".scroll .scrollCount").offsetTop - interval  + `px`; 
 		
-
-
 
 		if( scrollpercent < 0.25 ){
 
