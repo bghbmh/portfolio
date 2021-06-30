@@ -243,62 +243,44 @@ function clickEvent(e, top, height, tId, spread){
 
 //=====================================================================================================================
 // 스크롤 1 =============================================================================================================
-//function scrolling(callback, delay){
-function scrolling(){
+function scrolling(e){
+
+	// y = ax + b , b : yConst, a : slope = (y2 - y1)/(x2 - x1)
+	let iniRectTop = document.querySelector(".rect1").offsetTop;
+	let iniRectLeft = document.querySelector(".rect1").offsetLeft;
+	let insidePageHeight = document.querySelector(".scroll .area").offsetHeight - iniRectTop; // 
+	let insidePageWidth = document.querySelector(".rect1").offsetLeft - 20;  // 	
+
+	let slope = -1*document.querySelector(".scroll").offsetHeight / document.querySelector(".scroll").offsetWidth ;
+	let yConst = iniRectTop - iniRectLeft*slope ;
 	
-	let iniScrollTop = null;
-	let iniRectTop = null;
-	let iniRectLeft = null;
-	let pageHeight = null;
-	let pageWidth = null;
-	let scrollAreaHeight = null;
-	let breakPoint = { state :false, dx : 0, initleft : 0, dir : 1 };
+	let viewWidth = document.querySelector(".rect1").offsetLeft - 10;
+	let viewHeight = document.querySelector(".rect3").offsetTop - document.querySelector(".rect1").offsetTop; // departure.y - breakpoint.y;
 
+	console.log("asd", viewHeight, viewWidth, insidePageHeight,insidePageWidth)
 
-	let rect1 = document.querySelector(".rect1");
-	let rect2 = document.querySelector(".rect2");
-	let rect3 = document.querySelector(".rect3");
+	let iniScrollTop = 0;
 
-	let dy = rect3.offsetTop - rect1.offsetTop;
-	let dx = rect3.offsetLeft - 20;
+	return function(e){
 
+		let scrollpercent = this.scrollTop/(this.scrollHeight - this.offsetHeight);
+		document.querySelector(".scroll p").textContent ="scroll " +  parseInt(scrollpercent*100) + "%";
 
-	return function(e){		
-
-		if( iniScrollTop === null ){
-			iniRectTop = rect1.offsetTop;
-			iniRectLeft = rect1.offsetLeft;
-			pageHeight = this.scrollHeight;
-			pageWidth = dx;  // this.offsetWidth;  		
-			pageOuterHeight = this.scrollHeight - this.offsetHeight; //this.offsetHeight
-
-			iniScrollTop = this.scrollTop;
-		}
-
-		document.querySelector(".scroll p").textContent = this.scrollTop;
-		let scrollpercent = this.scrollTop/pageOuterHeight;
+		//1번 외에 나머지 사각형들 위치 고정 및 움직임
 		let interval = iniScrollTop - this.scrollTop;
-
-		//고정, 임시값들
-		rect3.style.top = rect3.offsetTop - interval  + `px`; 
+		document.querySelector(".rect3").style.top = document.querySelector(".rect3").offsetTop - interval  + `px`; 
 		document.querySelector(".rectfill").style.top = document.querySelector(".rectfill").offsetTop - interval  + `px`;
 		document.querySelector(".rectstroke").style.top = document.querySelector(".rectstroke").offsetTop - interval  + `px`;
-		document.querySelector(".cards").style.top = document.querySelector(".cards").offsetTop - interval  + `px`;
-		document.querySelector(".scroll .dir").style.top = document.querySelector(".scroll .dir").offsetTop - interval  + `px`; 
-		document.querySelector(".scroll .scrollCount").style.top = document.querySelector(".scroll .scrollCount").offsetTop - interval  + `px`; 
-		
 
-		if( scrollpercent < 0.25 ){
-
+		if( scrollpercent < 0.33 ){
 			document.querySelector(".card").classList.remove("off");
 			document.querySelector(".rectfill").classList.remove("on");
 			document.querySelector(".rectstroke").classList.remove("on");
-
 		} else {
 			document.querySelector(".card").classList.add("off");
 			document.querySelector(".rectfill").classList.add("on");
 			document.querySelector(".rectstroke").classList.add("on");
-		}		
+		}
 
 		if( scrollpercent > 0.75 ){
 			document.querySelector(".cards").classList.add("on");
@@ -306,54 +288,149 @@ function scrolling(){
 			document.querySelector(".cards").classList.remove("on");
 		}
 
-		if( scrollpercent > 0.48 ){
-			//console.log("111  - ",scrollpercent*100, "%")
-			breakPoint.state = true;
-			if( breakPoint.initleft === 0 ){
-				breakPoint.initleft = rect1.offsetLeft;
-				breakPoint.dx = rect3.offsetLeft - rect1.offsetLeft;			
-			}
+		//1번 사각형 움직임
+		let dx, dy;
+		if( scrollpercent === 0 ){
+			dx = 0;
+			dy = 0;
 
-		} else {
-			//console.log("222  - ",breakPoint.state)
-			breakPoint.state = false;
-			if( breakPoint.dx !== 0 ) breakPoint.dx = 0;
-			if( breakPoint.initleft !== 0 ) breakPoint.initleft = 0;
+		} else if( scrollpercent > 0.95 ){
 
-		}
-	
+			dx = -30;
+			dy = document.querySelector(".rect3").offsetTop - iniRectTop;
 
-		if( breakPoint.state ) {
+		} else if( scrollpercent > 0.45 ){
 
-			rect1.style.top = rect3.offsetTop + `px`;	
+			dx = -( insidePageWidth*(1-(scrollpercent-0.45)*2) );
+			dy = document.querySelector(".rect3").offsetTop - iniRectTop;
 
-			if( rect1.offsetLeft >= 0 && rect1.offsetLeft < 20 ) {
-				rect1.style.left = "20px";
+		} else {						
+			
+			dy = -7 + viewHeight*scrollpercent + parseInt(insidePageHeight*scrollpercent);
+			dx = (iniRectTop + iniScrollTop + this.scrollTop - yConst)/slope  - insidePageWidth ;
+			//dx = (dy - yConst)/slope  - viewWidth ;
 
-			// } else if ( rect1.offsetLeft > iniRectLeft ) {
+			//console.log("aa ", (iniRectTop+ iniScrollTop + this.scrollTop - yConst)/slope)
 
-			// 	console.log(" 222222 ", iniRectLeft-50)
+		}	
 
-			// 	rect1.style.left = iniRectLeft - 60 +"px";
-
-			} else {
-				if ( scrollpercent > 0.95 ) rect1.style.left = iniRectLeft - 60 +"px";
-				else rect1.style.left = breakPoint.initleft + parseInt(2*breakPoint.dx*(scrollpercent - 0.48))  + `px`;
-			}					
-
-		} else {	
-			rect1.style.top = iniRectTop + parseInt(dy*scrollpercent)+ parseInt(pageHeight*scrollpercent) + `px`;
-			rect1.style.left = iniRectLeft  - parseInt(2*pageWidth*scrollpercent) + `px`;
-		}
-
+		document.querySelector(".rect1").style.transform = `translateX(${ dx }px) translateY(${ dy }px)`;
 		iniScrollTop = this.scrollTop;
 	};
 
 }
 
-function testTemp(){
+//function scrolling(callback, delay){
+// function scrolling(){
+	
+// 	let iniScrollTop = null;
+// 	let iniRectTop = null;
+// 	let iniRectLeft = null;
+// 	let pageHeight = null;
+// 	let pageWidth = null;
+// 	let scrollAreaHeight = null;
+// 	let breakPoint = { state :false, dx : 0, initleft : 0, dir : 1 };
 
-}
+
+// 	let rect1 = document.querySelector(".rect1");
+// 	let rect2 = document.querySelector(".rect2");
+// 	let rect3 = document.querySelector(".rect3");
+
+// 	let dy = rect3.offsetTop - rect1.offsetTop;
+// 	let dx = rect3.offsetLeft - 20;
+
+
+// 	return function(e){		
+
+// 		if( iniScrollTop === null ){
+// 			iniRectTop = rect1.offsetTop;
+// 			iniRectLeft = rect1.offsetLeft;
+// 			pageHeight = this.scrollHeight;
+// 			pageWidth = dx;  // this.offsetWidth;  		
+// 			pageOuterHeight = this.scrollHeight - this.offsetHeight; //this.offsetHeight
+
+// 			iniScrollTop = this.scrollTop;
+// 		}
+
+// 		document.querySelector(".scroll p").textContent = this.scrollTop;
+// 		let scrollpercent = this.scrollTop/pageOuterHeight;
+// 		let interval = iniScrollTop - this.scrollTop;
+
+// 		//고정, 임시값들
+// 		rect3.style.top = rect3.offsetTop - interval  + `px`; 
+// 		document.querySelector(".rectfill").style.top = document.querySelector(".rectfill").offsetTop - interval  + `px`;
+// 		document.querySelector(".rectstroke").style.top = document.querySelector(".rectstroke").offsetTop - interval  + `px`;
+// 		document.querySelector(".cards").style.top = document.querySelector(".cards").offsetTop - interval  + `px`;
+// 		document.querySelector(".scroll .dir").style.top = document.querySelector(".scroll .dir").offsetTop - interval  + `px`; 
+// 		document.querySelector(".scroll .scrollCount").style.top = document.querySelector(".scroll .scrollCount").offsetTop - interval  + `px`; 
+		
+
+// 		if( scrollpercent < 0.25 ){
+
+// 			document.querySelector(".card").classList.remove("off");
+// 			document.querySelector(".rectfill").classList.remove("on");
+// 			document.querySelector(".rectstroke").classList.remove("on");
+
+// 		} else {
+// 			document.querySelector(".card").classList.add("off");
+// 			document.querySelector(".rectfill").classList.add("on");
+// 			document.querySelector(".rectstroke").classList.add("on");
+// 		}		
+
+// 		if( scrollpercent > 0.75 ){
+// 			document.querySelector(".cards").classList.add("on");
+// 		} else {
+// 			document.querySelector(".cards").classList.remove("on");
+// 		}
+
+// 		if( scrollpercent > 0.48 ){
+// 			//console.log("111  - ",scrollpercent*100, "%")
+// 			breakPoint.state = true;
+// 			if( breakPoint.initleft === 0 ){
+// 				breakPoint.initleft = rect1.offsetLeft;
+// 				breakPoint.dx = rect3.offsetLeft - rect1.offsetLeft;			
+// 			}
+
+// 		} else {
+// 			//console.log("222  - ",breakPoint.state)
+// 			breakPoint.state = false;
+// 			if( breakPoint.dx !== 0 ) breakPoint.dx = 0;
+// 			if( breakPoint.initleft !== 0 ) breakPoint.initleft = 0;
+
+// 		}
+	
+
+// 		if( breakPoint.state ) {
+
+// 			rect1.style.top = rect3.offsetTop + `px`;	
+
+// 			if( rect1.offsetLeft >= 0 && rect1.offsetLeft < 20 ) {
+// 				rect1.style.left = "20px";
+
+// 			// } else if ( rect1.offsetLeft > iniRectLeft ) {
+
+// 			// 	console.log(" 222222 ", iniRectLeft-50)
+
+// 			// 	rect1.style.left = iniRectLeft - 60 +"px";
+
+// 			} else {
+// 				if ( scrollpercent > 0.95 ) rect1.style.left = iniRectLeft - 60 +"px";
+// 				else rect1.style.left = breakPoint.initleft + parseInt(2*breakPoint.dx*(scrollpercent - 0.48))  + `px`;
+// 			}					
+
+// 		} else {	
+// 			rect1.style.top = iniRectTop + parseInt(dy*scrollpercent)+ parseInt(pageHeight*scrollpercent) + `px`;
+// 			rect1.style.left = iniRectLeft  - parseInt(2*pageWidth*scrollpercent) + `px`;
+// 		}
+
+// 		iniScrollTop = this.scrollTop;
+// 	};
+
+// }
+
+// function testTemp(){
+
+// }
 
 
 

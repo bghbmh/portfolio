@@ -29,6 +29,10 @@
 		{
 			"name" : "스크롤2",
 			"link" : "scroll2"	
+		},
+		{
+			"name" : "마우스무브",
+			"link" : "scroll2"	
 		}
 	]
 
