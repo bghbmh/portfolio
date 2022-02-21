@@ -739,7 +739,7 @@ nav:active .bar{
 	width: 40%;
 	height: 80%;
 	top: 50%;
-	right: 1em;	
+	left: calc(50% + 1em);
 	transform: translateY(-50%);
 
 	padding: 2.5em 3em;
