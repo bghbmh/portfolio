@@ -1,7 +1,25 @@
 @font-face {
-    font-family: "hotf";
+    font-family: "hyundai";
+    src: url('HyundaiSansHeadKROTFBold.otf') format('OpenType') ;
+    font-weight: bolder;
+    font-style: normal;
+}
+@font-face {
+    font-family: "hyundai";
+    src: url('HyundaiSansHeadKROTFMedium.otf') format('OpenType') ;
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "hyundai";
     src: url('HyundaiSansHeadKROTFRegular.otf') format('OpenType') ;
     font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "hyundai";
+    src: url('HyundaiSansHeadKROTFLight.otf') format('OpenType') ;
+    font-weight: lighter;
     font-style: normal;
 }
 
