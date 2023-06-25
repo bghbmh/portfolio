@@ -324,7 +324,7 @@ body.onModal > * { }
 	max-width: 98%;
 	margin: 10em auto;
 	border-radius: 24px;
-	background-color: var(--white);
+	background-color: transparent;
 	overflow: hidden;
 }
 .modalBody img{ max-width: 100%; }
@@ -364,6 +364,7 @@ body.onModal > * { }
 	overflow-y: auto;
 	max-height: 90%;
 	top: 50%; transform: translateY(-50%);
+	background-color: var(--white);
 }
 .modal.type2 .modalBody img{ width: 50%; height: 100%;}
 .modal.type2 .modalBody  .description{
