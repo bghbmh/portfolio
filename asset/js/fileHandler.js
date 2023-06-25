@@ -126,7 +126,7 @@ function loadingMessage(state){
 
 	let loadingMsg = document.createElement("div");
 	loadingMsg.setAttribute("class", "loadingMsg")
-	loadingMsg.textContent = "loading_test";
+	//loadingMsg.textContent = "loading_test";
 	document.querySelector('body').appendChild(loadingMsg);
 }
 
