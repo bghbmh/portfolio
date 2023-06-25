@@ -168,10 +168,12 @@ main.global{
 header.global{
 	position: -webkit-sticky;;
 	position: sticky;
-	top: -2em;
+	top: -1em;
 	transition: all .3s;
 	z-index: 9;
+	background-color: var(--white);
 }
+header.global .utility{ display: none; }
 nav.global [role="menubar"]{ position:relative; margin-top: 1.5em; }
 nav.global [role="menubar"]:before{
 	content: 'n';
