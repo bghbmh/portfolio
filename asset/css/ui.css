@@ -171,7 +171,7 @@ header.global{
 	top: -1em;
 	transition: all .3s;
 	z-index: 9;
-	background-color: var(--white);
+	background-color: #fafafa;
 }
 header.global .utility{ display: none; }
 nav.global [role="menubar"]{ position:relative; margin-top: 1.5em; }
