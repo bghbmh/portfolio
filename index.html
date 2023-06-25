@@ -1,14 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
+
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="Content-Script-Type" content="text/javascript">
 	<meta http-equiv="Content-Style-Type" content="text/css">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Cache-Control" content="No-Cache">
 	<meta http-equiv="Pragma" content="No-Cache">
-	<meta name="format-detection" content="telephone=no, address=no, email=no" />
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
 
 	<meta name="apple-mobile-web-app-title" content="박민희">
 	<meta name="robots" content="index,follow">
@@ -17,10 +18,10 @@
 	<meta name="author" content="Bak Min Hui_BMH_박민희">
 	<meta name="copyright" content="박민희">
 
-	<meta property="og:title" content="안녕하세요 박민희입니다" />
-	<meta property="og:url" content="https://bghbmh.github.io/main/" />
-	<meta property="og:image" content="img/icon192.jpg" />
-	<meta property="og:description" content="디자인/퍼블리셔" />
+	<meta property="og:title" content="안녕하세요 박민희입니다">
+	<meta property="og:url" content="https://bghbmh.github.io/main/">
+	<meta property="og:image" content="img/icon192.jpg">
+	<meta property="og:description" content="디자인/퍼블리셔">
 
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="img/icon144.jpg">
@@ -29,219 +30,106 @@
 	<link rel="icon" type="image/jpg" sizes="192x192" href="img/icon192.jpg">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icon72.jpg" />
-	<link rel="apple-touch-icon-precomposed" sizes="96x96" href="img/icon96.jpg" />
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/icon144.jpg" />
-	<link rel="apple-touch-icon-precomposed" sizes="192x192" href="img/icon192.jpg" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icon72.jpg">
+	<link rel="apple-touch-icon-precomposed" sizes="96x96" href="img/icon96.jpg">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/icon144.jpg">
+	<link rel="apple-touch-icon-precomposed" sizes="192x192" href="img/icon192.jpg">
 
 	<title>박민희</title>
 
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="css/basic.css">
-	<link rel="stylesheet" href="css/icons_style.css">
-	<link rel="stylesheet" href="css/popup_style.css">
-	<link rel="stylesheet" href="css/bmhStyle2.css">
-	<link rel="stylesheet" href="css/effect_circle_outline.css">
+	<link rel="stylesheet" type="text/css" href="asset/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="asset/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="asset/css/ui.css">
+
+	<script type="text/javascript" src="asset/js/commonFunction.js"></script>
+	<script type="module" src="asset/js/common.js"></script>
+	<script type="text/javascript" src="asset/js/test.js"></script>
 
 </head>
 
+<style>
+.loadingMsg{
+	position: fixed;
+	top:0; bottom:0;
+	left:0; right: 0;
+	background-color: #f1f1f1;
+	font-size: 48px;
+	z-index: 99999999999;
+}
+</style>
+
 <body>
 
-	<div class="wrap">
-		<!-- <header>
-			<ul id="work" class="work">
-				<li>Web</li>
-				<li>Print</li>
-				<li>BrandinG</li>
-				<li>Content</li>
-			</ul>
-			<ul id="job" class="job">
-				<li>DesiGner</li>
-				<li>박민희</li>
-			</ul>
-		</header> -->	
-
-		<section class="HiEveryone">
-		 	<div><img src="img/icons_myFace.svg"></div>
-			<div>안녕하세요<br>박민희입니다</div>
-		</section> <!---->
-		<nav>
-			<button data-btn="퍼블리싱">
-				퍼블리싱<span></span>
-			</button>
-			<span class="bar"></span>
-			<button data-btn="디자인">
-				디자인<span></span>
-			</button>  
-			<!-- <button class="write">글남기기</button>
-			<button class="calltxt">어플쓰기</button>    -->     	
-		</nav>
-
-
-		<!-- subpage --> 
-		<div class="subpage">
-			<div class="btnSet">
-				<button id="closeSubPage" class="closePage" aniEffect="cfOutline">
-					<span class="icons leftArrowSide"></span>
-					<div class="circumference_outline" data-anim="base wrapper">
-						<div class="circumference" data-anim="base left"></div>
-						<div class="circumference" data-anim="base right"></div>
-					</div>
-				</button>
-			</div>
-
-			<div class="contents">
-				<ul class="category">
-					<li data-category="uiComponents">
-						<img src="img/icons_pf-21.svg">
-						<div>UI Components</div>
-						<span>추가 중</span>						
-					</li>
-					<li data-category="퍼즐">
-						<img src="img/icons_pf-21.svg">
-						<div>간단한 퍼즐</div>
-						<span>Simple Puzzle</span>						
-					</li>
-					<!-- <li data-category="랜딩페이지">
-						<img src="img/icons_pf-21.svg">
-						<div>랜딩페이지</div>
-						<span>Story / scroll event</span>						
-					</li> -->
-				</ul>
-			</div>
-
-			<div class="microSite">
+	<header class="global">
+		<div class="hello">
+			<h1 class="logo" aria-label="안녕하세요 박민희입니다"></h1>
+			<a href="tel:010-3469-1323">010.3469.1323</a>
+			<div class="utility">
+				<button type="button">test</button>
 			</div>
 		</div>
-		<div class="subpage">
-			<div class="btnSet">
-				<button id="closeSubPage" class="closePage" aniEffect="cfOutline">
-					<span class="icons leftArrowSide"></span>
-					<div class="circumference_outline" data-anim="base wrapper">
-						<div class="circumference" data-anim="base left"></div>
-						<div class="circumference" data-anim="base right"></div>
-					</div>
-				</button>
-				
-				<button id="allItemSubPage" class="allItemsPage" aniEffect="cfOutline">
-					<span class="icons allItems"></span>
-					<div class="circumference_outline" data-anim="base wrapper">
-						<div class="circumference" data-anim="base left"></div>
-						<div class="circumference" data-anim="base right"></div>
-					</div>
-				</button>
+		<nav class="global">
+			<div role="menubar" style="--x : 0">
+				<button type="button" role="menuitem" data-category="모두" aria-current="page">모두</button>
+				<button type="button" role="menuitem" data-category="웹">웹</button>
+				<button type="button" role="menuitem" data-category="인쇄">인쇄</button>
+				<button type="button" role="menuitem" data-category="콘텐츠">콘텐츠</button>
+				<button type="button" role="menuitem" data-category="브랜딩">브랜딩</button>
 			</div>
-			<!-- <div class="subillust">
-				<img src="img/icons_myFace.svg">
-			</div> -->
+		</nav>
+	</header>
+<script>
+
+</script>
+
+	<main class="global">
+<!-- 		<h2 class="category">
+			Category
+		</h2> -->
+
+		<section class="grid products" data-tablet-grid="3" >
 
 
-			<div class="contents">
-				<ul class="category">
-					<li data-category="웹">
-						<img src="img/icons_pf-21.svg">
-						<div>웹</div>
-						<span>Web / UI / UX</span>						
-					</li>
-					<li data-category="인쇄">
-						<img src="img/icons_pf-22.svg">
-						<div>인쇄</div>
-						<span>Print / Illust</span>						
-					</li>
-					<li data-category="브랜딩">
-						<img src="img/icons_pf-23.svg">
-						<div>브랜딩</div>
-						<span>Branding / CI / BI</span>						
-					</li>
-					<li data-category="콘텐츠">
-						<img src="img/icons_pf-24.svg">
-						<div>콘텐츠</div>
-						<span>Content / Illust</span>						
-					</li>
-				</ul>
+		</section>
 
-			</div>
+<!-- 		<section class="cards-7 products" data-tablet-grid="3" >
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+		</section>
 
-	        <!-- 최근 작업 또는 대표 작업 모음 --> 
-	        <!-- 웹 Web / UI / UX --> 
-			<div class="mainContents">
-				<div class="btnSet">
-					<button class="closePage" aniEffect="cfOutline">
-						<span class="icons leftArrowSide"></span>
-						<div class="circumference_outline" data-anim="base wrapper">
-							<div class="circumference" data-anim="base left"></div>
-							<div class="circumference" data-anim="base right"></div>
-						</div>
-					</button>
-					<button class="categoryItemPage" aniEffect="cfOutline">
-						<span class="icons allItems"><span class="selected"></span></span>
-						<div class="circumference_outline" data-anim="base wrapper">
-							<div class="circumference" data-anim="base left"></div>
-							<div class="circumference" data-anim="base right"></div>
-						</div>
-					</button>	
-				</div>			
-				<div class="subsubTitle"></div>				
+		<br><br>
+		<section class="cards-3 products" data-tablet-grid="3" >
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+			<figure class="card" style="background-color: #f0f0f0;">1</figure>
+		</section>
+ -->
 
-				<div class="cntList"></div>		
+	</main>
 
-			</div> <!--end  maincontents --> 
-			<!-- 작업물 상세 설명 --> 
-			<div class="subDetail">
-				<div class="btnSet">
-					<button class="closePage circle" aniEffect="cfOutline">
-						<span class="icons crossShape"></span>
-						<div class="circumference_outline" data-anim="base wrapper">
-							<div class="circumference" data-anim="base left"></div>
-							<div class="circumference" data-anim="base right"></div>
-						</div>
-					</button>
-					<button class="hashtagItemPage circle" aniEffect="cfOutline">
-						<span class="icons allItems"><span class="selected"></span></span>
-						<div class="circumference_outline" data-anim="base wrapper">
-							<div class="circumference" data-anim="base left"></div>
-							<div class="circumference" data-anim="base right"></div>
-						</div>
-					</button>
-				</div>
-				<div class="item">
-				
-				</div>
-			</div>
-			
+	<footer class="global">
 
-		</div><!-- end subpage2 -->
-
-		<div class="workResult">
-			<div class="btnSet">
-				<button class="closePage">
-					<span class="icons leftArrowSide"></span>
-				</button>
-				<div class="faceLogo">
-					<img src="img/icons_myFace.svg"> 
-				</div>	
-			</div>
-			<ul>
-				<!-- <li>
-					<img src="img/pic/paper03.png">
-					<div><span>aaa</span><span>bbb</span></div>
-				</li> -->
-			</ul>
-		</div> <!-- -->
-
-
-	</div><!-- end wrap-->
+		<div class="copyright">
+			ⓒ 2022. 박민희
+			<a href="tel:010-3469-1323">010.3469.1323</a>
+		</div>
+	</footer>
 
 
 
-
-<script src="js/basic.js"></script> 
-<script src="js/popup.js"></script>
-<script src="js/topNameSlide.js"></script> 
-<!-- <script src="js/bmh.js"></script>  -->
-<script src="js/loadFile.js"></script> 
-<script src="js/bmh2.js"></script> 
 
 </body>
 
