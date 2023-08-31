@@ -55,7 +55,7 @@
 	{
 		"src" : "../asset/img/ddd.png",
 		"srcRatio" : "rowspan2",
-		"category" : 브랜딩",
+		"category" : "브랜딩",
 		"hash" : [ "hash2", "hashZZ" ],
 		"description" : {
 				"bg" : "../asset/img/888_bg.png",
