@@ -1,134 +1,202 @@
 
 
 export class fileHandler {
-	static isThere = false;
-	static fileName = false;
-
-	static _script = (src, {...options } = {} ) => {
-		let nowWindow = document.querySelector("html");
-		this.fileName = src.slice( src.lastIndexOf('/') + 1 ) ;
-		nowWindow.querySelectorAll('head script').forEach( (scriptFile, idx) => {
-			if( scriptFile.attributes.src.textContent.indexOf(this.fileName) >= 0 ) this.isThere = true;
-		});
-
-		if( this.isThere ) return;
-
-		var script = document.createElement('script');
-		script.src = src;//url;//this.requestUrl;
-		//script.type= type;
-		for( let prop in options ){
-			switch (prop){
-			case "eventListeners":
-				console.log("eventListeners - ",options[prop]);
-				for( let type in options[prop] )
-					this.attachEvent(type, script, options[prop][type]);
-				break;
-			default :
-				script[prop] = options[prop];
-				console.log("options - ",prop);
-				break;
-			}
-
-		}
-
-		nowWindow.querySelector('head').appendChild(script);
-
-		console.log("it was loaded a file==============")
-		return;
-			
+/*
+{
+	"type" : "script",
+	"url": '../asset/js/test2.js' ,
+	"eventListeners" : {
+		"load" : () => { console.log( "===load callbackFile===", this) },
+		'error' : () => { console.log( "===cerror allbackFile===",this) }
 	}
-
-	static attachEvent = (eType, eTarget, eFunc) => {
-		console.log("attachEvent - ",eType, eTarget, eFunc);
-		eTarget.addEventListener(eType, eFunc );
+}
+*/
+	static _load = ({...args}) => {
+		const xhr = new XMLHttpRequest();
+		//xhr.callback = null || args.callback;
+		xhr.arguments = args;
+		// xhr.onload = testSuccess;
+		// xhr.onerror = testError;
+		xhr.onreadystatechange = xhrReadystatechange;
+		xhr.onprogress = UpdateProgress;
+		xhr.open("GET", args.url, true);
+		xhr.send(null);
 	}
-
-	static _json = (url, callback) => {
-		this.findFile(url, callback);
-	};
-
-	static findFile = (url, callback) => {
-		let isFile = true;
-		const httpRequest = new XMLHttpRequest();
-		const method = "GET";
-		const requestURL = url;
-
-		if( !httpRequest ) alert("do not connection");
-
-		httpRequest.addEventListener("progress", updateProgress);
-		httpRequest.addEventListener("load", function(){
-			console.log("The transfer is complete." );
-			if( isFile )
-				callback(JSON.parse(httpRequest.response));
-		});
-		httpRequest.addEventListener("readystatechange", () => {
-			// In local files, status is 0 upon success in Mozilla Firefox
-			loadingMessage("on"); console.log("readystatechange status - ", httpRequest.readyState);
-			if (httpRequest.readyState === XMLHttpRequest.DONE) {
-				const status = httpRequest.status;
-				if (status === 0 || (status >= 200 && status < 400)) {
-					// The request has been completed successfully
-					loadingMessage("off");
-
-				} else {
-					// Oh no! There has been an error with the request!
-					isFile = false;
-					alert("no???")
-					console.log("readystatechange status aaaaaaaa - ", httpRequest.readyState);
-					loadingMessage("off");
-				}
-			}
-		});
-		// httpRequest.addEventListener("error", transferFailed);
-		// httpRequest.addEventListener("abort", transferCanceled);
-
-		httpRequest.open(method, url, true); // 동기 false, 비동기 true
-
-		httpRequest.send();
-
-	};
 }
 
 
-// progress on transfers from the server to the client (downloads)
-function updateProgress(event) {
-  if (event.lengthComputable) {
-    const percentComplete = (event.loaded / event.total) * 100;
-    console.log("The transfer is updateProgress.", percentComplete);
-    // ...
-  } else {
-    // Unable to compute progress information since the total size is unknown
-  }
+function xhrSuccess(xhr) {
+	loadingMessage.off();
+
+	if ( xhr.status === 0 || ( xhr.status >= 200 && xhr.status < 400 ) ) {
+		//console.log("testSuccess - ", xhr.arguments[0] );
+		fileTypeBox(xhr);
+		// The request has been completed successfully
+		//console.log("readystatechange status good - ", this.readyState);
+	} else {
+		// Oh no! There has been an error with the request!
+		console.log("testSuccess 확인중_파일이 않습니다.", xhr.responseURL, "\n xhr.readyState - ", xhr.readyState);
+		//alert("확인중_파일이 존재하지 않습니다." + url)
+	}
+}
+function xhrError(xhr) {
+	loadingMessage.off();
+	//console.log("testError qqq- ", xhr,xhr.statusText)
+	console.log("확인중_파일이 존재하지 않습니다.", xhr.responseURL, "\n this.readyState - ", xhr.readyState);
+
+}
+function xhrReadystatechange(){
+	//console.log("testReadystatechange");
+
+	loadingMessage.on("text text");
+	if (this.readyState === XMLHttpRequest.DONE) {
+		const status = this.status;
+		if ( this.status === 0 || ( this.status >= 200 && this.status < 400 ) ) {
+			// The request has been completed successfully
+			xhrSuccess(this);
+		} else {
+			// Oh no! There has been an error with the request!
+			xhrError(this);
+		}
+	}
+}
+function UpdateProgress(event) {
+	if (event.lengthComputable) {
+		const percentComplete = (event.loaded / event.total) * 100;
+		//console.log("The transfer is updateProgress.", percentComplete);
+		// ...
+	} else {
+		// Unable to compute progress information since the total size is unknown
+	}
+}
+
+function fileTypeBox(xhr) {
+	//console.log("fileTypeBox - ", xhr)
+
+	switch ( fileType(xhr.arguments.url) ){
+		case "js":
+			//console.log("fileTypeBox script");
+			_script(xhr.arguments);
+			break;
+		case "json":
+			//console.log("fileTypeBox json");
+			xhr.arguments.callback( xhr)
+			break;
+	}
+}
+function fileType ( fileUrl ){
+	return fileUrl.slice( fileUrl.lastIndexOf('.') + 1 ) ;
+}
+function _css ( options = {} ){
+
+
+}
+function _script ( options = {} ){
+
+	let nowWindow = document.querySelector("html");
+	let fileName = options.url.slice( options.url.lastIndexOf('/') + 1 ) ;
+	let isThere = false;
+	nowWindow.querySelectorAll('head script').forEach( (scriptFile, idx) => {
+		if( scriptFile.attributes.src.textContent.indexOf(fileName) >= 0 ) isThere = true;
+	});
+
+	var script = document.createElement('script');
+	script.src = options.url;//url;//this.requestUrl;
+	//script.type= type;
+	for( let prop in options ){
+		switch (prop){
+			case "eventListeners":
+				//console.log("eventListeners - ",options[prop]);
+				for( let type in options[prop] )
+					attachEvent(type, script, options[prop][type]);
+				break;
+			default :
+				//script[prop] = options[prop];
+				//console.log("options - ",prop);
+				break;
+		}
+
+	}
+
+	nowWindow.querySelector('head').appendChild(script);
+
+	//console.log("it was loaded a file==============")
+	return;
+
+}
+
+function attachEvent (eType, eTarget, eFunc) {
+	eTarget.addEventListener(eType, eFunc );
 }
 
 function transferComplete(evt) {
-  console.log("The transfer is complete.",this, JSON.parse(evt.target.response) );
+	//console.log("The transfer is complete.",this, JSON.parse(evt.target.response) );
 }
 
 function transferFailed(evt) {
-  console.log("An error occurred while transferring the file.");
+	//console.log("An error occurred while transferring the file.");
 }
 
 function transferCanceled(evt) {
-  console.log("The transfer has been canceled by the user.");
+	//console.log("The transfer has been canceled by the user.");
 }
 
 
-function loadingMessage(state){
-	console.log("loadingMessage state - ", state);
+var loadingMessage = {
+	isThere : null,
+	newMsg : null,
+	on : function (msg = null){
+		//console.log("on");
+		this.isThere = document.querySelector(".loadingMsg");
 
-	let loadingElem = document.querySelector(".loadingMsg");
-	if( state == "off" && loadingElem ){
-		loadingElem.parentNode.removeChild(loadingElem);
-		return;
+		if( this.isThere ) return;
+
+		this.newMsg = document.createElement("div");
+		this.newMsg.setAttribute("class", "loadingMsg")
+		this.newMsg.textContent =  msg || "loading_test";
+		document.querySelector('body').appendChild(this.newMsg);
+
+	},
+	off : function() {
+		if( !this.isThere ) return;
+		//console.log("off", this);
+		this.isThere.parentNode.removeChild(this.isThere);
+		this.isThere = null;
+		this.newMsg = null;
+
 	}
-	if( document.querySelector(".loadingMsg") ) return;
+};
 
-	let loadingMsg = document.createElement("div");
-	loadingMsg.setAttribute("class", "loadingMsg")
-	//loadingMsg.textContent = "loading_test";
-	document.querySelector('body').appendChild(loadingMsg);
-}
 
+
+// var loadingMessage = (function() {
+// 	console.log("loadingMessage state - ");
+
+// 	let isThere = null;
+// 	let newMsg = null;
+
+// 	return {
+// 		on : function (msg = null){
+// 			console.log("on");
+// 			isThere = document.querySelector(".loadingMsg");
+
+// 			if( loadingElem ) return;
+
+// 			newMsg = document.createElement("div");
+// 			newMsg.setAttribute("class", "loadingMsg")
+// 			newMsg.textContent =  msg || "loading_test";
+// 			document.querySelector('body').appendChild(newMsg);
+
+// 		},
+// 		off : function() {
+
+// 			if( !isThere ) return;
+// 			console.log("off");
+// 			isThere.parentNode.removeChild(isThere);
+// 			isThere = null;
+
+// 		}
+// 	};
+// } )();
 
 

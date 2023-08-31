@@ -1,4 +1,4 @@
-function CreateElement( { ...attributes } = {} ){
+function CreateElement( { ...attributes } = {} ){ // { tag : "div", class: "sample"} 
 	if ( !attributes.hasOwnProperty("tag") ) return;
 
 	let tag = document.createElement(attributes.tag);
