@@ -57,9 +57,9 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 	document.querySelector('nav.global').addEventListener("click", (e) => {
 
-		console.log("global - ", e.target.closest("button").dataset.page );
+		//console.log("global - ", e.target.closest("button").dataset.page );
 		
-		document.querySelector("#msg").innerHTML=`<span>test_click + span tag </span>`;
+		document.querySelector("#msg").innerHTML='test_click + span tag';
 
 
 		// switch ( e.target.closest("button").dataset.page ){
