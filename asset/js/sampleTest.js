@@ -99,7 +99,7 @@ export var Sample = (function() {
 			
 			if( dataUrl ){
 				_dataUrl = dataUrl;
-				fileHandler._load( { url: '../testJS/data/sampleNav.json', callback : this.dataSetUp.bind(this), loadType: "nav" });
+				fileHandler._load( { url: './data/sampleNav.json', callback : this.dataSetUp.bind(this), loadType: "nav" });
 				fileHandler._load( { url: dataUrl, callback : this.dataSetUp.bind(this), loadType: "items" });
 			}
 		},
