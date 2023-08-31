@@ -67,6 +67,8 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 		switch ( e.target.closest("button").dataset.page ){
 			case "design" :
 				document.querySelector("#msg").textContent="test Msg-- switch design";
+				
+				document.querySelector("body").classList.remove("intro");
 				Sample.init( document.querySelector('main'), './data/test.json' ) ;
 				break;
 			case "forndDevelop" :
