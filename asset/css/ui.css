@@ -244,7 +244,7 @@ body.intro header.global{ flex:1;    flex-direction: column; text-align: center;
 body.intro .hello{
     flex-direction:column;
     align-items:center;
-    margin-top: 10em;
+    margin-top: 3em;
     gap: 1em;
     flex: none;
 }
@@ -291,6 +291,7 @@ body.intro nav.global a:last-child:hover:after{ transform: translateX(100%); }
         padding-left: calc(50% - (var(--container) / 2));
         padding-right: calc(50% - (var(--container) / 2));
     }
+    body.intro .hello{ margin-top: 10em; }
 }
 @media(min-width:1440px){
     nav.global [aria-controls="gnb"]{ display: none;  }
