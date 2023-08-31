@@ -48,6 +48,10 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 	new Component("aaa");
 
+
+
+	document.querySelector("#msg").textContent="test Msg-- load";
+
 	//new SampleTest(document.querySelector('main'));
 	//SampleTest.render(document.querySelector('sample'))
 
