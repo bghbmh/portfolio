@@ -50,7 +50,7 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 
 
-	document.querySelector("#msg").textContent="test Msg-- load";
+	document.querySelector("#msg").textContent="test Msg123 -- load";
 
 	//new SampleTest(document.querySelector('main'));
 	//SampleTest.render(document.querySelector('sample'))
