@@ -61,6 +61,8 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 		
 		document.querySelector("#msg").textContent="test Msg-- click";
 
+		e.preventDefault();
+
 		switch ( e.target.closest("button").dataset.page ){
 			case "design" :
 				document.querySelector("#msg").textContent="test Msg-- switch design";
