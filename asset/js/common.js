@@ -14,11 +14,11 @@ import { Sample } from "./sampleTest.js";
 //fileHandler._script('../asset/js/test2.js');
 fileHandler._load({
 		"type" : "script",
-		"url": '../asset/js/test33.js'
+		"url": './asset/js/test33.js'
 	});
 fileHandler._load({
 		"type" : "script",
-		"url": '../asset/js/test2.js' ,
+		"url": './asset/js/test2.js' ,
 		"eventListeners" : {
 			"load" : () => { console.log( "===load callbackFile===", this) },
 			'error' : () => { console.log( "===cerror allbackFile===",this) }
@@ -59,7 +59,7 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 		switch ( e.target.closest("button").dataset.page ){
 			case "design" :
 				alert("path test__ now is Sample");
-				Sample.init( document.querySelector('main'), '../data/test.json' ) ;
+				Sample.init( document.querySelector('main'), './data/test.json' ) ;
 				break;
 			case "forndDevelop" :
 
