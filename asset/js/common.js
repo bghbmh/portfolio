@@ -73,7 +73,7 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 				break;
 			default:
-				document.querySelector("#msg").textContent="test Msg-- switch break" + e.target.closest("button").dataset.page;
+				document.querySelector("#msg").textContent="test Msg-- switch break -- " + e.target.closest("button").dataset.page;
 				break;
 		}
 
