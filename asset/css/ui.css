@@ -167,6 +167,7 @@ footer.global{
     height: auto;
     padding: 1em;
     flex: none;
+    z-index:99;
 }
 main.global{
     flex:0 1 auto;
@@ -180,7 +181,7 @@ header.global{
     position: -webkit-sticky;;
     position: sticky;
     display: flex;
-    top: 0em; /* -1em */
+    top: -1em; /* -1em */
     transition: all .3s;
     z-index: 9;
     background-color: #fafafa;
