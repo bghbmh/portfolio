@@ -55,6 +55,8 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 	//new SampleTest(document.querySelector('main'));
 	//SampleTest.render(document.querySelector('sample'))
 
+	document.querySelector("#msg").innerHTML='test_click + span tag';
+
 	document.querySelector('nav.global').addEventListener("click", (e) => {
 
 		//console.log("global - ", e.target.closest("button").dataset.page );
