@@ -53,10 +53,12 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 	document.querySelector('nav.global').addEventListener("click", (e) => {
 
-		console.log("global - ", e.target.closest("button").dataset.page )
+		console.log("global - ", e.target.closest("button").dataset.page );
+		alert("path test");
 
 		switch ( e.target.closest("button").dataset.page ){
 			case "design" :
+				alert("path test__ now is Sample");
 				Sample.init( document.querySelector('main'), '../data/test.json' ) ;
 				break;
 			case "forndDevelop" :
