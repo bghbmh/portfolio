@@ -1,0 +1,72 @@
+
+[
+
+	{
+		"src" : "../asset/img/web111.png",
+		"srcRatio" : "rowspan1",
+		"category" : "test1",
+		"hash" : [ "hash1", "hash2", "hash4", "hash13" ],
+		"description" : {
+				"bg" : "../asset/img/web111_bg.png",
+				"img" : "../asset/img/web111.png",
+				"info" : {
+					"name" : "project name",
+					"target" : "target",
+					"concept" : "feeling concept"
+				}
+			}
+	},
+	{
+		"src" : "../asset/img/pic/w23.png",
+		"category" : "zzzzzz2",
+		"link" : "https://amnesty.or.kr/campaign/iwd2020/",
+		"hash" : [ "hash13" ]
+	},
+	{
+		"src" : "../asset/img/aaa.png",
+		"srcRatio" : "rowspan2",
+		"category" : "test1",
+		"hash" : [ "hash2", "hash13" ],
+		"description" : {
+				"bg" : "../asset/img/222_bg.png",
+				"img" : "../asset/img/222.png",
+				"info" : {
+					"name" : "project name222",
+					"target" : "target222",
+					"concept" : "feeling concept222"
+				}
+			}
+	},
+	{
+		"src" : "../asset/img/ccc.png",
+		"srcRatio" : "rowspan3",
+		"category" : "test3",
+		"hash" : [ "hash2", "hash333" ],
+		"description" : {
+				"bg" : "../asset/img/333_bg.png",
+				"img" : "../asset/img/333.png",
+				"info" : {
+					"name" : "project name333",
+					"target" : "target333",
+					"concept" : "feeling concept333"
+				}
+			}
+	},
+	{
+		"src" : "../asset/img/ddd.png",
+		"srcRatio" : "rowspan2",
+		"category" : "zzzzzz2",
+		"hash" : [ "hash2", "hashZZ" ],
+		"description" : {
+				"bg" : "../asset/img/888_bg.png",
+				"img" : "../asset/img/888.png",
+				"info" : {
+					"name" : "project name888",
+					"target" : "target888",
+					"concept" : "feeling concept888"
+				}
+			}
+	}
+
+]
+
