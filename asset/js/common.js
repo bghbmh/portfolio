@@ -61,7 +61,7 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 		//console.log("global - ", e.target.closest("button").dataset.page );
 		
-		document.querySelector("#msg").textContent ='test_click1234 + span tag' + e.target.closest("button").dataset.page;
+		document.querySelector("#msg").textContent ='test_click1234 + span tag00' + e.target.closest("button").dataset.page;
 
 
 		switch ( e.target.closest("button").dataset.page ){
