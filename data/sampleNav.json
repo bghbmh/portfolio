@@ -1,41 +1,28 @@
 
 [
 	{
-		"category" : "test1",
+		"category" : "웹",
 		"class" : "icon-pf-0",		
 		"menu" : "test1",
-		"sub" : "sub1 / test1"
+		"sub" : "UX / UI / html,css,js"
 	},
 	{
-		"category" : "cate2",
+		"category" : "인쇄",
 		"class" : "icon-pf-1",		
 		"menu" : "cate2",
-		"sub" : "zzz / xxx / yyy"
+		"sub" : "일러스트"
 	},
 	{
-		"category" : "zzzzzz2",
+		"category" :"콘텐츠",
 		"class" : "icon-pf-2",		
 		"menu" : "zzzzzz2",
 		"sub" : "ㅋㅋㅋ"
 	},
 	{
-		"category" : "test3",
+		"category" : "브랜딩",
 		"class" : "icon-pf-3",		
 		"menu" : "test3",
 		"sub" : "zzz / xxx / yyy"
-	},
-	{
-		"category" : "menu33",
-		"class" : "icon-pf-4",		
-		"menu" : "menu33",
-		"sub" : "a / b / c"
-	},
-	{
-		"category" : "all",
-		"class" : "icon-pf-5",		
-		"menu" : "all",
-		"sub" : ""
 	}
-
 ]
 
