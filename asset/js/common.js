@@ -64,18 +64,18 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 		document.querySelector("#msg").textContent ='test_click1234 + span tag';
 
 
-		// switch ( e.target.closest("button").dataset.page ){
-		// 	case "design" :
-		// 		document.querySelector("#msg").textContent="test Msg-- switch design";
-		// 		//Sample.init( document.querySelector('main'), './data/test.json' ) ;
-		// 		break;
-		// 	case "forndDevelop" :
+		switch ( e.target.closest("button").dataset.page ){
+			case "design" :
+				document.querySelector("#msg").textContent="test Msg-- switch design";
+				//Sample.init( document.querySelector('main'), './data/test.json' ) ;
+				break;
+			case "forndDevelop" :
 
-		// 		break;
-		// }
+				break;
+		}
 
-		// document.querySelector('main').classList = "";
-		// document.querySelector('main').classList.add(e.target.closest("button").dataset.page);
+		document.querySelector('main').classList = "";
+		document.querySelector('main').classList.add(e.target.closest("button").dataset.page);
 
 	});
 
