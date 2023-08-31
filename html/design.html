@@ -47,7 +47,7 @@
 
 </head>
 
-<body class="intro">
+<body>
 	<header class="global">
 		<div class="hello">
 			<h1 class="logo">
@@ -66,10 +66,39 @@
 		</nav>
 	</header>
 
-	<main class="global">
+
+
+<style>
+.menubar{
+    min-height: 2em;
+}
+.menubar.on [role="menuitem"]{ 
+    float: right;
+    transition: all .3s; 
+}
+.menubar [role="menuitem"].on{
+    float: left;
+}
+
+</style>
+
+
+
+
+
+
+
+	<main>
+<!-- 		<h2 class="category">
+			Category
+		</h2>
+
+		<section class="flex sample" data-tablet-grid="3" ></section>
+ -->
 	</main>
 
 	<footer class="global">
+
 		<div class="copyright">
 			ⓒ 2022. 박민희
 			<a href="tel:010-3469-1323">010.3469.1323</a>
