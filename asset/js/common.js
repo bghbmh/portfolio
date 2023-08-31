@@ -72,6 +72,9 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 			case "forndDevelop" :
 
 				break;
+			default:
+				document.querySelector("#msg").textContent="test Msg-- switch break";
+				break;
 		}
 
 		document.querySelector('main').classList = "";
