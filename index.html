@@ -37,17 +37,17 @@
 
 	<title>박민희</title>
 
-	<link rel="stylesheet" type="text/css" href="../asset/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../asset/css/layout.css">
-	<link rel="stylesheet" type="text/css" href="../asset/css/ui.css">
+	<link rel="stylesheet" type="text/css" href="asset/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="asset/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="asset/css/ui.css">
 
-	<script type="text/javascript" src="../asset/js/commonFunction.js"></script>
-	<script type="module" src="../asset/js/common.js"></script>
-	<script type="text/javascript" src="../asset/js/test.js"></script>
+	<script type="text/javascript" src="asset/js/commonFunction.js"></script>
+	<script type="module" src="asset/js/common.js"></script>
+	<script type="text/javascript" src="asset/js/test.js"></script>
 
 </head>
 
-<body>
+<body class="intro">
 	<header class="global">
 		<div class="hello">
 			<h1 class="logo">
@@ -60,49 +60,21 @@
 		</div>
 		<nav class="global">
 			<div role="menubar" style="--x : 0">
-				<a href="forndDevelop.html" role="menuitem" class="">front</a>
-				<a href="design.html" role="menuitem" class="">design</a>
-			</div>
+				<button type="button" data-page="forndDevelop" role="menuitem" class="">front</button>
+				<button type="button" data-page="design" role="menuitem" class="">design</button>
+			</div> <!-- html/design.html -->
 		</nav>
 	</header>
-
-
-
-<style>
-.menubar{
-    min-height: 2em;
-}
-.menubar.on [role="menuitem"]{ 
-    float: right;
-    transition: all .3s; 
-}
-.menubar [role="menuitem"].on{
-    float: left;
-}
-
-</style>
-
-
-
-
-
-
-
-	<main>
-<!-- 		<h2 class="category">
-			Category
-		</h2>
-
-		<section class="flex sample" data-tablet-grid="3" ></section>
- -->
+ 
+	<main class="global">
 	</main>
 
 	<footer class="global">
-
 		<div class="copyright">
-			ⓒ 2022. 박민희
+			ⓒ 2023. 박민희
 			<a href="tel:010-3469-1323">010.3469.1323</a>
-		</div>
+		</div> 
+		
 	</footer>
 
 
