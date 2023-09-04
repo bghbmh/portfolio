@@ -48,23 +48,15 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 	new Component("aaa");
 
-
-
-
-
 	//new SampleTest(document.querySelector('main'));
 	//SampleTest.render(document.querySelector('sample'))
-
-
 
 	document.querySelector('nav.global').addEventListener("click", (e) => {
 
 		//console.log("global - ", e.target.closest("button").dataset.page );
-		
 
 		switch ( e.target.closest("button").dataset.page ){
 			case "design" :
-				
 				
 				document.querySelector("body").classList.remove("intro");
 				Sample.init( document.querySelector('main'), './data/test.json' ) ;
