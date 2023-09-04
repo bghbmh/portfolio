@@ -50,23 +50,21 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 
 
-	document.querySelector("#msg").textContent ="test Msg123 -- load";
+
 
 	//new SampleTest(document.querySelector('main'));
 	//SampleTest.render(document.querySelector('sample'))
 
-	document.querySelector("#msg").textContent ='test_click + span tag';
+
 
 	document.querySelector('nav.global').addEventListener("click", (e) => {
 
 		//console.log("global - ", e.target.closest("button").dataset.page );
 		
-		document.querySelector("#msg").textContent ='test_click1234 + span tag00' + e.target.closest("button").dataset.page;
-
 
 		switch ( e.target.closest("button").dataset.page ){
 			case "design" :
-				document.querySelector("#msg").textContent="test Msg-- switch design";
+				
 				
 				document.querySelector("body").classList.remove("intro");
 				Sample.init( document.querySelector('main'), './data/test.json' ) ;
@@ -75,7 +73,7 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 				break;
 			default:
-				document.querySelector("#msg").textContent="test Msg-- switch break -- " + e.target.closest("button");
+				
 				break;
 		}
 
@@ -84,11 +82,4 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 	});
 
-
-
-
-
-
 });
-
-
