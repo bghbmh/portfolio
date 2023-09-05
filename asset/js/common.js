@@ -18,7 +18,7 @@ fileHandler._load({
 	});
 fileHandler._load({
 		"type" : "script",
-		"url": './asset/js/test2.js' ,   
+		"url": './asset/js/test2.js' ,
 		"eventListeners" : {
 			"load" : () => { console.log( "===load callbackFile===", this) },
 			'error' : () => { console.log( "===cerror allbackFile===",this) }
@@ -48,16 +48,24 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 	new Component("aaa");
 
+
+
+
+
 	//new SampleTest(document.querySelector('main'));
 	//SampleTest.render(document.querySelector('sample'))
+
+
 
 	document.querySelector('nav.global').addEventListener("click", (e) => {
 
 		//console.log("global - ", e.target.closest("button").dataset.page );
+		
 
 		switch ( e.target.closest("button").dataset.page ){
 			case "design" :
-				console.log("======= update test =========");
+				console.log("location - ", window.location)
+				
 				document.querySelector("body").classList.remove("intro");
 				Sample.init( document.querySelector('main'), './data/bmh.json' ) ;
 				break;
@@ -74,4 +82,7 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 	});
 
+
 });
+
+
