@@ -64,7 +64,10 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 		switch ( e.target.closest("button").dataset.page ){
 			case "design" :
-				console.log("location - ", window.location)
+			window.location.href += window.location.href + '/design';
+				console.log("location - ", window.location.pathname)
+
+				//if( window.location.pathname.index )
 				
 				document.querySelector("body").classList.remove("intro");
 				Sample.init( document.querySelector('main'), './data/bmh.json' ) ;
