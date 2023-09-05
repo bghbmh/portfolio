@@ -1,28 +1,27 @@
-
 [
 	{
 		"category" : "웹",
-		"class" : "icon-pf-0",		
+		"class" : "icons_pf-21",		
 		"menu" : "test1",
 		"sub" : "UX / UI / html,css,js"
 	},
 	{
 		"category" : "인쇄",
-		"class" : "icon-pf-1",		
+		"class" : "icons_pf-22",		
 		"menu" : "cate2",
-		"sub" : "일러스트"
+		"sub" : "Print / Illust"
 	},
 	{
 		"category" :"콘텐츠",
-		"class" : "icon-pf-2",		
+		"class" : "icons_pf-23",		
 		"menu" : "zzzzzz2",
-		"sub" : "ㅋㅋㅋ"
+		"sub" : "content"
 	},
 	{
 		"category" : "브랜딩",
-		"class" : "icon-pf-3",		
+		"class" : "icons_pf-24",		
 		"menu" : "test3",
-		"sub" : "zzz / xxx / yyy"
+		"sub" : "Branding / CI"
 	}
 ]
 
