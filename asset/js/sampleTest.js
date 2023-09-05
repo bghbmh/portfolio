@@ -203,7 +203,7 @@ export var Sample = (function() {
 				//location.href = "products.html";
 				document.querySelector("main").classList.contains("design");
 
-				return console.log("click category? all - ", clickMenu);
+				return console.log("click category?  all_ itemData - ", _itemsData);
 			}
 
 
