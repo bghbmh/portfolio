@@ -18,7 +18,7 @@ fileHandler._load({
 	});
 fileHandler._load({
 		"type" : "script",
-		"url": './asset/js/test2.js' ,
+		"url": './asset/js/test2.js' ,   
 		"eventListeners" : {
 			"load" : () => { console.log( "===load callbackFile===", this) },
 			'error' : () => { console.log( "===cerror allbackFile===",this) }
