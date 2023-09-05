@@ -123,13 +123,7 @@ export var Sample = (function() {
 
 			let html =``;
 
-			if( !_selectedCategory || !_sampleItems[_selectedCategory] ) {				
-				return `
-					<div class="item none">
-						등록된 이미지가 없습니다
-					</div>
-				`;
-			}
+			
 
 			if( _selectedCategory === "all" ){
 
@@ -144,6 +138,12 @@ export var Sample = (function() {
 					`;
 				});
 						
+			} else if( !_selectedCategory || !_sampleItems[_selectedCategory] ) {				
+				return `
+					<div class="item none">
+						등록된 이미지가 없습니다
+					</div>
+				`;
 			} else {
 				_sampleItems[_selectedCategory].forEach( item => {
 					 
