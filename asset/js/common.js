@@ -57,7 +57,7 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 		switch ( e.target.closest("button").dataset.page ){
 			case "design" :
-				console.log("update test");
+				console.log("======= update test =========");
 				document.querySelector("body").classList.remove("intro");
 				Sample.init( document.querySelector('main'), './data/bmh.json' ) ;
 				break;
