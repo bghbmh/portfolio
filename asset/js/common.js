@@ -59,7 +59,7 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 			case "design" :
 				
 				document.querySelector("body").classList.remove("intro");
-				Sample.init( document.querySelector('main'), './data/test.json' ) ;
+				Sample.init( document.querySelector('main'), './data/bmh.json' ) ;
 				break;
 			case "forndDevelop" :
 
