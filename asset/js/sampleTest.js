@@ -246,7 +246,7 @@ export var Sample = (function() {
 			this.setItems( _selectedCategory );
 		},
 		render: function(target, html = null){
-			//console.log("render", html );
+			console.log("render  check  _selectedCategory == ", html );
 			// let renderArea = _space;
 			// if( target ) renderArea = target;
 			( target ? target : _space ).innerHTML = html;
