@@ -4,7 +4,7 @@ import { url } from "./linkAddress.js";
 /*
 샘플 컴포넌트 테스트용_230714
 html을 createElement로 만들지 않고
-퍼블된 태그 구조를 그대로 사용
+퍼블된 태그 구조를 그대로 사용 ff
 */
 
 export var Sample = (function() {
