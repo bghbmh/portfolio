@@ -4,7 +4,7 @@ import { url } from "./linkAddress.js";
 /*
 샘플 컴포넌트 테스트용_230714
 html을 createElement로 만들지 않고
-퍼블된 태그 구조를 그대로 사용 test
+퍼블된 태그 구조를 그대로 사용
 */
 
 export var Sample = (function() {
@@ -123,15 +123,13 @@ export var Sample = (function() {
 
 			let html =``;
 
-			
-
 			if( _selectedCategory === "all" ){
 
 				_itemsData.forEach( item => {
 					html += `
-						<div class="item" data-category=${item.category}>
+						<div class="item" data-category="${item.category}">
 							<figure class="img"><img src="${item.src}" alt="img title" aria-hidden="true"></figure>
-							<figcaption class="info">
+							<figcaption class="hash">
 								${this.testSpan(item.hash)}
 							</figcaption>
 						</div>
@@ -148,7 +146,7 @@ export var Sample = (function() {
 				_sampleItems[_selectedCategory].forEach( item => {
 					 
 					html += `
-						<div class="item" style="background-image : url('${item.description.bg}');" data-category=${item.category}>
+						<div class="item" style="background-image : url('${item.description.bg}');" data-category="${item.category}">
 							<figure class="img"><img src="${item.description.img}" alt="img title" aria-hidden="true"></figure>
 							<figcaption class="info">
 								${this.testDl(item.description.info)}
