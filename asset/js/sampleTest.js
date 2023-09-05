@@ -123,6 +123,8 @@ export var Sample = (function() {
 
 			let html =``;
 
+			
+
 			if( _selectedCategory === "all" ){
 
 				_itemsData.forEach( item => {
@@ -234,8 +236,8 @@ export var Sample = (function() {
 			for( const menu of clickMenu.parentNode.children ){
 				menu.classList.remove("on");
 
-				if( menu.dataset.selected === "true" )
-					menu.dataset.selected === "false";
+				if( menu.dataset.selected === "true" ) menu.dataset.selected = "false";
+				else menu.dataset.selected = "true";
 			}
 
 			clickMenu.classList.add("on");
@@ -244,7 +246,7 @@ export var Sample = (function() {
 			this.setItems( _selectedCategory );
 		},
 		render: function(target, html = null){
-			console.log("render  check  _selectedCategory == ", html );
+			// console.log("render  check  _selectedCategory == ", html );
 			// let renderArea = _space;
 			// if( target ) renderArea = target;
 			( target ? target : _space ).innerHTML = html;
