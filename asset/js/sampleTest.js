@@ -204,11 +204,11 @@ export var Sample = (function() {
 			//console.log("url.searchParams.get category ++ sampleTest ++  ", url.searchParams.get("category"));
 
 			// 페이지이동 임시_230706
-			if( url.searchParams.get("category") === "all"  ){
-				//location.href = "products.html";
-				document.querySelector("main").classList.contains("design");
-				return console.log("url category? all_ itemData - ", _itemsData);
-			}
+			// if( url.searchParams.get("category") === "all"  ){
+			// 	//location.href = "products.html";
+			// 	document.querySelector("main").classList.contains("design");
+			// 	return console.log("url category? all_ itemData - ", _itemsData);
+			// }
 
 			if( !clickMenu ) return console.log("list? clickMenu - ", clickMenu);
 
