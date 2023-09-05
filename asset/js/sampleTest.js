@@ -130,6 +130,12 @@ export var Sample = (function() {
 					</div>
 				`;
 			}
+
+			if( _selectedCategory === "all" ){
+				html += `
+					test
+				`;	
+			}
 			
 			_sampleItems[_selectedCategory].forEach( item => {
 				 
@@ -183,7 +189,7 @@ export var Sample = (function() {
 			if( url.searchParams.get("category") === "all"  ){
 				//location.href = "products.html";
 				document.querySelector("main").classList.contains("design");
-				return console.log("url category? all - ");
+				return console.log("url category? all_ itemData - ", _itemsData);
 			}
 
 			if( !clickMenu ) return console.log("list? clickMenu - ", clickMenu);
@@ -196,6 +202,7 @@ export var Sample = (function() {
 			if( clickMenu.dataset.category === "all"  ){
 				//location.href = "products.html";
 				document.querySelector("main").classList.contains("design");
+
 				return console.log("click category? all - ", clickMenu);
 			}
 
