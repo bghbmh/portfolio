@@ -15,7 +15,7 @@ export var Sample = (function() {
 	let _category = [];
 	let _sampleItems = {};
 	let _nav = null;
-	let _navData = null;
+	let _navData = null; 
 	let _itemsBox = null;
 	let _selectedCategory = null;
 
@@ -36,7 +36,8 @@ export var Sample = (function() {
 				}); 
 			}
 
-			if( !Object.entries(_sampleItems).length ){  console.log("init _sampleItems" );
+			console.log("init _sampleItems 00", _sampleItems );
+			if( !Object.entries(_sampleItems).length ){  console.log("init _sampleItems 11 - ", _sampleItems );
 				_itemsData.forEach( item => {
 
 					let isThere = false;
@@ -98,7 +99,7 @@ export var Sample = (function() {
 			//this.setNav(_space.parentNode );
 			
 			if( dataUrl ){
-				_dataUrl = dataUrl;
+				_dataUrl = dataUrl; console.log( " init-- ", dataUrl)
 				fileHandler._load( { url: './data/sampleNav.json', callback : this.dataSetUp.bind(this), loadType: "nav" });
 				fileHandler._load( { url: dataUrl, callback : this.dataSetUp.bind(this), loadType: "items" });
 			}
