@@ -64,7 +64,7 @@ console.log("load ---  url.searchParams.get category - ", url.searchParams.get("
 
 		switch ( e.target.closest("button").dataset.page ){
 			case "design" :
-				window.location.href += '?page=design';
+				url.searchParams.set("page", "design" );
 				console.log("location - ", window.location.pathname)
 
 				//if( window.location.pathname.index )
