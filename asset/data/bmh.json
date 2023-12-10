@@ -3,19 +3,19 @@
 	{
 		"id" : 86,
 		"main" : true,
-		"src" : "../asset/data/img/me12.png",
+		"src" : "./asset/data/img/me12.png",
 		"category" : "웹",
 		"hash" : [ "제안","디자인" ]
 	},
 	{
 		"id" : 85,
 		"main" : true,
-		"src" : "../asset/data/img/me11.png",
+		"src" : "./asset/data/img/me11.png",
 		"category" : "웹",
 		"hash" : [ "반응형", "대시보드","디자인", "코딩"  ],
 		"description" : {
-				"bg" : "../asset/data/img/web111_bg.png",
-				"src" : "../asset/data/img/me11.png",
+				"bg" : "./asset/data/img/web111_bg.png",
+				"src" : "./asset/data/img/me11.png",
 				"title" : "콘텐츠관리",
 				"link" : "nameCard/m_nameCard.html",
 				"designer" : "박민희",
@@ -25,19 +25,19 @@
 	{
 		"id" : 87,
 		"main" : true,
-		"src" : "../asset/data/img/me13.png",
+		"src" : "./asset/data/img/me13.png",
 		"category" : "웹",
 		"hash" : [ "제안","디자인" ]
 	},
 	{
 		"id" : 89,
 		"main" : true,
-		"src" : "../asset/data/img/w1.jpg",
+		"src" : "./asset/data/img/w1.jpg",
 		"category" : "웹",
 		"hash" : [ "코딩", "반응형" ],
 		"description" : {
-			"bg" : "../asset/data/img/print112_bg.png",
-			"src" : "../asset/data/img/w1.png",
+			"bg" : "./asset/data/img/print112_bg.png",
+			"src" : "./asset/data/img/w1.png",
 			"title" : "HYCU",
 			"link" : "nameCard/m_nameCard.html",
 			"coding" : "박민희"
@@ -46,20 +46,20 @@
 	{
 		"id" : 91,
 		"main" : true,
-		"src" : "../asset/data/img/me15.png",
+		"src" : "./asset/data/img/me15.png",
 		"category" : "웹",
 		"hash" : [ "리뉴얼", "디자인"]
 	},
 	{
 		"id" : 88,
 		"main" : true,
-		"src" : "../asset/data/img/w1.png",
+		"src" : "./asset/data/img/w1.png",
 		"srcRatio" : "rowspan1",
 		"category" : "웹",
 		"hash" : [ "리뉴얼", "반응형", "디자인", "코딩"  ],
 		"description" : {
-				"bg" : "../asset/data/img/print112_bg.png",
-				"src" : "../asset/data/img/w1.png",
+				"bg" : "./asset/data/img/print112_bg.png",
+				"src" : "./asset/data/img/w1.png",
 				"title" : "훌라로 랜딩페이지",
 				"mainColor" : [ "#5a2efd", "#2df1fd" ],
 				"link" : "nameCard/m_nameCard.html",
@@ -70,7 +70,7 @@
 	{
 		"id" : 90,
 		"main" : true,
-		"src" : "../asset/data/img/me14.png",
+		"src" : "./asset/data/img/me14.png",
 		"category" : "웹",
 		"hash" : [ "디자인", "코딩", "반응형" ]
 	},
@@ -78,13 +78,13 @@
 	{
 		"id" : 84,
 		"main" : true,
-		"src" : "../asset/data/img/web111.png",
+		"src" : "./asset/data/img/web111.png",
 		"srcRatio" : "rowspan1",
 		"category" : "웹",
 		"hash" : [ "모바일", "명함", "코딩"  ],
 		"description" : {
-				"bg" : "../asset/data/img/web111_bg.png",
-				"src" : "../asset/data/img/web111.png",
+				"bg" : "./asset/data/img/web111_bg.png",
+				"src" : "./asset/data/img/web111.png",
 				"title" : "모바일명함",
 				"targetAge" : "40대 이상(사용자), 20대 이상(사용자의 고객)",
 				"concept" : "산뜻함",
@@ -99,33 +99,33 @@
 	{
 		"id" : 83,
 		"main" : true,
-		"src" : "../asset/data/img/w23.png",
+		"src" : "./asset/data/img/w23.png",
 		"category" : "웹",
 		"link" : "https://amnesty.or.kr/campaign/iwd2020/",
 		"hash" : [ "pc","모바일", "코딩" ]
 	},
 	{
 		"id" : 82,
-		"src" : "../asset/data/img/paper30.png",
+		"src" : "./asset/data/img/paper30.png",
 		"category" : "인쇄",
 		"hash" : [ "엽서", "일러스트" ]
 	},
 	{
 		"id" : 81,
-		"src" : "../asset/data/img/paper31.png",
+		"src" : "./asset/data/img/paper31.png",
 		"category" : "인쇄",
 		"hash" : [ "엽서", "청첩장", "일러스트" ]
 	},
 	{
 		"id" : 80,
 		"main" : true,
-		"src" : "../asset/data/img/paper27.png",
+		"src" : "./asset/data/img/paper27.png",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "브로슈어", "안내문", "보험" ],
 		"description" : {
-				"bg" : "../asset/data/img/print114_bg.png",
-				"src" : "../asset/data/img/print114.png",
+				"bg" : "./asset/data/img/print114_bg.png",
+				"src" : "./asset/data/img/print114.png",
 				"title" : "치매보험 가입 안내",
 				"targetAge" : "50대 이상의 부양자가 있는 20대 이상",
 				"printColor" : "4도",
@@ -135,13 +135,13 @@
 	},
 	{
 		"id" : 79,
-		"src" : "../asset/data/img/w18.jpg",
+		"src" : "./asset/data/img/w18.jpg",
 		"srcRatio" : "rowspan2",
 		"category" : "웹",
 		"hash" : [ "모바일"],
 		"description" : {
-				"bg" : "../asset/data/img/web113_bg.png",
-				"src" : "../asset/data/img/web113.png",
+				"bg" : "./asset/data/img/web113_bg.png",
+				"src" : "./asset/data/img/web113.png",
 				"title" : "치매보험",
 				"targetAge" : "50대 이상의 부양자가 있는 20대 이상",
 				"concept" : "글자, 그림은 최대한 사용하지 않기",
@@ -153,13 +153,13 @@
 	{
 		"id" : 78,
 		"main" : true,
-		"src" : "../asset/data/img/w22.png",
+		"src" : "./asset/data/img/w22.png",
 		"srcRatio" : "rowspan2",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일"],
 		"description" : {
-				"bg" : "../asset/data/img/web114_bg.png",
-				"src" : "../asset/data/img/web114.png",
+				"bg" : "./asset/data/img/web114_bg.png",
+				"src" : "./asset/data/img/web114.png",
 				"title" : "어린이보험",
 				"targetAge" : "30대 이상",
 				"mainColor" : [ "#5656fb" ],
@@ -170,13 +170,13 @@
 	},
 	{
 		"id" : 77,
-		"src" : "../asset/data/img/w19.jpg",
+		"src" : "./asset/data/img/w19.jpg",
 		"srcRatio" : "rowspan2",
 		"category" : "웹",
 		"hash" : [ "모바일", "메인페이지", "코딩", "javascript", "일러스트" ],
 		"description" : {
-				"bg" : "../asset/data/img/web112_bg.png",
-				"src" : "../asset/data/img/web112.png",
+				"bg" : "./asset/data/img/web112_bg.png",
+				"src" : "./asset/data/img/web112.png",
 				"title" : "택시함께",
 				"targetAge" : "20대 이상",
 				"concept" : "편안함, 인자함, 개인을 위한, 패키지와 다른",
@@ -189,37 +189,37 @@
 	},
 	{
 		"id" : 76,
-		"src" : "../asset/data/img/w21.png",
+		"src" : "./asset/data/img/w21.png",
 		"srcRatio" : "rowspan2",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일" ]
 	},
 	{
 		"id" : 75,
-		"src" : "../asset/data/img/paper15.png",
+		"src" : "./asset/data/img/paper15.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "A3", "일러스트" ]
 	},
 	{
 		"id" : 74,
-		"src" : "../asset/data/img/paper16.png",
+		"src" : "./asset/data/img/paper16.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "A3", "일러스트" ]
 	},
 	{
 		"id" : 73,
-		"src" : "../asset/data/img/paper28.jpg",
+		"src" : "./asset/data/img/paper28.jpg",
 		"category" : "브랜딩",
 		"hash" : [ "로고", "CI" ]
 	},
 	{
 		"id" : 72,
-		"src" : "../asset/data/img/paper29.jpg",
+		"src" : "./asset/data/img/paper29.jpg",
 		"category" : "브랜딩",
 		"hash" : [ "로고", "CI" ],
 		"description" : {
-				"bg" : "../asset/data/img/branding111_bg.png",
-				"src" : "../asset/data/img/branding111.png",
+				"bg" : "./asset/data/img/branding111_bg.png",
+				"src" : "./asset/data/img/branding111.png",
 				"title" : "아하봄",
 				"targetAge" : "20대 이상",
 				"concept" : "따뜻함, 사랑",
@@ -230,13 +230,13 @@
 	},
 	{
 		"id" : 71,
-		"src" : "../asset/data/img/z01.jpg",
+		"src" : "./asset/data/img/z01.jpg",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "패키지", "VR", "카드보드", "일러스트" ]	,
 		"description" : {
-				"bg" : "../asset/data/img/print112_bg.png",
-				"src" : "../asset/data/img/print112.png",
+				"bg" : "./asset/data/img/print112_bg.png",
+				"src" : "./asset/data/img/print112.png",
 				"title" : "카드보드(VR)",
 				"targetAge" : "미취학, 초등학교 1~2학년",
 				"printColor" : "4도",
@@ -246,13 +246,13 @@
 	},
 	{
 		"id" : 70,
-		"src" : "../asset/data/img/paper02.png",
+		"src" : "./asset/data/img/paper02.png",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "530x800", "일러스트" ],
 		"description" : {
-				"bg" : "../asset/data/img/print111_bg.png",
-				"src" : "../asset/data/img/print111.png",
+				"bg" : "./asset/data/img/print111_bg.png",
+				"src" : "./asset/data/img/print111.png",
 				"title" : "천문정보알림",
 				"targetAge" : "미취학, 초등학교 1~2학년",
 				"printColor" : "4도",
@@ -263,33 +263,33 @@
 	},
 	{
 		"id" : 69,
-		"src" : "../asset/data/img/paper03.png",
+		"src" : "./asset/data/img/paper03.png",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "530x800", "일러스트" ]
 	},
 	{
 		"id" : 68,
-		"src" : "../asset/data/img/paper04.png",
+		"src" : "./asset/data/img/paper04.png",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "530x800", "일러스트" ]
 	},
 	{
 		"id" : 67,
-		"src" : "../asset/data/img/paper05.png",
+		"src" : "./asset/data/img/paper05.png",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "530x800", "일러스트" ]
 	},
 	{
 		"id" : 66,
-		"src" : "../asset/data/img/paper06.png",
+		"src" : "./asset/data/img/paper06.png",
 		"category" : "인쇄",
 		"hash" : [ "보드게임", "A3", "일러스트" ],
 		"description" : {
-				"bg" : "../asset/data/img/print113_bg.png",
-				"src" : "../asset/data/img/print113.png",
+				"bg" : "./asset/data/img/print113_bg.png",
+				"src" : "./asset/data/img/print113.png",
 				"title" : "혜성탐사게임",
 				"targetAge" : "초등학교 1~2학년",
 				"printColor" : "4도",
@@ -301,79 +301,79 @@
 	},
 	{
 		"id" : 65,
-		"src" : "../asset/data/img/paper07.png",
+		"src" : "./asset/data/img/paper07.png",
 		"category" : "인쇄",
 		"hash" : [ "보드게임", "1200x1200", "일러스트" ]
 	},
 
 	{
 		"id" : 64,
-		"src" : "../asset/data/img/paper08.png",
+		"src" : "./asset/data/img/paper08.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
 	},
 	{
 		"id" : 63,
-		"src" : "../asset/data/img/paper09.png",
+		"src" : "./asset/data/img/paper09.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
 	},
 	{
 		"id" : 62,
-		"src" : "../asset/data/img/paper10.png",
+		"src" : "./asset/data/img/paper10.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
 	},
 	{
 		"id" : 61,
-		"src" : "../asset/data/img/paper11.png",
+		"src" : "./asset/data/img/paper11.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
 	},
 	{
 		"id" : 60,
-		"src" : "../asset/data/img/paper12.png",
+		"src" : "./asset/data/img/paper12.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "900x600", "일러스트" ]
 	},
 	{
 		"id" : 59,
-		"src" : "../asset/data/img/paper14.png",
+		"src" : "./asset/data/img/paper14.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "900x600", "일러스트" ]
 	},
 	{
 		"id" : 58,
-		"src" : "../asset/data/img/c04.jpg",
+		"src" : "./asset/data/img/c04.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 	{
 		"id" : 57,
-		"src" : "../asset/data/img/c05.jpg",
+		"src" : "./asset/data/img/c05.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 	{
 		"id" : 56,
-		"src" : "../asset/data/img/c06.jpg",
+		"src" : "./asset/data/img/c06.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 	{
 		"id" : 55,
-		"src" : "../asset/data/img/c07.jpg",
+		"src" : "./asset/data/img/c07.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 	{
 		"id" : 54,
-		"src" : "../asset/data/img/c08.png",
+		"src" : "./asset/data/img/c08.png",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]	,
 		"description" : {
-				"bg" : "../asset/data/img/print115_bg.png",
-				"src" : "../asset/data/img/print115.png",
+				"bg" : "./asset/data/img/print115_bg.png",
+				"src" : "./asset/data/img/print115.png",
 				"title" : "교과서용 컷",
 				"targetAge" : "고등 융합과학",
 				"printColor" : "4도",
@@ -383,122 +383,122 @@
 	},
 	{
 		"id" : 53,
-		"src" : "../asset/data/img/c09.png",
+		"src" : "./asset/data/img/c09.png",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 	{
 		"id" : 52,
-		"src" : "../asset/data/img/c10.png",
+		"src" : "./asset/data/img/c10.png",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 
 	{
 		"id" : 51,
-		"src" : "../asset/data/img/w01.jpg",
+		"src" : "./asset/data/img/w01.jpg",
 		"category" : "웹",
 		"hash" : ["모바일", "메인페이지", "코딩" ]
 	},
 	{
 		"id" : 50,
-		"src" : "../asset/data/img/w02.jpg",
+		"src" : "./asset/data/img/w02.jpg",
 		"category" : "웹",
 		"hash" : ["모바일", "메인페이지", "코딩" ]
 	},
 	{
 		"id" : 49,
-		"src" : "../asset/data/img/w04.jpg",
+		"src" : "./asset/data/img/w04.jpg",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일", "메인페이지", "코딩" ]
 	},
 	{
 		"id" : 48,
-		"src" : "../asset/data/img/z02.jpg",
+		"src" : "./asset/data/img/z02.jpg",
 		"category" : "인쇄",
 		"hash" : [ "책", "표지", "일러스트" ]
 	},
 	{
 		"id" : 47,
-		"src" : "../asset/data/img/paper18.png",
+		"src" : "./asset/data/img/paper18.png",
 		"category" : "인쇄",
 		"hash" : [ "명함", "일러스트" ]
 	},
 	{
 		"id" : 46,
-		"src" : "../asset/data/img/paper17.png",
+		"src" : "./asset/data/img/paper17.png",
 		"category" : "인쇄",
 		"hash" : [ "명함", "일러스트" ]
 	},
 	{
 		"id" : 45,
-		"src" : "../asset/data/img/paper01.jpg",
+		"src" : "./asset/data/img/paper01.jpg",
 		"category" : "인쇄",
 		"hash" : [ "브로슈어", "안내문", "제품" ]
 	},
 
 	{
 		"id" : 44,
-		"src" : "../asset/data/img/p33.jpg",
+		"src" : "./asset/data/img/p33.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
 		"id" : 43,
-		"src" : "../asset/data/img/p35.png",
+		"src" : "./asset/data/img/p35.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
 		"id" : 42,
-		"src" : "../asset/data/img/p36.png",
+		"src" : "./asset/data/img/p36.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
 		"id" : 41,
-		"src" : "../asset/data/img/p37.png",
+		"src" : "./asset/data/img/p37.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
 		"id" : 40,
-		"src" : "../asset/data/img/p38.png",
+		"src" : "./asset/data/img/p38.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
 		"id" : 39,
-		"src" : "../asset/data/img/p39.png",
+		"src" : "./asset/data/img/p39.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이", "모바일"]
 	},
 	{
 		"id" : 38,
-		"src" : "../asset/data/img/p40.png",
+		"src" : "./asset/data/img/p40.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이", "모바일"]
 	},
 	{
 		"id" : 37,
-		"src" : "../asset/data/img/p41.png",
+		"src" : "./asset/data/img/p41.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이", "모바일"]
 	},
 	{
 		"id" : 36,
-		"src" : "../asset/data/img/p42.jpg",
+		"src" : "./asset/data/img/p42.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문",  "어린이"]
 	},
 	{
 		"id" : 35,
-		"src" : "../asset/data/img/p43.jpg",
+		"src" : "./asset/data/img/p43.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이"]	,
 		"description" : {
-				"bg" : "../asset/data/img/content112_bg.png",
-				"src" : "../asset/data/img/content112.png",
+				"bg" : "./asset/data/img/content112_bg.png",
+				"src" : "./asset/data/img/content112.png",
 				"title" : "모바일용 정보 알림",
 				"targetAge" : "미취학 또는 초등학교 1~2학년 자녀를 둔 부모",
 				"concept" : "귀여움",
@@ -510,171 +510,171 @@
 
 	{
 		"id" : 34,
-		"src" : "../asset/data/img/p44.jpg",
+		"src" : "./asset/data/img/p44.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이"]
 	},
 	{
 		"id" : 33,
-		"src" : "../asset/data/img/p52.jpg",
+		"src" : "./asset/data/img/p52.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 32,
-		"src" : "../asset/data/img/p58.jpg",
+		"src" : "./asset/data/img/p58.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 31,
-		"src" : "../asset/data/img/p60.jpg",
+		"src" : "./asset/data/img/p60.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 30,
-		"src" : "../asset/data/img/p61.jpg",
+		"src" : "./asset/data/img/p61.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 29,
-		"src" : "../asset/data/img/p62.jpg",
+		"src" : "./asset/data/img/p62.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 28,
-		"src" : "../asset/data/img/paper19.jpg",
+		"src" : "./asset/data/img/paper19.jpg",
 		"category" : "인쇄",
 		"hash" : [ "광고", "포스터" ]
 	},
 	{
 		"id" : 27,
-		"src" : "../asset/data/img/paper20.jpg",
+		"src" : "./asset/data/img/paper20.jpg",
 		"category" : "인쇄",
 		"hash" : [ "광고", "잡지" ]
 	},
 	{
 		"id" : 26,
-		"src" : "../asset/data/img/paper21.jpg",
+		"src" : "./asset/data/img/paper21.jpg",
 		"category" : "인쇄",
 		"hash" : [ "광고", "지하철"]
 	},
 	{
 		"id" : 25,
-		"src" : "../asset/data/img/paper22.jpg",
+		"src" : "./asset/data/img/paper22.jpg",
 		"category" : "인쇄",
 		"hash" : [ "광고", "지하철"]
 	},
 
 	{
 		"id" : 24,
-		"src" : "../asset/data/img/w13.jpg",
+		"src" : "./asset/data/img/w13.jpg",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일", "마케팅"]
 	},
 	{
 		"id" : 23,
-		"src" : "../asset/data/img/w14.jpg",
+		"src" : "./asset/data/img/w14.jpg",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일", "마케팅"]
 	},
 
 	{
 		"id" : 22,
-		"src" : "../asset/data/img/w15.jpg",
+		"src" : "./asset/data/img/w15.jpg",
 		"category" : "웹",
 		"hash" : [ "모바일", "마케팅"]
 	},
 	{
 		"id" : 21,
-		"src" : "../asset/data/img/w16.jpg",
+		"src" : "./asset/data/img/w16.jpg",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일", "마케팅"]
 	},
 	{
 		"id" : 20,
-		"src" : "../asset/data/img/w17.jpg",
+		"src" : "./asset/data/img/w17.jpg",
 		"category" : "웹",
 		"hash" : [ "모바일", "마케팅"]
 	},
 
 	{
 		"id" : 19,
-		"src" : "../asset/data/img/p02.jpg",
+		"src" : "./asset/data/img/p02.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 18,
-		"src" : "../asset/data/img/p03.jpg",
+		"src" : "./asset/data/img/p03.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 17,
-		"src" : "../asset/data/img/p14.jpg",
+		"src" : "./asset/data/img/p14.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 16,
-		"src" : "../asset/data/img/p15.jpg",
+		"src" : "./asset/data/img/p15.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 15,
-		"src" : "../asset/data/img/p22.jpg",
+		"src" : "./asset/data/img/p22.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 14,
-		"src" : "../asset/data/img/p25.jpg",
+		"src" : "./asset/data/img/p25.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 13,
-		"src" : "../asset/data/img/p28.jpg",
+		"src" : "./asset/data/img/p28.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 12,
-		"src" : "../asset/data/img/p29.jpg",
+		"src" : "./asset/data/img/p29.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 11,
-		"src" : "../asset/data/img/p30.jpg",
+		"src" : "./asset/data/img/p30.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 10,
-		"src" : "../asset/data/img/p31.jpg",
+		"src" : "./asset/data/img/p31.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 9,
-		"src" : "../asset/data/img/p46.jpg",
+		"src" : "./asset/data/img/p46.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 8,
-		"src" : "../asset/data/img/p48.jpg",
+		"src" : "./asset/data/img/p48.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]	,
 		"description" : {
-				"bg" : "../asset/data/img/content111_bg.png",
-				"src" : "../asset/data/img/content111.png",
+				"bg" : "./asset/data/img/content111_bg.png",
+				"src" : "./asset/data/img/content111.png",
 				"title" : "결혼정보업체 상세페이지",
 				"targetAge" : "20대 이상 고소득자",
 				"concept" : "고급, 우아함",
@@ -684,43 +684,43 @@
 	},
 	{
 		"id" : 7,
-		"src" : "../asset/data/img/w05.gif",
+		"src" : "./asset/data/img/w05.gif",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
 		"id" : 6,
-		"src" : "../asset/data/img/w06.png",
+		"src" : "./asset/data/img/w06.png",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
 		"id" : 5,
-		"src" : "../asset/data/img/w07.png",
+		"src" : "./asset/data/img/w07.png",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
 		"id" : 4,
-		"src" : "../asset/data/img/w08.png",
+		"src" : "./asset/data/img/w08.png",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
 		"id" : 3,
-		"src" : "../asset/data/img/w09.png",
+		"src" : "./asset/data/img/w09.png",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
 		"id" : 2,
-		"src" : "../asset/data/img/w10.png",
+		"src" : "./asset/data/img/w10.png",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
 		"id" : 1,
-		"src" : "../asset/data/img/w11.jpg",
+		"src" : "./asset/data/img/w11.jpg",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	}
