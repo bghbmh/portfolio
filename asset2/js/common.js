@@ -7,7 +7,7 @@ import { Modal } from "./modalType2.js";
 document.addEventListener("DOMContentLoaded", () => {
 
 	console.log("DOMContentLoaded ")
-	fileHandler._load( { url: '../assets/data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
+	fileHandler._load( { url: '../data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
 
 	if( document.querySelector(".noteSticky") )
 		document.querySelector(".noteSticky").addEventListener("click", noteStickyHandler);
@@ -136,7 +136,7 @@ function cardListHandler(e){
 		case "detail":
 			
 			fileHandler._load( { 
-				url: '../assets/data/bmh.json', 
+				url: '../data/bmh.json', 
 				callback : function(request){
 					
 					let items = JSON.parse(request.responseText);
