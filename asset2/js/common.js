@@ -7,7 +7,7 @@ import { Modal } from "./modalType2.js";
 document.addEventListener("DOMContentLoaded", () => {
 
 	console.log("DOMContentLoaded ")
-	fileHandler._load( { url: '../asset2/data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
+	fileHandler._load( { url: './asset2/data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
 
 	if( document.querySelector(".noteSticky") )
 		document.querySelector(".noteSticky").addEventListener("click", noteStickyHandler);
