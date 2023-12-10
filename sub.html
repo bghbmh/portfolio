@@ -41,7 +41,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
 	<link rel="mask-icon" href="../assets/img/safari-pinned-tab.svg" color="#5bbad5">
 
-	<title>testMain</title>
+	<title>testSub</title>
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="assets2/css/bootstrap.css">
@@ -58,19 +58,7 @@
 
 </head>
 
-<body class="main">
-	<!--<i class="fa-solid fa-virus-covid-slash"></i>
-
-	<i class="fa-solid fa-user-bmh"></i>
-
-	<i class="fa-regular fa-comment-dots"></i>
-
-	<i class="fa-solid fa-truck-fast-bmh"></i>
-
-	<i class="fa-solid fa-location-dot"></i>
-  <i class="fa-brands fa-adn"></i>
-
- <img src="../assets/img/icon-missimg.svg"> -->
+<body>
 
 	<!-- header -->
 	<header class="common">
@@ -82,30 +70,43 @@
 				<a href="main.html" title="박민희입니다" aria-label="박민희입니다"></a>
 			</h1>
 			<div class="contact">
-				<a href="tel:010-3469-1323" class="btn call" aria-label="전화하기">
-					<i class="fa-solid fa-mobile-screen-button"></i>
-					<span>010.3469.1323</span>
-				</a>
-				<a href="mail:bghbmh@gmail.com" class="btn mail" aria-label="메일보내기">
-					<i class="fa-solid fa-envelope"></i>
-					<span>bghbmh@gmail.com</span>
-				</a>
+				<a href="tel:02-1234-12134" class="btn icon call" aria-label="전화하기" title="전화하기" ><i class="fa-solid fa-mobile-screen-button"></i></a>
+				<a href="mail:test@mail.com" class="btn icon mail" aria-label="메일보내기" title="메일보내기"><i class="fa-solid fa-envelope"></i> </a>
 			</div>
 		</div>
 
 	</header>
 	<!-- // header -->
 
+
 	<main class="common">
-		<header class="d-flex align-items-center justify-content-between mb-3">
-			<h2 class="h6 m-0">최근 작업</h2>
-			<a href="sub.html" class="btn p-2">모두보기</a>
-		</header>
-		 
-		<section class="cardList main" data-columns="3" >
+		<h2 class="hidden">category_0</h2>
+		<section class="cardList" data-columns="3">
+			
+
 		</section>
+
+		<!-- <section class="hashModal">
+			<header>
+				<h3 class="hidden">해시태그 아이템 모음</h3>
+				<nav class="hashList">
+					<button type="button" class="btn hash on" data-ui-hash="hash1">hash1</button>
+					<button type="button" class="btn hash" data-ui-hash="한글입숨22">한글입숨22</button>
+				</nav>
+				<button type="button" class="btn icon close" aria-label="닫기">화면닫기</button>
+			</header>
+
+
+			<article>listItem</article>
+			<article>listItem</article>
+			<article>listItem</article>
+
+		</section> -->
 	</main>
 
+
+
+	<!--footer-->
 	<footer class="common">
 		<div class="copyright">
 			ⓒ 2023. 박민희 
@@ -115,7 +116,33 @@
 			</span>
 		</div>
 	</footer>
+	<!-- // footer  -->
 
+
+
+	<script>
+
+		// document.querySelector(".sitemap-btn").addEventListener("click", function() {
+		// 	console.log("sitemap - ", this)
+		// });
+
+
+
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+
+		for (i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				var cont = this.nextElementSibling;
+				if (cont.style.maxHeight) {
+					cont.style.maxHeight = null;
+				} else {
+					cont.style.maxHeight = cont.scrollHeight + "px";
+				}
+			});
+		}
+	</script>
 
 
 
