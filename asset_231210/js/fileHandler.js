@@ -1,4 +1,4 @@
- 
+
 
 export class fileHandler {
 /*
@@ -22,7 +22,6 @@ export class fileHandler {
 		xhr.open("GET", args.url, true);
 		xhr.send(null);
 	}
-
 }
 
 
@@ -50,7 +49,6 @@ function xhrReadystatechange(){
 	//console.log("testReadystatechange");
 
 	loadingMessage.on("text text");
-	//console.log(loadingMessage)
 	if (this.readyState === XMLHttpRequest.DONE) {
 		const status = this.status;
 		if ( this.status === 0 || ( this.status >= 200 && this.status < 400 ) ) {
@@ -144,61 +142,61 @@ function transferCanceled(evt) {
 }
 
 
-// var loadingMessage =  {
-// 	isThere : null,
-// 	newMsg : null,
-// 	on : function (msg = null){
-// 		//console.log("on");
-// 		this.isThere = document.querySelector(".loadingMessage");
+var loadingMessage = {
+	isThere : null,
+	newMsg : null,
+	on : function (msg = null){
+		//console.log("on");
+		this.isThere = document.querySelector(".loadingMsg");
 
-// 		if( this.isThere ) return;
+		if( this.isThere ) return;
 
-// 		this.newMsg = document.createElement("div");
-// 		this.newMsg.setAttribute("class", "loadingMessage")
-// 		this.newMsg.textContent =  msg || "loading_test";
-// 		document.querySelector('body').appendChild(this.newMsg);
+		this.newMsg = document.createElement("div");
+		this.newMsg.setAttribute("class", "loadingMsg")
+		this.newMsg.textContent =  msg || "loading_test";
+		document.querySelector('body').appendChild(this.newMsg);
 
-// 	},
-// 	off : function() {
-// 		if( !this.isThere ) return;
-// 		//console.log("off", this);
-// 		this.isThere.parentNode.removeChild(this.isThere);
-// 		this.isThere = null;
-// 		this.newMsg = null;
+	},
+	off : function() {
+		if( !this.isThere ) return;
+		//console.log("off", this);
+		this.isThere.parentNode.removeChild(this.isThere);
+		this.isThere = null;
+		this.newMsg = null;
 
-// 	}
-// };
+	}
+};
 
 
 
-var loadingMessage = (function() {
-	console.log("loadingMessage state - ");
+// var loadingMessage = (function() {
+// 	console.log("loadingMessage state - ");
 
-	let isThere = null;
-	let newMsg = null;
+// 	let isThere = null;
+// 	let newMsg = null;
 
-	return {
-		on : function (msg = null){
-			//console.log("on", msg);
-			isThere = document.querySelector(".loadingMsg");
+// 	return {
+// 		on : function (msg = null){
+// 			console.log("on");
+// 			isThere = document.querySelector(".loadingMsg");
 
-			if( isThere ) return;
+// 			if( loadingElem ) return;
 
-			newMsg = document.createElement("div");
-			newMsg.setAttribute("class", "loadingMsg")
-			newMsg.textContent =  msg || "loading_test";
-			document.querySelector('body').appendChild(newMsg);
+// 			newMsg = document.createElement("div");
+// 			newMsg.setAttribute("class", "loadingMsg")
+// 			newMsg.textContent =  msg || "loading_test";
+// 			document.querySelector('body').appendChild(newMsg);
 
-		},
-		off : function() {
+// 		},
+// 		off : function() {
 
-			if( !isThere ) return;
-			//console.log("off");
-			isThere.parentNode.removeChild(isThere);
-			isThere = null;
+// 			if( !isThere ) return;
+// 			console.log("off");
+// 			isThere.parentNode.removeChild(isThere);
+// 			isThere = null;
 
-		}
-	};
-} )();
+// 		}
+// 	};
+// } )();
 
 
