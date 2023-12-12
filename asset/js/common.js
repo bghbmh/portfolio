@@ -21,6 +21,10 @@ function noteStickyHandler(){
 	};
 }
 
+function clickTest(){
+	 alert(" event Test alert!!");
+}
+
 function introHandler(request) {
 
 	console.log("test load items",request.arguments, JSON.parse(request.responseText))
@@ -136,7 +140,7 @@ function cardListHandler(e){
 		case "detail":
 			
 			fileHandler._load( { 
-				url: '../asset/data/bmh.json', 
+				url: './asset/data/bmh.json', 
 				callback : function(request){
 					
 					let items = JSON.parse(request.responseText);
@@ -146,6 +150,7 @@ function cardListHandler(e){
 						class:"popup detail",
 						eventListeners : {
 							"load" : () => { console.log("click___test_attach eventListeners") } ,
+							"click" : clickTest ,
 							"click" : cardListHandler 
 						},
 						 tId : e.timeStamp
