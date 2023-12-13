@@ -173,7 +173,7 @@ function transferCanceled(evt) {
 
 var loadingMessage = (function() {
 	console.log("loadingMessage state - ");
-	alert("load msg test");
+	//alert("load msg test");
 
 	let isThere = null;
 	let newMsg = null;
