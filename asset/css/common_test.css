@@ -207,6 +207,16 @@ a { color: var(--info, hsl(211.1, 100%, 50%));	cursor: pointer; }
 
 
 
+.loadingMsg{
+ position:absolute;
+	top:calc( 50% - 1rem );
+	left: calc( 50% - 1rem );
+	display: inline-block;
+	
+}
+
+
+
 /* 폼태그 */
 
 input::-webkit-input-placeholder {color:var(--placeholder, #333)}
