@@ -186,7 +186,7 @@ var loadingMessage = (function() {
 
 			newMsg = document.createElement("div");
 			newMsg.setAttribute("class", "loadingMsg")
-			newMsg.textContent =  msg || "loading_test";
+			newMsg.textContent =  msg || "잠시만 기다려주세요";
 			document.querySelector('body').appendChild(newMsg);
 
 		},
