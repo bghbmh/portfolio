@@ -1,18 +1,69 @@
 import * as component from './component.js';
 import { fileHandler } from "./fileHandler.js";
-import { Modal } from "./modalType2.js";
+import { Modal } from "./modalType3.js";
 // import { dataHandler } from "./dataHandler.js";
 
 
 document.addEventListener("DOMContentLoaded", () => {
 
 	console.log("DOMContentLoaded ")
-	fileHandler._load( { url: './asset/data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
+	fileHandler._load( { url: '../data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
+
+
+	if( document.querySelector(".listTest") ){
+		document.querySelector(".listTest").addEventListener("click", listTestFunction('dt') );
+	}
+		
 
 	if( document.querySelector(".noteSticky") )
 		document.querySelector(".noteSticky").addEventListener("click", noteStickyHandler);
 
 });
+
+
+function listTestFunction(targetTag){
+	let selectedItem = undefined ;
+	let tagrgetItem = targetTag;
+	return function(e){
+		if( !e.target.closest(tagrgetItem) ) return;
+
+		if( selectedItem === e.target.closest(".on") ) 
+		selectedItem = e.target.closest(".on");
+		
+		selectedItem ? selectedItem.classList.remove("on") : console.log(" selecteditem ? = ", selectedItem);
+		
+		elem.parentNode.classList.add("on") ;
+		selectedItem = e.target.closest(tagrgetItem).parentNode;
+	};
+}
+
+
+
+// function listTestFunction(){
+// 	console.log("asdasd  - ", this)
+// 	let elem = false;
+// 	let self = null;
+// 	let selectedListitem = null;
+// 	return function(e){
+// 		if( !self ) self = this;
+// 		elem = e.target.closest("dt");
+// 		if( !elem || elem.parentNode.classList.contains("on") ) {
+// 			elem.parentNode.classList.remove("on")
+// 			return;
+// 		}
+// 		//[...this.children].forEach
+// 		//for( let x of self.children ) x.classList.remove("on")
+// 		if( !selectedListitem ) selectedListitem.classList.remove("on")
+// 		elem.parentNode.classList.add("on") ;
+// 		selectedListitem = elem;
+
+
+
+// 		console.log("listTestFunction, a - ",self,  e)
+// 	};
+// }
+
+
 
 function noteStickyHandler(){
 	let t = false;
@@ -21,9 +72,58 @@ function noteStickyHandler(){
 	};
 }
 
-function clickTest(){
-	 alert(" event Test alert!!");
+function testFunction(e){
+	//console.log("testFunction - ", e)
 }
+
+
+function setGnbHandler(g, ig, it){
+	const gnb = g;
+	let itemGroup = ig;
+	let selectedItem = it;
+	const targetClassName = gnb.dataset.target;
+	let currentItem = undefined ;
+
+	return function(e) {
+		if( !e.target.closest(".btn") ) return;
+
+		if( selectedItem === ( currentItem = e.target.closest(".btn") )  ) return; 
+
+		if( selectedItem ) { 
+			selectedItem.classList.remove("on");
+			selectedItem.removeAttribute("aria-current"); 
+		}
+
+		itemGroup.style.setProperty("--x", currentItem.offsetLeft); // + menuBtn.offsetWidth/2 
+		itemGroup.style.setProperty("--w", currentItem.offsetWidth); // + menuBtn.offsetWidth/2 
+		currentItem.setAttribute("aria-current", "page") ;
+		currentItem.classList.add("on");
+
+		selectedItem = currentItem;
+
+
+		/* 아이템 정렬 */
+		let z = ["opacity0", "test"];
+		for( let child of document.querySelector( "." + targetClassName ).children ) {
+
+			if( currentItem.dataset.category == "모두" ){
+				child.classList.remove(...z);
+				child.classList.remove("off");
+			} else if( child.dataset.category !== currentItem.dataset.category ){
+				child.classList.add(...z);
+				setTimeout(() => child.classList.add("off"), 400);
+			} else {
+				child.classList.remove(...z);
+				child.classList.remove("off");
+			}
+			
+		}
+	};
+
+}
+
+
+
 
 function introHandler(request) {
 
@@ -45,21 +145,21 @@ function introHandler(request) {
 			}
 			if( idx > 2 ) break;
 		}
-		document.querySelector(".cardList.main").innerHTML = html;
-		document.querySelector(".cardList.main").addEventListener("click", cardListHandler );
 	} else if( document.querySelector(".cardList") ){
 		for( let i=0; i<itemsData.length; i++ ){
 			html = html + component.mainCardType1(itemsData[i]);
 		}
-		document.querySelector(".cardList").innerHTML = html;
-		document.querySelector(".cardList").addEventListener("click", cardListHandler );
+		
 	}
+	document.querySelector(".cardList").innerHTML = html;
+	document.querySelector(".cardList").addEventListener("click", cardListHandler );
 	
 
 	/* gnb 임시 */
 	if( !document.querySelector(".gnb") ){
 		let gnb = CreateElement({ tag : "NAV", class : "gnb", "data-target":"cardList"});
-		let ul = CreateElement({ tag : "UL", class : "tabType1"});
+		console.log(" click gnb");
+		let itemGroup = CreateElement({ tag : "UL", class : "tabType1"});
 
 		let category = [];
 		itemsData.forEach( item => {
@@ -67,55 +167,18 @@ function introHandler(request) {
 			if( category.findIndex( v => v ===  item.category) < 0 )  category.push( item.category);
 		});
 
-		for( let i=0; i<category.length; i++ ){
-			ul.innerHTML += `
-			<li>
-				<button type="button" class="btn" data-category="${category[i]}">${category[i]}</button>
-			</li>
-			`
-		}
-		gnb.addEventListener("click", e => {
-			console.log(" click gnb");
-			let menuBtn = e.target.closest(".btn");
-			ul.style.setProperty("--x", menuBtn.offsetLeft); // + menuBtn.offsetWidth/2 
-			ul.style.setProperty("--w", menuBtn.offsetWidth); // + menuBtn.offsetWidth/2 
-
-			for( const child of ul.children) { 
-				child.children[0].classList.remove("on");
-				child.children[0].removeAttribute("aria-current"); 
-			}
-			menuBtn.setAttribute("aria-current", "page") ;
-			menuBtn.classList.add("on");
-
-			/* 아이템 정렬 */
-			let z = ["opacity0", "test"];
-			for( let child of document.querySelector( "." + gnb.dataset.target ).children ) {
-
-				if( menuBtn.dataset.category == "모두" ){
-					child.classList.remove(...z);
-					child.classList.remove("off");
-				}
-				else if( child.dataset.category !== menuBtn.dataset.category ){
-					child.classList.add(...z);
-					setTimeout(() => child.classList.add("off"), 400);
-				} else {
-					child.classList.remove(...z);
-					child.classList.remove("off");
-				}
-				
-			}
-		
-		});
+		for( let i=0; i<category.length; i++ )	
+			itemGroup.innerHTML += `<li><button type="button" class="btn" data-category="${category[i]}">${category[i]}</button></li>`
 
 		
-		gnb.appendChild(ul);
+		gnb.appendChild(itemGroup);
+		gnb.addEventListener("click", setGnbHandler(gnb,itemGroup, itemGroup.children[0].children[0]));
 		document.querySelector("header.common").appendChild(gnb);
 
-		/* gnb menu init */
-		ul.querySelector(".btn").classList.add("on");
-		ul.querySelector(".btn").setAttribute("aria-current", "page") ;
-		ul.style.setProperty("--x", 0 );
-		ul.style.setProperty("--w", ul.children[0].offsetWidth); // + menuBtn.offsetWidth/2 
+		itemGroup.style.setProperty("--x", 0 );
+		itemGroup.style.setProperty("--w", itemGroup.children[0].offsetWidth); // + menuBtn.offsetWidth/2 
+		itemGroup.children[0].setAttribute("aria-current", "page") ;
+		itemGroup.children[0].classList.add("on");		
 	}
 
 }
@@ -131,7 +194,7 @@ function cardListHandler(e){
 	switch (uiUtil){
 		case "zoomin":
 			console.log( " util test - ",  Modal );
-			Modal.Zoomin( { target: clickElem.dataset.uiTarget, class :"popup zoomin", tId : e.timeStamp } );
+			Modal.Zoomin( { target: clickElem.dataset.uiTarget , tId : e.timeStamp } );
 			//Modal.Alert( { message: "aaaaaaaa~!!!!!", class :"alert" } );
 			//Modal.Alert( { message: "test test test"} );
 			//Modal.alert({test : "test"})
@@ -140,18 +203,17 @@ function cardListHandler(e){
 		case "detail":
 			
 			fileHandler._load( { 
-				url: './asset/data/bmh.json', 
+				url: '../data/bmh.json', 
 				callback : function(request){
 					
 					let items = JSON.parse(request.responseText);
 
 					Modal.detail({ 
 						html : component.detailViewPage( items, clickElem.dataset.uiTarget  ),
-						class:"popup detail",
+						class:"popup",
 						eventListeners : {
 							"load" : () => { console.log("click___test_attach eventListeners") } ,
-							"click" : clickTest ,
-							"click" : cardListHandler 
+							"click" : [cardListHandler ,testFunction]
 						},
 						 tId : e.timeStamp
 					})
@@ -175,8 +237,8 @@ function cardListHandler(e){
 
 
 
-function CreateElement(attributes = {}) { // { tag : "div", class: "sample"} 
-	if (!attributes.hasOwnProperty("tag")) return alert("no Tag, check attributes + tagName");
+function CreateElement(attributes = {}) { // { tag : "div", class: "sample", ...} 
+	if (!attributes.hasOwnProperty("tag")) return alert("no Tag, require the Tag");
 
 	let tag = document.createElement(attributes.tag);
 	for (let prop in attributes) {
