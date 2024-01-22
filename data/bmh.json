@@ -1,566 +1,742 @@
 
 [
-
 	{
-		"src" : "asset/img/web111.png",
-		"srcRatio" : "rowspan1",
+		"id" : 93,
+		"main" : true,
+		"src" : "../data/img/me17.png",
 		"category" : "웹",
-		"hash" : [ "모바일", "명함", "html/css", "javascript" ],
+		"hash" : [ "제안용","디자인" ]
+	},
+	{
+		"id" : 92,
+		"main" : true,
+		"src" : "../data/img/me16.jpg",
+		"category" : "웹",
+		"hash" : [ "마크업","반응형" ]
+	},
+	{
+		"id" : 85,
+		"main" : true,
+		"src" : "../data/img/me11.png",
+		"category" : "웹",
+		"hash" : [ "반응형", "대시보드","디자인", "마크업"  ],
 		"description" : {
-				"bg" : "asset/img/web111_bg.png",
-				"img" : "asset/img/web111.png",
-				"이름" : "모바일명함",
-				"타깃층" : "40대 이상(사용자), 20대 이상(사용자의 고객)",
-				"콘셉트" : "산뜻함",
-				"주 사용색" : [ "#5a2efd", "#2df1fd" ],
-				"링크" : "nameCard/m_nameCard.html",
-				"디자인" : "박민희",
-				"코딩" : "박민희",
-				"설명" : "보험설계사를 위한 1차 명함 시안, 라이프플래너(보험설계사)들의 연령은 주로 40대 중후반이며 영업 시 카톡을 많이 사용한다고 함"
+				"bg" : "../data/img/web111_bg.png",
+				"src" : "../data/img/me11.png",
+				"title" : "콘텐츠관리",
+				"link" : "nameCard/m_nameCard.html",
+				"designer" : "박민희",
+				"coding" : "박민희"
 			}
 	},
 	{
-		"src" : "asset/img/pic/w23.png",
+		"id" : 87,
+		"main" : true,
+		"src" : "../data/img/me13.png",
 		"category" : "웹",
-		"링크" : "https://amnesty.or.kr/campaign/iwd2020/",
-		"hash" : [ "pc","모바일", "html/css", "javascript" ]
+		"hash" : [ "제안용","디자인" ]
 	},
 	{
-		"src" : "asset/img/pic/paper30.png",
+		"id" : 86,
+		"main" : true,
+		"src" : "../data/img/me12.png",
+		"category" : "웹",
+		"hash" : [ "제안용","디자인" ]
+	},
+	{
+		"id" : 89,
+		"main" : true,
+		"src" : "../data/img/w1.jpg",
+		"category" : "웹",
+		"hash" : [ "마크업", "반응형" ],
+		"description" : {
+			"bg" : "../data/img/print112_bg.png",
+			"src" : "../data/img/w1.png",
+			"title" : "HYCU",
+			"link" : "nameCard/m_nameCard.html",
+			"coding" : "박민희"
+		}
+	},
+	{
+		"id" : 91,
+		"main" : true,
+		"src" : "../data/img/me15.png",
+		"category" : "웹",
+		"hash" : [ "리뉴얼", "디자인"]
+	},
+	{
+		"id" : 88,
+		"main" : true,
+		"src" : "../data/img/w1.png",
+		"srcRatio" : "rowspan1",
+		"category" : "웹",
+		"hash" : [ "리뉴얼", "반응형", "디자인", "마크업"  ],
+		"description" : {
+				"bg" : "../data/img/print112_bg.png",
+				"src" : "../data/img/w1.png",
+				"title" : "훌라로 랜딩페이지",
+				"mainColor" : [ "#5a2efd", "#2df1fd" ],
+				"link" : "nameCard/m_nameCard.html",
+				"designer" : "박민희",
+				"coding" : "박민희"
+			}
+	},
+	{
+		"id" : 90,
+		"main" : true,
+		"src" : "../data/img/me14.png",
+		"category" : "웹",
+		"hash" : [ "디자인", "마크업", "반응형" ]
+	},
+	{
+		"id" : 84,
+		"main" : true,
+		"src" : "../data/img/web111.png",
+		"srcRatio" : "rowspan1",
+		"category" : "웹",
+		"hash" : [ "모바일", "명함", "마크업"  ],
+		"description" : {
+				"bg" : "../data/img/web111_bg.png",
+				"src" : "../data/img/web111.png",
+				"title" : "모바일명함",
+				"targetAge" : "40대 이상(사용자), 20대 이상(사용자의 고객)",
+				"concept" : "산뜻함",
+				"mainColor" : [ "#5a2efd", "#2df1fd" ],
+				"link" : "nameCard/m_nameCard.html",
+				"designer" : "박민희",
+				"coding" : "박민희",
+				"story" : "보험설계사를 위한 1차 명함 시안, 라이프플래너(보험설계사)들의 연령은 주로 40대 중후반이며 영업 시 카톡을 많이 사용한다고 함"
+			}
+	},
+	
+	{
+		"id" : 83,
+		"main" : true,
+		"src" : "../data/img/w23.png",
+		"category" : "웹",
+		"link" : "https://amnesty.or.kr/campaign/iwd2020/",
+		"hash" : [ "pc","모바일", "마크업" ]
+	},
+	{
+		"id" : 82,
+		"src" : "../data/img/paper30.png",
 		"category" : "인쇄",
 		"hash" : [ "엽서", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper31.png",
+		"id" : 81,
+		"src" : "../data/img/paper31.png",
 		"category" : "인쇄",
 		"hash" : [ "엽서", "청첩장", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper27.png",
-		"srcRatio" : "rowspan3",
+		"id" : 80,
+		"main" : true,
+		"src" : "../data/img/paper27.png",
+		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "브로슈어", "안내문", "보험" ],
 		"description" : {
-				"bg" : "asset/img/print114_bg.png",
-				"img" : "asset/img/print114.png",
-				"이름" : "치매보험 가입 안내",
-				"타깃층" : "50대 이상의 부양자가 있는 20대 이상",
-				"색상" : "4도",
-				"디자인" : "박민희",
-				"설명" : "고객을 만나 보험 상담을 할 때 사용할 자료, 브로슈어(얇은 책자)"
+				"bg" : "../data/img/print114_bg.png",
+				"src" : "../data/img/print114.png",
+				"title" : "치매보험 가입 안내",
+				"targetAge" : "50대 이상의 부양자가 있는 20대 이상",
+				"printColor" : "4도",
+				"designer" : "박민희",
+				"story" : "고객을 만나 보험 상담을 할 때 사용할 자료, 브로슈어(얇은 책자)"
 			}
 	},
 	{
-		"src" : "asset/img/pic/w18.jpg",
-		"srcRatio" : "rowspan3",
+		"id" : 79,
+		"src" : "../data/img/w18.jpg",
+		"srcRatio" : "rowspan2",
 		"category" : "웹",
 		"hash" : [ "모바일"],
 		"description" : {
-				"bg" : "asset/img/web113_bg.png",
-				"img" : "asset/img/web113.png",
-				"이름" : "치매보험",
-				"타깃층" : "50대 이상의 부양자가 있는 20대 이상",
-				"콘셉트" : "글자, 그림은 최대한 사용하지 않기",
-				"주 사용색" : [ "#29c097", "#272f46" ],
-				"디자인" : "박민희",
-				"설명" : "치매보험 안내 및 상담 신청 페이지, 온라인 마케팅용 랜딩페이지"
+				"bg" : "../data/img/web113_bg.png",
+				"src" : "../data/img/web113.png",
+				"title" : "치매보험",
+				"targetAge" : "50대 이상의 부양자가 있는 20대 이상",
+				"concept" : "글자, 그림은 최대한 사용하지 않기",
+				"mainColor" : [ "#29c097", "#272f46" ],
+				"designer" : "박민희",
+				"story" : "치매보험 안내 및 상담 신청 페이지, 온라인 마케팅용 랜딩페이지"
 			}
 	},
 	{
-		"src" : "asset/img/pic/w22.png",
-		"srcRatio" : "rowspan3",
+		"id" : 78,
+		"main" : true,
+		"src" : "../data/img/w22.png",
+		"srcRatio" : "rowspan2",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일"],
 		"description" : {
-				"bg" : "asset/img/web114_bg.png",
-				"img" : "asset/img/web114.png",
-				"이름" : "어린이보험",
-				"타깃층" : "30대 이상",
-				"주 사용색" : [ "#5656fb" ],
-				"코딩" : "html/css",
-				"설명" : "어린이보험 안내 및 상담 신청 페이지, 온라인 마케팅용 랜딩페이지"
+				"bg" : "../data/img/web114_bg.png",
+				"src" : "../data/img/web114.png",
+				"title" : "어린이보험",
+				"targetAge" : "30대 이상",
+				"mainColor" : [ "#5656fb" ],
+				"designer" : "박민희",
+				"coding" : "박민희",
+				"story" : "어린이보험 안내 및 상담 신청 페이지, 온라인 마케팅용 랜딩페이지"
 			}
 	},
 	{
-		"src" : "asset/img/pic/w19.jpg",
-		"srcRatio" : "rowspan3",
+		"id" : 77,
+		"src" : "../data/img/w19.jpg",
+		"srcRatio" : "rowspan2",
 		"category" : "웹",
-		"hash" : [ "모바일", "메인페이지", "html/css", "javascript", "일러스트" ],
+		"hash" : [ "모바일", "메인페이지", "마크업", "javascript", "일러스트" ],
 		"description" : {
-				"bg" : "asset/img/web112_bg.png",
-				"img" : "asset/img/web112.png",
-				"이름" : "택시함께",
-				"타깃층" : "20대 이상",
-				"콘셉트" : "편안함, 인자함, 개인을 위한, 패키지와 다른",
-				"주 사용색" : [ "#0cc4a1", "#fae683" ],
-				"링크" : "taxi/index.html",
-				"디자인" : "박민희",
-				"코딩" : "박민희",
-				"설명" : "1인 고객을 위한 여행신청페이지, 개인택시 영업자용 2차 시안, 결정된 세부내용이 없어 그 외 페이지는 보류"
+				"bg" : "../data/img/web112_bg.png",
+				"src" : "../data/img/web112.png",
+				"title" : "택시함께",
+				"targetAge" : "20대 이상",
+				"concept" : "편안함, 인자함, 개인을 위한, 패키지와 다른",
+				"mainColor" : [ "#0cc4a1", "#fae683" ],
+				"link" : "taxi/index.html",
+				"designer" : "박민희",
+				"coding" : "박민희",
+				"story" : "1인 고객을 위한 여행신청페이지, 개인택시 영업자용 2차 시안, 결정된 세부내용이 없어 그 외 페이지는 보류"
 			}
 	},
 	{
-		"src" : "asset/img/pic/w21.png",
-		"srcRatio" : "rowspan3",
+		"id" : 76,
+		"src" : "../data/img/w21.png",
+		"srcRatio" : "rowspan2",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일" ]
 	},
 	{
-		"src" : "asset/img/pic/paper15.png",
+		"id" : 75,
+		"src" : "../data/img/paper15.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "A3", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper16.png",
+		"id" : 74,
+		"src" : "../data/img/paper16.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "A3", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper28.jpg",
+		"id" : 73,
+		"src" : "../data/img/paper28.jpg",
 		"category" : "브랜딩",
 		"hash" : [ "로고", "CI" ]
 	},
 	{
-		"src" : "asset/img/pic/paper29.jpg",
+		"id" : 72,
+		"src" : "../data/img/paper29.jpg",
 		"category" : "브랜딩",
 		"hash" : [ "로고", "CI" ],
 		"description" : {
-				"bg" : "asset/img/branding111_bg.png",
-				"img" : "asset/img/branding111.png",
-				"이름" : "아하봄",
-				"타깃층" : "20대 이상",
-				"콘셉트" : "따뜻함, 사랑",
-				"주 사용색" : [ "#fbd943" ],
-				"디자인" : "박민희",
-				"설명" : "'아하'는 아랍어로 '사랑'이라는 뜻, '봄'은 '보험'의 줄임말이자 '봄(spring, 春)'이라는 중의적인 의미를 담고 있음.<br>로고는 'ㅇ', 'ㅎ'을 합쳐 하트모양을 표현했고, 위의 붉은 색을 띄는 'ㄴ'은 'ㅎ'의 윗부분이자 동시에 여러 보험 중 하나를 고르라는 '✔'를 표현함"
+				"bg" : "../data/img/branding111_bg.png",
+				"src" : "../data/img/branding111.png",
+				"title" : "아하봄",
+				"targetAge" : "20대 이상",
+				"concept" : "따뜻함, 사랑",
+				"mainColor" : [ "#fbd943" ],
+				"designer" : "박민희",
+				"story" : "'아하'는 아랍어로 '사랑'이라는 뜻, '봄'은 '보험'의 줄임말이자 '봄(spring, 春)'이라는 중의적인 의미를 담고 있음.<br>로고는 'ㅇ', 'ㅎ'을 합쳐 하트모양을 표현했고, 위의 붉은 색을 띄는 'ㄴ'은 'ㅎ'의 윗부분이자 동시에 여러 보험 중 하나를 고르라는 '✔'를 표현함"
 			}
 	},
 	{
-		"src" : "asset/img/pic/z01.jpg",
+		"id" : 71,
+		"src" : "../data/img/z01.jpg",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "패키지", "VR", "카드보드", "일러스트" ]	,
 		"description" : {
-				"bg" : "asset/img/print112_bg.png",
-				"img" : "asset/img/print112.png",
-				"이름" : "카드보드(VR)",
-				"타깃층" : "미취학, 초등학교 1~2학년",
-				"색상" : "4도",
-				"디자인" : "박민희",
-				"설명" : "천문스쿨을 방문한 학생들이 사용할 VR 간편 도구"
+				"bg" : "../data/img/print112_bg.png",
+				"src" : "../data/img/print112.png",
+				"title" : "카드보드(VR)",
+				"targetAge" : "미취학, 초등학교 1~2학년",
+				"printColor" : "4도",
+				"designer" : "박민희",
+				"story" : "천문스쿨을 방문한 학생들이 사용할 VR 간편 도구"
 			}
 	},
 	{
-		"src" : "asset/img/pic/paper02.png",
+		"id" : 70,
+		"src" : "../data/img/paper02.png",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "530x800", "일러스트" ],
 		"description" : {
-				"bg" : "asset/img/print111_bg.png",
-				"img" : "asset/img/print111.png",
-				"이름" : "천문정보알림",
-				"타깃층" : "미취학, 초등학교 1~2학년",
-				"색상" : "4도",
-				"크기" : "A2",
-				"디자인" : "박민희",
-				"설명" : "천문스쿨 내부 인테리어로 사용될 포스터, 학습용 포스터 / 테마별 템플릿"
+				"bg" : "../data/img/print111_bg.png",
+				"src" : "../data/img/print111.png",
+				"title" : "천문정보알림",
+				"targetAge" : "미취학, 초등학교 1~2학년",
+				"printColor" : "4도",
+				"printSize" : "A2",
+				"designer" : "박민희",
+				"story" : "천문스쿨 내부 인테리어로 사용될 포스터, 학습용 포스터 / 테마별 템플릿"
 			}
 	},
 	{
-		"src" : "asset/img/pic/paper03.png",
+		"id" : 69,
+		"src" : "../data/img/paper03.png",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "530x800", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper04.png",
+		"id" : 68,
+		"src" : "../data/img/paper04.png",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "530x800", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper05.png",
+		"id" : 67,
+		"src" : "../data/img/paper05.png",
 		"srcRatio" : "rowspan2",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "530x800", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper06.png",
+		"id" : 66,
+		"src" : "../data/img/paper06.png",
 		"category" : "인쇄",
 		"hash" : [ "보드게임", "A3", "일러스트" ],
 		"description" : {
-				"bg" : "asset/img/print113_bg.png",
-				"img" : "asset/img/print113.png",
-				"이름" : "혜성탐사게임",
-				"타깃층" : "초등학교 1~2학년",
-				"색상" : "4도",
-				"크기" : "A3",
-				"디자인" : "박민희",
-				"설명" : "천문스쿨을 방문한 학생들이 '태양계를 도는 혜성'을 더 쉽게 학습할 수 있게 만든 게임, 보드게임"
+				"bg" : "../data/img/print113_bg.png",
+				"src" : "../data/img/print113.png",
+				"title" : "혜성탐사게임",
+				"targetAge" : "초등학교 1~2학년",
+				"printColor" : "4도",
+				"printSize" : "A3",
+				"designer" : "박민희",
+				"story" : "천문스쿨을 방문한 학생들이 '태양계를 도는 혜성'을 더 쉽게 학습할 수 있게 만든 게임, 보드게임"
 			}
 
 	},
 	{
-		"src" : "asset/img/pic/paper07.png",
+		"id" : 65,
+		"src" : "../data/img/paper07.png",
 		"category" : "인쇄",
 		"hash" : [ "보드게임", "1200x1200", "일러스트" ]
 	},
 
 	{
-		"src" : "asset/img/pic/paper08.png",
+		"id" : 64,
+		"src" : "../data/img/paper08.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper09.png",
+		"id" : 63,
+		"src" : "../data/img/paper09.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper10.png",
+		"id" : 62,
+		"src" : "../data/img/paper10.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper11.png",
+		"id" : 61,
+		"src" : "../data/img/paper11.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper12.png",
+		"id" : 60,
+		"src" : "../data/img/paper12.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "900x600", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper14.png",
+		"id" : 59,
+		"src" : "../data/img/paper14.png",
 		"category" : "인쇄",
 		"hash" : [ "포스터", "900x600", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/c04.jpg",
+		"id" : 58,
+		"src" : "../data/img/c04.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 	{
-		"src" : "asset/img/pic/c05.jpg",
+		"id" : 57,
+		"src" : "../data/img/c05.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 	{
-		"src" : "asset/img/pic/c06.jpg",
+		"id" : 56,
+		"src" : "../data/img/c06.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 	{
-		"src" : "asset/img/pic/c07.jpg",
+		"id" : 55,
+		"src" : "../data/img/c07.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 	{
-		"src" : "asset/img/pic/c08.png",
+		"id" : 54,
+		"src" : "../data/img/c08.png",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]	,
 		"description" : {
-				"bg" : "asset/img/print115_bg.png",
-				"img" : "asset/img/print115.png",
-				"이름" : "교과서용 컷",
-				"타깃층" : "고등 융합과학",
-				"색상" : "4도",
-				"디자인" : "박민희",
-				"설명" : "2015년 교육과정을 바탕으로 만든 교과서를 위한 컷"
+				"bg" : "../data/img/print115_bg.png",
+				"src" : "../data/img/print115.png",
+				"title" : "교과서용 컷",
+				"targetAge" : "고등 융합과학",
+				"printColor" : "4도",
+				"designer" : "박민희",
+				"story" : "2015년 교육과정을 바탕으로 만든 교과서를 위한 컷"
 			}
 	},
 	{
-		"src" : "asset/img/pic/c09.png",
+		"id" : 53,
+		"src" : "../data/img/c09.png",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 	{
-		"src" : "asset/img/pic/c10.png",
+		"id" : 52,
+		"src" : "../data/img/c10.png",
 		"category" : "콘텐츠",
 		"hash" : [ "컷", "2015년 교육과정", "고등과학", "일러스트"]
 	},
 
 	{
-		"src" : "asset/img/pic/w01.jpg",
+		"id" : 51,
+		"src" : "../data/img/w01.jpg",
 		"category" : "웹",
-		"hash" : ["모바일", "메인페이지", "html/css" ]
+		"hash" : ["모바일", "메인페이지", "마크업" ]
 	},
 	{
-		"src" : "asset/img/pic/w02.jpg",
+		"id" : 50,
+		"src" : "../data/img/w02.jpg",
 		"category" : "웹",
-		"hash" : ["모바일", "메인페이지", "html/css" ]
+		"hash" : ["모바일", "메인페이지", "마크업" ]
 	},
 	{
-		"src" : "asset/img/pic/w04.jpg",
+		"id" : 49,
+		"src" : "../data/img/w04.jpg",
 		"category" : "웹",
-		"hash" : [ "pc", "모바일", "메인페이지", "html/css" ]
+		"hash" : [ "pc", "모바일", "메인페이지", "마크업" ]
 	},
 	{
-		"src" : "asset/img/pic/z02.jpg",
+		"id" : 48,
+		"src" : "../data/img/z02.jpg",
 		"category" : "인쇄",
 		"hash" : [ "책", "표지", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper18.png",
+		"id" : 47,
+		"src" : "../data/img/paper18.png",
 		"category" : "인쇄",
 		"hash" : [ "명함", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper17.png",
+		"id" : 46,
+		"src" : "../data/img/paper17.png",
 		"category" : "인쇄",
 		"hash" : [ "명함", "일러스트" ]
 	},
 	{
-		"src" : "asset/img/pic/paper01.jpg",
+		"id" : 45,
+		"src" : "../data/img/paper01.jpg",
 		"category" : "인쇄",
 		"hash" : [ "브로슈어", "안내문", "제품" ]
 	},
 
 	{
-		"src" : "asset/img/pic/p33.jpg",
+		"id" : 44,
+		"src" : "../data/img/p33.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
-		"src" : "asset/img/pic/p35.png",
+		"id" : 43,
+		"src" : "../data/img/p35.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
-		"src" : "asset/img/pic/p36.png",
+		"id" : 42,
+		"src" : "../data/img/p36.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
-		"src" : "asset/img/pic/p37.png",
+		"id" : 41,
+		"src" : "../data/img/p37.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
-		"src" : "asset/img/pic/p38.png",
+		"id" : 40,
+		"src" : "../data/img/p38.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
-		"src" : "asset/img/pic/p39.png",
+		"id" : 39,
+		"src" : "../data/img/p39.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이", "모바일"]
 	},
 	{
-		"src" : "asset/img/pic/p40.png",
+		"id" : 38,
+		"src" : "../data/img/p40.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이", "모바일"]
 	},
 	{
-		"src" : "asset/img/pic/p41.png",
+		"id" : 37,
+		"src" : "../data/img/p41.png",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이", "모바일"]
 	},
 	{
-		"src" : "asset/img/pic/p42.jpg",
+		"id" : 36,
+		"src" : "../data/img/p42.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "안내문",  "어린이"]
 	},
 	{
-		"src" : "asset/img/pic/p43.jpg",
+		"id" : 35,
+		"src" : "../data/img/p43.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이"]	,
 		"description" : {
-				"bg" : "asset/img/content112_bg.png",
-				"img" : "asset/img/content112.png",
-				"이름" : "모바일용 정보 알림",
-				"타깃층" : "미취학 또는 초등학교 1~2학년 자녀를 둔 부모",
-				"콘셉트" : "귀여움",
-				"주 사용색" : [ "#e16654" ],
-				"디자인" : "박민희",
-				"설명" : "천문스쿨 이용자에게 모바일로 보내는 알림"
+				"bg" : "../data/img/content112_bg.png",
+				"src" : "../data/img/content112.png",
+				"title" : "모바일용 정보 알림",
+				"targetAge" : "미취학 또는 초등학교 1~2학년 자녀를 둔 부모",
+				"concept" : "귀여움",
+				"mainColor" : [ "#e16654" ],
+				"designer" : "박민희",
+				"story" : "천문스쿨 이용자에게 모바일로 보내는 알림"
 			}
 	},
 
 	{
-		"src" : "asset/img/pic/p44.jpg",
+		"id" : 34,
+		"src" : "../data/img/p44.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이"]
 	},
 	{
-		"src" : "asset/img/pic/p52.jpg",
+		"id" : 33,
+		"src" : "../data/img/p52.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p58.jpg",
+		"id" : 32,
+		"src" : "../data/img/p58.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p60.jpg",
+		"id" : 31,
+		"src" : "../data/img/p60.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p61.jpg",
+		"id" : 30,
+		"src" : "../data/img/p61.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p62.jpg",
+		"id" : 29,
+		"src" : "../data/img/p62.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/paper19.jpg",
+		"id" : 28,
+		"src" : "../data/img/paper19.jpg",
 		"category" : "인쇄",
 		"hash" : [ "광고", "포스터" ]
 	},
 	{
-		"src" : "asset/img/pic/paper20.jpg",
+		"id" : 27,
+		"src" : "../data/img/paper20.jpg",
 		"category" : "인쇄",
 		"hash" : [ "광고", "잡지" ]
 	},
 	{
-		"src" : "asset/img/pic/paper21.jpg",
+		"id" : 26,
+		"src" : "../data/img/paper21.jpg",
 		"category" : "인쇄",
 		"hash" : [ "광고", "지하철"]
 	},
 	{
-		"src" : "asset/img/pic/paper22.jpg",
+		"id" : 25,
+		"src" : "../data/img/paper22.jpg",
 		"category" : "인쇄",
 		"hash" : [ "광고", "지하철"]
 	},
 
 	{
-		"src" : "asset/img/pic/w13.jpg",
+		"id" : 24,
+		"src" : "../data/img/w13.jpg",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일", "마케팅"]
 	},
 	{
-		"src" : "asset/img/pic/w14.jpg",
+		"id" : 23,
+		"src" : "../data/img/w14.jpg",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일", "마케팅"]
 	},
 
 	{
-		"src" : "asset/img/pic/w15.jpg",
+		"id" : 22,
+		"src" : "../data/img/w15.jpg",
 		"category" : "웹",
 		"hash" : [ "모바일", "마케팅"]
 	},
 	{
-		"src" : "asset/img/pic/w16.jpg",
+		"id" : 21,
+		"src" : "../data/img/w16.jpg",
 		"category" : "웹",
 		"hash" : [ "pc", "모바일", "마케팅"]
 	},
 	{
-		"src" : "asset/img/pic/w17.jpg",
+		"id" : 20,
+		"src" : "../data/img/w17.jpg",
 		"category" : "웹",
 		"hash" : [ "모바일", "마케팅"]
 	},
 
 	{
-		"src" : "asset/img/pic/p02.jpg",
+		"id" : 19,
+		"src" : "../data/img/p02.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p03.jpg",
+		"id" : 18,
+		"src" : "../data/img/p03.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p14.jpg",
+		"id" : 17,
+		"src" : "../data/img/p14.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p15.jpg",
+		"id" : 16,
+		"src" : "../data/img/p15.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p22.jpg",
+		"id" : 15,
+		"src" : "../data/img/p22.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p25.jpg",
+		"id" : 14,
+		"src" : "../data/img/p25.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p28.jpg",
+		"id" : 13,
+		"src" : "../data/img/p28.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p29.jpg",
+		"id" : 12,
+		"src" : "../data/img/p29.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p30.jpg",
+		"id" : 11,
+		"src" : "../data/img/p30.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p31.jpg",
+		"id" : 10,
+		"src" : "../data/img/p31.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p46.jpg",
+		"id" : 9,
+		"src" : "../data/img/p46.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
-		"src" : "asset/img/pic/p48.jpg",
+		"id" : 8,
+		"src" : "../data/img/p48.jpg",
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]	,
 		"description" : {
-				"bg" : "asset/img/content111_bg.png",
-				"img" : "asset/img/content111.png",
-				"이름" : "결혼정보업체 상세페이지",
-				"타깃층" : "20대 이상 고소득자",
-				"콘셉트" : "고급, 우아함",
-				"디자인" : "박민희",
-				"설명" : "결혼정보업체 모객용 이벤트페이지, 온라인 마케팅용 이벤트"
+				"bg" : "../data/img/content111_bg.png",
+				"src" : "../data/img/content111.png",
+				"title" : "결혼정보업체 상세페이지",
+				"targetAge" : "20대 이상 고소득자",
+				"concept" : "고급, 우아함",
+				"designer" : "박민희",
+				"story" : "결혼정보업체 모객용 이벤트페이지, 온라인 마케팅용 이벤트"
 			}
 	},
 	{
-		"src" : "asset/img/pic/w05.gif",
+		"id" : 7,
+		"src" : "../data/img/w05.gif",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
-		"src" : "asset/img/pic/w06.png",
+		"id" : 6,
+		"src" : "../data/img/w06.png",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
-		"src" : "asset/img/pic/w07.png",
+		"id" : 5,
+		"src" : "../data/img/w07.png",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
-		"src" : "asset/img/pic/w08.png",
+		"id" : 4,
+		"src" : "../data/img/w08.png",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
-		"src" : "asset/img/pic/w09.png",
+		"id" : 3,
+		"src" : "../data/img/w09.png",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
-		"src" : "asset/img/pic/w10.png",
+		"id" : 2,
+		"src" : "../data/img/w10.png",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	},
 	{
-		"src" : "asset/img/pic/w11.jpg",
+		"id" : 1,
+		"src" : "../data/img/w11.jpg",
 		"category" : "웹",
 		"hash" : [ "pc"]
 	}
 
 
 ]
-
