@@ -207,16 +207,6 @@ a { color: var(--info, hsl(211.1, 100%, 50%));	cursor: pointer; }
 
 
 
-.loadingMsg{
- position:absolute;
-	top:calc( 50% - 1rem );
-	left: calc( 50% - 1rem );
-	display: inline-block;
-	
-}
-
-
-
 /* 폼태그 */
 
 input::-webkit-input-placeholder {color:var(--placeholder, #333)}
@@ -751,9 +741,9 @@ label.search input::-webkit-search-cancel-button{ display: block; color: var(--t
 
 
 .btn.hash {
-	background-color: var(--bg-color);
+	background-color: var(--bs-dark);
 	padding: .4rem .5rem;
-	color: var(--dark3);
+	color: #fff;
 	font-weight: 200;
 	border-radius: 100em;
 	font-size: .75rem;
