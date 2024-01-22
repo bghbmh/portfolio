@@ -1029,7 +1029,7 @@ label.search input::-webkit-search-cancel-button{ display: block; color: var(--t
 	.cardList .cardType1 header h3 { display: none; }
 	.cardList .cardType1 header .util{ margin-left: auto; }
 	.cardList .cardType1 footer{ 
-		background-color: var(--bg-color);
+		/* background-color: var(--bg-color); */
     margin: auto -.5rem -.5rem;
     border-radius: 4px;
 		
