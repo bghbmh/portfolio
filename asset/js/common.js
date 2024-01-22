@@ -7,7 +7,7 @@ import { Modal } from "./modalType3.js";
 document.addEventListener("DOMContentLoaded", () => {
 
 	console.log("DOMContentLoaded ")
-	fileHandler._load( { url: './data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
+	fileHandler._load( { url: '../main/data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
 
 
 	if( document.querySelector(".listTest") ){
