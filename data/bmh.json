@@ -60,7 +60,7 @@
 	{
 		"id" : 91,
 		"main" : true,
-		"img" : ["../main/data/img/me15.png"],
+		"img" : ["../main/data/img/me18-1.png","../main/data/img/me18-2.png","../main/data/img/me18-3.png"],
 		"category" : "웹",
 		"hash" : [ "리뉴얼", "디자인"]
 	},
