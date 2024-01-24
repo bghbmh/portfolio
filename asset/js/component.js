@@ -8,12 +8,12 @@ export function mainCardType1(item){
 			<header>
 				<h3 aria-label="${item.description ? '' : '제목없음'}">${item.description ? item.description.title : ''}</h3>
 				<div class="util">
-					${item.description ? str : ''}
-					<button type="button" class="btn icon" aria-label="크게보기" data-ui-util="zoomin" data-ui-target="${item.src}"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
-					
+					${buttonList(item)}						
 				</div>
 			</header>
-			<img src="${item.src ? item.src : '../assets/img/no-img.gif'}" alt="${item.alt ? item.alt : '이미지 설명이 없습니다'}" class="img">
+			<div class="imgGroup">
+				${imgList(item)}
+			</div>
 			<footer>
 				<nav>
 					${hashType(item.hash)}
@@ -21,6 +21,26 @@ export function mainCardType1(item){
 			</footer>
 		</article>
 	`;
+}
+
+function buttonList(item){
+	let html='';
+	if( item.description ){
+		html = `<button type="button" class="btn icon" aria-label="상세내용보기" data-ui-util="detail" data-ui-target="${item.id}"><i class="fa-solid fa-clone"></i></button>`;
+	} 
+	html += `<button type="button" class="btn icon" aria-label="크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(item.img)}'><i class="fa-solid fa-magnifying-glass-plus"></i></button>`;
+
+	return html;
+}
+
+function imgList(item, html = ''){
+	
+	if( !(item.description ? item.description.img.length : item.img.length) ){		
+		return `<img src="../assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
+	} 
+
+	item.img.forEach( src => { html += `<img src="${src}" alt="이미지">` });	
+	return html;
 }
 
 export function hashType(hash){
