@@ -2,9 +2,9 @@
 
 export function mainCardType1(item){
 	//console.log("tttt -", item.description ? item.description.title : 'aaa' )
-	let str = `<button type="button" class="btn icon" aria-label="상세내용보기" data-ui-util="detail" data-ui-target="${item.id}"><i class="fa-solid fa-clone"></i></button>`;
+	//  style="background-image: url(${item.description ? item.description.bg : ''})"
 	return `
-		<article class="cardType1" data-category="${item.category}"  style="background-image: url(${item.description ? item.description.bg : ''})">  
+		<article class="cardType1" data-category="${item.category}">  
 			<header>
 				<h3 aria-label="${item.description ? '' : '제목없음'}">${item.description ? item.description.title : ''}</h3>
 				<div class="util">
