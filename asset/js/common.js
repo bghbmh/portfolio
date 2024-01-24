@@ -203,7 +203,7 @@ function cardListHandler(e){
 		case "detail":
 			
 			fileHandler._load( { 
-				url: '../data/bmh.json', 
+				url: '../main/data/bmh.json', 
 				callback : function(request){
 					
 					let items = JSON.parse(request.responseText);
