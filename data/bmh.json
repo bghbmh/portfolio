@@ -32,14 +32,7 @@
 	{
 		"id" : 87,
 		"main" : true,
-		"img" : ["../main/data/img/me13.png"],
-		"category" : "웹",
-		"hash" : [ "제안용","디자인" ]
-	},
-	{
-		"id" : 86,
-		"main" : true,
-		"img" : ["../main/data/img/me12.png"],
+		"img" : ["../main/data/img/me13.png","../main/data/img/me12.png"],
 		"category" : "웹",
 		"hash" : [ "제안용","디자인" ]
 	},
