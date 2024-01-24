@@ -152,7 +152,7 @@ export function detailViewPage(items, selectedItem){
 			
 			<div class="viewArea" style="background-image: url(${item.description.bg ? item.description.bg : ''})">
 				<div class="img">
-					<img src="${item.description.src ? item.description.src : '../assets/img/no-img.gif'}" alt="${item.description.alt ? item.description.alt : '이미지 설명이 없습니다'}">
+					${imgList(item)}
 				</div>
 				<div class="extra">
 					<h4 class="title">${item.description.title}</h4>
