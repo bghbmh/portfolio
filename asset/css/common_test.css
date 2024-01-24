@@ -947,7 +947,22 @@ label.search input::-webkit-search-cancel-button{ display: block; color: var(--t
 	background-color: var(--bg-color);
 	color: var(--dark0);
 }
-.cardType1 .img{
+.cardType1 .imgGroup{
+	position: absolute;
+	display: block;
+	width: 100%; height: 100%;
+
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+.cardType1 .imgGroup img{
+		display: block;
+	width: 100%; height: 100%;
+	object-fit: cover;
+	object-position: center top;
+}
+/*.cardType1 .img{
 	position: absolute;
 	display: block;
 	width: 100%; height: 100%;
@@ -956,7 +971,7 @@ label.search input::-webkit-search-cancel-button{ display: block; color: var(--t
 	left: 0;
 	top: 0;
 	z-index: -1;
-}
+}*/
 .cardType1 footer{
 	margin-top: auto;
 }
