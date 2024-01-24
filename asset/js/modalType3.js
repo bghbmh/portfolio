@@ -177,7 +177,7 @@ function CreateElement(attributes = {}) { // { tag : "div", class: "sample"}
 
 
 function imgList(item, html = ''){
-	
+	console.log("imgList - ", item)
 	if( !item.length ){		
 		return `<img src="../assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
 	} 
