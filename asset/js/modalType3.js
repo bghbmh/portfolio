@@ -91,7 +91,7 @@ export var Modal = {
 						<button type="button" class="btn icon modalClose" aria-label="팝업닫기" title="닫기"></button>
 					</div>
 					<div class="contents">
-						<img src="${args.target}" alt="modal img test">
+						${imgList(args.target)}
 					</div>
 				</div>
 				`;
@@ -175,6 +175,16 @@ function CreateElement(attributes = {}) { // { tag : "div", class: "sample"}
 	return tag;
 }
 
+
+function imgList(item, html = ''){
+	
+	if( !item.length ){		
+		return `<img src="../assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
+	} 
+
+	item.forEach( src => { html += `<img src="${src}" alt="이미지">` });	
+	return html;
+}
 /* 나중에 따로 모아두기 */
 
 
