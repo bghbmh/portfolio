@@ -194,7 +194,7 @@ function cardListHandler(e){
 	switch (uiUtil){
 		case "zoomin":
 			console.log( " util test - ",  Modal );
-			Modal.Zoomin( { target: clickElem.dataset.uiTarget , tId : e.timeStamp } );
+			Modal.Zoomin( { target: JSON.parse(clickElem.dataset.uiTarget) , tId : e.timeStamp } );
 			//Modal.Alert( { message: "aaaaaaaa~!!!!!", class :"alert" } );
 			//Modal.Alert( { message: "test test test"} );
 			//Modal.alert({test : "test"})
@@ -209,7 +209,7 @@ function cardListHandler(e){
 					let items = JSON.parse(request.responseText);
 
 					Modal.detail({ 
-						html : component.detailViewPage( items, clickElem.dataset.uiTarget  ),
+						html : component.detailViewPage( items, JSON.parse(clickElem.dataset.uiTarget)  ),
 						class:"popup",
 						eventListeners : {
 							"load" : () => { console.log("click___test_attach eventListeners") } ,
