@@ -84,6 +84,8 @@ export var Modal = {
 			UI.element = CreateElement({tag: "DIV", class: args.class ? classGroup(args.class) : `popup ${UI.Name}`,  role: "dialog" });
 
 				//category.findIndex( v => v ===  item.category)
+
+			console.log("zoomin - ", args.target);
 	
 			UI.element.innerHTML = `
 				<div class="wrap">
@@ -177,7 +179,7 @@ function CreateElement(attributes = {}) { // { tag : "div", class: "sample"}
 
 
 function imgList(item, html = ''){
-	console.log("imgList - ", item)
+	console.log("imgList - ", typeof item, item)
 	if( !item.length ){		
 		return `<img src="../assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
 	} 
