@@ -720,7 +720,7 @@
 	},
 	{
 		"id" : 1,
-		"src" : "./asset/data/img/w11.jpg",
+		"src" : ["./asset/data/img/w11.jpg", "./asset/data/img/w10.png"],
 		"category" : "웹",
 		"hash" : [ "pc"]
 	}
