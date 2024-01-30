@@ -26,7 +26,7 @@
 		"id" : 87,
 		"main" : true,
 		"img" : ["../main/data/img/me13.png","../main/data/img/me12.png","../main/data/img/me17.png"],
-		category" : "웹",
+		"category" : "웹",
 		"hash" : [ "제안용","디자인" ]
 	},
 	{
