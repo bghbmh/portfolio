@@ -1,13 +1,6 @@
 
 [
 	{
-		"id" : 93,
-		"main" : true,
-		"img" : ["../main/data/img/me17.png"],
-		"category" : "웹",
-		"hash" : [ "제안용","디자인" ]
-	},
-	{
 		"id" : 92,
 		"main" : true,
 		"img" : ["../main/data/img/me16.jpg"],
@@ -32,8 +25,8 @@
 	{
 		"id" : 87,
 		"main" : true,
-		"img" : ["../main/data/img/me13.png","../main/data/img/me12.png"],
-		"category" : "웹",
+		"img" : ["../main/data/img/me13.png","../main/data/img/me12.png","../main/data/img/me17.png"],
+		category" : "웹",
 		"hash" : [ "제안용","디자인" ]
 	},
 	{
