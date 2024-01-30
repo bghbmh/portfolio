@@ -182,6 +182,15 @@ body {
 body.main{
 	background-color: transparent;
 }
+body.openShadowDom{ overflow: hidden }
+body.openShadowDom:after{
+	content: '';
+	position: fixed;
+	top:0; bottom:0;
+	left:0; right:0;
+	background-color: hsl(0 0% 0% / .7);
+	z-index: 9;
+}
 @media(min-width: 1200px){
 	body{  }
 }
@@ -947,6 +956,7 @@ label.search input::-webkit-search-cancel-button{ display: block; color: var(--t
 	background-color: var(--bg-color);
 	color: var(--dark0);
 }
+.cardType1 header .util .btn + .btn{ margin-left: 4px }
 .cardType1 .imgGroup{
 	position: absolute;
 	display: block;
