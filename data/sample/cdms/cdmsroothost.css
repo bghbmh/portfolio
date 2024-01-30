@@ -1,0 +1,155 @@
+@charset "utf-8";
+/* test CSS Document */
+
+
+:host{
+
+	--primary: #3B82F5;
+	--secondary: #6c757d;
+	--success: #6FCC31;
+	--info: hsl(188, 78%, 41%);
+	--warning: #ffc107;
+	--danger: #dc3545;
+	--light: hsl(210, 17%, 98%);
+	--dark: #343a40;
+	--teal: hsl(188 78% 46%);
+
+	--dark0: hsl(222, 33%, 8%);
+	--dark0-alpha95: hsl(222, 33%, 95%);
+	--dark0-alpha90: hsl(222, 33%, 90%);
+	--dark0-alpha80: hsl(222, 33%, 80%);
+	--dark0-alpha70: hsl(222, 33%, 70%);
+	--dark0-alpha01: hsl(222 33% 8% / .01);
+	
+
+	
+	--dark1: hsl(228 65% 10%);
+	--dark1-alpha90: hsl(228 65% 10% / .9);
+	--dark1-alpha80: hsl(228 65% 10% / .8);
+	--dark1-alpha20: hsl(228 65% 10% / .2);
+	--dark1-alpha10: hsl(228 65% 10% / .1);
+	--dark1-alpha01: hsl(228 65% 10% / .01);
+
+	--darkfa: #fafafa;
+    --darka: #aaa;
+    --dark9: #999;
+	--dark8: hsl(222, 33%, 88%);
+    --dark7: #777;
+    --dark6: #666;
+    --dark5: #555;
+    --dark4: #444;
+    --dark3: #333;
+    --dark2: #222;
+
+	--gray: hsl(208.2, 7.3%, 45.7%);
+	--gray-dark: hsl(210, 10.3%, 22.7%);
+	--gray-dark-alpha10: hsl(210 10.3% 22.7% / .1);
+	--gray-dark-alpha40: hsl(210 10.3% 22.7% / .4);
+
+	--bg-color: hsl(220, 23%, 97%);
+
+	--blue: hsl(217, 90%, 60%);
+	--blue-alpha90: hsl(217 90% 60% / .9);
+	--blue-alpha80: hsl(217 90% 60% / .8);
+	--blue-alpha70: hsl(217 90% 60% / .7);
+	--blue-alpha60: hsl(217 90% 60% / .6);
+	--blue-alpha50: hsl(217 90% 60% / .5);
+	--blue-alpha40: hsl(217 90% 60% / .4);
+	--blue-alpha30: hsl(217 90% 60% / .3);
+	--blue-alpha10: hsl(217 90% 60% / .1);
+	--blue-alpha05:hsl(217 90% 60% / .05);
+	
+
+	--green: hsl(162 73% 46%); /* hsl(96, 61%, 50%) */
+	--green-alpha40: hsl(162 73% 46% / .4);
+	--green-alpha30: hsl(162 73% 46% / .3);
+	--green-alpha10: hsl(162 73% 46%/ .1);
+	--green-alpha05: hsl(162 73% 46% / .05);
+
+	--orange: hsl(39, 100%, 73%);
+	--orange-alpha10: hsl(39 100% 73% / .1);
+
+	--teal-blue: hsl(188 78% 46%) ;    /* hsl(199, 100%, 60%) */
+	--teal-blue-alpha40: hsl(188 78% 46% / .4);
+	--teal-blue-alpha30: hsl(188 78% 46% / .3);
+	--teal-blue-alpha20: hsl(188 78% 46% / .2);
+	--teal-blue-alpha10: hsl(188 78% 46% / .1);
+	--teal-blue-alpha05: hsl(188 78% 46% / .05);
+	--teal-blue-alpha03: hsl(188 78% 46% / .03);
+	--teal-blue-alpha02: hsl(188 78% 46% / .02);
+
+	--purple: hsl(265, 100%, 60%);
+	--purple-alpha40: hsl(265 100% 60% / .4);
+	--purple-alpha30: hsl(265 100% 60% / .3);
+	--purple-alpha10: hsl(265 100% 60% / .1);
+	--purple-alpha05: hsl(265 100% 60% / .05);
+
+	--pink: hsla(0, 100%, 65%, 1); /* 73 -> 65 */
+	--pink-alpha40: hsla(0, 100%, 65%, .4);
+	--pink-alpha10: hsla(0, 100%, 65%, .1);
+	--pink-alpha05: hsla(0, 100%, 65%, .05);
+
+	--red: hsl(0, 79%, 54%);
+	--red-alpha10: hsl(0 79% 54% / .1);
+
+	--bronze: #CC7429;
+
+	--yellow: hsl(45, 100%, 60%);
+	--yellow-alpha40: hsl(45 100% 60% / .4);
+	--yellow-alpha30: hsl(45 100% 60% / .3);
+	--yellow-alpha10: hsl(45 100% 60% / .1);
+	--yellow-alpha05: hsl(45 100% 60% / .05);
+
+	--tiffany: #2EE6CA;
+	--black: #000000;
+
+	--transparent : transparent;
+
+
+	--text-dark0: hsl(218, 21%, 25%);
+	--text-dark1: hsl(217, 13%, 34%);
+	--text-dark2: hsl(217, 13%, 44%);
+	--text-dark3: hsl(217, 13%, 54%);
+	--text-dark4: hsl(217, 13%, 74%);
+
+
+	--gradation-primary: linear-gradient(158deg, var(--blue) 0%, hsl(226, 97%, 59%) 100%);
+	--gradation-teal: linear-gradient(158deg, var(--teal-blue) 0%, hsl(210, 100%, 50%) 100%);
+	--gradation-yellow: linear-gradient(158deg, var(--yellow) 0%, hsl(37, 92%, 51%) 100%);
+	--gradation-green: linear-gradient(158deg, var(--green)   0%, hsl(134, 67%, 48%) 100%);
+	--gradation-purple: linear-gradient(158deg, var(--purple) 0%, hsl(265, 71%, 42%) 100%);
+
+
+
+	--breakpoint-xs: 0;
+	--breakpoint-sm: 576px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 992px;
+	--breakpoint-xl: 1200px;
+
+
+	--main-contents-width: 1900px;
+	/* 1440px */
+
+
+	--border-radius-8: 8px;
+
+	--line-color: hsl(210, 14%, 83.1%);
+	--line-color2: hsl(210, 14%, 93.1%);
+
+	--placeholder: var(--text-dark3);
+
+	--scrollbar-track : var(--dark0-alpha90);
+	--scrollbar-thumb : var(--dark1-alpha20);
+
+	--th-color : hsl(0, 0%, 98%); /* 일단 넣어봄 */
+
+
+
+
+	--font-family-sans-serif: 'Pretendard Variable', 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', 'MGothic', 'AppleGothic',
+		'돋움', Dotum, Helvetica, -apple-system, BlinkMacSystemFont,
+		Roboto, "Segoe UI", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+}
