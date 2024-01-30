@@ -5,7 +5,9 @@
 		"main" : true,
 		"img" : ["../main/data/img/me16.jpg"],
 		"category" : "웹",
-		"hash" : [ "마크업","반응형" ]
+		"hash" : [ "마크업","반응형" ],
+		"sampleName" : "keimyung",
+		"samplePage" : ["main.html","samplepage_sub.html"]
 	},
 	{
 		"id" : 85,
@@ -13,11 +15,13 @@
 		"img" : ["../main/data/img/me11.png"],
 		"category" : "웹",
 		"hash" : [ "반응형", "대시보드","디자인", "마크업"  ],
+		"sampleName" : "cdms",
+		"samplePage" : ["samplepage_main.html","samplepage_sub.html"],
 		"description" : {
 				"bg" : ["../main/data/img/web111_bg.png"],
 				"img" : ["../main/data/img/me11.png"],
 				"title" : "콘텐츠관리",
-				"link" : "nameCard/m_nameCard.html",
+				"link" : "실제 사이트 있으면 넣기",
 				"designer" : "박민희",
 				"coding" : "박민희"
 			}
