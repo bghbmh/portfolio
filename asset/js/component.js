@@ -24,12 +24,19 @@ export function mainCardType1(item){
 }
 
 function buttonList(item){
+	//console.log("button item - ", item.sampleName)
 	let html='';
-	if( item.description ){
-		html = `<button type="button" class="btn icon" aria-label="상세내용보기" data-ui-util="detail" data-ui-target="${item.id}"><i class="fa-solid fa-clone"></i></button>`;
-	} 
-	html += `<button type="button" class="btn icon" aria-label="크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(item.img)}'><i class="fa-solid fa-magnifying-glass-plus"></i></button>`;
 
+	html += `<button type="button" class="btn icon" aria-label="크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(item.img)}'><i class="fa-solid fa-magnifying-glass-plus"></i></button>`;
+	
+	
+	if( item.sampleName && item.samplePage ){
+		html += `<button type="button" class="btn icon" aria-label="마크업샘플보기" data-ui-util="preview" data-sample-name="${item.sampleName}" data-sample-page='${JSON.stringify(item.samplePage)}'><i class="fa-solid fa-code"></i></button>`;
+	}
+
+	if( item.description ){
+		html += `<button type="button" class="btn icon" aria-label="상세내용보기" data-ui-util="detail" data-ui-target="${item.id}"><i class="fa-solid fa-clone"></i></button>`;
+	} 
 	return html;
 }
 
