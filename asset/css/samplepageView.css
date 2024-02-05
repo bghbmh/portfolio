@@ -28,8 +28,10 @@
 }
 
 .btn[data-ui-action="close"]{
-	position: fixed;
-	left: calc(100% - 2%);
+/*	position: fixed;*/
+	position: -webkit-sticky;
+	position: sticky;
+	left: calc(100% - 2rem);
  	top: 3%;
 	width: 36px;
 	height: 36px;
