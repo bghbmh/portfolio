@@ -275,20 +275,6 @@
 		"hash" : [ "포스터", "530x800", "일러스트" ]
 	},
 	{
-		"id" : 68,
-		"img" : ["../main/data/img/paper04.png"],
-		"srcRatio" : "rowspan2",
-		"category" : "인쇄",
-		"hash" : [ "포스터", "530x800", "일러스트" ]
-	},
-	{
-		"id" : 67,
-		"img" : ["../main/data/img/paper05.png"],
-		"srcRatio" : "rowspan2",
-		"category" : "인쇄",
-		"hash" : [ "포스터", "530x800", "일러스트" ]
-	},
-	{
 		"id" : 66,
 		"img" : ["../main/data/img/paper06.png"],
 		"category" : "인쇄",
@@ -321,18 +307,6 @@
 	{
 		"id" : 63,
 		"img" : ["../main/data/img/paper09.png"],
-		"category" : "인쇄",
-		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
-	},
-	{
-		"id" : 62,
-		"img" : ["../main/data/img/paper10.png"],
-		"category" : "인쇄",
-		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
-	},
-	{
-		"id" : 61,
-		"img" : ["../main/data/img/paper11.png"],
 		"category" : "인쇄",
 		"hash" : [ "포스터", "템플릿", "454x600","A4", "일러스트" ]
 	},
@@ -468,18 +442,6 @@
 		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
 	},
 	{
-		"id" : 40,
-		"img" : ["../main/data/img/p38.png"],
-		"category" : "콘텐츠",
-		"hash" : [ "템플릿", "교육", "안내문", "어린이"]
-	},
-	{
-		"id" : 39,
-		"img" : ["../main/data/img/p39.png"],
-		"category" : "콘텐츠",
-		"hash" : [ "템플릿", "교육", "어린이", "모바일"]
-	},
-	{
 		"id" : 38,
 		"img" : ["../main/data/img/p40.png"],
 		"category" : "콘텐츠",
@@ -513,18 +475,11 @@
 				"story" : "천문스쿨 이용자에게 모바일로 보내는 알림"
 			}
 	},
-
 	{
 		"id" : 34,
 		"img" : ["../main/data/img/p44.jpg"],
 		"category" : "콘텐츠",
 		"hash" : [ "템플릿", "교육", "어린이"]
-	},
-	{
-		"id" : 33,
-		"img" : ["../main/data/img/p52.jpg"],
-		"category" : "콘텐츠",
-		"hash" : [ "이벤트", "상세페이지"]
 	},
 	{
 		"id" : 32,
@@ -541,12 +496,6 @@
 	{
 		"id" : 30,
 		"img" : ["../main/data/img/p61.jpg"],
-		"category" : "콘텐츠",
-		"hash" : [ "이벤트", "상세페이지"]
-	},
-	{
-		"id" : 29,
-		"img" : ["../main/data/img/p62.jpg"],
 		"category" : "콘텐츠",
 		"hash" : [ "이벤트", "상세페이지"]
 	},
@@ -692,43 +641,43 @@
 		"id" : 7,
 		"img" : ["../main/data/img/w05.gif"],
 		"category" : "웹",
-		"hash" : [ "pc"]
+		"hash" : [ "pc", "유지보수"]
 	},
 	{
 		"id" : 6,
 		"img" : ["../main/data/img/w06.png"],
 		"category" : "웹",
-		"hash" : [ "pc"]
+		"hash" : [ "pc", "유지보수"]
 	},
 	{
 		"id" : 5,
 		"img" : ["../main/data/img/w07.png"],
 		"category" : "웹",
-		"hash" : [ "pc"]
+		"hash" : [ "pc", "유지보수"]
 	},
 	{
 		"id" : 4,
 		"img" : ["../main/data/img/w08.png"],
 		"category" : "웹",
-		"hash" : [ "pc"]
+		"hash" : [ "pc", "유지보수"]
 	},
 	{
 		"id" : 3,
 		"img" : ["../main/data/img/w09.png"],
 		"category" : "웹",
-		"hash" : [ "pc"]
+		"hash" : [ "pc", "유지보수"]
 	},
 	{
 		"id" : 2,
 		"img" : ["../main/data/img/w10.png"],
 		"category" : "웹",
-		"hash" : [ "pc"]
+		"hash" : [ "pc", "유지보수"]
 	},
 	{
 		"id" : 1,
 		"img" : ["../main/data/img/w11.jpg"],
 		"category" : "웹",
-		"hash" : [ "pc"]
+		"hash" : [ "pc", "유지보수"]
 	}
 
 
