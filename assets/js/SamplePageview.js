@@ -21,11 +21,11 @@ export class SamplePageview extends HTMLElement {
 		const shadow = this.attachShadow({ mode: "open" });
 		
 
-		let rootPath = `..../0_last/data/sample/` + ( this.sampleName || "temp1");
+		let rootPath = `../main/data/sample/` + ( this.sampleName || "temp1");
 
 		const linkElem = document.createElement("link");
 		linkElem.setAttribute("rel", "stylesheet");
-		linkElem.setAttribute("href", "../0_last//assets/css/samplepageView.css");
+		linkElem.setAttribute("href", "../main//assets/css/samplepageView.css");
 
 
 		const linkElem2 = document.createElement("link");
@@ -332,9 +332,6 @@ function addSamplePage(host, rootPath, filePath ){  //this.contentsBody, this.ro
 			const shadowWrap = document.createElement("div");
 			shadowWrap.setAttribute("class", "shadowWrap");
 			shadowWrap.innerHTML = html.replaceAll('../', rootPath);
-
-
-			console.log(`현재 target의 위치는-`, body, temp);
 
 			body.appendChild(shadowWrap);
 
