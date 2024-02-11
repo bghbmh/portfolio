@@ -7,7 +7,7 @@
 		"category" : "웹",
 		"hash" : [ "마크업","반응형" ],
 		"sampleName" : "keimyung",
-		"samplePage" : ["main.html","samplepage_sub.html"]
+		"samplePage" : ["main.html","sub.html"]
 	},
 	{
 		"id" : 85,
@@ -16,7 +16,7 @@
 		"category" : "웹",
 		"hash" : [ "반응형", "대시보드","디자인", "마크업"  ],
 		"sampleName" : "cdms",
-		"samplePage" : ["main.html","samplepage_sub.html"],
+		"samplePage" : ["main.html","sub.html"],
 		"description" : {
 				"bg" : ["../main/data/img/web111_bg.png"],
 				"img" : ["../main/data/img/me11.png"],
