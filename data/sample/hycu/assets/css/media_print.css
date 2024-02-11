@@ -1,0 +1,42 @@
+/* 
+- 사용법 -
+인쇄영역 중 제거 할 요소에는 class="no_print" 을 넣는다.
+
+*/
+@media print {
+    @page {
+        size: 21cm 29.7cm;
+        /*A4*/
+      margin: 2mm;
+    }
+
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        /* 크롬 배경화면 프린트 */
+    }
+
+    body {
+        position: relative;
+    }
+
+    header, aside, footer, .class-menu-btn, .no_print, #info-item-box .button-area, .listTab, [class*=menu], [class^=option], [class="paging"] {
+        display: none !important;
+    }
+
+    .print_section {
+        display: block;
+        page-break-before: always;
+        page-break-before: avoid;
+    }
+
+    .tbl .element {
+        page-break-inside: avoid;
+        -webkit-region-break-inside: avoid;
+        position: relative;
+    }
+
+
+}
