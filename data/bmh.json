@@ -650,18 +650,6 @@
 		"hash" : [ "pc", "유지보수"]
 	},
 	{
-		"id" : 5,
-		"img" : ["../main/data/img/w07.png"],
-		"category" : "웹",
-		"hash" : [ "pc", "유지보수"]
-	},
-	{
-		"id" : 4,
-		"img" : ["../main/data/img/w08.png"],
-		"category" : "웹",
-		"hash" : [ "pc", "유지보수"]
-	},
-	{
 		"id" : 3,
 		"img" : ["../main/data/img/w09.png"],
 		"category" : "웹",
@@ -670,12 +658,6 @@
 	{
 		"id" : 2,
 		"img" : ["../main/data/img/w10.png"],
-		"category" : "웹",
-		"hash" : [ "pc", "유지보수"]
-	},
-	{
-		"id" : 1,
-		"img" : ["../main/data/img/w11.jpg"],
 		"category" : "웹",
 		"hash" : [ "pc", "유지보수"]
 	}
