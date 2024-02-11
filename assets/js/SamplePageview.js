@@ -62,11 +62,11 @@ export class SamplePageview extends HTMLElement {
 		if( nav ){
 			
 			nav.addEventListener("click", e => {
-				e.preventDefault();
+				let c = e.target.closest("button");
 				
 
-				this.setAttribute("current", e.target.dataset.sampleHref );
-				this.currentPage = e.target.dataset.sampleHref;
+				this.setAttribute("current", c.dataset.sampleHref );
+				this.currentPage = c.dataset.sampleHref;
 
 				console.log("현재페이지 - ", this.currentPage)
 				// this.contentsBody.setAttribute("href", e.target.dataset.sampleHref) ;
