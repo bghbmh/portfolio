@@ -11,7 +11,9 @@ export class SamplePageview extends HTMLElement {
 		this.sampleName = n;
 		this.samplePage = p;
 		this.rootPath = rt;
-		this.contentsBody = new ShadowContents();
+		//this.contentsBody = new ShadowContents();
+
+		this.contentsBody = document.createElement("iframe");//new ShadowContents();
 
 		this.currentPage = '';
 
@@ -25,12 +27,12 @@ export class SamplePageview extends HTMLElement {
 
 		const linkElem = document.createElement("link");
 		linkElem.setAttribute("rel", "stylesheet");
-		linkElem.setAttribute("href", "../main//assets/css/samplepageView.css");
+		linkElem.setAttribute("href", "../main/assets/css/samplepageView.css");
 
 
 		const linkElem2 = document.createElement("link");
 		linkElem2.setAttribute("rel", "stylesheet");
-		linkElem2.setAttribute("href", this.rootPath+ this.sampleName + "roothost.css");
+		linkElem2.setAttribute("href", this.rootPath+ this.sampleName +"-" + "roothost.css");
 		
 		shadow.appendChild(linkElem);
 		shadow.appendChild(linkElem2);
@@ -129,30 +131,31 @@ export class SamplePageview extends HTMLElement {
 		// style.textContent = this.defaultCss;
 		// this.shadowRoot.appendChild(style);
 
-		this.contentsBody.shadowRoot.innerHTML = `
-		<style>
-		:host{
-			width: 100%;
-			height: 100%;
-		}
+		// this.contentsBody.shadowRoot.innerHTML = `
+		// 	<style>
+		// 	:host{
+		// 		width: 100%;
+		// 		height: 100%;
+		// 	}
 
-			.shadowWrap{
-				width: 100%;
-				height: 100%;
-				overflow-y : auto;
-				/*max-width: 95%;
-				margin: 3rem auto;*/
-				
-			}
+		// 		.shadowWrap{
+		// 			width: 100%;
+		// 			height: 100%;
+		// 			overflow-y : auto;
+		// 			/*max-width: 95%;
+		// 			margin: 3rem auto;*/
+					
+		// 		}
 
-			.wrapper {
-				position: relative;
-			}
-			</style>
+		// 		.wrapper {
+		// 			position: relative;
+		// 		}
+		// 		</style>
 
-		`;
+		// 	`;
 
 
+		//addSamplePage(this.contentsBody.shadowRoot, this.rootPath, this.getAttribute("current"));
 		addSamplePage(this.contentsBody, this.rootPath, this.getAttribute("current"));
 
 	}
@@ -229,24 +232,13 @@ function addSamplePage(host, rootPath, filePath ){  //this.contentsBody, this.ro
 
 
 
-	console.log(" addSamplePage555 - ", filePath, rootPath, host  )
-
-	//return;
+	host.src = filePath;
+	return;
 
 	//host.shadowRoot.innerHTML='';
 
 
-	let body = host.shadowRoot;
-	// let filePath = host.getAttribute("href");
-	// let rootPath = host.getAttribute("rootpath");
-
-
-	
-	
-
-	//return;
-	
-
+	let body = host;
 	//cnt.setAttribute("page", menuIdx);
 
 	if( body.querySelector("template") ){
@@ -270,29 +262,44 @@ function addSamplePage(host, rootPath, filePath ){  //this.contentsBody, this.ro
 				return;
 			}
 
-
 			temp.innerHTML = request.response;
+
+			
 		
-					
+			let hHtml = document.createElement("html");	
+			
+			body.appendChild(hHtml);
 		
 			// 템플릿 엘리먼트의 컨텐츠 존재 유무를 통해
 			// 브라우저가 HTML 템플릿 엘리먼트를 지원하는지 확인합니다
+			let scriptFiles = [];
 			if ("content" in document.createElement("template")){
 
 				let t = body.querySelector("template");
 
 				let clone = document.importNode(t.content, true);
 
-
-				t.content.querySelectorAll("link").forEach( child => {
+				clone.querySelectorAll("link").forEach( child => {
 					//console.log("child - ", child, child.attributes.href ? child.attributes.href.nodeValue.indexOf(".css"):"//")
 					
 					if( child.attributes.href.nodeValue.indexOf(".css") > -1 ){
 						child.attributes.href.nodeValue = child.attributes.href.nodeValue.replaceAll('../', rootPath);
 						//linkCsslist.push(child);
+						//body.appendChild(child);
+						hHtml.appendChild(child);
+					}
+				})
 
-						
-						body.appendChild(child);
+				console.log( clone.querySelectorAll("script")  )
+				
+				clone.querySelectorAll("script").forEach( (child,idx) => {
+					
+					
+					if(  child.attributes.src ? child.attributes.src.textContent.indexOf(".js") > -1 : false ){
+						console.log("child - ", idx,  child.attributes.src.textContent.indexOf(".js") )
+						child.attributes.src.nodeValue = child.attributes.src.nodeValue.replaceAll('../', rootPath);
+						//linkCsslist.push(child);
+						scriptFiles.push(child.attributes.src.nodeValue);
 					}
 				})
 
@@ -328,12 +335,26 @@ function addSamplePage(host, rootPath, filePath ){  //this.contentsBody, this.ro
 				
 			}
 
+			
 
-			const shadowWrap = document.createElement("div");
-			shadowWrap.setAttribute("class", "shadowWrap");
+
+			const shadowWrap = document.createElement("body");
+			shadowWrap.setAttribute("class", "shadowWrap dark");
 			shadowWrap.innerHTML = html.replaceAll('../', rootPath);
 
-			body.appendChild(shadowWrap);
+
+			console.log(`현재 target의 위치는-`, body, temp);
+
+			hHtml.appendChild(shadowWrap);
+
+			scriptFiles.forEach( child =>  {
+				let ss = document.createElement("script");
+				ss.src = child;
+				hHtml.appendChild(ss);
+			});
+
+
+			console.log("scriptFiles - ", scriptFiles );
 
 			body.removeChild(temp);
 
