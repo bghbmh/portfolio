@@ -132,6 +132,6 @@ header.samplePageGnb > nav > *{
 iframe{
 	flex: 1;
 	width: 100%;
-	
+	background-color: #fff;
 	border:0;
 }
