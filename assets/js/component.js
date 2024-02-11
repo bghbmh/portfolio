@@ -27,15 +27,15 @@ function buttonList(item){
 	//console.log("button item - ", item.sampleName)
 	let html='';
 
-	html += `<button type="button" class="btn icon" aria-label="크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(item.img)}'><i class="fa-solid fa-magnifying-glass-plus"></i></button>`;
+	html += `<button type="button" class="btn icon" title="크게보기" aria-label="크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(item.img)}'><i class="fa-regular fa-image"></i></button>`;
 	
 	
 	if( item.sampleName && item.samplePage ){
-		html += `<button type="button" class="btn icon" aria-label="마크업샘플보기" data-ui-util="preview" data-sample-name="${item.sampleName}" data-sample-page='${JSON.stringify(item.samplePage)}'><i class="fa-solid fa-code"></i></button>`;
+		html += `<button type="button" class="btn icon" title="마크업샘플보기" aria-label="마크업샘플보기" data-ui-util="preview" data-sample-name="${item.sampleName}" data-sample-page='${JSON.stringify(item.samplePage)}'><i class="fa-solid fa-code"></i></button>`;
 	}
 
 	if( item.description ){
-		html += `<button type="button" class="btn icon" aria-label="상세내용보기" data-ui-util="detail" data-ui-target="${item.id}"><i class="fa-solid fa-clone"></i></button>`;
+		html += `<button type="button" class="btn icon" title="상세내용보기" aria-label="상세내용보기" data-ui-util="detail" data-ui-target="${item.id}"><i class="fa-solid fa-object-group"></i></button>`;
 	} 
 	return html;
 }
@@ -95,11 +95,11 @@ export function extraInfoType1(extraInfo){
 				break;
 			case "designer":
 				//console.log("bg")
-				designer = titleType1({title : "디자인" , descript : extraInfo[key]});
+				designer = titleType1({title : "디자인<span>%</span>" , descript : extraInfo[key]});
 				break;
 			case "coding":
 				//console.log("img")
-				coding = titleType1({title : "코딩" , descript : extraInfo[key]});
+				coding = titleType1({title : "코딩<span>%</span>" , descript : extraInfo[key]});
 				break;
 
 			case "story":
@@ -133,6 +133,10 @@ export function extraInfoType1(extraInfo){
 				link = titleType1({ title : "링크" , descript : link });
 						
 				break;
+				case "library":
+					targetAge = titleType1({title : "라이브러리" , descript : extraInfo[key]});
+							
+					break;
 			default:
 				//html += titleType1({title : key , descript : extraInfo[key]});
 				break;
