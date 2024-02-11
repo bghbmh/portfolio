@@ -26,16 +26,14 @@ export function mainCardType1(item){
 function buttonList(item){
 	//console.log("button item - ", item.sampleName)
 	let html='';
+	html += `<button type="button" class="btn icon" title="이미지크게보기" aria-label="이미지크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(item.img)}'><i class="fa-regular fa-image"></i></button>`;
 
-	html += `<button type="button" class="btn icon" title="크게보기" aria-label="크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(item.img)}'><i class="fa-regular fa-image"></i></button>`;
-	
-	
 	if( item.sampleName && item.samplePage ){
-		html += `<button type="button" class="btn icon" title="마크업샘플보기" aria-label="마크업샘플보기" data-ui-util="preview" data-sample-name="${item.sampleName}" data-sample-page='${JSON.stringify(item.samplePage)}'><i class="fa-solid fa-code"></i></button>`;
+		html += `<button type="button" class="btn icon" title="샘플페이지보기" aria-label="샘플페이지보기" data-ui-util="preview" data-sample-name="${item.sampleName}" data-sample-page='${JSON.stringify(item.samplePage)}'><i class="fa-regular fa-eye"></i></button>`;
 	}
 
 	if( item.description ){
-		html += `<button type="button" class="btn icon" title="상세내용보기" aria-label="상세내용보기" data-ui-util="detail" data-ui-target="${item.id}"><i class="fa-solid fa-object-group"></i></button>`;
+		html += `<button type="button" class="btn icon" title="상세내용보기" aria-label="상세내용보기" data-ui-util="detail" data-ui-target="${item.id}"><i class="fa-solid fa-pager"></i></button>`;
 	} 
 	return html;
 }
