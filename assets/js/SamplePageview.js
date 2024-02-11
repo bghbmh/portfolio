@@ -53,7 +53,14 @@ export class SamplePageview extends HTMLElement {
 			nav = cf.CreateElement({tag: "nav", "aria-label" : "샘플페이지 메뉴" });
 
 			let html = '';
-			this.samplePage.forEach( (href, idx) => { html += `<button type="button" data-sample-num="${idx}" data-sample-href="${this.rootPath +"html/"+ href}">샘플<span>${idx}</span></button>` });
+			this.samplePage.forEach( (href, idx) => {
+				if( idx === 0 ){
+					html += `<button type="button" aria-selected="true" data-sample-num="${idx}" data-sample-href="${this.rootPath +"html/"+ href}">샘플<span>${idx}</span></button>`;
+				} else {
+					html += `<button type="button" aria-selected="false" data-sample-num="${idx}" data-sample-href="${this.rootPath +"html/"+ href}">샘플<span>${idx}</span></button>`;
+				}
+				
+			});
 			nav.innerHTML = html; 
 		} else {
 
@@ -63,10 +70,13 @@ export class SamplePageview extends HTMLElement {
 			
 			nav.addEventListener("click", e => {
 				let c = e.target.closest("button");
-				
 
+				if( c ){
+					for( let b of c.parentNode.children) b.ariaSelected = "false"; 
+				}
 				this.setAttribute("current", c.dataset.sampleHref );
 				this.currentPage = c.dataset.sampleHref;
+				c.ariaSelected = "true";
 
 				console.log("현재페이지 - ", this.currentPage)
 				// this.contentsBody.setAttribute("href", e.target.dataset.sampleHref) ;
