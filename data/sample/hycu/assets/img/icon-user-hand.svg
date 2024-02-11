@@ -1,0 +1,7 @@
+<svg id="icon-user-hand" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect id="사각형_228" data-name="사각형 228" width="32" height="32" fill="#ff1313" opacity="0"/>
+  <g id="Group_1" data-name="Group 1" transform="translate(6 7)">
+    <path id="패스_317" data-name="패스 317" d="M11,13.5H6.5a10.016,10.016,0,0,0-2.661.172,4,4,0,0,0-2.667,2.667A10.013,10.013,0,0,0,1,19M13.5,5.5A4.5,4.5,0,1,1,9,1,4.5,4.5,0,0,1,13.5,5.5Z" transform="translate(-1 -1)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="hand" d="M4.676,5.268v.961m0-.961V2.961a.588.588,0,0,1,1.176,0M4.676,5.268a.588.588,0,0,0-1.176,0v.769a2.942,2.942,0,0,0,5.882,0V4.115a.588.588,0,0,0-1.176,0M5.853,2.961V5.076m0-2.115V2.577a.588.588,0,0,1,1.176,0v.384m0,0V5.076m0-2.115a.588.588,0,0,1,1.176,0V4.115m0,0v.961" transform="translate(9.5 10.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"/>
+  </g>
+</svg>
