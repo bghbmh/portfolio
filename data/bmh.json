@@ -18,12 +18,13 @@
 		"sampleName" : "cdms",
 		"samplePage" : ["main.html","sub.html"],
 		"description" : {
-				"bg" : ["../main/data/img/web111_bg.png"],
+				"bg" : [""],
 				"img" : ["../main/data/img/me11.png"],
 				"title" : "콘텐츠관리",
 				"link" : "실제 사이트 있으면 넣기",
-				"designer" : "박민희",
-				"coding" : "박민희"
+				"designer" : "메인(100), 서브(100)",
+				"coding" : "메인(100), 서브(100)",
+				"library" : "Bootstrap"
 			}
 	},
 	{
@@ -36,17 +37,17 @@
 	{
 		"id" : 89,
 		"main" : true,
-		"img" : ["../main/data/img/me19_1.JPG","../main/data/img/me19_2.JPG"],
+		"img" : ["../main/data/img/me19_1.JPG", "../main/data/img/me19_2.JPG"],
 		"category" : "웹",
 		"hash" : [ "마크업", "반응형" ],
 		"sampleName" : "hycu",
 		"samplePage" : ["main.html","main_layout.html","main_components.html","sub.html"],
 		"description" : {
-			"bg" : ["../main/data/img/print112_bg.png"],
-			"img" : ["../main/data/img/me19_1.JPG"],
+			"img" : ["../main/data/img/w1.png"],
 			"title" : "HYCU",
 			"link" : "nameCard/m_nameCard.html",
-			"coding" : "박민희"
+			"coding" : "메인(80), 서브(40)",
+			"library" : "Semantic UI"
 		}
 	},
 	{
@@ -64,13 +65,13 @@
 		"category" : "웹",
 		"hash" : [ "리뉴얼", "반응형", "디자인", "마크업"  ],
 		"description" : {
-				"bg" : ["../main/data/img/print112_bg.png"],
+				"bg" : [],
 				"img" : ["../main/data/img/w1.png"],
 				"title" : "훌라로 랜딩페이지",
 				"mainColor" : [ "#5a2efd", "#2df1fd" ],
 				"link" : "nameCard/m_nameCard.html",
-				"designer" : "박민희",
-				"coding" : "박민희"
+				"designer" : "메인(100), 서브(100)",
+				"coding" : "메인(100), 서브(100)"
 			}
 	},
 	{
@@ -88,15 +89,15 @@
 		"category" : "웹",
 		"hash" : [ "모바일", "명함", "마크업"  ],
 		"description" : {
-				"bg" : ["../main/data/img/web111_bg.png"],
+				"bg" : [],
 				"img" : ["../main/data/img/web111.png"],
 				"title" : "모바일명함",
 				"targetAge" : "40대 이상(사용자), 20대 이상(사용자의 고객)",
 				"concept" : "산뜻함",
 				"mainColor" : [ "#5a2efd", "#2df1fd" ],
 				"link" : "nameCard/m_nameCard.html",
-				"designer" : "박민희",
-				"coding" : "박민희",
+				"designer" : "메인(100)",
+				"coding" : "메인(100)",
 				"story" : "보험설계사를 위한 1차 명함 시안, 라이프플래너(보험설계사)들의 연령은 주로 40대 중후반이며 영업 시 카톡을 많이 사용한다고 함"
 			}
 	},
@@ -134,7 +135,7 @@
 				"title" : "치매보험 가입 안내",
 				"targetAge" : "50대 이상의 부양자가 있는 20대 이상",
 				"printColor" : "4도",
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"story" : "고객을 만나 보험 상담을 할 때 사용할 자료, 브로슈어(얇은 책자)"
 			}
 	},
@@ -145,13 +146,13 @@
 		"category" : "웹",
 		"hash" : [ "모바일"],
 		"description" : {
-				"bg" : ["../main/data/img/web113_bg.png"],
+				"bg" : [],
 				"img" : ["../main/data/img/web113.png"],
 				"title" : "치매보험",
 				"targetAge" : "50대 이상의 부양자가 있는 20대 이상",
 				"concept" : "글자, 그림은 최대한 사용하지 않기",
 				"mainColor" : [ "#29c097", "#272f46" ],
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"story" : "치매보험 안내 및 상담 신청 페이지, 온라인 마케팅용 랜딩페이지"
 			}
 	},
@@ -168,7 +169,7 @@
 				"title" : "어린이보험",
 				"targetAge" : "30대 이상",
 				"mainColor" : [ "#5656fb" ],
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"coding" : "박민희",
 				"story" : "어린이보험 안내 및 상담 신청 페이지, 온라인 마케팅용 랜딩페이지"
 			}
@@ -187,7 +188,7 @@
 				"concept" : "편안함, 인자함, 개인을 위한, 패키지와 다른",
 				"mainColor" : [ "#0cc4a1", "#fae683" ],
 				"link" : "taxi/index.html",
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"coding" : "박민희",
 				"story" : "1인 고객을 위한 여행신청페이지, 개인택시 영업자용 2차 시안, 결정된 세부내용이 없어 그 외 페이지는 보류"
 			}
@@ -229,7 +230,7 @@
 				"targetAge" : "20대 이상",
 				"concept" : "따뜻함, 사랑",
 				"mainColor" : [ "#fbd943" ],
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"story" : "'아하'는 아랍어로 '사랑'이라는 뜻, '봄'은 '보험'의 줄임말이자 '봄(spring, 春)'이라는 중의적인 의미를 담고 있음.<br>로고는 'ㅇ', 'ㅎ'을 합쳐 하트모양을 표현했고, 위의 붉은 색을 띄는 'ㄴ'은 'ㅎ'의 윗부분이자 동시에 여러 보험 중 하나를 고르라는 '✔'를 표현함"
 			}
 	},
@@ -245,7 +246,7 @@
 				"title" : "카드보드(VR)",
 				"targetAge" : "미취학, 초등학교 1~2학년",
 				"printColor" : "4도",
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"story" : "천문스쿨을 방문한 학생들이 사용할 VR 간편 도구"
 			}
 	},
@@ -262,7 +263,7 @@
 				"targetAge" : "미취학, 초등학교 1~2학년",
 				"printColor" : "4도",
 				"printSize" : "A2",
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"story" : "천문스쿨 내부 인테리어로 사용될 포스터, 학습용 포스터 / 테마별 템플릿"
 			}
 	},
@@ -299,7 +300,7 @@
 				"targetAge" : "초등학교 1~2학년",
 				"printColor" : "4도",
 				"printSize" : "A3",
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"story" : "천문스쿨을 방문한 학생들이 '태양계를 도는 혜성'을 더 쉽게 학습할 수 있게 만든 게임, 보드게임"
 			}
 
@@ -382,7 +383,7 @@
 				"title" : "교과서용 컷",
 				"targetAge" : "고등 융합과학",
 				"printColor" : "4도",
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"story" : "2015년 교육과정을 바탕으로 만든 교과서를 위한 컷"
 			}
 	},
@@ -508,7 +509,7 @@
 				"targetAge" : "미취학 또는 초등학교 1~2학년 자녀를 둔 부모",
 				"concept" : "귀여움",
 				"mainColor" : [ "#e16654" ],
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"story" : "천문스쿨 이용자에게 모바일로 보내는 알림"
 			}
 	},
@@ -683,7 +684,7 @@
 				"title" : "결혼정보업체 상세페이지",
 				"targetAge" : "20대 이상 고소득자",
 				"concept" : "고급, 우아함",
-				"designer" : "박민희",
+				"designer" : "박민희(100)",
 				"story" : "결혼정보업체 모객용 이벤트페이지, 온라인 마케팅용 이벤트"
 			}
 	},
