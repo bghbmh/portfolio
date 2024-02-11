@@ -27,10 +27,10 @@ header.samplePageGnb{  flex: 0;
 	display: flex;
 	width: 100%;
 	height: auto;
-	padding: 1rem 0 .5rem;
+	padding: 1rem .75rem .5rem;
 
 	top:0;
-
+	
 	background-color: hsl(0, 0%, 0%);
 	z-index: 999999999999;
 }
@@ -49,16 +49,24 @@ header.samplePageGnb > nav{
 	display: inline-flex;
 	gap: 1rem;
 }
-header.samplePageGnb > nav > *{
+header.samplePageGnb > nav > button{
 	-webkit-appearance: none;
 	appearance: none;
 	background-color: transparent;
     border: 0;
 
 	display: inline-block;
-	padding: .5rem 1rem;
+	padding: .5rem 4px 2px;
 	color: #fff;
 	cursor: pointer;
+	font-size: 1rem;
+	border-bottom: 4px solid
+}
+header.samplePageGnb > nav > button[aria-selected="false"]{
+	border-bottom-color: transparent;
+}
+header.samplePageGnb > nav > button[aria-selected="true"]{
+	border-bottom-color: #fff;
 }
 
 .btn[data-ui-action="close"]{ 
