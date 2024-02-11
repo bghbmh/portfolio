@@ -1,13 +1,10 @@
-.wrapper {
-	position: relative;
-}
 
 :host{
 	all: initial; 
 	position: fixed;
 	width: 96%;
 	height: 96%;
-	overflow: auto;
+	overflow: hidden;
 	z-index: 11;
 	contain: content;
 	left: 2%;
@@ -20,24 +17,60 @@
 :host([variant="primary"]){} 
 
 
-.shadowWrap{
-	width: 100%;
-	/*max-width: 95%;
-	margin: 3rem auto;*/
-	
-}
-
-.btn[data-ui-action="close"]{
-/*	position: fixed;*/
+header.samplePageGnb{
 	position: -webkit-sticky;
 	position: sticky;
+
+	display: flex;
+	width: 100%;
+	height: auto;
+	padding: 1rem 0 .5rem;
+
+	top:0;
+
+	background-color: hsl(0, 0%, 0%);
+	z-index: 999999999999;
+}
+
+header.samplePageGnb > nav{
+
+/*    width: auto;
+    min-width: auto;
+    height: auto;
+    background: none;
+    z-index: unset;
+
+*/
+
+
+	display: inline-flex;
+	gap: 1rem;
+}
+header.samplePageGnb > nav > *{
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+    border: 0;
+
+	display: inline-block;
+	padding: .5rem 1rem;
+	color: #fff;
+	cursor: pointer;
+}
+
+.btn[data-ui-action="close"]{ 
+	-webkit-appearance: none;
+	appearance: none;
+
+/*	position: fixed;*/
+	position: static;
 	left: calc(100% - 2rem);
  	top: 3%;
 	width: 36px;
 	height: 36px;
 	background-color: hsl(0, 0%, 0%);
 	z-index: 9999;
-	transform: translateX(-100%);
+/*	transform: translateX(-100%);*/
 
 	padding:0;
 	margin:0;
@@ -46,6 +79,12 @@
 	max-width: 44px;
 	min-height: 44px;
 	max-height: 44px;
+
+
+	margin-left: auto;
+	margin-right: 1rem;
+
+	border: 0;
 }
 .btn[data-ui-action="close"]::before{
 	content: '';
@@ -67,4 +106,22 @@
 	-webkit-mask-image: url('../img/xi-svg-x.svg');
 	mask-image: url('../img/xi-svg-x.svg');
 
+}
+
+.shadowBody{
+	display: block;
+	min-height: 100%;
+	overflow: auto;
+}
+
+.shadowWrap{
+	width: 100%;
+
+	/*max-width: 95%;
+	margin: 3rem auto;*/
+	
+}
+
+.wrapper {
+	position: relative;
 }
