@@ -36,12 +36,14 @@
 	{
 		"id" : 89,
 		"main" : true,
-		"img" : ["../main/data/img/w1.jpg"],
+		"img" : ["../main/data/img/me19_1.JPG","../main/data/img/me19_2.JPG"],
 		"category" : "웹",
 		"hash" : [ "마크업", "반응형" ],
+		"sampleName" : "hycu",
+		"samplePage" : ["main.html","main_layout.html","main_components.html","sub.html"],
 		"description" : {
 			"bg" : ["../main/data/img/print112_bg.png"],
-			"img" : ["../main/data/img/w1.png"],
+			"img" : ["../main/data/img/me19_1.JPG"],
 			"title" : "HYCU",
 			"link" : "nameCard/m_nameCard.html",
 			"coding" : "박민희"
