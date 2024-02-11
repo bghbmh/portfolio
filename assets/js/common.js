@@ -14,7 +14,7 @@ import { Modal } from "./modalType3.js";
 document.addEventListener("DOMContentLoaded", () => {
 
 	console.log("DOMContentLoaded ")
-	cf.fileHandler._load( { url: '../0_last/data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
+	cf.fileHandler._load( { url: '../main/data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
 
 
 	if( document.querySelector(".listTest") ){
@@ -179,7 +179,7 @@ function cardListHandler(e){
 		case "detail":
 			
 			cf.fileHandler._load( { 
-				url: '../0_last/data/bmh.json', 
+				url: '../main/data/bmh.json', 
 				callback : function(request){
 					
 					let items = JSON.parse(request.responseText);
@@ -211,7 +211,7 @@ function cardListHandler(e){
 			//console.log("spv - ", clickElem.dataset.sampleName, JSON.parse(clickElem.dataset.samplePage));
 			let spArr = JSON.parse(clickElem.dataset.samplePage);
 
-			let rootPath = `../0_last/data/sample/` + clickElem.dataset.sampleName + "/";
+			let rootPath = `../main/data/sample/` + clickElem.dataset.sampleName + "/";
 
 			const spv = new SamplePageview(clickElem.dataset.sampleName, spArr, rootPath);
 			document.querySelector("body").appendChild(spv);
@@ -223,5 +223,4 @@ function cardListHandler(e){
 			break;
 	}
 }
-
 
