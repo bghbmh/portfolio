@@ -151,7 +151,7 @@ export function extraInfoType1(extraInfo){
 export function detailViewPage(items, selectedItem){
 	
 	let item = items.find( o => o.id === parseInt(selectedItem) );
-	console.log("success - ",item, items );
+	//console.log("success - ",item, items );
 	return `
 		<div class="header">
 			<h3 aria-label="상세보기"><span class="hidden">${item.description ? item.description.title : '??'}</span></h3>
