@@ -35,7 +35,7 @@ class ModalType{
 
 		this._parentElement.appendChild(this._element);
 
-		console.log("Modal draw" + this._name , " - ", this  );
+		//console.log("Modal draw" + this._name , " - ", this  );
 	}
 
 	attachEvent(eTarget, eType, eFunc) {
@@ -85,7 +85,7 @@ export var Modal = {
 
 				//category.findIndex( v => v ===  item.category)
 
-			console.log("zoomin - ", args.target);
+			//console.log("zoomin - ", args.target);
 	
 			UI.element.innerHTML = `
 				<div class="wrap">
@@ -112,7 +112,7 @@ export var Modal = {
 			/* 상세보기 있는지 확인 */
 
 			if( !this.isUI ){
-				console.log("new isUI- ", this.isUI )
+				//console.log("new isUI- ", this.isUI )
 				//console.log( " CreateElement - ", args.class, isElement);
 				let UI = new ModalType("detail");
 				UI.element = CreateElement({tag: "DIV",  
@@ -120,14 +120,14 @@ export var Modal = {
 											role: "dialog" });
 				UI.attachEvent(UI.element, "click", e => {
 					if( !e.target.closest(".modalClose") ) return;
-					console.log("detail111 - ", UI, this.isUI)
+					//console.log("detail111 - ", UI, this.isUI)
 
 					UI.element.classList.remove("on");
 					UI.parentElement.classList.remove("modal"+UI.Name);
 					setTimeout(() => {
 						UI.parentElement.removeChild(UI.element); 
 						UI = null;   this.isUI = null; 
-						console.log("detail222 - ", UI, this.isUI)
+						//console.log("detail222 - ", UI, this.isUI)
 					}, 400);
 				});
 
@@ -179,7 +179,7 @@ function CreateElement(attributes = {}) { // { tag : "div", class: "sample"}
 
 
 function imgList(item, html = ''){
-	console.log("imgList - ", typeof item, item)
+	//console.log("imgList - ", typeof item, item)
 	if( !item.length ){		
 		return `<img src="../assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
 	} 
