@@ -103,7 +103,7 @@ function setGnbHandler(g, ig, it){
 
 function introHandler(request) {
 
-	console.log("test load items",request.arguments, JSON.parse(request.responseText))
+	//console.log("test load items",request.arguments, JSON.parse(request.responseText))
 	let itemsData = JSON.parse(request.responseText);
 
 	//메인에만 노출
@@ -169,7 +169,7 @@ function cardListHandler(e){
 
 	switch (uiUtil){
 		case "zoomin":
-			console.log( " util test - ",  Modal );
+			console.log( " util zoomin " );
 			Modal.Zoomin( { target: JSON.parse(clickElem.dataset.uiTarget) , tId : e.timeStamp } );
 			//Modal.Alert( { message: "aaaaaaaa~!!!!!", class :"alert" } );
 			//Modal.Alert( { message: "test test test"} );
@@ -205,7 +205,7 @@ function cardListHandler(e){
 			
 			break;
 		case "preview":
-			console.log( " util test_preview - ");
+			console.log( " util preview ");
 			document.querySelector("body").classList.toggle("openShadowDom");
 
 			//console.log("spv - ", clickElem.dataset.sampleName, JSON.parse(clickElem.dataset.samplePage));
