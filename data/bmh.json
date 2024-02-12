@@ -67,7 +67,7 @@
 		"description" : {
 				"bg" : [],
 				"img" : ["../main/data/img/w1.png"],
-				"title" : "훌라로 랜딩페이지",
+				"title" : "",
 				"mainColor" : [ "#5a2efd", "#2df1fd" ],
 				"link" : "nameCard/m_nameCard.html",
 				"designer" : "메인(100), 서브(100)",
