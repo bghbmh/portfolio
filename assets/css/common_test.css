@@ -1016,6 +1016,7 @@ label.search input::-webkit-search-cancel-button{ display: block; color: var(--t
 .cardType1:hover header h3 { border-color: var(--bg-color); color: var(--bg-color); }
 @media( max-width: 990px ){
 	.cardType1 header h3{ font-size: 1.25rem; }
+	
 }
 
 
@@ -1063,10 +1064,11 @@ label.search input::-webkit-search-cancel-button{ display: block; color: var(--t
 	.cardList .cardType1{ 
 		padding: .75rem;
 		min-height: 13rem;
-		border-radius: var(--border-radius-8); 
+		border-radius: 8px;  
 	}
 	.cardList .cardType1 header h3 { display: none; }
 	.cardList .cardType1 header .util{ margin-left: auto; }
+	.cardList .cardType1 .imgGroup{ border-radius: 8px; }
 	.cardList .cardType1 footer{ 
 		/* background-color: var(--bg-color);
     margin: auto -.5rem -.5rem; */
