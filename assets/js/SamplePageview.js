@@ -6,7 +6,7 @@ export class SamplePageview extends HTMLElement {
 		// Always call super first in constructor
 		super();
 
-		console.log("------SamplePageview - constructo----", n,p,rt);
+		console.log("SamplePageview");
 
 		this.sampleName = n;
 		this.samplePage = p;
@@ -48,7 +48,7 @@ export class SamplePageview extends HTMLElement {
 
 		let nav = null;
 		if( this.samplePage.length > 1 ){
-			console.log("샘플페이지 메뉴 생성 ");
+			//console.log("샘플페이지 메뉴 생성 ");
 
 			nav = cf.CreateElement({tag: "nav", "aria-label" : "샘플페이지 메뉴" });
 
@@ -101,7 +101,7 @@ export class SamplePageview extends HTMLElement {
 		const btn = cf.CreateElement({tag: "button", class: "btn", type: "button", "aria-label" : "close", "data-ui-action":"close" });
 		btn.innerHTML = `<i class="fa-solid fa-clone"></i>`;
 		btn.addEventListener("click", e => {
-			console.log( "spv - ", this, e.target.closest("[data-ui-action]") );
+			//console.log( "spv - ", this, e.target.closest("[data-ui-action]") );
 			if( !e.target.closest("[data-ui-action]") ) return; 
 
 			this.parentNode.classList.remove("openShadowDom");
@@ -117,23 +117,22 @@ export class SamplePageview extends HTMLElement {
 	}
 
 	connectedCallback() {
-		console.log("----SamplePageview connectedCallback - 11111 " );
+		//console.log("----SamplePageview connectedCallback - 11111 " );
 
-		console.log("----SamplePageview setAttribute current 1111----")
+		//console.log("----SamplePageview setAttribute current 1111----")
 		this.setAttribute("current", this.rootPath +"html/"+this.samplePage[0] );
-		console.log("----SamplePageview setAttribute current 222----")
+		//console.log("----SamplePageview setAttribute current 222----")
 
 		//addSamplePage(this.contentsBody, this.rootPath, this.getAttribute("current"));
 
 	}
 
 	static get observedAttributes() {
-		console.log("----SamplePageview observedAttributes ----")
 		return ["current"];
 	}
 
 	attributeChangedCallback(name, oldValue, newValue){
-		console.log("----SamplePageview attributeChangedCallback ----", this);
+		console.log("SamplePageview attributeChangedCallback");
 
 		// this.shadowRoot.innerHTML='';
 
