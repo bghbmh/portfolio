@@ -14,7 +14,7 @@ import { Modal } from "./modalType3.js";
 document.addEventListener("DOMContentLoaded", () => {
 
 	console.log("DOMContentLoaded ")
-	cf.fileHandler._load( { url: '../main/data/bmh.json', callback : introHandler,loadType:"item", done: "items" });
+	cf.fileHandler._load( { url: '../main/data/bmh.json', success : introHandler,loadType:"item", done: "items" });
 
 
 	if( document.querySelector(".listTest") ){
