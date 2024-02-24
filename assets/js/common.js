@@ -242,8 +242,11 @@ function launchArocket(e){
 
 		},
 		error : function(request){
-			console.log("err",request.arguments.msg)
-			let errHtml = cf.CreateElement({tag: "div", class: "minialarm message" });
+			let pos = ` left: ${e.target.closest("button").offsetLeft}px; 
+						top: ${e.target.closest("button").offsetTop}px; 
+						transform: translate(-60%, -100%);
+					`;
+			let errHtml = cf.CreateElement({tag: "div", class: "minialarm message", style : pos });
 			errHtml.textContent  = "준비중임";
 			let b = cf.CreateElement({tag: "button", class: "btn close", type: "button", "title" : "메시지상자 닫는 버튼", "aria-label" : "메시지상자 닫는 버튼"  });
 			//b.innerHTML = `<i class="fa-solid fa-clone"></i>`;
