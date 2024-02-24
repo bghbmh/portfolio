@@ -2,16 +2,17 @@ import * as cf from './commonFunction.js';
 
 
 export class SamplePageview extends HTMLElement {
-	constructor(n = null, p = null, rt=null) {
+	constructor(n = null, p = null, rt=null, ch='') {
 		// Always call super first in constructor
 		super();
 
-		console.log("SamplePageview");
+		console.log("------SamplePageview - constructo----", n,p,rt);
 
 		this.sampleName = n;
 		this.samplePage = p;
 		this.rootPath = rt;
 		//this.contentsBody = new ShadowContents();
+		this.cssHref = ch;
 
 		this.contentsBody = document.createElement("iframe");//new ShadowContents();
 
@@ -22,12 +23,13 @@ export class SamplePageview extends HTMLElement {
 		// Create a shadow root
 		const shadow = this.attachShadow({ mode: "open" });
 		this.setAttribute("class", "testSamplepage");
+		
 
-		let rootPath = `../main/data/sample/` + ( this.sampleName || "temp1");
+		let rootPath = `../0_last/data/sample/` + ( this.sampleName || "temp1");
 
 		const linkElem = document.createElement("link");
 		linkElem.setAttribute("rel", "stylesheet");
-		linkElem.setAttribute("href", "../main/assets/css/samplepageView.css");
+		linkElem.setAttribute("href", this.cssHref);
 
 
 		const linkElem2 = document.createElement("link");
@@ -48,7 +50,7 @@ export class SamplePageview extends HTMLElement {
 
 		let nav = null;
 		if( this.samplePage.length > 1 ){
-			//console.log("샘플페이지 메뉴 생성 ");
+			console.log("샘플페이지 메뉴 생성 ");
 
 			nav = cf.CreateElement({tag: "nav", "aria-label" : "샘플페이지 메뉴" });
 
@@ -74,11 +76,13 @@ export class SamplePageview extends HTMLElement {
 				if( c ){
 					for( let b of c.parentNode.children) b.ariaSelected = "false"; 
 				}
+				
+
 				this.setAttribute("current", c.dataset.sampleHref );
 				this.currentPage = c.dataset.sampleHref;
 				c.ariaSelected = "true";
 
-				//console.log("현재페이지 - ", this.currentPage)
+				console.log("현재페이지 - ", this.currentPage)
 				// this.contentsBody.setAttribute("href", e.target.dataset.sampleHref) ;
 				// this.contentsBody.setAttribute("rootpath", this.rootPath ) ;
 				//this.contentsBody.reSet( this.rootPath) ;
@@ -113,26 +117,27 @@ export class SamplePageview extends HTMLElement {
 			shadow.appendChild( this.contentsBody );
 		}
 
-		document.querySelector("body").classList.toggle("openShadowDom");v
+		document.querySelector("body").classList.toggle("openShadowDom");
 	}
 
 	connectedCallback() {
-		//console.log("----SamplePageview connectedCallback - 11111 " );
+		console.log("----SamplePageview connectedCallback - 11111 " );
 
-		//console.log("----SamplePageview setAttribute current 1111----")
+		console.log("----SamplePageview setAttribute current 1111----")
 		this.setAttribute("current", this.rootPath +"html/"+this.samplePage[0] );
-		//console.log("----SamplePageview setAttribute current 222----")
+		console.log("----SamplePageview setAttribute current 222----")
 
 		//addSamplePage(this.contentsBody, this.rootPath, this.getAttribute("current"));
 
 	}
 
 	static get observedAttributes() {
+		console.log("----SamplePageview observedAttributes ----")
 		return ["current"];
 	}
 
 	attributeChangedCallback(name, oldValue, newValue){
-		console.log("SamplePageview attributeChangedCallback");
+		console.log("----SamplePageview attributeChangedCallback ----", this);
 
 		// this.shadowRoot.innerHTML='';
 
@@ -242,133 +247,134 @@ function addSamplePage(host, rootPath, filePath ){  //this.contentsBody, this.ro
 
 
 	host.src = filePath;
-	return;
+	//return;
 
 	//host.shadowRoot.innerHTML='';
 
 
-	let body = host;
-	//cnt.setAttribute("page", menuIdx);
+	// let body = host;
+	// //cnt.setAttribute("page", menuIdx);
 
-	if( body.querySelector("template") ){
-		console.log(" host - 111")
-		body.removeChild(body.querySelector("template"));
-	}
+	// if( body.querySelector("template") ){
+	// 	console.log(" host - 111")
+	// 	body.removeChild(body.querySelector("template"));
+	// }
 
-	let temp = document.createElement("template");
-	body.appendChild(temp);
+	// let temp = document.createElement("template");
+	// body.appendChild(temp);
 
 
 
-	cf.fileHandler._load( {  //  '../html/testMain.html'
-		url: filePath, 
-		callback : function(request){
+	// cf.fileHandler._load( {  //  '../html/testMain.html'
+	// 	url: filePath, 
+	// 	callback : function(request){
 
-			console.log("testpath - ", rootPath  );
+	// 		console.log("testpath - ", rootPath  );
 
-			if( !request.arguments.done ){
-				console.log("fail - ", rootPath, filePath, request );
-				return;
-			}
+	// 		if( !request.arguments.done ){
+	// 			console.log("fail - ", rootPath, filePath, request );
+	// 			return;
+	// 		}
 
-			temp.innerHTML = request.response;
+	// 		temp.innerHTML = request.response;
 
 			
 		
-			let hHtml = document.createElement("html");	
+	// 		let hHtml = document.createElement("html");	
 			
-			body.appendChild(hHtml);
+	// 		body.appendChild(hHtml);
 		
-			// 템플릿 엘리먼트의 컨텐츠 존재 유무를 통해
-			// 브라우저가 HTML 템플릿 엘리먼트를 지원하는지 확인합니다
-			let scriptFiles = [];
-			if ("content" in document.createElement("template")){
+	// 		// 템플릿 엘리먼트의 컨텐츠 존재 유무를 통해
+	// 		// 브라우저가 HTML 템플릿 엘리먼트를 지원하는지 확인합니다
+	// 		let scriptFiles = [];
+	// 		if ("content" in document.createElement("template")){
 
-				let t = body.querySelector("template");
+	// 			let t = body.querySelector("template");
 
-				let clone = document.importNode(t.content, true);
+	// 			let clone = document.importNode(t.content, true);
 
-				clone.querySelectorAll("link").forEach( child => {
-					//console.log("child - ", child, child.attributes.href ? child.attributes.href.nodeValue.indexOf(".css"):"//")
+	// 			clone.querySelectorAll("link").forEach( child => {
+	// 				//console.log("child - ", child, child.attributes.href ? child.attributes.href.nodeValue.indexOf(".css"):"//")
 					
-					if( child.attributes.href.nodeValue.indexOf(".css") > -1 ){
-						child.attributes.href.nodeValue = child.attributes.href.nodeValue.replaceAll('../', rootPath);
-						//linkCsslist.push(child);
-						//body.appendChild(child);
-						hHtml.appendChild(child);
-					}
-				})
+	// 				if( child.attributes.href.nodeValue.indexOf(".css") > -1 ){
+	// 					child.attributes.href.nodeValue = child.attributes.href.nodeValue.replaceAll('../', rootPath);
+	// 					//linkCsslist.push(child);
+	// 					//body.appendChild(child);
+	// 					hHtml.appendChild(child);
+	// 				}
+	// 			})
 
-				console.log( clone.querySelectorAll("script")  )
+	// 			console.log( clone.querySelectorAll("script")  )
 				
-				clone.querySelectorAll("script").forEach( (child,idx) => {
+	// 			clone.querySelectorAll("script").forEach( (child,idx) => {
 					
 					
-					if(  child.attributes.src ? child.attributes.src.textContent.indexOf(".js") > -1 : false ){
-						console.log("child - ", idx,  child.attributes.src.textContent.indexOf(".js") )
-						child.attributes.src.nodeValue = child.attributes.src.nodeValue.replaceAll('../', rootPath);
-						//linkCsslist.push(child);
-						scriptFiles.push(child.attributes.src.nodeValue);
-					}
-				})
+	// 				if(  child.attributes.src ? child.attributes.src.textContent.indexOf(".js") > -1 : false ){
+	// 					console.log("child - ", idx,  child.attributes.src.textContent.indexOf(".js") )
+	// 					child.attributes.src.nodeValue = child.attributes.src.nodeValue.replaceAll('../', rootPath);
+	// 					//linkCsslist.push(child);
+	// 					scriptFiles.push(child.attributes.src.nodeValue);
+	// 				}
+	// 			})
 
-				//console.log("template - ", typeof t.content.children );
-			}
+	// 			//console.log("template - ", typeof t.content.children );
+	// 		}
 
 			
 
-			let html=``;
-			if(  request.response.includes("<body") ){
-				let start = -1;
-				let end = -1;
-				let pos = -1;
-				let tarStr = '<body';
-				while( (pos = request.response.indexOf(tarStr, pos + 1)) != -1 ) { 
-					//console.log(`현재 target의 위치는 [${pos}] 번째 입니다.`);
-					if( tarStr === '<body' ) tarStr = ">";
-					else if( tarStr === '>' ) break;
+	// 		let html=``;
+	// 		if(  request.response.includes("<body") ){
+	// 			let start = -1;
+	// 			let end = -1;
+	// 			let pos = -1;
+	// 			let tarStr = '<body';
+	// 			while( (pos = request.response.indexOf(tarStr, pos + 1)) != -1 ) { 
+	// 				//console.log(`현재 target의 위치는 [${pos}] 번째 입니다.`);
+	// 				if( tarStr === '<body' ) tarStr = ">";
+	// 				else if( tarStr === '>' ) break;
 					
-				}
-				start = pos+1;
+	// 			}
+	// 			start = pos+1;
 
-				//console.log(`xxxx [${pos}] `);
+	// 			//console.log(`xxxx [${pos}] `);
 
-				tarStr = '</body>';
-				while( (pos = request.response.indexOf(tarStr, pos + 1)) != -1 ) { 
-					//console.log(`현재 target의 위치는 [${pos}] 번째 입니다.`);
-					end = pos;
-				}
+	// 			tarStr = '</body>';
+	// 			while( (pos = request.response.indexOf(tarStr, pos + 1)) != -1 ) { 
+	// 				//console.log(`현재 target의 위치는 [${pos}] 번째 입니다.`);
+	// 				end = pos;
+	// 			}
 
-				html = request.response.slice(start, end,);
+	// 			html = request.response.slice(start, end,);
 
 				
-			}
+	// 		}
 
 			
 
 
-			const shadowWrap = document.createElement("body");
-			shadowWrap.setAttribute("class", "shadowWrap dark");
-			shadowWrap.innerHTML = html.replaceAll('../', rootPath);
+	// 		const shadowWrap = document.createElement("body");
+	// 		shadowWrap.setAttribute("class", "shadowWrap dark");
+	// 		shadowWrap.innerHTML = html.replaceAll('../', rootPath);
 
 
-			console.log(`현재 target의 위치는-`, body, temp);
+	// 		console.log(`현재 target의 위치는-`, body, temp);
 
-			hHtml.appendChild(shadowWrap);
+	// 		hHtml.appendChild(shadowWrap);
 
-			scriptFiles.forEach( child =>  {
-				let ss = document.createElement("script");
-				ss.src = child;
-				hHtml.appendChild(ss);
-			});
+	// 		scriptFiles.forEach( child =>  {
+	// 			let ss = document.createElement("script");
+	// 			ss.src = child;
+	// 			hHtml.appendChild(ss);
+	// 		});
 
 
-			console.log("scriptFiles - ", scriptFiles );
+	// 		console.log("scriptFiles - ", scriptFiles );
 
-			body.removeChild(temp);
+	// 		body.removeChild(temp);
 
-		},
-		loadType:"text/html", 
-		done: true 
-	});
+	// 	},
+	// 	loadType:"text/html", 
+	// 	done: true 
+	// });
+
 }
