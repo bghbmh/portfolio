@@ -3,7 +3,7 @@ import * as cf from './commonFunction.js';
 //import { fileHandler } from "./fileHandler.js";
 import * as component from './component.js';
 import { SamplePageview } from './SamplePageview.js';
-
+import { ShuttleSpace } from './shuttleSpace.js';
 import { Modal } from "./modalType3.js";
 // import { dataHandler } from "./dataHandler.js";
 
@@ -12,9 +12,14 @@ import { Modal } from "./modalType3.js";
 
 
 document.addEventListener("DOMContentLoaded", () => {
-
+	
 	console.log("DOMContentLoaded ")
-	cf.fileHandler._load( { url: '../main/data/bmh.json', success : introHandler,loadType:"item", done: "items" });
+	cf.fileHandler._load( { 
+		url: '../main/data/test.json', 
+		success : introHandler,
+		loadType:"item", 
+		done: "items" 
+	});
 
 
 	if( document.querySelector(".listTest") ){
@@ -106,14 +111,14 @@ function setGnbHandler(g, ig, it){
 
 function introHandler(request) {
 
-	//console.log("test load items",request.arguments, JSON.parse(request.responseText))
+	console.log("test load items",request.arguments, JSON.parse(request.responseText))
 	let itemsData = JSON.parse(request.responseText);
 
 	//메인에만 노출
 	let idx = 0;
 	var html = ``;
 	
-	//console.log("html - ",idx, html)
+	
 
 	if( document.querySelector(".cardList.main") ){
 		for( let i=0; i<itemsData.length; i++ ){
@@ -132,7 +137,7 @@ function introHandler(request) {
 	}
 	document.querySelector(".cardList").innerHTML = html;
 	document.querySelector(".cardList").addEventListener("click", cardListHandler );
-	
+
 
 	/* gnb 임시 */
 	if( !document.querySelector(".gnb") ){
@@ -172,7 +177,7 @@ function cardListHandler(e){
 
 	switch (uiUtil){
 		case "zoomin":
-			console.log( " util zoomin " );
+			console.log( " util test - ",  Modal );
 			Modal.Zoomin( { target: JSON.parse(clickElem.dataset.uiTarget) , tId : e.timeStamp } );
 			//Modal.Alert( { message: "aaaaaaaa~!!!!!", class :"alert" } );
 			//Modal.Alert( { message: "test test test"} );
@@ -182,7 +187,7 @@ function cardListHandler(e){
 		case "detail":
 			
 			cf.fileHandler._load( { 
-				url: '../main/data/bmh.json', 
+				url: '../main/data/test.json', 
 				success : function(request){
 					
 					let items = JSON.parse(request.responseText);
@@ -208,8 +213,8 @@ function cardListHandler(e){
 			
 			break;
 		case "preview":
-			console.log( " util preview ");
-			document.querySelector("body").classList.toggle("openShadowDom");
+			console.log( " util test_preview - ");
+			//document.querySelector("body").classList.toggle("openShadowDom");
 
 			//console.log("spv - ", clickElem.dataset.sampleName, JSON.parse(clickElem.dataset.samplePage));
 			let spArr = JSON.parse(clickElem.dataset.samplePage);
@@ -227,21 +232,28 @@ function cardListHandler(e){
 	}
 }
 
+
+
+
 function launchArocket(e){
 
 	if( !e.target.closest("button") ) return;
 
 	console.log("launch a rocket!! ");
-	let filePath = '../0_last/data/spacestation3.json';
+	let filePath = '../main/data/spacestation.json';
 	cf.fileHandler._load( { 
 		url: filePath, 
 		success : function(request){
-			console.log("file - ", request);
+			loadingMessage.off();
+			console.log("file success - ", request);
 
 			document.querySelector("body").appendChild(new ShuttleSpace(filePath, request, "../main/assets/css/samplepageView.css"));
 
 		},
 		error : function(request){
+			//loadingMessage.off();
+			console.log("file err",e.currentTarget, e.target.closest("button"))
+
 			let pos = ` left: ${e.target.closest("button").offsetLeft}px; 
 						top: ${e.target.closest("button").offsetTop}px; 
 						transform: translate(-60%, -100%);
@@ -264,10 +276,66 @@ function launchArocket(e){
 			errHtml.appendChild(b);
 			document.querySelector("body").appendChild(errHtml);
 		},
+		progress: function(abc){
+			console.log("??? progress", abc);
+			loadingMessage.on("??? 진행상황 끌어옴");
+			if (abc.lengthComputable) {
+				const percentComplete = (abc.loaded / abc.total) * 100;
+
+				loadingMessage.on(cf.CreateElement({tag: "i", class: "icon-svg-no" }) );
+				//loadingMessage.on(`transfer?? test??${abc.loaded}`);
+				//console.log("1111111The transfer is updateProgress.", percentComplete);
+				// ...
+				console.log("333 transfer is updateProgress.", percentComplete);
+			} else {
+				// Unable to compute progress information since the total size is unknown
+				console.log("444transfer is updateProgress.");
+			}
+		},
 		loadType:"item", 
 		done: "items" 
 	});
 
 }
 
+var loadingMessage =  {
+	isThere : null,
+	newMsg : null,
+	on : function (msg = null){
 
+		if( this.isThere ){
+			console.log("common  --22 this.isThere - ",typeof msg=== "object",  this.isThere);
+			if( typeof msg === "object"){
+				this.newMsg.appendChild(msg);
+			} else {
+				msg ? this.isThere.textContent =  msg : "" ;
+			}
+			return;
+		}
+
+		console.log("common  -- 11 this.isThere - ",msg,  this.isThere)
+
+		this.newMsg = document.createElement("div");
+		this.newMsg.setAttribute("class", "loadingMessage");
+
+		if( typeof msg === "object"){
+			this.newMsg.appendChild(msg);
+		} else {
+			this.newMsg.textContent =  msg || "loading_test";
+		}
+		
+		this.isThere = this.newMsg;
+		document.querySelector('body').appendChild(this.newMsg);
+
+	},
+	off : function() {   console.log("common 0000 -- off", this);
+		if( !this.isThere ) return;
+		
+		this.isThere.parentNode.removeChild(this.isThere);
+		this.isThere = null;
+		this.newMsg = null;
+
+		console.log("common  -- off", this);
+
+	}
+};
