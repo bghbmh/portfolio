@@ -60,12 +60,15 @@ function xhrSuccess(xhr) {
 }
 function xhrError(xhr) {
 	loadingMessage.off();
+	xhr.arguments.done = false;
+	xhr.arguments.msg = "test ERROR message";
+	//xhr.arguments.error();
+
+	xhr.arguments.error(xhr);
+
+
 	//console.log("testError qqq- ", xhr,xhr.statusText)
 	console.log("확인중_파일이 존재하지 않습니다.", xhr.responseURL, "\n this.readyState - ", xhr.readyState);
-
-	//임시_제이쿼리 확인해보기
-	xhr.arguments.done = false;
-	xhr.arguments.callback(xhr)
 
 }
 function xhrReadystatechange(){
