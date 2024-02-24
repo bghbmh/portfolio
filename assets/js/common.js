@@ -183,7 +183,7 @@ function cardListHandler(e){
 			
 			cf.fileHandler._load( { 
 				url: '../main/data/bmh.json', 
-				callback : function(request){
+				success : function(request){
 					
 					let items = JSON.parse(request.responseText);
 
