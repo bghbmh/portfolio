@@ -1439,7 +1439,7 @@ main.common {
 	transition: all .2s;
 	opacity: 1;
 }
-body:has(.testSamplepage) .popup.detail .wrap{ opacity: .3; transform: scale(0.98); }
+body:has(.testSamplepage) .popup.detail .wrap{ width: 94%; opacity: .3; transform: scale(0.98); }
 
 
 .popup.detail .header{
@@ -1771,4 +1771,3 @@ body.main .cardList.main > *{
   -webkit-mask-image: url('../img/xi-svg-x.svg');
   mask-image: url('../img/xi-svg-x.svg');
 }
-
