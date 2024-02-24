@@ -21,7 +21,7 @@ export class SamplePageview extends HTMLElement {
 
 		// Create a shadow root
 		const shadow = this.attachShadow({ mode: "open" });
-		
+		this.setAttribute("class", "testSamplepage");
 
 		let rootPath = `../main/data/sample/` + ( this.sampleName || "temp1");
 
@@ -35,7 +35,7 @@ export class SamplePageview extends HTMLElement {
 		linkElem2.setAttribute("href", this.rootPath+ this.sampleName +"-" + "roothost.css");
 		
 		shadow.appendChild(linkElem);
-		shadow.appendChild(linkElem2);
+		//shadow.appendChild(linkElem2);
 
 
 
@@ -78,7 +78,7 @@ export class SamplePageview extends HTMLElement {
 				this.currentPage = c.dataset.sampleHref;
 				c.ariaSelected = "true";
 
-				console.log("현재페이지 - ", this.currentPage)
+				//console.log("현재페이지 - ", this.currentPage)
 				// this.contentsBody.setAttribute("href", e.target.dataset.sampleHref) ;
 				// this.contentsBody.setAttribute("rootpath", this.rootPath ) ;
 				//this.contentsBody.reSet( this.rootPath) ;
@@ -98,22 +98,22 @@ export class SamplePageview extends HTMLElement {
 		// const btn = document.createElement("button");
 		// btn.setAttribute("type", "button");
 
-		const btn = cf.CreateElement({tag: "button", class: "btn", type: "button", "aria-label" : "close", "data-ui-action":"close" });
-		btn.innerHTML = `<i class="fa-solid fa-clone"></i>`;
-		btn.addEventListener("click", e => {
-			//console.log( "spv - ", this, e.target.closest("[data-ui-action]") );
+		const shadowModalCloseBtn = cf.CreateElement({tag: "button", class: "btn", type: "button", "aria-label" : "close", "data-ui-action":"close" });
+		shadowModalCloseBtn.innerHTML = `<i class="fa-solid fa-clone"></i>`;
+		shadowModalCloseBtn.addEventListener("click", e => {
+			console.log( "spv - ", this, e.target.closest("[data-ui-action]") );
 			if( !e.target.closest("[data-ui-action]") ) return; 
 
 			this.parentNode.classList.remove("openShadowDom");
 			this.parentNode.removeChild(this);
 		});
-
-
-		header.appendChild(btn);
+		header.appendChild(shadowModalCloseBtn);
 
 		if( this.contentsBody ){
 			shadow.appendChild( this.contentsBody );
 		}
+
+		document.querySelector("body").classList.toggle("openShadowDom");v
 	}
 
 	connectedCallback() {
