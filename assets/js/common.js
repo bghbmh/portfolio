@@ -224,3 +224,44 @@ function cardListHandler(e){
 	}
 }
 
+function launchArocket(e){
+
+	if( !e.target.closest("button") ) return;
+
+	console.log("launch a rocket!! ");
+	let filePath = '../0_last/data/spacestation3.json';
+	cf.fileHandler._load( { 
+		url: filePath, 
+		success : function(request){
+			console.log("file - ", request);
+
+			document.querySelector("body").appendChild(new ShuttleSpace(filePath, request));
+
+		},
+		error : function(request){
+			console.log("err",request.arguments.msg)
+			let errHtml = cf.CreateElement({tag: "div", class: "minialarm message" });
+			errHtml.textContent  = "준비중임";
+			let b = cf.CreateElement({tag: "button", class: "btn close", type: "button", "title" : "메시지상자 닫는 버튼", "aria-label" : "메시지상자 닫는 버튼"  });
+			//b.innerHTML = `<i class="fa-solid fa-clone"></i>`;
+			b.addEventListener("click", e => {
+
+				console.log("minialarm - ", e.currentTarget)
+
+				e.currentTarget.parentNode.classList.add("off");
+				let ch = e.currentTarget.parentNode;
+				setTimeout(function(){
+					document.querySelector("body").removeChild(ch)
+				}, 400);
+			});
+
+			errHtml.appendChild(b);
+			document.querySelector("body").appendChild(errHtml);
+		},
+		loadType:"item", 
+		done: "items" 
+	});
+
+}
+
+
