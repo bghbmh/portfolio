@@ -2,22 +2,34 @@
 :host{
 	all: initial; 
 	position: fixed;
-	width: 96%;
-	height: 96%;
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
-	z-index: 11;
+	z-index: 1051;
 	contain: content;
-	left: 2%;
-	top:2%;
-	border-radius: 1rem;
+
 	background-color: transparent;
-	
-	display: flex;
-	flex-direction: column;
 		
 } /* selects the my-button tag */
 :host(.primary){} /* selects the my-button when it has the primary class */
 :host([variant="primary"]){} 
+
+:host(.testSamplepage){
+	width: 96%;
+	height: calc(100% - 4rem);
+	left: 2%; top: 4rem;
+
+	display: flex;
+	flex-direction: column;
+	border-top-left-radius: var(--border-radius-16);
+	border-top-right-radius: var(--border-radius-16);
+}
+
+:host(.shuttleSpace){
+	width: 100%;
+	height: 100%;
+}
+
 
 
 header.samplePageGnb{  flex: 0;
@@ -31,8 +43,9 @@ header.samplePageGnb{  flex: 0;
 
 	top:0;
 	
-	background-color: hsl(0, 0%, 0%);
+	background-color: hsl(0, 0%, 13%);
 	z-index: 999999999999;
+	box-sizing: border-box;
 }
 
 header.samplePageGnb > nav{
@@ -79,7 +92,7 @@ header.samplePageGnb > nav > button[aria-selected="true"]{
  	top: 3%;
 	width: 36px;
 	height: 36px;
-	background-color: hsl(0, 0%, 0%);
+	background-color: hsl(0, 0%, 13%);
 	z-index: 9999;
 /*	transform: translateX(-100%);*/
 
@@ -93,7 +106,7 @@ header.samplePageGnb > nav > button[aria-selected="true"]{
 
 
 	margin-left: auto;
-	margin-right: 1rem;
+	/* margin-right: 1rem; */
 
 	border: 0;
 }
@@ -143,3 +156,90 @@ iframe{
 	background-color: #fff;
 	border:0;
 }
+
+.station{
+	flex:1;
+	background-color: hsl(0, 0%, 13%);
+	padding: 2rem;	
+	position: fixed;
+	box-sizing: border-box;
+	width: 96%;
+	height: 96%;
+	overflow: hidden;
+	z-index: 11;
+	contain: content;
+	left: 2%;
+	top:2%;
+	border-radius: 1rem;
+	transition: all .2s;
+}
+.station.back{ transform: scale(0.97); }
+
+.station header.samplePageGnb{   padding: 0;  }
+
+.spaceStation {
+	display: flex;
+	gap: 1rem;
+}
+.spaceStation .btn{
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+    border: 0;
+
+	display: inline-block;
+	
+	padding:0;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1rem;
+	font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+[data-word]{
+	display: inline-block;
+	width: 4rem;
+	height: 4rem;
+	background-color: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+}
+[data-word]:before{
+	content: attr(data-word);
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 64px;
+	font-weight: 900;
+	transform: translateY(6px) rotate(-10deg) scale(1.2);
+	/* transform: rotate(-10deg);
+	top: 6px;
+	position: relative; */
+	color: hsl(214, 81%, 50%);
+}
+
+
+
+#rocket{
+	position: fixed;
+	z-index: 99;
+	display: block;
+	width: 96%;
+	height: 96%;
+	background-color: hsl(0, 0%, 100%);
+	left: 2%;
+	top: 105%;
+	transition: top 0.2s;
+	border-radius: 1rem;
+}
+#rocket.on{
+	top: 5%;
+}
+.btn.iframeClosingBtn{
+	position: fixed;
+	right: 4%;
+	top: 105%;	
+	transition: top 0.2s;
+}
+
+#rocket.on ~ .btn.iframeClosingBtn{ top: 7%; }
