@@ -1725,3 +1725,50 @@ body.main .cardList.main > *{
 
 
 
+.minialarm {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	min-width: 200px;
+	min-height: 3em;
+	background-color: hsl(0 0% 0% / .8);
+	border-radius: 4px;
+	font-size: 14px;
+	color: #fff;
+	padding: .75rem;
+	font-weight: 200;
+	opacity: 1;
+	transition: opacity .2s;
+}
+.minialarm.off{ opacity: 0; }
+.minialarm .btn.close{
+	background-color: transparent;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 4px;
+	min-width: 1.5em;
+	min-height: 1.5em;
+	width: 1.5em;
+	height: 1.5em;
+	font-size: 1em;
+}
+.minialarm .btn.close::before{
+	content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  background-color: currentColor;
+  -webkit-mask-size: contain;
+  -webkit-mask-position-x: 50%;
+  -webkit-mask-position-y: calc(50% - 0px);
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position-x: 50%;
+  mask-position-y: 50%;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('../img/xi-svg-x.svg');
+  mask-image: url('../img/xi-svg-x.svg');
+}
+
