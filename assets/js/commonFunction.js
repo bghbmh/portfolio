@@ -36,7 +36,7 @@ export class fileHandler {
 		// xhr.onload = testSuccess;
 		// xhr.onerror = testError;
 		xhr.onreadystatechange = xhrReadystatechange;
-		xhr.onprogress = UpdateProgress;
+		xhr.onprogress = args.progress || UpdateProgress;
 		xhr.open("GET", args.url, true);
 		xhr.send(null);
 	}
@@ -45,7 +45,7 @@ export class fileHandler {
 	
 
 function xhrSuccess(xhr) {
-	loadingMessage.off();
+	//loadingMessage.off();
 
 	if ( xhr.status === 0 || ( xhr.status >= 200 && xhr.status < 400 ) ) {
 		//console.log("testSuccess - ", xhr.arguments[0] );
@@ -59,7 +59,7 @@ function xhrSuccess(xhr) {
 	}
 }
 function xhrError(xhr) {
-	loadingMessage.off();
+	//loadingMessage.off();
 	xhr.arguments.done = false;
 	xhr.arguments.msg = "test ERROR message";
 	//xhr.arguments.error();
@@ -78,11 +78,12 @@ function xhrError(xhr) {
 function xhrReadystatechange(){
 	//console.log("testReadystatechange");
 
-	loadingMessage.on("text text");
+	//loadingMessage.on("xhrReadystatechange");
 	if (this.readyState === XMLHttpRequest.DONE) {
 		const status = this.status;
 		if ( this.status === 0 || ( this.status >= 200 && this.status < 400 ) ) {
 			// The request has been completed successfully
+			
 			xhrSuccess(this);
 		} else {
 			// Oh no! There has been an error with the request!
@@ -91,12 +92,15 @@ function xhrReadystatechange(){
 	}
 }
 function UpdateProgress(event) {
+	 
 	if (event.lengthComputable) {
-		const percentComplete = (event.loaded / event.total) * 100;
-		//console.log("The transfer is updateProgress.", percentComplete);
+		const percentComplete = (event.loaded / event.total) * 100;   //loadingMessage.on("UpdateProgress");
+		//console.log("1111111The transfer is updateProgress.", percentComplete);
 		// ...
+		console.log("xxxxx- The transfer is updateProgress.", percentComplete);
 	} else {
 		// Unable to compute progress information since the total size is unknown
+		console.log("2222222The transfer is updateProgress.");
 	}
 }
 
@@ -188,63 +192,4 @@ function transferCanceled(evt) {
 	//console.log("The transfer has been canceled by the user.");
 }
 
-
-var loadingMessage =  {
-	isThere : null,
-	newMsg : null,
-	on : function (msg = null){
-		//console.log("on");
-		this.isThere = document.querySelector(".loadingMessage");
-
-		if( this.isThere ) return;
-
-		this.newMsg = document.createElement("div");
-		this.newMsg.setAttribute("class", "loadingMessage")
-		this.newMsg.textContent =  msg || "loading_test";
-		document.querySelector('body').appendChild(this.newMsg);
-
-	},
-	off : function() {
-		if( !this.isThere ) return;
-		//console.log("off", this);
-		this.isThere.parentNode.removeChild(this.isThere);
-		this.isThere = null;
-		this.newMsg = null;
-
-	}
-};
-
-
-
-// var loadingMessage = (function() {
-// 	console.log("loadingMessage state - ");
-
-// 	let isThere = null;
-// 	let newMsg = null;
-
-// 	return {
-// 		on : function (msg = null){
-// 			console.log("on");
-// 			isThere = document.querySelector(".loadingMsg");
-
-// 			if( loadingElem ) return;
-
-// 			newMsg = document.createElement("div");
-// 			newMsg.setAttribute("class", "loadingMsg")
-// 			newMsg.textContent =  msg || "loading_test";
-// 			document.querySelector('body').appendChild(newMsg);
-
-// 		},
-// 		off : function() {
-
-// 			if( !isThere ) return;
-// 			console.log("off");
-// 			isThere.parentNode.removeChild(isThere);
-// 			isThere = null;
-
-// 		}
-// 	};
-// } )();
-	
-	
 	
