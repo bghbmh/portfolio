@@ -137,7 +137,7 @@ export class ShuttleSpace extends HTMLElement {
 
 	attributeChangedCallback(name, oldValue, newValue){
 		console.log("--- ShuttleSpace attributeChangedCallback ---" );
-		addSamplePage(this.contentsBody, this.getAttribute("current"));
+		addSamplePage(this.contentsBody, this.getAttribute("current")+".html");
 
 		
 	}
