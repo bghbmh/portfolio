@@ -49,7 +49,7 @@ function xhrSuccess(xhr) {
 
 	if ( xhr.status === 0 || ( xhr.status >= 200 && xhr.status < 400 ) ) {
 		//console.log("testSuccess - ", xhr.arguments[0] );
-		fileTypeBox(xhr);
+		fileType(xhr);
 		// The request has been completed successfully
 		//console.log("readystatechange status good - ", this.readyState);
 	} else {
@@ -69,6 +69,10 @@ function xhrError(xhr) {
 
 	//console.log("testError qqq- ", xhr,xhr.statusText)
 	console.log("확인중_파일이 존재하지 않습니다.", xhr.responseURL, "\n this.readyState - ", xhr.readyState);
+
+	//임시_제이쿼리 확인해보기
+	
+	//xhr.arguments.callback(xhr)
 
 }
 function xhrReadystatechange(){
@@ -96,31 +100,31 @@ function UpdateProgress(event) {
 	}
 }
 
-function fileTypeBox(xhr) {
-	//console.log("fileTypeBox - ", xhr)
+function fileType(xhr) {
+	//console.log("fileType - ", xhr)
 
-	switch ( fileType(xhr.arguments.url) ){
+	switch ( fileCheck(xhr.arguments.url) ){
 		case "js":
-			//console.log("fileTypeBox script");
+			//console.log("fileType script");
 			_script(xhr.arguments);
 			break;
 		case "html":
-			//console.log("fileTypeBox script");
+			//console.log("fileType script");
 			//_html(xhr.arguments);
-			xhr.arguments.callback(xhr)
+			xhr.arguments.success(xhr)
 			break;
 		case "json":
-			//console.log("fileTypeBox json");
-			xhr.arguments.callback( xhr)
+			//console.log("fileType json");
+			xhr.arguments.success( xhr)
 			break;
 		case "nofile":
-			//console.log("fileTypeBox json");
+			//console.log("fileType json");
 			xhr.arguments.url = "nofile";
-			xhr.arguments.callback( xhr);
+			xhr.arguments.success( xhr);
 			break;
 	}
 }
-function fileType ( fileUrl ){
+function fileCheck ( fileUrl ){
 	return fileUrl.lastIndexOf('.') === -1 ? "nofile" : fileUrl.slice( fileUrl.lastIndexOf('.') + 1 ) ;
 }
 function _css ( options = {} ){
