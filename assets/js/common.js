@@ -216,7 +216,7 @@ function cardListHandler(e){
 
 			let rootPath = `../main/data/sample/` + clickElem.dataset.sampleName + "/";
 
-			const spv = new SamplePageview(clickElem.dataset.sampleName, spArr, rootPath);
+			const spv = new SamplePageview(clickElem.dataset.sampleName, spArr, rootPath, "../main/assets/css/samplepageView.css");
 			document.querySelector("body").appendChild(spv);
 
 
@@ -238,7 +238,7 @@ function launchArocket(e){
 		success : function(request){
 			console.log("file - ", request);
 
-			document.querySelector("body").appendChild(new ShuttleSpace(filePath, request));
+			document.querySelector("body").appendChild(new ShuttleSpace(filePath, request, "../main/assets/css/samplepageView.css"));
 
 		},
 		error : function(request){
