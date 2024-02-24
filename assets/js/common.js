@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	if( document.querySelector(".noteSticky") )
 		document.querySelector(".noteSticky").addEventListener("click", noteStickyHandler);
 
+	if( document.querySelector("[data-ui-action='launch']" ) )
+		document.querySelector("[data-ui-action='launch']" ).addEventListener("click", launchArocket);
+
 });
 
 
