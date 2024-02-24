@@ -1,0 +1,20 @@
+
+[
+
+	{
+		"id" : 1,
+		"title" : "scroll1",
+		"template" : "scroll1",
+		"favicon" : "",
+		"effect" : ""
+	},
+	{
+		"id" : 2,
+		"title" : "test",
+		"template" : "tttt",
+		"favicon" : "",
+		"effect" : ""
+	}
+
+]
+
