@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	
 	console.log("DOMContentLoaded ")
 	cf.fileHandler._load( { 
-		url: '../main/data/test.json', 
+		url: '../main/data/bmh.json', 
 		success : introHandler,
 		loadType:"item", 
 		done: "items" 
