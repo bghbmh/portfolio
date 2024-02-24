@@ -2,7 +2,7 @@ import * as cf from './commonFunction.js';
 
 
 export class ShuttleSpace extends HTMLElement {
-	constructor(f = null, d=null) {
+	constructor(f = null, d=null, ch='') {
 		// Always call super first in constructor
 		super();
 
@@ -10,6 +10,7 @@ export class ShuttleSpace extends HTMLElement {
 
 		this.rocketList = f;
 		this.rowData = d;
+		this.cssHref = ch;
 
 		this.launch = '';
 
@@ -40,7 +41,7 @@ export class ShuttleSpace extends HTMLElement {
 
 		const linkElem = document.createElement("link");
 		linkElem.setAttribute("rel", "stylesheet");
-		linkElem.setAttribute("href", "../0_last/assets/css/samplepageView.css");
+		linkElem.setAttribute("href", this.cssHref);
 		
 		shadow.appendChild(linkElem);
 
