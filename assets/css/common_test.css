@@ -1181,6 +1181,7 @@ header.common .gnb ul {
 	background-color: transparent;
 	color: var(--text-dark2);
 }
+.contact .btn span{ display: none }
 .contact .btn.icon {
 	min-width: 2em;
 	min-height: 2em;
