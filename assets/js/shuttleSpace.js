@@ -74,9 +74,10 @@ export class ShuttleSpace extends HTMLElement {
 			if( !e.target.closest("button") ) return; 
 
 			let btn = e.target.closest("button");
+			console.log("btn template - ",btn, btn.dataset.uiTemplate )
 			
 
-			this.launch = this.stationRoot + btn.ariaLabel;
+			this.launch = this.stationRoot + btn.dataset.uiTemplate;
 			this.setAttribute("current", this.launch );
 			station.classList.add("back");
 			this.contentsBody.classList.add("on");
@@ -84,7 +85,7 @@ export class ShuttleSpace extends HTMLElement {
 		});
 
 		itemList.forEach( (item, idx) => {
-			let b = cf.CreateElement({tag: "button", class: "btn", "aria-label" : `${item.title}` })
+			let b = cf.CreateElement({tag: "button", class: "btn", "title" : `${item.title}`,"aria-label" : `${item.title}`, "data-ui-template":`${item.template}` })
 			let c = cf.CreateElement({tag: "span", "aria-hidden" : "true", "data-word" : `${item.title.charAt(0)}` });
 			let d = cf.CreateElement({tag: "div", "class":"title" });
 			d.textContent = item.title;
@@ -137,7 +138,7 @@ export class ShuttleSpace extends HTMLElement {
 
 	attributeChangedCallback(name, oldValue, newValue){
 		console.log("--- ShuttleSpace attributeChangedCallback ---" );
-		addSamplePage(this.contentsBody, this.getAttribute("current")+".html");
+		addSamplePage(this.contentsBody, this.getAttribute("current")+".html" );
 
 		
 	}
