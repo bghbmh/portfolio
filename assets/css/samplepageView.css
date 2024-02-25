@@ -179,7 +179,8 @@ iframe{
 
 .spaceStation {
 	display: flex;
-	gap: 1rem;
+	gap: 3rem;
+	flex-wrap: wrap;
 }
 .spaceStation .btn{
 	-webkit-appearance: none;
@@ -195,11 +196,22 @@ iframe{
 	font-size: 1rem;
 	font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+.spaceStation .btn .title{
+	font-size: 13px;
+	font-weight: 200;
+	margin-top: 4px;
+	overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  width: 4rem;
+
+}
 [data-word]{
 	display: inline-block;
 	width: 4rem;
 	height: 4rem;
-	background-color: #fff;
+	background-color: hsl(167, 65%, 46%);
 	border-radius: 8px;
 	overflow: hidden;
 }
@@ -209,13 +221,13 @@ iframe{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 64px;
+	font-size: 52px;
 	font-weight: 900;
-	transform: translateY(6px) rotate(-10deg) scale(1.2);
+	transform: translateY(12px) rotate(-10deg) scale(1.2);
 	/* transform: rotate(-10deg);
 	top: 6px;
 	position: relative; */
-	color: hsl(214, 81%, 50%);
+	color: #fff;
 }
 
 
