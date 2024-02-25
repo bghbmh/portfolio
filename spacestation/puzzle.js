@@ -775,13 +775,16 @@ document.querySelector(".microSite").addEventListener("click", function(e){
 	{
 		matrix.x = 2;
 		matrix.y = 2;
-		 size = 0.5;
+				//임시
+		if( window.innerWidth < 600 ) size = 0.4;
+		else size = 0.5;
 	}
 	else
 	{
 		matrix.x = 2;
 		matrix.y = 2;
-		size = 0.6;
+		if( window.innerWidth < 600 ) size = 0.4;
+		else size = 0.6;
 	}
 
 	puzzleLoad(e.target, matrix, size);
