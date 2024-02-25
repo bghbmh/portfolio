@@ -86,7 +86,7 @@ export class ShuttleSpace extends HTMLElement {
 
 		itemList.forEach( (item, idx) => {
 			let b = cf.CreateElement({tag: "button", class: "btn", "title" : `${item.title}`,"aria-label" : `${item.title}`, "data-ui-template":`${item.template}` })
-			let c = cf.CreateElement({tag: "span", "aria-hidden" : "true", "data-word" : `${item.title.charAt(0)}` });
+			let c = cf.CreateElement({tag: "span", "aria-hidden" : "true", "data-word" : `${item.title.charAt(0)}`, "style":`background-color:hsl(${167+(idx*20)}, 65%, 46%);`});
 			let d = cf.CreateElement({tag: "div", "class":"title" });
 			d.textContent = item.title;
 			b.appendChild(c);
