@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Cache-Control" content="No-Cache">
+	<meta http-equiv="Pragma" content="No-Cache">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+
+</head>
+
+<body class="">
+
+	<style>
+		html,
+		body {
+			padding: 0;
+			margin: 0;
+			height: 100%
+		}
+
+		button {
+			appearance: button;
+			-webkit-appearance: button;
+			-moz-appearance: button;
+			-webkit-border-radius: 0;
+			border-radius: 0;
+			border: 0;
+			padding: 0;
+			margin: 0;
+			background: none;
+			cursor: pointer;
+		}
+
+		.cmpt {
+			width: 200px;
+			font-size: 15px;
+			line-height: 1;
+			text-align: center;
+			padding: 1em 0;
+			border: 1px solid #eee;
+			border-radius: 3px;
+		}
+
+		.alert {
+			position: relative;
+			width: 280px;
+			height: auto;
+
+			top: 50%;
+			transform: translateY(-80%);
+			margin: 0 auto;
+
+			font-size: 16px;
+			border: 1px solid #eee;
+			border-radius: 3px;
+			box-shadow: 0 0 13px 4px rgba(0, 0, 0, .1);
+
+			transition: opacity .2s;
+
+			-webkit-animation-name: ani_opacity;
+			animation-name: ani_opacity;
+			-webkit-animation-duration: .2s;
+			animation-duration: .2s
+		}
+
+		.alert .contentsArea,
+		.alert button {
+			width: 100%;
+			font-size: 1em;
+			font-weight: lighter;
+			line-height: 1.6;
+			text-align: center;
+			padding: 2em 0;
+
+
+		}
+
+		.alert button {
+			color: #333;
+			padding: 0.6em 0;
+			border-top: 1px solid #eee;
+
+		}
+
+		.alert button:hover {
+			background: #eee;
+		}
+
+		.alert.off {
+			opacity: 0;
+		}
+
+		/*애니메이션*/
+		@-webkit-keyframes ani_opacity {
+			0% {
+				opacity: 0
+			}
+
+			100% {
+				opacity: 1
+			}
+		}
+
+		@keyframes ani_opacity {
+			0% {
+				opacity: 0
+			}
+
+			100% {
+				opacity: 1
+			}
+		}
+	</style>
+
+
+
+	<script>
+		function openAlert(board, addName, msg, btnStr) { // board, target, msg, btnStr
+
+			//target.disabled = true;
+
+			let modal = document.createElement("div");
+			modal.setAttribute("class", "popup " + addName);
+
+			let contentsArea = document.createElement("div");
+			contentsArea.setAttribute("class", "contentsArea");
+			contentsArea.textContent = msg;
+			modal.appendChild(contentsArea);
+
+			let btn = document.createElement("button");
+			btn.textContent = btnStr;
+
+			btn.addEventListener("click", function btnhandler() {
+				modal.classList.add("off");
+				let tId = setTimeout(() => {
+					// target.disabled = false;
+					btn.removeEventListener("click", btnhandler);
+					board.removeChild(modal);
+					clearTimeout(tId);
+				}, 400);
+			});
+
+			modal.appendChild(btn);
+			board.appendChild(modal);
+
+		}
+
+
+		openAlert(document.querySelector("body"), "alert", "알림 내용을 입력해주세요", "확인");
+
+
+	</script>
+
+
+</body>
+
+</html>
