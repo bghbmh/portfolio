@@ -1,17 +1,44 @@
 
 [
-
 	{
-		"id" : 1,
-		"title" : "scroll1",
-		"template" : "scroll1",
+		"id" : 6,
+		"title" : "list",
+		"template" : "listItemSelected",
+		"favicon" : "",
+		"effect" : ""
+	},
+	{
+		"id" : 5,
+		"title" : "입력해보기",
+		"template" : "enterInfo",
+		"favicon" : "",
+		"effect" : ""
+	},
+	{
+		"id" : 4,
+		"title" : "펼쳐지는 화면",
+		"template" : "opendoor",
+		"favicon" : "",
+		"effect" : ""
+	},
+	{
+		"id" : 3,
+		"title" : "단순알림",
+		"template" : "simpleModall1",
 		"favicon" : "",
 		"effect" : ""
 	},
 	{
 		"id" : 2,
-		"title" : "test",
-		"template" : "tttt",
+		"title" : "간단한 퍼즐...망했네...",
+		"template" : "puzzle",
+		"favicon" : "",
+		"effect" : ""
+	},
+	{
+		"id" : 1,
+		"title" : "scroll",
+		"template" : "scroll1",
 		"favicon" : "",
 		"effect" : ""
 	}
