@@ -3,7 +3,7 @@
 	{
 		"id" : 95,
 		"main" : true,
-		"img" : ["../main/data/img/kfia.jpeg"],
+		"img" : ["../main/data/img/kfia.png"],
 		"category" : "웹",
 		"hash" : [ "마크업","모바일","리뉴얼","디자인" ],
 		"sampleName" : "kfia",
