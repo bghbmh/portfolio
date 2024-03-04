@@ -1,5 +1,6 @@
 
 [
+	
 	{
 		"id" : 95,
 		"main" : true,
@@ -74,6 +75,14 @@
 			"coding" : "메인(80), 서브(40)",
 			"library" : "Semantic UI"
 		}
+	},
+	{
+		"id" : 96,
+		"img" : ["../main/data/img/educon.png"],
+		"category" : "웹",
+		"hash" : [ "마크업","디자인" ],
+		"sampleName" : "educon",
+		"samplePage" : ["edu1_main.html"]
 	},
 	{
 		"id" : 91,
