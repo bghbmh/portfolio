@@ -1,0 +1,158 @@
+/* body.login {
+  padding-top: 100px;
+  padding-bottom: 40px;
+  background-color: var(--bg-light);
+}
+
+.form-signin {
+  max-width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: var(--font-size-body);
+
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+} */
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  /* border-top-left-radius: 0;
+  border-top-right-radius: 0; */
+}
+
+/* .form-signin .has-feedback label.sr-only ~ .form-control-feedback {
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--dark8);
+}
+
+.form-signin *:has( > #saveId){
+	height: 1.7rem;
+    width: 1.7rem;
+	padding: 2px;
+    border-radius: 100em;
+}
+.form-signin *:has( > #saveId) .glyphicon {   }
+
+
+.form-signin .btn.focus, 
+.form-signin .btn.active {
+    color: #fff;
+    background-color: var(--primary2);
+    border-color: var(--primary2);
+}
+.form-signin .btn span.glyphicon{color: currentcolor; opacity:.3;} */
+
+
+
+/* 네이버 로그인 */
+.naver-login {
+	background:#12c800;
+	border-color:#19af00;
+}
+.naver-login:hover{
+	background:#10b500;
+	border-color:#148f00;
+}
+
+/* 추가 회원가입 */
+.form-join {
+  max-width: 100%;
+  /*padding: 15px;*/
+  margin: 0 auto;
+}
+/* .form-join .form-join-heading,
+.form-join .checkbox {
+  margin-bottom: 10px;
+}
+.form-join .checkbox {
+  font-weight: normal;
+}
+.form-join .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-join .form-control:focus {
+  z-index: 2;
+}
+.form-join input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-join input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+} */
+
+/* 이용약관 및 개인정보취급방침
+.terms {margin:10px 0;}
+.terms .terms_area {padding:20px; border:1px solid #ccc; background:#fff;}
+.terms_area .terms_bx {margin-bottom:0;}
+.terms_bx h4 {margin:0; padding-top: 10px; font-weight: 600;}
+.terms_bx .view_bx {overflow: hidden; overflow-y:auto; position:relative; height:100px; margin:15px 0; background:#f7f7f7;}
+.terms_bx .view_bx .section {padding:10px; font-size:13px; color:#666; line-height:18px;}
+.terms_bx .view_bx .section h1,
+.terms_bx .view_bx .section h2,
+.terms_bx .view_bx .section h3,
+.terms_bx .view_bx .section h4,
+.terms_bx .view_bx .section h5,
+.terms_bx .view_bx .section dt {
+	margin:0; font-weight:normal; font-size:14px; line-height:1.5;
+}
+.terms_bx .terms_choice {font-size:1.5rem;}
+.terms_bx .terms_choice label {font-size:1.5rem;}
+.terms .terms_area {background:#fff; border:1px solid #ccc;}
+.terms_bx .link_ban {color:#333}
+.terms_bx .link_ban:hover,
+.terms_bx .link_ban:focus,
+.terms_bx .link_ban:active {text-decoration: none}
+
+.terms_bx .link_ban .mobile_certifi {padding: 130px 0 0 0; text-align: center; background: url(../img/common/mobile_certifi.png) no-repeat center; background-size: contain;}
+.terms_bx .link_ban .s_tit {text-align: center; margin-top:20px; font-weight: 600; font-size: 16px;}
+.terms_bx .link_ban .comment {font-size:16px; line-height: 1.6; margin-top:10px;}
+ */
+
+
+
+
+
+/* 회원가입, 아이디 비번찾기
+.lg_link {}
+.lg_link ul {display: inline-block;}
+.lg_link li {float: left; margin: 0 10px;}
+.lg_link li.dv_line {padding-top: 10px; font-size: 16px; color: #999;}
+.lg_link li a {display: block; width: 100%; padding: 10px; font-size: 16px; color: #333;}
+.lg_link li a:hover,
+.lg_link li a:focus,
+.lg_link li a:active {text-decoration: none;}
+ */
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>회원가입_본인인증</title>
+
+
+	<div include-html="../../mockup/commonHead.html"></div>
+	
+
+</head>
+
+<body>
+
+	<!-- 네비게이션 시작 -->
+	<div include-html="../../mockup/commonnavTop.html"></div>
+	<!-- //네비게이션 끝  -->
+
+	<!-- 모바일 콘텐츠 시작 -->
+	<div class="cotent container">  <!-- container 클래스 추가_240126 -->
+
+		<!-- 뒤로가기, 페이지 이름 등 영역 -->
+		<div class="container">  
+			<div class="row">
+				<div class="navbar-header bg-gray-t1">
+					<!-- 뒤로가기 버튼-->
+					<a class="top-btn2" href="javascript:goList();">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+					</a>
+					
+					<span class="page-tit">본인인증</span>					
+				</div>
+			</div>
+		</div>
+		<!-- //뒤로가기, 페이지 이름 등 영역 -->
+
+
+		<div id="btn-confirm" class="way_certifi appear margin-top-30 margin-bottom-30">
+			<a href="javascript:certification();">
+				<b>본인확인</b><small>휴대폰인증</small>
+			</a>
+			<a href="javascript:ipinCertification();">
+				<b>아이핀(I-PIN)</b><small>인증</small>
+			</a>
+			<a href="javascript:cardCertification();">
+				<b>신용카드</b><small>인증</small>
+			</a>
+			
+		</div>
+
+
+		<P>
+			본 교육은 영업자가 받아야 하는 교육이며, 영업자 대신 받을 수 있는 경우는 아래와 같습니다.
+		</P>
+
+		<div class="bcLight p-3">
+			<strong>식품위생법 제41조 제3항</strong>
+			<p>영업자가 영업에 직접 종사하지 아니하거나, 두 곳 이상의 장소에서 영업을 하는 경우에는 종업원 중에서 식품위생에 관한 책임자를 지정하여 영업자 대신 교육을 받게 할 수 있음</p>
+			<p>※ '공유주방 운영업의 위생관리책임자 교육'은 위생관리책임자 본인이 교육 수료하여야 함</p>
+			<br>
+			<strong>수입식품안전관리 특별법 제17조 제3항</strong>
+			<p>영업자가 총리령으로 정하는 부득이한 사유가 있는 경우에는 종업원 중에서 관리책임자를 지정하여 영업자 대신 교육을 받게 할 수 있음.</p>
+		</div>
+		
+
+
+		<ul class="list-bullet-dot margin-top-30">
+			<li>입력한 정보는 본인인증에만 사용되며 이외의 용도로 사용 또는 저장하지 않습니다.</li>
+			<!-- <li>인증 팝업 생성을 위해 <span class="fcRed">브라우저 팝업 차단 기능을 해재</span>해 주시기 바랍니다.</li> -->
+		</ul>
+			
+	</div>
+	<!-- //모바일 콘텐츠 끝 -->
+
+	<!-- footer -->
+	<div include-html="../../mockup/commonFooter.html"></div>
+	<!-- //footer  -->
+
+
+<!-- Javascript -->
+<script src="../m/assets/js/jquery.min.js"></script>
+<script src="../m/assets/js/bootstrap.min.js"></script>
+
+
+
+
+
+<!-- 프론트용-개발 시 무시 -->
+<script src="../../mockup/test.js"></script>
+<!-- //프론트용-개발 시 무시 -->
+    
+</body>
+</html>

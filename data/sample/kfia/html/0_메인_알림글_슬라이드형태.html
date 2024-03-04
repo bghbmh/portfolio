@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>한국식품산업협회 온라인 식품위생교육</title>
+
+	<div include-html="../../mockup/commonHead.html"></div>
+
+
+</head>
+
+<body>
+
+	<!-- 네비게이션 시작 -->
+	<div include-html="../../mockup/commonnavTop.html"></div>
+	<!-- //네비게이션 끝  -->
+
+	<div class="cotent container"> <!-- 속성삭제, 클래스 추가 -->
+		<!-- 모바일 콘텐츠 시작 -->
+		<div class="mobile-main">        
+			<div class="row2 gap2 com04 min-height-400px margin-top-20"> <!--  기존에 있던 클래스 모두 교체 -->
+
+				<!-- 공지사항_알림 등 -->
+				<div class="col8 notice carousel2"> <!-- 슬라이드 스타일2 적용한 경우 -->
+
+					<div class="p-3">
+						<div class=" fs-300per">가</div>
+					</div>
+					 
+					<div class="p-3">
+						<div class=" fs-300per">나</div>
+					</div>
+
+				</div>
+				<!-- //공지사항_알림 등 -->
+
+				<div class="col4 d-flex flex-column gap2"> <!--  기존에 있던 클래스 모두 삭제 -->
+		
+					<button type="button" class="btn btn-primary flex-fill-equal " onclick="javascript:goLogin();">
+						<span class="txt">회원가입<br> / 로그인</span>
+						<i class="icon-svg-arrow-right margin-top-auto margin-left-auto" aria-hidden="true"></i>
+					</button>
+		
+					<button type="button" class="btn btn-secondary flex-fill-equal" onclick="location.href='/MobileMain.cmd?cmd=goOfflineReceipt'">
+						<span class="txt">집합교육<br>일정</span>
+						<i class="icon-svg-arrow-right margin-top-auto margin-left-auto" aria-hidden="true"></i>
+					</button>
+
+					<button type="button" class="btn btn-navy flex-fill-equal" onclick="location.href='/MobileMain.cmd?cmd=goOfflineAttend'">
+						<span class="txt">교육신청<br>(신규/기존)</span>
+						<i class="icon-svg-arrow-right margin-top-auto margin-left-auto" aria-hidden="true"></i>
+					</button>
+
+				</div>
+
+				<!-- 샘플_목업 확인용
+					<button type="button" class="col12 btn p-2">
+						col12_버튼
+					</button> 
+				-->
+
+			</div>        
+
+
+			<!-- 배너 슬라이드_ 전체 변경함_240207 -->
+			<div class="carousel margin-top-30">
+
+				<div>
+					<a class="cItem" href="https://pf.kakao.com/_xfZfGT ">
+						<div class="flex-fill">
+							<p><b class="fcKakao">카카오톡 플러스 친구</b></p>
+							<small>카카오톡으로 물어보세요.</small>
+						</div>
+						<img src="../m/assets/img/main/icon-kakaotalk.svg" alt="카카오톡아이콘" aria-hidden="true">
+					</a>
+				</div>
+				
+				<div>
+					<a class="cItem" href="https://m.blog.naver.com/1890963">
+						<div class="flex-fill">
+							<p><b class="fcNaver">네이버 블로그</b></p>
+								<small>자주하는 민원 질문을 모았어요.</small>
+						</div>
+						<img src="../m/assets/img/main/icon-naverblog.svg" alt="네이버블로그아이콘" aria-hidden="true">
+					</a>
+				</div>
+				
+			</div>
+			<!-- /배너 슬라이드 -->
+
+		
+			<!-- 전화번호 -->
+			<div class="tel_number margin-top-20"> <!-- container 클래스 삭제 -->
+				<div class="area_pnumber">  <!-- col-xs-6 text-center  클래스 삭제 -->
+					<h3>KFIA 교육관련 문의처</h3>
+					<a href="tel:1577-3869" class="btn bcTransparent fs-300per fw-900 fcGreen">1577-3869</a>
+				</div>
+				<div class=" area_pnumber"> <!-- col-xs-6 text-center  클래스 삭제 -->
+					<p>메디오피아테크(기술문의)</p>
+					<a href="tel:02-3460-8374" class="btn bcTransparent  fw-700">02-3460-8374</a>
+					<small>평일 오전9시 ~ 오후6시</small>
+				</div>
+			</div>
+			<!-- /전화번호 -->
+		</div>
+	
+		<!-- //모바일 콘텐츠 끝 -->
+	</div>
+
+	<div class="m-footer">
+		<div class="container">
+			<div class="foot-copy">© KFIA. ALL RIGHTS RESERVED.</div>
+		</div>
+	</div> 
+
+
+
+	<!-- Javascript -->
+	<script src="../m/assets/js/jquery.min.js"></script>
+	<script src="../m/assets/js/bootstrap.min.js"></script>
+
+
+	<!-- slick으로 변경함 -->
+	<script src="../m/assets/js/slick.min.js"></script>
+	<script>
+		$('.carousel').slick({
+			autoplay:true,
+			dots: true,
+			arrows: false
+		});
+
+
+		$('.carousel2').slick({
+			autoplay:true,
+			dots: true,
+			arrows: false,
+			customPaging: function( carousel,idx){
+				if( idx === 0 ){ 
+					let btns = tempCreateElem({ tag : "div", class: "ctrl"});					
+					btns.addEventListener("click", e => { 
+						let tar = e.target.closest(".ctrlbtn");
+						[...btns.children].forEach( ch => ch.classList.remove('on') );
+
+						if(  tar.classList.contains("stop") ) $(carousel.$slider[0]).slick('slickPause') ;
+						else $(carousel.$slider[0]).slick('slickPlay');
+
+						tar.classList.add('on');						
+					});
+					let btn1 = tempCreateElem({ tag:"button", class:"ctrlbtn stop", "type": "button", "aria-label":"stop","title":"stop"});
+					let btn2 = tempCreateElem({ tag:"button", class:"ctrlbtn play", "type": "button", "aria-label":"play","title":"play"});
+
+					btns.appendChild(btn1);
+					btns.appendChild(btn2);
+					btns.dataset.slideCount = carousel.slideCount ;
+
+					carousel.$slider[0].appendChild(btns);					
+
+				}				
+
+				function tempCreateElem(attributes = {}){// { tag : "div", class: "sample"}
+					let tag = document.createElement(attributes.tag);
+					for (let prop in attributes) {
+						if (prop == "tag") continue;
+						tag.setAttribute(prop, attributes[prop]);
+					}
+					return tag;
+				}
+
+				return `<span>${idx+1}</span>`;
+			}
+		});
+
+		//$('.notice').slick('slickPause');
+	</script>
+
+
+<!-- 프론트용-개발 시 무시 -->
+<script src="../../mockup/test.js"></script>
+<!-- //프론트용-개발 시 무시 -->
+
+    
+</body>
+</html>
