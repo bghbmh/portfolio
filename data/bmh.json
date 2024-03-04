@@ -14,9 +14,7 @@
 		"id" : 94,		
 		"img" : ["../main/data/img/ohseong_bg.jpeg"],
 		"category" : "웹",
-		"hash" : [ "마크업"],
-		"sampleName" : "ohseong",
-		"samplePage" : []
+		"hash" : [ "마크업"]
 	},
 	{
 		"id" : 93,
@@ -31,9 +29,7 @@
 		"id" : 92,		
 		"img" : ["../main/data/img/knu10.png"],
 		"category" : "웹",
-		"hash" : [ "마크업"],
-		"sampleName" : "knu10",
-		"samplePage" : []
+		"hash" : [ "마크업"]
 	},
 	{
 		"id" : 85,
