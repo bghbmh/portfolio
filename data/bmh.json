@@ -72,7 +72,7 @@
 			"img" : ["../main/data/img/w1.png"],
 			"title" : "HYCU",
 			"link" : "nameCard/m_nameCard.html",
-			"coding" : "메인(80), 서브(40)",
+			"coding" : "메인(85), 서브(40)",
 			"library" : "Semantic UI"
 		}
 	},
