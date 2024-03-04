@@ -15,7 +15,7 @@
 		"category" : "웹",
 		"hash" : [ "마크업"],
 		"sampleName" : "ohseong",
-		"samplePage" : ["sub02_01_1.jsp","sub02_02.jsp"]
+		"samplePage" : []
 	},
 	{
 		"id" : 93,
@@ -32,7 +32,7 @@
 		"category" : "웹",
 		"hash" : [ "마크업"],
 		"sampleName" : "knu10",
-		"samplePage" : ["sub_학점교류안내_수강방법.jsp","sub_학점교류안내_학점교류규정.jsp"]
+		"samplePage" : []
 	},
 	{
 		"id" : 85,
