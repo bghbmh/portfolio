@@ -28,7 +28,7 @@
 	},
 	{
 		"id" : 92,		
-		"img" : ["../main/data/img/ohseong.jpeg"],
+		"img" : ["../main/data/img/knu10.png"],
 		"category" : "웹",
 		"hash" : [ "마크업"],
 		"sampleName" : "knu10",
