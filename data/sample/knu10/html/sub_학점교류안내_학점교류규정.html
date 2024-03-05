@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<!--common -->
+<head>
+	<meta charset="UTF-8" />
+	<title>거점국립대학교 학점교류시스템</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="initial-scale=1" />
+	<meta name="author" content="거점국립대학교" />
+	<meta name="description" content="거점국립대학교 학점교류시스템입니다." />
+	<meta name="keywords" content="학점교류시스템, 한국교육정보화재단, 강원대학교, 경북대학교, 경상국립대학교, 부산대학교, 서울대학교, 전남대학교, 전북대학교, 제주대학교, 충남대학교, 충북대학교 " />
+
+	<!-- Favicon ie/ie외 브라우저/apple/android -->
+	<link rel="shortcut icon" type="image/x-icon" href="../data/img/favicon_16.png" />
+	<link rel="icon" type="image/png" href="#" />
+	<link rel="apple-touch-icon" href="#" />
+	<link rel="icon" type="image/png" href="#" />
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="../data/css/jquery-ui.css" />
+	<link rel="stylesheet" href="../data/css/jquery-ui-slider-pips.css" />
+	<link rel="stylesheet" href="../data/css/footable.standalone.css" />
+	<link rel="stylesheet" href="../data/css/jquery.mCustomScrollbar.min.css" />
+	<link rel="stylesheet" href="../data/css/semantic.css" />
+	<link rel="stylesheet" href="../data/css/ionicons.css" />
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" >
+	<link rel="stylesheet" href="../data/css/slick.css" />
+	<link rel="stylesheet" href="../data/css/slick-theme.css" />
+	<link rel="stylesheet" href="../data/css/h_reset.css" />
+	<link rel="stylesheet" href="../data/css/hub-element-ui.css" />
+	<link rel="stylesheet" href="../data/css/header.css" />
+	<link rel="stylesheet" href="../data/css/footer.css" />
+
+	<!-- Summernote Editor -->
+	<link rel="stylesheet" href="../data/summernote/summernote-lite.css" />
+	<link rel="stylesheet" href="../data/summernote/plugin/math/katex.min.css" />
+	<link rel="stylesheet" href="../data/summernote/plugin/emoji/css/emoji.css" />
+
+	<!-- Scripts -->
+	<script src="../data/js/jquery.min.js"></script>
+	<script src="../data/js/jquery-ui.min.js"></script>
+	<script src="../data/js/jquery-ui-slider-pips.js"></script>
+	<script src="../data/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="../data/js/semantic.min.js"></script>
+	<script src="../data/js/footable.min.js"></script>
+	<script src="../data/js/jquery.scrollify.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script src="../data/js/slick.min.js"></script>
+	<script src="../data/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../data/js/hub-common.js"></script>
+	<script src="../data/js/h_common.js"></script>
+
+	<!-- Summernote Editor -->
+	<script src="../data/summernote/summernote-lite.js"></script>
+	<script src="../data/summernote/lang/summernote-ko-KR.js"></script>
+	<script src="../data/summernote/plugin/math/katex.min.js"></script>
+	<script src="../data/summernote/plugin/math/summernote-math.js"></script>
+	<script src="../data/summernote/plugin/emoji/js/config.js"></script>
+	<script src="../data/summernote/plugin/emoji/js/tam-emoji.js"></script>
+	<script src="../data/summernote/plugin/uploadcare.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../data/css/h_sub.css" />
+</head>
+	<!--//common -->
+
+	<body>
+		<!-- mobile_lnb -->
+		<div class="ui right sidebar menu-inbox">
+			<button class="close" title="닫기">닫기</button>
+			<nav>
+				<ul class="navList">
+					<li>
+						<a href="#0"><span>사업소개</span></a>
+						<div class="twoDep">
+							<ul>
+								<li><a href="#0">인사말</a></li>
+								<li><a href="#0">학점교류 소개</a></li>
+								<li><a href="#0">참여대학 안내</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#0"><span>학점교류 안내</span></a>
+						<div class="twoDep">
+							<ul>
+								<li><a href="#0">학점교류 일정</a></li>
+								<li><a href="#0">학점교류 교과목</a></li>
+								<li><a href="#0">수강방법</a></li>
+								<li><a href="#0">학점교류 규정</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#0"><span>커뮤니티</span></a>
+						<div class="twoDep">
+							<ul>
+								<li><a href="#0">공지사항</a></li>
+								<li><a href="#0">자료실</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="#0"><span>고객센터</span></a>
+						<div class="twoDep">
+							<ul>
+								<li><a href="#0">자주하는 질문</a></li>
+								<li><a href="#0">제안 및 불편 사항 접수</a></li>
+								<li><a href="#0">Q&A</a></li>
+								<li><a href="#0">원격지원</a></li>
+								<li><a href="#0">학습환경 안내</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<script>
+				/********** NAV 메뉴 **********/
+				$(".navList li")
+					.unbind("click")
+					.bind("click", function () {
+						if ($(this).hasClass("on") != true) {
+							$(".navList li").removeClass("on");
+							$(this).addClass("on");
+						} else {
+							$(".navList li").removeClass("on");
+						}
+					});
+			</script>
+		</div>
+		<!-- mobile menu slidebar -->
+		<!-- //mobile_lnb -->
+
+		<div id="container">
+			<div class="section">
+				<div class="login_bar">
+					<div class="inner"></div>
+				</div>
+
+				<!-- header -->
+				<header class="sub">
+					<div class="login_bar">
+						<div class="inner">
+							<a href="#">LMS바로가기</a>
+							<a href="#">로그아웃</a>
+						</div>
+					</div>
+					<div class="inner-box">
+						<div class="gnb_wrap">
+							<h1>
+								<a href="#0"><img src="../data/img/logo_w_light.png" alt="거점국립대학교 로고" /></a>
+							</h1>
+							<div class="hr_cont">
+								<div class="mo-menu ml15"><i class="ion-navicon"></i></div>
+							</div>
+							<!-- pc 메뉴 -->
+							<div id="gnb">
+								<h2 class="blind">전체 메뉴</h2>
+								<ul class="gnbList main_menu">
+									<li>
+										<h3><a href="#0">사업소개</a></h3>
+										<div class="twoDep">
+											<ul>
+												<li><a href="#0">인사말</a></li>
+												<li><a href="#0">학점교류 소개</a></li>
+												<li><a href="#0">참여대학 안내</a></li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<h3><a href="#0">학점교류 안내</a></h3>
+										<div class="twoDep">
+											<ul>
+												<li><a href="#0">학점교류 일정</a></li>
+												<li><a href="#0">학점교류 교과목</a></li>
+												<li><a href="#0">수강방법</a></li>
+												<li><a href="#0">학점교류 규정</a></li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<h3><a href="#0">커뮤니티</a></h3>
+										<div class="twoDep">
+											<ul>
+												<li><a href="#0">공지사항</a></li>
+												<li><a href="#0">자료실</a></li>
+											</ul>
+										</div>
+									</li>
+									<li>
+										<h3><a href="#0">고객센터</a></h3>
+										<div class="twoDep">
+											<ul>
+												<li><a href="#0">자주하는 질문</a></li>
+												<li><a href="#0">제안 및 불편 사항 접수</a></li>
+												<li><a href="#0">Q&A</a></li>
+												<li><a href="#0">원격지원</a></li>
+												<li><a href="#0">학습환경 안내</a></li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<script>
+								/********** NAV 메뉴 **********/
+								// getLocationInfo();
+								jQuery(".gnbList")
+									.children("li")
+									.each(function (q) {
+										jQuery(this).hover(
+											function () {
+												jQuery("#gnb").stop().animate(
+													{
+														height: 300,
+													},
+													200,
+												);
+											},
+											function () {
+												jQuery("#gnb").stop().animate(
+													{
+														height: 80,
+													},
+													200,
+												);
+											},
+										);
+										jQuery(this).focusin(function () {
+											jQuery("#gnb").stop().animate(
+												{
+													height: 300,
+												},
+												200,
+											);
+										});
+										jQuery(this).focusout(function () {
+											jQuery("#gnb").stop().animate(
+												{
+													height: 80,
+												},
+												200,
+											);
+										});
+
+										$("#gnb li").on("mouseover focusin", function (e) {
+											e.preventDefault();
+											// $("header").removeClass("on");
+											$("header").addClass("on");
+											$("#gnb li").removeClass("active");
+											$(this).addClass("active");
+										});
+
+										$("header").on("mouseleave focusout", function (e) {
+											e.preventDefault();
+											$("header").removeClass("on");
+											$(this).children("#gnb li").removeClass("active");
+										});
+									});
+							</script>
+						</div>
+					</div>
+				</header>
+				<script>
+					$("button.header_myarea").click(function (e) {
+						e.preventDefault();
+						$("header .util").toggleClass("on");
+					});
+					$("button.log_btn").click(function (e) {
+						e.preventDefault();
+						$("header.log_in .util").toggleClass("on");
+					});
+				</script>
+				<!-- //Header 영역 부분 -->
+				<!-- //header -->
+
+				<!-- sub 헤더 공통 -->
+				<div class="subHeader">
+					<div class="inner">
+						<!--<header> -->
+						<h2 class="subHeaderTtile">학점교류 안내</h2>
+						<div class="breadcrumb">
+							<a href="#0" class="item home" aria-label="메인"></a>
+							<a href="#0" class="item">학점교류 안내</a>
+							<a href="#0" class="item">학점교류 규정</a>
+						</div>
+					</div>
+				</div>
+				<!-- //sub 헤더 공통 -->
+
+				<!-- sub menu 공통 -->
+				<nav class="subMenu">
+					<div class="inner">
+						<a href="#0" class="item">학점교류 일정</a>
+						<a href="#0" class="item">학점교류 교과목</a>
+						<a href="#0" class="item">수강방법</a>
+						<a href="#0" class="item active">학점교류 규정</a>
+					</div>
+				</nav>
+				<!-- //sub menu 공통 -->
+			</div>
+			<div class="section">
+				<div class="inner tempbcColor">
+					<!-- tempbcColor 게시판 외 안내 페이지에서만 사용하는 클래스 -->
+
+					<!-- 서브페이지 제목 -->
+					<h3 class="subContentTitle">학점교류 규정</h3>
+					<!-- //서브페이지 제목 -->
+
+					<!-- 본문_안내글 -->
+
+					<!-- 테이블 스타일 공통 -->
+					<div class="table-wrap">
+						<table>
+							<colgroup>
+								<col width="20%">
+								<col width="">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>구분</th>
+									<th>내용</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr> 
+									<td>학점교류 운영</td>
+									<td class="tl">
+										<p class="bulletDot fcDark3">학점교류는 고등교육법 시행령 제14조의 2 관련 「일반대학의 원격수업 운영에 관한 훈령」 (교육부 훈령 제367호, 2021.02.15.) 및 「대학등의 원격수업 운영에 관한 훈령」(교육부 훈령 제397호, 2022.01.17., 시행일 2022.3.25) 을 준수하여 운영</p>
+										<p class="bulletDot fcDark3">매학기 개강 3개월 이전에 희망교과목 추천 및 2주일 이전에 폐강 과목 공지</p>
+										<p>※ 전체 수강인원 50명 미만은 폐강 원칙</p><p class="bulletDot fcDark3">수강신청은 학생 소속 대학의 수강신청 시스템을 이용</p>
+										<p class="bulletDot fcDark3">동일 대학에서 개설한 교과목 수강신청은 1과목으로 한정</p>
+										<p class="bulletDot fcDark3">수강 후 취득한 학점은 참여대학별로 졸업 학점에 가산</p>
+									</td>
+								</tr>
+							
+								<tr> 
+									<td>수업진행 및 성적 평가방법</td>
+									<td class="tl">
+										<p class="bulletDot fcDark3">학사운영은 정규학기(1학기, 2학기), 계절학기(하계, 동계)로 함</p>
+										<p class="bulletDot fcDark3">각 주차별 강의는 개강일 00:00(자정)부터 매주 화요일 12:00(정오)를 원칙으로 함</p>
+										<p class="bulletDot fcDark3">정기시험(중간, 기말)은 각 대학별로 개설된 과목을 동일 시간으로 편성</p>
+										<p class="bulletDot fcDark3">성적평가는 참여대학별 평가를 원칙으로 하며, 각 대학의 학사운영규정을 적용함</p>
+									</td>
+								</tr>		
+								<tr> 
+									<td>콘텐츠 관리</td>
+									<td class="tl">
+										<p class="bulletDot fcDark3">각 대학별로 품질심사를 거친 과목 개설</p>
+									</td>
+								</tr>					
+								
+							</tbody>
+						</table>
+					</div>
+					<!-- 테이블 스타일 공통 -->
+
+					<div class="com01 mt50">
+						<img src="../data/img/full_rule.png">
+					</div>
+					
+					<!-- //본문_안내글 -->
+
+
+					
+				</div>
+			</div>
+		</div>
+		<!-- footer  -->
+<!-- footer 영역 부분 -->
+<footer id="bottom">
+	<div class="section">
+		<div class="inner">
+			<div class="left_wrap">
+				<div class="up_box">
+					<div class="footer_logo">
+						<a href="#"><img src="../data/img/footer_logo.png" alt="로고" /></a>
+					</div>
+					<ul class="list">
+						<li><a href="#">KREN정관</a></li>
+						<li><a href="#">KREN규정</a></li>
+						<li><a href="#">개인정보처리방침</a></li>
+					</ul>
+					<div class="footer_agency clearfix">
+						<div class="cont_box">
+							<span class="tit"><a href="#footer_agency1" class="">관련기관 바로가기</a></span>
+							<div id="footer_agency1" class="cont" style="display: none">
+								<ul>
+									<li><a href="https://edu.ekoreatech.ac.kr/" target="_blank" title="새창">IT전문교육</a></li>
+									<li><a href="https://bank.e-koreatech.ac.kr/" target="_blank" title="새창">컨퍼런스</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ul class="copy">
+					<li>
+						<span>재단법인 한국교육정보화재단</span>
+						<span>대표자 : 김홍기</span>
+						<span>고유번호 : 119-82-63800</span>
+						<span>주소 : 서울특별시 관악구 관악로 1 서울대학교 정보화본부 4층</span>
+						<br />
+						<span>TEL : 02-882-5363</span>
+						<span>FAX : 02-873-7484</span>
+						<span>E-MAIL : kren@snu.ac.kr</span>
+					</li>
+					<li class="copy_wr">COPYRIGHT(c) Korea Education ICT Network. ALL RIGHTS RESERVED.</li>
+				</ul>
+			</div>
+			<!-- <div class="right_wrap">
+				<div class="footer_agency clearfix">
+					<div class="cont_box">
+						<span class="tit"><a href="#footer_agency1" class="">관련기관 바로가기</a></span>
+						<div id="footer_agency1" class="cont" style="display: none">
+							<ul>
+								<li><a href="https://edu.ekoreatech.ac.kr/" target="_blank" title="새창">IT전문교육</a></li>
+								<li><a href="https://bank.e-koreatech.ac.kr/" target="_blank" title="새창">컨퍼런스</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+</footer>
+<!-- //footer 영역 부분 -->
+	</body>
+</html>
