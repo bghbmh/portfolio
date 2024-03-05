@@ -29,6 +29,13 @@
 		"effect" : ""
 	},
 	{
+		"id" : 8,
+		"title" : "모바일명함.. 엎어짐,,, 망할...",
+		"template" : "nameCard",
+		"favicon" : "",
+		"effect" : ""
+	},
+	{
 		"id" : 2,
 		"title" : "간단한 퍼즐...망했네...",
 		"template" : "puzzle",
