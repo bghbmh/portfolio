@@ -14,7 +14,9 @@
 		"id" : 94,		
 		"img" : ["../main/data/img/ohseong_bg.jpeg"],
 		"category" : "웹",
-		"hash" : [ "마크업"]
+		"hash" : [ "마크업"],
+		"sampleName" : "ohseong",
+		"samplePage" : ["sub02_01_1.html","sub02_03.html"]
 	},
 	{
 		"id" : 93,
@@ -29,7 +31,9 @@
 		"id" : 92,		
 		"img" : ["../main/data/img/knu10.png"],
 		"category" : "웹",
-		"hash" : [ "마크업"]
+		"hash" : [ "마크업"],
+		"sampleName" : "knu10",
+		"samplePage" : ["sub_학점교류안내_수강방법.html","sub_학점교류안내_학점교류규정.html"]
 	},
 	{
 		"id" : 85,
