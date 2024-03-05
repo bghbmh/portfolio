@@ -41,6 +41,13 @@
 		"template" : "scroll1",
 		"favicon" : "",
 		"effect" : ""
+	},
+	{
+		"id" : 7,
+		"title" : "천천히...스크롤느리게, 피해자들의 안녕을 위해",
+		"template" : "blindness",
+		"favicon" : "",
+		"effect" : ""
 	}
 
 ]
