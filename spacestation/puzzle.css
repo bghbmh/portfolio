@@ -1,0 +1,234 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/* 고정값 변수 설정 */
+:root {
+     --tt : hsl(167, 65%, 46%);
+	/* 퍼즐 */
+	--cell-width: 119px;
+	--cell-height: 180px;
+	--cell-background-sise: 450px auto;
+	--cell-background-image: url("puzzle.jpg");
+
+	--whole-width: 300px;
+	--puzzle-section-height: 1000px;
+}
+
+/* 퍼즐 */
+/*.game{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0 auto;
+
+	background: #fff;
+	z-index: 33;
+}*/
+html,
+body {
+	padding: 0;
+	margin: 0;
+	height: 100%
+}
+.game{
+	padding: 0;
+	list-style: none;
+
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+
+	top: 50%;
+	transform: translateY(-50%);
+
+	align-items: center;
+	justify-content: center;
+}
+
+.game li{
+	position: relative;
+	
+	font-size: 10px;
+	width:50%;
+	height:50%;
+
+	margin:5em;
+	text-align: center;
+
+	cursor: pointer;
+}
+
+.game li img{
+	width: 35em;
+	height: 35em;
+	object-fit: cover;
+	border-radius: 20em;
+}
+
+
+
+ .game li dl{
+	display: block;
+	width: 100%;
+	padding-top: 1em;
+	font-size: 1.5em;
+}
+
+ .game li dl dt{
+	padding: .7em 0;
+	font-weight: 100;
+}
+
+ .game li dl dd{
+	padding: 0;
+	margin: 0;
+
+	font-size: .9em;
+	font-weight: 100;
+	color: #999;
+}
+
+
+
+
+@media(max-width:  1220px){
+	.game li img{ width: 30em; height: 30em;	}	
+}
+
+@media(max-width:  1024px){
+	.game li img{ width: 25em; height: 25em;	}	
+}
+
+@media(max-width:  834px){
+	.game{ flex-direction: column; }
+	.game li img{ width: 20em; height: 20em; }	
+}
+
+@media(max-width:  414px){
+	.game li img{ width: 12em; height: 12em; }	
+}
+
+#board{
+	position: absolute;/*
+	display: flex;*/
+	width: 100%;
+	height: 100%;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	padding:2em;
+
+	background: #fff;
+	box-sizing: border-box;
+
+	overflow: hidden;
+
+	z-index: 55;
+
+}
+
+#board img{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+
+}
+
+.puzzleImg{
+	/*display: none;*/
+}
+
+#board > span{
+	position: absolute;
+	display: inline-block;
+
+/*	width: var(--cell-width);
+	height: var(--cell-height);
+
+	background-image: var(--cell-background-image);	*/	
+	background-repeat: no-repeat;
+	
+/*	background-size: var(--cell-background-sise);	*/	
+
+	opacity: 1;
+	-webkit-transition: opacity 0.6s ease;
+	-moz-transition: opacity 0.6s ease;
+	-o-transition: opacity 0.6s ease;
+	transition: opacity 0.6s ease;
+}
+
+#board > span.moving{
+	box-shadow: 0px 0px 13px rgba(0,0,0,.3);
+}
+
+#board > span.off{
+	opacity: 0;
+
+}
+
+#madeBoard{
+	position: absolute;
+	z-index: 22;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	background-image: var(--cell-background-image);		
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#puzzleBtnSet{
+	position: absolute;
+	z-index: 33;
+	width: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	z-index: 999;
+}
+
+#puzzleBtnSet button{
+	position: relative;
+	display: inline-block;
+	font-size: 15px;
+	line-height: 1;
+
+	width: 6em;
+	height: 6em;
+
+	margin:1em;
+	padding:1em;
+
+	border: 1px solid #ccc;
+	border-radius: 50%;
+	color: #000;
+	background: #fff;/*  transparent  */
+	
+}
+
+#puzzleBtnSet button:nth-child(2){
+	background: #000;
+	border-color: #000;
+	color: #fff;
+}
+
+#puzzleBtnSet button:nth-child(1):hover{
+	background: #e3e3e3;
+	border-color: #e3e3e3;
+	color: #000;
+}
+
+#puzzleBtnSet button:nth-child(2):hover{
+	background: #e3e3e3;
+	border-color: #e3e3e3;
+	color: #000;
+
+}
