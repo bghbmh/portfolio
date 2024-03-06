@@ -28,12 +28,11 @@
 		"samplePage" : ["main.html","sub.html"]
 	},
 	{
-		"id" : 92,		
-		"img" : [],
+		"id" : 92,	
 		"category" : "웹",
 		"hash" : [ "마크업"],
 		"sampleName" : "knu10",
-		"samplePage" : ["sub_학점교류안내_수강방법.html","sub_학점교류안내_학점교류규정.html"]
+		"samplePage" : ["sub_학점교류안내_수강방법.html","sub_학점교류안내_학점교류규정.html"]
 	},
 	{
 		"id" : 85,
@@ -93,8 +92,6 @@
 	},
 	{
 		"id" : 88,
-		"main" : true,
-		"img" : [],
 		"srcRatio" : "훌라로",
 		"category" : "웹",
 		"hash" : [ "리뉴얼", "반응형", "디자인", "마크업"  ],
