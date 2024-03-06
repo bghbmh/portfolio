@@ -29,7 +29,7 @@
 	},
 	{
 		"id" : 92,		
-		"img" : ["../main/data/img/knu10.png"],
+		"img" : [],
 		"category" : "웹",
 		"hash" : [ "마크업"],
 		"sampleName" : "knu10",
@@ -94,19 +94,11 @@
 	{
 		"id" : 88,
 		"main" : true,
-		"img" : ["../main/data/img/w1.png"],
-		"srcRatio" : "rowspan1",
+		"img" : [],
+		"srcRatio" : "훌라로",
 		"category" : "웹",
 		"hash" : [ "리뉴얼", "반응형", "디자인", "마크업"  ],
-		"description" : {
-				"bg" : [],
-				"img" : ["../main/data/img/w1.png"],
-				"title" : "",
-				"mainColor" : [ "#5a2efd", "#2df1fd" ],
-				"link" : "nameCard/m_nameCard.html",
-				"designer" : "메인(100), 서브(100)",
-				"coding" : "메인(100), 서브(100)"
-			}
+		
 	},
 	{
 		"id" : 90,
