@@ -41,7 +41,7 @@ function buttonList(item){
 function imgList(item, html = ''){
 	
 	if( !(item.description ? item.description.img.length : item.img.length) ){		
-		return `<img src="../assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
+		return `<img src="../main/assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
 	} 
 
 	item.img.forEach( src => { html += `<img src="${src}" alt="이미지">` });	
