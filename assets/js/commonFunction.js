@@ -10,12 +10,28 @@ export function CreateElement(attributes = {}) { // { tag : "div", class: "sampl
 }
 
 
+export const throttle = (callback, timeout = 600) => {
+	let timer;
+	return (...args) => {
+		if (!timer) {
+			timer = setTimeout(() => {
+				callback.apply(this, args);
+				timer = undefined;
+			}, timeout);
+		}
+	};
+};
+  
+
+export const debounce = (callback, timeout = 400) => {
+	let timer;
+	return (...args) => {
+		clearTimeout(timer);
+		timer = setTimeout(() => { callback.apply(this, args);  console.log("debounce") }, timeout);
+	};
+};
 
 
-
-
-
- 
 
 export class fileHandler {
 	/*
@@ -64,11 +80,11 @@ function xhrError(xhr) {
 	xhr.arguments.msg = "test ERROR message";
 	//xhr.arguments.error();
 
-	xhr.arguments.error(xhr);
+	xhr.arguments.error ? xhr.arguments.error(xhr) : console.log("확인중_파일이 존재하지 않습니다.", xhr.responseURL, "\n this.readyState - ", xhr.readyState);
 
 
 	//console.log("testError qqq- ", xhr,xhr.statusText)
-	console.log("확인중_파일이 존재하지 않습니다.", xhr.responseURL, "\n this.readyState - ", xhr.readyState);
+	
 
 	//임시_제이쿼리 확인해보기
 	
