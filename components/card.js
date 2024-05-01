@@ -31,7 +31,7 @@ export let typeA =  (item) => {
 
 
 function buttonList2(item){
-	//console.log("button2 item - ", tempImgbox(item))
+	console.log("button2 item - ", item);
 	let html='';
 
 	html += `<button type="button" class="btn icon" title="이미지크게보기" aria-label="이미지크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(tempImgbox(item))}'><i class="icon-svg-zoom-in" aria-hidden="true"></i></button>`;
