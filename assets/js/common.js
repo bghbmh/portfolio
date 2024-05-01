@@ -218,7 +218,7 @@ function cardListHandler(e){
 		case "detail":
 			
 			cf.fileHandler._load( { 
-				url: '../main/data/test.json', 
+				url: '../main/data/bmh.json', 
 				success : function(request){
 					
 					let items = JSON.parse(request.responseText);
@@ -239,7 +239,7 @@ function cardListHandler(e){
 			break;
 		case 'extraInfo':
 			cf.fileHandler._load( { 
-				url: '../main/data/test.json', 
+				url: '../main/data/bmh.json', 
 				success : function(request){
 					
 					let items = JSON.parse(request.responseText);
