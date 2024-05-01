@@ -2007,6 +2007,7 @@ main.common2{
 	flex:1; 
 	max-width: 1440px;
 	padding-bottom: 5rem;
+	padding-top: 6rem;
 }
 footer.common2{ 
 	display: inline-flex; 
