@@ -2,6 +2,7 @@ import * as cf from './commonFunction.js';
 
 //import { fileHandler } from "./fileHandler.js";
 import * as component from './component.js';
+import * as card from '../../components/card.js';
 import { SamplePageview } from './SamplePageview.js';
 import { ShuttleSpace } from './shuttleSpace.js';
 import { Modal } from "./modalType3.js";
@@ -14,8 +15,8 @@ import { Modal } from "./modalType3.js";
 document.addEventListener("DOMContentLoaded", () => {
 	
 	console.log("DOMContentLoaded ")
-	cf.fileHandler._load( { 
-		url: '../main/data/bmh.json', 
+	cf.fileHandler._load( { //bmh.json
+		url: '../0_last/data/bmh.json', 
 		success : introHandler,
 		loadType:"item", 
 		done: "items" 
@@ -53,7 +54,7 @@ function listTestFunction(targetTag){
 }
 
 function testFunction(e){
-	//console.log("testFunction - ", e)
+	console.log("testFunction - ", e)
 }
 
 function testFunction111(aa){
@@ -61,25 +62,44 @@ function testFunction111(aa){
 }
 
 
-function setGnbHandler(g, ig, it){
-	const gnb = g;
-	let itemGroup = ig;
-	let selectedItem = it;
+function setGnbHandler(g = null){
+
+	let gnb = null;
+	if(  g.type === "resize" )
+		gnb = document.querySelector(".gnb2");
+	else 
+		gnb = g;
+
+	//const gnb =  document.querySelector(".gnb2") || g ;
+
+	console.log( "gnb111111 - ", g, g.type );
+
+	let selectedItem = gnb.querySelector(".on") || gnb.querySelectorAll(".btn")[0];
 	const targetClassName = gnb.dataset.target;
-	let currentItem = undefined ;
+	let currentItem = gnb.querySelector(".on") ;
+
+	
 
 	return function(e) {
-		if( !e.target.closest(".btn") ) return;
+		
 
-		if( selectedItem === ( currentItem = e.target.closest(".btn") )  ) return; 
+		if( e.type !== "resize" && !e.target.closest(".btn") ) return;
+
+		if( e.type === "resize" ) currentItem = gnb.querySelector(".on") ;
+		else currentItem = e.target.closest(".btn");
+
+		console.log( "gnb2222222 - ", e.type,  currentItem);
+
+		if( e.type !== "resize" && selectedItem === currentItem ) return; 
+
 
 		if( selectedItem ) { 
 			selectedItem.classList.remove("on");
 			selectedItem.removeAttribute("aria-current"); 
 		}
 
-		itemGroup.style.setProperty("--x", currentItem.offsetLeft); // + menuBtn.offsetWidth/2 
-		itemGroup.style.setProperty("--w", currentItem.offsetWidth); // + menuBtn.offsetWidth/2 
+		gnb.style.setProperty("--x", currentItem.offsetLeft); // + menuBtn.offsetWidth/2 
+		gnb.style.setProperty("--w", currentItem.offsetWidth); // + menuBtn.offsetWidth/2 
 		currentItem.setAttribute("aria-current", "page") ;
 		currentItem.classList.add("on");
 
@@ -118,32 +138,36 @@ function introHandler(request) {
 	let idx = 0;
 	var html = ``;
 	
-	
+	let testElem = document.querySelector(".cardList2") || document.querySelector(".cardList");
 
-	if( document.querySelector(".cardList.main") ){
+	if( testElem.classList.contains("main") ){
+
 		for( let i=0; i<itemsData.length; i++ ){
-			//console.log("item main - ", html)
+			
 			if( itemsData[i].main ){
-				html = html + component.mainCardType1(itemsData[i]);
+				html = html + card.typeA(itemsData[i]);
 				idx++;
 			}
 			if( idx > 2 ) break;
 		}
-	} else if( document.querySelector(".cardList") ){
+	} else {
+		console.log("test resub- ", itemsData);
+
 		for( let i=0; i<itemsData.length; i++ ){
-			html = html + component.mainCardType1(itemsData[i]);
+			//html = html + component.mainCardType1(itemsData[i]);
+			html = html + card.typeA(itemsData[i]);
 		}
 		
 	}
-	document.querySelector(".cardList").innerHTML = html;
-	document.querySelector(".cardList").addEventListener("click", cardListHandler );
+	testElem.innerHTML = html;
+	testElem.addEventListener("click", cardListHandler );
 
 
 	/* gnb 임시 */
-	if( !document.querySelector(".gnb") ){
-		let gnb = cf.CreateElement({ tag : "NAV", class : "gnb", "data-target":"cardList"});
+	if( !document.querySelector(".gnb2") ){
+		let gnb = cf.CreateElement({ tag : "NAV", class : "gnb2", "data-target":"cardList2"});
 		console.log(" click gnb");
-		let itemGroup = cf.CreateElement({ tag : "UL", class : "tabType1"});
+		let itemGroup = cf.CreateElement({ tag : "UL", class : "tabType2"});
 
 		let category = [];
 		itemsData.forEach( item => {
@@ -156,16 +180,23 @@ function introHandler(request) {
 
 		
 		gnb.appendChild(itemGroup);
-		gnb.addEventListener("click", setGnbHandler(gnb,itemGroup, itemGroup.children[0].children[0]));
-		document.querySelector("header.common").appendChild(gnb);
+		gnb.addEventListener("click", setGnbHandler(gnb) );
+		window.addEventListener("resize", cf.debounce(setGnbHandler(gnb).bind(gnb)) );
+		
 
-		itemGroup.style.setProperty("--x", 0 );
-		itemGroup.style.setProperty("--w", itemGroup.children[0].offsetWidth); // + menuBtn.offsetWidth/2 
-		itemGroup.children[0].setAttribute("aria-current", "page") ;
-		itemGroup.children[0].classList.add("on");		
+		//document.querySelector("header.common").appendChild(gnb);		
+		document.querySelector("header.common2 > .hello2").insertBefore(gnb, document.querySelector("header.common2 .contact2"));
+
+		gnb.style.setProperty("--x", 0 );
+		gnb.style.setProperty("--w", itemGroup.children[0].offsetWidth); // + menuBtn.offsetWidth/2 
+		gnb.querySelectorAll(".btn")[0].setAttribute("aria-current", "page") ;
+		gnb.querySelectorAll(".btn")[0].classList.add("on");		
 	}
 
 }
+
+
+
 
 
 function cardListHandler(e){
@@ -187,7 +218,7 @@ function cardListHandler(e){
 		case "detail":
 			
 			cf.fileHandler._load( { 
-				url: '../main/data/bmh.json', 
+				url: '../0_last/data/test.json', 
 				success : function(request){
 					
 					let items = JSON.parse(request.responseText);
@@ -206,6 +237,27 @@ function cardListHandler(e){
 			});
 
 			break;
+		case 'extraInfo':
+			cf.fileHandler._load( { 
+				url: '../0_last/data/test.json', 
+				success : function(request){
+					
+					let items = JSON.parse(request.responseText);
+					let item = items.find( o => o.id === parseInt(JSON.parse(clickElem.dataset.uiTarget)) );
+
+					Modal.extraInfo({ 
+						html : component.extraInfo(item.description),
+						class: "popup",
+						eventListeners : {
+							"load" : () => { console.log("click___test_attach eventListeners") } ,
+							"click" : [testFunction]
+						},
+						tId : e.timeStamp
+					})
+				},
+				loadType:"item", done: "items" 
+			});
+			break;
 		case "noteSticky":
 			console.log("noteStickyHandler - ", clickElem);
 			clickElem.classList.toggle("on");
@@ -219,9 +271,9 @@ function cardListHandler(e){
 			//console.log("spv - ", clickElem.dataset.sampleName, JSON.parse(clickElem.dataset.samplePage));
 			let spArr = JSON.parse(clickElem.dataset.samplePage);
 
-			let rootPath = `../main/data/sample/` + clickElem.dataset.sampleName + "/";
+			let rootPath = `../0_last/data/sample/` + clickElem.dataset.sampleName + "/";
 
-			const spv = new SamplePageview(clickElem.dataset.sampleName, spArr, rootPath, "../main/assets/css/samplepageView.css");
+			const spv = new SamplePageview(clickElem.dataset.sampleName, spArr, rootPath, "../0_last/assets/css/samplepageView.css");
 			document.querySelector("body").appendChild(spv);
 
 
@@ -240,14 +292,14 @@ function launchArocket(e){
 	if( !e.target.closest("button") ) return;
 
 	console.log("launch a rocket!! ");
-	let filePath = '../main/data/spacestation.json';
+	let filePath = '../0_last/data/spacestation.json';
 	cf.fileHandler._load( { 
 		url: filePath, 
 		success : function(request){
 			loadingMessage.off();
 			console.log("file success - ", request);
 
-			document.querySelector("body").appendChild(new ShuttleSpace(filePath, request, "../main/assets/css/samplepageView.css"));
+			document.querySelector("body").appendChild(new ShuttleSpace(filePath, request, "../0_last/assets/css/samplepageView.css"));
 
 		},
 		error : function(request){
