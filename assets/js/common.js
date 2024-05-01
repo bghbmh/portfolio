@@ -72,7 +72,7 @@ function setGnbHandler(g = null){
 
 	//const gnb =  document.querySelector(".gnb2") || g ;
 
-	console.log( "gnb111111 - ", g, g.type );
+	//console.log( "gnb111111 - ", g, g.type );
 
 	let selectedItem = gnb.querySelector(".on") || gnb.querySelectorAll(".btn")[0];
 	const targetClassName = gnb.dataset.target;
@@ -131,7 +131,7 @@ function setGnbHandler(g = null){
 
 function introHandler(request) {
 
-	console.log("test load items",request.arguments, JSON.parse(request.responseText))
+	//console.log("test load items",request.arguments, JSON.parse(request.responseText))
 	let itemsData = JSON.parse(request.responseText);
 
 	//메인에만 노출
