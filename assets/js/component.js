@@ -23,11 +23,15 @@ export function mainCardType1(item){
 	`;
 }
 
+
+
 function buttonList(item){
 	//console.log("button item - ", item.sampleName)
 	let html='';
-	html += `<button type="button" class="btn icon" title="이미지크게보기" aria-label="이미지크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(item.img)}'><i class="fa-regular fa-image"></i></button>`;
 
+	html += `<button type="button" class="btn icon" title="이미지크게보기" aria-label="이미지크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(tempImgbox(item))}'><i class="fa-regular fa-image"></i></button>`;
+	
+	
 	if( item.sampleName && item.samplePage ){
 		html += `<button type="button" class="btn icon" title="샘플페이지보기" aria-label="샘플페이지보기" data-ui-util="preview" data-sample-name="${item.sampleName}" data-sample-page='${JSON.stringify(item.samplePage)}'><i class="fa-regular fa-eye"></i></button>`;
 	}
@@ -41,12 +45,128 @@ function buttonList(item){
 function imgList(item, html = ''){
 	
 	if( !(item.description ? item.description.img.length : item.img.length) ){		
-		return `<img src="../main/assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
+		return `<img src="../assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
 	} 
 
 	item.img.forEach( src => { html += `<img src="${src}" alt="이미지">` });	
 	return html;
 }
+
+
+
+
+
+export function cardType2(item){
+	//console.log("tttt -", item.description ? item.description.title : 'aaa' )
+	//  style="background-image: url(${item.description ? item.description.bg : ''})"
+	return `
+		<article class="cardType2 row-span${item.rowSpan}" data-category="${item.category}">
+			<header>
+				<h3 aria-label="${item.description ? '' : '제목없음'}">${item.description ? item.description.title : ''}</h3>
+				<div class="util">
+					${buttonList2(item)}					
+				</div>
+			</header>
+
+			<div class="main">
+				${imgList2(item)}
+			</div>
+
+			<footer>
+			${buttonList3(item)}	
+			</footer>
+		</article>
+	`;
+}
+
+
+function buttonList2(item){
+	//console.log("button item - ", item.sampleName)
+	let html='';
+
+	html += `<button type="button" class="btn icon" title="이미지크게보기" aria-label="이미지크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(tempImgbox(item))}'><i class="icon-svg-zoom-in" aria-hidden="true"></i></button>`;
+	
+	
+	if( item.sampleName && item.samplePage ){
+		html += `<button type="button" class="btn icon" title="샘플페이지보기" aria-label="샘플페이지보기" data-ui-util="preview" data-sample-name="${item.sampleName}" data-sample-page='${JSON.stringify(item.samplePage)}'><i class="icon-svg-monitor-01" aria-hidden="true"></i></button>`;
+	}
+
+	return html;
+}
+
+
+function buttonList3(item){
+	//console.log("button item - ", item.sampleName)
+	let html='';
+
+	if( item.description ){
+		html += `<button type="button" class="btn icon" title="추가설명있음" aria-label="추가설명있음" data-ui-util="extraInfo" data-ui-target="${item.id}"><i class="icon-svg-message-plus-square" aria-hidden="true"></i></button>`;
+	} 
+	return html;
+}
+
+
+function imgList2(item, html = ''){
+	//console.log("key - ", item, item.img.main, item.img.sub.length);
+
+	if( !item.img.main && !item.img.sub.length ){	
+		html += `<img src="../assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
+		return html;
+	} 
+
+	for( let key in item.img ){
+		//console.log("key00000 - ", key)
+
+		switch(key){
+			case "main":
+				//console.log("key - ", key, item.img.main)
+				if( !item.img[key] ) break;
+				html += `<img src="${item.img[key]}" alt="${key}이미지">`;
+				item.tempImgbox.push(item.img[key]);
+				break;
+			case "sub":
+				item.img.sub.forEach( src => { 
+					html += `<img src="${src}"  alt="${key}이미지">`;
+					item.tempImgbox.push(src);
+				});	
+				
+				break; 
+		}
+	}
+
+	return html;
+}
+
+
+// 임시_어디가 더 적절한지 모르겠는데, 일단 여기서 배열로 넣어둠_240318
+function tempImgbox(item, html = ''){
+	if( !item.tempImgbox ){
+		item.tempImgbox = [];	
+	}
+	
+	if( !item.img.main && !item.img.sub.length ){		
+		item.tempImgbox.push("../assets/img/no-img.gif");
+		return item.tempImgbox;
+	} 
+
+	for( let key in item.img ){
+		
+		switch(key){
+			case "main":
+				item.tempImgbox.push(item.img.main);
+				break;
+			case "sub":
+				item.img.sub.forEach( src => item.tempImgbox.push(src) );	
+				break; 
+		}
+	}
+
+	//console.log("---tempImgbox - ", item.tempImgbox)
+
+	return item.tempImgbox;
+}
+
+
 
 export function hashType(hash){
 
@@ -151,7 +271,7 @@ export function extraInfoType1(extraInfo){
 export function detailViewPage(items, selectedItem){
 	
 	let item = items.find( o => o.id === parseInt(selectedItem) );
-	//console.log("success - ",item, items );
+	console.log("success - ",item, items );
 	return `
 		<div class="header">
 			<h3 aria-label="상세보기"><span class="hidden">${item.description ? item.description.title : '??'}</span></h3>
@@ -204,3 +324,131 @@ function linkedItem(item, itemsBox){
 
 }
 
+
+
+export function extraInfo(item){
+
+	let html='';
+
+	for( let key in item ){
+		html += titleType1({title : key , descript : item[key]});
+	}
+
+	return html;
+}
+
+
+
+
+export function myDBlist(items){
+	
+	//let item = items.find( o => o.id === parseInt(selectedItem) );
+	console.log("success - ",item, items );
+	return `
+	<div class="col4 item">
+		<header class="d-flex">
+			<label class="margin-right-auto">
+				<input type="checkbox" name="testform">
+			</label>
+
+			<span class="label blue">메인에서 보임</span>
+		</header>
+		<div class="cnts grid">
+			<div class="col5 " style="background-color: #e9e9e9;">
+				<div class="upload fileList type2 w-100per">
+					<figure class="item">
+						<img src="../../../m/assets/img/main/sample.png">
+						<figcaption class="figcaption">
+							<dl class="option">
+								<dt class="title">sample.png</dt>
+								<dd>7.6KB</dd>
+							</dl>
+						</figcaption>
+					</figure>
+				</div>
+
+				<div class="upload fileList type3 w-100per margin-top-1"> <!-- 파일 업로드할때 -->
+					<figure class="item">
+						<img src="../../../m/assets/img/main/sample.png">
+						<figcaption class="figcaption">
+							<dl class="option">
+								<dt class="title">sample.png</dt>
+								<dd>7.6KB</dd>
+							</dl>
+						</figcaption>
+					</figure>
+					<figure class="item">
+						<img src="../../../m/assets/img/main/sample.png">
+						<figcaption class="figcaption">
+							<dl class="option">
+								<dt class="title">sample.png</dt>
+								<dd>7.6KB</dd>
+							</dl>
+						</figcaption>
+					</figure>								
+				</div>
+					
+			</div>
+
+			<div class="col7 d-flex flex-column align-items-start " style="background-color:#eeaacc;">
+				<div class="w-100per" data-ui-placeholder>
+					<span class="guide">카테고리</span>
+					<p>test_웹</p>
+				</div>
+
+				<hr class="w-100per dot">
+
+				<div class="w-100per">
+					<span class="guide">test_해시태그</span>
+					<p>
+						<span>gotl</span>
+						<span>해시태그</span>
+					</p>
+				</div>
+
+				<hr class="w-100per dashed">
+
+				<div class="w-100per">
+					<span class="guide">제목</span>
+					<p>test_없으면 빈칸으로</p>
+				</div>
+
+				<hr class="w-100per dot">
+
+				<div class="w-100per">
+					<span class="guide">샘플이름</span>
+					<p>test_폴더명으로 들어가야함</p>
+				</div>
+
+				<hr class="w-100per dot">
+
+				<div class="upload type1 w-100per"> 
+					<span class="guide">test_샘플페이지</span>
+					<div class="fileList">
+						
+						<figure class="item">
+							<img src="../../../m/assets/img/main/sample.png">
+							<figcaption class="figcaption">
+								<dl class="option">
+									<dt class="title">sample.png</dt>
+									<dd>7.6KB</dd>
+								</dl>
+							</figcaption>
+						</figure>
+							
+					</div>
+					
+				</div>
+
+				
+
+			</div>
+		</div>
+		<footer class="">					
+			<button type="submit" class="btn" aria-label="수정하기 버튼" title="수정하기 버튼"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+			<button type="button" class="btn" aria-label="삭제하기 버튼" title="삭제하기 버튼"><i class="fa-solid fa-pen" aria-hidden="true"></i></button>
+		</footer>
+	</div>
+	`;
+
+}
