@@ -24,7 +24,7 @@ class ModalType{
 
 		//testModal(msg, btnStr, UI);
 
-		if( !this._element || !this._parentElement ) {
+		if( !this._element && !this._parentElement ) {
 			console.log("there is No Element - " , this);
 			return;
 		}
@@ -81,11 +81,11 @@ export var Modal = {
 			let UI =  ModalType.creat("zoomin"); // new ModalType();
 
 			UI.tId = args.tId;
-			UI.element = CreateElement({tag: "DIV", class: args.class ? classGroup(args.class) : `popup ${UI.Name}`,  role: "dialog" });
+			UI.element = CreateElement({tag: "DIV", class: Array.isArray(args.class) ? classGroup(args.class) : `popup ${UI.Name}`,  role: "dialog" });
 
 				//category.findIndex( v => v ===  item.category)
 
-			//console.log("zoomin - ", args.target);
+			console.log("zoomin - ", args.target);
 	
 			UI.element.innerHTML = `
 				<div class="wrap">
@@ -112,22 +112,22 @@ export var Modal = {
 			/* 상세보기 있는지 확인 */
 
 			if( !this.isUI ){
-				//console.log("new isUI- ", this.isUI )
+				console.log("new isUI- ", this.isUI )
 				//console.log( " CreateElement - ", args.class, isElement);
 				let UI = new ModalType("detail");
 				UI.element = CreateElement({tag: "DIV",  
-											class: args.class ?  args.class : `popup ${UI.Name}`, 
+											class: Array.isArray(args.class) ? classGroup(args.class) : `popup ${UI.Name}`, 
 											role: "dialog" });
 				UI.attachEvent(UI.element, "click", e => {
 					if( !e.target.closest(".modalClose") ) return;
-					//console.log("detail111 - ", UI, this.isUI)
+					console.log("detail111 - ", UI, this.isUI)
 
 					UI.element.classList.remove("on");
 					UI.parentElement.classList.remove("modal"+UI.Name);
 					setTimeout(() => {
 						UI.parentElement.removeChild(UI.element); 
 						UI = null;   this.isUI = null; 
-						//console.log("detail222 - ", UI, this.isUI)
+						console.log("detail222 - ", UI, this.isUI)
 					}, 400);
 				});
 
@@ -155,12 +155,42 @@ export var Modal = {
 			
 			this.isUI.draw();
 
+		},
+		extraInfo : function(args){
+			console.log("추가된 모달 스타일 - test args - ", args);
+			let UI =  ModalType.creat("extraInfo"); // new ModalType();
+
+			UI.tId = args.tId;
+			UI.element = CreateElement({tag: "DIV", class: Array.isArray(args.class) ? classGroup(args.class) : `popup ${UI.Name}`,  role: "dialog" });
+
+			UI.element.innerHTML = `
+				<div class="wrap">
+					<div class="header">
+						<p class="title">title_제목</p>
+						<button type="button" class="btn icon modalClose" aria-label="팝업닫기" title="닫기" data-ui-action="close"></button>
+					</div>
+					<div class="contents">
+						${args.html}
+					</div>
+				</div>				
+				`;
+			UI.attachEvent(UI.element, "click", e => {
+				if( !e.target.closest("[data-ui-action='close']") ) return;
+				UI.element.classList.remove("on");
+				UI.parentElement.classList.remove("modal"+UI.Name);
+				setTimeout(() => {
+					UI.parentElement.removeChild(UI.element); 
+					UI = null; 
+				}, 400);
+			});
+			UI.draw();
 		}
 
 
 };
 
 function classGroup(arr){
+	console.log("typeof - ", arr, Array.isArray(arr) )
 	let c = '';
 	arr.forEach( a => c += " " + a );
 	return c;
@@ -179,12 +209,12 @@ function CreateElement(attributes = {}) { // { tag : "div", class: "sample"}
 
 
 function imgList(item, html = ''){
-	//console.log("imgList - ", typeof item, item)
+	
 	if( !item.length ){		
-		return `<img src="../assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
+		return `<img src="./assets/img/no-img.gif" alt="등록된 이미지가 없습니다">`;
 	} 
 
-	item.forEach( src => { html += `<img src="${src}" alt="이미지">` });	
+	item.forEach( name => { html += `<img src="${name}" alt="이미지">` });	
 	return html;
 }
 /* 나중에 따로 모아두기 */
