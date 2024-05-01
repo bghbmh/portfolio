@@ -2007,7 +2007,6 @@ main.common2{
 	flex:1; 
 	max-width: 1440px;
 	padding-bottom: 5rem;
-	padding-top: 6rem;
 }
 footer.common2{ 
 	display: inline-flex; 
@@ -2135,22 +2134,26 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 	overflow: auto;
 	display: flex;
 	padding: 2rem 1rem;
+	margin-left: 0rem;
+		margin-right: 0rem;
 	margin-top: -2rem;
 }
 .cardList2.main > * { 
 	min-width: 300px; 
 	height: 300px;
 }
-
 @media(min-width: 1440px){
+	.cardList2{ margin-top: 6rem; }
+}
+@media(min-width: 1640px){
 	.cardList2{
 		--ggap: 40px; /* var(--gap, 1rem); */
 		margin-left: 6rem;
 		margin-right: 6rem;
 	}
 	.cardList2.main{
-		margin-left: 0rem;
-		margin-right: 0rem;
+		margin-left: -6rem;
+		margin-right: -6rem;
 		padding: 2rem 6rem;
 	}
 }
