@@ -2032,7 +2032,7 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 @media(min-width: 1440px){
 	body:has(header.common2){ 	flex-direction: row;  }
 	
-	header.common2{ min-width: 180px; max-width: 250px; width : auto; }
+	header.common2{ min-width: 180px; max-width: 250px; width : auto; background-color: transparent; }
     .hello2 .gnb2 .tabType2{  flex-direction: column }
     .hello2 .gnb2 .tabType2::before{ display:none; }
     .hello2 .gnb2 .btn{ padding-left: .5rem; }
