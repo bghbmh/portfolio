@@ -2224,22 +2224,21 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 }
 .cardType2 footer{
 	padding: .5rem;
-	margin-top: auto;
-	text-align: right;
-
 	position: absolute;
-  right: 0;
-  bottom: -1rem;
+	left: 0;
+	top: 0;
+	
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
 }
 .cardType2 footer .btn{
 	
-	border-radius: 100em;
-	background-color: transparent;
-	color: #000;
+	border-radius: 4px;
+	background-color: hsl(0 0% 0% / .8);
+	color: #fff;
 }
-/* .cardType2 .btn.icon:hover { background-color: var(--dark2);} */
-
-
+.cardType2 .btn:hover { color: #fff; }
 
 
 
