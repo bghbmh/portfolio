@@ -650,7 +650,7 @@
 	{
 		"id" : 50,
 		"main" : false,
-		"rowSpan" : 1,
+		"rowSpan" : 2,
 		"image" : [
 			{
 				"fileName":"../main/data/image/w02.jpg",
