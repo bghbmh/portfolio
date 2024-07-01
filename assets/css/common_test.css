@@ -2237,6 +2237,10 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 	border-radius: 4px;
 	background-color: hsl(0 0% 0% / .8);
 	color: #fff;
+
+	/* 임시	 */
+	pointer-events: none;
+  cursor: default;
 }
 .cardType2 .btn:hover { color: #fff; }
 
