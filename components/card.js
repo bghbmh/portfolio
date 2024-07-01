@@ -22,7 +22,7 @@ export let typeA =  (item) => {
 				</div>
 
 				<footer>
-				${buttonList3(item)}	
+				${hashType(item.hash)}	
 				</footer>
 			</article>
 		
