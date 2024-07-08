@@ -16,8 +16,8 @@
 
 :host(.testSamplepage){
 	width: 96%;
-	height: calc(100% - 4rem);
-	left: 2%; top: 4rem;
+	height: calc(100% - 2rem);
+	left: 2%; top: 2rem;
 
 	display: flex;
 	flex-direction: column;
@@ -28,6 +28,7 @@
 :host(.shuttleSpace){
 	width: 100%;
 	height: 100%;
+	top:0;
 }
 
 
