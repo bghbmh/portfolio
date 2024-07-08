@@ -734,7 +734,7 @@ label.search input::-webkit-search-cancel-button{ display: block; color: var(--t
 .icon-svg-mail-01::before { --maskImage: url('../img/icon-svg-mail-01.svg'); }
 .icon-svg-rocket-02::before { --maskImage: url('../img/icon-svg-rocket-02.svg'); }
 .icon-svg-message-plus-square::before { --maskImage: url('../img/icon-svg-message-plus-square.svg'); }
-
+.icon-svg-code-solid::before { --maskImage: url('../img/code-solid.svg'); }
 
 
 .btn {
