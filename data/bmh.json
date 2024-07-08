@@ -14,23 +14,8 @@
 		"category" : "웹",
 		"hash" : [  "마크업", "모바일", "리뉴얼", "디자인" ],
 		"sampleName": "kfia",
-		"samplePage" : ["0_메인.html", "0_공통_컴포넌트_가이드.html", "회원가입_정보입력.html" ]
-	},
-	{
-		"id" : 92,
-		"main" : true,
-		"rowSpan" : 2,
-		"image" : [
-			{
-				"fileName":"../main/data/image/me16.jpg",
-				"fileSize":"0",
-				"template":"main"
-			}
-		],
-		"category" : "웹",
-		"hash" : [ "마크업","반응형" ],
-		"sampleName" : "keimyung",
-		"samplePage" : ["main.html","sub.html"]
+		"samplePage" : ["0_메인.html", "0_공통_컴포넌트_가이드.html", "회원가입_정보입력.html" ],
+		"markupcode" : "https://github.com/bghbmh/main/tree/2c87320e5ca9963199b5cbbf0adeeb2a5d160517/data/sample/kfia"
 	},
 	{
 		"id" : 85,
@@ -46,12 +31,29 @@
 		"category" : "웹",
 		"hash" : [ "디자인", "반응형", "대시보드","마크업"  ],
 		"sampleName" : "cdms",
-		"samplePage" : ["0_메인.html", "sub_마이프로젝트-프로젝트진행상태.html","고객사로그인.html"],
+		"samplePage" : ["0_메인.html", "sub_마이프로젝트-프로젝트진행상태.html","고객사로그인.html"],
 		"description" : {
 			"title" : "cdms",
 			"디자인" : "박민희",
 			"퍼블리싱" : "박민희"
-		}
+		},
+		"markupcode" : "https://github.com/bghbmh/main/tree/2c87320e5ca9963199b5cbbf0adeeb2a5d160517/data/sample/cdms"
+	},	
+	{
+		"id" : 92,
+		"main" : true,
+		"rowSpan" : 2,
+		"image" : [
+			{
+				"fileName":"../main/data/image/me16.jpg",
+				"fileSize":"0",
+				"template":"main"
+			}
+		],
+		"category" : "웹",
+		"hash" : [ "마크업","반응형" ],
+		"sampleName" : "keimyung",
+		"samplePage" : ["main.html","sub.html"]
 	},
 	{
 		"id" : 87,
