@@ -13,7 +13,8 @@ export let typeA =  (item) => {
 				<header>
 					<h3 aria-label="${item.title ? item.title : '제목없음'}">${item.title ? item.title : ''}</h3>
 					<div class="util">
-						${buttonList2(item)}					
+						${buttonList2(item)}	
+						${markupcode(item)}				
 					</div>
 				</header>
 
@@ -22,16 +23,18 @@ export let typeA =  (item) => {
 				</div>
 
 				<footer>
-				${hashType(item.hash)}	
+					${hashType(item.hash)}	
 				</footer>
 			</article>
 		
-		`;
+		`; 
 };
-
+/* <footer>
+					${buttonList3(item)}	
+				</footer> */
 
 function buttonList2(item){
-	//console.log("button2 item - ", item);
+	//console.log("button2 item - ", tempImgbox(item))
 	let html='';
 
 	html += `<button type="button" class="btn icon" title="이미지크게보기" aria-label="이미지크게보기" data-ui-util="zoomin" data-ui-target='${JSON.stringify(tempImgbox(item))}'><i class="icon-svg-zoom-in" aria-hidden="true"></i></button>`;
@@ -39,6 +42,16 @@ function buttonList2(item){
 	
 	if( item.sampleName && item.samplePage ){
 		html += `<button type="button" class="btn icon" title="샘플페이지보기" aria-label="샘플페이지보기" data-ui-util="preview" data-sample-name="${item.sampleName}" data-sample-page='${JSON.stringify(item.samplePage)}'><i class="icon-svg-monitor-01" aria-hidden="true"></i></button>`;
+	}
+	return html;
+}
+
+function markupcode(item){
+	console.log("item.markupcode item - ", item.markupcode)
+	let html='';
+	
+	if( item.markupcode ){
+		html += `<a class="btn icon" href="${item.markupcode}" target="_blank" title="소스코드보기" aria-label="소스코드보기" ><i class="icon-svg-code-solid" aria-hidden="true"></i></a>`;
 	}
 	return html;
 }
@@ -74,7 +87,7 @@ function imgList2(item, html = ''){
 	return html;
 }
 
-// 임시_어디가 더 적절한지 모르겠는데, 일단 여기서 배열로 넣어둠_240318
+// 임시_어디가 더 적절한지 모르겠는데, 일단 여기 넣어둠_
 function tempImgbox(item, html = ''){
 	let arr = [];	
 	
