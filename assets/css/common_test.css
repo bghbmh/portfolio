@@ -707,7 +707,7 @@ label.search input::-webkit-search-cancel-button{ display: block; color: var(--t
 	font-size: 1em;
 	color: currentColor;
 	background-color: currentColor;
-	-webkit-mask-size: contain;
+	-webkit-mask-size: 1.1em;
 	-webkit-mask-position-x: 50%;
 	-webkit-mask-position-y: calc(50% - 0px);
 	-webkit-mask-repeat: no-repeat;
