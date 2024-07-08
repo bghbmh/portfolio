@@ -2182,7 +2182,7 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 
 	position: absolute;
   left: 0;
-  bottom: -1rem;
+  bottom: 2rem;
 }
 .cardType2 header h3{
 	flex: 1;
