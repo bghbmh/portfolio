@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="date=no">
+	<meta name="format-detection" content="address=no">
+	<meta name="format-detection" content="email=no">
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<title>회원관리</title>
+
+	<link rel="shortcut icon" href="./img/favicon.ico">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/footable.standalone.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/summernote-bs4.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/jquery.fileupload-ui.css">
+	<link rel="stylesheet" href="../assets/css/jstree/default/style.min.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/common.css">
+	<!-- // Stylesheets -->
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../assets/js/footable.min.js"></script>
+	<script type="text/javascript" src="../assets/js/fullcalendar-6.1.9/index.global.min.js"></script>
+	<script type="text/javascript" src="../assets/js/summernote-bs4.js"></script>
+	<script src="../assets/js/jstree.min.js"></script>
+	<script src="../assets/js/jquery.ui.widget.js"></script>
+	<script src="../assets/js/jquery.fileupload.js"></script>
+	<!-- //Scripts -->
+
+</head>
+
+<body>
+	<!-- 헤더 공통 -->
+	<div include-html="onlyMockup/header-common.html"></div>
+	<!-- //헤더 공통 -->
+
+	<!-- 사이드메뉴 -->
+	<aside class="common">
+        <button type="button" class="btn mobileMenuBtn collapse" aria-label="메뉴펼치고 접는 버튼"></button>
+		<nav class="sideNav type1">
+			
+			<ul class="menu" role="menu">
+				<li class="menu-item">
+					<a href="#0" class="menu-link">프로젝트 진행상태</a>
+				</li>
+				<li class="menu-item">
+					<a href="#0" class="menu-link">공지사항</a>
+				</li>
+                <li class="menu-item">
+					<a href="#0" class="menu-link">게시판</a>
+				</li>
+                <li class="menu-item">
+					<a href="#0" class="menu-link">프로젝트 일정</a>
+				</li>
+                <li class="menu-item">
+					<a href="#0" class="menu-link active">콘텐츠 뱅크</a>
+				</li>
+                <li class="menu-item">
+					<a href="#0" class="menu-link">진행 중인 프로젝트</a>
+                    <div class="menu">
+						<a href="#0" class="menu-link">가_한글입숨_22dept</a>
+                        <a href="#0" class="menu-link">나_한글입숨_22dept</a>
+					</div>
+				</li>
+			</ul>
+		</nav>
+
+	</aside>
+	<!-- //사이드메뉴 -->
+
+
+	<!-- 콘텐츠 -->
+	<main class="common">
+
+		<!-- 페이지 위치 -->
+		<div class="option-content pageInfo">
+			<nav class="right" aria-label="breadcrumb">
+				<ol class="breadcrumb type2">
+					<li class="breadcrumb-item home"><a href="/" class="xi-home">메인페이지</a></li>
+					<li class="breadcrumb-item"><a href="#0">마이프로젝트</a></li>
+					<li class="breadcrumb-item active" aria-current="page"><a href="#0">콘텐츠 뱅크</a></li>
+				</ol>
+			</nav>
+		</div>
+		<!-- //페이지 위치 -->
+
+		<!-- 콘텐츠 입력 -->
+
+        <!-- box-->
+		<div class="box">
+
+            <div class="header d-flex gap3  flex-wrap pt-1 mb-3 border-bottom">
+                <b class="h6  mr-auto">필수 정보</b>
+            </div>
+
+            <div class="option-content gap1 justify-content-end">
+                <button type="button" class="btn teal">추가</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table type2 mb-3">
+                    <colgroup>
+                        <col style="width:16%;">
+                        <col style="width:34%;">
+                        <col style="width:16%;">
+                        <col style="width:34%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>사용자ID</th>
+                            <td>
+                                <div class="d-inline-flex gap1">
+                                    <label class="inputtext flex-grow-1">
+                                        <input type="text" placeholder="사용자ID">
+                                    </label>
+                                    <button type="button" class="btn">아이디 중복확인</button>
+                                </div>
+                            </td>
+                            <th>비밀번호</th>
+                            <td>
+                                <label class="password ">
+                                    <input type="password" placeholder="비밀번호">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이름</th>
+                            <td>
+                                <label class="inputtext">
+                                    <input type="text" placeholder="업무명을 작성하세요">
+                                </label>
+                            </td>
+                            <th>이메일</th>
+                            <td>
+                                <label class="email ">
+                                    <input type="email" placeholder="이메일">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>전화번호</th>
+                            <td>
+                                <div class="d-inline-flex gap1">
+                                    <label class="inputtext flex-grow-1">
+                                        <input type="text" >
+                                    </label>
+                                    <label class="inputtext flex-grow-1">
+                                        <input type="text">
+                                    </label>
+                                    <label class="inputtext flex-grow-1">
+                                        <input type="text">
+                                    </label>
+                                </div>
+                            </td>
+                            <th>휴대폰</th>
+                            <td>
+                                <div class="d-inline-flex gap1">
+                                    <label class="inputtext flex-grow-1">
+                                        <input type="text" >
+                                    </label>
+                                    <label class="inputtext flex-grow-1">
+                                        <input type="text">
+                                    </label>
+                                    <label class="inputtext flex-grow-1">
+                                        <input type="text">
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>사용유무</th>
+                            <td colspan="3">
+                                <label class="radio mr-3">
+                                    <input type="radio" name="n1" >
+                                    <span>사용</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="n1">
+                                    <span>사용안함</span>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="header d-flex gap3  flex-wrap pt-1 mt-3 mb-3 border-bottom">
+                <b class="h6  mr-auto">필수 정보</b>
+            </div>
+            <div class="table-responsive">
+                <table class="table type2 mb-3">
+                    <colgroup>
+                        <col style="width:16%;">
+                        <col style="width:34%;">
+                        <col style="width:16%;">
+                        <col style="width:34%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>회사명</th>
+                            <td>
+                                <label class="inputtext">
+                                    <input type="text" placeholder="입력">
+                                </label>
+                            </td>
+                            <th>소속/부서</th>
+                            <td>
+                                <label class="inputtext">
+                                    <input type="text" placeholder="입력">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>직급</th>
+                            <td>
+                                <label class="inputtext">
+                                    <input type="text" placeholder="입력">
+                                </label>
+                            </td>
+                            <th>메모</th>
+                            <td>
+                                <label class="inputtext">
+                                    <input type="text" placeholder="입력">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주소</th>
+                            <td colspan="3">
+								<div class="d-inline-flex gap1">
+									<label class="inputtext flex-grow-1">
+										<input type="text" disabled>
+									</label>
+									<button type="button" class="btn">우편번호</button>
+								</div>
+                                <label class="inputtext w-100 mt-1">
+                                    <input type="text" placeholder="" disabled>
+                                </label>
+								<label class="inputtext w-100 mt-1">
+                                    <input type="text" placeholder="상세주소">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>메모</th>
+                            <td colspan="3">
+                                <label class="textarea w-100">
+                                    <textarea rows="3" placeholder="입력"></textarea>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="option-content gap1 justify-content-end">
+                <button type="button" class="btn blue">등록</button>
+                <button type="button" class="btn">취소</button>
+            </div>
+                   
+        </div>
+        <!-- //box-->
+
+        <!-- box-->
+		<div class="box">
+
+            <div class="option-content gap1 justify-content-end">
+				<div class="left">
+					<dl class="optionListType small mr-auto"> <!-- small mr-auto -->
+						<div><dt>전체</dt><dd><b class="badge">00</b>개</dd></div>
+						<div><dd><b class="badge">1</b>/ 5 page</dd></div>
+					</dl>
+				</div>
+
+				<div class="right">
+					<label class="select">
+						<select>
+							<option value="test01" selected="">test01</option>
+							<option value="op02">op02</option>
+						</select>
+					</label>
+					<label class="select">
+						<select>
+							<option value="default">전체</option>
+							<option value="20" selected="">20</option>
+							<option value="50" selected="">50</option>
+						</select>
+					</label>
+				</div>
+					
+            </div>
+               
+            <div class="table-responsive ">
+                <table class="table type2 footabletype" 
+                    data-breakpoints='{ "xs": 300, "sm": 768, "md": 1024, "lg": 1200 }' 
+                    data-empty="tbody에 내용이 없을때 넣는 문구 입력_등록/검색된 내용이 없습니다">
+                    <thead>
+                        <tr>
+                            <th data-breakpoints="" class="">No</th> <!-- w-8 -->
+                            <th data-breakpoints="">아이디</th>
+                            <th data-breakpoints="xs sm" class="">이름</th>
+                            <th data-breakpoints="xs sm md" class="w-20">이메일</th>
+                            <th data-breakpoints="xs sm md" class="">회사명</th>
+                            <th data-breakpoints="xs sm md" class="">소속부서</th>
+                            <th data-breakpoints="xs sm md" class="">직급</th>
+                            <th data-breakpoints="xs sm md" class="">전화번호</th>
+                            <th data-breakpoints="xs sm md" class="">휴대폰</th>
+                            <th data-breakpoints="xs sm md" class="">상태</th>
+                            <th data-breakpoints="xs sm md" class="">삭제</th>
+                            <th data-breakpoints="xs sm md" class="">
+                                <label class="checkbox"><input type="checkbox" name="n1"></label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="w-8">999</td>
+                            <td>id</td>
+                            <td>이플</td>
+                            <td>여우별@star.io</td>
+                            <td>함초롱하다 </td>
+                            <td>로운 </td>
+                            <td>Larry</td>
+                            <td>02&#45;1234&#45;1234</td>
+                            <td>+82&#45;1234&#45;1234</td>
+                            <td>
+                                <span class="label green">사용</span>
+                                <span class="label gray">중지</span>
+                            </td>
+                            <td>
+								<button type="button" class="btn icon pink" aria-label="삭제하기"><i class="xi-trash-o"></i></button>
+								<button type="button" class="btn icon pink" aria-label="삭제하기" disabled><i class="xi-trash-o"></i></button>
+							</td>
+                            <td>
+								<label class="checkbox"><input type="checkbox" name="n1"></label>
+							</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>	
+            <script>				
+                $(function() {
+                    $('.footabletype').footable();
+                });
+            </script>
+
+            <div class="option-content gap1 justify-content-end">
+                <button type="button" class="btn">선택 메일 보내기</button>
+                <button type="button" class="btn">선택 SMS보내기</button>
+            </div>
+
+            <nav aria-label="페이지네이션" class="mt-3 mb-3">
+                <ul class="pagination type2">
+                    <li class="page-item first disabled"><a class="page-link" href="#">제일앞</a></li>
+                    <li class="page-item prev"><a class="page-link" href="#">이전</a></li>
+                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item next"><a class="page-link" href="#">다음</a></li>
+                    <li class="page-item last "><a class="page-link" href="#">제일뒤</a></li>
+                </ul>
+            </nav>
+
+            <div class="searchType1 w-100 justify-content-center">
+                <label class="select">
+                    <select>
+                        <option value="default">선택</option>
+                        <option value="t1" selected="">t1</option>
+                        <option value="t2" selected="">t2</option>
+                    </select>
+                </label>
+                <div class="search">
+                    <label class="inputsearch">
+                        <input type="search" placeholder="검색">
+                    </label>
+                    <button type="button" class="btn"><i class="xi-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- //box-->
+
+		<!-- //콘텐츠 입력 -->
+	</main>
+	<!-- //콘텐츠 -->
+
+
+	<!-- 푸터 공통
+	<div include-html="onlyMockup/footer-common.html"></div> -->
+	<!-- //푸터 공통 -->
+
+<!--  프론트 확인용 개발 시 필요없음 -->
+<script src="onlyMockup/loadFile.js"></script>
+<!-- // 프론트 확인용 -->
+</body>
+
+</html>
