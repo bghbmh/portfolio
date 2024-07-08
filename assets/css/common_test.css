@@ -2157,7 +2157,7 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 	.cardList2.main{
 		margin-left: -6rem;
 		margin-right: -6rem;
-		padding: 2rem 6rem;
+		padding: 0rem 6rem;
 	}
 }
 
