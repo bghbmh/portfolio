@@ -2108,7 +2108,7 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 
 /* 카드리스트 */
 .cardList2{
-	--ggap: 1rem;
+	--ggap: 32px;
 	display: grid;
 	gap: var(--ggap, 1rem);
 	grid-auto-rows: 15rem;
@@ -2145,11 +2145,11 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 	height: 300px;
 }
 @media(min-width: 1440px){
-	.cardList2{ margin-top: 6rem; }
+	.cardList2{--ggap: 40px;  margin-top: 6rem; }
 }
 @media(min-width: 1640px){
 	.cardList2{
-		--ggap: 40px; /* var(--gap, 1rem); */
+		/* var(--gap, 1rem); */
 		margin-left: 6rem;
 		margin-right: 6rem;
 	}
