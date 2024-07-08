@@ -2211,7 +2211,7 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
   overflow: hidden;
   border-radius: var(--border-radius-8);
   z-index: -1;
-  box-shadow: var(--box-shadow1);
+  /* box-shadow: var(--box-shadow1); */
 }
 .cardType2 img{ 
 	display: block;
