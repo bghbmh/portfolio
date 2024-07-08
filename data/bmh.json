@@ -46,7 +46,7 @@
 		"category" : "웹",
 		"hash" : [ "디자인", "반응형", "대시보드","마크업"  ],
 		"sampleName" : "cdms",
-		"samplePage" : ["main.html","sub.html"],
+		"samplePage" : ["0_메인.html","sub_마이프로젝트-프로젝트진행상태.html","고객사로그인.html"],
 		"description" : {
 			"title" : "cdms",
 			"디자인" : "박민희",
