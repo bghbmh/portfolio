@@ -2135,17 +2135,18 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 .cardList2 > .off{ display: none; }
 
 .cardList2.main{
-	overflow: auto;
-	display: flex;
-	padding: 0;
-	margin-left: 1rem;
-	margin-right: 1rem;
-	margin-top: 0;
-	min-height: 360px;
+
 }
 .cardList2.main > * { 
-	min-width: 300px; 
-	height: 300px;
+
+}
+.cardList2.main  > * {
+    grid-column: span 12 !important;
+  }
+@media(min-width: 768px){
+	.cardList2.main  > * {
+    grid-column: span 4 !important;
+  }
 }
 @media(min-width: 1440px){
 	.cardList2{--ggap: 56px 40px;  margin-top: 6rem; }
@@ -2157,10 +2158,11 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 		margin-right: 6rem;
 	}
 	.cardList2.main{
-		margin-left: -6rem;
-		margin-right: -6rem;
-		padding: 0rem 6rem;
+		margin: 0;
+		margin-left: 0rem;
+		margin-right: 0rem;
 	}
+
 }
 
 
