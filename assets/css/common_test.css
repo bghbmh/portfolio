@@ -2029,6 +2029,12 @@ header.common2.main .hello2 .logo { transform: scale(1.5); }
 header.common2.main + main.common2{ width: 100%;  margin-left:auto ; margin-right: auto; }
 header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border:0; justify-content: center; }
 
+
+.contact2 .btn[title="망했네"]{ display: none }
+
+
+
+
 @media(min-width: 1440px){
 	body:has(header.common2){ 	flex-direction: row;  }
 	
@@ -2095,10 +2101,6 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 }
 
 
-.row-span1{ grid-row: span 1; }
-.row-span2{ grid-row: span 2; }
-.row-span3{ grid-row: span 3; }
-
 
 .hashmenu{ margin: 4rem 1rem 1rem;  }
 .hashmenu .btn{	font-size: 0.875rem; }
@@ -2108,10 +2110,10 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 
 /* 카드리스트 */
 .cardList2{
-	--ggap: 48px 32px;
+	--ggap: 24px 24px;
 	display: grid;
 	gap: var(--ggap, 1rem);
-	grid-auto-rows: 15rem;
+	grid-auto-rows: 10rem;
 
 	margin-left: 1rem;
 	margin-right: 1rem;
@@ -2165,24 +2167,27 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 /* 카드스타일 */
 .cardType2{  /* background-color: hsl(0 100% 100% / .7); */
 	position: relative;
-	display: flex;
-	flex-direction: column;
+	
 	/* overflow: hidden;
 	min-height: calc((1024px - ( 40px * 2 )) / 3); */
 	z-index: 1;
 
 	transition: all .5s;
-
+	background-color: #fff;
+	padding: 1rem;
 /*	box-shadow: var(--box-shadow1);
 
 	*/
+	padding-left: 45%;
+box-shadow: 0 0 20px hsl(0 0% 0% / .05);
+border-radius: .4rem;
 }
 .cardType2 header{
-	display: flex;
+	display: inline-flex;
 	padding: .5rem;
 
-	position: absolute;
-  left: 0;
+ /*! position: relative; */
+  margin-left: 1rem;
   bottom: 0rem;
 }
 .cardType2 header h3{
@@ -2199,18 +2204,21 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 	gap: .5rem;
 }
 .cardType2 header .util .btn{
-	border-radius: .4em;
-  background-color: hsl(0 0% 0% / 1);
-  color: #fff;
+	border-radius: em;
+	padding: 0px;
+  background-color: hsl(0 0% 0% / .1);
+  color: #000;
 }
 .cardType2 .main{
-	position: absolute;
+	position: absolute; /*! */
 	display: block;
-	width: 100%;
-	height: calc(100% - 0rem);
+	width: calc(50% - 2rem);
+	height: calc(100% - 2rem);
   overflow: hidden;
   border-radius: var(--border-radius-8);
   z-index: -1;
+	left: 1rem;
+	top: 1rem;
   /* box-shadow: var(--box-shadow1); */
 }
 .cardType2 img{ 
@@ -2224,13 +2232,14 @@ header.common2.main ~ footer.common2{ margin: auto; padding-bottom: 4rem; border
 	color: red;
 }
 .cardType2 footer{
-	padding: 0 .5rem .5rem;
-	position: absolute;
-	left: 0;
-	top: 100%;
+	padding: 0  ;
+	/*! position: absolute;
+	left: 50%;
+	top: 0%; */
 	display: flex;
 	flex-wrap: wrap;
 	gap: 4px;
+	margin-left: 1rem;
 }
 .cardType2 footer .btn{
 	
