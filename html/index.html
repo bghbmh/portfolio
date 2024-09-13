@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Cache-Control" content="No-Cache">
+	<meta http-equiv="Pragma" content="No-Cache">
+	<meta name="format-detection" content="telephone=no, address=no, email=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+
+	<title>박민희</title>
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/common.css">
+	<script type="module" src="../assets/js/common.js"></script>
+</head>
+<body>
+
+<style>
+
+
+</style>
+
+	<header class="common">    
+		 <div class="util">
+			<a href="/" class="logo"><b>포트폴리오</b></a>
+			<!--스크롤 시 이름 나타남-->
+			<h1 class="title">박민희</h1>
+			<!--스크롤 시 이름 나타남-->
+			<a class="btn btn-link" href="mailto:bghbmh@gamil.com">bghbmh@gamil.com</a>
+		 </div>
+	</header>
+	<main class="container main">
+		<section class="hello">
+			<header>
+				<h2 data-title="박민희">박민희</h2>
+			</header>
+			<div class="contents-wrap">
+				<p><small>UXUI</small> <strong>designer</strong></p>
+				<span>+</span>
+				<p><small>UI</small> <strong>development</strong></p>
+			</div>
+
+			<section class="bg text-animation">
+				<div class="textLoop"></div>
+			</section>
+
+		</section>
+
+
+		<section class="recent-product">
+			<h3 class="visually-hidden">최근 작업</h3>
+			<div class="contents-wrap items-wrap ">
+				
+			</div>
+			<section class="bg text-animation">
+				<div class="textLoop type2"></div>
+			</section>
+		</section>
+
+		<section class="recent-work">
+			<header>
+				<h3 class="">최근 작업</h3>
+				<a href="/sub" class="btn btn-link">더보기</a>
+			</header>
+			
+			<div class="contents-wrap">
+				<div class="list-type1 items-wrap">
+
+					<!--item-->
+					<button class="btn item"  data-order="3" data-action="modal" title="pageView" aria-label="샘플페이지보기" data-ui-util="pageView">
+						<strong>CMDS</strong>
+						<i class="btn icon" aria-hidden="true"></i>
+						<span class="labels d-inline-flex gap-2">
+							<b class="label main" data-type="1">웹</b><b class="label sub" data-type="2">구축</b>
+						</span>
+						
+					</button>
+					<!--/item-->
+					
+					<!--item-->
+					<button class="btn item"  data-order="4" data-action="modal" title="pageView" aria-label="샘플페이지보기" data-ui-util="pageView">
+						<strong>HYCU</strong>
+						<i class="btn icon" aria-hidden="true"></i>
+						<span class="labels d-inline-flex gap-2">
+							<b class="label main" data-type="1">웹</b><b class="label sub" data-type="2">구축</b>
+						</span>
+						
+					</button>
+					<!--/item-->
+					
+				</div>
+				
+			</div>
+		</section>
+	</main>
+
+	<footer class="common">
+		<div class="contents-wrap">
+			<div>
+				<a class="btn btn-link" href="mailto:bghbmh@gamil.com">bghbmh@gamil.com</a>
+
+				<p><small>markup + javascript = 박민희 </small></p>
+			</div>
+			
+			<span class="madein">c - 2024 ㅂㅁㅎ</span>
+		</div>
+		
+	</footer>
+
+
+<!-- 
+	<script>
+
+		document.querySelector("body").addEventListener("click", e => {
+
+		console.log(" test xxxx- ")
+		}, { once: true });
+
+		document.querySelector("[data-action='toggle']").addEventListener("click", e => {
+			document.querySelector( e.currentTarget.dataset.target).classList.toggle("expanded");
+		});
+
+		function bodyClickhandler(body, content, className = "active") {
+			console.log("  z33- ");
+			if (!content) return;
+			document.querySelector("body").addEventListener("click", xxd.bind({"body" : body, "content":content, "className":className}));
+		}
+
+		function xxd(e) {
+		e.stopPropagation();
+			let a = findElement(e.target, this.content);
+			if (a) return;
+			
+			this.body.classList.remove(this.className);
+			document.querySelector("body").removeEventListener("click", xxd);
+			
+		}
+
+		function findElement(elem, tar) {
+			if (!elem && !tar) return;
+			while (elem !== tar) {
+				elem = elem.parentNode;
+				if (elem === document.querySelector("body")) {
+					return null;
+				}
+			}
+			return elem;
+		}
+
+
+		document.querySelectorAll("[data-action='modal']").forEach(pp => pp.addEventListener("click", e => {
+
+			e.stopPropagation();
+			
+			let o = document.querySelector(  e.currentTarget.dataset.target);
+			o.classList.add("show");
+			console.log("  z11- ");
+
+			if (o.popoverEvent) return;
+			o.popoverEvent = true;
+			o.querySelector("[data-bs-dismiss='modal']").addEventListener("click", () => {
+
+				console.log("  z22- ");
+
+
+				o.classList.remove("show");
+				delete o.popoverEvent;
+			}, { once: true });
+
+			bodyClickhandler(o, o.querySelector(".modal-content"), "show")
+
+		}));
+
+
+
+	</script>
+
+ -->
+
+
+	
+</body>
+</html>
