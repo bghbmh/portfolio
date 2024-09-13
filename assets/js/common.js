@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	
 	console.log("DOMContentLoaded ")
 	cf.fileHandler._load( { //bmh.json
-		url: '../data/myList.json',
+		url: '../main/data/myList.json',
 		success : (request) => {
 			
 			try {
@@ -101,7 +101,7 @@ function resetView(e){
 	if( e.type === "change" ){
 	
 		cf.fileHandler._load( { //bmh.json
-			url: '../data/myList.json',
+			url: '../main/data/myList.json',
 			success : (request) => {
 				
 				try {
@@ -230,7 +230,7 @@ function cardListHandler(e){
 			console.log( " action - ",  clickElem.dataset.action , clickElem.closest('[data-order]').dataset.order );
 
 			cf.fileHandler._load( { //bmh.json
-				url: '../data/myList.json',
+				url: '../main/data/myList.json',
 				success : (request) => {
 					
 					try {
