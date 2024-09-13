@@ -4,7 +4,7 @@ import { cardStyle } from '../../components/cardStyle.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
-	console.log(location.origin, " - ", location.pathname);
+	console.log(location.origin, " - ", location);
 	console.log("DOMContentLoaded ")
 	cf.fileHandler._load( { //bmh.json
 		url: '../main/data/myList.json',
