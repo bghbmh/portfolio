@@ -81,12 +81,6 @@ function xhrError(xhr) {
 	//xhr.arguments.error();
 
 	xhr.arguments.error ? xhr.arguments.error(xhr) : console.log("확인중_파일이 존재하지 않습니다.", xhr.responseURL, "\n this.readyState - ", xhr.readyState);
-
-
-	//console.log("testError qqq- ", xhr,xhr.statusText)
-	
-
-	//임시_제이쿼리 확인해보기
 	
 	//xhr.arguments.callback(xhr)
 
