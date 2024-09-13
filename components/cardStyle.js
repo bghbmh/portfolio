@@ -1,4 +1,4 @@
-
+let uu = "https://bghbmh.github.io/main";
 export let cardStyle = {	
 	//let item = items.find( o => o.id === parseInt(selectedItem) );
 	
@@ -16,7 +16,7 @@ export let cardStyle = {
 				</header>
 				<div class="contents">
 					<div class="images-wrap">
-					 ${ idx !== 2 ? item.mainOpenImages.map( (t,idx) => `<img src="/data/files/${t.name}" class="${ idx === 0 ? "mp" : "dp"}" alt="${item.title}">` ).join("") : item.mainOpenImages.map( (t,idx) => `<img src="/data/files/${t.name}" class="${ idx === 0 ? "full" : "dp"}" alt="${item.title}">` ).join("") }
+					 ${ idx !== 2 ? item.mainOpenImages.map( (t,idx) => `<img src="${uu}/data/files/${t.name}" class="${ idx === 0 ? "mp" : "dp"}" alt="${item.title}">` ).join("") : item.mainOpenImages.map( (t,idx) => `<img src="${uu}/data/files/${t.name}" class="${ idx === 0 ? "full" : "dp"}" alt="${item.title}">` ).join("") }
 					</div>
 					<div class="bg" aria-hidden="true">
 						<i class="clip01" aria-hidden="true"></i>
@@ -70,7 +70,6 @@ export let cardStyle = {
 }
 
 
-let uu = "https://bghbmh.github.io/main";
 
 
 function image(images ){
