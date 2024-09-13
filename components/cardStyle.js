@@ -70,12 +70,13 @@ export let cardStyle = {
 }
 
 
+let uu = "https://bghbmh.github.io/main";
 
 
 function image(images ){
 
 	//console.log("image check - ", images.length)
-	return images.length ? images.map( t => `<img src="${location.origin}${location.pathname}/data/files/${t.name}" alt="메인이미지">` ).join("") : `<div class="item" title="등록된이미지가없습니다"><i class="icon-svg-image-sharp"></i></div>`;
+	return images.length ? images.map( t => `<img src="${uu}/data/files/${t.name}" alt="메인이미지">` ).join("") : `<div class="item" title="등록된이미지가없습니다"><i class="icon-svg-image-sharp"></i></div>`;
 }
 
 function categories(category){
