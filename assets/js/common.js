@@ -2,12 +2,13 @@ import * as cf from './commonFunction.js';
 import { Modal } from '../../components/modal.js';
 import { cardStyle } from '../../components/cardStyle.js';
 
+let uu = "https://bghbmh.github.io/main";
 
 document.addEventListener("DOMContentLoaded", () => {
-	console.log(location.origin, " - ", location);
+	console.log(location, location.origin);
 	console.log("DOMContentLoaded ")
 	cf.fileHandler._load( { //bmh.json
-		url: '../main/data/myList.json',
+		url: uu+'/data/myList.json',
 		success : (request) => {
 			
 			try {
@@ -101,7 +102,7 @@ function resetView(e){
 	if( e.type === "change" ){
 	
 		cf.fileHandler._load( { //bmh.json
-			url: '../main/data/myList.json',
+			url: uu+'/data/myList.json',
 			success : (request) => {
 				
 				try {
@@ -230,7 +231,7 @@ function cardListHandler(e){
 			console.log( " action - ",  clickElem.dataset.action , clickElem.closest('[data-order]').dataset.order );
 
 			cf.fileHandler._load( { //bmh.json
-				url: '../main/data/myList.json',
+				url: uu+'/data/myList.json',
 				success : (request) => {
 					
 					try {
@@ -252,7 +253,7 @@ function cardListHandler(e){
 									link.addEventListener("click", e => { 
 										e.stopPropagation();
 										console.log("link - ",Modal.box.querySelector("iframe"), e.currentTarget.dataset);
-										Modal.box.querySelector("iframe").src = `../data/sample/${e.currentTarget.dataset.sampleName}/html/${e.currentTarget.dataset.link}`;
+										Modal.box.querySelector("iframe").src = `${uu}/data/sample/${e.currentTarget.dataset.sampleName}/html/${e.currentTarget.dataset.link}`;
 									});
 						
 								});
@@ -313,7 +314,7 @@ function tamplateModalHTML(modalStyle, item){
 
 
 					<div class="modal-body" style="padding:0">
-						${item.samplePage.length ? `<iframe class="iframe" src="../data/sample/${item.sampleName}/html/${item.samplePage[0].name}" style="width: 100%;height: 100%" ></iframe>` : ''}
+						${item.samplePage.length ? `<iframe class="iframe" src="${uu}/data/sample/${item.sampleName}/html/${item.samplePage[0].name}" style="width: 100%;height: 100%" ></iframe>` : ''}
 
 					</div>
 				</div>
@@ -339,8 +340,8 @@ function tamplateModalHTML(modalStyle, item){
 						</div>
 					</div>
 					<div class="modal-body">
-						${item.mainimage.map( img => `<img src="../data/files/${img.name}">` ).join("")  }
-						${item.subimage.map( img => `<img src="../data/files/${img.name}">` ).join("")}
+						${item.mainimage.map( img => `<img src="${uu}/data/files/${img.name}">` ).join("")  }
+						${item.subimage.map( img => `<img src="${uu}/data/files/${img.name}">` ).join("")}
 		
 					</div>
 					<!-- <div class="modal-footer">
@@ -360,8 +361,8 @@ function tamplateModalHTML(modalStyle, item){
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						${item.mainimage.length ? item.mainimage.map( img => `<img src="../data/files/${img.name}">` ).join("") : '<img src="" alt="동록한이미지가없습니다">' }
-						${item.subimage.length ? item.subimage.map( img => `<img src="../data/files/${img.name}">` ).join("") : '<img src="" alt="동록한이미지가없습니다">' }
+						${item.mainimage.length ? item.mainimage.map( img => `<img src="${uu}/data/files/${img.name}">` ).join("") : '<!--img src="" alt="동록한이미지가없습니다"-->' }
+						${item.subimage.length ? item.subimage.map( img => `<img src="${uu}/data/files/${img.name}">` ).join("") : '<!--img src="" alt="동록한이미지가없습니다"-->' }
 					</div>
 					<!-- <div class="modal-footer">
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
