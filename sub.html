@@ -44,12 +44,10 @@
 	<title>박민희</title>
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/common_test.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/common.css">
 	<!-- // Stylesheets -->
 
 	<!-- Scripts -->
-	<script defer src="assets/fontawesome/js/all.js"></script>
 	<script type="module" src="assets/js/common.js"></script>
 	<!-- //Scripts -->
 
@@ -57,75 +55,97 @@
 
 <body>
 
-	<!-- header -->
-	<header class="common2">
-		<div class="hello2">
-			<h1 class="logo" aria-label="안녕하세요">
-				<a href="index.html" title="박민희입니다" aria-label="박민희입니다"></a>
-			</h1>
-			<div class="contact2">
-				<a href="tel:010-3469-1323" class="btn icon call" title="전화하기" aria-label="전화하기">
-					<i class="icon-svg-phone-01" aria-hidden="true"></i>
-					<!-- <span>010.3469.1323</span> -->
-				</a>
-				<a href="mailto:bghbmh@gmail.com" class="btn icon mail" title="메일보내기" aria-label="메일보내기">
-					<i class="icon-svg-mail-01" aria-hidden="true"></i>
-					<!-- <span>bghbmh@gmail.com</span> -->
-				</a>
-				<button type="button" class="btn icon" title="망했네" aria-label="망하는 데" data-ui-action="launch">
-					<i class="icon-svg-rocket-02" aria-hidden="true"></i>
-				</button>
-			</div>
+
+	<header class="common">    
+		<!-- <a href="/admin" class="admin">myAdmin</a> -->
+		<div class="util">
+		   <a href="/" class="logo"><b>포트폴리오</b></a>
+		   <!--스크롤 시 이름 나타남-->
+		   <h1 class="title">박민희</h1>
+		   <!--스크롤 시 이름 나타남-->
+		   <a class="btn btn-link" href="mailto:bghbmh@gamil.com">bghbmh@gamil.com</a>
 		</div>
+   </header>
+	<main class="container ">
+		<h2 class=" visually-hidden">category_0 test</h2>
+		<form class="search hashtag   " data-mockup-ui="gnbgnb">
+			<div class="wrap">
+				<nav class="d-flex gap-1 mt-3 mb-3">
+					<label class="btn active"><input type="checkbox" name="hash" value="모두" checked>모두</label>
+					<label class="btn"><input type="checkbox" name="hash" value="디자인"><!--디자인-->디자인</label>
+					<label class="btn"><input type="checkbox" name="hash" value="마크업"><!--마크업-->마크업</label>
+					<label class="btn"><input type="checkbox" name="hash" value="모바일"><!--모바일-->모바일</label>
+					<label class="btn"><input type="checkbox" name="hash" value="데스크탑"><!--데스크탑-->데스크탑</label>
+					<label class="btn"><input type="checkbox" name="hash" value="반응형"><!--반응형-->반응형</label>
+					<label class="btn"><input type="checkbox" name="hash" value="마케팅"><!--마케팅-->마케팅</label>
+					<label class="btn"><input type="checkbox" name="hash" value="웹"><!--웹-->웹</label>
+					<label class="btn"><input type="checkbox" name="hash" value="콘텐츠"><!--콘텐츠-->콘텐츠</label>
+					<label class="btn"><input type="checkbox" name="hash" value="인쇄"><!--인쇄-->인쇄</label>
+					<label class="btn"><input type="checkbox" name="hash" value="브랜딩"><!--브랜딩-->브랜딩</label>
 
-	</header>
-	<!-- // header -->
-
-
-	<main class="common2">
-		<h2 class="hidden">category_0</h2>
-		<section class="grid cardList2" data-pc-columns="3" data-tablet-columns="2" data-mobile-columns="1">
+				</nav>
+			</div>
 			
+			<div class="hashList">
+				<label class="btn" title="메뉴삭제" data-action="delete"><input type="checkbox" name="hash" value="모두" checked>모두</label>
+			</div>
+		</form>
+			
+		<section class="grid cardList2" > <!-- style="display: none;" -->
+			<h3 class="col12 visually-hidden"> category_0 test</h3>
+
+
 
 		</section>
 	</main>
+	
 
-
-
-	<!--footer-->
 	<footer class="common">
-		<div class="copyright">
-			ⓒ 2023. 박민희
+		<div class="contents-wrap">
+			<div>
+				<a class="btn btn-link" href="mailto:bghbmh@gamil.com">bghbmh@gamil.com</a>
+
+				<p><small>markup + javascript = 박민희 </small></p>
+			</div>
+			
+			<span class="madein">c - 2024 ㅂㅁㅎ</span>
 		</div>
+		
 	</footer>
-	<!-- // footer  -->
-
-
+	
 
 	<script>
-
-		// document.querySelector(".sitemap-btn").addEventListener("click", function() {
-		// 	console.log("sitemap - ", this)
-		// });
-
-
-
-		var acc = document.getElementsByClassName("accordion");
-		var i;
-
-		for (i = 0; i < acc.length; i++) {
-			acc[i].addEventListener("click", function () {
-				this.classList.toggle("active");
-				var cont = this.nextElementSibling;
-				if (cont.style.maxHeight) {
-					cont.style.maxHeight = null;
-				} else {
-					cont.style.maxHeight = cont.scrollHeight + "px";
-				}
-			});
-		}
-	</script>
-
+		// document.querySelector(".search.hashtag > .wrap").addEventListener("mousedown", mouseEventHandler);
+		// document.querySelector(".search.hashtag > .wrap").addEventListener("mouseup", mouseEventHandler);
+		// document.querySelector(".search.hashtag > .wrap").addEventListener("mousemove", mouseEventHandler);
+		
+		// let mouseActive = false;
+		// let preX = -16;
+		// function mouseEventHandler(e){
+				
+		//     if( e.type === "mousemove" && mouseActive){
+				
+		//         let x = this.scrollWidth - (e.clientX - preX) - 16;
+		//         let xa = e.clientX - preX;
+		//         console.log("mouseEventHandler -", xa, this.scrollLeft, this.clientWidth );
+				
+		//          this.scrollLeft += xa;
+		//         preX = e.clientX;
+			   
+			   
+		//        // this.scrollLeft += 10;
+		//     }
+			
+		//     if(  e.type === "mousedown" ){
+		//         mouseActive = true;
+		//     }
+			
+		//     if(  e.type === "mouseup" ){
+		//         mouseActive = false; 
+		//         preX = e.clientX;
+		//     }
+		// }
+	</script>	
 
 
 </body>
