@@ -2,7 +2,7 @@ import * as cf from './commonFunction.js';
 import { Modal } from '../../components/modal.js';
 import { cardStyle } from '../../components/cardStyle.js';
 
-let origin = location.origin; //https://bghbmh.github.io/main
+let origin = location.origin+"/main"; //https://bghbmh.github.io/main
 
 document.addEventListener("DOMContentLoaded", () => {
 	console.log(location, location.origin);
