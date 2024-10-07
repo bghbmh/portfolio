@@ -1,4 +1,4 @@
-let uu = "https://bghbmh.github.io/main";
+let origin = location.origin; //https://bghbmh.github.io/main
 export let cardStyle = {	
 	//let item = items.find( o => o.id === parseInt(selectedItem) );
 	
@@ -16,7 +16,7 @@ export let cardStyle = {
 				</header>
 				<div class="contents">
 					<div class="images-wrap">
-					 ${ idx !== 2 ? item.mainOpenImages.map( (t,idx) => `<img src="${uu}/data/files/${t.name}" class="${ idx === 0 ? "mp" : "dp"}" alt="${item.title}">` ).join("") : item.mainOpenImages.map( (t,idx) => `<img src="${uu}/data/files/${t.name}" class="${ idx === 0 ? "full" : "dp"}" alt="${item.title}">` ).join("") }
+					 ${ idx !== 2 ? item.mainOpenImages.map( (t,idx) => `<img src="${origin}/data/files/${t.name}" class="${ idx === 0 ? "mp" : "dp"}" alt="${item.title}">` ).join("") : item.mainOpenImages.map( (t,idx) => `<img src="${origin}/data/files/${t.name}" class="${ idx === 0 ? "full" : "dp"}" alt="${item.title}">` ).join("") }
 					</div>
 					<div class="bg" aria-hidden="true">
 						<i class="clip01" aria-hidden="true"></i>
@@ -53,14 +53,9 @@ export let cardStyle = {
 
 						<!--테스트용-->
 						<!--//테스트용-->
-						${item.sampleName ? `<button type="button" class="btn btn-icon" data-action="modal" title="샘플페이지보기" data-sample-name="${item.sampleName}" aria-label="샘플페이지보기" data-ui-util="pageView">
-							<!--<i class="bi bi-file-earmark-code-fill" aria-hidden="true"></i> -->
-							<i class="icon-svg-article"></i>
-						</button> `: ''}
 
-						<button type="button" class="btn btn-icon" data-action="modal" title="이미지크게보기" aria-label="이미지크게보기" data-ui-util="zoomIn">
-							<i class="icon-svg-imagesmode" aria-hidden="true"></i>
-						</button>
+						${sampleFile(item)}
+
 					</div>
 					
 				</footer>
@@ -69,13 +64,42 @@ export let cardStyle = {
 	},
 }
 
+function sampleFile(item){
+	//console.log(item.externalLink)
 
+	let html ='';
+
+	if( item.sampleName && item.samplePage.length ){
+		html += `
+			<button type="button" class="btn btn-icon" data-action="modal" data-sample-name="${item.sampleName}" data-ui-util="pageView">
+				<!--<i class="bi bi-file-earmark-code-fill" aria-hidden="true"></i> -->
+				<i class="icon-svg-article"></i> 샘플보기
+			</button> `;
+	}
+	
+	if( ("externalLink" in item) && Object.entries(item.externalLink).length ){
+		for( let key in item.externalLink ){
+			html += `<a target="_blank" class="btn" href="${key}" >
+				<svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 16 16" width="20" aria-hidden="true" class=""><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+				${item.externalLink[key]}
+			</a>`;
+			
+		}
+	} else {
+		html +=`<button type="button" class="btn btn-icon" data-action="modal" data-ui-util="zoomIn"><i class="icon-svg-imagesmode" aria-hidden="true"></i> 크게보기</button>`;
+	}
+
+	
+
+	return html;
+
+}
 
 
 function image(images ){
 
 	//console.log("image check - ", images.length)
-	return images.length ? images.map( t => `<img src="${uu}/data/files/${t.name}" alt="메인이미지">` ).join("") : `<div class="item" title="등록된이미지가없습니다"><i class="icon-svg-image-sharp"></i></div>`;
+	return images.length ? images.map( t => `<img src="${origin}/data/files/${t.name}" alt="메인이미지">` ).join("") : `<div class="item" title="등록된이미지가없습니다"><i class="icon-svg-image-sharp"></i></div>`;
 }
 
 function categories(category){

@@ -65,10 +65,22 @@ export let Modal = {
 		if( !mainBody )	document.querySelector("body").appendChild(Modal.box);
 		else mainBody.appendChild(Modal.box); /* 차후 문자인지 아닌지 확인절차 추가*/
 
-		return Modal.box; // common 에서 바로 이벤트추가할 수 있게 수정
+		document.querySelector("body").classList.add("modalOpen");
+
+		return Modal.box; // 부투스트랩 확인해보기
 	},
-	close : (item) => {
-		console.log("close",item, Modal);
+	close : (id = null ) => {
+		//console.log("close",id, Modal);
+
+		// e.stopPropagation();
+		// e.currentTarget.classList.remove("show");
+
+		document.querySelector("body").removeChild(document.querySelector("#" + Modal.box.id))
+		Modal.box = null;
+
+		document.querySelector("body").classList.remove("modalOpen");
+
+		console.log("Modal close22",id, Modal);
 	}
 
 
