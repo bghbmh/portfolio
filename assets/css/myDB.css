@@ -1,9 +1,12 @@
 @charset "utf-8";
 
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+/* 
 @import url("../fonts/Pretendard-1.3.8/web/variable/pretendardvariable.css");
 @import url("../fonts/XEIcon-2.2.0/xeicon.css");
-/* @import url("../fonts/XEIcon-2.2.0/xeicon_104.min.css"); */
-
+@import url("../fonts/XEIcon-2.2.0/xeicon_104.min.css"); */
+@import url("reset.css");
 @import url("upload.css");
 
 :root {
@@ -345,6 +348,18 @@ body {
 .gap1 { gap: .25rem }
 .gap2 { gap: .5rem }
 .gap3 { gap: 1rem }
+
+.gap-0 { gap: 0 ; --gap: 0;  }
+  
+.gap-1 { gap: 0.25rem ; --gap: 0.25rem }
+
+.gap-2 { gap: 0.5rem ; --gap: 0.5rem }
+
+.gap-3 { gap: 1rem ; --gap: 1rem ; }
+
+.gap-4 { gap: 1.5rem ; --gap: 1.5rem }
+
+.gap-5 { gap: 3rem ; --gap: 3rem ; }
 
 .rowGap1 { row-gap: .25rem }
 .rowGap2 { row-gap: .5rem }
@@ -1745,6 +1760,7 @@ main.common {
 	flex:1;
 	padding: 4px 0;
 }
+.itemList > .item .cnts .col5 .upload.type2{ height: 12em; }
 
 
 
@@ -1857,107 +1873,5 @@ main.common {
 
 
 /* row */
-.row{ margin-right: -.5rem; margin-left: -.5rem; }
-.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9{
-	padding-right: .5rem; padding-left: .5rem;
-}
-
-
-@media( max-width: 1024px ){
-	.row[data-tablet-columns="1"],
-	.row[data-tablet-columns="2"],
-	.row[data-tablet-columns="3"],
-	.row[data-tablet-columns="4"],
-	.row[data-tablet-columns="5"],
-	.row[data-tablet-columns="6"],
-	.row[data-tablet-columns="7"],
-	.row[data-tablet-columns="8"],
-	.row[data-tablet-columns="9"],
-	.row[data-tablet-columns="10"],
-	.row[data-tablet-columns="11"],
-	.row[data-tablet-columns="12"]{ flex-wrap: wrap; 	}	
-	
-	.row[data-tablet-columns="1"] > * { flex: 0 0 100%;  max-width: 100%; }
-	.row[data-tablet-columns="2"] > * { flex: 0 0 50%;  max-width: 50%; }
-	.row[data-tablet-columns="3"] > * { flex: 0 0 33.333333%;  max-width: 33.333333%; }
-	.row[data-tablet-columns="4"] > * { flex: 0 0 25%;  max-width: 25%; }
-	.row[data-tablet-columns="5"] > * { flex: 0 0 20%;  max-width: 20%; }
-	.row[data-tablet-columns="6"] > * { flex: 0 0 16.666667%;  max-width: 16.666667%; }
-	.row[data-tablet-columns="7"] > * { flex: 0 0 14.285714%;  max-width: 14.285714%; }
-	.row[data-tablet-columns="8"] > * { flex: 0 0 12.5%;  max-width: 12.5%; }
-	.row[data-tablet-columns="9"] > * { flex: 0 0 11.111111%;  max-width: 11.111111%; }
-	.row[data-tablet-columns="10"] > * { flex: 0 0 10%;  max-width: 100%; }
-	.row[data-tablet-columns="11"] > * { flex: 0 0 100%;  max-width: 10%; }
-	.row[data-tablet-columns="12"] > * { flex: 0 0 8.333333%;  max-width: 8.333333%; }
-}
-
-@media( max-width: 768px ){
-
-	.row[data-mobile-columns="1"] > * { flex: 0 0 100%;  max-width: 100%; }
-	.row[data-mobile-columns="2"] > * { flex: 0 0 50%;  max-width: 50%; }
-	.row[data-mobile-columns="3"] > * { flex: 0 0 33.333333%;  max-width: 33.333333%; }
-	.row[data-mobile-columns="4"] > * { flex: 0 0 25%;  max-width: 25%; }
-	.row[data-mobile-columns="5"] > * { flex: 0 0 20%;  max-width: 20%; }
-	.row[data-mobile-columns="6"] > * { flex: 0 0 16.666667%;  max-width: 16.666667%; }
-	.row[data-mobile-columns="7"] > * { flex: 0 0 14.285714%;  max-width: 14.285714%; }
-	.row[data-mobile-columns="8"] > * { flex: 0 0 12.5%;  max-width: 12.5%; }
-	.row[data-mobile-columns="9"] > * { flex: 0 0 11.111111%;  max-width: 11.111111%; }
-	.row[data-mobile-columns="10"] > * { flex: 0 0 10%;  max-width: 100%; }
-	.row[data-mobile-columns="11"] > * { flex: 0 0 100%;  max-width: 10%; }
-	.row[data-mobile-columns="12"] > * { flex: 0 0 8.333333%;  max-width: 8.333333%; }
-}
-
 
 /* 그리드 수정 */
-.row2{
-	display: grid;
-	gap: var(--gap, 1rem);
-	grid-template-columns: repeat(12, 1fr);
-}
-.row2:has(.col){ grid-template-columns: repeat(auto-fit, minmax(8%, 1fr)); }
-.row2 > .col1{ grid-column: span 1; }
-.row2 > .col2{ grid-column: span 2; }
-.row2 > .col3{ grid-column: span 3; }
-.row2 > .col4{ grid-column: span 4; }
-.row2 > .col5{ grid-column: span 5; }
-.row2 > .col6{ grid-column: span 6; }
-.row2 > .col7{ grid-column: span 7; }
-.row2 > .col8{ grid-column: span 8; }
-.row2 > .col9{ grid-column: span 9; }
-.row2 > .col10{ grid-column: span 10; }
-.row2 > .col11{ grid-column: span 11; }
-.row2 > .col12{ grid-column: span 12; }
-
-
-
-
-.grid{
-	display: grid;
-	gap: var(--gap, 1rem);
-	grid-template-columns: repeat(12, 1fr);
-}
-
-.grid > .col1{ grid-column: span 1; }
-.grid > .col2{ grid-column: span 2; }
-.grid > .col3{ grid-column: span 3; }
-.grid > .col4{ grid-column: span 4; }
-.grid > .col5{ grid-column: span 5; }
-.grid > .col6{ grid-column: span 6; }
-.grid > .col7{ grid-column: span 7; }
-.grid > .col8{ grid-column: span 8; }
-.grid > .col9{ grid-column: span 9; }
-.grid > .col10{ grid-column: span 10; }
-.grid > .col11{ grid-column: span 11; }
-.grid > .col12{ grid-column: span 12; }
-
-.grid > .rowSpan1{ grid-row: span 1; }
-.grid > .rowSpan2{ grid-row: span 2; }
-
-@media( max-width: 1024px ){
-	.grid[data-tablet-columns="2"] > *:not(.col12) { grid-column: span 6;	}	
-
-}
-@media( max-width: 768px ){
-	.grid[data-mobile-columns="1"] > *:not(.col12) { grid-column: span 12;	}	
-
-}

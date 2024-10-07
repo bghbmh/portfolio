@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url("reset.css");
+
 
 body{ padding: 3rem 1rem; }
 form{ 
@@ -29,8 +29,9 @@ label:has(small){  }
 
 .formType1 > header{ margin-bottom: .85rem; }
 
-.formType1 .h5{ font-size: .85rem }
-.formType1 h5{ font-size: .85rem }   .formType1 .field{   }
+.formType1 .h5{ font-size: .85rem; margin-right: auto; }
+.formType1 h5{ font-size: .85rem; margin-right: auto; }   
+.formType1 .field{   }
 
 .formType1 .field + .field{ 
 	margin-top : 1rem;
@@ -45,12 +46,13 @@ label:has(small){  }
 	padding: 0;
 	color: #fff;
 	background-color: #aaa;
-	min-width: auto; min-height: auto;
-	width: 1.5em;
+	width: auto; min-height: auto;
+	min-width: 1.5em;
 	height: 1.5em;
 	line-height: 1;
-	border-radius: 100em;
-	margin-left: auto;
+	border-radius: 4px;
+	padding: 2px 4px;
+	margin-left: 8px;
 }
 .item-wrap:not(.fileBox):has(> *){ margin-top: 1rem }
 

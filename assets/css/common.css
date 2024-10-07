@@ -130,6 +130,9 @@ i[class*="icon-svg-"] {
 	cursor: pointer;
 	padding: 0px;
 
+	vertical-align: middle;
+  line-height: initial;
+
 	--maskimg : url('../img/common/icon-svg-missimg.svg');
 	
 }
@@ -730,7 +733,7 @@ label input[type="radio"]:checked {
 	display: block;
 	overflow: hidden;
 	
-	max-height: 260px;
+	max-height: 260px;  height: 260px;
 }
 .cardType1 .contents img{
 	max-width: 100%;
@@ -793,7 +796,11 @@ label input[type="radio"]:checked {
 .cardType1 .btn{
 	color: #000;  
 	font-weight: 400;
+	font-size: 13px;
 }
+.cardType1 .btn i[class*="icon-svg-"]{ font-size:  1.3em;}
+.cardType1 .btn + .btn{ margin-left: 4px;}
+.cardType1 footer .util .btn{ padding-left: 0; }
 @media(min-width: 1024px){
 	.cardType1{ 
 		padding: 56px 56px;
@@ -839,6 +846,7 @@ label input[type="radio"]:checked {
 .cardList2 .cardType1 footer{ 
 	grid-column: 1 / span 5;
 	grid-row: auto;
+	padding-top: 2rem;
 }
 @media(min-width: 600px){
 	.cardList2 > .col3,

@@ -54,11 +54,15 @@
 	flex:1;
 	list-style: none;
 	display: block;
+	
 	padding: 4px 0;
 	margin:0;
 
 	flex-basis: 100%;
-	
+	background-color: hsl(0 0% 97%);
+}
+.upload.type1:not(:has(.fileBox .item)) .fileBox[data-guide]::before{
+	content: 'asdf';
 }
 .upload.type1 .fileBox .item{ 
 	position: relative;

@@ -2,15 +2,13 @@ import * as cf from './commonFunction.js';
 import { Modal } from '../../components/modal.js';
 import { cardStyle } from '../../components/cardStyle.js';
 
-let uu = "https://bghbmh.github.io/main";
-
-let origin = location.origin;
+let origin = location.origin; //https://bghbmh.github.io/main
 
 document.addEventListener("DOMContentLoaded", () => {
-	console.log("location - ", origin);
+	console.log(location, location.origin);
 	console.log("DOMContentLoaded ")
 	cf.fileHandler._load( { //bmh.json
-		url: uu+'/data/myList.json',
+		url: origin+'/data/myList.json',
 		success : (request) => {
 			
 			try {
@@ -39,9 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		searchHashtag.addEventListener('keyup', resetView);
 		searchHashtag.addEventListener('submit', resetView);
 	}
-
-	
-
 });
 
 function testScrollNav(e){
@@ -104,7 +99,7 @@ function resetView(e){
 	if( e.type === "change" ){
 	
 		cf.fileHandler._load( { //bmh.json
-			url: uu+'/data/myList.json',
+			url: origin+'/data/myList.json',
 			success : (request) => {
 				
 				try {
@@ -173,8 +168,6 @@ function setView222(request, orderList = null){
 		document.querySelector(".recent-product .items-wrap").innerHTML += mi.map( (m, idx) => cardStyle.main(m, idx) ).join('');
 		document.querySelector(".recent-product .items-wrap").addEventListener("click", cardListHandler);
 
-		
-
 	} else if( document.querySelector(".cardList2") ) {
 
 		document.querySelector(".cardList2").innerHTML += items.map( item => cardStyle.sub(item) ).join('');
@@ -233,7 +226,7 @@ function cardListHandler(e){
 			console.log( " action - ",  clickElem.dataset.action , clickElem.closest('[data-order]').dataset.order );
 
 			cf.fileHandler._load( { //bmh.json
-				url: uu+'/data/myList.json',
+				url: origin+'/data/myList.json',
 				success : (request) => {
 					
 					try {
@@ -255,16 +248,13 @@ function cardListHandler(e){
 									link.addEventListener("click", e => { 
 										e.stopPropagation();
 										console.log("link - ",Modal.box.querySelector("iframe"), e.currentTarget.dataset);
-										Modal.box.querySelector("iframe").src = `${uu}/data/sample/${e.currentTarget.dataset.sampleName}/html/${e.currentTarget.dataset.link}`;
+										Modal.box.querySelector("iframe").src = `${origin}/data/sample/${e.currentTarget.dataset.sampleName}/html/${e.currentTarget.dataset.link}`;
 									});
 						
 								});
 							}
 
 							document.querySelector("body").classList.add("modalOpen");
-							
-
-
 						} else {
 							console.log("error", re)
 							return;
@@ -296,9 +286,7 @@ function tamplateModalHTML(modalStyle, item){
 				<div class="modal-content">
 
 					<div class="modal-header">
-						
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">닫기</button>
-		
 						<div class="extraInfo expanded">
 							<h5 class="modal-title" role="button" aria-label="더보기버튼"  data-action="toggle" data-target=".extraInfo" aria-label=".extraInfo">
 								<span>${item.title !== "" ? item.title : "Modal_프로젝트프로필" }</span>
@@ -306,17 +294,14 @@ function tamplateModalHTML(modalStyle, item){
 							</h5>							
 
 							${ item.category.length ? '<div class="labels">' + item.category.map( o => `<span class="info ${o.label}" data-type=${o.type}>${o.name}</span>`).join('') + '</div>' : ''}
-							
-		
+
 							${Object.keys(item.extraInfo).length ? '<dl class="extraInfo-wrap">' + Object.entries(item.extraInfo).map( arr => `<dd class="info" aria-label="${arr[0]}">${arr[1]}</dd>`).join('') + '</dl>' : ''}
 
 							${item.samplePage.length ? '<nav class="buttons">' +  item.samplePage.map( o => `<button type="button" class="btn text-start" data-sample-name="${item.sampleName}" data-link="${o.name}">${o.label}</button>`).join('') + '</nav>' : ''}
 						</div>
 					</div>
-
-
 					<div class="modal-body" style="padding:0">
-						${item.samplePage.length ? `<iframe class="iframe" src="${uu}/data/sample/${item.sampleName}/html/${item.samplePage[0].name}" style="width: 100%;height: 100%" ></iframe>` : ''}
+						${item.samplePage.length ? `<iframe class="iframe" src="${origin}/data/sample/${item.sampleName}/html/${item.samplePage[0].name}" style="width: 100%;height: 100%" ></iframe>` : ''}
 
 					</div>
 				</div>
@@ -326,9 +311,7 @@ function tamplateModalHTML(modalStyle, item){
 			<div class="modal-dialog modal-extra-lg modal-dialog-centered modal-dialog-scrollable projectView"> 
 				<div class="modal-content">
 					<div class="modal-header">
-						
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		
 						<div class="extraInfo expanded">
 							<h5 class="modal-title" role="button" aria-label="더보기버튼"  data-action="toggle" data-target=".extraInfo" aria-label=".extraInfo">
 								<span>${item.title !== "" ? item.title : "Modal_프로젝트프로필" }</span>
@@ -336,15 +319,13 @@ function tamplateModalHTML(modalStyle, item){
 							</h5>							
 
 							${ item.category.length ? '<div class="labels">' + item.category.map( o => `<span class="info ${o.label}" data-type=${o.type}>${o.name}</span>`).join('') + '</div>' : ''}
-							
 		
 							${Object.keys(item.extraInfo).length ? '<dl class="extraInfo-wrap">' + Object.entries(item.extraInfo).map( arr => `<dd class="info" aria-label="${arr[0]}">${arr[1]}</dd>`).join('') + '</dl>' : ''}
 						</div>
 					</div>
 					<div class="modal-body">
-						${item.mainimage.map( img => `<img src="${uu}/data/files/${img.name}">` ).join("")  }
-						${item.subimage.map( img => `<img src="${uu}/data/files/${img.name}">` ).join("")}
-		
+						${item.mainimage.map( img => `<img src="${origin}/data/files/${img.name}">` ).join("")  }
+						${item.subimage.map( img => `<img src="${origin}/data/files/${img.name}">` ).join("")}
 					</div>
 					<!-- <div class="modal-footer">
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -363,8 +344,8 @@ function tamplateModalHTML(modalStyle, item){
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						${item.mainimage.length ? item.mainimage.map( img => `<img src="${uu}/data/files/${img.name}">` ).join("") : '<!--img src="" alt="동록한이미지가없습니다"-->' }
-						${item.subimage.length ? item.subimage.map( img => `<img src="${uu}/data/files/${img.name}">` ).join("") : '<!--img src="" alt="동록한이미지가없습니다"-->' }
+						${item.mainimage.length ? item.mainimage.map( img => `<img src="${origin}/data/files/${img.name}">` ).join("") : '<!--img src="" alt="동록한이미지가없습니다"-->' }
+						${item.subimage.length ? item.subimage.map( img => `<img src="${origin}/data/files/${img.name}">` ).join("") : '<!--img src="" alt="동록한이미지가없습니다"-->' }
 					</div>
 					<!-- <div class="modal-footer">
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
