@@ -1121,7 +1121,7 @@ label input[type="radio"]:checked {
 	margin: 0 8px 0 0; 
 }
 .pageView .extraInfo> *:not(.modal-title) { display: none ; }
-.pageView .extraInfo.expanded > *:not(.modal-title){ display: flex; }
+.pageView .extraInfo.expanded > *:not(.modal-title){ display: flex; flex-wrap: wrap; }
 
 .modal-dialog-scrollable .modal-body { padding-bottom: 5rem; }
 
