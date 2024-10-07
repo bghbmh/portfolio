@@ -4,8 +4,10 @@ import { cardStyle } from '../../components/cardStyle.js';
 
 let uu = "https://bghbmh.github.io/main";
 
+let origin = location.origin;
+
 document.addEventListener("DOMContentLoaded", () => {
-	console.log(location, location.origin);
+	console.log("location - ", origin);
 	console.log("DOMContentLoaded ")
 	cf.fileHandler._load( { //bmh.json
 		url: uu+'/data/myList.json',
