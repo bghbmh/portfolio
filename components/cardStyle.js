@@ -1,4 +1,4 @@
-let origin = location.origin; //https://bghbmh.github.io/main
+let origin = location.origin+"/main"; //https://bghbmh.github.io/main
 export let cardStyle = {	
 	//let item = items.find( o => o.id === parseInt(selectedItem) );
 	
