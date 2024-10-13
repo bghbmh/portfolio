@@ -19,9 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
 				throw request.responseText; 
 			} catch (e) {
 				if ( e ) {
-					console.log(" pathname - ", location.pathname) 
+					const uurl = new URL(location.href);
+					const params = uurl.searchParams;
+					//const params = new URLSearchParams(location.href);
+					let parList = params.get("list");
+					console.log(" pathname - ",params, parList) 
 					//setView(request)
-					if( location.pathname === '/' || location.pathname.indexOf('portfolio') >= 0 ){
+					if( location.pathname === '/' ||  !parList ){ // location.pathname.indexOf('portfolio') >= 0
 						initMain(request);
 					} else {
 						initSub(request);
