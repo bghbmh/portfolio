@@ -5,12 +5,14 @@ import { tamplateModalHTML } from './markupHTML.js';
 
 import { ct, tempDB, origin } from '../../data/tempCategoryListl.js';
 
+let fileurl = origin+location.pathname + 'data/' + tempDB; 
+
 document.addEventListener("DOMContentLoaded", () => {
-	console.log( origin, "----", location.pathname , location.origin);
+	console.log( location.pathname , location.origin);
 	console.log("DOMContentLoaded ")  
 
 	cf.fileHandler._load( { //bmh.json
-		url: origin+'/data/' + tempDB,
+		url: fileurl,
 		success : (request) => {
 			
 			try {
@@ -30,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				}
 			}
 		},
-		error: (request) =>  console.log("err DOMContentLoaded - ",request.arguments.msg)
+		error: (request) =>  console.log("err - ",request.arguments.msg)
 	});
 });
 
@@ -158,7 +160,7 @@ function resetHashList( setItem){
 function resetCardList(hashList){
 
 	cf.fileHandler._load( { 
-		url: origin+'/data/' + tempDB,
+		url: fileurl,
 		success : (request) => {
 			
 			try {
@@ -214,7 +216,7 @@ function cardListHandler(e){
 			console.log( " action - ",  clickElem.dataset.action , clickElem.closest('[data-order]').dataset.order );
 
 			cf.fileHandler._load( { //bmh.json
-				url: origin+'/data/' + tempDB,
+				url: fileurl,
 				success : (request) => {
 					
 					try {
