@@ -1,7 +1,7 @@
 import * as cf from './commonFunction.js';
 
 import { myDBCardType1 } from '../../components/myDBCardType1.js';
-import { ct } from '../../data/tempCategoryListl.js';
+import { imgfileurl , sampleurl } from '../../data/tempCategoryListl.js';
 
 
 function tamplateModalHTML(modalStyle, item){
@@ -30,7 +30,7 @@ function tamplateModalHTML(modalStyle, item){
 						</div>
 					</div>
 					<div class="modal-body" style="padding:0">
-						${item.samplePage.length ? `<iframe class="iframe" src="${origin}/data/sample/${item.sampleName}/html/${item.samplePage[0].name}" style="width: 100%;height: 100%" ></iframe>` : ''}
+						${item.samplePage.length ? `<iframe class="iframe" src="${sampleurl}${item.sampleName}/html/${item.samplePage[0].name}" style="width: 100%;height: 100%" ></iframe>` : ''}
 
 					</div>
 				</div>
@@ -53,8 +53,8 @@ function tamplateModalHTML(modalStyle, item){
 						</div>
 					</div>
 					<div class="modal-body">
-						${item.mainimage.map( img => `<img src="${origin}/data/files/${img.name}">` ).join("")  }
-						${item.subimage.map( img => `<img src="${origin}/data/files/${img.name}">` ).join("")}
+						${item.mainimage.map( img => `<img src="${imgfileurl}${img.name}">` ).join("")  }
+						${item.subimage.map( img => `<img src="${imgfileurl}${img.name}">` ).join("")}
 					</div>
 					<!-- <div class="modal-footer">
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -73,8 +73,8 @@ function tamplateModalHTML(modalStyle, item){
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						${item.mainimage.length ? item.mainimage.map( img => `<img src="${origin}/data/files/${img.name}">` ).join("") : '<!--img src="" alt="동록한이미지가없습니다"-->' }
-						${item.subimage.length ? item.subimage.map( img => `<img src="${origin}/data/files/${img.name}">` ).join("") : '<!--img src="" alt="동록한이미지가없습니다"-->' }
+						${item.mainimage.length ? item.mainimage.map( img => `<img src="${imgfileurl}${img.name}">` ).join("") : '<!--img src="" alt="동록한이미지가없습니다"-->' }
+						${item.subimage.length ? item.subimage.map( img => `<img src="${imgfileurl}${img.name}">` ).join("") : '<!--img src="" alt="동록한이미지가없습니다"-->' }
 					</div>
 					<!-- <div class="modal-footer">
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
