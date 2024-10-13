@@ -180,7 +180,7 @@ i.icon-svg-imagesmode{ --maskimg : url('../img/common/icon-svg-imagesmode.svg');
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-height: 73vh;
+	min-height: 86vh;
 
 	position: relative;
 	z-index: 1;
@@ -340,7 +340,7 @@ i.icon-svg-imagesmode{ --maskimg : url('../img/common/icon-svg-imagesmode.svg');
 
 
 
-.recent-product{ position: relative;}
+.recent-product{ position: relative;  margin-top: 10vh  }
 .recent-product .items-wrap{
 	display: flex;
 	flex-wrap: wrap;
@@ -362,7 +362,7 @@ i.icon-svg-imagesmode{ --maskimg : url('../img/common/icon-svg-imagesmode.svg');
 	font-size: 24px;
 	z-index: 0;
 	display: inline-block;
-	transition: all .7s;
+
 }
 .recent-product .item header{ margin-top: .5em}
 .recent-product .item  h4{ font-weight: 900; font-size: 1em; }
@@ -469,10 +469,34 @@ i.icon-svg-imagesmode{ --maskimg : url('../img/common/icon-svg-imagesmode.svg');
 .recent-product .item.shape1 .images-wrap .mp{ bottom: 3.6em;  right: 8em;   }
 .recent-product .item.shape1 .images-wrap .dp{ bottom: 3.6em;  right: 1em;   }
 
+
+.recent-product .item{
+	transition: all .3s;
+	opacity: 0;
+	top: 2rem;
+	
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+.recent-product .item.shape2{ top: 6rem; }
+.recent-product .item.shape2{ transition-delay: .3s; }
+.recent-product .item.shape3{ transition-delay: .6s; }
+.recent-product .item.on{ opacity: 1;  }
+
+.recent-product .item.shape1.on{ top: -1rem; animation-name: updown; }
+.recent-product .item.shape2.on{ top: -1rem; animation-name: updown; }
+.recent-product .item.shape3.on{ top: -1rem; animation-name: updown; }
+
+
 @media(min-width: 600px){
 	.recent-product .item{   
 		max-width: calc( (100% - 16px) / 2 );
 	}
+
+	.recent-product .item.shape1.on{ top: -4rem; animation-name: updown; }
+	.recent-product .item.shape2.on{ top: 1rem; animation-name: updown; }
+	.recent-product .item.shape3.on{ top: -3rem; animation-name: updown; }	
 }
 
 @media(min-width: 768px){
@@ -534,7 +558,11 @@ i.icon-svg-imagesmode{ --maskimg : url('../img/common/icon-svg-imagesmode.svg');
 	.recent-product .item.shape2 .images-wrap .mp{ bottom: 1.7em;  right: 10em;   }
 	.recent-product .item.shape2 .images-wrap .dp{ bottom: 2em;  right: 2em;   }
 }
-
+@keyframes updown {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(8px); }
+	100% { transform: translateY(0); }
+}
 
 /* 수정_240911 */
 .list-type1 .item{
