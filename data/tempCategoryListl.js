@@ -24,3 +24,4 @@ export let filedburl = origin +location.pathname+'data/' + tempDB;
 
 export let imgfileurl = origin +location.pathname+'/data/files/'; 
 
+export let sampleurl = origin  +location.pathname +'/data/sample/'; 
