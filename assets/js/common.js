@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				if ( e ) {
 					console.log(" pathname - ", location.pathname) 
 					//setView(request)
-					if( location.pathname === '/' || location.pathname === '/portfolio' ){
+					if( location.pathname === '/' || location.pathname.indexOf('portfolio') >= 0 ){
 						initMain(request);
 					} else {
 						initSub(request);
