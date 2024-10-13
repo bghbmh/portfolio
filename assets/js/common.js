@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				}
 			}
 		},
-		error: (request) =>  console.log("err - ",request.arguments.msg)
+		error: (request) =>  console.log("err DOMContentLoaded - ",request.arguments.msg)
 	});
 });
 
