@@ -1,4 +1,7 @@
-let origin = location.origin; //https://bghbmh.github.io/main
+
+
+import { imgfileurl } from '../data/tempCategoryListl.js';
+
 export let cardStyle = {	
 	//let item = items.find( o => o.id === parseInt(selectedItem) );
 	
@@ -72,9 +75,9 @@ function mainOpenList(num, item){
 
 	let html = '';
 	if( num === 2 ){ 
-		html = item.mainOpenImages.map( (t,idx) => `<img src="${origin}/data/files/${t.name}" class="${ idx === 0 ? "full" : "dp"}" alt="${item.title}">` ).join("");
+		html = item.mainOpenImages.map( (t,idx) => `<img src="${imgfileurl}${t.name}" class="${ idx === 0 ? "full" : "dp"}" alt="${item.title}">` ).join("");
 	} else { 
-		html = item.mainOpenImages.map( (t, idx) => `<img src="${origin}/data/files/${t.name}" class="${ idx === 0 ? "mp" : "dp"}" alt="${item.title}">` ).join("") ;
+		html = item.mainOpenImages.map( (t, idx) => `<img src="${imgfileurl}${t.name}" class="${ idx === 0 ? "mp" : "dp"}" alt="${item.title}">` ).join("") ;
 	}
 	return html;
 }
@@ -114,7 +117,7 @@ function sampleFile(item){
 function image(images ){
 
 	//console.log("image check - ", images.length)
-	return images.length ? images.map( t => `<img src="${origin}/data/files/${t.name}" alt="메인이미지">` ).join("") : `<div class="item" title="등록된이미지가없습니다"><i class="icon-svg-image-sharp"></i></div>`;
+	return images.length ? images.map( t => `<img src="${imgfileurl}${t.name}" alt="메인이미지">` ).join("") : `<div class="item" title="등록된이미지가없습니다"><i class="icon-svg-image-sharp"></i></div>`;
 }
 
 function categories(category){
