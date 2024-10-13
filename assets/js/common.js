@@ -6,7 +6,7 @@ import { tamplateModalHTML } from './markupHTML.js';
 import { ct, tempDB, origin } from '../../data/tempCategoryListl.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-	console.log( location.pathname , location.origin);
+	console.log( origin, "----", location.pathname , location.origin);
 	console.log("DOMContentLoaded ")  
 
 	cf.fileHandler._load( { //bmh.json
