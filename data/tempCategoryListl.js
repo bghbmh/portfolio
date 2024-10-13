@@ -22,6 +22,6 @@ export let origin = location.origin; //https://bghbmh.github.io/main
 
 export let filedburl = origin +location.pathname+'data/' + tempDB; 
 
-export let imgfileurl = origin +location.pathname+'/data/files/'; 
+export let imgfileurl = origin +location.pathname+'data/files/'; 
 
-export let sampleurl = origin  +location.pathname +'/data/sample/'; 
+export let sampleurl = origin  +location.pathname +'data/sample/'; 
