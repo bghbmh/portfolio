@@ -3,16 +3,16 @@ import { Modal } from '../../components/modal.js';
 import { cardStyle } from '../../components/cardStyle.js';
 import { tamplateModalHTML } from './markupHTML.js';
 
-import { ct, tempDB, origin } from '../../data/tempCategoryListl.js';
+import { ct, tempDB, origin, filedburl } from '../../data/tempCategoryListl.js';
 
-let fileurl = origin+location.pathname + 'data/' + tempDB; 
+
 
 document.addEventListener("DOMContentLoaded", () => {
 	console.log( location.pathname , location.origin);
 	console.log("DOMContentLoaded ")  
 
 	cf.fileHandler._load( { //bmh.json
-		url: fileurl,
+		url: filedburl,
 		success : (request) => {
 			
 			try {
@@ -160,7 +160,7 @@ function resetHashList( setItem){
 function resetCardList(hashList){
 
 	cf.fileHandler._load( { 
-		url: fileurl,
+		url: filedburl,
 		success : (request) => {
 			
 			try {
@@ -216,7 +216,7 @@ function cardListHandler(e){
 			console.log( " action - ",  clickElem.dataset.action , clickElem.closest('[data-order]').dataset.order );
 
 			cf.fileHandler._load( { //bmh.json
-				url: fileurl,
+				url: filedburl,
 				success : (request) => {
 					
 					try {
