@@ -20,5 +20,7 @@ export let tempDB = "myList.json"; // testList.json
 
 export let origin = location.origin; //https://bghbmh.github.io/main
 
+export let filedburl = origin+'/data/' + tempDB; 
 
+export let imgfileurl = origin+'/data/files/'; 
 
