@@ -8,10 +8,9 @@ import { ct, tempDB, origin, filedburl } from '../../data/tempCategoryListl.js';
 
 
 document.addEventListener("DOMContentLoaded", () => {
-	console.log( location.pathname , location.origin);
 	console.log("DOMContentLoaded ")  
 
-	cf.fileHandler._load( { //bmh.json
+	cf.fileHandler._load( { 
 		url: filedburl,
 		success : (request) => {
 			
@@ -19,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				throw request.responseText; 
 			} catch (e) {
 				if ( e ) {
+					
 					const uurl = new URL(location.href);
 					const params = uurl.searchParams;
 					//const params = new URLSearchParams(location.href);
@@ -52,6 +52,39 @@ function initMain(request){console.log("initMain - ");
 	let mainOpenitems = items.filter( it => it.mainOpen );
 	cntBox.appendChild( recentProduct(mainOpenitems) );
 	cntBox.appendChild( recentWork() );
+
+
+
+
+	const observerOptions = {
+		root: null,
+		rootMargin: "0px",
+		threshold: [0.0],
+	};
+	
+	let intersectionObserver = new IntersectionObserver(function (entries) {
+		entries.forEach((entry) => {
+			const adBox = entry.target;
+	
+			if (entry.isIntersecting) {
+				//if (entry.intersectionRatio >= 0.75) {
+					console.log("intersectionRatio >= 0  ", entry.target.textContent);
+					entry.target.classList.add("on");
+				//}
+			} else {
+				//if ( entry.intersectionRatio === 0.0 ) {
+					console.log("intersectionRatio == 0.0  ");
+					entry.target.classList.remove("on");
+				//}
+			}
+		});
+	}, observerOptions);
+	
+	
+	document.querySelectorAll(".recent-product .item").forEach( oe => intersectionObserver.observe(oe) );
+
+
+
 }
 
 function initSub(request){console.log("initSub - "); 
@@ -309,7 +342,7 @@ function recentWork(){
 	let html = `
 			<header>
 				<h3 class="">최근 작업</h3>
-				<a href="/list" class="btn btn-link">더보기</a>
+				<a href="?list=on" class="btn btn-link">더보기</a>
 			</header>
 			
 			<div class="contents-wrap">
