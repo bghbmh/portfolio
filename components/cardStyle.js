@@ -1,5 +1,4 @@
 
-
 import { imgfileurl } from '../data/tempCategoryListl.js';
 
 export let cardStyle = {	
