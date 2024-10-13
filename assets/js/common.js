@@ -3,7 +3,7 @@ import { Modal } from '../../components/modal.js';
 import { cardStyle } from '../../components/cardStyle.js';
 import { tamplateModalHTML } from './markupHTML.js';
 
-import { ct, tempDB, origin, filedburl } from '../../data/tempCategoryListl.js';
+import { ct, tempDB, origin, filedburl, sampleurl } from '../../data/tempCategoryListl.js';
 
 
 
@@ -275,7 +275,7 @@ function cardListHandler(e){
 									link.addEventListener("click", e => { 
 										e.stopPropagation();
 										console.log("link - ",Modal.box.querySelector("iframe"), e.currentTarget.dataset);
-										Modal.box.querySelector("iframe").src = `${origin}/data/sample/${e.currentTarget.dataset.sampleName}/html/${e.currentTarget.dataset.link}`;
+										Modal.box.querySelector("iframe").src = `${sampleurl}${e.currentTarget.dataset.sampleName}/html/${e.currentTarget.dataset.link}`;
 									});
 						
 								});
