@@ -1323,22 +1323,35 @@ body.modalOpen{ overflow: hidden; }
 
 
 
-.contents:has([src*="logo-react"]){
+.contents:has([src*="ui-test-"]){
+	position: relative;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+
 	color: #fff;
 	background-color: #20232a;
 }
-.contents:has([src*="logo-react"]):after{ 
-	content: "React";
-	font-weight: 900;
-	font-size: 18px;
+.contents:has([src*="ui-test-"]):before{ 
+	position: absolute;
+	content:  "React";
+	display: inline-block;
+	font-weight: 700;
+	font-size: 14px;
 	letter-spacing: 1px;
+	
+	background-image: url(../img/common/logo-react.svg);
+	background-repeat: no-repeat;
+	background-position: 8px 6px;
+	background-size: 2rem;
+	
+	padding-left: calc(2rem + 8px);
+	padding-top: 8px;
+
+	right: 1rem;
 }
-.contents:has([src*="logo-react"]) img{
-	width: 2rem;
+.contents:has([src*="ui-test-"]) img{
+	display: block;
+	width: 80%;
 	height: auto;
-	margin-left: -8px;
+	margin:  auto;
 	object-fit: contain;
 }
