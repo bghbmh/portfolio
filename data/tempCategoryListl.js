@@ -11,10 +11,9 @@ export let ct = {
 		"웹",
 		"콘텐츠",
 		"인쇄",
-		"브랜딩",
 		"ui-test"
 	]
-};
+};//"브랜딩",
 
 export let tempDB = "myList.json"; // testList.json
 
