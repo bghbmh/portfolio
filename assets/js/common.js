@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			
 			try {
 				throw request.responseText; 
-			} catch (e) {
-				if ( e ) {
+			} catch (text) {
+				if ( text ) {
 					
 					const uurl = new URL(location.href);
 					const params = uurl.searchParams;
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 						initSub(request);
 					}
 				} else {
-					console.log("error", e)
+					console.log("error", text )
 					return;
 				}
 			}
