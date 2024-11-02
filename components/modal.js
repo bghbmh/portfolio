@@ -52,8 +52,6 @@ export let Modal = {
 		Modal.box.innerHTML = item.tamplateHTML;
 		Modal.box.classList.add("show");
 
-
-
 		if( !mainBody )	document.querySelector("body").appendChild(Modal.box);
 		else mainBody.appendChild(Modal.box); /* 차후 문자인지 아닌지 확인절차 추가*/
 
@@ -62,31 +60,22 @@ export let Modal = {
 		return Modal.box; // 부투스트랩 확인해보기
 	},
 	close : (id = null ) => {
-
 		document.querySelector("body").removeChild(document.querySelector("#" + Modal.box.id))
 		Modal.box = null;
-
 		document.querySelector("body").classList.remove("modalOpen");
-
-		console.log("Modal close22",id, Modal);
 	},
 	outsideContentClickHandler : () => {
-		Modal.box.addEventListener("click", e => { 
-			console.log("second event test - ", Modal.box ? Modal.box.id : "box nono" ); 
-
+		Modal.box.addEventListener("click", e => {
 			if( e.target.closest('.modal-content') ){
 				console.log("===== inside modal-content =====")
 			} else {
 				console.log("===== outside modal-content =====");
 				e.stopPropagation();
 				e.currentTarget.classList.remove("show");
-
 				Modal.close();
 			}
 			
 			if( !e.target.closest('[data-bs-dismiss]') ) return;
-		
-		
 		});
 	}
 
