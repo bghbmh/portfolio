@@ -208,7 +208,7 @@
 .carousel.type3 .ctrl .c-dots .slick-active{ width: 24px; background-color: hsl(217 35% 13% / .9); }
 .carousel.type3 .ctrl .ctrlbtn{
 	display: inline-block;
-	width: 18px; height: 18px;
+	width: 16px; height: 16px;
 	font-size: 14px;
 	    background-size: contain;
 	    color: var(--text-dark-0);

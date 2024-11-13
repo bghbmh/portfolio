@@ -2,6 +2,11 @@
 /* ==========================================================================================
 //이즈소프트 CMS board CSS
 ============================================================================================*/
+
+
+
+
+
 /* 페이지,검색영역*/
 .board_info { position: relative; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
 .board_info .page_info { flex: 1; min-width: 18rem; }
@@ -40,7 +45,6 @@
 .board_info.type2 .board_search .form-inline .form-control, 
 .board_info.type2 .board_search .form-row .form-select, 
 .board_info.type2 .board_search .form-row .form-control { width: auto; }
-
 
 
 
@@ -280,7 +284,7 @@ div.tstyle_list .xi-lock { color: #222; font-size: 2rem; display: inline-block; 
 
 .btn.icon [class*="-svg-"]{ min-width: 24px; height: 20px; }
 
-/* 추가_2407 */
+/* 추가_2407__ 확인
 label.btn:has(input[class*="-svg-"]){
 	position: relative;
 	display: inline-flex;
@@ -326,8 +330,8 @@ label.btn input[type="checkbox"][class*="-svg-"]:after{
 
 label.btn input[type="checkbox"][class*="-svg-"]:checked { animation: colorEff .3s ;   }
 label.btn input[type="checkbox"][class*="-svg-"]:checked::before { -webkit-mask-size: 100%; mask-size: 100%; /*color: #fff;*/ animation: colorEff .3s ;}
-label.btn input[type="checkbox"][class*="-svg-"]:checked:after{ background-color: var(--bcColor, var(--text-dark-0)); /* opacity: 1; */  animation: colorEff .3s ; }
-
+label.btn input[type="checkbox"][class*="-svg-"]:checked:after{ background-color: var(--bcColor, var(--text-dark-0));   animation: colorEff .3s ; }
+ */
 
 
 @keyframes colorEff {
@@ -388,7 +392,7 @@ div.tstyle_view ul.head li ~ li { position: relative; padding-left: 0rem; margin
 div.tstyle_view ul.head:has( > li:nth-last-of-type(2)) > li:before { content: ''; display: inline-block; background-color: #ddd; width: 3px; height: 3px; margin: 0 12px 0 8px;
   transform: translateY(-100%); }
 div.tstyle_view ul.head li strong { color: var(--text-dark-2, #aaacb1); font-weight: normal; }
-div.tstyle_view ul.head li span { color: var(--text-dark-0, #555); position: relative; padding-left: 0.6rem; margin-left: 0.6rem; }
+div.tstyle_view ul.head li > span { color: var(--text-dark-0, #555); position: relative; padding-left: 0.6rem; margin-left: 0.6rem; }
 div.tstyle_view ul.head li span::before { content: ''; display: none; background-color: #ddd; width: 1px; height: 1.2rem; position: absolute; transform: translate(0, -50%); left: 0; top: 50%; }
 div.tstyle_view div.tb_contents { padding: 5rem 6rem; border-bottom: 1px solid #d3d8dd; word-break: keep-all; }
 
@@ -552,6 +556,10 @@ ul.add_file.left li { justify-content: left; }*/
 .list_board li:first-child span:before { transform: rotate(180deg); }*/
 .list_board li a { color: #333; flex: 0 0 80%; max-width: 80%; display: block; padding-left: 0rem; display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
 .list_board li a:hover { text-decoration: underline; }
+
+.list_board.border-top-0 li:first-of-type{ border-top: 0 }
+.list_board.border-bottom-0:after{ display:none }
+
 /* comment */ /*답변*/
 /*div.CommentWrap { margin: 4rem 0; 답변  }
 div.CommentWrap > .cmtForm h4 { font-size: 18px; font-weight: normal; font-weight: 500; margin-bottom: 15px; }

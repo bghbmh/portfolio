@@ -74,7 +74,7 @@ button.disabled { opacity: 0.45 !important; pointer-events: none !important; }
 
 /* 상태 라벨 추가_221222 */
 .label { display: inline-block; padding: 4px 12px; line-height: normal; font-size: .9em; border-radius: .4rem; color: var(--dark3); border: 1px solid currentColor; }
-.label.basic { display: inline-block; padding: 0.4rem 0.6rem; line-height: normal; font-size: 13px; border-radius: .4rem; color: var(--dark3); border: none; }
+.label.basic { display: inline-block; padding: 0.4rem 0.6rem; line-height: normal; font-size: 14px; border-radius: .4rem; color: var(--dark3); border: none; }
 .label.basic.bcRed { color: #da4727; }
 .label.basic.bcTeal { color: #12949C; }
 .label.basic.bcBlue { color: #0090D0; }
@@ -455,18 +455,29 @@ sub - 수강신청
 .course_list .course_con { display: flex; position: relative; justify-content: space-between;  padding:32px 2rem; background-color: #fff; gap: 16px 32px; }
 .course_list .course_con .course_img { 
 	flex: 0 0 22rem; max-width: 22rem; 
-	min-height: 180px;
-  align-self: center;
-  background-color: #fcfcfc;
-  
+	min-height: 130px;
+	align-self: center;
+	background-color: #fcfcfc;
 }
-.course_list .course_con .course_img img { border-radius: var(--border-radius-4px); }
-.course_list .course_con .course_info { display: flex; flex-direction: column; flex:1; padding: 0 0rem; }
+.course_list .course_con .course_img img { 
+	border-radius: var(--border-radius-4px); 
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+.course_list .course_con .course_info { 
+	display: flex; flex-direction: column; flex:1; padding: 0 0rem; 
+	align-self: center;
+}
 
 
 /* 추가_2407 */
 .course_list .course_con .course_info .card_label .label{ padding-left:0; padding-right:0; font-weight:700 }
 .course_list .course_con .course_info .card_label .label + .label{ margin-left: 4px }
+.courseList.type2 .course_con .card_label > * { font-size: 14px; }
 
 .course_list .course_con .course_info .item { display: flex; flex-direction: column; flex: 1; }
 .course_list .course_con .course_info .item h2 { color: var(--text-dark, #222); font-size: 2rem; transition: all .5s; font-weight: 700; }
@@ -488,35 +499,60 @@ sub - 수강신청
 
 
 
-
-
 .course_list ul.courseList.type2{
 	padding-top: 2rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	gap: 24px;
+	gap: 48px 32px;
+	align-content: stretch;
 }
 .course_list ul.courseList.type2 > li { /* */ border-bottom: 0px solid #e5e5e5; }
 .course_list ul.courseList.type2 .course_con{
 	flex-direction: column;
 	justify-content: left;
 	padding: 0;
+	min-height: 100%;
 }
+
 .course_list ul.courseList.type2 .course_con .course_img { 
-	flex: 0 0 100%; 
+
+	flex: none; 
 	max-width: 100%; 
-	max-height: 20rem;
-	overflow: hidden;
+	width: 100%;
+	height: 20rem;
+
 }
+.course_list ul.courseList.type2 .course_con .course_img a {  }
 .course_list ul.courseList.type2 .course_con .course_img img{ 
 	width: 100%; height: 100%;
-	object-fit: cover; object-position: center; 
+	min-height: 180px;
+	object-fit: cover; 
+	object-position: center; 
 }
-.course_list ul.courseList.type2 .course_con .course_info .item ul li span {  width: 6em; }
+.course_list ul.courseList.type2 .course_con .course_info .item ul li span { width: 6em; }
+.course_list ul.courseList.type2 .course_con .course_info {  align-self: normal; }
 
-
-
-
+/* 추가_2410 */
+.course_list ul.courseList .course_con .course_img{ position:relative;  }
+.course_list ul.courseList .course_con .course_img .course_like {position: absolute; top: 1rem; right: 1rem;}
+.course_list ul.courseList .course_con .course_img .course_like label.btn:has(input[class*="-svg-"]):after {opacity:.3;}
+.course_list ul.courseList .course_con .course_img .course_like label.btn span { color: #fff; filter: none;}
+.course_list ul.courseList .course_con .course_img .course_like label.btn input[type="checkbox"][class*="-svg-"]:before {color: #fff;}
+.course_list ul.courseList .course_con .course_img .course_like label.btn input[type="checkbox"]:checked:after{ background-color: var(--bcColor, #A30000); opacity:1 }
+.course_list .course_con .course_info .etc_info {margin-top: .8rem;}
+.course_list .course_con .course_info .etc_info span {position: relative;}
+.course_list .course_con .course_info .etc_info span + span {padding-left: 0.6rem; margin-left: 0.6rem;}
+.course_list .course_con .course_info .etc_info span + span::before {
+    content: '';
+    display: block;
+    background-color: #ddd;
+    width: 1px;
+    height: 1.4rem;
+    position: absolute;
+    transform: translate(0, -50%);
+    left: -2px;
+    top: 50%;
+}
 
 
 .course_header { padding: 32px; background-color: #25262b; }
@@ -567,7 +603,7 @@ sub - 수강신청
 /*    min-width: auto;*/
     padding: 1.3rem 1.5em;
 }
-.course_detail.type2 .detail_con { border: 0; background-color: #fcfcfc; }
+.course_detail.type2 .detail_con { border: 0; background-color: #f9f9f9; }
 
 
 .course_pay {display: flex; flex-direction: column; position: relative; padding: 3rem; background-color: #fff; border-radius: 2.5rem; border: 1px solid #E9EBF2;}
@@ -633,15 +669,16 @@ sub - 수강신청
 .myCourseList.type2.col3 .list_ul .list_li { min-width: 320px; flex-basis: calc((100% - (var(--g) * 2)) / 3);  }
 .myCourseList.type2.col4 .list_ul .list_li { min-width: 200px; flex-basis: calc((100% - (var(--g) * 3)) / 4);  }
 .myCourseList.type2 .list_ul .list_li .item { 
-box-shadow: 0px 0px 0px 0px hsla(0, 0%, 0%, 0); /*	*/
+	box-shadow: 0px 0px 0px 0px hsla(0, 0%, 0%, 0); /*	*/
 
-	border: 1px solid hsla(0, 0%, 0%, 0.1);
+	border: 1px solid var(--border);
 
 	min-height: 342px;
 	height: 100%;
-	border-radius: var(--border-radius-4px);
+	border-radius: var(--border-radius-8px);
 	display: flex;
-  flex-direction: column;
+	flex-direction: column;
+	overflow: hidden;
 }
 .myCourseList.type2 .list_ul .list_li .item_txt > *{ margin:0; }
 .myCourseList.type2 .list_ul .list_li .item_txt > * + *{ margin-top: 4px }
@@ -665,6 +702,10 @@ box-shadow: 0px 0px 0px 0px hsla(0, 0%, 0%, 0); /*	*/
   max-height: calc(1em * 1.5 * 2);
 
 }
+
+.myCourseList .list_ul .list_li .thumb_img{ border-radius:0 }
+
+
 .myCourseList.type2 .card_label .label{ font-size: 15px; font-weight: 700; padding-left:0; padding-right:0  }
 .myCourseList.type2 .card_label .label + .label{ margin-left: 4px }
 .myCourseList.type2 .etc_info{ 
@@ -773,6 +814,13 @@ sub - 마이페이지
 .member .flex-container .con_avatar .entry_btn {width: 60%; margin-top: -2rem;}
 .member .flex-container .con_avatar .entry_btn button { font-size: 1.6rem; border-radius: 4rem;}
 
+
+@media(max-width: 1280px){
+	.course_list ul.courseList.type2{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
 @media(max-width: 1140px){
 	.myCourseList.type2 .list_ul{ --g : 16px; }
 	.myCourseList.type2 .list_ul .list_li { padding: 0; }
@@ -790,10 +838,10 @@ sub - 마이페이지
 @media(max-width: 1024px){
 	.course_detail.type2 .detail_top + .btns { justify-content: center; padding-left: 0; }
 
-	.course_list .course_con{ --left : 18rem }
+	.course_list .course_con{ --left : 18rem;  }
 	.course_list .course_con .course_img { flex: 0 0 var(--left); max-width: var(--left); }
 
-	.course_list ul.courseList.type2{  grid-template-columns: 1fr 1fr 1fr; }
+	.course_list ul.courseList.type2{  grid-template-columns: 1fr 1fr ;  }
 }
 @media (max-width:980px) {
 	.course_detail .detail_top .course_img { flex: 0 0 28rem; max-width: 28rem; }
@@ -819,20 +867,28 @@ sub - 마이페이지
 	.course_list .course_con .course_info .item ul li { font-size: 14px; }
 
 	
-	.course_list .course_con .btn_apply{ 
-		flex-basis:100%; padding-top: 2rem; 
-		padding-left: calc(var(--left) + 32px ); 
-	}
+	.course_list .course_con .btn_apply{  padding-top: 0rem;  }
 
 	.myCourseList.type2 .list_ul .list_li { padding: 0; }
 
 	.course_list ul.courseList.type2{  grid-template-columns: 1fr 1fr; }
-	.course_list ul.courseList.type2 .course_con .btn_apply { padding-left: 0;    }
+	.course_list ul.courseList.type2 .course_con .btn_apply { padding-left: 0;    
+		flex-basis: 0;
+	}
+
 	
 }
 @media (max-width:670px) {
 	.myCourseList.col4 .list_ul { margin: 0 -0.8rem; }
 	.myCourseList.col4 .list_ul .list_li { flex: 0 0 50%; max-width: 50%; padding: 0 1rem 3rem 1rem; }
+
+
+	.course_list .course_con .btn_apply{  padding-top: 0rem; 
+		flex-basis:100%;
+		padding-left: calc(var(--left) + 32px ); 
+	}
+
+
 	
 	.course_detail .detail_top { flex-direction: column; }
 	.course_detail .detail_top .course_img { margin: 2rem 0 0 0; flex: auto; }
@@ -849,8 +905,13 @@ sub - 마이페이지
 }
 @media (max-width:550px) {
 	.course_list .course_con {flex-direction: column; justify-content: center;}
-	.course_list .course_con .course_img {flex:auto; max-width: 26rem; }
-	.course_list .course_con .course_info {margin-right: inherit; padding: 0 ; }
+	.course_list .course_con .course_img {
+/*		flex:auto; max-width: 26rem; */
+--left: 100%;
+        width: var(--left);
+        min-height: 20rem;
+	}
+	.course_list .course_con .course_info { width: 100%; margin-right: inherit; padding: 0 ; }
 	.course_list .course_con .btn_apply { padding-left: 0}
 	.course_list .course_con .btn_apply .btn { }
 	.basket-total-price > div {padding: 2rem;}
