@@ -1,0 +1,1290 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>커뮤니티 샘플</title>
+
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<meta name="description" content="페이지 설명" />
+		
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="../tpl/004/img/common/apple-touch-icon-57x57.png">
+		<link rel="icon" type="image/png" href="../tpl/004/img/common/favicon-16x16.png" sizes="16x16">
+		
+		<link rel="stylesheet" href="../tpl/004/css/hrd_common.css" />
+		<link rel="stylesheet" href="../tpl/004/css/webfonts.css" />
+		<link rel="stylesheet" href="../tpl/004/css/layout.css" />
+		<link rel="stylesheet" href="../tpl/004/css/effect_slick.css" />
+		<link rel="stylesheet" href="../tpl/004/css/sub.css"><!-- main 페이지에서 사용 -->
+		
+		
+		<script src="https://ge60.edutrack.kr/tpl/004/jquery/jquery-3.2.1.min.js"></script>
+		<script defer src="../tpl/004/jquery/slick.min.js"></script>
+		<script defer src="https://ge60.edutrack.kr/tpl/004/js/func.min.js"></script>
+		<script defer src="https://ge60.edutrack.kr/tpl/004/js/common.js"></script>
+		<script defer src="https://ge60.edutrack.kr/tpl/004/js/main.js"></script>
+		<script src="https://ge60.edutrack.kr/tpl/004/jquery/jquery.cycle2.js"></script>
+		
+		<script src="https://ge60.edutrack.kr/app/js/Context.js"></script>
+		<script src="https://ge60.edutrack.kr/tpl/004/js/common_conf.js"></script>
+		<script src="https://ge60.edutrack.kr/tpl/004/js/common_util.js"></script>
+		<script src="https://ge60.edutrack.kr/tpl/004/js/common_function.js"></script>
+		
+	
+	</head>
+	
+	
+	<body>
+		<div id="skipNav">
+			<a href="#content">본문으로 바로가기</a>
+			<a href="#gnb">주메뉴 바로가기</a>
+		</div>
+		<!--#wrap-->
+		<div id="wrap">
+			<header class="header">            
+				<div class="logo_search">
+					<div class="container">
+						<h1 class="logo">
+							<a href="#0" class="link">
+								<span class="sr-only">연세의료원</span>
+							</a>
+						</h1>
+					 
+						<div class="gnb_util">
+							<div class="member_area">
+			
+								<!-- util 수정_240708 -->
+								<div class="logout">
+									
+									<ul class="nav">
+										<li class="">
+											<div class="welcome relate_site">
+												<span class="title text">
+													인재개발팀<strong class="ml10">학습자1</strong>
+													<button type="button" class="d-inline-flex" title="옵션더보기버튼" aria-label="옵션더보기버튼">
+														<i class="icon-svg-chevron-down" aria-hidden="true"></i>
+													</button>
+												</span> 
+												<div class="com001" role="list">
+													<a href="/home/main/goMenuPage?mcd=HM03006000" class="listitem" role="listitem">
+														<span>내 개인정보</span>
+														<i class="xi-user mla" aria-hidden="true"></i>
+													</a>
+													<div class="">
+														<button type="button" class="listitem relate_site" role="listitem"> 
+															<span class="title">testMenu</span>
+															<i class="xi-user mla" aria-hidden="true"></i>
+														</button>
+														<div class="menu">
+															<a href="#0" class="listitem">menu11</a>
+															<a href="#0" class="listitem">menu11</a>
+														</div>
+													</div>
+													<a href=""  class="listitem" role="listitem">
+														<span>결제현황</span>
+														<i class="xi-paper mla" aria-hidden="true"></i>
+													</a>
+													<a href="/home/user/logout" class="listitem desktop-elem" role="listitem">
+														<span>로그아웃</span>
+														<i class="xi-log-out mla" aria-hidden="true"></i>
+													</a>
+												</div>
+											</div>
+											
+										</li>
+										<li class="">
+											<button type="button" class="title d-inline-flex"><strong>관리자</strong></button>
+											<!--
+											<button type="button" class="title d-inline-flex"><strong>강사</strong></button>
+											-->
+										</li>
+										<li class="relate_site">
+											<button type="button" class="title d-inline-flex" title="현재수강과정 알림" aria-label="현재수강과정 알림">
+												<i class="icon-svg-bell-01 fs-20px" aria-hidden="true"></i>
+												<em class="badge">3</em>
+											</button>
+			
+											<!-- 알림메시지 있을때-->
+											<div class="com002" >
+												<div class="title">
+													<b>알림</b>
+													<button type="button" class="modal-close mla" title="창닫기버튼" aria-label="창닫기버튼">
+														<i class="icon-svg-x-close" aria-hidden="true"></i>
+													</button>
+													<script>
+														document.querySelector(".modal-close").addEventListener("click", e => e.currentTarget.closest(".relate_site").classList.remove("active") )
+													</script>
+												</div>
+												<hr class="solid bcDark2 mb8">
+												
+												<ul >
+													<li>
+														<small class="fcGray">2024.04.30 09:30:12</small>
+														<P class="font-weight-500 ">축하합니다. 학습 과정을 이수하였습니다.</P>
+													</li>
+													<li>
+														<small class="fcGray">2024.04.30 09:30:12</small>
+														<P class="font-weight-500 ">축하합니다. 학습 과정을  과정을 이수하였습니다.</P>
+													</li>
+												</ul>
+			
+												<hr class="solid bcDark3 mt8 mb8">
+												<div class="extraInfo">
+													<small class="fs-12px">가장 최근 로그인 2024.04.30 09:30:12</small>
+												</div>
+											</div>
+											<!-- //알림메시지 있을때-->
+			
+											<!-- 알림메시지 없을때-->
+											<!--
+											<div class="com002" >
+												<div class="title">
+													<b>알림</b>
+													<button type="button" class="modal-close mla" title="창닫기버튼" aria-label="창닫기버튼">
+														<i class="icon-svg-x-close" aria-hidden="true"></i>
+													</button>
+												</div>
+												<hr class="solid bcDark2 mb8">
+												
+												<div class="no_content">
+													<div class="no_text">
+														<i class="icon-svg-bell-off fs-20px" aria-hidden="true"></i>
+														<span>알림이 없습니다</span>
+													</div>
+												</div>
+			
+												<hr class="solid bcDark3 mt8 mb8">
+												<div class="extraInfo ">
+													<small class="fs-12px">가장 최근 로그인 2024.04.30 09:30:12</small>
+												</div>
+											</div>
+										-->
+											<!-- //알림메시지 없을때-->	                        	                          	
+										</li>
+										<li  class="relate_site">
+											<button type="button" class="title" title="바로가기" aria-label="바로가기">
+												<i class="xi-apps d-inline-flex align-items-center fs-24px" aria-hidden="true"></i>
+											</button>
+			
+											<!--바로가기 목록-->
+											<div class="com024" role="list">
+												
+												<a href="" role="listitem">
+													<i class="xi-book" aria-hidden="true"></i>
+													<b>교육과정</b>
+												</a>
+												<a href="" role="listitem">
+													<i class="xi-check-square" aria-hidden="true"></i>
+													<b>내 학습 과정</b>
+												</a>
+												<a href="" role="listitem">
+													<i class="xi-forum" aria-hidden="true"></i>
+													<b>커뮤니티 현황</b>
+												</a>
+												<a href="" role="listitem">
+													<i class="xi-file" aria-hidden="true"></i>
+													<b>설문조사</b>
+												</a>
+												<a href="" role="listitem">
+													<i class="xi-call" aria-hidden="true"></i>
+													<b>문의처</b>
+												</a>
+												<a href="" role="listitem">
+													<i class="xi-help" aria-hidden="true"></i>
+													<b>QnA</b>
+												</a>
+												<a href="" role="listitem">
+													<i class="xi-bell" aria-hidden="true"></i>
+													<b>알림</b>
+												</a>
+												<a href="" role="listitem">
+													<i class="xi-user-address" aria-hidden="true"></i>
+													<b>담당자 모드</b>
+												</a>
+			
+												<!--
+												<div class="no_content">
+													<div class="no_text">
+														<span>항목없을때</span>
+													</div>
+												</div>
+												-->
+												
+											</div>
+											<!-- //바로가기 목록-->
+			
+										</li>
+										<li class="mobile-elem">
+											<a href="/home/user/logout" class="" title="로그아웃" aria-label="로그아웃">
+												<i class="icon-svg-logout fs-20px" aria-hidden="true"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<!-- //util 수정_240708 -->
+			
+							</div>
+							<!-- //member_area -->
+											  
+						</div>
+						<!-- //gnb_util -->
+					</div>
+					<!-- //container -->
+				</div>
+				<!--//logo_search-->
+			
+				<div class="gnb_area">
+					<nav class="nav container" id="gnb">
+			
+						<!-- 검색영역 추가_2407 -->
+						<button id="btn_sch" class="btn_sch_open">
+							<i class="xi-search" aria-hidden="true"></i>
+							<span class="sr-only">검색버튼</span>
+						</button>
+			
+						<!-- css 확인을 위해 임시 추가함_검색_240412//css 확인을 위해 임시 추가함_검색_240412 -->
+						<div class="sch_layer">    
+			
+							<form class="" name="courseSearch" id="courseSearch" onsubmit="return false;">  <!--클래스 삭제_2407-->
+								<div class="search"> <!--감싸는태그추가_2407-->
+									<label for="searchValue" class="title">통합검색</label>
+									<input type="text" id="searchValue" name="searchValue" maxlength="100" placeholder="찾으시는 교육을 검색해보세요">
+									<button id="btnSch" class="btn_sch" onclick="topCourseSearch()">
+										<i class="xi-search" aria-hidden="true"></i><span class="sr-only">검색버튼</span>
+									</button>
+								</div>
+							</form>
+							<button type="button" class="btn_sch_close">
+								<i class="xi-close-thin" aria-hidden="true"></i><span class="sr-only">검색 닫기</span>
+							</button>
+						</div>
+						<!-- 검색영역 추가_2407 -->          
+			
+			
+						<button type="button" class="btn_allmenu">
+							<span class="sr-only">전체메뉴보기</span>
+							<i class="xi-bars" aria-hidden="true"></i>
+						</button>
+						<h2 class="pop_title">전체메뉴</h2>
+						
+						<ul id="head_menu" class="topmenu">
+							
+							<li class="depth1">
+								<a href="#0"><span>교육과정</span></a>
+								<div class="submenu">                    
+									<ul class="depth2">    
+										<li><a href="#0">필수교육</a></li>	
+										<li><a href="#0">인증교육</a></li>
+										<li>
+											<a href="#0">일반교육</a>
+											<ul class="depth3">
+												<li><a href="#0">핵심공통</a></li>
+												<li><a href="#0">리더십</a></li>
+												<li><a href="#0">직무</a></li>
+												<li><a href="#0">생애개발</a></li>
+											</ul>
+										</li>	
+										<li>
+											<a href="#0">부서교육</a>
+											<ul class="depth3">
+												<li><a href="#0">부서교육관리</a></li>
+												<li><a href="#0">부서교육</a></li>
+												<li><a href="#0">직무</a></li>
+												<li><a href="#0">부서통계</a></li>
+											</ul>
+										</li>	
+									</ul>
+								</div>
+							</li>
+							
+							<li class="depth1">
+								<a href="#0"><span>커뮤니티</span></a>
+								<div class="submenu">                    
+									<ul class="depth2">    
+										<li><a href="#0">커뮤니티 현황</a></li>	
+										<li><a href="#0">설문</a></li>
+									</ul>
+								</div>
+							</li>
+			
+							<li class="depth1">
+								<a href="#0"><span>나의 학습</span></a>
+								<div class="submenu">                    
+									<ul class="depth2">   
+										<!--메뉴 추가수정_240822--> 
+										<li><a href="#0">학습 현황</a></li>	
+										<li><a href="#0">학습 과정</a></li>
+										<li><a href="#0">학습 결과</a></li>	
+										<!--//메뉴 추가수정_240822--> 
+									</ul>
+								</div>
+							</li>
+			
+							<li class="depth1">
+								<a href="#0"><span>지원</span></a>
+								<div class="submenu">                    
+									<ul class="depth2">    
+										<li><a href="#0">의료원 교육 제도</a></li>	
+										<li><a href="#0">문의처</a></li>
+										<li><a href="#0">QnA</a></li>
+										<li><a href="#0">공지사항</a></li>	
+									</ul>
+								</div>
+							</li>			
+																						  
+						</ul>
+						<button type="button" class="pop_close">
+							<i class="xi-close" aria-hidden="true"></i>
+							<span class="sr-only">전체메뉴 레이어 닫기</span>
+						</button>
+					</nav>
+				</div>
+				<!-- //gnb_area -->
+			</header>
+
+			<main class="main">
+				<div id="contentWrap" class="container">
+
+					<!-- content -->
+					<div id="content" class="content">
+
+
+						<!-- 페이지정보 -->
+						<div class="h1_area">
+							<div class="location_bar">
+								<nav class="location">
+									<ul>
+										<li>
+											<a href="/"><i class="xi-home-o" aria-hidden="true"></i><span class="sr-only">Home</span></a>
+										</li>							
+										<li><span class="">커뮤니티</span></li>
+										<li><span class="current">클럽</span></li>
+									</ul>
+								</nav>                                                   
+							</div>
+							<h4 class="title_h1">커뮤니티</h4>
+						</div>
+						 <!-- //페이지정보 -->
+						
+						<!-- 2dp 메뉴 -->
+						<div class="subMenu">
+							<ul class="menu">
+								<li class=""><a href="#1">채널</a></li>
+								<li class=""><a href="#1">클럽</a></li>
+								<li class="active"><a href="#0">나의 커뮤니티</a></li>
+							</ul>
+						</div>
+						<!-- //2dp 메뉴 -->
+
+
+
+						<!-- 페이지제목 -->
+						<!-- //페이지제목 -->
+
+						<!-- 3dp 메뉴_ 필요한 경우 추가 -->
+						<!-- //3dp 메뉴--> 
+
+
+
+
+						<!-- 페이지 콘텐츠 -->
+
+
+						<!--아이템이 많을때-->
+						<aside class="right">
+							<nav class="quick">
+								<a href="" class="btn">
+									<i class="icon-svg-temp2" aria-hidden="true"></i>게시글 쓰기
+								</a>
+
+								<a href="" class="btn">
+									<i class="icon-svg-dayevent" aria-hidden="true"></i>가입하기
+								</a>
+
+								<a href="" class="btn">
+									<i class="icon-svg-meeting1" aria-hidden="true"></i>정모 만들기
+								</a>
+
+								<a href="" class="btn">
+									<i class="icon-svg-meeting2" aria-hidden="true"></i>번개 만들기
+								</a>
+							</nav>
+							<button type="button" aria-label="메뉴펼치고접는버튼" aria-expanded="false" aria-controls="quick" class="btn tTemp"><i class="xi-plus" aria-hidden="true"></i></button>
+							<script>
+								document.querySelector(".tTemp").addEventListener("click", e => {
+									if( e.currentTarget.ariaExpanded === "true" ) e.currentTarget.ariaExpanded = "false";
+									else e.currentTarget.ariaExpanded = "true";
+								})
+							</script>
+						</aside>
+
+
+						
+
+						<div class="testWrap"><!--testWrap태그 추가_241107-->
+
+							<h3 class="subMenu_title">나의 커뮤니티, 채널</h3> <!-- 페이지제목 이동_241107 -->
+
+							<div class="txt-center word-break-keep-all">
+								클럽 같은 관심과 취향을 가진 사람들이 함께 활동하는 모임
+
+								지식을 공유하고 필요한 정보를 찾아볼 수 있는 공간
+							</div>
+							
+							<!-- board_info -->
+							<div class="board_info type2 d-flex"> <!-- 클래스 수정_241107 -->
+								<div class="page_btn flex-none">
+									<button type="button" class="btn border-0 pl0 txt-left pr0"><i aria-hidden="true" class="xi-angle-left mr4"></i>목록 보기</button> <!-- 클래스 수정_241107 -->  
+								</div>
+							</div>
+							<!-- //board_info -->
+
+
+							<br><br><br>
+
+							<!-- board_info -->
+							<div class="board_info type2 d-flex"> <!-- 클래스 수정_241107 -->
+								<div class="page_btn flex-none">
+									<button type="button" class="btn border-0 pl0 txt-left pr0"><i aria-hidden="true" class="xi-angle-left mr4"></i>클럽 목록</button> <!-- 클래스 수정_241107 -->  
+								</div>
+
+								<form id="" name="" class="board_search margin-0 margin-left-auto flex-0">
+									<fieldset class="form-row">
+										<legend class="blind">정렬</legend>
+										<select class="form-select" name="sortKey" title="정렬 순서를 선택하세요." onchange="setSortKey(this.value,1)">
+											<option value="">선택</option>
+											<option value="" selected="">최신순</option>
+											<option value="">인기순</option>
+										</select>
+									</fieldset>
+								</form>
+							</div>
+							<!-- //board_info -->
+
+							<br><br><br>
+
+							<div class="com45">
+
+								<aside class="left">
+									<div class="title">카테고리</div>
+									<nav>										
+										<a href="" class="btn active"><i class="icon-svg-check-circle mr4" aria-hidden="true"></i>전체</a>
+										<a href="" class="btn"><i class="icon-svg-record-voice-over mr4" aria-hidden="true"></i>리더십</a>
+										<a href="" class="btn"><i class="icon-svg-prescriptions mr4" aria-hidden="true"></i>연구 및 교육</a>
+										<a href="" class="btn"><i class="icon-svg-monitor-heart mr4" aria-hidden="true"></i>임상지식</a>
+										<a href="" class="btn"><i class="icon-svg-note-stack mr4" aria-hidden="true"></i>오피스툴</a>
+										<a href="" class="btn"><i class="icon-svg-developer-board mr4" aria-hidden="true"></i>AI, IT</a>
+									</nav>									
+								</aside>
+
+								<!-- board_info -->
+								<div class="board_info type2 d-flex">
+									<!--div class="page_btn flex-none">
+										<button type="button" class="btn border-0 pl0 txt-left pr0"><i aria-hidden="true" class="xi-angle-left mr4"></i>목록 보기</button> 
+									</div-->
+
+									<div class="page_info txt-right margin-0 margin-left-auto min-width-auto">
+										<ul class="tabs type3 d-inline-flex w-auto" style="">
+											<li class="mb0  active">
+												<a class="tab_nav" href="#aaaa01" aria-label="목록형 보기" title="선택된 탭메뉴"><i class="icon-svg-list" aria-hidden="true"></i></a>
+											</li>
+											<li class="mb0">
+												<a class="tab_nav" href="#aaaa02" aria-label="섬네일형 보기" title="비활성 탭메뉴"><i class="icon-svg-grid" aria-hidden="true"></i></a>
+											</li>	
+											
+										</ul>
+									</div>
+
+									<form id="" name="" class="board_search margin-0 flex-0">
+										<fieldset class="form-row">
+											<legend class="blind">정렬</legend>
+											<select class="form-select" name="sortKey" title="정렬 순서를 선택하세요." onchange="setSortKey(this.value,1)">
+												<option value="">선택</option>
+												<option value="" selected="">최신순</option>
+												<option value="">인기순</option>
+											</select>
+										</fieldset>
+									</form>
+								</div>
+								<!-- //board_info -->
+
+
+								<div id="aaaa01" class="tab_cont " style="display: block;">
+									<table class="tstyle list">
+										<caption>나의 게시글 목록</caption>
+										<colgroup>
+											<col class="w8 ">
+											<col class="w13 ">
+											<col>
+											<col class="w8 ">
+											<col class="w13 ">
+											<col class="w8 ">
+											<col class="w8 ">
+										</colgroup>
+										<thead class="dhead">
+											<tr>
+												<th scope="col" class="">번호</th>
+												<th scope="col" class="">카테고리</th>
+												<th scope="col" class="title">제목</th>
+												<th scope="col" class="">글쓴이</th>
+												<th scope="col" class="">작성일</th>
+												<th scope="col" class="">조회수</th>
+												<th scope="col" class="" aria-label="좋아요" title="좋아요"><i class="icon-svg-thumbs-up fs-13px mr4 "></i></th>
+											</tr>
+										</thead>
+										<tbody class="dbody" id="">
+											<tr>
+												<td class="m-hidden" data-title="번호">13</td>
+												<td class="" data-title="카테고리"><span class="label fcWhite bcDark1 mr4">직무 / 리더십</span></td>
+												<td class="title" data-title="제목"> 
+													<a href="#">사이트 오픈 공지 입니다.<i class="xi-new" aria-hidden="true"></i><span class="sr-only">새글</span>
+													</a>
+												</td>
+												<td class="" data-title="글쓴이">김가람</td>
+												<td class="" data-title="작성일">2024.11.28</td>
+												<td class="" data-title="조회수" aria-label="조회수" title="조회수"><i class="xi-eye-o mr4 mobile-elem" aria-hidden="true"></i>33</td>
+												<td class="" data-title="좋아요" aria-label="좋아요" title="좋아요"><i class="icon-svg-thumbs-up fs-13px mr4 mobile-elem" aria-hidden="true"></i>33</td>
+											</tr>
+											
+										</tbody>
+									</table>
+
+								</div>
+
+								<div id="aaaa02" class="tab_cont " style="display: none;">
+									<div class="com044">
+										<div href="#0" class="card-type4 item">
+											<a class="img">
+												<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+											</a>
+											
+											<div class="cnt">
+												<a class="title">
+													222__2024년 제1회 임상시험의 새로운 트랜드 2024년 제1회 임상 시험의 새로운 트랜드
+												</a>
+												<div class="options d-flex flex-wrap gap-2 mt4 ">
+													<span class="labels w100"> 
+														<span class="label fcWhite bcDark1 mr4">직무 / 리더십</span>
+													</span>
+													<span class=" d-inline-flex align-items-center gap-1 vertical">
+														<i class="xi-user-o fs-17px" aria-hidden="true"></i>99 
+													</span>
+													<span class=" d-inline-flex align-items-center gap-1 vertical"> 
+														<i class="icon-svg-thumbs-up" aria-hidden="true"></i>99 
+													</span>
+												</div>
+											</div>
+												
+										</div>
+
+										<div href="#0" class="card-type4 item">
+											
+											<a class="img">
+												<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+											</a>
+											<div class="cnt">
+												<a class="title">
+													222__2024년 제1회 임상시험의 새로운 트랜드
+												</a>
+												<div class="options d-flex flex-wrap gap-2 mt4">
+													<span class="labels w100"> 
+														<span class="label fcWhite bcDark1 mr4">직무 / 리더십</span>
+													</span>
+													<span class=" d-inline-flex align-items-center gap-1 vertical">
+														<i class="xi-user-o fs-17px" aria-hidden="true"></i>99 
+													</span>
+													<span class=" d-inline-flex align-items-center gap-1 vertical"> 
+														<i class="icon-svg-thumbs-up" aria-hidden="true"></i>99 
+													</span>
+												</div>
+											</div>
+											
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+
+
+
+							<br><br><br>
+
+
+
+
+							<!-- 인기 클럽 TOP 5 -->
+							<div class="mt30"> <!-- 클래수 수정_241107-->
+								<div class="d-flex">
+									<h4 class="seg_title">인기 클럽 TOP 5</h4>
+								</div>
+
+								<div class=" community list" >
+									<a href="#0" class="card-type4 item" >
+										<div class="options d-flex gap-2 ">
+											<span class="labels tpos"> <!--클래스 수정_241107-->
+												<b class="label bcWhite fcPrimary">클럽명</b>
+											</span>
+											<span class=" d-inline-flex align-items-center gap-1 vertical"> <!--클래스 수정_241107-->
+												<i class="xi-user-o fs-16px" aria-hidden="true"></i>99   <!--클래스 수정_241107-->
+											</span>
+											<span class=" d-inline-flex align-items-center gap-1 vertical"> <!--클래스 수정_241107-->
+												<i class="icon-svg-check-heart" aria-hidden="true"></i>99
+											</span>
+										</div>
+										<div class="title margin-top-auto">
+											222__2024년 제1회 임상시험의 새로운 트랜드 2024년 제1회 임상 시험의 새로운 트랜드
+										</div>
+										<div class="img">
+											<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+										</div>
+									</a>
+
+									<a href="#0" class="card-type4 item" >
+										<div class="options d-flex gap-2 ">
+											<span class="labels tpos"> <!--클래스 수정_241107-->
+												<b class="label bcWhite fcPrimary">클럽명 클럽명</b>
+											</span>
+											<span class=" d-inline-flex align-items-center gap-1 vertical"> <!--클래스 수정_241107-->
+												<i class="xi-user-o fs-16px" aria-hidden="true"></i>99   <!--클래스 수정_241107-->
+											</span>
+											<span class=" d-inline-flex align-items-center gap-1 vertical"> <!--클래스 수정_241107-->
+												<i class="icon-svg-check-heart" aria-hidden="true"></i>99 
+											</span>
+										</div>
+										<div class="title margin-top-auto">
+											222__2024년 제1회 임상시험의 새로운 트랜드 2024년 제1회 임상 시험의 새로운 트랜드
+										</div>
+										<div class="img">
+											<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+										</div>
+									</a>
+
+									
+								</div>
+							</div>
+							<!--//인기 클럽 TOP 5 -->
+
+
+
+							<br><br><br>
+
+
+
+
+							<ul class="tabs type2 mt20 border-bottom-1 mb20" style="">
+								<li class="active"><a class="tab_nav" href="#txx1">홈</a></li>	
+								<li class=""><a class="tab_nav" href="#txx2">게시판</a></li>
+								<li class=""><a class="tab_nav" href="#txx3">사진첩</a></li>	
+							</ul>
+
+							<br><br>
+
+
+							<div class=" community list">
+								<a href="#0" class="card-type4 item">
+									<div class="options d-flex gap-2 ">
+										<span class="labels tpos"> <!--클래스 수정_241107-->
+											<b class="label bcWhite fcPrimary">클럽명</b>
+										</span>
+										<span class=" d-inline-flex align-items-center gap-1 vertical"> <!--클래스 수정_241107-->
+											<i class="xi-user-o fs-16px" aria-hidden="true"></i>99   <!--클래스 수정_241107-->
+										</span>
+										<span class=" d-inline-flex align-items-center gap-1 vertical"> <!--클래스 수정_241107-->
+											<i class="icon-svg-check-heart" aria-hidden="true"></i>99
+										</span>
+									</div>
+									<div class="title margin-top-auto">
+										222__2024년 제1회 임상시험의 새로운 트랜드 2024년 제1회 임상 시험의 새로운 트랜드
+									</div>
+									<div class="img">
+										<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+									</div>
+								</a>
+
+								<a href="#0" class="card-type4 item">
+									<div class="options d-flex gap-2 ">
+										<span class="labels tpos"> <!--클래스 수정_241107-->
+											<b class="label bcWhite fcPrimary">클럽명 클럽명</b>
+										</span>
+										<span class=" d-inline-flex align-items-center gap-1 vertical"> <!--클래스 수정_241107-->
+											<i class="xi-user-o fs-16px" aria-hidden="true"></i>99   <!--클래스 수정_241107-->
+										</span>
+										<span class=" d-inline-flex align-items-center gap-1 vertical"> <!--클래스 수정_241107-->
+											<i class="icon-svg-check-heart" aria-hidden="true"></i>99 
+										</span>
+									</div>
+									<div class="title margin-top-auto">
+										222__2024년 제1회 임상시험의 새로운 트랜드 2024년 제1회 임상 시험의 새로운 트랜드
+									</div>
+									<div class="img">
+										<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+									</div>
+								</a>
+
+
+							</div>
+							<br><br>
+
+
+							<!--card-type15-->card-type15
+							<div class="card-type15">
+
+								<!--위치이동-->
+								<div class="extrainfo">
+
+									<dl class="item w100">
+										<div>
+											<dt class="">개설클럽</dt> <!--클래스 삭제_241107-->
+											<dd><b>4</b>개</dd> <!--태그추가_241107-->
+										</div>
+
+										<div>
+											<dt class="">가입클럽</dt> <!--클래스 삭제_241107-->
+											<dd><b>4</b>개</dd><!--태그추가_241107-->
+										</div>
+
+										<div>
+											<dt class="">가입요청중</dt> <!--클래스 삭제_241107-->
+											<dd><b>4</b>개</dd><!--태그추가_241107-->
+										</div>
+									</dl>
+
+								</div>
+								<!--//위치이동-->
+
+								<div class="user">
+									<div class="img">
+										<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+										<button type="button" class="btn" title="이미지 선택" aria-label="이미지 선택"><i class="xi-pen" aria-hidden="true"></i></button>
+									</div>
+									<div class="info">
+										<div class="name">김가람</div>
+										<small>인재개발팀</small>
+									</div>
+								</div>
+
+								<div class="btns"> <!--위치이동-->
+									<a href="#0" class="btn"><i class="xi-heart mr4" aria-hidden="true"></i>찜한 클럽</a>
+									<a href="#0" class="btn">좋아요한 게시물</a>
+									<a href="#0" class="btn">최근 본 클럽 및 채널 게시물</a>
+								</div>
+								
+							</div>
+							<!--card-type15-->
+
+
+							<br><br>
+
+
+							<!--card-type9-->card-type9
+							<div class="card-type9  ">
+
+								<div class="w100 d-flex">
+									<button type="button" class="btn bcDark4 margin-left-auto">탈퇴하기</button>
+								</div>
+
+								<div class="img w100">  <!--클래스 수정_241107-->
+									<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+								</div>
+
+								<div class="cnt padding-0 max-width-full"><!--클래스 수정_241107-->
+									
+									<dl class="dl-type2 fcDark1 mb5 fs-14px">
+										<dt><span class="label basic fcPrimary">인문학/책/글</span></dt>
+										<dd><u>멤버15</u></dd>
+										<dd class="fcViolet">찜 <i class="xi-heart mr4" aria-hidden="true"></i>32</dd><!--클래스 수정_241107-->
+									</dl>
+
+									<div class="title"> 
+										<!--위치이동, 클래스 수정_241107-->
+										<label class="ml10">
+											<input type="checkbox" class="icon-svg-check-heart mr4 bcViolet" ><span class="hidden">좋아요(찜)</span>
+										</label>
+										<!--//위치이동_241107-->
+										나의 커뮤니티 채널 이름 나의 커뮤니티 채널 이름  나의 커뮤니티 채널 이름
+									</div>
+
+									<!--extrainfo-->
+									<div class="extrainfo mt0">
+
+										<div class="item ">
+											<span class="basic bcTeal label">클럽장</span>
+											<span>윤한울</span>
+										</div>
+
+										<div class="item ">
+											<span class="fcDark1">최근활동일</span>
+											<span>2024.05.09</span>
+										</div>
+
+										<!-- 툴팁 메시지 -->
+										<div class="alert d-inline-block fs-13px bcOrange-500">
+											<div class="d-flex gap-1 flex-wrap">
+												<i class="xi-info-o fs-16px flex-none" aria-hidden="true"></i>
+												<span class="flex-1">
+													가입 승인 요청중입니다
+												</span>
+											</div>
+										</div>
+										<!-- //툴팁 메시지 -->
+
+									</div>
+									<!--//extrainfo-->
+
+									<!--태그 <div class="option mt30"></div> 삭제_241107-->
+
+								</div>
+								<div class="description">
+
+									<!--text-overflow-->
+									<div class="text-overflow  min-height-200px "> <!-- 더보기버튼 클릭시 expanded 클래스 추가  -->
+										<div class="text-overflow-cnt">
+											소솜 비나리 바람꽃 곰다시 로운 도담도담 아슬라 아름드리 그루잠 사과 곰다시 책방 감또개 산들림 아련 나래 감사합니다 감또개 감또개 예그리나 아련 여우비 도르레 별빛 여우비 로운 노트북 도르레 로운 비나리 그루잠 별빛 감또개 컴퓨터 늘품 곰다시 별하 산들림 도서관 바람꽃 가온누리 안녕 나비잠 우리는 아슬라 미리내 별빛 비나리 곰다시 도담도담.<br>
+											<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+
+											다솜 아련 감또개 늘품 옅구름 달볓 비나리 나비잠 늘품 산들림 도담도담 포도 도르레 미쁘다 함초롱하다 비나리 별빛 도서 곰다시 가온누리 비나리 안녕 함초롱하다 비나리 여우별 곰다시 아련 사과 예그리나 미쁘다 아리아 여우비 컴퓨터 별하 달볓 소솜 비나리 별하 비나리 도담도담 노트북 비나리 옅구름 여우별 여우별 우리는 다솜 아리아 감사합니다 로운.<br><br>
+
+											소솜 비나리 바람꽃 곰다시 로운 도담도담 아슬라 아름드리 그루잠 사과 곰다시 책방 감또개 산들림 아련 나래 감사합니다 감또개 감또개 예그리나 아련 여우비 도르레 별빛 여우비 로운 노트북 도르레 로운 비나리 그루잠 별빛 감또개 컴퓨터 늘품 곰다시 별하 산들림 도서관 바람꽃 가온누리 안녕 나비잠 우리는 아슬라 미리내 별빛 비나리 곰다시 도담도담.<br><br>
+
+											다솜 아련 감또개 늘품 옅구름 달볓 비나리 나비잠 늘품 산들림 도담도담 포도 도르레 미쁘다 함초롱하다 비나리 별빛 도서 곰다시 가온누리 비나리 안녕 함초롱하다 비나리 여우별 곰다시 아련 사과 예그리나 미쁘다 아리아 여우비 컴퓨터 별하 달볓 소솜 비나리 별하 비나리 도담도담 노트북 비나리 옅구름 여우별 여우별 우리는 다솜 아리아 감사합니다 로운.
+										</div>
+
+										<button type="button" class="btn xz">더보기<i class="xi-angle-down" aria-hidden="true"></i></button>
+									</div>
+									<!--//text-overflow-->
+									<script>
+										document.querySelector(".xz").addEventListener("click", e => {
+											e.currentTarget.parentNode.classList.toggle("expanded")
+										});
+									</script>
+
+								</div>
+
+							</div>
+							<!-- //card-type9-->
+
+							<br><br>
+
+
+
+							<div class="com040 mt50 mb20 "> <!--감싸는태그추가_241108-->
+								<ul class="tabs type4 mb0" style=""> <!--클래스수정_241108-->
+									<li class="active"><a class="tab_nav" href="#test01">가입 클럽</a></li>	
+									<li class=""><a class="tab_nav" href="#test02">나의 클럽</a></li>
+									<li class=""><a class="tab_nav" href="#test03">나의 게시글</a></li>
+								</ul>
+
+								<!-- board_info -->
+								<div class="board_info type2 mb0"> <!-- type2 클래스 추가_2407 -->
+
+									<form id="createCourseForm" name="createCourseForm" class="board_search margin-left-auto">
+
+										<fieldset class="form-row">
+											<legend class="blind">정렬</legend>
+
+											<select class="form-select" name="sortKey" title="내용입력">
+												<option value="">전체</option>
+												<option value="" >클럽명</option>
+												<option value="" selected>최신순</option>
+												<option value="">인기순</option>
+											</select>
+										</fieldset>
+									</form>
+								</div>
+								<!-- //board_info -->
+							</div> <!--//감싸는태그추가_241108-->
+							
+
+
+							<!--가입 클럽-->
+							<div id="test01" class="tab_cont " style="display: block;" >
+
+								<div class="list type2">
+
+									<!--card-type9-->
+									<div class="card-type9  ">
+
+										<div class="img">
+											<img src="../tpl/004/img/contents/aa.png" alt="과목명 이미지" aria-hidden="true">
+										</div>
+
+										<div class="cnt">
+
+											<div class="title"> 
+												<!--위치이동, 클래스 수정_241107-->
+												<label class="ml10">
+													<input type="checkbox" class="icon-svg-check-heart mr4 bcViolet"><span class="hidden">좋아요(찜)</span>
+												</label>
+												<!--//위치이동_241107-->
+												나의 커뮤니티 채널 이름 나의 커뮤니티 채널 이름  나의 커뮤니티 채널 이름
+											</div>
+
+											<!--extrainfo-->
+											<div class="extrainfo mt0">  <!-- 클래스 수정_241107 -->
+
+												<div class="item ">
+													<span class="basic bcTeal label">클럽장</span>
+													<span>윤한울1</span>
+												</div>
+
+												<div class="item ">
+													<span class="fcDark1">최근활동일</span>
+													<span>2024.05.09</span>
+												</div>
+
+												<dl class="dl-type2 ">	<!--클래스 수정_241107-->
+		                                            <dt class="fcDark1">인문학/책/글</dt> <!--클래스 수정_241107-->
+		                                            <dd class="fcDark1"><u>멤버15</u></dd>	<!--클래스 수정_241107-->
+		                                            <dd class="fcViolet">찜 <i class="xi-heart mr4" aria-hidden="true"></i>32</dd><!--클래스 수정_241107-->
+		                                        </dl>
+
+		                                        <!-- 툴팁 메시지 -->
+												<div class="alert d-inline-block fs-13px bcOrange-500">
+													<div class="d-flex gap-1 flex-wrap">
+														<i class="xi-info-o fs-16px flex-none" aria-hidden="true"></i>
+														<span class="flex-1">
+															가입 승인 요청중입니다
+														</span>
+													</div>
+												</div>
+												<!-- //툴팁 메시지 -->
+
+											</div>
+											<!--//extrainfo-->
+
+										</div>
+										<div class="description">
+
+											<ul class="list_board mt0 mb0"> 
+												<li><a href="#">11.2(토) 책방탐험, 남산책방책방탐험, 남산책방책방탐험, 남산책방책방탐험, 남산책방책방탐험, 남산책방책방탐험, 남산책방책방탐험, 남산책방책방탐험, 남산책방책방탐험, 남산책방책방탐험, 남산책방책방탐험, 남산책방책방탐험, 남산책방<i aria-hidden="true" class="xi-angle-right ml4"></i></a></li>
+												<li><a href="#">11.2(토) 책방탐험, 남산책방<i aria-hidden="true" class="xi-angle-right ml4"></i></a></li>
+											</ul>
+
+										</div>
+
+									</div>
+									<!-- //card-type9-->								
+
+									<!--card-type9-->
+									<div class="card-type9  ">
+
+										<div class="img">
+											<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+										</div>
+
+										<div class="cnt">
+
+											<a href="#0" class="title"> 
+												[신촌] 나의 클럽인경우 <a href="#0" class="btn text bcWhite" aria-label="클럽수정하기" title="클럽수정하기"><i class="xi-cog fs-16px" aria-hidden="true"></i></a>
+											</a>
+
+											<!--extrainfo-->
+											<div class="extrainfo">
+
+												<div class="item ">
+													<span class="basic bcTeal label">클럽장</span>
+													<span>윤한울</span>
+												</div>
+
+												<!-- 툴팁 메시지 -->
+												<div class="alert d-inline-block fs-13px bcOrange-500">
+													<div class="d-flex gap-1 flex-wrap">
+														<i class="xi-info-o fs-16px flex-none" aria-hidden="true"></i>
+														<span class="flex-1">
+															회원승인요청이 있습니다.
+														</span>
+													</div>
+												</div>
+												<!-- //툴팁 메시지 -->
+
+												<div class="item ">
+													<span class="fcDark1">최근활동일</span>
+													<span>2024.05.09</span>
+												</div>
+
+												<dl class="dl-type2 ">	<!--클래스 수정_241107-->
+		                                            <dt class="fcDark1">인문학/책/글</dt> <!--클래스 수정_241107-->
+		                                            <dd class="fcDark1"><u>멤버15</u></dd>	<!--클래스 수정_241107-->
+		                                            <dd class="fcViolet">찜 <i class="xi-heart mr4" aria-hidden="true"></i>32</dd><!--클래스 수정_241107-->
+		                                        </dl>
+
+											</div>
+											<!--//extrainfo-->
+
+										</div>
+										<div class="description">
+
+											<div class="extrainfo mt5 mb5">
+												<span class="label basic fcPrimary">샘플_책/글/인문학</span>
+												<div class="labels d-inline-block">
+													<span class="label basic fcDark1">#해쉬태그명</span>
+													<span class="label basic fcDark1">#해쉬태그명</span>
+													<span class="label basic fcDark1">#해쉬태그명</span>
+													<span class="label basic fcDark1">#해쉬태그명</span>
+													<span class="label basic fcDark1">#해쉬태그명</span>
+													<span class="label basic fcDark1">#해쉬태그명</span>
+													<span class="label basic fcDark1">#해쉬태그명</span>
+													<span class="label basic fcDark1">#해쉬태그명</span>
+													<span class="label basic fcDark1">#해쉬태그명</span>
+													<span class="label basic fcDark1">#해쉬태그명</span>
+												</div>
+												
+											</div>
+
+											<!--text-overflow-->
+											<div class="text-overflow  "> <!-- 클래스  수정_241107--> <!-- 더보기버튼 클릭시 expanded 클래스 추가  -->
+												<div class="text-overflow-cnt">
+													소솜 비나리 바람꽃 곰다시 로운 도담도담 아슬라 아름드리 그루잠 사과 곰다시 책방 감또개 산들림 아련 나래 감사합니다 감또개 감또개 예그리나 아련 여우비 도르레 별빛 여우비 로운 노트북 도르레 로운 비나리 그루잠 별빛 감또개 컴퓨터 늘품 곰다시 별하 산들림 도서관 바람꽃 가온누리 안녕 나비잠 우리는 아슬라 미리내 별빛 비나리 곰다시 도담도담.<br>
+
+													다솜 아련 감또개 늘품 옅구름 달볓 비나리 나비잠 늘품 산들림 도담도담 포도 도르레 미쁘다 함초롱하다 비나리 별빛 도서 곰다시 가온누리 비나리 안녕 함초롱하다 비나리 여우별 곰다시 아련 사과 예그리나 미쁘다 아리아 여우비 컴퓨터 별하 달볓 소솜 비나리 별하 비나리 도담도담 노트북 비나리 옅구름 여우별 여우별 우리는 다솜 아리아 감사합니다 로운.<br><br>
+
+													<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+
+													소솜 비나리 바람꽃 곰다시 로운 도담도담 아슬라 아름드리 그루잠 사과 곰다시 책방 감또개 산들림 아련 나래 감사합니다 감또개 감또개 예그리나 아련 여우비 도르레 별빛 여우비 로운 노트북 도르레 로운 비나리 그루잠 별빛 감또개 컴퓨터 늘품 곰다시 별하 산들림 도서관 바람꽃 가온누리 안녕 나비잠 우리는 아슬라 미리내 별빛 비나리 곰다시 도담도담.<br><br>
+
+													다솜 아련 감또개 늘품 옅구름 달볓 비나리 나비잠 늘품 산들림 도담도담 포도 도르레 미쁘다 함초롱하다 비나리 별빛 도서 곰다시 가온누리 비나리 안녕 함초롱하다 비나리 여우별 곰다시 아련 사과 예그리나 미쁘다 아리아 여우비 컴퓨터 별하 달볓 소솜 비나리 별하 비나리 도담도담 노트북 비나리 옅구름 여우별 여우별 우리는 다솜 아리아 감사합니다 로운.
+												</div>
+
+												<button type="button" class="btn xz">더보기<i class="xi-angle-down" aria-hidden="true"></i></button>
+											</div>
+											<!--//text-overflow-->										
+
+										</div>
+
+									</div>
+									<!-- //card-type9-->
+
+									<!--card-type9-->
+									<div class="card-type9  ">
+
+										<div class="img">
+											<img src="../tpl/004/img/contents/sampleSize@2x.png" alt="과목명 이미지" aria-hidden="true">
+										</div>
+
+										<div class="cnt">
+
+											<!-- 툴팁 메시지 -->
+											<div class="alert d-inline-block fs-13px bcOrange-500">
+												<div class="d-flex gap-1 flex-wrap">
+													<i class="xi-info-o fs-16px flex-none" aria-hidden="true"></i>
+													<span class="flex-1">개설 요청중</span>
+												</div>
+											</div>
+											<!-- //툴팁 메시지 -->
+
+											<a href="#0" class="title"> 
+												[신촌] 나의 클럽인경우
+											</a>
+
+											<!--extrainfo-->
+											<div class="extrainfo">
+
+												<div class="item ">
+													<span class="basic bcTeal label">클럽장</span>
+													<span>윤한울</span>
+												</div>
+
+												<div class="item ">
+													<span class="fcDark1">최근활동일</span>
+													<span>2024.05.09</span>
+												</div>
+
+												<dl class="dl-type2 ">	<!--클래스 수정_241107-->
+		                                            <dt class="fcDark1">인문학/책/글</dt> <!--클래스 수정_241107-->
+		                                            <dd class="fcDark1"><u>멤버15</u></dd>	<!--클래스 수정_241107-->
+		                                            <dd class="fcViolet">찜 <i class="xi-heart mr4" aria-hidden="true"></i>32</dd><!--클래스 수정_241107-->
+		                                        </dl>
+
+												<!-- 툴팁 메시지 -->
+												<div class="alert d-inline-block fs-13px bcGreen-500">
+													<div class="d-flex gap-1 flex-wrap">
+														<i class="xi-info-o fs-16px flex-none" aria-hidden="true"></i>
+														<span class="flex-1">개설 요청 되었습니다.<br>관리자의 승인 이후 사용이 가능합니다. </span>
+													</div>
+												</div>
+												<!-- //툴팁 메시지 -->
+
+											</div>
+											<!--//extrainfo-->
+
+										</div>
+										<div class="description">
+
+											<div class="extrainfo mt5 mb5">
+												<span class="label basic fcPrimary">샘플_책/글/인문학</span>
+												<div class="labels d-inline-block">
+													<span class="label basic fcDark1">#해쉬태그명</span>
+													<span class="label basic fcDark1">#해쉬태그명</span>
+												</div>
+												
+											</div>
+
+											<!--text-overflow-->
+											<div class="text-overflow  "> <!-- 클래스  수정_241107--> <!-- 더보기버튼 클릭시 expanded 클래스 추가  -->
+												<div class="text-overflow-cnt">
+													소솜 비나리 바람꽃 곰다시 로운 도담도담 아슬라 아름드리 그루잠 사과 곰다시 책방 감또개 산들림 아련 나래 감사합니다_짧은글
+												</div>
+
+											</div>
+											<!--//text-overflow-->										
+
+										</div>
+
+									</div>
+									<!-- //card-type9-->
+
+
+								</div>
+
+								<!--board_pager--><!--//board_pager-->
+							</div>
+							<!--//가입 클럽-->
+
+							<div id="test02" class="tab_cont "  >test222 </div>
+
+
+							<!--나의게시글-->
+							<div id="test03" class="tab_cont ">
+								<table class="tstyle list type2">
+									<caption>나의 게시글 목록</caption>
+									<colgroup>
+										<col class="w8 ">
+										<col>
+										<col class="w8 ">
+										<col class="w13 ">
+										<col class="w8 ">
+										<col class="w8 ">
+									</colgroup>
+									<thead class="dhead">
+										<tr>
+											<th scope="col" class="">번호</th>
+											<th scope="col" class="title">제목</th>
+											<th scope="col" class="">글쓴이</th>
+											<th scope="col" class="">작성일</th>
+											<th scope="col" class="">조회수</th>
+											<th scope="col" class="">좋아요</th>
+										</tr>
+									</thead>
+									<tbody class="dbody" id="">
+										<tr>
+											<td class="m-hidden" data-title="번호">13</td>
+											<td class="title" data-title="제목"> 
+												<a href="#">
+													<span class="label fcWhite bcDark1 mr4">직무 / 리더십</span>
+													사이트 오픈 공지 입니다.<i class="xi-new" aria-hidden="true"></i><span class="sr-only">새글</span>
+												</a>
+											</td>
+											<td class="" data-title="글쓴이">김가람</td>
+											<td class="" data-title="작성일">2024.11.28</td>
+											<td class="" data-title="조회수" aria-label="조회수" title="조회수"><i class="xi-eye-o mr4 "></i>33</td>
+											<td class="" data-title="좋아요" aria-label="좋아요" title="좋아요"><i class="icon-svg-thumbs-up fs-13px mr4 "></i>33</td>
+										</tr>
+										<tr>
+											<td class="m-hidden" data-title="번호">12</td>
+											<td class="title" data-title="제목">
+												<a href="#">
+													<span class="label fcWhite bcDark1 mr4">자기계발 / 교양</span>
+													로그인이 잘 안될때 해결 방법입니다.로그인이 잘 안될때 해결 방법입니다.
+												</a>
+											</td>
+											<td class="" data-title="글쓴이">김가람</td>
+											<td class="" data-title="작성일">2024.11.28</td>
+											<td class="" data-title="조회수" aria-label="조회수" title="조회수"><i class="xi-eye-o mr4 "></i>33</td>
+											<td class="" data-title="좋아요" aria-label="좋아요" title="좋아요"><i class="icon-svg-thumbs-up fs-13px mr4 "></i>33</td>
+										</tr>
+										<tr>
+											<td class="m-hidden" data-title="번호">11</td>
+											<td class="title" data-title="제목">
+												<i class="xi-subdirectory-arrow" aria-hidden="true"><span class="sr-only">답글</span></i>
+												<a href="#"><span class="label fcWhite bcDark1 mr4">자기계발 / 교양</span>로그인이 잘 안될때 해결 방법입니다.</a></td>
+											<td class="" data-title="글쓴이">김가람</td>
+											<td class="" data-title="작성일">2024.11.28</td>
+											<td class="" data-title="조회수" aria-label="조회수" title="조회수"><i class="xi-eye-o  mr4"></i>33</td>
+											<td class="" data-title="좋아요" aria-label="좋아요" title="좋아요"><i class="icon-svg-thumbs-up fs-13px mr4 "></i>33</td>
+										</tr>
+										<tr>
+											<td class="m-hidden" data-title="번호">10</td>
+											<td class="title" data-title="제목"><a href="#"><span class="label fcWhite bcDark1 mr4">자기계발 / 아웃도어</span>금일 19시~21시 전산 점검 안내입니다.</a></td>
+											<td class="" data-title="글쓴이">김가람</td>
+											<td class="" data-title="작성일">2024.11.28</td>
+											<td class="" data-title="조회수" aria-label="조회수" title="조회수"><i class="xi-eye-o mr4 "></i>33</td>
+											<td class="" data-title="좋아요" aria-label="좋아요" title="좋아요"><i class="icon-svg-thumbs-up fs-13px mr4 "></i>33</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--//나의게시글-->
+
+						</div>	<!--//testWrap태그 추가_241107-->
+
+						<!-- //페이지 콘텐츠 -->
+						 
+
+							
+					</div>
+					<!-- //content -->
+				</div>
+				<!-- //contentWrap -->
+				  
+
+			</main>
+
+			<footer class="footer">
+				<button type="button" class="go_top fixed stick"><i class="xi-angle-up-min" aria-hidden="true"></i><span>TOP</span></button>
+				<div class="container">
+				   
+					<div class="inner-wrap">
+						<div class="footer_logo"><img src="../tpl/004/img/common/logo_w.svg"></div>
+						<ol>
+							<li><a href="/home/main/goMenuPage?mcd=HM06001000">이용약관</a></li>
+							<li><a href="/home/main/goMenuPage?mcd=HM06002000">개인보호처리방침</a></li>
+							<li><a href="/home/main/goMenuPage?mcd=HM06002000">이메일주소무단수집거부</a></li>
+							<li>
+								<div class="relate_site">
+									<a href="#" class="title">관련사이트<i class="xi-angle-up-min" aria-hidden="true"></i></a>
+									<ul class="list">
+										<li><a href="https://gw.yuhs.ac/" target="_blank">연세의료원 그룹웨어(원내망 접속시)</a></li>
+										<li><a href="https://plaza.yuhs.ac/" target="_blank">연세의료원 그룹웨어(원외망 접속시)</a></li>
+										<li><a href="https://yuhs.kyoboreadingtree.co.kr/" target="_blank">세브란스 북클럽</a></li>
+										<li><a href="https://apply.tutoring.co.kr/s_R728OJ7E" target="_blank">전화/화상 외국어</a></li>
+										<li><a href="https://whattime.co.kr/tutoringb2b/yuhs_offline" target="_blank">1:1 영어회화</a></li>
+										<li><a href="https://whattime.co.kr/tutoringb2b/yuhs_offline2" target="_blank">Medical Presentation</a></li>
+										<li><a href="https://www.learnus.org/" target="_blank">연세대학교 런어스</a></li>
+									</ul>
+								</div>
+							</li>
+						</ol>
+						<ul>
+							<li class="address">
+								<address>03722 서울특별시 서대문구 연세로 50-1</address>
+							</li>
+						</ul>
+						<div>ⓒ 2023 YONSEI UNIVERSITY HEALTH SYSTEM. ALL RIGHTS RESERVED.</div>
+					</div>
+			
+				</div>
+			
+			</footer>
+		</div>
+		<!--//#wrap-->
+
+<script>
+//목업용_개발과 상관없음
+$(".tabs .tab_nav").on("click", function (e) {
+	e.preventDefault();
+	e.stopImmediatePropagation();
+
+	this.parentNode.parentNode.querySelectorAll("a").forEach( elem => {
+		elem.parentNode.classList.remove("active");
+		document.querySelector(elem.hash).style.display = "none";
+	} );
+	
+	this.parentNode.classList.add("active");
+	document.querySelector(this.hash).style.display = "block";
+})
+
+</script>
+	</body>
+</html>
