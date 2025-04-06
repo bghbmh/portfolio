@@ -1,238 +1,137 @@
 import * as cf from '../assets/js/commonFunction.js';
 
-export let Modal = {	
-	//let item = items.find( o => o.id === parseInt(selectedItem) );
-	box : null,
-	init : (item) => {
-		Modal.box = cf.CreateElement({ tag : "div",  
+export class Modal {
+	constructor(args) {
+		this.box = cf.CreateElement({
+			tag: "div",
 			class: "modal fade",
-			id : item.id ? item.id : 'example1',
-			tabindex :-1,
-			"aria-labelledby" : item.id ? item.id+"Label" : 'Label',
-			"aria-hidden" : true
-		})
-
-		Modal.box.addEventListener("click", e => {
-			
-			if( !e.target.closest('[data-bs-dismiss]') ) return;
-			
-			e.stopPropagation();
-			e.currentTarget.classList.remove("show");
-
-			Modal.close();
-			
-			setTimeout(() => {
-				//console.log("setTimeout - ",item, Modal);
-			}, 5000);
+			id: args.id ? args.id : "my",
+			tabindex: -1,
 		});
-
-		Modal.outsideContentClickHandler();
-
-		if( item.addEvent ) {
-			console.log("'addEvent???", item.addEvent)
-			Modal.addEvent();
-		}
-	},
-	addEvent : () =>{
-		console.log("'addEvent", this)
-	},
-	attachEvent(eTarget, eType, eFunc) {
-		//console.log('eFunc - ',eFunc, typeof eFunc)
-		if( typeof eFunc !== "function" ){
-			//console.log('eFunc33 - ',eFunc, typeof eFunc)
-			for( let f of eFunc ) eTarget.addEventListener(eType, f );
-			return;
-		}
-		eTarget.addEventListener(eType, eFunc );
-	},
-	open : (item, mainBody = null ) => {
-		//console.log(Modal)
-		if( !Modal.box ) Modal.init(item);
-
-		Modal.box.innerHTML = item.tamplateHTML;
-		Modal.box.classList.add("show");
-
-		if( !mainBody )	document.querySelector("body").appendChild(Modal.box);
-		else mainBody.appendChild(Modal.box); /* 차후 문자인지 아닌지 확인절차 추가*/
-
-		document.querySelector("body").classList.add("modalOpen");
-
-		return Modal.box; // 부투스트랩 확인해보기
-	},
-	close : (id = null ) => {
-		document.querySelector("body").removeChild(document.querySelector("#" + Modal.box.id))
-		Modal.box = null;
-		document.querySelector("body").classList.remove("modalOpen");
-	},
-	outsideContentClickHandler : () => {
-		Modal.box.addEventListener("click", e => {
-			if( e.target.closest('.modal-content') ){
-				console.log("===== inside modal-content =====")
-			} else {
-				console.log("===== outside modal-content =====");
-				e.stopPropagation();
-				e.currentTarget.classList.remove("show");
-				Modal.close();
-			}
-			
-			if( !e.target.closest('[data-bs-dismiss]') ) return;
-		});
+		this.box.initValue = this.initializeDefaults();
+		this.initDefaultValues(args); // 사용자 정의 초기값 설정
+		this.create(args); // 모달 생성
 	}
 
+	create = (args) => {
+		if (this.box.initValue.tamplateHTML) {
+			this.box.innerHTML = this.box.initValue.tamplateHTML;
+		}
 
+		this.box.classList.add("show");
+		document.body.append(this.box);
+		document.querySelector("body").classList.add("modalOpen");
+
+		// ✅ onInit 함수 실행
+		if (typeof this.box.initValue.onInit === "function") {
+			this.box.initValue.onInit(this.box);
+		}
+
+	};
+
+	// 기본 속성설정
+	initializeDefaults() {
+		return {
+			tamplateHTML: null,
+			onInit: null, // 기본은 null, 함수가 들어오면 실행
+		};
+	}
+
+	// 사용자 정의 초기값 설정
+	initDefaultValues = (args) => {
+		if (!args) return;
+		for (let key in args) {
+			this.box.initValue[key] = args[key];
+		}
+	};
+
+	static open(args = null) {
+		return new this(args);
+	}
+
+	static close(obj = null) {
+		if (!obj) return;
+		console.log("close modal - ", obj);
+	}
 }
 
 
- 
 
 
+// document.querySelector("[data-action='toggle']").addEventListener("click", e => {
+// 	document.querySelector( e.currentTarget.dataset.target).classList.toggle("expanded");
+// });
+
+function bodyClickhandler(body, content, className = "active") {
+	console.log("  z33- ");
+	if (!content) return;
+	document.querySelector("body").addEventListener("click", xxd.bind({"body" : body, "content":content, "className":className}));
+}
+
+function xxd(e) {
+	e.stopPropagation();
+	let a = findElement(e.target, this.content);
+	if (a) return;
+	
+	this.body.classList.remove(this.className);
+	document.querySelector("body").removeEventListener("click", xxd);
+	
+}
+
+function findElement(elem, tar) {
+	if (!elem && !tar) return;
+	while (elem !== tar) {
+		elem = elem.parentNode;
+		if (elem === document.querySelector("body")) {
+			return null;
+		}
+	}
+	return elem;
+}
 
 
-// import * as cf from '../assets/js/commonFunction.js';
+// document.querySelectorAll("[data-action='modal']").forEach(pp => pp.addEventListener("click", e => {
 
-// export let Modal = {	
-// 	//let item = items.find( o => o.id === parseInt(selectedItem) );
-// 	box : null,
-// 	init : (item) => {
-// 		Modal.box = cf.CreateElement({ tag : "div",  
-// 			class: "modal fade",
-// 			id : item.id ? item.id : 'example1',
-// 			tabindex :-1,
-// 			"aria-labelledby" : item.id ? item.id+"Label" : 'Label',
-// 			"aria-hidden" : true
-// 		})
-
-// 		Modal.box.addEventListener("click", e => {
-			
-// 			if( !e.target.closest('[data-bs-dismiss]') ) return;
-			
-// 			e.stopPropagation();
-// 			e.currentTarget.classList.remove("show");
-
-// 			document.querySelector("body").removeChild(document.querySelector("#" + Modal.box.id))
-// 			Modal.box = null;
-// 			item = null;
-
-// 			//console.log("close",item, Modal);
-// 			document.querySelector("body").classList.remove("modalOpen");
-
-			
-// 			setTimeout(() => {
-// 				//console.log("setTimeout - ",item, Modal);
-// 			}, 5000);
-			
-			
-// 		});
-
-
-
-// 		if( item.addEvent ) {
-// 			console.log("'addEvent???", item.addEvent)
-// 			Modal.addEvent();
-// 		}
-// 	},
-// 	addEvent : () =>{
-// 		console.log("'addEvent", this)
-// 	},
-// 	attachEvent(eTarget, eType, eFunc) {
-// 		//console.log('eFunc - ',eFunc, typeof eFunc)
-// 		if( typeof eFunc !== "function" ){
-// 			//console.log('eFunc33 - ',eFunc, typeof eFunc)
-// 			for( let f of eFunc ) eTarget.addEventListener(eType, f );
-// 			return;
-// 		}
-// 		eTarget.addEventListener(eType, eFunc );
-// 	},
-// 	open : (item, mainBody = null ) => {
-// 		//console.log(Modal)
-// 		if( !Modal.box ) Modal.init(item);
-
-// 		Modal.box.innerHTML = item.tamplateHTML;
-// 		Modal.box.classList.add("show");
-
-
-
-// 		if( !mainBody )	document.querySelector("body").appendChild(Modal.box);
-// 		else mainBody.appendChild(Modal.box); /* 차후 문자인지 아닌지 확인절차 추가*/
-
-// 		document.querySelector("body").classList.add("modalOpen");
-
-// 		return Modal.box; // 부투스트랩 확인해보기
-// 	},
-// 	close : (id = null ) => {
-// 		//console.log("close",id, Modal);
-
-// 		// e.stopPropagation();
-// 		// e.currentTarget.classList.remove("show");
-
-// 		document.querySelector("body").removeChild(document.querySelector("#" + Modal.box.id))
-// 		Modal.box = null;
-
-// 		document.querySelector("body").classList.remove("modalOpen");
-
-// 		console.log("Modal close22",id, Modal);
-// 	}
-
-
-// }
-
-
-
-// // document.querySelector("[data-action='toggle']").addEventListener("click", e => {
-// // 	document.querySelector( e.currentTarget.dataset.target).classList.toggle("expanded");
-// // });
-
-// function bodyClickhandler(body, content, className = "active") {
-// 	console.log("  z33- ");
-// 	if (!content) return;
-// 	document.querySelector("body").addEventListener("click", xxd.bind({"body" : body, "content":content, "className":className}));
-// }
-
-// function xxd(e) {
 // 	e.stopPropagation();
-// 	let a = findElement(e.target, this.content);
-// 	if (a) return;
 	
-// 	this.body.classList.remove(this.className);
-// 	document.querySelector("body").removeEventListener("click", xxd);
-	
-// }
+// 	let o = document.querySelector(  e.currentTarget.dataset.target);
+// 	o.classList.add("show");
+// 	console.log("  z11- ");
 
-// function findElement(elem, tar) {
-// 	if (!elem && !tar) return;
-// 	while (elem !== tar) {
-// 		elem = elem.parentNode;
-// 		if (elem === document.querySelector("body")) {
-// 			return null;
-// 		}
-// 	}
-// 	return elem;
-// }
+// 	if (o.popoverEvent) return;
+// 	o.popoverEvent = true;
+// 	o.querySelector("[data-bs-dismiss='modal']").addEventListener("click", () => {
+
+// 		console.log("  z22- ");
 
 
-// // document.querySelectorAll("[data-action='modal']").forEach(pp => pp.addEventListener("click", e => {
+// 		o.classList.remove("show");
+// 		delete o.popoverEvent;
+// 	}, { once: true });
 
-// // 	e.stopPropagation();
-	
-// // 	let o = document.querySelector(  e.currentTarget.dataset.target);
-// // 	o.classList.add("show");
-// // 	console.log("  z11- ");
+// 	bodyClickhandler(o, o.querySelector(".modal-content"), "show")
 
-// // 	if (o.popoverEvent) return;
-// // 	o.popoverEvent = true;
-// // 	o.querySelector("[data-bs-dismiss='modal']").addEventListener("click", () => {
-
-// // 		console.log("  z22- ");
-
-
-// // 		o.classList.remove("show");
-// // 		delete o.popoverEvent;
-// // 	}, { once: true });
-
-// // 	bodyClickhandler(o, o.querySelector(".modal-content"), "show")
-
-// // }));
+// }));
 
 
 
-
+function modalWrap(){
+	return cf.CreateElement({ tag : "div",  
+		class: "modal-dialog modal-dialog-centered modal-dialog-scrollable",
+		id : "my" ,
+		tabindex :-1,
+	})`
+	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"> 
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">
+					<span>edit_test</span>
+				</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body formType1 ">
+				${myDBCardType1.edit(item)}
+			</div>
+		</div>
+	</div>`
+}
