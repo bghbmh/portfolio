@@ -13,14 +13,16 @@ function tamplateModalHTML(modalStyle, item){
 		return `
 			<div class="modal-dialog modal-extra-lg modal-dialog-centered modal-dialog-scrollable pageView"> 
 				<div class="modal-content">
-
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">닫기</button>
 					<div class="modal-header">
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">닫기</button>
-						<div class="extraInfo expanded">
+						<div class="d-flex">
 							<h5 class="modal-title" role="button" aria-label="더보기버튼"  data-action="toggle" data-target=".extraInfo" aria-label=".extraInfo">
 								<span>${item.title !== "" ? item.title : "Modal_프로젝트프로필" }</span>
-								<i class="bi bi-chevron-up" aria-hidden="true"></i>
-							</h5>							
+							</h5>	
+							<button type="button" class="btn ttt" data-on="접기" data-off="펼치기"></button>
+						</div>
+						
+						<div class="extraInfo expanded">
 
 							${ item.category.length ? '<div class="labels">' + item.category.map( o => `<span class="info ${o.label}" data-type=${o.type}>${o.name}</span>`).join('') + '</div>' : ''}
 
