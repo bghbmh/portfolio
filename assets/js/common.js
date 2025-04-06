@@ -317,6 +317,17 @@ function recentWork(){
 				<div class="list-type1 items-wrap">
 
 					<!--item-->
+					<button class="btn item"  data-order="20" data-action="modal" title="pageView" aria-label="샘플페이지보기" data-ui-util="pageView">
+						<strong>연세의료원 직원교육</strong>
+						<i class="btn icon" aria-hidden="true"></i>
+						<span class="labels d-inline-flex gap-2">
+							<b class="label main" data-type="1">웹</b><b class="label sub" data-type="2">구축</b>
+						</span>
+						
+					</button>
+					<!--/item-->
+
+					<!--item-->
 					<button class="btn item"  data-order="13" data-action="modal" title="pageView" aria-label="샘플페이지보기" data-ui-util="pageView">
 						<strong>CMDS</strong>
 						<i class="btn icon" aria-hidden="true"></i>
@@ -327,16 +338,7 @@ function recentWork(){
 					</button>
 					<!--/item-->
 					
-					<!--item-->
-					<button class="btn item"  data-order="16" data-action="modal" title="pageView" aria-label="샘플페이지보기" data-ui-util="pageView">
-						<strong>HYCU</strong>
-						<i class="btn icon" aria-hidden="true"></i>
-						<span class="labels d-inline-flex gap-2">
-							<b class="label main" data-type="1">웹</b><b class="label sub" data-type="2">구축</b>
-						</span>
-						
-					</button>
-					<!--/item-->
+					
 					
 				</div>
 				
