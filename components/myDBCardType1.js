@@ -1,6 +1,6 @@
 
 import * as cf from '../assets/js/commonFunction.js';
-import { ct } from '../data/nameList-es6.js';
+import { ct, tempDB, origin, filedburl, sampleurl } from '../data/tempCategoryListl.js';
 
 
 let noItem =  {
