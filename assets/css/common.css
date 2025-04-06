@@ -590,6 +590,8 @@ i.icon-svg-imagesmode{ --maskimg : url('../img/common/icon-svg-imagesmode.svg');
 .recent-work{ 
 	margin-top: 100px;
 	padding-bottom: 100px;
+	padding-left: 1em;
+  padding-right: 1em;
 }
 .recent-work header{
 	display: flex;
