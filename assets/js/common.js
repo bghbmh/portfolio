@@ -180,31 +180,57 @@ function cardListHandler(e){
 
 							console.log("item",z, item)
 							
-							let mmm = Modal.open({
-								id : clickElem.dataset.uiUtil,
-								tamplateHTML : tamplateModalHTML(clickElem.dataset.uiUtil, item),
-								onInit: function (elem) {
-									elem.querySelectorAll("[data-link]").forEach( link => {
-										e.stopPropagation();
-										console.log("Modal", clickElem)
-										link.addEventListener("click", e => { 
-											e.stopPropagation();
-											elem.querySelector("iframe").src = `${sampleurl}${e.currentTarget.dataset.sampleName}/html/${e.currentTarget.dataset.link}`;
+							if( clickElem.dataset.uiUtil === "pageView"){
+							
+								let mmm = Modal.open({
+									id : clickElem.dataset.uiUtil,
+									tamplateHTML : tamplateModalHTML(clickElem.dataset.uiUtil, item),
+									onInit: function (elem) {
+
+										
+
+										
+											elem.querySelectorAll("[data-link]").forEach( link => {
+												e.stopPropagation();
+												console.log("Modal", clickElem)
+												link.addEventListener("click", e => { 
+													e.stopPropagation();
+													elem.querySelector("iframe").src = `${sampleurl}${e.currentTarget.dataset.sampleName}/html/${e.currentTarget.dataset.link}`;
+												});
+											});
+		
+											elem.querySelector('.btn.ttt').addEventListener("click", e => {
+												e.target.classList.toggle("xx");
+												e.target.parentNode.nextElementSibling.classList.toggle("expanded");
+											});
+		
+											elem.querySelector('.btn-close').addEventListener("click", e => {
+												let m = e.target.closest(".modal");
+												document.body.removeChild(m);
+												document.querySelector("body").classList.remove("modalOpen");
+											});
+										
+										
+									}
+								});
+							} else if(  clickElem.dataset.uiUtil === "zoomIn" ){
+								console.log("clickElem.dataset.uiUtil - ", clickElem.dataset.uiUtil)
+
+								let mmm = Modal.open({
+									id : clickElem.dataset.uiUtil,
+									tamplateHTML : tamplateModalHTML(clickElem.dataset.uiUtil, item),
+									onInit: function (elem) {
+
+										elem.querySelector('.btn-close').addEventListener("click", e => {
+											let m = e.target.closest(".modal");
+											document.body.removeChild(m);
+											document.querySelector("body").classList.remove("modalOpen");
 										});
-									});
-
-									elem.querySelector('.btn.ttt').addEventListener("click", e => {
-										e.target.classList.toggle("xx");
-										e.target.parentNode.nextElementSibling.classList.toggle("expanded");
-									});
-
-									elem.querySelector('.btn-close').addEventListener("click", e => {
-										let m = e.target.closest(".modal");
-										document.body.removeChild(m);
-										document.querySelector("body").classList.remove("modalOpen");
-									});
-								}
-							});
+										
+										
+									}
+								});
+							}
 
 							document.querySelector("body").classList.add("modalOpen");
 						} else {
