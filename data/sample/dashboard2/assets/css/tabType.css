@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+/* @import url('../bootstrap-icons/font/bootstrap-icons.css'); */
+
+.tab{
+	display: flex;
+	gap: 10px;
+	font-size: 15px;
+	margin-bottom: 30px;
+}
+.tab .tab-menu{
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	padding: 12px 28px 12px 16px;
+	border-radius: var(--border-radius-default);
+	background-color: #fff;
+	font-size: 1em;
+}
+.tab .tab-menu i{ margin-right: 7px; }
+.tab .tab-menu i[class*="-svg2-web"],
+.tab .tab-menu i[class*="-svg2-print"],
+.tab .tab-menu i[class*="-svg2-branding"],
+.tab .tab-menu i[class*="-svg2-contents"],
+.tab .tab-menu i[class*="-svg2-me"] { padding: 0; background-color: transparent; }
+
+.tab .tab-menu .font-number{ color: var(--red-400) }
+.tab .tab-menu.active{ 
+	background-color: var(--primary-500); 
+	color: #fff;
+}
+.tab .tab-menu.active .font-number{ color: var(--primary-100) }
+@media(max-width: 1280px){
+	.tab{ flex-wrap: wrap }
+}
+@media(max-width: 900px){
+	.tab{ 
+		--pl : 20px;
+		flex-wrap: nowrap; 
+		
+		padding-left: var(--pl);
+		margin-left: calc( -1 * var(--pl) );
+		margin-right: calc( -1 * var(--pl) );
+		padding-right: var(--pl);
+
+		overflow: auto;
+		scrollbar-width: none; /* 스크롤바 숨김  */ 
+	}
+	.tab::-webkit-scrollbar {  display: none; /* 스크롤바 숨김 */ }
+}
