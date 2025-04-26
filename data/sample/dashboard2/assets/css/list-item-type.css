@@ -128,7 +128,7 @@
 	.list-item-type3 .category i[class*="-svg2-"]{ padding: 0; background-color: transparent; }
 	.list-item-type3 .category dl { display: flex; gap: 2px }
 	.list-item-type3 .state { order: 5; margin-left: auto;   }
-	/* .list-item-type3 .option-wrap { display: none; } */
+	.list-item-type3 .option-wrap { display: none; } /* */
 }
 @media(max-width: 768px){
 	.list-item-type3{  padding: 1em 1em 1em 4em; }
