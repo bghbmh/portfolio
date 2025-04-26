@@ -132,6 +132,8 @@
 }
 @media(max-width: 768px){
 	.list-item-type3{  padding: 1em 1em 1em 4em; }
+	.list-item-type3 .btn-wrap .btn{ padding-left: 0 }
+	.list-item-type3 .state > * {  font-size: 12px; padding: 5px 8px 5px 5px;  gap: 4px; }
 }
 
 
