@@ -1,0 +1,335 @@
+@charset "UTF-8";
+
+
+/* ui 추가_241101 */
+.cCalendar {  
+	background-color: #fff;
+}
+.cCalendar .fc{  
+	--fc-border-color : hsl(0 10% 93% );  
+	--fc-today-bg-color : var(--primary);
+
+	--fc-button-border-color : hsla(228, 45%, 98%, 1);
+	--fc-button-bg-color : hsla(228, 45%, 98%, 1);
+	--fc-button-text-color: hsla(221, 16%, 61%, 1);
+
+	--fc-button-hover-bg-color : hsla(228, 15%, 88%, 1);
+	--fc-button-hover-border-color : var(--fc-button-hover-bg-color);
+
+	--fc-button-active-bg-color : var(--fc-button-hover-bg-color);
+	--fc-button-active-border-color : var(--fc-button-hover-bg-color);
+
+	--fc-neutral-bg-color: hsl(220, 12%, 92%);
+
+	font-size: 16px;
+}
+
+
+.cCalendar.default{ 
+	width:100%; 
+	/* max-width: 400px;  */
+	padding: 1.5em 1em 1em;  
+	border: 1px solid var(--fc-border-color);
+	border-radius: 5px;
+}
+.cCalendar.default .fc td.fc-day  { padding: 4px; }
+
+.cCalendar.default .fc-day-number.fc-sat.fc-past { color:#0000FF; }
+.cCalendar.default .fc-day-sun,
+.cCalendar.default .fc-day-sun a { color:#E7505A !important; }
+.cCalendar.default .fc-day-sat,
+.cCalendar.default .fc-day-sat a { color:#007CE2 !important; }
+.cCalendar.default .fc .fc-daygrid-day-top {
+	display: flex;
+	flex-direction: row;
+}
+.cCalendar.default .fc .fc-daygrid-day-number {
+	z-index: 4;
+	font-size: 14px;
+	width: calc(1em * 1.6);
+	height: calc(1em * 1.6);
+	line-height: 1;
+	border-radius: 100em;
+	text-align: center;
+	
+}
+.cCalendar.default .fc .fc-daygrid-day.fc-day-today {	background-color: transparent;  }
+.cCalendar.default .fc .fc-daygrid-day.fc-day-today  .fc-daygrid-day-number{ background-color: var(--fc-today-bg-color); color: #fff; }
+
+/*
+.cCalendar.default .fc .fc-col-header-cell-cushion {
+	display: inline-block;
+	padding: 2px 4px;
+	letter-spacing: 1em;
+	overflow: hidden;
+	width: calc(1em + 3px);
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.cCalendar.default .fc-theme-standard td, 
+.cCalendar.default .fc-theme-standard th { padding-top:4px; padding-bottom:4px }
+.cCalendar.default .fc .fc-daygrid-day-number { width: 100%; text-align: center; color: #7C86A2;  }
+.cCalendar.default .fc .fc-daygrid-body-natural .fc-daygrid-day-events {  margin-bottom: 0em; }
+.cCalendar.default .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {  min-height: 0em; }
+.cCalendar.default .fc .fc-daygrid-day.fc-day-today { background-color:transparent; }
+.cCalendar.default .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-top { 
+	background-color: var(--fc-today-bg-color); 
+	border-radius: 100em;
+	width: 2em;
+	height: 2em;
+	margin: auto;
+}
+.cCalendar.default .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-top a{ color: #fff ; }
+.cCalendar.default .fc .fc-toolbar-title { font-size: 1em; margin-left: .8em; }
+
+.cCalendar.default .fc .fc-button-primary {
+	font-size: 14px;
+	border-radius: 100em;
+	padding: 4px;
+	line-height: 1;
+}
+.cCalendar.default .fc .fc-button-primary:hover { color: var(--black); }
+
+.cCalendar.default .fc-day-number.fc-sat.fc-past { color:#0000FF; }
+.cCalendar.default .fc-day-sun,
+.cCalendar.default .fc-day-sun a { color:#E7505A !important; }
+.cCalendar.default .fc-day-sat,
+.cCalendar.default .fc-day-sat a { color:#007CE2 !important; }
+*/
+
+
+
+
+/*  */
+.cCalendar.default.mini{ 
+	max-width: 400px; 
+	padding: 2em 1em 1em;  
+	background-color: #fff;
+}
+.cCalendar.default.mini .fc-theme-standard td, 
+.cCalendar.default.mini .fc-theme-standard th {	border: 0;   }
+.cCalendar.default.mini .fc-theme-standard .fc-scrollgrid { border: 0;  }
+.cCalendar.default.mini .fc .fc-col-header-cell-cushion {
+	display: inline-block;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+.cCalendar.default.mini .fc .fc-daygrid-day-top{ border-radius: 100em; 
+	width: 3em; 
+	height: 3em;
+	color: #7C86A2;  
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  
+}
+.cCalendar.default.mini .fc .fc-daygrid-day-number { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%; height: 100%; 
+}
+.cCalendar.default.mini .fc .fc-daygrid-body-natural .fc-daygrid-day-events {  margin-bottom: 0em; }
+.cCalendar.default.mini .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {  min-height: 0em; }
+
+
+.cCalendar.default.mini .fc .fc-daygrid-day.fc-day-today { background-color:transparent; }
+.cCalendar.default.mini .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-top { 
+	background-color: var(--fc-today-bg-color); 
+
+	margin: auto;
+}
+.cCalendar.default.mini .fc .fc-toolbar-title { 
+	font-size: 20px; 
+	margin-left: .8em;
+	font-weight: 700;
+}
+
+.cCalendar.default.mini .fc .fc-button-primary {
+	font-size: 14px;
+	border-radius: 100em;
+	padding: 4px;
+	line-height: 1;
+}
+.cCalendar.default.mini .fc .fc-button-primary:hover { color: var(--black); }
+
+.cCalendar .fc .fc-popover{
+	max-width: calc(220px + 3em);
+	width: 100%;
+}
+
+
+
+
+.fc a:hover{ color: #222; }
+
+.fc-daygrid-dot-event { align-items: baseline; flex-wrap: wrap;  }
+.fc-daygrid-dot-event .fc-event-title {
+	flex-grow: 1;
+	flex-shrink: 1;
+	font-weight: 700;
+	min-width: 0px;
+	overflow: hidden;
+	white-space: normal;  
+}
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events { min-height: 5em; }
+
+.fc-daygrid-event-dot{ --fc-daygrid-event-dot-width: 4px; height: 4px;  }
+.fc-daygrid-dot-event.fc-event-mirror, .fc-daygrid-dot-event:hover {
+	background: hsla(0, 0%, 0%, 0.05);
+}
+.fc .fc-daygrid-more-link:hover {
+	background-color: hsl(216 45% 21%);
+	color: hsl(0 0% 92%);
+}
+
+.fc-daygrid-dot-event .fc-event-title {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	min-width: 100%;
+	max-width: 10px;
+	padding-left: 1em;
+	font-weight: 600;
+}
+.fc-theme-standard .fc-popover-header {
+	background: hsl(216 45% 21%);
+	color: hsl(0 0% 95%);
+	padding: 6px 12px;
+}
+
+.fc .fc-more-popover{
+	box-shadow: hsla(0, 0%, 0%, 0.15) 0px 2px 20px;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.fc .fc-more-popover .fc-popover-body {
+	min-width: 220px;
+	padding: 10px;
+	max-height: 300px;
+	overflow: auto;
+}
+.fc .fc-more-popover .fc-popover-body::-webkit-scrollbar{ 
+	height: 6px; width: 6px; 
+	background-color: #e1e1e1;
+}
+.fc .fc-more-popover .fc-popover-body::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 10px;
+}
+.fc .fc-more-popover .fc-popover-body .fc-daygrid-dot-event:hover {
+	background: hsla(0, 0%, 0%, 0.02);
+}
+
+
+.fc .fc-more-popover .fc-popover-body .fc-daygrid-dot-event { flex-wrap: nowrap; }
+.fc .fc-more-popover .fc-popover-body .fc-daygrid-event-harness + .fc-daygrid-event-harness{ margin-top: 4px;}
+.fc .fc-more-popover .fc-popover-body .fc-daygrid-dot-event .fc-event-title {
+	white-space: normal;
+	text-overflow:unset;
+	min-width:auto;
+	max-width: none;
+	padding-left: 4px;
+  }
+
+
+
+
+
+
+
+
+.cCalendar.week .fc{ }
+/* 스크롤바 전체 기본 꾸미기 */
+.cCalendar.week .fc .fc-scroller::-webkit-scrollbar { width: 10px; }
+
+/* 스크롤바 막대 꾸미기 */
+.cCalendar.week .fc .fc-scroller::-webkit-scrollbar-thumb {
+	 background: #e9e9e9; /* 스크롤바 막대 색상 */
+    border-radius: 12px 12px 12px 12px;
+}
+
+/* 스크롤바 트랙 꾸미기 */
+.cCalendar.week .fc .fc-scroller::-webkit-scrollbar-track {  }
+
+
+/*.cCalendar.week .fc .fc-timegrid .fc-daygrid-body { display: none; }
+.cCalendar.week .fc .fc-scrollgrid-section:has(.fc-timegrid-divider) {display: none; }*/
+.cCalendar.week .fc-theme-standard th{   font-weight:500 }
+.cCalendar.week .fc-v-event .fc-event-main-frame{ flex-direction: column-reverse; }
+
+.cCalendar.week .fc-v-event .fc-event-main{ color: var(--black) }
+.cCalendar.week .fc-v-event {
+    background-color: hsl(210deg 97% 95% );
+    border-left: 4px solid var(--fc-event-border-color);
+}
+.cCalendar.week .fc-v-event.fc-event-past{
+	background-color: hsl(210deg 7% 95% );
+    border-color: hsl(210deg 7% 75% );
+}
+.cCalendar.week .fc-timegrid-event .fc-event-time { text-overflow:ellipsis; }
+
+.cCalendar.week .fc-col-header-cell.fc-day.fc-day-today{ background-color: transparent; }
+.cCalendar.week .fc-col-header-cell:has(.dhc) .fc-col-header-cell-cushion{ display: block; padding:0 }
+.cCalendar.week  .dhc{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--black);
+}
+.cCalendar.week  .dhc .day{ 
+	font-size: 16px;   
+	
+	width: 100%;
+	border-bottom: 1px solid var(--fc-border-color);
+	padding: 3px;
+}
+.cCalendar.week  .dhc .num{ 
+	display:inline-block; 
+	width: 2em; 
+	height: 2em;
+	line-height: 2em;
+	font-size: 1em;
+	border-radius: 100em;
+	margin: 8px 4px;
+	position: relative;
+}
+.cCalendar.week .fc-col-header-cell.fc-day.fc-day-sun .dhc{ color: #E7505A ; }
+.cCalendar.week .fc-col-header-cell.fc-day.fc-day-sat .dhc{ color: #007CE2 ; }
+
+
+
+.cCalendar.week .fc .fc-timegrid-col.fc-day-today { background-color: #fff; }
+.cCalendar.week .fc-col-header-cell.fc-day.fc-day-today  .dhc .num{ background-color: var(--fc-today-bg-color); color: #fff  }
+.cCalendar.week .fc-direction-ltr .fc-timegrid-slot-label-frame .fc-timegrid-slot-label-cushion{  padding: 0 12px; font-size: 15px; }
+
+
+
+
+
+/* 확인하기_241112 */
+
+.cCalendar.week .fc .fc-timegrid-slot {	font-size: 10px;  }
+
+
+
+
+
+
+.cCalendar.week{
+	min-width: 100%;
+	max-width: 10px;
+
+}
+
+@media(max-width: 1280px){
+
+}
+@media(max-width: 1024px){
+
+}
+@media(max-width: 600px){
+
+}
