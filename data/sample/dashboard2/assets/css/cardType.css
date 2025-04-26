@@ -10,7 +10,7 @@
 }
 .card-type2 .title{
 	font-size: 18px;
-	color: var(--dark-800);
+	color: var(--font-color-default);
 
 	overflow: hidden;
 	text-overflow: ellipsis;

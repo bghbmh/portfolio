@@ -1,5 +1,6 @@
 @charset "UTF-8";
 :root {
+	--upload-bg-option-color : #fff;
 	--upload-line-color: hsl(210, 14%, 93.1%);
 	--upload-border-radius : 8px;
 	--upload-text-color: hsl(217 13% 54%);
@@ -16,7 +17,9 @@
 	--upload-max-width: calc( var(--upload-item-width) * 5 + ( var(--upload-col-gap) * 4 ) + 4px + 4px + 1px + 1px );
 }
 
-button {
+.upload button,
+.upload-type2 button,
+.upload-type3 button {
 	text-transform: none;
 	appearance: none;
 	-moz-appearance: none;
@@ -201,6 +204,7 @@ button {
 	--upload-min-width : calc( var(--upload-item-width) * 3 + ( var(--upload-col-gap) * 2 ) + 4px + 4px + 1px + 1px );
 	--upload-max-width: calc( var(--upload-item-width) * 5 + ( var(--upload-col-gap) * 4 ) + 4px + 4px + 1px + 1px );
 
+	
 
 	position: relative;
 	color: var(--upload-text-color);
@@ -564,52 +568,29 @@ button {
 /* upload-type3 */
 .upload-type3 {
 	
-	--gutter : 6px;
+	--upload-gutter : 6px;
 	
 	--t3-width : 240px ;
 	--u-w : calc( var(--t3-width) /3 ) ; /*  80px */
 	--u-h : 80px;
-	--t3-cnt-wrap-width : calc( var(--t3-width) + ( var(--gutter) * 2 ) );
-	--t3-cnt-wrap-height : calc( var(--u-h) * 2 + ( var(--gutter) * 1 ) );
+	--t3-cnt-wrap-width : calc( var(--t3-width) + ( var(--upload-gutter) * 2 ) );
+	--t3-cnt-wrap-height : calc( var(--u-h) * 2 + ( var(--upload-gutter) * 1 ) );
 
-	--upload-file-btn-width : calc( var(--u-w) + ( var(--gutter) / 2 ));
-	--upload-file-btn-height : calc( var(--u-h) + var(--gutter) );
+	--upload-file-btn-width : calc( var(--u-w) + ( var(--upload-gutter) / 2 ));
+	--upload-file-btn-height : calc( var(--u-h) + var(--upload-gutter) );
+
+	--upload-filebox-bg-color : var(--gray-f1);
+	--upload-bg-option-color : #fff;
 	
 
 	position: relative;
 	display: inline-block;
 	width: var(--t3-cnt-wrap-width ) ;/* 가로길이는 3개 열 */
 	min-height: var(--t3-cnt-wrap-height) ; /* 높이는 기본 2개 행 */
-	background-color: var(--dark-300);
+	
 	border-radius: var(--upload-border-radius);
 	
 	z-index: 0;
-}
-.upload-type3:before{
-	content: '';
-	position: absolute;
-	display: block;
-	width: var(--u-w);
-	height: var(--u-h);
-	border-radius: var(--upload-border-radius);
-	border-top-left-radius: 0;
-	background-color: #fff;
-	left: var(--upload-file-btn-width) ;
-	top:0;
-	z-index: -2;
-}
-.upload-type3:after{
-	content: '';
-	position: absolute;
-	display: block;
-	width: var(--u-w);
-	height: var(--u-h);
-	border-radius: var(--upload-border-radius);
-	border-top-left-radius: 0;
-	background-color: #fff;
-	left:0;
-	top: var(--upload-file-btn-height) ;
-	z-index: -2;
 }
 
 .upload-type3 .upload-file-btn{
@@ -632,7 +613,30 @@ button {
 	left: 0;
 	z-index: 3;
 	line-height: 1;
-	background-color: #fff;
+	background-color: var(--upload-bg-option-color);
+}
+.upload-type3 .upload-file-btn:before{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 8px;
+	height: 8px;
+	background-color: var(--upload-filebox-bg-color);
+	left: 100%;
+	top: 0;
+	border-top-left-radius: var(--upload-border-radius);
+}
+.upload-type3 .upload-file-btn:after{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 8px;
+	height: 8px;
+	background-color: var(--upload-filebox-bg-color);
+	left: 0;
+	top: 100%;
+	border-top-left-radius: var(--upload-border-radius);
+	z-index: 0;
 }
 
 .upload-type3 .upload-file-btn .area{
@@ -666,30 +670,29 @@ button {
 	padding: 6px;
 	border-radius: var(--upload-border-radius);
 	z-index: 0;
+	background-color: var(--upload-filebox-bg-color);
 }
 .upload-type3 .upload-file-box:before{
 	content: '';
 	position: absolute;
 	display: block;
-	width: var(--u-w);
-	height:var(--u-h);
-	border-radius: var(--upload-border-radius);
-	background-color: var(--dark-300);
+	width: 8px;
+	height: 8px;
+	background-color: var(--upload-bg-option-color);
 	left: var(--upload-file-btn-width) ;
 	top:0;
-	z-index: -1;
+
 }
 .upload-type3 .upload-file-box:after{
 	content: '';
 	position: absolute;
 	display: block;
-	width: var(--u-w);
-	height:var(--u-h);
-	border-radius: var(--upload-border-radius);
-	background-color:  var(--dark-300);
+	width: 8px;
+	height: 8px;
+	background-color: var(--upload-bg-option-color);
 	left: 0;
 	top: var(--upload-file-btn-height) ;
-	z-index: -1;
+	z-index: 4;
 }
 
 .upload-type3 .upload-file-box .item {

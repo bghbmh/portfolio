@@ -146,6 +146,7 @@ header.common .user-image-wrap .img{
 	height: 100%;
 	object-fit: cover;
 	clip-path: url(#userImageClip);
+	left: -2px;
 }
 
 header.common .user-image-wrap > svg {
@@ -250,8 +251,8 @@ header.common .user-image-wrap .bg{ z-index: -1 }
 	gap: 8px;
 	width: 100%;
 	height: 100%;
-	background-color: #fff;
-	color: var(--dark-500);
+	background-color: var(--gnb-menu-bg-color);
+	color: var(--gnb-menu-font-color);
 	border-radius: 16px;
 	transition: all .3s;
 	margin-left: 0;
@@ -335,7 +336,7 @@ main.common{
 .page-header .page-title{
 	font-size: 28px;	  
 	font-weight: 800;
-	color: var(--dark-800);
+	color: var(--font-color-default);
 	margin: 0;
 	margin-right: auto;
 }

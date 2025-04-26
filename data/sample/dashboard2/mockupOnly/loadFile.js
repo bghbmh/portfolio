@@ -3,6 +3,12 @@ function ttt22(){
 
 	//cccchart();
 
+	if( document.querySelector(".toggle.mode input") ){
+		document.querySelector(".toggle.mode input").addEventListener("click", e => {
+			document.body.classList.toggle("dark");
+		});
+	}
+
 
 	  // 현재 페이지의 URL에서 파라미터를 가져옵니다.
 	  const urlParams = new URLSearchParams(window.location.search);
@@ -42,16 +48,7 @@ function ttt22(){
 	  }
 
 
-
-
-
-
-
 	document.querySelectorAll(".ctrl-gnb").forEach( btn => {
-
-		console.log("메뉴버튼 이벤트 붙는시점 ttt22")
-
-
 		btn.addEventListener("click", () => {
 			document.querySelector("header.common").classList.toggle("expanded")
 		});

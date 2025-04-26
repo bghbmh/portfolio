@@ -29,9 +29,6 @@
 
 	--ui-font-sans-serif: 'Pretendard Variable', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-	--body-background-color: hsl(150 20% 98%);
-
-
 	/* 회색 */
 	--gray-f9: hsl(0, 0%, 98%);
 	--gray-f1: hsl(0, 0%, 95%);
@@ -52,8 +49,7 @@
 
 
 
-	--line-color: hsl(0, 3%, 93%);;/*  */
-	--form-border-color : var(--dark-400);
+	
 	--bc-color: hsl(180, 33%, 98%);
 	--bc-white: hsl(0, 0%, 100%);
 	--danger: hsl(345, 100%, 46%);
@@ -201,18 +197,7 @@
 
 	--border-radius-default : 16px;
 
-	--table-th-bg : #F4F6F7; 
-	--table-td-line-color : hsl(192 10% 90%);
-	--table-top-line-color : var(--dark-100);
 
-	--disabled-bg : #E4E8E9;
-	--disabled-line-color : #E4E8E9;
-	--disabled-text-color:red;
-
-
-	--scroll-track-color: #F4F6F7;
-	--scroll-thumb-color: #546066;
-	--scroll-size: 4px;
 
 
 
@@ -223,6 +208,7 @@
 
 
 
+
 	/* 카테리별 배경 색상 */
 	--web : #FFF2E0; 
 	--print : #E0F9FF;
@@ -230,3 +216,4 @@
 	--contents : #FFE8E0;
 	--me : #FAF5D2;
 }
+

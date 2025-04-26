@@ -33,12 +33,12 @@
 .section + .section{ margin-top: 30px;}
 .section-header{ display: flex; gap: 8px; padding: 1em 0 16px; }
 .section-header .title{ margin-right: auto }
-.section-header .title .text{ font-size: 24px; font-weight: 700; color: var(--dark-800); margin-bottom: 0; }
+.section-header .title .text{ font-size: 24px; font-weight: 700; color: var(--font-color-default); margin-bottom: 0; }
 
 .section.type2{
 	padding: 1em 2.5em 1.5em;
 	border-radius: var(--border-radius-default);
-	background-color: #fff;
+	background-color: var(--section-background-color);
 }
 .section.type2 .section-header{ padding-top: 1em }
 @media(max-width: 1280px){
@@ -81,7 +81,7 @@
 	gap: 30px 24px ;
 }
 .tCom001 .item:not(:has(.btn-add)){
-	background-color: #fff;
+	background-color: var(--section-background-color);
 	padding: 30px 46px;
 	border-radius: 16px;
 	min-height: 264px;
@@ -98,7 +98,7 @@
 .tCom001 .item .project-count{ 
 	font-size: 16px; 
 	font-weight: 800; 	
-	color: var(--dark-800);
+	color: var(--font-color-default);
 }
 .tCom001 .item .project-count strong{ 
 	display: inline-block;
@@ -142,10 +142,11 @@
 .tCom002 .section-header .title .font-number{ font-size: 24px; padding: 0 5px; }
 .tCom002 .items-wrap{ display: flex; gap: 24px; }
 .tCom002 .items-wrap .item{
-	background-color: #fff;
+	background-color: var(--section-background-color);
 	border-radius: var(--border-radius-default);
 	padding: 1em ;
 	flex: 1 1 130px;
+	column-gap: 1em;
   /* min-width: 130px; */
   max-width: 30%;
 }
@@ -209,15 +210,15 @@
 
 .list-item-type1{
 	display: flex; 
-	gap: 8px;
+	gap: 1em;
 	align-items: center;
 	padding: 6px 12px;
 	border-radius: var(--border-radius-default);
-  background-color: hsl(0, 0%, 100%);
+  background-color: var(--section-background-color);
 }
 .list-item-type1 i{ 
 	flex: none;
-	background-color: var(--dark-100);
+	/* background-color: var(--dark-100); */
 	padding: 4px;
 	box-sizing: content-box;
 }
@@ -274,14 +275,14 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	
-	color: var(--dark-900);
+	color: var(--font-color-default);
 }
 .list-item-type2 i{ flex: none }
 
 
 .tCom005 { 
 	padding: 16px 20px; 
-	background-color: #fff; 
+	background-color: var(--section-background-color);
 	border-radius : var(--border-radius-default) ;
 }
 .tCom005 .list-item-type2{ 
@@ -316,6 +317,7 @@
 	object-fit: cover;
 	object-position: center;
 }
+.member img[src*="icon-svg-"]{ transform: scale(0.7) }
 .member.none{ background-color: transparent; }
 .member.none img{ transform: scale(.7); }
 .member.none figcaption{ display: inline-block; line-height: 1.2; }
@@ -323,7 +325,7 @@
 .member.circle{ border-radius: 100em; transform: scale(1.1); }
 
 .member-wrap { position: relative; display: inline-flex; justify-content: center; }
-.member-wrap .member{ box-shadow: 0 0 0px 5px #fff;  }
+.member-wrap .member{ box-shadow: 0 0 0px 5px var(--section-background-color);  }
 .member-wrap .member + .member{ margin-left: -8px; }
 
 .plus-more{
@@ -346,7 +348,7 @@
 .tCom006 .member{ 
 	width: 30px; height: 30px;
 	border-radius: 100em;
-	border: 3px solid #fff;
+	border: 3px solid var(--section-background-color);
 	box-sizing: content-box;
 	
 }
@@ -441,7 +443,7 @@
 }
 .tCom010 .info dl{ flex:1 0 45%; font-size: 16px; }
 .tCom010 .info dt{ font-size: 1em; font-weight: 400; padding-bottom: .5em; }
-.tCom010 .info dd{ font-size: 1.25em; color: var(--dark-800); }
+.tCom010 .info dd{ font-size: 1.25em; color: var(--font-color-default); }
 
 .tCom010 .info .description{
 	padding: 1em;
@@ -503,7 +505,7 @@
 .tCom011 .info dl{ flex:1 0 100%; font-size: 16px; }
 .tCom011 .info dl + dl{ border-top: 1px solid var(--dark-100); padding-top: 1.5em; margin-top: 1.5em; }
 .tCom011 .info dt{ font-size: 1em; font-weight: 400; padding-bottom: .7em; }
-.tCom011 .info dd{ /* font-size: 1.125em; */ color: var(--dark-800); }
+.tCom011 .info dd{ /* font-size: 1.125em; */ color: var(--font-color-default); }
 
 .tCom011 .category{ font-size: 16px;  }
 .tCom011 .category .option {   }
@@ -532,7 +534,7 @@
 }
 .tCom011 .image-wrap .upload-type2{ max-width: 100%; }
 .tCom011 .image-wrap .upload-type3{
-	--t3-width: calc( 100% - ( var(--gutter) * 2 ) );
+	--t3-width: calc( 100% - ( var(--upload-gutter) * 2 ) );
 }
 @media(max-width: 1024px){
 	.tCom011{ flex-direction: column; }
@@ -635,7 +637,7 @@
 .tCom013 .info dd{ 
 	padding: 1em; 
 	background-color: var(--gray-f9); 
-	color: var(--dark-800); 
+	color: var(--font-color-default); 
 	border-radius: var(--border-radius-8px);
 	font-size: 1.125em;
 }
