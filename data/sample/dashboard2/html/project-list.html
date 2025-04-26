@@ -70,13 +70,18 @@
 		<!--섹션-->
 		<section class="section">
 			<!--섹션 헤더-->
-			<header class="section-header">
-				<div class="title margin-right-2">
+			<header class="section-header align-items-center">
+				<div class="title margin-right-auto">
 					<h3 class="text">모두보기 <span class="font-number fcPrimary">99</span></h3>
 				</div>
 				<div class="btn-wrap">
-					<button type="button" class="btn default round"><i class="icon-svg-chevron-right" aria-hidden="true"></i>삭제</button>
-					
+					<div class="dropdown">
+						<button type="button" class="btn default round dropdown-toggle expanded " title="버튼 목록 보기" aria-label="버튼 목록 보기"><i class="icon-svg-dots-vertical" aria-hidden="true"></i></button>
+						<div class="dropdown-menu">
+							<button type="button" class="dropdown-item">선택 항목 삭제</button>
+							<button type="button" class="dropdown-item">전체 삭제</button>
+						</div>
+					</div>
 				</div>
 			</header>
 			<!--//섹션 헤더-->
