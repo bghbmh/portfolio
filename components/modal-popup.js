@@ -68,7 +68,7 @@ class ModalPopup extends HTMLElement {
 		super(); // HTMLElement의 constructor 호출
 		 this.attachShadow({ mode: 'open' });
 
-		const cssFilePaths = ['../assets/css/bootstrap.css','../assets/css/reset.css','../assets/css/common.css'];
+		const cssFilePaths = ['./assets/css/bootstrap.css','./assets/css/reset.css','./assets/css/common.css'];
 		
 		loadMultipleStylesheets(cssFilePaths).then(sheets => {
             this.shadowRoot.adoptedStyleSheets = sheets;

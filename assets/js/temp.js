@@ -1,4 +1,4 @@
-import * as DOM from '../../components/Utils-dom.js';
+import * as DOM from './components/Utils-dom.js';
 // 메인 ======================================
 
 export function initMain(items){
