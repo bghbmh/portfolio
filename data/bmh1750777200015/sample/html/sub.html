@@ -1,0 +1,581 @@
+
+<!DOCTYPE html>
+<html lang="ko" data-title="과목홈_레이아웃"> <!-- data-title="" 이 속성값은 퍼블 확인을 위해 넣어둔 것입니다 개발시 필요없음 -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="author" content="한양사이버대학" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <title>HYCU</title>
+
+    <!--[if lt IE 9]> <script src="경로명/html5shiv.js"></script> <![endif]-->
+
+
+    <!-- Favicon ie/ie외 브라우저/apple/android -->
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="icon" type="image/png" href="#">
+    <link rel="apple-touch-icon" href="#">
+    <link rel="icon" type="image/png" href="#">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery-ui-slider-pips.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/new/footable.standalone.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/new/semantic.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/ionicons.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/xeicon.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/plyr.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/new/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/new/element-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/new/element-ui-dark.css" />
+    <!-- Summernote Editor
+    <link rel="stylesheet" type="text/css" href="../data/summernote/summernote-lite.css" />
+    <link rel="stylesheet" type="text/css" href="../data/summernote/plugin/math/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../data/summernote/plugin/emoji/css/emoji.css" />
+ -->
+    <!-- Scripts -->
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-ui-slider-pips.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../assets/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="../assets/js/classie.js"></script>
+    <script type="text/javascript" src="../assets/js/semantic.min.js"></script>
+    <script type="text/javascript" src="../assets/js/semantic-ui-calendar.min.js"></script>
+    <script type="text/javascript" src="../assets/js/footable.min.js"></script>
+    <script type="text/javascript" src="../assets/js/iframe.js"></script>
+    <script type="text/javascript" src="../assets/js/chart.min.js"></script>
+    <script type="text/javascript" src="../assets/js/Chart.PieceLabel.min.js"></script>
+    <script type="text/javascript" src="../assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../assets/js/modal.js"></script>
+    <script type="text/javascript" src="../assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="../assets/js/timeline.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.dynamiclist.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.star-rating-svg.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.knob.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.treeview.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.video-layers.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plyr.js"></script>
+    <script type="text/javascript" src="../assets/js/hls.min.js"></script>
+
+	<script type="text/javascript" src="../assets/js/common.js"></script>
+	<!-- <script type="text/javascript" src="../temp_asset/js/common_tempAsset.js"></script> -->
+
+    <!-- Summernote Editor
+    <script type="text/javascript" src="../data/summernote/summernote-lite.js"></script>
+    <script type="text/javascript" src="../data/summernote/lang/summernote-ko-KR.js"></script>
+    <script type="text/javascript" src="../data/summernote/plugin/math/katex.min.js"></script>
+    <script type="text/javascript" src="../data/summernote/plugin/math/summernote-math.js"></script>
+    <script type="text/javascript" src="../data/summernote/plugin/emoji/js/config.js"></script>
+    <script type="text/javascript" src="../data/summernote/plugin/emoji/js/tam-emoji.js"></script>
+    <script type="text/javascript" src="../data/summernote/plugin/uploadcare.js"></script>
+ -->
+ <link rel="stylesheet" type="text/css" href="../assets/css/new/class_default.css" />
+</head>
+
+    <body class=""> <!-- dark 클래스로 접근할때는 body에 붙이기_230329 -->
+        <div id="wrap" class="main"> <!-- 클래스 변경_235017 -->
+            <!-- class_top 인클루드  -->
+            
+                <!-- id="container" 밖에 있던 헤더는 컨테이너 안으로 이동_230517 -->
+
+                <link rel="stylesheet" type="text/css" href="../assets/css/new/class_lnb.css">
+
+                <!-- main_menu 영역 부분 --> 
+                <nav class="gnb"> <!-- 태그 및 클래스 변경 변경_230517 -->
+                    <button type="button" class="menu_btn on" title="메뉴 열고 닫는 버튼" data-medi-ui="gnbmenu"><i class="ion-navicon" aria-hidden="true"></i></button> <!-- aria-hidden 추가_230517 -->
+                
+                    <div id="class_lnb" class="menu_box"> <!-- 강의실홈에서 사용하는 메뉴인 경우 아이디변경_230517 -->
+                
+                        <!-- 로고/사용자정보 -->
+                        <div class="top"> <!-- 태그 및 클래스 추가_230517 -->
+                
+                            <h1 class="logo"> <!-- header에 있던 로고 위치 이동_230517 -->
+                                <a href="#0">
+                                    <img src="../assets/img/logo.svg" alt="한양사이버대학로고">
+                                </a>
+                            </h1>
+                
+                            <!-- 사용자정보 -->
+                            <div class="user_info">
+                
+                                <!-- header 에 있던 셀렉트박스 위치 이동_230517-->
+                                <select class="ui dropdown compact  select_sm" id="insti_box" name="insti_box">  <!-- compact  클래스 추가_230517 -->
+                                    <option value="전체">전체</option>
+                                    <option value="대학원">대학원</option>
+                                    <option value="대학교">대학교</option>
+                                </select>
+                                <!-- //header 에 있던 셀렉트박스 위치 이동_230517-->
+                
+                                <!-- header 에 있던 사용자 이미지/드롭다운  위치 이동_230517-->
+                                <div class="user-img ui dropdown">
+                                    <div class="initial-img sm c-4">석현</div>
+                                    <div class="menu">
+                                        <div class="item profile">
+                                            <div class="initial-img sm c-4">석현</div>
+                                            <ul>
+                                                <li>김석현 (prof1)</li>
+                                                <li><a href="#0" class="link">프로필 관리</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="divider m0"></div>
+                                        <div class="item"><a href="#0"><i class="user circle icon"></i>마이페이지</a></div>
+                                        <div class="divider m0"></div>
+                                        <div class="item"><a href="#0"><i class="sign-out icon"></i>로그아웃</a></div>
+                                    </div>
+                                </div>
+                                <!-- //header 에 있던 사용자 이미지/드롭다운  위치 이동_230517-->
+                            </div>
+                            <!-- //사용자정보 -->
+                
+                        </div>
+                        <!-- //로고/사용자정보 -->
+                
+                        <!-- 메뉴 영역 -->
+                        <div class="scrollarea">
+                
+                            <!-- 메인대시 메뉴 -->
+                
+                
+                
+                            <!-- //메인대시 메뉴 -->
+                
+                
+                            <!-- 과목홈 메뉴 -->
+                
+                            <div class="menu"> <!-- user_cont -> menu 클래스 변경_230517 -->
+                                <ul>
+                                    <li><a href="#0" class="go-home"><i class="ico-home-circle-outline ico" aria-hidden="true"></i><span>강의실(홈)</span></a></li>
+                                    <li class="sub-menu">
+                                        <a href="#0"><i class="ico-bullhorn-variant ico" aria-hidden="true"></i><span>알림터</span></a>
+                                        <ul>
+                                            <li><a href="#0">강의 공지</a></li>
+                                            <li><a href="#0">강의 Q&A</a></li>
+                                            <li><a href="#0">1:1 상담</a></li>
+                                            <li><a href="#0">강의 자료실</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu">
+                                        <a href="#0"><i class="ico-forum ico" aria-hidden="true"></i><span>게시판</span></a>
+                                        <ul>
+                                            <li><a href="#0">자유게시판</a></li>
+                                            <li><a href="#0">[팀]게시판</a></li>
+                                            <li><a href="#0">추가 게시판</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu">
+                                        <a href="#0"><i class="ico-human-board ico" aria-hidden="true"></i><span>학습활동</span></a>
+                                        <ul>
+                                            <li><a href="#0">중간/기말 시험</a></li>
+                                            <li><a href="#0">과제</a></li>
+                                            <li><a href="#0">토론</a></li>
+                                            <li><a href="#0">퀴즈</a></li>
+                                            <li><a href="#0">설문</a></li>
+                                            <li><a href="#0">세미나</a></li>
+                                            <li><a href="#0">강의 평가</a></li>
+                                            <li><a href="#0">만족도 평가</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu">
+                                        <a href="#0"><i class="ico-class-info ico" aria-hidden="true"></i><span>수강정보</span></a>
+                                        <ul>
+                                            <li><a href="#0">나의 정보</a></li>
+                                            <li><a href="#0">출석 현황</a></li>
+                                            <li><a href="#0">학습 통계</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-menu">
+                                        <a href="#0"><i class="ico-finance ico" aria-hidden="true"></i><span>종합 성적</span></a>
+                                    </li>
+                                </ul>
+                
+                                <!-- 배너 있던 영역 삭제 -->
+                            </div>
+                            <!-- //과목홈 메뉴 -->
+                
+                
+                
+                
+                        </div>
+                        <!-- //메뉴 영역 -->
+                            
+                    </div>
+                </nav><!-- id="container" 안에 있던 메뉴는 컨테이너 밖으로 위치 이동_230517 -->
+                <!-- #container -->
+                <div id="container" class="ui form"> <!-- 클래스 추가_235017 -->
+                    
+                    <!-- Header 영역 부분 -->
+					<header class="common"> <!-- 클래스 추가_230517 -->
+
+						<!-- location 위치 이동함_230517 -->
+						<div class="location-wrap">
+							<!-- <div class="inner"> 삭제_230517-->
+							<!-- 페이지 정보 -->
+							<div class="ui menu">
+								<a href="#" class="home r_btn"><img src="../assets/img/location_home.gif" alt="홈으로"></a>
+								<div class="pageTit_wrap">                
+									<ul class="page_locat"> 
+										<li>과목홈</li>
+										<li>알림터_1depth</li>
+										<li>전체공지_2depth</li>
+									</ul>
+						<!--             <div class="r_btn_wrap flex-item">
+										<p class="desktop-elem">
+											<small>
+												<span>이전로그인</span> <span>2022.07.18 15:17 (211.157.234.211)</span>
+											</small>
+										</p>
+										<a href="#" class="">
+											<small class="flex-item">
+												<i class="icon-stuff-ruler ico"></i>
+												<span class="desktop-elem">수업운영도구</span>
+											</small>
+										</a>                    
+									</div> -->
+								</div>
+							</div>
+							<!-- //페이지 정보 -->
+							<!-- </div> -->
+						
+							<!-- 학기/강의실 선택하기 -->
+							<div class="option-content">
+								<select id="u_seme" class="ui dropdown ">
+									<option value="">학기 선택</option>
+									<option value="2022년도 2학기">2022년도 2학기</option>
+									<option value="2022년도 1학기">2022년도 1학기</option>
+									<option value="2021년도 2학기">2021년도 2학기</option>
+									<option value="2021년도 1학기">2021년도 1학기</option>
+								</select>
+						
+								
+								<select id="a1" class="ui dropdown my-class">
+									<option value="">강의실 바로가기</option>
+									<option value="중급 영어 회화 및 고급 영어로 가는 길 중급 영어 회화 및 고급 영어로 가는 길">중급 영어 회화 및 고급 영어로 가는 길 중급 영어 회화 및 고급 영어로 가는 길</option>
+									<option value="문리학의 원리">문리학의 원리</option>
+								</select>
+							</div>
+							 <!-- //학기/강의실 선택하기 -->
+						</div>
+						
+						<!-- //location 위치 이동함_230517 -->
+
+						<!-- <div class="inner"> 삭제_230517-->
+							<!-- 로고 셀렉트 박스 삭제_230517-->
+							<ul class="util">
+
+								<!-- <li class="mail "></li>  하나로 합쳐짐 , 태그 삭제_230717 -->
+
+								<li class="alrim"> 
+									<a href="#0"  data-medi-ui="mail" title="최근에 수신한 SMS,PUSH,E-Mail을 확인합니다."><i class="icon-bell ico" aria-hidden="true"></i></a> <!-- 아이콘변경_230517-->
+									<label class="count">999</label>
+
+									<div class="menu"> <!-- 스크롤 영역 분리를 위해 감싸는 태그 추가_230717 -->
+
+										<!-- 탭메뉴 추가_230717 -->
+										<div class=" ui pointing secondary tabmenu tMenubar ml8 mr8"> <!-- 클래스 flex p8 gap4 변경_230717  -->
+											<a class="tmItem active" data-tab="tabcont1">PUSH<small class="msg_num">99</small></a>
+											<a class="tmItem" data-tab="tabcont2">쪽지<small class="msg_num">99</small></a>
+											<a class="tmItem" data-tab="tabcont3">test_내용없음</a>
+										</div>
+										<!-- //탭메뉴 추가_230717 -->
+
+										<div class="scrollbox_inside ">  <!--  클래스 수정 _230717 -->
+
+											<!-- <div class="flex p8 gap4">
+												<a href="" class="ui basic small button">버튼</a>
+											</div>  태그 삭제_230717 -->
+
+											<!-- <div class="ui divider m0"></div> 태그 삭제_230717 -->
+
+											<!-- push_230717 -->
+											<div class="p8 ui tab active" data-tab="tabcont1">  <!--  클래스 수정 dataset 추가 _230717 -->
+
+												<div class="item">
+													<a href="#0" onclick="goSysmsgList('S');return false;" title="내용보기">
+														<p class="item-title text-truncate">[S] test수업 진행 안내 사항을 말씀드립니다. 반드시 지정된 강의기간에 강의내용이 오픈될 수 있도록 작업해주세요.</p> 
+														<div class="flex pt8">
+															<small class="f075 mra">이름</small>
+															<small class="f075">2023-03-24 15:30:51</small>
+														</div>
+													</a>
+												</div>
+												<div class="item">
+													<a href="#0" onclick="goSysmsgList('S');return false;" title="내용보기">
+														<p class="item-title text-truncate">[S] 말주임표클래스 text-truncate 추가.</p>
+														<div class="flex pt8">
+															<small class="f075 mra">이름</small>
+															<small class="f075">2023-03-24 15:30:51</small>
+														</div>
+													</a>
+												</div>
+												<div class="item">
+													<a href="#0">test</a>
+												</div>
+
+											</div>
+											<!-- //push_230717 -->
+
+											<!-- 쪽지_230717 -->
+											<div class="p8 ui tab " data-tab="tabcont2"> 
+
+												<div class="item"> 
+													<div class="flex">  <!-- 박스 추가_230327  -->
+														<a href="#0"  onclick="goSysmsgList('N');return false;" title="내용보기">
+															<p class="item-title">[M] asdfasdf asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf</p>
+															<div class="flex pt8">
+																<small class="f075 mra">이름</small>
+																<small class="f075">2023-03-24 15:30:51</small>
+															</div>
+														</a>                                               
+														<button type="button" class="ui basic mini button boxShadowNone mla flex-shrink0" onclick="viewSysmsgSendBox('N0')" title="답장"><i class="xi-reply"></i></button> 
+													</div>
+																				
+
+													<div class="field flex flex-column gap4 mt10" >
+
+														<!-- 첨부된파일_230717 -->
+														<div class="ui segment p0 m0">
+															<div class="mb5 opacity7 file-txt">
+																<a href="javascript:void(0)" class="btn border0" onclick="fileDown('')">
+																	<i class="xi-download mr3" aria-hidden="true"></i>
+																	4-1-01 직제 규정.hwp (66 KB)
+																</a>
+																<a href="javascript:void(0)" class="btn border0" onclick="fileDown('')">
+																	<i class="xi-download mr3" aria-hidden="true"></i>
+																	9086f74a4072a8.jpg (7 MB)
+																</a>
+																<a href="javascript:void(0)" class="btn border0" onclick="fileDown('')">
+																	<i class="xi-download mr3" aria-hidden="true"></i>
+																	4267235fdfb8f7.jpg (6 MB)                                                    
+																</a>                                  
+															</div>
+														</div>
+														<!-- //첨부된파일_230717 -->
+
+														<textarea id="sysmsg_N0" rows="2"></textarea> 
+
+														<!-- 버튼 추가_230717 -->
+														<div class="flex">
+															<button class="ui basic icon small button mra" title="파일첨부" aria-label="파일첨부"><i class="save icon"></i></button>
+															<button class="ui basic small button" >전송</button>
+														</div>
+														<!-- //버튼 추가_230717 -->
+
+														<!-- 첨부한 파일_230717 -->
+														<div class="ui segment p0 m0">
+															<div class="mb5 opacity7 file-txt">
+																<div class="btn border0" >
+																	<i class="paperclip icon f080" aria-hidden="true"></i>
+																	4-1-01 직제 규정.hwp (66 KB)
+																	<button type="button" class="del" title="파일삭제" aria-label="파일삭제"></button>
+																</div>
+																<div class="btn border0" >
+																	<i class="paperclip icon f080" aria-hidden="true"></i>
+																	9086f74a4072a8.jpg (7 MB)
+																	<button type="button" class="del" title="파일삭제" aria-label="파일삭제"></button>
+																</div>
+																<div class="btn border0" >
+																	<i class="paperclip icon f080" aria-hidden="true"></i>
+																	4267235fdfb8f7.jpg (6 MB)   
+																	<button type="button" class="del" title="파일삭제" aria-label="파일삭제"></button>                                                 
+																</div>                                  
+															</div>
+														</div>
+														<!-- //첨부한 파일_230717 -->
+
+													</div>                      
+												</div> 
+												<div class="item">  
+													<div class="flex">
+														<a href="#0"  onclick="goSysmsgList('N');return false;" title="내용보기">
+															<p class="item-title">[M] asdfasdf</p>
+															<small class="f075">2023-03-27 09:57:56</small>
+														</a>                                               
+														<button type="button" class="ui basic mini button boxShadowNone mla flex-shrink0" onclick="viewSysmsgSendBox('N0')" title="답장"><i class="xi-reply"></i></button>
+													</div>
+
+													<div id="sysmsg_sendbox_N0" class="field flex flex-column gap4 mt10" style="display: none !important;">
+														<textarea id="sysmsg_N0" rows="2"></textarea> 
+														<button class="ui basic mini button mla" onclick="sendSysmsg('N',0,'9020015','젼인숙');return false;">보내기</button>
+													</div>                      
+												</div>  
+											</div>
+											<!-- //쪽지_230717 -->
+
+											<!-- 탭 내용없을때_230717 -->
+											<div class="p8 ui tab " data-tab="tabcont3"> 
+												<div class="flex-container m-hAuto">
+													<div class="no_content">
+														<!-- <i class="paper plane outline icon f170"></i> -->
+														<span>test_새로운 메시지 없음</span>
+														<div class="flex tc mt10 gap4">
+															<a href="" class="ui basic small button">버튼</a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- //탭 내용없을때_230717 -->
+
+										</div>
+
+										<div class="flex p8">
+											<button type="button" class="ui basic button small mra">모두 읽음 처리</button>
+											<button type="button" class="ui basic button small">전체 목록</button>
+										</div>
+
+									</div>
+
+										
+									<script> 
+										//초기화 방법 1__일반적인 형식
+										$('.tabmenu.tMenubar .tmItem').tab(); 
+
+										//초기화 방법 2__탭을 선택해 초기화 할 경우
+										//$('.tabmenu.tMenubar .tmItem').tab('change tab', 'tabcont2'); 
+
+										// 탭 콘텐츠 변경
+										//$('.tabmenu.tMenubar .tmItem').tab('change tab', 'tabcont3'); // 탭콘텐츠 
+										//$('.tabmenu.tMenubar .tmItem').tab('change tab', 'tabcont2 _data-tab 값입력하는곳');
+									</script>
+
+								</li>
+
+								<li class="mode">
+									<a href="#0" data-medi-ui="mode"><i class="theme-light-dark ico" aria-hidden="true"></i></a>    
+
+									<div class="menu">
+										<div class="title">설정</div>
+										<div class="item"> 
+											<div class="option-content">
+												<div class="sec_head">화면모드</div>
+												<div class="flex">
+													<button type="button" class="ui basic button"><i class="ion-checkmark icon f075 m0" aria-hidden="true"></i> 다크</button>
+													<button type="button" class="ui blue button"><i class="ion-checkmark icon f075 m0" aria-hidden="true"></i> 라이트</button>
+													
+												</div>
+											</div> 
+											<div class="option-content">
+												<div class="sec_head">언어</div>
+												<div class="flex">
+													<button type="button" class="ui blue button"><i class="ion-checkmark icon f075 m0" aria-hidden="true"></i> Kor</button>
+													<button type="button" class="ui basic button"><i class="ion-checkmark icon f075 m0" aria-hidden="true"></i> Eng</button>
+												</div>
+											</div>                    
+										</div> 
+									</div>                                        
+								</li>
+								<!-- 사용자 정보 위치 lnb 로 이동함_230517 -->
+								<!-- <script> 화면 확대 축소 스크립트 삭제_230517 -->
+							</ul>
+						<!-- </div> 삭제_230517-->
+
+					</header><!-- 헤더_공통으로 사용 가능한지 확인하기, 위치 이동_230517 -->
+                    <!--%@ include file="../inc/location_last.jsp" %--> <!-- location 위치 header 로  이동_230517 -->
+
+
+                    <!-- 본문 content 부분 -->
+                    <div class="content stu_section">   
+
+                        <!-- classInfo -->
+                        <div class="classInfo">
+                            <h1>[사회] 유럽 문화 탐방 (1반)</h1>
+                            <div class="classSection">
+                                <!-- 
+                                <ul class="list_verticalline">
+                                    <li>
+                                        <b class="opacity5">이수구분</b>
+                                        <span class="">교양필수</span>
+                                    </li>
+                                    <li>
+                                        <b class="opacity5">관상학과</b> 
+                                        <span class="">사회과학</span>
+                                    </li>
+                                        <li>
+                                        <b class="opacity5">교육형태</b>
+                                        <span class="">혼합</span>
+                                    </li>
+                                </ul>
+                                -->
+                                <!-- //ui 통일을 위해 태그 변경_221215 -->
+                                <div class="cls_btn">
+                                    <a href="#0" class="ui bcPurpleAlpha85 button">수업계획서</a>
+                                    <a href="#0" class="ui bcTealAlpha85 button">학습독려</a>
+                                    <a href="#0" class="ui bcDarkblueAlpha85 button">평가기준</a>
+                                </div>
+                            </div>
+                            <!-- <button class="info-toggle"><i class="ion-minus-round"></i></button> -->
+                        </div>
+                        <!-- //classInfo -->                     
+
+                        <div class="ui form">
+                            <!-- layout2 -->
+                            <div class="layout2">
+
+
+                                <!-- <div  style="margin-top: 1200px;"></div>스크롤테스트용_230519-->
+                                <div class="row">
+                                    <div class="col">
+                                        test
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <!-- //layout2 -->
+                        </div> 
+                    </div>
+                    <!-- //본문 content 부분 -->
+                        
+                    <!-- footer 영역 부분 -->
+                    <footer id="bottom">
+                        <button class="go_top" data-medi-ui="gotop"> <!-- 탑 버튼 추가_230525 -->
+                            <i class="ico icon-upload"></i>
+                            <!-- <span class="text">TOP</span> -->
+                        </button>
+                        <div class="inner">
+                            <div class="fr_cont">
+                                <ul class="copy">
+                                    <li>
+                                        <address>(04763) 서울시 성동구 왕십리로 220 한양사이버대학교</address>
+                                        <span class="tel_info">
+                                            <span class="info_tab">|</span>고객지원팀 : 02-2290-0114
+                                        </span>
+                                        <span class="tel_info">
+                                            <span class="info_tab">|</span>팩스 : 02-2290-0600
+                                        </span>
+                                        <span class="tel_info">
+                                            <span class="info_tab">|</span>등록번호 : 206-82-06345
+                                        </span>
+                                    </li>
+                                    <li>©2018 MEDIOPIA TECH. All rights reserved.</li>
+                                </ul>
+                                <div class="exc_copy">
+                                    <a href="#" class="ui basic small blue button">개인정보처리방침</a>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- //footer 영역 부분 --><!-- 푸터 위치 이동_235017 -->
+                </div>
+                <!-- //#container -->
+
+                <!-- </div> 오류_필요없는 닫힘태그 삭제_221208 --> 
+                
+        </div>
+
+
+<!-- 목업 확인을 위한 파일입니다 개발 시에는 무시해도 됩니다-->
+<script type="text/javascript" src="../mockup/test.js"></script> 
+<!-- //목업 확인을 위한 파일입니다 개발 시에는 무시해도 됩니다 -->
+
+    </body>
+
+</html>
