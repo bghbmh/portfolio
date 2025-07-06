@@ -1,4 +1,9 @@
-import './web-components.js';
+// import './web-components.js';
+import './components/common-header.js';
+import './components/common-footer.js';
+import './components/card-type1.js';
+import './components/modal-popup.js';
+
 import * as DOM from './components/Utils-dom.js';
 import { HASH_LIST , ORIGIN} from './components/config.js';
 
