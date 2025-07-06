@@ -132,7 +132,7 @@ i[class*="icon-svg-"] {
 	vertical-align: middle;
   line-height: initial;
 
-	--maskimg : url('/assets/img/common/icon-svg-missimg.svg');
+	--maskimg : url('./assets/img/common/icon-svg-missimg.svg');
 	
 }
 i[class*="icon-svg-"]:before {
@@ -156,8 +156,8 @@ i[class*="icon-svg-"]:before {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-i.icon-svg-article{ --maskimg : url('/assets/img/common/icon-svg-article.svg'); }
-i.icon-svg-imagesmode{ --maskimg : url('/assets/img/common/icon-svg-imagesmode.svg'); }
+i.icon-svg-article{ --maskimg : url('./assets/img/common/icon-svg-article.svg'); }
+i.icon-svg-imagesmode{ --maskimg : url('./assets/img/common/icon-svg-imagesmode.svg'); }
 
 .container{
 	position: relative;
@@ -236,7 +236,7 @@ i.icon-svg-imagesmode{ --maskimg : url('/assets/img/common/icon-svg-imagesmode.s
 }
 .textLoop {
 	animation: textLoop 30s linear infinite;
-	background-image: url("/assets/img/common/ㅂㅁㅎ2.svg") ;
+	background-image: url("./assets/img/common/ㅂㅁㅎ2.svg") ;
 	background-repeat: repeat-x;
 	background-size: auto;
 	width: calc(100% + ( 1062px ));
@@ -246,30 +246,30 @@ i.icon-svg-imagesmode{ --maskimg : url('/assets/img/common/icon-svg-imagesmode.s
 	opacity: .2; 
 	/* scale: .8; */
 }
-.textLoop.type2{ background-image: url("/assets/img/common/ㅂㅁㅎ.svg") ;  opacity: 1;  }
+.textLoop.type2{ background-image: url("./assets/img/common/ㅂㅁㅎ.svg") ;  opacity: 1;  }
 
 
 .text-animation > .q { width: 134px; height: 121px; }
-.text-animation > .q::before {	--maskImage: url('/assets/img/common/ㅂ.svg'); }
+.text-animation > .q::before {	--maskImage: url('./assets/img/common/ㅂ.svg'); }
 .text-animation > .k { width: 69px;  height: 121px;   }
-.text-animation > .k::before {	--maskImage: url('/assets/img/common/ㅏ.svg'); }
+.text-animation > .k::before {	--maskImage: url('./assets/img/common/ㅏ.svg'); }
 .text-animation > .r { width: 132px;  height: 128px;   }
-.text-animation > .r::before {	--maskImage: url('/assets/img/common/ㄱ.svg'); }
+.text-animation > .r::before {	--maskImage: url('./assets/img/common/ㄱ.svg'); }
 
 .text-animation > .a { margin-left: 2em; width: 149px;   height: 125px;   }
-.text-animation > .a::before {	--maskImage: url('/assets/img/common/ㅁ.svg'); }
+.text-animation > .a::before {	--maskImage: url('./assets/img/common/ㅁ.svg'); }
 .text-animation > .l { width: 37px;  height: 125px;    }
-.text-animation > .l::before {	--maskImage: url('/assets/img/common/ㅣ.svg'); }
+.text-animation > .l::before {	--maskImage: url('./assets/img/common/ㅣ.svg'); }
 .text-animation > .s { width: 132px; height: 128px;    }
-.text-animation > .s::before {	--maskImage: url('/assets/img/common/ㄴ.svg'); }
+.text-animation > .s::before {	--maskImage: url('./assets/img/common/ㄴ.svg'); }
 
 .text-animation > .g { margin-left: 2em;  width: 143px; height: 151px;    }
-.text-animation > .g::before {	--maskImage: url('/assets/img/common/ㅎ.svg'); }
+.text-animation > .g::before {	--maskImage: url('./assets/img/common/ㅎ.svg'); }
 .text-animation > .ml { width: 162px;  height: 125px;    }
-.text-animation > .ml::before {	--maskImage: url('/assets/img/common/ㅢ.svg'); }
+.text-animation > .ml::before {	--maskImage: url('./assets/img/common/ㅢ.svg'); }
 
 .text-animation > .qag{ width: 1095px; height: 151px; }
-.text-animation > .qag::before {	--maskImage: url('/assets/img/common/ㅂㅁㅎ.svg'); }
+.text-animation > .qag::before {	--maskImage: url('./assets/img/common/ㅂㅁㅎ.svg'); }
 
 @keyframes textLoop {
 	100% { transform: translate3D(-1062px, 0, 0); }
@@ -413,7 +413,7 @@ i.icon-svg-imagesmode{ --maskimg : url('/assets/img/common/icon-svg-imagesmode.s
 .recent-product .item.shape1 .contents .bg .clip03{
 	width: 8em;
 	height: 8em;
-	background-image: url('/assets/img/common/shape1.svg');
+	background-image: url('./assets/img/common/shape1.svg');
 	right: 0.5em;
 	bottom: 2.5em;
 }
@@ -421,7 +421,7 @@ i.icon-svg-imagesmode{ --maskimg : url('/assets/img/common/icon-svg-imagesmode.s
 .recent-product .item.shape2 .contents .bg .clip03{
 	width: 13em;
 	height: 5em;
-	background-image: url('/assets/img/common/shape2.svg');
+	background-image: url('./assets/img/common/shape2.svg');
 	right: 0;
 	bottom: 0.5em;
 }
@@ -429,7 +429,7 @@ i.icon-svg-imagesmode{ --maskimg : url('/assets/img/common/icon-svg-imagesmode.s
 .recent-product .item.shape3 .contents .bg .clip03{
 	width: 8em;
 	height: 5em;
-	background-image: url('/assets/img/common/shape3.svg');
+	background-image: url('./assets/img/common/shape3.svg');
 	left: 1em;
 	bottom: 1em;
 }
@@ -627,7 +627,7 @@ label input[type="radio"] {
 	cursor: pointer;
 	padding: 4px;
 
-	--maskimg : url('/assets/img/common/icon-svg-missimg.svg');
+	--maskimg : url('./assets/img/common/icon-svg-missimg.svg');
 	
 }
 label input[type="checkbox"]:before,
@@ -688,7 +688,7 @@ label input[type="radio"]:checked {
 	border-color: transparent; 
 	padding: 3px; 
 	opacity: .2; 
-	--maskimg : url('/assets/img/common/icon-svg-check.svg');
+	--maskimg : url('./assets/img/common/icon-svg-check.svg');
 	background-color: transparent;
 }
 
@@ -730,7 +730,7 @@ label input[type="radio"]:checked {
 	gap:0;
 	pointer-events: none;
 }
-.search.hashtag .hashList .btn input[type="checkbox"]{ --w: 1em; --maskimg : url('/assets/img/common/icon-svg-close.svg'); padding:0 }
+.search.hashtag .hashList .btn input[type="checkbox"]{ --w: 1em; --maskimg : url('./assets/img/common/icon-svg-close.svg'); padding:0 }
 .search.hashtag .hashList .btn input[type="checkbox"]::before{ 
 	content: '#';
 	mask: none;
@@ -989,7 +989,7 @@ label input[type="radio"]:checked {
 	mask-position-y: 50%;
 	mask-repeat: no-repeat;
 	
-	--maskimg : url('/assets/img/common/x-lg.svg'); 
+	--maskimg : url('./assets/img/common/x-lg.svg'); 
 
 	-webkit-mask-image: var(--maskimg);
 	mask-image: var(--maskimg);
@@ -1280,7 +1280,7 @@ label input[type="radio"]:checked {
 	mask-position-y: 50%;
 	mask-repeat: no-repeat;
 	
-	--maskimg : url('/assets/img/common/filetype-html.svg'); 
+	--maskimg : url('./assets/img/common/filetype-html.svg'); 
 
 	-webkit-mask-image: var(--maskimg);
 	mask-image: var(--maskimg);
@@ -1304,7 +1304,7 @@ label input[type="radio"]:checked {
 	mask-position-y: 50%;
 	mask-repeat: no-repeat;
 	
-	--maskimg : url('/assets/img/common/arrow-right-short.svg'); 
+	--maskimg : url('./assets/img/common/arrow-right-short.svg'); 
 
 	-webkit-mask-image: var(--maskimg);
 	mask-image: var(--maskimg);
@@ -1421,7 +1421,7 @@ body.modalOpen{ overflow: hidden; }
 	font-size: 14px;
 	letter-spacing: 1px;
 	
-	background-image: url(/assets/img/common/logo-react.svg);
+	background-image: url(./assets/img/common/logo-react.svg);
 	background-repeat: no-repeat;
 	background-position: 8px 6px;
 	background-size: 2rem;
