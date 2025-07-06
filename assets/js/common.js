@@ -190,7 +190,7 @@ const MarkUp = {
 
 		</div>
 		<div class="modal-body" slot="modal-body">
-			<iframe class="iframe" src="../data/${item.samplePage[0].webUrl}" style="width: 100%;height: 100%; border: 0;" ></iframe>
+			<iframe class="iframe" src="./data/${item.samplePage[0].webUrl}" style="width: 100%;height: 100%; border: 0;" ></iframe>
 		
 		</div> `
 	}
@@ -206,7 +206,7 @@ function mainCardhandler(e){
 
 	if( clickElem.dataset.action ===  "modal" ){
 
-		jsonDB('../data/testDB.json').then( itemsData => {
+		jsonDB('./data/testDB.json').then( itemsData => {
 			let item = itemsData.find( item => item.order === order );
 			initUtilModal( util, item);
 		}).catch(error => {
