@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function initSetPage(webComponent){
-	const itemsData = await jsonDB('../data/testDB.json'); 
+	const itemsData = await jsonDB('./data/testDB.json'); 
 
 	if( webComponent === 'main' ){
 		console.log('URL- load webComponent ', );
@@ -91,7 +91,7 @@ function globalNavHandler(e){
 async function subRender(hashList){
 	
 	let wrap = document.querySelector(".cardList2");
-	const itemsData = await jsonDB('../data/testDB.json'); 
+	const itemsData = await jsonDB('./data/testDB.json'); 
 	let renderList = [];
 	
 	wrap.innerHTML='';
