@@ -18,7 +18,7 @@ class CommonHeader extends HTMLElement {
 		super(); // HTMLElement의 constructor 호출
 		const shadowRoot = this.attachShadow({ mode: 'open' });
 
-		const cssFilePaths = ['../assets/css/reset.css','../assets/css/common.css'];
+		const cssFilePaths = ['./assets/css/reset.css','./assets/css/common.css'];
 		let self = new CSSStyleSheet();
 		self.replaceSync(cssText);
 		loadMultipleStylesheets(cssFilePaths).then(sheets => {
