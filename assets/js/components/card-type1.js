@@ -21,7 +21,7 @@ class CardType1 extends HTMLElement {
 		this._fileItems = {}; // 비동기로 가져올 file 데이터 저장 변수
 		this._body = null;
 
-		const cssFilePaths = ['../assets/css/bootstrap.css','../assets/css/reset.css','../assets/css/common.css'];
+		const cssFilePaths = ['./assets/css/bootstrap.css','./assets/css/reset.css','./assets/css/common.css'];
 		
 		loadMultipleStylesheets(cssFilePaths).then(sheets => {
             this.shadowRoot.adoptedStyleSheets = sheets;
@@ -161,7 +161,7 @@ const MarkUp = {
 }
 
 function image(images ){
-	return images.length > 0 ? `<img src="/data/${images[0].webUrl}" alt="메인이미지">` : `<div class="item" title="등록된이미지가없습니다"><i class="icon-svg-image-sharp"></i></div>`;
+	return images.length > 0 ? `<img src="./data/${images[0].webUrl}" alt="메인이미지">` : `<div class="item" title="등록된이미지가없습니다"><i class="icon-svg-image-sharp"></i></div>`;
 }
 
 
