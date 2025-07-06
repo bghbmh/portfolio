@@ -6,7 +6,7 @@ class CommonFooter extends HTMLElement {
 		super(); // HTMLElement의 constructor 호출
 		const shadowRoot = this.attachShadow({ mode: 'open' });
 
-		const cssFilePaths = ['../assets/css/reset.css','../assets/css/common.css'];
+		const cssFilePaths = ['./assets/css/reset.css','./assets/css/common.css'];
 		
 		loadMultipleStylesheets(cssFilePaths).then(sheets => {
 			shadowRoot.adoptedStyleSheets = sheets;
