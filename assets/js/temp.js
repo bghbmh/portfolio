@@ -159,7 +159,7 @@ function mainOpenList(num, item){
 	let cn = "mp";
 	if( num === 2 ) cn = "full";
 
-	return item.mainOpenImages.map( (img,idx) => `<img src="/data/${img.webUrl}" class="${ idx === 0 ?  cn : "dp"}" alt="${item.title}">` ).join("");
+	return item.mainOpenImages.map( (img,idx) => `<img src="./data/${img.webUrl}" class="${ idx === 0 ?  cn : "dp"}" alt="${item.title}">` ).join("");
 }
 
 // 메인 ======================================
