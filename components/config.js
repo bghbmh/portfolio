@@ -95,4 +95,4 @@ export const HASH_LIST = ["디자인",
 		"ui-test"
 	];
 
-export const ORIGIN = location.origin; 
+export const ORIGIN = location; 
