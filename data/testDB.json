@@ -180,7 +180,7 @@
         "size": 244817,
         "type": "image/png",
         "lastModified": 1743958251501,
-        "webUrl": "bmh1750777200021/preview/메인페이지.png"
+        "webUrl": "bmh1750777200021/preview/메인페이지.png"
       },
       {
         "alt": "",
@@ -188,7 +188,7 @@
         "size": 235063,
         "type": "image/png",
         "lastModified": 1743958251503,
-        "webUrl": "bmh1750777200021/preview/게시글 상세보기-공통.png"
+        "webUrl": "bmh1750777200021/preview/게시글 상세보기-공통.png"
       },
       {
         "alt": "",
@@ -196,7 +196,7 @@
         "size": 215395,
         "type": "image/png",
         "lastModified": 1743958251504,
-        "webUrl": "bmh1750777200021/preview/수강신청 & 확인.png"
+        "webUrl": "bmh1750777200021/preview/수강신청 & 확인.png"
       }
     ],
     "sampleName": "ssu",
@@ -204,20 +204,20 @@
       {
         "label": "메인",
         "alt": "",
-        "name": "메인.html",
+        "name": "메인.html",
         "size": 13820,
         "type": "text/html",
         "lastModified": 1743958251503,
-        "webUrl": "bmh1750777200021/sample/html/메인.html"
+        "webUrl": "bmh1750777200021/sample/html/메인.html"
       },
       {
-        "label": "게시판-글상세보기",
+        "label": "게시판_글상세보기",
         "alt": "",
-        "name": "게시판_글상세보기_공통스타일.html",
+        "name": "게시판_글상세보기_공통스타일.html",
         "size": 8703,
         "type": "text/html",
         "lastModified": 1751718644657,
-		"webUrl": "bmh1750777200021/sample/html/게시판_글상세보기_공통스타일.html"
+		"webUrl": "bmh1750777200021/sample/html/게시판_글상세보기_공통스타일.html"
       },
       {
         "label": "게시판-목록",
