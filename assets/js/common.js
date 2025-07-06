@@ -1,6 +1,6 @@
 import './web-components.js';
-import * as DOM from '../../components/Utils-dom.js';
-import { HASH_LIST , ORIGIN} from '../../components/config.js';
+import * as DOM from './components/Utils-dom.js';
+import { HASH_LIST , ORIGIN} from './components/config.js';
 
 import * as MAIN from  './temp.js';
 
