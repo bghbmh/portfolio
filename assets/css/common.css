@@ -36,7 +36,7 @@ header.common{
 	font-weight: 500;
 }
 .header-common-util .logo::before{
-	content: url(/assets/img/common/logo.svg);
+	content: url(./assets/img/common/logo.svg);
 	display: inline-block;
 	width: 54px;
 
