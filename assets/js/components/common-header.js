@@ -7,7 +7,7 @@ let cssText = `
 				/* 임시 */
 				position: sticky;
 				z-index: 3;
-				top: -8px;
+				top: 0px;
 				transition: all 1s;
 				display: block;
 			} `;
