@@ -132,7 +132,7 @@ i[class*="icon-svg-"] {
 	vertical-align: middle;
   line-height: initial;
 
-	--maskimg : url('../img/common/icon-svg-missimg.svg');
+	--maskimg : url('./assets/img/common/icon-svg-missimg.svg');
 	
 }
 i[class*="icon-svg-"]:before {
@@ -156,8 +156,8 @@ i[class*="icon-svg-"]:before {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-i.icon-svg-article{ --maskimg : url('../img/common/icon-svg-article.svg'); }
-i.icon-svg-imagesmode{ --maskimg : url('../img/common/icon-svg-imagesmode.svg'); }
+i.icon-svg-article{ --maskimg : url('./assets/img/common/icon-svg-article.svg'); }
+i.icon-svg-imagesmode{ --maskimg : url('./assets/img/common/icon-svg-imagesmode.svg'); }
 
 .container{
 	position: relative;
