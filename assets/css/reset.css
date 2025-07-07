@@ -254,7 +254,7 @@ width: 1em;
   mask-position-x: 50%;
   mask-position-y: 50%;
   mask-repeat: no-repeat;
-  --maskimg: url('../img/common/x-lg.svg');
+  --maskimg: url('./assets/img/common/x-lg.svg');
   -webkit-mask-image: var(--maskimg);
   mask-image: var(--maskimg);
   -webkit-font-smoothing: antialiased;
