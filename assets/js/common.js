@@ -235,7 +235,7 @@ function initUtilModal(util, item){
 	modal.querySelector('.ctrl-pageview')?.addEventListener("click", e => { 
 		let link = e.target.closest("[data-link]").dataset.link;
 		e.stopPropagation();
-		modal.querySelector("iframe").src = `/data/${link}`;
+		modal.querySelector("iframe").src = `./data/${link}`;
 	});	
 	modal.open();
 }
