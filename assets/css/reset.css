@@ -223,9 +223,10 @@ img{ max-width: 100%}
 
 
 .btn-modal-close{
-	position: absolute;
-	right: 1em;
-	top: 1em;
+	/* position: absolute; */
+	position: fixed;
+	right: calc(50% - 750px);
+	top: 2em;
 	color: transparent;
 	background-color: var(--bs-dark);
 	opacity: 1;
@@ -253,7 +254,7 @@ width: 1em;
   mask-position-x: 50%;
   mask-position-y: 50%;
   mask-repeat: no-repeat;
-  --maskimg: url('./assets/img/common/x-lg.svg');
+  --maskimg: url('../img/common/x-lg.svg');
   -webkit-mask-image: var(--maskimg);
   mask-image: var(--maskimg);
   -webkit-font-smoothing: antialiased;
