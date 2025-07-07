@@ -682,10 +682,10 @@ label input[type="radio"]:checked {
 	border-bottom: 1px solid #222;
 	margin: 0;
 	overflow: auto;
-	background-color: red;
+	background-color: var(--bs-body-bg);
 	display: flex;
 	gap: .25rem;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	align-items: center;
 	width: 100%;
 	height: 4em;
@@ -772,6 +772,7 @@ label input[type="radio"]:checked {
 		/*! padding-right: calc( 50% - var(--contentbox-width) / 2 ); */
 	}
 	.search.hashtag nav{
+		flex-wrap: wrap;
 		padding-left: calc( 50% - var(--contentbox-width) / 2 );
 		padding-right: calc( 50% - var(--contentbox-width) / 2 );
 	}

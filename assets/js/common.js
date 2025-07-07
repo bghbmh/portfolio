@@ -48,7 +48,7 @@ function setGlobalNav(){
 	CONTAINER.appendChild(globalNav);
 	globalNav.addEventListener('change', globalNavHandler);
 
-	let nav = DOM.CreateElement({tag:"nav", class: "d-flex gap-1 mt-3 mb-3"});
+	let nav = DOM.CreateElement({tag:"nav", class: ""});
 	globalNav.appendChild(nav);
 	nav.appendChild(DOM.CreateElement({ tag : "label",  class : "btn active",
 		innerHTML : `<input type="checkbox" name="hash" value="모두" checked><span>모두</span>`
