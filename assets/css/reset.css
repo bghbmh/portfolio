@@ -225,7 +225,7 @@ img{ max-width: 100%}
 .btn-modal-close{
 	/* position: absolute; */
 	position: fixed;
-	right: 2em;
+	right: 24px;
 	top: 2em;
 	color: transparent;
 	background-color: var(--bs-dark);
@@ -239,33 +239,33 @@ img{ max-width: 100%}
 	border-radius: 100em;
 }
 .btn-modal-close::before {
-  flex: none;
-  content: '';
-  display: inline-block;
-width: 1em;
-  height: 1em;
-  color: #fff;
-  background-color: currentColor;
-  -webkit-mask-size: contain;
-  -webkit-mask-position-x: 50%;
-  -webkit-mask-position-y: calc(50% - 0px);
-  -webkit-mask-repeat: no-repeat;
-  mask-size: contain;
-  mask-position-x: 50%;
-  mask-position-y: 50%;
-  mask-repeat: no-repeat;
-  --maskimg: url('./assets/img/common/x-lg.svg');
-  -webkit-mask-image: var(--maskimg);
-  mask-image: var(--maskimg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	flex: none;
+	content: '';
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	color: #fff;
+	background-color: currentColor;
+	-webkit-mask-size: contain;
+	-webkit-mask-position-x: 50%;
+	-webkit-mask-position-y: calc(50% - 0px);
+	-webkit-mask-repeat: no-repeat;
+	mask-size: contain;
+	mask-position-x: 50%;
+	mask-position-y: 50%;
+	mask-repeat: no-repeat;
+	--maskimg: url('./assets/img/common/x-lg.svg');
+	-webkit-mask-image: var(--maskimg);
+	mask-image: var(--maskimg);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
- 
-  font-size: calc(1em + 3px);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+	font-size: calc(1em + 3px);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 @media (min-width: 500px) {
