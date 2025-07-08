@@ -225,7 +225,7 @@ img{ max-width: 100%}
 .btn-modal-close{
 	/* position: absolute; */
 	position: fixed;
-	right: calc(50% - 750px);
+	right: 2em;
 	top: 2em;
 	color: transparent;
 	background-color: var(--bs-dark);
@@ -279,8 +279,6 @@ width: 1em;
 		height: calc(100% - 8px);
 	}
 }
-
-
 @media(min-width: 1024px){
 
 }
@@ -290,4 +288,7 @@ width: 1em;
 		margin-left: auto;
 		margin-right: auto;
 	}
+}
+@media(min-width: 1600px){
+	.btn-modal-close{ right: calc(50% - 750px); }
 }
