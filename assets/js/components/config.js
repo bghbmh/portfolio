@@ -82,6 +82,14 @@ export const STATE_STEP =  [
 	}
 ]
 
+export const HASH_LIST = [
+		"웹",
+		"콘텐츠",
+		"인쇄",
+		"브랜딩",
+		"ui-test"
+	];
+/*
 export const HASH_LIST = ["디자인",
 		"마크업",
 		"모바일",
@@ -94,5 +102,5 @@ export const HASH_LIST = ["디자인",
 		"브랜딩",
 		"ui-test"
 	];
-
+*/
 export const ORIGIN = location.origin; 
