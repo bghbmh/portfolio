@@ -859,6 +859,7 @@ label input[type="radio"]:checked {
 
 	color: transparent;
 	position: relative;
+	min-height: 1.5em;
 }
 .cardType1 header .extraInfo-wrap .info:before{
 	content: '';
