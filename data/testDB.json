@@ -212,8 +212,9 @@
     "title": "프로젝트관리",
     "description": "",
     "extraInfo": {
-      "디자인": "박민희",
-      "UI-웹컴포넌트": "박민희"
+      "디자인": "",
+      "UI-웹컴포넌트": "",
+      "nodejs": "",
     },
     "externalLink": {
       "샘플보기2": "https://wowadmin.onrender.com/",
