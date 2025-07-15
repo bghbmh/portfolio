@@ -772,7 +772,10 @@
     ],
     "title": "파일업로드",
     "description": "",
-    "extraInfo": {},
+    "extraInfo": {
+      "디자인": "박민희",
+      "UI-자바스크립트": ""
+    },
     "externalLink": {
       "소스보기": "https://github.com/bghbmh/simple-ui-test/tree/main/UploadFiles"
     },
