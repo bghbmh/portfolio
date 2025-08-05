@@ -18,7 +18,7 @@ class CommonFooter extends HTMLElement {
 		<footer class="common">
 			<div class="contents-wrap">
 				<div>
-					<a class="btn btn-link" href="mailto:bghbmh@gamil.com">bghbmh@gamil.com</a>
+					<a class="btn btn-link" href="mailto:bghbmh@gmail.com">bghbmh@gmail.com</a>
 					<p><small>markup + javascript = 박민희 </small></p>
 				</div>
 				<span class="madein">c - 2025ㅂㅁㅎ</span>
