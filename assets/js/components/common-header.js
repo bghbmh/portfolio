@@ -40,7 +40,7 @@ console.log("////////////////////// render ", this.shadowRoot.adoptedStyleSheets
 					
 					<h1 class="title">박민희</h1>
 				
-					<a class="btn btn-link" href="mailto:bghbmh@gamil.com">bghbmh@gamil.com</a>
+					<a class="btn btn-link" href="mailto:bghbmh@gmail.com">bghbmh@gmail.com</a>
 				</div>
 			<!-- /header -->
 		`;
