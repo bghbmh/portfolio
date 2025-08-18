@@ -102,7 +102,7 @@ class ProjectsContainer extends HTMLElement {
 	async _loadInitData( ) {   
 
 		try {
-			this._rawdata = await jsonDB('../data/testDB.json'); 	
+			this._rawdata = await jsonDB('../../data/testDB.json'); 	
 			this._setItems(this._rawdata);		
 			this.setAttribute('mode', 'view'); // 데이터 로드 완료 후 'view' 모드로 변경
 			
@@ -146,4 +146,5 @@ async function jsonDB(router) {
 		console.error('전송 중 오류 발생:', error);
     	throw error;
 	}
+
 }
