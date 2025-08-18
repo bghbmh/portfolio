@@ -400,7 +400,7 @@ const MarkUp = {
 
 		</div>
 		<div class="modal-body" slot="modal-body">
-			<iframe class="iframe" src="../data/${item.samplePage[0].webUrl}" style="width: 100%;height: 100%; border: 0;" ></iframe>
+			<iframe class="iframe" src="./data/${item.samplePage[0].webUrl}" style="width: 100%;height: 100%; border: 0;" ></iframe>
 		
 		</div> `
 	},
@@ -457,5 +457,6 @@ const MarkUp = {
 		</article>
 		`
 	}
+
 
 }
