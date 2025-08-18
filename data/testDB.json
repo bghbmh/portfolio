@@ -4,21 +4,29 @@
     "mainOpenImages": [
       {
         "alt": "",
-        "name": "rr1-1.png",
+        "name": "mainOpen.png",
         "size": 147799,
         "type": "image/png",
         "lastModified": 1743958251474,
-        "webUrl": "bmh1750777200021/preview/rr1-1.png"
-      },
-      {
-        "alt": "",
-        "name": "rr1-2.png",
-        "size": 216417,
-        "type": "image/png",
-        "lastModified": 1743958251495,
-        "webUrl": "bmh1750777200021/preview/rr1-2.png"
+        "webUrl": "bmh1750777200021/preview/mainOpen21.png"
       }
     ],
+	"summary": "기존 입시/학사 시스템의 UI/UX 개선, 반응형 웹 적용, 시각적 명료성과 정보 탐색 효율을 높이기 위한 방향으로 리디자인",
+	"overview" :[
+		{
+			"title" : "카드형 정보 구조로 전환",
+			"description" : "정보 우선순위 + 시각적 그룹화를 형성해 카드 단위로 묶어 한눈에 보기 쉽게 재구성"
+		},
+		{
+			"title" : "좌측 메뉴 구조 개선 (접힘/확장 + 호버 안내)",
+			"description" : "콘텐츠 영역 확 및 마우스 오버 시 아이콘 설명(텍스트) 노출"
+		},
+		{
+			"title" : "시각 스타일 개선",
+			"description" : "여백 정리 및 글자 계층 구조 정립 + 중성톤+포인트컬러 활용으로 브랜드 톤 통일"
+		}
+	],
+	"tools" : [ "figma", "html", "css", "javascript"],
     "category": [
       {
         "name": "웹",
@@ -43,49 +51,69 @@
       "디자인": "박민희",
       "마크업": "박민희"
     },
-    "externalLink": {},
+    "externalLink": {
+		"figma" : "https://www.figma.com/proto/irCs6X1eHSiE5xKw3MVv6E/rePF?page-id=0%3A1&node-id=1-242&viewport=1070%2C512%2C0.29&t=gVcJ8duIShxCY1Fs-1&scaling=min-zoom&content-scaling=fixed"
+	},
+	"imageComparison":{
+		"before":{
+			"alt": "",
+			"name": "메인페이지.png",
+			"size": 244817,
+			"type": "image/png",
+			"lastModified": 1743958251501,
+			"webUrl": "bmh1750777200021/preview/before.png"
+		},
+		"after":{
+			"alt": "",
+			"name": "메인페이지.png",
+			"size": 244817,
+			"type": "image/png",
+			"lastModified": 1743958251501,
+			"webUrl": "bmh1750777200021/preview/after.png"
+		}
+	},
     "mainimage": [
       {
         "alt": "",
-        "name": "아이디-비밀번호찾기.png",
+        "name": "아이디-비밀번호찾기.png",
         "size": 2309812,
         "type": "image/png",
         "lastModified": 1743958251529,
-        "webUrl": "bmh1750777200021/preview/아이디-비밀번호찾기.png"
+        "webUrl": "bmh1750777200021/preview/아이디-비밀번호찾기.png"
       }
     ],
     "subimage": [
       {
         "alt": "",
-        "name": "전체공지사항.png",
+        "name": "전체공지사항.png",
         "size": 158968,
         "type": "image/png",
         "lastModified": 1743958251496,
-        "webUrl": "bmh1750777200021/preview/전체공지사항.png"
+        "webUrl": "bmh1750777200021/preview/전체공지사항.png"
       },
       {
         "alt": "",
-        "name": "메인페이지.png",
+        "name": "메인페이지.png",
         "size": 244817,
         "type": "image/png",
         "lastModified": 1743958251501,
-        "webUrl": "bmh1750777200021/preview/메인페이지.png"
+        "webUrl": "bmh1750777200021/preview/메인페이지.png"
       },
       {
         "alt": "",
-        "name": "게시글 상세보기-공통.png",
+        "name": "게시글 상세보기-공통.png",
         "size": 235063,
         "type": "image/png",
         "lastModified": 1743958251503,
-        "webUrl": "bmh1750777200021/preview/게시글 상세보기-공통.png"
+        "webUrl": "bmh1750777200021/preview/게시글 상세보기-공통.png"
       },
       {
-        "alt": "수강신청 & 확인",
-        "name": "수강신청 & 확인.png",
+        "alt": "",
+        "name": "수강신청 & 확인.png",
         "size": 215395,
         "type": "image/png",
         "lastModified": 1743958251504,
-        "webUrl": "bmh1750777200021/preview/수강신청 & 확인.png"
+        "webUrl": "bmh1750777200021/preview/수강신청 & 확인.png"
       }
     ],
     "sampleName": "ssu",
@@ -93,105 +121,59 @@
       {
         "label": "메인",
         "alt": "",
-        "name": "메인.html",
+        "name": "메인.html",
         "size": 13820,
         "type": "text/html",
         "lastModified": 1743958251503,
-        "webUrl": "bmh1750777200021/sample/html/메인.html"
+        "webUrl": "bmh1750777200021/sample/html/메인.html"
       },
       {
-        "label": "게시판_글상세보기",
+        "label": "게시판-글상세보기",
         "alt": "",
-        "name": "게시판_글상세보기_공통스타일.html",
+        "name": "게시판_글상세보기_공통스타일.html",
         "size": 8703,
         "type": "text/html",
         "lastModified": 1751718644657,
-		"webUrl": "bmh1750777200021/sample/html/게시판_글상세보기_공통스타일.html"
+		"webUrl": "bmh1750777200021/sample/html/게시판_글상세보기_공통스타일.html"
       },
       {
         "label": "게시판-목록",
         "alt": "",
-        "name": "전체공지사항.html",
+        "name": "전체공지사항.html",
         "size": 5345,
         "type": "text/html",
         "lastModified": 1751718644658,
-        "webUrl": "bmh1750777200021/sample/html/전체공지사항.html"
+        "webUrl": "bmh1750777200021/sample/html/전체공지사항.html"
       },
       {
-        "label": "가이드 ",
+        "label": "가이드",
         "alt": "",
-        "name": "00_기본_ui_스타일_디자인가이드_수정중.html",
+        "name": "00_기본_ui_스타일_디자인가이드_수정중.html",
         "size": 50717,
         "type": "text/html",
         "lastModified": 1751718644658,
-		"webUrl": "bmh1750777200021/sample/html/00_기본_ui_스타일_디자인가이드_수정중.html"
+		"webUrl": "bmh1750777200021/sample/html/00_기본_ui_스타일_디자인가이드_수정중.html"
       }
     ],
     "order": 22,
     "projectNum": 1750777200021,
     "ID": "bmh1750777200021",
     "projectState": "before",
-    "member": []
-  },
+    "member": [],
+	"designLink" : "https://www.figma.com/design/irCs6X1eHSiE5xKw3MVv6E/rePF?node-id=1-242&t=YgXdRxL5yaaq8Plg-1"
+  },	
   {
     "mainOpen": false,
-    "mainOpenImages": [],
-    "category": [
-      {
-        "name": "UI",
-        "type": "5",
-        "label": "main"
-      },
-      {
-        "name": "sample",
-        "type": "5",
-        "label": "sub"
-      }
-    ],
-    "hash": [
-      "디자인",
-      "마크업",
-      "ui-test"
-    ],
-    "title": "타임피커",
-    "description": "",
-    "extraInfo": {
-      "디자인": "박민희",
-      "UI-자바스크립트": "박민희"
-    },
-    "externalLink": {},
-    "mainimage": [
+    "mainOpenImages": [
       {
         "alt": "",
-        "name": "ui-sample-timepicker.svg",
-        "size": 27498,
-        "type": "image/svg+xml",
-        "lastModified": 1750914285265,
-        "webUrl": "bmh1750777200020/preview/ui-sample-timepicker.svg"
+        "name": "mainOpen.png",
+        "size": 147799,
+        "type": "image/png",
+        "lastModified": 1743958251474,
+        "webUrl": "bmh1750777200022/preview/mainOpen.png"
       }
     ],
-    "subimage": [],
-    "sampleName": "timepicker",
-    "samplePage": [
-      {
-        "label": "sample0",
-        "alt": "",
-        "name": "index.html",
-        "size": 3044,
-        "type": "text/html",
-        "lastModified": 1750914285264,
-        "webUrl": "bmh1750777200020/sample/html/index.html"
-      }
-    ],
-    "order": 21,
-    "projectNum": 1750777200020,
-    "ID": "bmh1750777200020",
-    "projectState": "complete",
-    "member": []
-  },
-    {
-    "mainOpen": false,
-    "mainOpenImages": [],
     "category": [
       {
         "name": "UI",
@@ -212,13 +194,12 @@
     "title": "프로젝트관리",
     "description": "",
     "extraInfo": {
-      "디자인": "a",
-      "UI-웹컴포넌트": "b",
-      "Nodejs": "c"
+      "디자인": "박민희",
+      "마크업": "박민희"
     },
     "externalLink": {
       "샘플보기2": "https://wowadmin.onrender.com/",
-      "소스보기": "https://github.com/bghbmh/wowAdmin"
+      "github": "https://github.com/bghbmh/wowAdmin"
     },
     "mainimage": [
       {
@@ -303,22 +284,79 @@
   },
   {
     "mainOpen": false,
+     "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200020/preview/mainOpen20.png"
+      }
+    ],
+    "category": [
+      {
+        "name": "UI",
+        "type": "5",
+        "label": "main"
+      },
+      {
+        "name": "sample",
+        "type": "5",
+        "label": "sub"
+      }
+    ],
+    "hash": [
+      "디자인",
+      "마크업",
+      "ui-test"
+    ],
+    "title": "타임피커",
+    "description": "",
+    "extraInfo": {
+      "디자인": "박민희",
+      "마크업": "박민희"
+    },
+    "externalLink": {},
+    "mainimage": [
+      {
+        "alt": "",
+        "name": "ui-sample-timepicker.svg",
+        "size": 27498,
+        "type": "image/svg+xml",
+        "lastModified": 1750914285265,
+        "webUrl": "bmh1750777200020/preview/ui-sample-timepicker.svg"
+      }
+    ],
+    "subimage": [],
+    "sampleName": "timepicker",
+    "samplePage": [
+      {
+        "label": "sample0",
+        "alt": "",
+        "name": "index.html",
+        "size": 3044,
+        "type": "text/html",
+        "lastModified": 1750914285264,
+        "webUrl": "bmh1750777200020/sample/html/index.html"
+      }
+    ],
+    "order": 21,
+    "projectNum": 1750777200020,
+    "ID": "bmh1750777200020",
+    "projectState": "complete",
+    "member": []
+  },
+  {
+    "mainOpen": false,
     "mainOpenImages": [
       {
 		"alt": "",
-        "name": "rr1-1.png",
+        "name": "mainOpen.png",
         "size": 147799,
         "type": "image/png",
         "lastModified": 1745753986183,
-		"webUrl": "bmh1750777200019/preview/rr1-1.png"
-      },
-      {
-		"alt": "",
-        "name": "rr1-2.png",
-        "size": 216417,
-        "type": "image/png",
-        "lastModified": 1745753986184,
-		"webUrl": "bmh1750777200019/preview/rr1-2.png"
+		"webUrl": "bmh1750777200019/preview/mainOpen19.png"
       }
     ],
     "category": [
@@ -423,20 +461,29 @@
     "mainOpen": true,
     "mainOpenImages": [
       {
-        "name": "rr2-1.png",
+        "name": "mainOpen.png",
         "size": 467494,
         "type": "image/png",
         "lastModified": 1745749309057,
-		"webUrl": "bmh1750777200018/preview/rr2-1.png"
-      },
-      {
-        "name": "rr2-2.png",
-        "size": 607780,
-        "type": "image/png",
-        "lastModified": 1745749309061,
-		"webUrl": "bmh1750777200018/preview/rr2-2.png"
+		"webUrl": "bmh1750777200018/preview/mainOpen18.png"
       }
     ],
+	"summary": "기존 서브페이지의 구조 개선 및 UI 재사용성 강화",
+	"overview" :[
+		{
+			"title" : "UI 구조화",
+			"description" : "순수 HTML/CSS로 구조화 → 다른 서브페이지에 재사용 가능"
+		},
+		{
+			"title" : "디자인 개선",
+			"description" : "반응형 레이아웃 적용으로 모바일/태블릿 접근성 강화"
+		},
+		{
+			"title" : "유지보수 및 신규 페이지 제작 시 스타일 일관성 확보",
+			"description" : ""
+		}
+	],
+	"tools" : [ "figma", "html", "css", "javascript"],
     "category": [
       {
         "name": "웹",
@@ -507,7 +554,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+     "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200012/preview/mainOpen12.png"
+      }
+    ],
     "category": [
       {
         "name": "UI",
@@ -545,7 +601,7 @@
     "samplePage": [],
     "order": 18,
     "externalLink": {
-      "소스보기": "https://github.com/bghbmh/simple-ui-test/tree/main"
+      "github": "https://github.com/bghbmh/simple-ui-test/tree/main"
     },
     "projectNum": 1750777200017,
     "ID": "bmh1750777200017",
@@ -554,7 +610,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+    "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 147799,
+        "type": "image/png",
+        "lastModified": 1743958251474,
+        "webUrl": "bmh1750777200016/preview/mainOpen.png"
+      }
+    ],
     "category": [
       {
         "name": "웹",
@@ -613,7 +678,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+    "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200015/preview/mainOpen15.png"
+      }
+    ],
     "category": [
       {
         "name": "웹",
@@ -690,7 +764,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+     "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200014/preview/mainOpen14.png"
+      }
+    ],
     "category": [
       {
         "name": "웹",
@@ -752,7 +835,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+    "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200013/preview/mainOpen13.png"
+      }
+    ],
     "category": [
       {
         "name": "UI",
@@ -772,12 +864,9 @@
     ],
     "title": "파일업로드",
     "description": "",
-    "extraInfo": {
-      "디자인": "박민희",
-      "UI-자바스크립트": ""
-    },
+    "extraInfo": {},
     "externalLink": {
-      "소스보기": "https://github.com/bghbmh/simple-ui-test/tree/main/UploadFiles"
+      "github": "https://github.com/bghbmh/simple-ui-test/tree/main/UploadFiles"
     },
     "mainimage": [
       {
@@ -785,7 +874,7 @@
         "size": 74801,
         "type": "image/png",
         "lastModified": 1745748659583,
-        "webUrl": "bmh1750777200013/preview/ui-sample-uploadfiles.png"
+        "webUrl": "bmh1750777200013/preview/mainOpen13.png"
       }
     ],
     "subimage": [],
@@ -808,7 +897,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+    "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200012/preview/mainOpen12.png"
+      }
+    ],
     "category": [
       {
         "name": "웹",
@@ -888,53 +986,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
-    "category": [
+    "mainOpenImages": [
       {
-        "name": "UI",
-        "type": "5",
-        "label": "main"
-      },
-      {
-        "name": "sample",
-        "type": "5",
-        "label": "sub"
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200010/preview/mainOpen.png"
       }
     ],
-    "hash": [
-      "디자인",
-      "마크업",
-      "ui-test"
-    ],
-    "title": "추천 키워드",
-    "description": "",
-    "extraInfo": {
-      "react": ""
-    },
-    "externalLink": {
-      "소스보기": "https://github.com/bghbmh/simple-ui-test/tree/main/KeyWord"
-    },
-    "mainimage": [
-      {
-        "name": "ui-test-handler-keyword.png",
-        "size": 9440,
-        "type": "image/png",
-        "lastModified": 1729579859670,
-        "webUrl": "bmh1750777200011/preview/ui-test-handler-keyword.png"
-      }
-    ],
-    "subimage": [],
-    "sampleName": "",
-    "samplePage": [],
-    "order": 12,
-    "projectNum": 1750777200011,
-    "ID": "bmh1750777200011",
-    "projectState": "complete",
-    "member": []
-  },
-  {
-    "mainOpen": false,
-    "mainOpenImages": [],
     "category": [
       {
         "name": "웹",
@@ -980,53 +1041,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
-    "category": [
+     "mainOpenImages": [
       {
-        "name": "콘텐츠",
-        "type": "3",
-        "label": "main"
-      },
-      {
-        "name": "제작",
-        "type": "1",
-        "label": "sub"
+        "alt": "",
+        "name": "paper31.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200008/preview/mainOpen08.png"
       }
     ],
-    "hash": [
-      "마크업",
-      "반응형",
-      "웹",
-      "콘텐츠"
-    ],
-    "title": "앰네스티",
-    "description": "",
-    "extraInfo": {
-      "디자인": "",
-      "마크업": ""
-    },
-    "mainimage": [
-      {
-        "name": "w23.png",
-        "size": 1179834,
-        "type": "image/png",
-        "lastModified": 1714528380000,
-        "webUrl": "bmh1750777200009/preview/w23.png"
-      }
-    ],
-    "subimage": [],
-    "sampleName": "",
-    "samplePage": [],
-    "order": 10,
-    "externalLink": {},
-    "projectNum": 1750777200009,
-    "ID": "bmh1750777200009",
-    "projectState": "complete",
-    "member": []
-  },
-  {
-    "mainOpen": false,
-    "mainOpenImages": [],
     "category": [
       {
         "name": "인쇄",
@@ -1069,11 +1093,20 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+     "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200007/preview/mainOpen07.png"
+      }
+    ],
     "category": [
       {
-        "name": "인쇄",
-        "type": "2",
+        "name": "콘텐츠",
+        "type": "3",
         "label": "main"
       },
       {
@@ -1084,10 +1117,9 @@
     ],
     "hash": [
       "디자인",
-      "콘텐츠",
-      "인쇄"
+      "콘텐츠"
     ],
-    "title": "",
+    "title": "수업 안내문",
     "description": "",
     "extraInfo": {
       "디자인": "박민희"
@@ -1125,13 +1157,25 @@
     "mainOpen": true,
     "mainOpenImages": [
       {
-        "name": "rr3-1.png",
+        "name": "mainOpen.png",
         "size": 2905488,
         "type": "image/png",
         "lastModified": 1728845965612,
-		"webUrl": "bmh1750777200006/preview/rr3-1.png"
+		"webUrl": "bmh1750777200006/preview/mainOpen06.png"
       }
     ],
+	"summary": "보험 안내 브로슈어",
+	"overview" :[
+		{
+			"title" : "",
+			"description" : "전체 디자인 기획, 레이아웃 구성, 인포그래픽 제작"
+		},
+		{
+			"title" : "",
+			"description" : "고객 대상 보험 상품 정보와 절차를 한눈에 이해할 수 있도록 시각화"
+		}
+	],
+	"tools" : ["illustrator", "indesign"],
     "category": [
       {
         "name": "인쇄",
@@ -1176,7 +1220,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+     "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200005/preview/mainOpen05.png"
+      }
+    ],
     "category": [
       {
         "name": "웹",
@@ -1222,7 +1275,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+     "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200004/preview/mainOpen.png"
+      }
+    ],
     "category": [
       {
         "name": "인쇄",
@@ -1240,7 +1302,7 @@
       "콘텐츠",
       "인쇄"
     ],
-    "title": "",
+    "title": "수업 포스터",
     "description": "",
     "extraInfo": {
       "디자인": ""
@@ -1292,7 +1354,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+     "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200003/preview/mainOpen.png"
+      }
+    ],
     "category": [
       {
         "name": "인쇄",
@@ -1336,7 +1407,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
+    "mainOpenImages": [
+      {
+        "alt": "",
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200002/preview/mainOpen02.png"
+      }
+    ],
     "category": [
       {
         "name": "인쇄",
@@ -1352,7 +1432,7 @@
     "hash": [
       "인쇄"
     ],
-    "title": "",
+    "title": "교과서용 컷",
     "description": "",
     "extraInfo": {
       "일러스트(컷)": ""
@@ -1367,7 +1447,16 @@
         "webUrl": "bmh1750777200002/preview/c08.png"
       }
     ],
-    "subimage": [],
+    "subimage": [
+		{
+        "alt": "",
+        "name": "c09.png",
+        "size": 997109,
+        "type": "image/png",
+        "lastModified": 1751720250014,
+        "webUrl": "bmh1750777200002/preview/c09.png"
+      }
+	],
     "sampleName": "",
     "samplePage": [],
     "order": 3,
@@ -1379,50 +1468,16 @@
   },
   {
     "mainOpen": false,
-    "mainOpenImages": [],
-    "category": [
-      {
-        "name": "인쇄",
-        "type": "2",
-        "label": "main"
-      },
-      {
-        "name": "제작",
-        "type": "1",
-        "label": "sub"
-      }
-    ],
-    "hash": [
-      "인쇄"
-    ],
-    "title": "",
-    "description": "",
-    "extraInfo": {
-      "일러스트(컷)": ""
-    },
-    "mainimage": [
+     "mainOpenImages": [
       {
         "alt": "",
-        "name": "c09.png",
-        "size": 997109,
-        "type": "image/png",
-        "lastModified": 1751720250014,
-        "webUrl": "bmh1750777200001/preview/c09.png"
+        "name": "mainOpen.png",
+        "size": 1220095,
+        "type": "image/jpeg",
+        "lastModified": 1714528320000,
+        "webUrl": "bmh1750777200000/preview/mainOpen00.png"
       }
     ],
-    "subimage": [],
-    "sampleName": "",
-    "samplePage": [],
-    "order": 2,
-    "externalLink": {},
-    "projectNum": 1750777200001,
-    "ID": "bmh1750777200001",
-    "projectState": "complete",
-    "member": []
-  },
-  {
-    "mainOpen": false,
-    "mainOpenImages": [],
     "category": [
       {
         "name": "콘텐츠",
@@ -1441,7 +1496,7 @@
       "웹",
       "콘텐츠"
     ],
-    "title": "",
+    "title": "이벤트페이지",
     "description": "",
     "extraInfo": {
       "디자인": ""
