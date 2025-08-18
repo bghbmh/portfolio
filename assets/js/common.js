@@ -1,241 +1,213 @@
-// import './web-components.js';
-import './components/common-header.js';
-import './components/common-footer.js';
-import './components/card-type1.js';
+import './web-components.js';
+import * as DOM from './components/Utils-dom.js';
 import './components/modal-popup.js';
 
-import * as DOM from './components/Utils-dom.js';
-import { HASH_LIST , ORIGIN} from './components/config.js';
-
-import * as MAIN from  './temp.js';
-
-const CONTAINER = document.querySelector("main.container");
+const header = DOM.CreateElement({ tag : "common-header" });
+const container = DOM.CreateElement({ tag : "common-container", id: "container" });
+const footer = DOM.CreateElement({ tag : "common-footer" });
 
 document.addEventListener('DOMContentLoaded', () => {
-	console.log("DOMContentLoaded - ");
-
-	//window.location.href = '/';
-	console.log('URL ',location.origin, window.location.pathname);
+	
+	initSetView();
 
 	const uurl = new URL(location.href);
 	const params = uurl.searchParams;
-	let parList = params.get("list");
+	let current = params.get("current");
 
-	if( location.pathname === '/' ||  !parList ) initSetPage('main');
-	else  initSetPage('list'); 
+	console.log("parList - ", current);
+
+	console.log('URL ',location.origin, window.location.pathname);
+
+	//if( location.pathname === '/' ||  !parList ) setPage('main');
+	setPage(current); 
+
 });
 
-async function initSetPage(webComponent){
-	const itemsData = await jsonDB('./data/testDB.json'); 
+window.addEventListener('popstate', (event) => {
+	console.log('URL이 변경되었습니다 (popstate 이벤트 발생)', window.location.pathname);
+	// 이곳에서 현재 window.location.pathname 또는 window.location.search 등을 읽어와
+	// 해당 URL에 맞는 컴포넌트 또는 내용을 로드하는 함수를 호출합니다.
+	//loadComponents(); // 아까 예시로 든 함수
+});
 
-	if( webComponent === 'main' ){
-		console.log('URL- load webComponent ', );
-		MAIN.initMain( itemsData );
-		document.querySelector(".recent-product").addEventListener("click", mainCardhandler);
-		document.querySelector(".recent-work").addEventListener("click", mainCardhandler);
-	} else if( webComponent === 'list' ){
-		setGlobalNav();
+
+function initSetView(){   console.log("initSetView - ", 		location.href);
+	document.body.appendChild(header);
+	header.classList.add("observeItem");// 임시
+	header.addEventListener("clicked-global-nav", e => {
+		console.log("common js - ", e.detail.value);
 		
-		const wrap = DOM.CreateElement({tag:'section', class:"grid cardList2"});
-		CONTAINER.appendChild(wrap);
-		setList(wrap, itemsData);
-	}
+		setPage(e.detail.value);
 
-}
+		if( e.detail.value === 'contact' || e.detail.value === 'me' ) return;
 
-function setGlobalNav(){
-	let globalNav = DOM.CreateElement({tag:"form", class: "search hashtag", "data-mockup-ui":"gnbgnb"});
-	CONTAINER.appendChild(globalNav);
-	globalNav.addEventListener('change', globalNavHandler);
+		const uurl = new URL(location.href);
+		const params = uurl.searchParams;
+		params.set('current', e.detail.value);
+		uurl.search = params.toString();
 
-	let nav = DOM.CreateElement({tag:"nav", class: ""});
-	globalNav.appendChild(nav);
-	nav.appendChild(DOM.CreateElement({ tag : "label",  class : "btn active",
-		innerHTML : `<input type="checkbox" name="hash" value="모두" checked><span>모두</span>`
-	}));
+		// // 새로운 URL로 페이지 이동 (또는 히스토리 상태 변경)
+		// // 1. 페이지를 실제로 이동시키는 방법
+		// window.location.href = url.toString();
 
-	HASH_LIST.forEach( (hash, idx) => {
-		let la = DOM.CreateElement({ tag : "label", class : "btn" });
-		let inputText = DOM.CreateElement({ tag : "input", type : "checkbox", name:"hash", value : hash });
-		la.appendChild(inputText);
-		la.appendChild(DOM.CreateElement({ tag : "span", textContent : hash }) );
-		nav.appendChild( la);
-	})
-}
-
-function globalNavHandler(e){     
-	if( e.keyCode !== undefined && e.keyCode !== 13 ) return;
-
-	if( e.type === "change" ){  
-		const nav = e.target.closest("form");
-
-		let clickMenu = e.target;
-		if( clickMenu.value === "모두" ) { 
-			nav.hash.forEach( n => n.checked = false );
-			clickMenu.checked = true; 
-		} else {
-			nav.hash[0].checked = false;
-			if( ![...nav.hash].filter( n => n.checked === true ).length ){
-				nav.hash[0].checked = true;
-			}
-		}
-
-		let selectedMenu = [...nav.hash].filter( a =>  a.checked ).map( b => b.value);
-		subRender(selectedMenu);
-
-		let sl = clickMenu.parentNode.offsetLeft  - window.innerWidth/2 ;
-		nav.scrollTo({ left: sl, top: 0, behavior: "smooth" });
-	}
-}
-
-async function subRender(hashList){
-	
-	let wrap = document.querySelector(".cardList2");
-	const itemsData = await jsonDB('./data/testDB.json'); 
-	let renderList = [];
-	
-	wrap.innerHTML='';
-	if( hashList.findIndex( h => h === "모두") > -1 ){
+		// // 2. 페이지 이동 없이 URL만 변경하는 방법 (HTML5 History API)
+		// //    뒤로가기/앞으로가기 버튼 동작에 영향을 줍니다.
+		history.pushState({}, '', uurl.toString());
+		// // 또는 history.replaceState({}, '', uurl.toString());
 		
-		renderList = [...itemsData];
-	} else {
-		
-		console.log("renderlist - ", hashList)
-		let selected = [];
-		hashList.forEach( hash => {
-			itemsData.forEach( item => {
-				if( item.hash.includes(hash) && !selected.find( a => a === item) ){
-					selected.push(item);
-				}
-			});
-		});
-
-		selected.forEach( sel  => {
-			let isItem = [...wrap.children].find( wr => Number(wr.dataset.order) === Number(sel.order) );
-			
-			if( !isItem ){
-				renderList.push(sel);
-			}
-		});
-		
-	}
-
-	setList(wrap, renderList);
-}
-
-function setList(wrap, itemsData){
-	
-	itemsData.forEach( item => {
-		const card = DOM.CreateElement({ tag:'card-type1' });
-		card.data = item;
-		wrap.appendChild(card);
-		
-
-		card.addEventListener('clicked-card', e => {
-			initUtilModal(e.detail.util, item);
-		});
-	})
-}
-
-
-async function jsonDB(router) {
-	try {
-		const response = await fetch( router, { method: 'GET' });
-		if (!response.ok) {
-			const errorText = await response.text();
-			throw new Error(` error! status: ${response.status}, message: ${errorText}`);
-		}
-    	const result = await response.json();
-		return result;
-	} catch (error) {
-		console.error('전송 중 오류 발생:', error);
-    	throw error;
-	}
-}
-
-const MarkUp = {
-	zoomIn : (item) => {
-		let images = [...item.mainimage, ...item.subimage];
-		console.log("modal - ",item,images)
-		return `
-		<div class="modal-header" slot="modal-header">
-			<h5 class="modal-title">이미지 크게 보기/h5>
-		</div>
-		<div class="modal-body" slot="modal-body">
-		${ images.map( img => `<img src="./data/${img.webUrl}">` ).join('') }
-		</div> `
-	},
-	pageView : (item) => {
-		console.log("modal - ",item.samplePage);
-		return `
-		<div class="modal-header" slot="modal-header">
-			<div class="d-flex">
-				<h5 class="modal-title" role="button" aria-label="더보기버튼" data-action="toggle" data-target=".extraInfo">
-					<span>${item.title !== "" ? item.title : "제목이 없습니다" }</span>
-				</h5>	
-				<button type="button" class="btn ttt" aria-label="접고펼치는버튼" data-on="접기" data-off="펼치기"></button>
-			</div>
-
-			<div class="extraInfo expanded">
-				<div class="labels">
-					${ item.category.map( o => `<span class="info ${o.label}" data-type=${o.type}>${o.name}</span>`).join('') }
-				</div>
-
-				${Object.keys(item.extraInfo).length ? '<dl class="extraInfo-wrap">' + Object.entries(item.extraInfo).map( arr => `<dd class="info" aria-label="${arr[0]}">${arr[1]}</dd>`).join('') + '</dl>' : ''}
-
-				<nav class="buttons ctrl-pageview">
-					${ item.samplePage.map( o => `<button type="button" class="btn text-start" data-link="${o.webUrl}">${o.label}</button>`).join('')}
-				</nav>
-			</div>
-
-		</div>
-		<div class="modal-body" slot="modal-body">
-			<iframe class="iframe" src="./data/${item.samplePage[0].webUrl}" style="width: 100%;height: 100%; border: 0;" ></iframe>
-		
-		</div> `
-	}
-
-}
-
-function mainCardhandler(e){
-	if( !e.target.closest('[data-action]') ) return;
-
-	let clickElem = e.target.closest('[data-action]');
-	let order = Number( clickElem.dataset.order );
-	let util = clickElem.dataset.uiUtil;
-
-	if( clickElem.dataset.action ===  "modal" ){
-
-		jsonDB('./data/testDB.json').then( itemsData => {
-			let item = itemsData.find( item => item.order === order );
-			initUtilModal( util, item);
-		}).catch(error => {
-            console.error(" css ", error);
-        });
-		
-	}
-}
-
-function initUtilModal(util, item){
-	let modal = DOM.CreateElement({
-		tag: 'modal-popup', 	id: "modal1", 		class: "modal ",
-		tabindex: "-1", 		role: "dialog",
-		size: 'extra-large',
-		util: util
-	});			
-
-	if( util === "zoomIn" ) modal.innerHTML = MarkUp.zoomIn( item );
-	else modal.innerHTML = MarkUp.pageView( item ); // pageView 
-	document.body.appendChild(modal);
-
-	modal.querySelector('.btn.ttt')?.addEventListener("click", e => {
-		e.target.classList.toggle("xx");
-		e.target.parentNode.nextElementSibling.classList.toggle("expanded");
 	});
-	modal.querySelector('.ctrl-pageview')?.addEventListener("click", e => { 
-		let link = e.target.closest("[data-link]").dataset.link;
-		e.stopPropagation();
-		modal.querySelector("iframe").src = `./data/${link}`;
-	});	
+	document.body.appendChild(container);
+	document.body.appendChild(footer);
+
+	
+}
+
+async function setPage(pageType = 'main'){
+
+	console.log('pageType ',pageType);
+
+	if( pageType === 'main' ){
+		helloEveryone();
+		mainItem();
+		
+		
+	} else if( pageType === 'projects' ){
+		projects();
+		
+	} else if( pageType === 'contact' ||  pageType === 'me' ){
+		console.log('contact============ ',pageType);
+		const uurl = new URL(location.href);
+		const params = uurl.searchParams;
+		let current = params.get("current");
+		subModal(current , pageType);
+
+	}
+
+	header.setAttribute('current', pageType);
+
+}
+
+
+function projects(){
+	container.innerHTML = '';
+	const selectNav = DOM.CreateElement({ tag : "select-list-nav" });
+	const projectsContainer = DOM.CreateElement({ tag : "projects-container" });
+
+	selectNav.addEventListener("clicked-select-list", e => {
+		console.log("select-nav : ", e.detail.value);
+		const selectedValuesString = JSON.stringify(e.detail.value);
+		projectsContainer.setAttribute('selected', selectedValuesString);
+	});
+
+	
+
+	container.appendChild(selectNav);
+	container.appendChild(projectsContainer);	
+}
+
+function mainItem(){
+	const mainItemWrap = DOM.CreateElement({ tag : "main-item-wrap" })
+	container.appendChild(mainItemWrap);	
+}
+
+function helloEveryone(){
+	const hello = DOM.CreateElement({ tag : "hello-everyone" })
+	container.appendChild(hello);	
+	setObserve(hello);
+}
+
+
+
+function setObserve(trigger){
+
+	const observerOptions = {
+		root: null,
+		rootMargin: "100px 0px 0px 0px", // 뷰포트 상단에서 100px 위를 기준으로 감지 시작
+		threshold: [0.0, 0.5] // 요소가 뷰포트에서 사라지기 시작할 때 감지
+	};
+
+	// const onIntersect = (entries) => {
+	// 	entries.forEach((entry) => {
+	// 		document.querySelector("common-header").classList.add("observeItem");
+	// 	})
+	// }
+	
+	let intersectionObserver = new IntersectionObserver(function (entries) {
+		entries.forEach((entry) => {
+			// if (entry.isIntersecting ) {
+				
+			// 	document.querySelector("common-header").classList.add("observeItem");
+			// } else {
+			// 	document.querySelector("common-header").classList.remove("observeItem");
+			// }
+
+
+			if (entry.isIntersecting) {
+				if (entry.intersectionRatio >= 0.5) {
+					
+					console.log("aaa  >= 0.5", entry.target);
+				}
+			} else {
+				if (entry.intersectionRatio === 0.0 ) {
+					console.log("bbb  === 0.0", entry.target);
+				}
+			}
+
+
+		});
+	}, observerOptions);
+	intersectionObserver.observe(trigger);
+}
+
+function subModal(current, modaltype){
+
+	const MarkUp = {
+		me :  `
+			<div class="modal-header" slot="modal-header">
+				<img src="/assets/img/common/logo.svg">
+			</div>
+			<div class="modal-body" slot="modal-body">
+			<img src="/assets/img/common/me.png" class="me">
+			준비 중입니다
+			</div> `
+		,
+		contact : `
+			<div class="modal-header" slot="modal-header">
+				<img src="/assets/img/common/logo2.svg">
+			</div>
+			<div class="modal-body" slot="modal-body">
+				<div class="c">
+					<a class="btn mailto" href="mailto:bghbmh@gmail.com">bghbmh@gmail.com</a>
+					<p><small>html + css + javascript + vite  + nodejs = 박민희</small></p>
+					<p><small>{ vite  , nodejs }  ⊂  beginner</small></p>
+					<img src="/assets/img/common/me.png" class="me">
+				</div>
+				<div class="d">
+					<img src="/assets/img/common/nameCard-img.svg">
+				</div>
+			</div> `
+		
+	}
+
+	let modal = DOM.CreateElement({
+					tag: 'modal-popup', 	
+					id: "modal1", 		
+					class: "modal ",
+					tabindex: "-1", 		
+					role: "dialog",
+					size: 'extra-large',
+					util: modaltype
+				});	
+	modal.innerHTML = MarkUp[modaltype];
+
+	
+	modal.addEventListener('modal-close', (e) => {
+		console.log("모달이 닫히는 이벤트를 외부에서 감지했습니다!" , e.detail);
+		// 모달 숨기기 등 필요한 로직 실행   
+		header.setAttribute('current', current);
+	});
+
+	document.body.appendChild(modal);
 	modal.open();
 }
+
