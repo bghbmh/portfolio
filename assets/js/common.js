@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	console.log('URL ',location.origin, window.location.pathname);
 
-	if( window.location.pathname.indexOf('portfolio') > -1 ){
+	if( window.location.pathname.indexOf('portfolio') > -1  && current === null ){
 		current = 'main';
 		params.set('current', current);
 		uurl.search = params.toString();
