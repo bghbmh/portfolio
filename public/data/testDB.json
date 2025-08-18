@@ -125,7 +125,7 @@
         "size": 13820,
         "type": "text/html",
         "lastModified": 1743958251503,
-        "webUrl": "bmh1750777200021/sample/html/메인.html"
+        "webUrl": "bmh1750777200021/sample/html/메인.html"
       },
       {
         "label": "게시판-글상세보기",
@@ -139,20 +139,20 @@
       {
         "label": "게시판-목록",
         "alt": "",
-        "name": "전체공지사항.html",
+        "name": "전체공지사항.html",
         "size": 5345,
         "type": "text/html",
         "lastModified": 1751718644658,
-        "webUrl": "bmh1750777200021/sample/html/전체공지사항.html"
+        "webUrl": "bmh1750777200021/sample/html/전체공지사항.html"
       },
       {
         "label": "가이드",
         "alt": "",
-        "name": "00_기본_ui_스타일_디자인가이드_수정중.html",
+        "name": "00_기본_ui_스타일_디자인가이드_수정중.html",
         "size": 50717,
         "type": "text/html",
         "lastModified": 1751718644658,
-		"webUrl": "bmh1750777200021/sample/html/00_기본_ui_스타일_디자인가이드_수정중.html"
+		"webUrl": "bmh1750777200021/sample/html/00_기본_ui_스타일_디자인가이드_수정중.html"
       }
     ],
     "order": 22,
