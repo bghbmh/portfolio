@@ -1,0 +1,10 @@
+<svg id="icon-sch-triangle" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="사각형_866" data-name="사각형 866" fill="#fff" stroke="#fff" stroke-width="1" opacity="0">
+    <rect width="32" height="32" stroke="none"/>
+    <rect x="0.5" y="0.5" width="31" height="31" fill="none"/>
+  </g>
+  <g id="다각형_8" data-name="다각형 8" transform="translate(7 9)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9,0l9,14H0Z" stroke="none"/>
+    <path d="M 9 5.547776222229004 L 5.494998931884766 11 L 12.50500106811523 11 L 9 5.547776222229004 M 9 0 L 18 14 L 0 14 L 9 0 Z" stroke="none" fill="#eccb23"/>
+  </g>
+</svg>

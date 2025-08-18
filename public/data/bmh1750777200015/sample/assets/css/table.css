@@ -1,0 +1,318 @@
+/* 테이블 파란색 */
+.table .table_blue {
+    margin: 5px 0;
+}
+.table.scrollbox_hrz .table_blue {
+    margin: 5px 0 0;
+}
+.table_blue {
+    width: 100%;
+    border-top: 2px solid #2185d0;
+    font-size: 14px;
+}
+.table_blue th,
+.table_blue td {
+    padding: 10px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.table_blue tr td:first-child {
+    border-left: none;
+}
+.table_blue tfoot td {
+    font-weight: bold;
+}
+.msg_cont .table_blue td {
+    background-color: #fff;
+}
+.table_blue td i {
+    display: inline-block;
+    text-align: center;
+}
+.table_blue th {
+    font-weight: bold;
+    color: #005bab;
+    background-color: #f7f8fc;
+}
+.table_blue thead th {
+    border-left: 1px solid #cdcdcd;
+}
+.table_blue thead th:first-child {
+    border-left: none;
+}
+.table_blue thead th:first-child {
+    background: #f7f8fc;
+}
+.table_blue th.red {
+    font-weight: bold;
+    /*color: #fff;*/
+    background-color: #ffbfbb;
+}
+.table_blue th.pink {
+    background-color: #ffe2da;
+}
+.table_blue tfoot td {
+    background-color: #f7f8fc !important;
+}
+.table_blue tfoot td.tfootline {
+    border-top: 2px dotted #2185d0 !important;
+}
+.table_blue tfoot td.tfootline_th {
+    font-weight: bold;
+    color: #005bab;
+    border-top: 2px dotted #2185d0 !important;
+}
+.table_blue tbody tr td.row_tit {
+    background: #F7F8FC;
+}
+.table_blue.box {
+    position: static;
+    left: auto;
+}
+.table_blue.box tr.box {
+    border: 2px solid #f45f54;
+}
+.table_blue .color06.blank td {
+    padding: 0;
+    height: 10px;
+}
+.table_blue .small {
+    font-size: 14px;
+    font-size: 1.4rem;
+}
+.table_blue .small2 {
+    font-size: 13px;
+    font-size: 1.3rem;
+    line-height: 120%;
+}
+.table_blue .pink {
+    background-color: #ffe2da;
+}
+.table_blue .yellow {
+    background-color: #fff9e3;
+}
+.table_blue th.col_add {
+    padding: 0;
+}
+.table_blue th.col_add p {
+    padding: 7px 0;
+}
+.table_blue th.col_add .col_box,
+.table_blue th.col_add .col_box25 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #cdcdcd;
+    padding: 5px 0;
+}
+.table_blue th.col_add .col_box li {
+    width: 33.33%;
+}
+.table_blue th.col_add .col_box span {
+    display: block;
+    width: 50%;
+    font-size: 13px;
+}
+.table_blue th.col_add .col_box25 span {
+    display: block;
+    width: 25%;
+    font-size: 13px;
+}
+.table_blue th.col_add .col_box span,
+.table_blue th.col_add .col_box25 span,
+.table_blue th.col_add .col_box li {
+    border-left: 1px solid #cdcdcd;
+}
+.table_blue th.col_add .col_box span:first-child,
+.table_blue th.col_add .col_box25 span:first-child,
+.table_blue th.col_add .col_box li:first-child {
+    border-left: none;
+}
+/* 가로확대 */
+.table_full {
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+/* 큰테이블 팝업용 */
+.tableBig {
+    margin-top: 10px;
+    overflow: visible;
+    z-index: 999;
+}
+.table_blues {
+    border: 1px solid #ddd;
+    overflow-x: auto;
+}
+.table_blueS {
+    border-top: 2px solid #005bab;
+    font-size: 13px;
+    font-size: 1.3rem;
+    overflow: visible;
+}
+.table_blueS th,
+.table_blueS td {
+    padding: 4px 4px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.table_blueS th {
+    font-weight: bold;
+    color: #005bab;
+    background-color: #f7f8fc;
+}
+.table_blueS thead th {
+    border-left: none;
+    background: #f7f8fc url(../images/sub/th-bar.png) no-repeat left center;
+}
+.table_blueS thead th:first-child {
+    background: #f7f8fc;
+}
+.table_blueS th.red {
+    font-weight: bold;
+    color: #fff;
+    background-color: #ffbfbb;
+}
+.table_blueS th.pink {
+    background-color: #ffe2da;
+}
+.table_blueS tfoot td {
+    background-color: #f7f8fc !important;
+}
+.table_blueS tfoot td.tfootline {
+    border-top: 2px dotted #005bab !important;
+}
+.table_blueS tfoot td.tfootline_th {
+    font-weight: bold;
+    color: #005bab;
+    border-top: 2px dotted #005bab !important;
+}
+
+
+.tableBig {
+    margin-top: 10px;
+    overflow: visible;
+    z-index: 999;
+}
+.table_blueS2 {
+    border-top: 2px solid #005bab;
+    font-size: 13px;
+    font-size: 1.3rem;
+    overflow: visible;
+}
+.table_blueS2 th,
+.table_blueS2 td {
+    padding: 4px 4px;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.table_blueS2 th {
+    font-weight: bold;
+    color: #005bab;
+    background-color: #f7f8fc;
+    line-height: 120%;
+}
+.table_blueS2 thead th {
+    border-left: none;
+    background: #f7f8fc url(../images/sub/th-bar.png) no-repeat left center;
+}
+.table_blueS2 thead th:first-child {
+    background: #f7f8fc;
+}
+.table_blueS2 th.red {
+    font-weight: bold;
+    color: #fff;
+    background-color: #ffbfbb;
+}
+.table_blueS2 th.pink {
+    background-color: #ffe2da;
+}
+.table_blueS2 tfoot td {
+    background-color: #f7f8fc !important;
+}
+.table_blueS2 tfoot td.tfootline {
+    border-top: 2px dotted #005bab !important;
+}
+.table_blueS2 tfoot td.tfootline_th {
+    font-weight: bold;
+    color: #005bab;
+    border-top: 2px dotted #005bab !important;
+}
+
+/* 테이블 th 블릿 */
+table.bul_box th {
+    text-align: left;
+}
+table.bul_box th span {
+    position: relative;
+    display: inline-block;
+    padding-left: 15px;
+}
+table.bul_box th span:before {
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 4px;
+    height: 4px;
+    background-color: #1b3b7b;
+    content: '';
+}
+
+ul.info_table_list > li {
+    margin-bottom: 15px;
+}
+ul.info_table_list > li p {
+    font-size: 16px;
+    font-weight: 500;
+}
+/* .bul_box */
+.bul_box > li, p.bul_box {
+    position: relative;
+    padding: 0 0 0 12px;
+    text-align: left;
+    line-height: 24px;
+}
+.bul_box > li:before {
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 4px;
+    height: 4px;
+    background-color: #1b3b7b;
+    content: '';
+}
+
+@media all and (max-width: 768px) {
+    /* 테이블 */
+    .table {
+        width: 100%;
+        overflow-x: auto;
+    }
+    .table table {
+        table-layout: inherit;
+    }
+    table.table_blue th,
+    table.table_blue td {
+        white-space: nowrap;
+    }
+    table.footable th,
+    table.footable td {
+        white-space: normal;
+    }
+    .box-style {
+        padding: 30px;
+        background: #eceef5;
+    }
+    .table_blue .bul_box.per50 li {
+        width: 100%;
+    }
+
+
+
+}
