@@ -32,7 +32,7 @@ const cssText = `
 	font-weight: 500;
 }
 .logo::before{
-	content: url(/assets/img/common/logo.svg);
+	content: url(./assets/img/common/logo.svg);
 	display: inline-block;
 	width: 54px;
 
@@ -202,3 +202,4 @@ const MarkUp = {
 		return ` `
 	}
 }
+
