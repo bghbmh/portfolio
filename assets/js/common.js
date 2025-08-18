@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		current = 'main';
 		params.set('current', current);
 		uurl.search = params.toString();
+		history.pushState({}, '', uurl.toString());
 	}
 
 	//if( location.pathname === '/' ||  !parList ) setPage('main');
@@ -170,26 +171,26 @@ function subModal(current, modaltype){
 	const MarkUp = {
 		me :  `
 			<div class="modal-header" slot="modal-header">
-				<img src="/assets/img/common/logo.svg">
+				<img src="assets/img/common/logo.svg">
 			</div>
 			<div class="modal-body" slot="modal-body">
-			<img src="/assets/img/common/me.png" class="me">
+			<img src="assets/img/common/me.png" class="me">
 			준비 중입니다
 			</div> `
 		,
 		contact : `
 			<div class="modal-header" slot="modal-header">
-				<img src="/assets/img/common/logo2.svg">
+				<img src="assets/img/common/logo2.svg">
 			</div>
 			<div class="modal-body" slot="modal-body">
 				<div class="c">
 					<a class="btn mailto" href="mailto:bghbmh@gmail.com">bghbmh@gmail.com</a>
 					<p><small>html + css + javascript + vite  + nodejs = 박민희</small></p>
 					<p><small>{ vite  , nodejs }  ⊂  beginner</small></p>
-					<img src="/assets/img/common/me.png" class="me">
+					<img src="assets/img/common/me.png" class="me">
 				</div>
 				<div class="d">
-					<img src="/assets/img/common/nameCard-img.svg">
+					<img src="assets/img/common/nameCard-img.svg">
 				</div>
 			</div> `
 		
