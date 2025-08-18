@@ -70,7 +70,7 @@ class MainItemWrap extends HTMLElement {
     async _loadInitData( ) {   
 
 		try {
-			this._rawdata = await jsonDB('../../data/testDB.json'); 	
+			this._rawdata = await jsonDB('./data/testDB.json'); 	
 			this._setItems();		
 			this.setAttribute('mode', 'view'); // 데이터 로드 완료 후 'view' 모드로 변경
 			
@@ -113,3 +113,4 @@ async function jsonDB(router) {
 	}
 
 }
+
