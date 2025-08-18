@@ -1,8 +1,6 @@
 
 import * as DOM from './Utils-dom.js';
 import { DispatchCustomEvent } from './Utils-event.js';
-import { getFileUrl,CheckFilesInFolder , loadMultipleStylesheets} from './Utils-api.js';
-
 
 // CSS 파일 연결
 const modalStyles = `
@@ -66,18 +64,7 @@ class ModalPopup extends HTMLElement {
 
 	constructor() {
 		super(); // HTMLElement의 constructor 호출
-		 this.attachShadow({ mode: 'open' });
-
-		const cssFilePaths = ['./assets/css/bootstrap.css','./assets/css/reset.css','./assets/css/common.css'];
-		
-		loadMultipleStylesheets(cssFilePaths).then(sheets => {
-            this.shadowRoot.adoptedStyleSheets = sheets;
-        }).catch(error => {
-            console.error(" css ", error);
-        });
-
-		// HTML template을 JavaScript 문자열로 정의 (이 부분은 이전과 동일)
-
+		this.attachShadow({ mode: 'open' });
 		
 		const templateHTML = `
 		<div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable" part="modal-dialog">
@@ -87,10 +74,13 @@ class ModalPopup extends HTMLElement {
 
 				<button type="button" 
 						class="btn-modal-close" 
-						part="btn-close" 
+						part="btn-modal-close" 
 						data-action="modal-close" 
 						data-bs-dismiss="modal" 
-						aria-label="팝업 닫기 버튼">닫기</button>
+						aria-label="팝업 닫기 버튼">
+							<span part="btn-modal-close-icon"><svg viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg></span>
+							<span part="btn-modal-close-text">닫기</span>
+						</button>
 
 				<div class="" part="modal-header">
 					<slot name="modal-header"></slot>
@@ -99,13 +89,13 @@ class ModalPopup extends HTMLElement {
 				<div class="test-body" part="modal-body">
 					<slot name="modal-body"></slot>
 				</div>
-				
-			
 
 			</div>
 			<!--//modal-content-->
 
 		</div> 	`;
+
+		
 
 		/**
 		 * 일단 빼둠_250610
@@ -129,7 +119,6 @@ class ModalPopup extends HTMLElement {
 		
 	}
 
-	// 1. 관찰할 속성(attribute)을 정의합니다.
 	static get observedAttributes() {
 		return ['open', 'size']; // 'open'이라는 속성을 관찰하겠다.
 	}
@@ -169,13 +158,12 @@ class ModalPopup extends HTMLElement {
 		this._isOpen = isOpen; // 내부 상태 동기화
 
 		if (isOpen) {
-			//this.dialog.classList.add('active');
 			this._disableScroll();
 			this._trapFocus();
 			document.addEventListener('keydown', this._bindHandleKeyDown);
 			this.setAttribute('aria-hidden', 'false');
-			// 모달이 열릴 때 focus를 위한 초기 요소 저장
-			this.initialFocusElement = document.activeElement;
+			
+			this.initialFocusElement = document.activeElement;// 모달이 열릴 때 focus를 위한 초기 요소 저장
 		} else {
 			//this.dialog.classList.remove('active');
 			this._enableScroll();
@@ -188,21 +176,22 @@ class ModalPopup extends HTMLElement {
 				//
 			}, 400);
 
-			DispatchCustomEvent( this.shadowRoot, 'modal-close', { action : 'modal-close'} )
+			//DispatchCustomEvent( this.shadowRoot, 'modal-close', { action : 'modal-close'} )
 		}
 	}
 
-	// 5. open/close 메서드는 이제 속성을 제어하는 역할로 변경됩니다.
-	open() {
-		if (!this.hasAttribute('open')) { // 이미 열려있지 않다면
-			this.setAttribute('open', ''); // 'open' 속성 추가
+	open() {  //console.log("modal-click ---- open")
+		if (!this.hasAttribute('open')) { 
+			this.setAttribute('open', ''); 
 			this.classList.add("show");
 		}
 	}
 
-	close() {  console.log("modal-click ---- close")
-		if (this.hasAttribute('open')) { // 이미 닫혀있지 않다면
-			this.removeAttribute('open'); // 'open' 속성 제거
+	close() {  //console.log("modal-click ---- close")
+		DispatchCustomEvent( this.shadowRoot, 'modal-close', { action : 'modal-close'} );
+
+		if (this.hasAttribute('open')) { 
+			this.removeAttribute('open'); 
 			this.classList.remove("show");
 			this.remove(); 
 		}
@@ -224,16 +213,9 @@ class ModalPopup extends HTMLElement {
 	}
 
 	_handleClickOutside(event) {
-		// 여기에 로그를 찍어봅니다.
-		// console.log("DEBUG: _handleClickOutside called!");
-		// console.log("event.target:", event.target);
-		// console.log("event.currentTarget:", event.currentTarget);
-		// console.log("this.dialog:", this.dialog);
-
 		if (event.target === event.currentTarget) {
 			this.close();
 		}
-		
 	}
 
 	_trapFocus() {
@@ -248,7 +230,7 @@ class ModalPopup extends HTMLElement {
 		// 두 리스트를 합칩니다.
 		const focusableElements = [ ...lightFocusable, ...shadowFocusable ];
 
-		console.log("modal _trapFocus ---- ", focusableElements, focusableElements[0]);
+		//console.log("modal _trapFocus ---- ", focusableElements, focusableElements[0]);
 
 		if (focusableElements.length > 0) {
 			focusableElements[0].focus();
