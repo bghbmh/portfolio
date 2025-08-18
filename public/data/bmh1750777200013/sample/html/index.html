@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko" style="height: 100%;">
+
+<head>
+	<meta name="naver-site-verification" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>파일업로드</title>
+
+	<link rel="stylesheet" href="./파일업로드.css">
+
+</head>
+
+<body>
+
+	<section>
+		<header>
+			<h3>파일 업로드 type1</h3>
+		</header>
+
+		<!--upload type1-->
+		<div class=" upload-type1 example11">
+			<button type="button" class="upload-file-btn " title="파일 추가하기" aria-label="파일 추가하기">
+				<span class="area">
+					첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 직접 선택해주세요.
+					<span class="btn primary">파일 선택</span>
+				</span>
+			</button>
+			<div class="upload-file-box " ></div>
+		</div>
+		<!--//upload type1-->
+	</section>
+
+
+	<section>
+		<header>
+			<h3>파일 업로드 type2</h3>
+		</header>
+
+		<!-- upload type2 -->
+		<div class="upload-type2 example22"> 
+			<button type="button" class="upload-file-btn " title="이미지 추가하기" aria-label="이미지 추가하기">
+				<span class="area" aria-hidden="true">파일 선택</span>
+			</button>
+			<div class="upload-file-box"></div>
+		</div>
+		<!--//upload type2 -->
+	</section>
+
+
+	<section>
+		<header>
+			<h3>파일 업로드 type3</h3>
+		</header>		
+		<!--upload type3-->
+		<div class=" upload-type3 example33">
+			<button type="button" class="upload-file-btn " title="이미지 추가하기" aria-label="이미지 추가하기">
+				<span class="area" aria-hidden="true">파일 선택?</span>
+			</button>
+			<div class="upload-file-box " ></div>
+		</div>
+		<!--//upload type3-->
+	</section>
+
+<script src="./bUploadFile.js"></script>
+<script>
+
+	
+	// 파일 업로드 초기화
+
+	const uploadInstances = {}; 
+	const tempUrl = 'https://bghbmh.github.io/simple-ui-test/UploadFiles/icon-svg-double-paper.svg';
+
+	uploadInstances.everyThing = bUploadFiles.init({
+		loadBtn: document.querySelector(".upload-type1 .upload-file-btn"),
+		fileBox: document.querySelector(".upload-type1 .upload-file-box"),
+		maxFiles : 0,//기본 0
+		onPreviewMarkUp: upload2markup
+	})
+
+
+	uploadInstances.mainimage = bUploadFiles.init({
+		loadBtn: document.querySelector(".upload-type2 .upload-file-btn"),
+		fileBox: document.querySelector(".upload-type2 .upload-file-box"),
+		multiple: false, //기본 true, 선택 사항: 단일 파일의 경우 false로 설정
+		onPreviewMarkUp: upload2markup
+	})
+
+
+	uploadInstances.subimage = bUploadFiles.init({
+		loadBtn: document.querySelector(".upload-type3 .upload-file-btn"),
+		fileBox: document.querySelector(".upload-type3 .upload-file-box"),
+		multiple: true, 
+		maxFiles : 13,
+		onPreviewMarkUp: upload2markup
+	})
+	
+
+	function upload1markup(file, objectURL, args = null ){
+
+		const image = file.type.startsWith('image/');
+		const tempUrl = 'https://bghbmh.github.io/simple-ui-test/UploadFiles/icon-svg-double-paper.svg';
+
+		let fileItemWrap = document.createElement("figure");
+		fileItemWrap.setAttribute("class", "item");
+		fileItemWrap.innerHTML = `
+			<img src="${image ? objectURL : tempUrl}" alt="이미지">
+			<figcaption>				
+				<span class="option title">${file.name}</span>
+				<span class="option">${(file.size / 1024).toFixed(2)} KB</span>
+			</figcaption>
+		`;
+		return fileItemWrap;
+
+	}
+
+	function upload2markup(file, objectURL){
+		const image = file.type.startsWith('image/');
+		const tempUrl = 'https://bghbmh.github.io/simple-ui-test/UploadFiles/icon-svg-double-paper.svg';
+			
+		let fileItemWrap = document.createElement("figure");
+		fileItemWrap.setAttribute("class", "item");
+		fileItemWrap.innerHTML = `
+			<img src="${image ? objectURL : tempUrl}" alt="이미지">
+			<figcaption>
+				<span class="option title">${file.name}</span>
+				<span class="option">${(file.size / 1024).toFixed(2)} KB</span>
+			</figcaption>
+		`;
+		return fileItemWrap;
+	}
+</script>
+
+
+</body>
+
+</html>

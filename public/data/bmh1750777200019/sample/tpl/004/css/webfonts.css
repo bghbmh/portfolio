@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* NotoSansKR */
+@import url(../fonts/NotoSansKR.min.css); 
+
+/* NotoSansKR 구글          @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap); */
+
+/* Roboto */
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap);                
+/* Montserrat */            
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/* XEIcon */                
+@import url(../fonts/xeicon.min.css);
+
+/* 여기어때 잘난체 */        
+@import url(../fonts/yg-jalnan.min.css);
+@import url(../fonts/pretendard/web/variable/pretendardvariable.css);

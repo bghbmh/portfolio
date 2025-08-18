@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<title>마이프로젝트-프로젝트진행상태</title>
+
+	<link rel="shortcut icon" href="./img/favicon.ico">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/footable.standalone.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/summernote-bs4.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/jquery.fileupload-ui.css">
+	<link rel="stylesheet" href="../assets/css/jstree/default/style.min.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/common.css">
+	<!-- // Stylesheets -->
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="../assets/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="../assets/js/footable.min.js"></script>
+	<script type="text/javascript" src="../assets/js/fullcalendar-6.1.9/index.global.min.js"></script>
+	<script type="text/javascript" src="../assets/js/summernote-bs4.js"></script>
+	<script src="../assets/js/jstree.min.js"></script>
+	<!-- //Scripts -->
+
+</head>
+
+<body>
+	<!-- 헤더 공통 -->
+	<div include-html="../assets/onlyMockup/header-common.html"></div>
+	<!-- //헤더 공통 -->
+
+	<!-- 사이드메뉴 -->
+	<aside class="common">
+        <button type="button" class="btn mobileMenuBtn collapse" aria-label="메뉴펼치고 접는 버튼"  data-mockup-ui="sidenavcollapsebtn"></button>
+		<nav class="sideNav type1">
+			
+			<ul class="menu" role="menu">
+				<li class="menu-item">
+					<a href="#0" class="menu-link active">프로젝트 진행상태</a>
+				</li>
+				<li class="menu-item">
+					<a href="#0" class="menu-link">공지사항</a>
+				</li>
+                <li class="menu-item">
+					<a href="#0" class="menu-link">게시판</a>
+				</li>
+                <li class="menu-item">
+					<a href="#0" class="menu-link">프로젝트 일정</a>
+				</li>
+                <li class="menu-item">
+					<a href="#0" class="menu-link">콘텐츠 뱅크</a>
+				</li>
+                <li class="menu-item">
+					<a href="#0" class="menu-link">진행 중인 프로젝트</a>
+                    <div class="menu">
+						<a href="#0" class="menu-link">가_한글입숨_22dept</a>
+                        <a href="#0" class="menu-link">나_한글입숨_22dept</a>
+					</div>
+				</li>
+			</ul>
+		</nav>
+
+	</aside>
+	<!-- //사이드메뉴 -->
+
+
+	<!-- 콘텐츠 -->
+	<main class="common">
+
+		<!-- 페이지 위치 -->
+		<div class="option-content pageInfo">
+			<nav class="right" aria-label="breadcrumb">
+				<ol class="breadcrumb type2">
+					<li class="breadcrumb-item home"><a href="/" class="xi-home">메인페이지</a></li>
+					<li class="breadcrumb-item"><a href="#0">마이프로젝트</a></li>
+					<li class="breadcrumb-item active" aria-current="page"><a href="#0">프로젝트진행상태</a></li>
+				</ol>
+			</nav>
+		</div>
+		<!-- //페이지 위치 -->
+
+		<!-- 콘텐츠 입력 -->
+
+        <!-- box 프로젝트 진행 상태-->
+		<div class="box">
+
+            <div class="header d-flex gap3  flex-wrap pt-1 mb-3 border-bottom">
+                <b class="h6  mr-auto">프로젝트 진행 상태</b>
+                <dl class="optionListType small"> <!-- small mr-auto -->
+					<div>
+						<dt><i class="xi-svg-circle fs110"></i></dt>
+						<dd><span class="badge">완료(100점)</span></dd>
+					</div>
+					<div>
+						<dt><i class="xi-svg-triangle fs110"></i></dt>
+						<dd><span class="badge">진행중(50점)</span></dd>
+					</div>
+					<div>
+						<dt><i class="xi-svg-x fs110"></i></dt>
+						<dd><span class="badge">미완료(0점)</span></dd>
+					</div>
+				</dl>
+            </div>
+
+            <div class="stepType2 w-100">	
+                <div class="step bcGreen">
+                    <div class="cardType3">
+                        <dl class="titleSetType1">
+                            <dt>분석</dt>
+                            <dd>
+                                
+									<label class="number w-80px">
+										<span class="unitText back">%</span>
+										<input type="number" value="" placeholder="0">
+									</label>
+								
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="cardType3">
+                        <dl class="titleSetType1">
+                            <dt>설계</dt>
+                            <dd>
+                                
+									<label class="number w-80px">
+										<span class="unitText back">%</span>
+										<input type="number" value="" placeholder="0">
+									</label>
+								
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="cardType3">
+                        <dl class="titleSetType1">
+                            <dt>개발</dt>
+                            <dd>
+                                
+									<label class="inputtext w-80px">
+										<span class="unitText back">%</span>
+										<input type="text" value="" placeholder="0">
+									</label>
+								
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="cardType3">
+                        <dl class="titleSetType1">
+                            <dt>실행</dt>
+                            <dd>
+                                
+									<label class="inputtext w-80px">
+										<span class="unitText back">%</span>
+										<input type="text" value="" placeholder="0">
+									</label>
+								
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="cardType3">
+                        <dl class="titleSetType1">
+                            <dt>평가</dt>
+                            <dd>
+                               
+									<label class="inputtext w-80px bcLight">
+										<span class="unitText back">%</span>
+										<input type="text" value="" placeholder="0">
+									</label>
+								
+                                
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="option-content justify-content-end">
+                <button type="button" class="btn teal">수정</button>
+            </div>           
+        </div>
+        <!-- //box 프로젝트 진행 상태-->
+
+        <!-- box 분석 -->
+		<div class="box">
+
+            <div class="header d-flex pt-1 mb-3 gap1 flex-wrap border-bottom">
+                <b class="h6  mr-auto">분석</b>
+                <dl class="optionListType small"> <!-- small -->
+					<div>
+						<dt><i class="xi-svg-circle fs110"></i></dt>
+						<dd><span class="badge">완료(100점)</span></dd>
+					</div>
+					<div>
+						<dt><i class="xi-svg-triangle fs110"></i></dt>
+						<dd><span class="badge">진행중(50점)</span></dd>
+					</div>
+					<div>
+						<dt><i class="xi-svg-x fs110"></i></dt>
+						<dd><span class="badge">미완료(0점)</span></dd>
+					</div>
+				</dl>
+            </div>
+
+            <div class="table-responsive ">
+                <table class="table type2 footabletype" 
+                    data-breakpoints='{ "xs": 300, "sm": 768, "md": 1024, "lg": 1200 }' 
+                    data-empty="tbody에 내용이 없을때 넣는 문구 입력_등록/검색된 내용이 없습니다">
+                    <thead>
+                        <tr>
+                            <th data-breakpoints="" class="w-15">구분</th>
+                            <th data-breakpoints="xs sm md" class="w-30">파일등록</th>
+                            <th data-breakpoints="xs sm" class="">다운로드</th>
+                            <th data-breakpoints="xs sm md" class="w-10">버전관리</th>
+                            <th data-breakpoints="xs sm md" class="w-15">등록일</th>
+                            <th data-breakpoints="xs sm md" class="w-15">업무검토(책임자)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="">과정계획서</td>
+                            <td>
+								<div class="d-inline-flex gap1">
+									<div class="fileHandleType1">
+										<label class="file btn"><input type="file" name="x1"></label>
+										<label class="inputtext"><input type="text" readonly="readonly" value="" placeholder="파일선택"></label>
+										<button type="button" class="btn find green" aria-label="파일선택"><i class="xi-upload" aria-hidden="true"></i></button>
+										<button type="button" class="btn icon delete" aria-label="파일삭제" style="display: none;"><i class="xi-trash-o"></i></button>
+									</div>
+								</div>
+								
+							</td>
+                            <td>
+								<a class="file" href="#0">test.txt</a>
+							</td>
+                            <td>Ver5</td>
+                            <td>2023.23.23</td>
+                            <td>
+                                <label class="checkbox" aria-label="완료"><input type="checkbox" name="a1" data-ui-icon="O"></label>
+                                <label class="checkbox" aria-label="진행중"><input type="checkbox" name="a1" data-ui-icon="Z"></label>
+                                <label class="checkbox" aria-label="미완료"><input type="checkbox" name="a1" data-ui-icon="X"></label>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>	
+            <script>				
+                $(function() {
+                    $('.footabletype').footable();
+                });
+            </script>
+            
+
+            <div class="option-content justify-content-end">
+                <button type="button" class="btn blue">적용</button>
+            </div>
+
+        </div>
+        <!-- //box 분석-->
+
+
+        <!-- box 설계 -->
+		<div class="box">
+
+            <div class="header d-flex pt-1 mb-3 border-bottom">
+                <b class="h6">설계</b>
+            </div>
+
+            <div class="option-content gap1 flex-wrap justify-content-end">
+                <span class="d-inline-flex align-items-center">창크기</span>
+                <div class="d-inline-flex gap1 ">
+                    <label class="inputtext w-100px">
+                        <span class="unitText front">가로</span>
+                        <input type="text" placeholder="0">
+                    </label>
+                    <label class="inputtext  w-100px">
+                        <span class="unitText front">세로</span>
+                        <input type="text" placeholder="0">
+                    </label>
+                    <button type="button" class="btn">적용</button>
+                </div>
+                
+            </div>
+
+            <div class="table-responsive ">
+                <table class="table type2 footabletype" 
+                    data-breakpoints='{ "xs": 300, "sm": 768, "md": 1024, "lg": 1200 }' 
+                    data-empty="tbody에 내용이 없을때 넣는 문구 입력_등록/검색된 내용이 없습니다">
+                    <thead>
+                        <tr>
+                            
+                            <th data-breakpoints="" class="w-10 text-nowrap">차시</th>
+                            <th data-breakpoints="" class="">차시명</th>
+                            <th data-breakpoints="xs sm md" class="w-10">콘텐츠타입</th>
+                            <th data-breakpoints="xs sm md" class="w-10">등록</th>
+                            <th data-breakpoints="xs sm md" class="w-10">미리보기</th>
+                            <th data-breakpoints="xs sm md" class="w-15">업무검토(책임자)</th>
+							<th  data-breakpoints="" class="w-8 text-center">
+                                <label class="checkbox" aria-label="전체선택"><input type="checkbox" name="b1"></label> <!--  desktop-elem -->
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>                            
+                            <td>1</td>
+                            <td><label class="inputtext w-100"><input type="text" name="b1" placeholder="입력"></label></td>
+                            <td>동영상</td>
+                            <td>
+								<label class="file btn" aria-label="파일선택"><input type="file" name="x1"><i class="xi-upload" aria-hidden="true"></i></label>
+							</td>
+                            <td><button type="button" class="btn" aria-label="미리보기"><i class="xi-eye-o"></i></button></td>
+                            
+                            <td>
+                                <label class="checkbox" aria-label="완료"><input type="checkbox" name="a1" data-ui-icon="O"></label>
+                                <label class="checkbox" aria-label="진행중"><input type="checkbox" name="a1" data-ui-icon="Z"></label>
+                                <label class="checkbox" aria-label="미완료"><input type="checkbox" name="a1" data-ui-icon="X"></label>
+                            </td>
+							<td class=" text-center"><label class="checkbox" aria-label="선택"><input type="checkbox" name="b1"></label></td>
+                        </tr>
+
+						<tr>
+                            
+                            <td>1</td>
+                            <td><label class="inputtext w-100"><input type="text" name="b1" placeholder="입력"></label></td>
+                            <td>동영상</td>
+                            <td>
+								<label class="file btn" aria-label="파일선택"><input type="file" name="x1"><i class="xi-upload" aria-hidden="true"></i></label>
+							</td>
+                            <td><button type="button" class="btn" aria-label="미리보기"><i class="xi-eye-o"></i></button></td>
+                            
+                            <td>
+                                <label class="checkbox" aria-label="완료"><input type="checkbox" name="a1" data-ui-icon="O"></label>
+                                <label class="checkbox" aria-label="진행중"><input type="checkbox" name="a1" data-ui-icon="Z"></label>
+                                <label class="checkbox" aria-label="미완료"><input type="checkbox" name="a1" data-ui-icon="X"></label>                                
+                            </td>
+							<td class=" text-center"><label class="checkbox" aria-label="선택"><input type="checkbox" name="b1"></label></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>	
+
+
+        </div>
+        <!-- //box 설계 -->
+
+
+        <!-- box 평가 -->
+		<div class="box">
+
+            <div class="header d-flex pt-1 mb-3 border-bottom">
+                <b class="h6">평가</b>
+            </div>
+
+            <div class="d-block">
+                <div class="com14">
+                    <div class="option-content">
+                        <div class="star-rating">
+                            <input type="radio" id="5-stars" name="rating" value="5" />
+                            <label for="5-stars" class="star"><i class="xi-star"></i></label>
+                            <input type="radio" id="4-stars" name="rating" value="4" />
+                            <label for="4-stars" class="star"><i class="xi-star"></i></label>
+                            <input type="radio" id="3-stars" name="rating" value="3" />
+                            <label for="3-stars" class="star"><i class="xi-star"></i></label>
+                            <input type="radio" id="2-stars" name="rating" value="2" />
+                            <label for="2-stars" class="star"><i class="xi-star"></i></label>
+                            <input type="radio" id="1-star" name="rating" value="1" />
+                            <label for="1-star" class="star"><i class="xi-star"></i></label>
+                        </div>
+                        <label class="textarea">
+                            <textarea rows="2" placeholder="입력_test"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="option-content justify-content-end">
+                        <button type="button" class="btn blue">등록</button>
+                    </div>
+                </div>
+
+                <dl class="optionListType mt-3">
+                    <div>
+                        <dt>평균</dt>
+                        <dd>
+                            <b class="badge blue"><i class="xi-star"></i>4.0</b>
+                        </dd>
+                    </div>
+                </dl>
+                
+                <div class="mt-4">
+                    <div class="replyType1">
+                        <strong class="score"><i class="xi-star"></i>4</strong>
+                        <dl class="optionListType small"> 
+                            <div>
+                                <dd>메디오피아</dd>
+                            </div>
+                            <div>
+                                <dd>userID</dd>
+                            </div>
+                            <div>
+                                <dd>김아무개</dd>
+                            </div>
+                        </dl>
+                        <p class="comment">
+                            전체적으로 잘 진행되었습니다. 수고하셨습니다.
+                        </p>
+                    </div>
+                    <div class="replyType1">
+                        <strong class="score"><i class="xi-star"></i>4</strong>
+                        <dl class="optionListType small"> 
+                            <div>
+                                <dd>메디오피아</dd>
+                            </div>
+                            <div>
+                                <dd>userID</dd>
+                            </div>
+                            <div>
+                                <dd>김아무개</dd>
+                            </div>
+                        </dl>
+                        <p class="comment">
+                            전체적으로 잘 진행되었습니다. 수고하셨습니다.
+                        </p>
+                    </div>
+                </div>
+
+                
+            </div>
+
+           
+
+
+        </div>
+        <!-- //box 평가 -->
+
+
+		<!-- //콘텐츠 입력 -->
+	</main>
+	<!-- //콘텐츠 -->
+
+
+	<!-- 푸터 공통 -->
+	<div include-html="../assets/onlyMockup/footer-common.html"></div>
+	<!-- //푸터 공통 -->
+
+<!--  프론트 확인용 개발 시 필요없음 -->
+<script src="../assets/onlyMockup/loadFIle.js"></script>
+<!-- // 프론트 확인용 -->
+</body>
+
+</html>

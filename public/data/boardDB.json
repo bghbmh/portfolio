@@ -1,0 +1,16 @@
+[
+	{
+		"keyword" : ["새글", "공지", "중요"],
+		"description": {
+			"check" : true,
+			"value" : "miniBig"
+		},
+		"time" : {
+			"first" : "",
+			"last" : ""
+		},
+		"author" : "miniBig",
+		"view" : 0,
+		"comment" : "파일로연결하기"
+	}
+]
