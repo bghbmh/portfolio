@@ -451,7 +451,7 @@ const MarkUp = {
 	view : ( item, fileItems = null ) => {
 		return `
 		<div class="image-wrap">
-		${item.imageComparison ? `<image-comparison data-before="${item.imageComparison.before.webUrl}"  data-after="${item.imageComparison.after.webUrl}"></image-comparison>` : `<div class="image"><img src="/data/${item.mainOpenImages[0].webUrl}" alt="이미지"></div>`}
+		${item.imageComparison ? `<image-comparison data-before="${item.imageComparison.before.webUrl}"  data-after="${item.imageComparison.after.webUrl}"></image-comparison>` : `<div class="image"><img src="./data/${item.mainOpenImages[0].webUrl}" alt="이미지"></div>`}
 			
 		</div>
 		
@@ -497,6 +497,7 @@ const MarkUp = {
 	}
 
 }
+
 
 
 
