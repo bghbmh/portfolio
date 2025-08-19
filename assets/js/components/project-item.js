@@ -419,13 +419,10 @@ const MarkUp = {
 			</div>
 
 			<header class="list-item-header">			
-				${item.title !== "" ? `<h3 class="list-item-title">${item.title}</h3>` : "" }		
-				<div class="tool-name-list">
-					<div class="tool">figma</div>
-					<div class="tool">html</div>
-					<div class="tool">css</div>
-					<div class="tool">javascript</div>
-				</div>
+				${item.title !== "" ? `<h3 class="list-item-title">${item.title}</${ item.tools ? `<div class="tool-name-list">
+					${ item.tools.map( t => `<div class="tool">${t}</div>` ).join('') } </div>` : '' }
+			
+		
 			</header>
 
 			<div class="list-item-info-container">
