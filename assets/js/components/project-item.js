@@ -351,7 +351,7 @@ class ProjectItem extends HTMLElement {
 				modal.querySelector('.ctrl-pagePreView')?.addEventListener("click", e => {
 					let link = e.target.closest("[data-link]").dataset.link;
 					e.stopPropagation();
-					modal.querySelector("iframe").src = `/data/${link}`;
+					modal.querySelector("iframe").src = `./data/${link}`;
 				});	
 			}
 			document.body.appendChild(modal);
@@ -372,7 +372,7 @@ const MarkUp = {
 			<h5 class="modal-title">이미지 크게 보기</h5>
 		</div>
 		<div class="modal-body" slot="modal-body">
-			${ images.map( img => `<img src="/data/${img.webUrl}">` ).join('') }
+			${ images.map( img => `<img src="./data/${img.webUrl}">` ).join('') }
 		</div> `
 	},
 	pagePreView : (item) => {
@@ -460,3 +460,4 @@ const MarkUp = {
 
 
 }
+
