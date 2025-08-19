@@ -415,7 +415,7 @@ const MarkUp = {
 			<!--   -->
 
 			<div class="list-item-image-wrap">
-				<div class="image"><img src="/data/${item.mainOpenImages[0].webUrl}" alt="이미지1"></div>
+				<div class="image"><img src="./data/${item.mainOpenImages[0].webUrl}" alt="이미지1"></div>
 			</div>
 
 			<header class="list-item-header">			
@@ -460,4 +460,5 @@ const MarkUp = {
 
 
 }
+
 
