@@ -1,0 +1,7 @@
+<svg id="icon-circle-player" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect id="사각형_781" data-name="사각형 781" width="32" height="32" fill="#ff1313" opacity="0"/>
+  <g id="play-circle" transform="translate(8 8)">
+    <path id="패스_328" data-name="패스 328" d="M9.657,17.314A7.657,7.657,0,1,0,2,9.657,7.657,7.657,0,0,0,9.657,17.314Z" transform="translate(-2 -2)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    <path id="패스_329" data-name="패스 329" d="M9.5,8.72c0-.365,0-.548.076-.65a.383.383,0,0,1,.279-.152c.127-.009.281.09.588.287l3.614,2.324c.267.171.4.257.446.366a.383.383,0,0,1,0,.3c-.046.109-.179.195-.446.366l-3.614,2.324c-.307.2-.461.3-.588.287a.383.383,0,0,1-.279-.152c-.076-.1-.076-.285-.076-.65Z" transform="translate(-3.757 -3.386)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>
