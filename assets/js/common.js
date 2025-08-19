@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	let current = params.get("current");
 
 	console.log("parList - ", current);
+	
+	alert.log("parList - test");
 
 	console.log('URL ',location.origin, window.location.pathname);
 
