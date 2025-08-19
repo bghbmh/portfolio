@@ -125,7 +125,7 @@
         "size": 13820,
         "type": "text/html",
         "lastModified": 1743958251503,
-        "webUrl": "bmh1750777200021/sample/html/메인.html"
+        "webUrl": "bmh1750777200021/sample/html/main.html"
       },
       {
         "label": "게시판-글상세보기",
@@ -134,7 +134,7 @@
         "size": 8703,
         "type": "text/html",
         "lastModified": 1751718644657,
-		"webUrl": "bmh1750777200021/sample/html/게시판_글상세보기_공통스타일.html"
+		"webUrl": "bmh1750777200021/sample/html/board.html"
       },
       {
         "label": "게시판-목록",
@@ -143,7 +143,7 @@
         "size": 5345,
         "type": "text/html",
         "lastModified": 1751718644658,
-        "webUrl": "bmh1750777200021/sample/html/전체공지사항.html"
+        "webUrl": "bmh1750777200021/sample/html/notice.html"
       },
       {
         "label": "가이드",
@@ -152,7 +152,7 @@
         "size": 50717,
         "type": "text/html",
         "lastModified": 1751718644658,
-		"webUrl": "bmh1750777200021/sample/html/00_기본_ui_스타일_디자인가이드_수정중.html"
+		"webUrl": "bmh1750777200021/sample/html/guide.html"
       }
     ],
     "order": 22,
