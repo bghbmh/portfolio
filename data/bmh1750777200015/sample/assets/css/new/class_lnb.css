@@ -1,0 +1,220 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*  LNB */
+
+#class_lnb ul{
+    display: block;
+    height: calc(100% );
+    overflow: auto;
+    overflow: auto;
+    scrollbar-width: none;
+}
+#class_lnb ul::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+
+#class_lnb ul > li > ul li:last-child {
+    border-bottom: none;
+}
+
+#class_lnb ul > li {
+    position: relative;
+    margin: 7px 0;
+}
+#class_lnb ul > li ul li.open {
+    background-color: #353a48 !important;
+}
+#class_lnb ul > li a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding: 7px 10px 7px 20px;
+    color: #fff;
+    opacity: .8;
+    border-radius: var(--border-radiusC);
+}
+
+/* #class_lnb ul > li a i {
+    display: inline-block;
+    flex-grow: 1;
+} */
+/* #class_lnb ul > li.sub-menu > a:after {
+    content: '\f3d0';
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Ionicons";
+    color: #fff;
+} */
+/* #class_lnb ul > li.sub-menu.open > a:after {
+    content: '\f3d8';
+    font-family: "Ionicons";
+} */
+
+#class_lnb ul > li a .ico {
+    display: block;
+    width: 1.6em;
+    height: 1.6em;
+}
+#class_lnb ul > li a .ico.ico-class-info {
+    display: block;
+    width: 1.45em;
+    height: 1.3em;
+}
+#class_lnb ul > li a .ico.ico-home-circle-outline {
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    margin:0 3px 0 4px;
+}
+
+#class_lnb ul > li > a.go-home {
+    margin-bottom: 14px;
+    background-color: var(--white-alpha10); 
+}
+#class_lnb ul > li > a.go-home:after {
+    position: absolute;
+    right: 27px;
+    top: 50%;
+    width: 15px;
+    height: 15px;
+    transform: translateY(-50%);
+    background:  url('../../img/ico-arrow-01.svg');
+    text-indent: -9999px;
+}
+
+/* svg viewBox 24x24 */
+/*.ico.ico-human-board:before{ -webkit-mask-image: url('../../img/ico-human-board.svg'); mask-image: url('../../img/ico-human-board.svg'); }
+.ico.ico-forum:before{ -webkit-mask-image: url('../../img/ico-forum.svg'); mask-image: url('../../img/ico-forum.svg'); }
+.ico.ico-finance-bank:before{ -webkit-mask-image: url('../../img/ico-finance-bank.svg'); mask-image: url('../../img/ico-finance-bank.svg'); }
+.ico.ico-finance:before{ -webkit-mask-image: url('../../img/ico-finance.svg'); mask-image: url('../../img/ico-finance.svg'); }
+.ico.ico-bullhorn-variant:before{ -webkit-mask-image: url('../../img/ico-bullhorn-variant.svg'); mask-image: url('../../img/ico-bullhorn-variant.svg'); }
+.ico.ico-setting-outline:before{ -webkit-mask-image: url('../../img/ico-setting-outline.svg'); mask-image: url('../../img/ico-setting-outline.svg'); }
+.ico.ico-test:before{ -webkit-mask-image: url('../../img/ico-test.svg'); mask-image: url('../../img/ico-test.svg'); }*/
+
+/* svg viewBox 22?x */
+/*.ico.ico-class-info:before{ -webkit-mask-image: url('../../img/ico-class-info.svg'); mask-image: url('../../img/ico-class-info.svg'); }*/
+
+/* svg viewBox 18x18 */
+/*.ico.ico-home-circle-outline:before{ -webkit-mask-image: url('../../img/ico-home-circle-outline.svg'); mask-image: url('../../img/ico-home-circle-outline.svg'); }*/
+
+/* svg viewBox 16x16 */
+/*.ico.ico-arrow-01:before{ -webkit-mask-image: url('../../img/ico-arrow-01.svg'); mask-image: url('../../img/ico-arrow-01.svg'); }*/
+
+/*#class_lnb ul > li > a:after { 
+    content: '\f3d0';
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Ionicons";
+    color: #fff;
+    transition: .2s;
+}*/
+#class_lnb ul > li > a + ul > li a:after { display:  none; }
+/*#class_lnb ul > li.open > a:after {
+    content: '\f3d8';
+    font-family: "Ionicons"; 
+}*/
+#class_lnb ul > li > a + ul{ margin: 1em 0;     display: initial; }
+#class_lnb ul > li > a + ul > li { display: none;}
+#class_lnb ul > li > a + ul:before{ 
+    content: '\f3d0';
+    position: absolute;
+    right: 30px;
+    top: 0;
+/*    transform: translateY(-50%);*/
+    font-family: "Ionicons";
+    color: #fff;
+    transition: .2s;
+    line-height: 46px;
+        pointer-events: none;
+}
+#class_lnb ul > li.open > a + ul:before{ content: '\f3d8'; }
+#class_lnb ul > li.open > a + ul > li { display: initial;}
+
+#class_lnb ul > li.no > a:after {
+    display: none;
+}
+
+#class_lnb ul > li ul {
+    display: none;
+}
+#class_lnb ul > li.open ul {
+    display: block;
+}
+#class_lnb ul > li.open > a {
+    background-color: var(--lightblue2-alpha50);
+    color: #fff;
+    opacity: 1;
+}
+
+/*#class_lnb ul > li a i::before{ font-size: 1.377rem; }*/
+#class_lnb ul > li a span {
+    padding: 4px 12px;
+    font-size: 1.067em;
+}
+#class_lnb ul > li a:hover,
+#class_lnb ul > li a:focus {
+    /* background-color: #353a48; */
+    background-color: var(--lightblue2-alpha50);
+    color: #fff;
+    opacity: 1;
+
+}
+
+#class_lnb ul > li ul { 
+/*    display: block; */
+    margin-top: 1em; 
+    margin-bottom: 1em; 
+}
+/* #class_lnb ul > li.open ul {
+    display: block;
+} */
+#class_lnb ul > li ul li a {
+    font-weight: 300;
+    padding: 5px;
+    padding-left: calc(30px + 12px);
+}
+
+#class_lnb ul > li ul li a:before {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    margin-top: 0px;
+    margin-right: 10px;
+    border-radius: 100em;
+    background-color: var(--white-alpha80);
+    border-radius: 100%;
+}
+
+#class_lnb ul > li ul li a:hover,
+#class_lnb ul > li ul li a:focus,
+#class_lnb ul > li ul li a.active  {
+    /* background-color: #353a48; */
+    background-color: var(--lightblue2-alpha30);
+    color: #fff;
+    opacity: 1;
+}
+
+#class_lnb ul > li i:before {
+    margin: 0;
+}
+#class_lnb ul > li > ul > li a {
+    color: rgba(255, 255, 255, 1); /* .6 -> 1 글자 안보인다해서 투명도 지움_230424 */
+}
+
+
+/******************* MEDIA QUERY  *********************/
+@media all and (max-width:1024px) {
+    #class_lnb.active {
+        left: 0;
+        width: 220px;
+    }  
+
+}
