@@ -839,10 +839,12 @@ cursor: pointer;
 @media(max-width: 600px){
 	[util="contact"] .modal-header{ padding: 64px 42px 40px; }
 	[util="contact"] .modal-header img{ width: 40px; }
-	[util="contact"] .modal-body{ flex-direction: column;  padding: 0 42px 64px; height: 45vh; }
+	[util="contact"] .modal-body{ flex-direction: column;  padding: 0 42px 64px; height: auto;
+    min-height: 55vh; }
 	[util="contact"] .btn.mailto{ font-size: 20px; }
 	[util="contact"] .c p small{ font-size: 12px; }
 	[util="contact"] .c .me{ width: 50px; }
+	[util="contact"] .d{ flex-grow:0 }
 }
 
 
