@@ -51,11 +51,11 @@ const cssText = `
 	flex-direction: column;
 	border-radius: 0px;
 	overflow: hidden;
-	margin: 0 1rem;
+	
 
 	width: calc(100% - 24px);
 	max-width: 1280px;
-	margin: 0 12px;
+	margin: 0 auto;
 	padding: 2.5em 8px;
 
 	/* background-color: #121314;
