@@ -396,7 +396,7 @@ class MainItem extends HTMLElement {
 				modal.querySelector('.ctrl-pagePreView')?.addEventListener("click", e => {
 					let link = e.target.closest("[data-link]").dataset.link;
 					e.stopPropagation();
-					modal.querySelector("iframe").src = `/data/${link}`;
+					modal.querySelector("iframe").src = `./data/${link}`;
 				});	
 			}
 			document.body.appendChild(modal);
@@ -444,7 +444,7 @@ const MarkUp = {
 
 		</div>
 		<div class="modal-body" slot="modal-body">
-			<iframe class="iframe" src="../data/${item.samplePage[0].webUrl}" style="width: 100%;height: 100%; border: 0;" ></iframe>
+			<iframe class="iframe" src="./data/${item.samplePage[0].webUrl}" style="width: 100%;height: 100%; border: 0;" ></iframe>
 		
 		</div> `
 	},
@@ -497,6 +497,7 @@ const MarkUp = {
 	}
 
 }
+
 
 
 
