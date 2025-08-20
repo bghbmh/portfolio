@@ -1,4 +1,5 @@
 
+
 const cssText = `
 	:host{
 		position: relative;
@@ -20,7 +21,7 @@ footer.common .contents-wrap {
     position: sticky;
     bottom: 0;
     overflow: visible;
-    padding: 13em 3em 2em;
+    padding: 13em 1.5em 2em;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -58,6 +59,7 @@ p{ margin: 8px 0; padding: 0; }
 	footer.common .contents-wrap a[href*="mailto"]{ font-size: 2.5em; }
 }
 @media(min-width: 1024px){
+	footer.common .contents-wrap { padding: 13em 3em 2em; }
 	footer.common .contents-wrap a[href*="mailto"]{ font-size: 4.5em; }
 }
 @media(min-width: 1440px){
@@ -71,6 +73,7 @@ p{ margin: 8px 0; padding: 0; }
 	
 	
 `;
+
 
 class CommonFooter extends HTMLElement {
 
@@ -101,3 +104,4 @@ class CommonFooter extends HTMLElement {
 }
 
 customElements.define('common-footer', CommonFooter);
+
