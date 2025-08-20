@@ -14,7 +14,7 @@ const cssText = `
 		/*! height: 100%; */
 		padding: 36px var(--bs-gutter-x) 24px !important ;
 		
-
+		box-sizing: border-box;
 
 
 		   
