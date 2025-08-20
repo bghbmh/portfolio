@@ -51,11 +51,11 @@ const cssText = `
 	flex-direction: column;
 	border-radius: 0px;
 	overflow: hidden;
-	
+	margin: 0 1rem;
 
 	width: calc(100% - 24px);
 	max-width: 1280px;
-	margin: 0 auto;
+	margin: 0 12px;
 	padding: 2.5em 8px;
 
 	/* background-color: #121314;
@@ -144,7 +144,7 @@ const cssText = `
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	gap: 1em;
+	/* gap: 1em; */
 	padding-top: 12px;
 
 	min-height: 5em;
@@ -153,6 +153,7 @@ const cssText = `
 .list-item-btn-wrap {
 	display: flex;
 	gap: 4px 1em;
+	margin-top: auto;
 }
 
 .list-item-btn-wrap .btn {
@@ -175,6 +176,31 @@ const cssText = `
 	line-height: 1.5;
 }
 
+
+
+.extraInfo-wrap{ margin: 0 0 auto 0; padding-bottom: 1.5em; }
+.extraInfo-wrap > .info {
+	display: inline-flex;
+	padding-right: 1em;
+}
+.extraInfo-wrap > .info > dd,
+.extraInfo-wrap > .info > dt{ margin: 0; padding: 0 }
+.extraInfo-wrap > .info > dt{ color: rgb(62, 72, 118); font-weight: 700; }
+.extraInfo-wrap > .info > dd{ color: hsla(230, 26%, 22%, 1.00);  font-weight: 700; font-weight: 300; }
+.extraInfo-wrap > .info > dt + dd{ margin-left: 4px }
+
+
+.extraInfo-wrap > .info:before{
+	content: "";
+	display: inline-flex;
+	width: 3px;
+	height: 3px;
+	background-color: rgba(120, 119, 119, 1);
+	font-weight: bold;
+	margin: .5em .5em 0 .5em;
+	margin-top: calc( .5em + 2px);
+	line-height: 0;
+}
 
 @media (min-width: 768px) {
 	.list-item {
@@ -255,6 +281,7 @@ const cssText = `
 }
 
 `;
+
 class ProjectItem extends HTMLElement {
 
 	constructor() {
@@ -431,6 +458,11 @@ ${ item.tools ? `<div class="tool-name-list">
 
 				${ item.summary ? `<p class="summary">${item.summary}</p>` : '' }
 
+
+				${
+					Object.keys(item.extraInfo).length ? '<dl class="extraInfo-wrap">' + Object.entries(item.extraInfo).map( arr => `<div class="info"><dt>${arr[0]}</dt><dd>${arr[1]}</dd></div>`).join('') + '</dl>' : ''
+				}
+
 				<div class="list-item-btn-wrap">
 					${ item.externalLink.figma ? `<a href="${item.externalLink.figma}" target="_blank" class="btn">${ICONSET.figma}디자인</a>` : '' }
 				
@@ -459,5 +491,6 @@ ${ item.tools ? `<div class="tool-name-list">
 
 
 }
+
 
 
