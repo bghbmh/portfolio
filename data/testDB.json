@@ -48,8 +48,8 @@
     "title": "글로벌미래교육원",
     "description": "",
     "extraInfo": {
-      "디자인": "박민희",
-      "마크업": "박민희"
+      "디자인": "100% 참여",
+      "마크업": "100% 참여"
     },
     "externalLink": {
 		"figma" : "https://www.figma.com/proto/SWs9NH9QWRn9s7HpIRCCrQ/%EC%88%AD%EC%8B%A4%EB%8C%80_%EA%B8%80%EB%A1%9C%EB%B2%8C%EB%AF%B8%EB%9E%98%EA%B5%90%EC%9C%A1%EC%9B%90?page-id=170%3A2531&node-id=195-3468&p=f&viewport=910%2C934%2C0.06&t=3PLtJrtShYeX618D-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=195%3A3468&show-proto-sidebar=1"
@@ -121,7 +121,7 @@
       {
         "label": "메인",
         "alt": "",
-        "name": "main.html",
+        "name": "메인.html",
         "size": 13820,
         "type": "text/html",
         "lastModified": 1743958251503,
@@ -130,7 +130,7 @@
       {
         "label": "게시판-글상세보기",
         "alt": "",
-        "name": "board.html",
+        "name": "게시판_글상세보기_공통스타일.html",
         "size": 8703,
         "type": "text/html",
         "lastModified": 1751718644657,
@@ -139,7 +139,7 @@
       {
         "label": "게시판-목록",
         "alt": "",
-        "name": "notice.html",
+        "name": "전체공지사항.html",
         "size": 5345,
         "type": "text/html",
         "lastModified": 1751718644658,
@@ -148,7 +148,7 @@
       {
         "label": "가이드",
         "alt": "",
-        "name": "guide.html",
+        "name": "00_기본_ui_스타일_디자인가이드_수정중.html",
         "size": 50717,
         "type": "text/html",
         "lastModified": 1751718644658,
@@ -174,6 +174,7 @@
         "webUrl": "bmh1750777200022/preview/mainOpen.png"
       }
     ],
+	"summary": "개인 작업",
     "category": [
       {
         "name": "UI",
@@ -195,8 +196,9 @@
     "title": "프로젝트관리",
     "description": "",
     "extraInfo": {
-      "디자인": "박민희",
-      "마크업": "박민희"
+      "디자인": "",
+      "프론트앤드": "웹컴포넌트, javascript",
+	  "백엔드" :" nodejs 사용,"
     },
     "externalLink": {
       "샘플보기2": "https://wowadmin.onrender.com/",
@@ -295,6 +297,7 @@
         "webUrl": "bmh1750777200020/preview/mainOpen20.png"
       }
     ],
+	"summary": "개인 작업, 간단한 라이브러리 제작",
     "category": [
       {
         "name": "UI",
@@ -316,8 +319,8 @@
     "title": "타임피커",
     "description": "",
     "extraInfo": {
-      "디자인": "박민희",
-      "마크업": "박민희"
+      "디자인": "",
+      "마크업": "javascript"
     },
     "externalLink": {},
     "mainimage": [
@@ -383,8 +386,8 @@
     "title": "연세의료원 직원교육",
     "description": "",
     "extraInfo": {
-      "디자인": "박민희",
-      "마크업": "박민희"
+      "디자인": "100% 참여",
+      "마크업": "100% 참여"
     },
     "mainimage": [
       {
@@ -508,8 +511,8 @@
     "title": "KMCU 교수학습지원센터",
     "description": "",
 	"extraInfo": {
-      "디자인(서브페이지)": "",
-      "마크업": ""
+      "디자인": "서브페이지 100% 참여",
+      "마크업": "100% 참여"
     },
     "mainimage": [
       {
@@ -588,7 +591,7 @@
     "title": "KFIA",
     "description": "",
     "extraInfo": {
-      "디자인": ""
+      "디자인": "100% 참여"
     },
     "mainimage": [
       {
@@ -657,7 +660,7 @@
     "title": "HYCU",
     "description": "",
     "extraInfo": {
-      "마크업": ""
+      "마크업": "90% 참여"
     },
     "mainimage": [
       {
@@ -744,8 +747,8 @@
     "title": "KFIA 모바일버전개선",
     "description": "",
     "extraInfo": {
-      "디자인": "",
-      "마크업": ""
+      "디자인": "100% 참여",
+      "마크업": "100% 참여"
     },
     "mainimage": [
       {
@@ -795,6 +798,7 @@
         "webUrl": "bmh1750777200013/preview/mainOpen13.png"
       }
     ],
+	"summary":"개인 작업, 간단한 라이브러리 제작",
     "category": [
       {
         "name": "UI",
@@ -815,7 +819,10 @@
 	"tools" : [ "html", "css", "javascript"],
     "title": "파일업로드",
     "description": "",
-    "extraInfo": {},
+    "extraInfo": {
+		"디자인":"",
+		"마크업": "javascript"
+	},
     "externalLink": {
       "github": "https://github.com/bghbmh/simple-ui-test/tree/main/UploadFiles"
     },
@@ -880,8 +887,8 @@
     "title": "CDMS",
     "description": "",
     "extraInfo": {
-      "디자인": "",
-      "마크업": ""
+      "디자인": "100% 참여",
+      "마크업": "100% 참여"
     },
     "mainimage": [
       {
@@ -970,8 +977,8 @@
     "title": "지식서비스플랫폼",
     "description": "",
     "extraInfo": {
-      "디자인": "",
-      "마크업": ""
+      "디자인": "100% 참여",
+      "마크업": "100% 참여"
     },
     "mainimage": [
       {
@@ -1077,7 +1084,7 @@
     "title": "수업 안내문",
     "description": "",
     "extraInfo": {
-      "디자인": "박민희"
+      "디자인": ""
     },
     "mainimage": [
       {
@@ -1151,7 +1158,7 @@
     "title": "안내서",
     "description": "",
     "extraInfo": {
-      "디자인": "박민희"
+      "디자인": ""
     },
     "mainimage": [
       {
@@ -1185,6 +1192,7 @@
         "webUrl": "bmh1750777200005/preview/mainOpen05.png"
       }
     ],
+	"summary":"모바일 버전만 제작",
     "category": [
       {
         "name": "웹",
@@ -1206,8 +1214,8 @@
     "title": "",
     "description": "",
     "extraInfo": {
-      "디자인": "",
-      "마크업": ""
+      "디자인": "100% 참여",
+      "마크업": "100% 참여"
     },
     "mainimage": [
       {
