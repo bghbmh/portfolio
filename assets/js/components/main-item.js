@@ -322,15 +322,16 @@ class MainItem extends HTMLElement {
 		
 		const observerOptions = {
 			root: null,
-			rootMargin: "0px",
-			threshold: [0.0],
+			rootMargin: "0px 0px 0px 0px",
+			threshold: [0.0, 1.0],
 		};
 		
 		let intersectionObserver = new IntersectionObserver(function (entries) {
 			entries.forEach((entry) => {
-				const adBox = entry.target;
-				if (entry.isIntersecting) {
-					entry.target.classList.add("on");
+				if (entry.isIntersecting ) {
+					if (entry.intersectionRatio >= 0.0 ) {
+						entry.target.classList.add("on");
+					} 
 				} else {
 					entry.target.classList.remove("on");
 				}
@@ -497,6 +498,7 @@ const MarkUp = {
 	}
 
 }
+
 
 
 
