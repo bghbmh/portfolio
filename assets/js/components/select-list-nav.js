@@ -39,7 +39,7 @@ function setCssStyle(){
 	gap: 0px;
 	font-weight: 300;
 	border: 1px solid rgb(85, 85, 85);
-	border-radius: 0.6em .6em .6em 0;
+	border-radius: 0.3em;
 	transition: 0.3s;
 	cursor: pointer;
 }
@@ -92,7 +92,6 @@ function setCssStyle(){
 	color: #f0f0f0;
 	font-weight: 200;
 	border-radius: 6em;
-	border-bottom-left-radius: 1.7em;
 	padding: 0.5em 2em .5em 1em ;
 }
 	
@@ -205,3 +204,4 @@ class SelectListNav extends HTMLElement {
 }
 
 customElements.define('select-list-nav', SelectListNav);
+
