@@ -64,6 +64,8 @@ const cssText = `
 
 	color: rgb(22, 30, 41);
 	background-color: hsl(200 6% 50% / .03);
+
+	box-sizing: border-box;
 }
 
 .list-item .tool-name-list {
@@ -491,6 +493,7 @@ ${ item.tools ? `<div class="tool-name-list">
 
 
 }
+
 
 
 
