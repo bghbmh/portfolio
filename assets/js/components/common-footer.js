@@ -91,8 +91,8 @@ class CommonFooter extends HTMLElement {
 				<div>
 					<a class="btn btn-link" href="mailto:bghbmh@gmail.com">bghbmh@gmail.com</a>
 					
-					<p><small>html + css + javascript + vite  + nodejs = 박민희</small></p>
-					<p><small>{ vite  , nodejs }  ⊂  beginner</small></p>
+					<p><small>html + css + javascript + react  + nodejs = 박민희</small></p>
+					<p><small>{ react  , nodejs }  ⊂  beginner</small></p>
 				</div>
 				<span class="madein">ⓒ 2025 ㅂㅁㅎ</span>
 			</div>
