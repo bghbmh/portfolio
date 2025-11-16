@@ -333,7 +333,7 @@ class MainItem extends HTMLElement {
 						entry.target.classList.add("on");
 					} 
 				} else {
-					entry.target.classList.remove("on");
+					// entry.target.classList.remove("on");
 				}
 			});
 		}, observerOptions);
