@@ -46,27 +46,10 @@
         "webUrl": "bmh1750777200019/preview/3-2_데스크탑11.png"
       }
     ],
-    "subimage": [
-      {
-        "alt": "",
-        "name": "나의학습_내학습현황.png",
-        "size": 94451,
-        "type": "image/png",
-        "lastModified": 1745753986183,
-        "webUrl": "bmh1750777200019/preview/나의학습_내학습현황.png"
-      },
-      {
-        "alt": "",
-        "name": "나의학습_내학습과정.png",
-        "size": 147812,
-        "type": "image/png",
-        "lastModified": 1745753986184,
-        "webUrl": "bmh1750777200019/preview/나의학습_내학습과정.png"
-      }
-    ],
+    "subimage": [],
     "sampleName": "",
     "samplePage": [],
-    "order": 20,
+    "order": 23,
     "externalLink": {
         "figma": "https://www.figma.com/proto/wmv5D13uyWmYO38nkHaUhq/%EB%A1%AF%EB%8D%B0-grs-academy?node-id=60-5016&starting-point-node-id=60%3A5016&locale=ko-kr#no_universal_links",
         "샘플": "https://grsdesign.hullaro.com/userMain/goUserMain?lang=ko"
