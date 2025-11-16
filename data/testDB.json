@@ -67,7 +67,9 @@
     "sampleName": "",
     "samplePage": [],
     "order": 20,
-    "externalLink": {},
+    "externalLink": {
+        "figma": "https://www.figma.com/proto/wmv5D13uyWmYO38nkHaUhq/%EB%A1%AF%EB%8D%B0-grs-academy?node-id=60-5016&starting-point-node-id=60%3A5016&locale=ko-kr#no_universal_links"
+    },
     "projectNum": 1750777200023,
     "ID": "bmh1750777200023",
     "projectState": "complete",
