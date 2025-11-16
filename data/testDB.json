@@ -1,7 +1,17 @@
 [
     {
     "mainOpen": false,
-    "mainOpenImages": [],
+    "mainOpenImages": [
+        {
+        "alt": "",
+        "name": "mainOpen_grs.png",
+        "size": 147799,
+        "type": "image/png",
+        "lastModified": 1743958251474,
+        "webUrl": "bmh1750777200021/preview/mainOpen_grs.png"
+      }
+        
+    ],
     "category": [
       {
         "name": "웹",
@@ -27,7 +37,16 @@
       "디자인": "100% 참여",
       "마크업": "100% 참여"
     },
-    "mainimage": [],
+    "mainimage": [
+        {
+        "alt": "",
+        "name": "mainOpen_grs.png",
+        "size": 147799,
+        "type": "image/png",
+        "lastModified": 1743958251474,
+        "webUrl": "bmh1750777200021/preview/mainOpen_grs.png"
+      }
+    ],
     "subimage": [],
     "sampleName": "",
     "samplePage": [],
