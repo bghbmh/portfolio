@@ -323,8 +323,8 @@ class MainItem extends HTMLElement {
 		const observerOptions = {
 			root: null,
 			rootMargin: "0px 0px 0px 0px",
-			threshold: [0.0, 1.0],
-		};
+			threshold: [0.0],
+		}; // [0.0, 1.0]
 		
 		let intersectionObserver = new IntersectionObserver(function (entries) {
 			entries.forEach((entry) => {
