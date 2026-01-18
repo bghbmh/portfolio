@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="date=no">
+	<meta name="format-detection" content="address=no">
+	<meta name="format-detection" content="email=no">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+
+	<meta name="author" content="hrd" />
+	<meta name="description" content="hrd" />
+
+	<!--파비콘-->
+	<link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
+	<!--//파비콘-->
+	
+	<!--기본_css-->
+	<link rel="stylesheet" type="text/css" href="../assets/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/common.css" />
+	<!--//기본_css-->
+
+	<!--기본_scripts-->
+	<script src="../assets/jquery-ui-1.13.0/external/jquery/jquery.js"></script>
+	<script src="../assets/jquery-ui-1.13.0/jquery-ui.js"></script>
+	<script src="../assets/js/common-ui.js"></script>
+	<!--//기본_scripts -->
+
+	<title>과정관리_개설정보</title>
+
+</head>
+<body>
+
+<!--공통헤더 및 skipNav-->
+<div id="skipNav">
+	<div class="blind">바로가기 메뉴</div>
+    <ul>
+        <li><a href="#loginout" title="로그인, 로그아웃 위치로 바로가기">로그인, 로그아웃 바로가기</a></li>
+        <li><a href="#common-gnb" title="주메뉴 위치로 바로가기">주메뉴 바로가기</a></li>
+		<li><a href="#common-lnb" title="주메뉴 위치로 바로가기">서브메뉴 바로가기</a></li>
+        <li><a href="#container" title="본문 위치로 바로가기">본문 바로가기</a></li>
+    </ul>
+</div>
+<header class="common">
+	<button type="button" class="btn ctrl-nav" data-hrd-target=".common-gnb" aria-label="모바일 메뉴 전체 펼쳐보기 버튼"><i class="ms-icon" aria-hidden="true">dehaze</i></button>
+
+	<div class="logo">
+		<h1><a href="#0"><img src="../assets/img/common/brand.svg" alt="로고"></a></h1>
+	</div>
+
+	<!--공통gnb-->	
+	<nav id="common-gnb" class="common-gnb">
+
+		<div class="option-control-wrap">
+			<!--버튼 클릭시 <nav id="common-gnb" ~> 태그에 expanded 클래스가 토글돼야함 -->
+			<button type="button" class="btn border-0 btn-close ctrl-nav" data-hrd-target=".common-gnb">
+				<i class="ms-icon" aria-hidden="true">close</i>
+				<span class="ctrl-nav__title">모바일 메뉴 열고 닫는 버튼</span>
+			</button>
+		</div>
+
+		<div class="common-gnb__list">
+			<div class="gnb-item "> 
+				<a href="https://www.naver.com/" class="current"> <!-- 현재페이지인 경우 current 클래스 추가 -->
+					<i class="ms-icon" aria-hidden="true">folder_data</i> <!--데스크탑에서는 안보임-->
+					<span>과정관리</span>
+				</a>
+
+				<!--2d 이상 메뉴_데스크탑에서 안보임-->
+				<ul>
+					<li>
+						<a href="#0">
+							<span>문제은행 관리__2d</span>
+						</a>
+					</li>
+					<li>
+						<a href="#0" class="">  <!-- 현재페이지일 때 a 태그에 current 클래스 추가 -->
+							<span>섦문은행 관리__2d</span>
+						</a>
+						<ul>
+							<li><a href="#0"  class="current"><span>ox__3d</span></a></li>   <!-- 현재페이지일 때 a 태그에 current 클래스 추가 -->
+							<li><a href="#0"><span>선다형__3d</span></a></li>
+						</ul>
+					</li>
+				</ul>
+				<!--//2d 이상 메뉴_데스크탑에서 안보임-->
+			</div>
+
+			<div class="gnb-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">user_attributes</i>
+					<span>회원관리</span>
+				</a>
+			</div>
+
+			<div class="gnb-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">payments</i>
+					<span>결제관리</span>
+				</a>
+			</div><div class="gnb-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">flowsheet</i>
+					<span>게시판관리</span>
+				</a>
+			</div><div class="gnb-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">shape_line</i>
+					<span>통계/모니터링</span>
+				</a>
+			</div>
+			<div class="gnb-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">inbox_customize</i>
+					<span>홈페이지관리</span>
+				</a>
+			</div>
+			
+			
+		</div>
+
+	</nav>
+	<!--//공통gnb-->
+
+	<!--util-->
+	<div class="util">
+		<div class="util-item  dropdown">
+			<button type="button" class="btn user dropdown-toggle" id="testH1">
+				<!-- <img src="../assets/img/common/sample-user.jpg" alt="사용자 사진"> -->
+				<img src="../assets/img/common/icon-svg-person.svg" alt="등록한 사진이 없습니다">
+			</button>
+			<div class="dropdown-menu  "> <!-- show 클래스가 붙으면 메뉴가 보임 -->
+				<a class="dropdown-item" href="#">드롭 다운1</a>
+				<a class="dropdown-item" href="#">드롭 다운2</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		document.querySelector("#testH1").addEventListener("click", e => e.currentTarget.nextElementSibling.classList.toggle("show") )
+	</script>
+	<!--util-->
+
+</header>
+<!--//공통헤더 및 skipNav-->
+
+<!--공통main-->
+<main class="common">
+
+	<!--공통lnb-->
+	<!--//공통lnb-->
+
+	<!--common__content-wrap-->
+	<div id="common-container" class="common-container">
+
+		<!--페이지 정보-->
+		<div class="page-info">
+			<nav class="breadcrumb" aria-label="breadcrumb">
+				<ol>
+					<li class="breadcrumb-item"><i class="ms-icon fill mr-1" aria-hidden="true">home</i> 홈</li>
+					<li class="breadcrumb-item"><i class="ms-icon">folder</i>메뉴1__1depth</li>
+					<li class="breadcrumb-item current">메뉴1-1</li>
+				</ol>
+			</nav>
+
+			<!--//페이지 제목-->
+			<h2 class="page-title">과정관리</h2>
+			<!--//페이지 제목-->
+		</div>
+		<!--//페이지 정보-->
+
+		<!--===CONTENT====-->
+
+
+		<!--hrd005-->
+		<aside class="hrd005 temp1">
+			<!--section-sub-header-->
+			<header class="section-sub-header pt-0">
+				<div class="title">
+					<h4 class="h4">개설단계</h4>
+				</div>
+			</header>
+			<!--//section-sub-header-->		
+
+			<ol class="process-step">
+				<li>
+					<button type="button" class="btn step end">
+						<i>01</i>
+						<span>기본정보</span>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn step active">
+						<i>02</i>
+						<span>개설정보</span>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn step">
+						<i>03</i>
+						<span>기본정보</span>
+					</button>
+				</li>
+			</ol>
+
+			<hr class="solid ">
+
+			<!--section-sub-header-->
+			<header class="section-sub-header pt-0">
+				<div class="title">
+					<h4 class="h4">과정운영</h4>
+				</div>
+			</header>
+			<!--//section-sub-header-->	
+
+			<ol class="process-step desktop-elem">
+				<li>
+					<button type="button" class="btn step end">
+						<i>01</i>
+						<span>수강생 관리</span>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn step active">
+						<i>02</i>
+						<span>시험관리</span>
+					</button>
+
+					<ol>
+						<li>
+							<button type="button" class="btn step end">
+								<span>시험정보</span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="btn step active">
+								<span>시험문제</span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="btn step ">
+								<span>성적조회</span>
+							</button>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<button type="button" class="btn step">
+						<i>03</i>
+						<span>평가 관리</span>
+					</button>
+				</li>
+			</ol>
+
+
+
+
+		</aside>
+		<!--//hrd005-->
+
+
+		<!--섹션-->
+		<section class="section"  >
+			<!--섹션용 헤더-->
+			<header class="section-header">
+				<div class="title">
+					<h3 class="h3">개설정보</h3>
+				</div>
+
+				<!--하단 선이 필요할 때-->
+				<hr class="solid width-100per m-0">
+			</header>
+			<!--//섹션용 헤더-->
+
+			<!--section 상단 옵션-->
+			<!--//section 상단 옵션-->
+
+			<!--hrd004-->
+			<div class="hrd004">
+				<div class="hrd004__contents left">
+
+					<!--section-sub-header-->
+					<header class="section-sub-header">
+						<div class="title">
+							<h4 class="h4">회차
+								<sup class="require" aria-label="필수입력항목"><i class="ms-icon fill" aria-label="hidden">fiber_manual_record</i></sup>
+							</h4>
+						</div>
+					</header>
+					<!--//section-sub-header-->
+
+					<label class="align-items-center gap-2">
+						<input type="text" class="width-6em flex-grow-1" aria-label="검색어를 입력하세요" placeholder="">
+						<span>회차</span>
+					</label>
+
+			
+
+					<!--section-sub-header-->
+					<header class="section-sub-header">
+						<div class="title">
+							<h4 class="h4">교육일정
+								<sup class="require" aria-label="필수입력항목"><i class="ms-icon fill" aria-label="hidden">fiber_manual_record</i></sup>
+							</h4>
+						</div>
+					</header>
+					<!--//section-sub-header-->
+
+					<!--hrd006-->
+					<div class="hrd006">
+
+						<!--hrd006__item-->
+						<dl class="hrd006__item">
+							<dt>교육신청기간</dt>
+							<dd>
+								<div class="d-inline-flex gap-2 flex-wrap align-items-center">
+									<label class="datepicker width-10em">
+										<input type="text" placeholder="기간" id="datepicker1">
+									</label> - 
+									<label class="datepicker width-10em"><input type="text" placeholder="기간" id="datepicker2"></label>									
+								</div>
+							</dd>
+						</dl>										
+						<!--//hrd006__item-->
+
+						<!--hrd006__item-->
+						<dl class="hrd006__item">
+							<dt>학습기간</dt>
+							<dd>
+								<div class="d-inline-flex gap-2 flex-wrap align-items-center">
+									<label class="datepicker width-10em">
+										<input type="text" placeholder="기간" id="datepicker1">
+									</label> - 
+									<label class="datepicker width-10em"><input type="text" placeholder="기간" id="datepicker2"></label>									
+								</div>
+							</dd>
+						</dl>
+						<!--//hrd006__item-->
+
+						<!--hrd006__item-->
+						<dl class="hrd006__item">
+							<dt>성적열람 시작일</dt>
+							<dd>
+								<label class="width-100per"><input type="text" class="width-12em" aria-label="교육 시작일을 입력하세요" placeholder="교육 시작일"></label>
+							</dd>
+						</dl>
+						<!--//hrd006__item-->
+
+					</div>
+					<script>										
+						$.datepicker.setDefaults({
+							dateFormat: 'yy-mm-dd',
+							prevText: '이전 달',
+							nextText: '다음 달',
+							monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+							monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+							dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+							dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+							dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+							showMonthAfterYear: true,
+							yearSuffix: '년'
+						});
+
+						$('.datepicker').datepicker();
+					</script>	
+					<!--//hrd006-->
+
+
+					<!--section-sub-header-->
+					<header class="section-sub-header">
+						<div class="title">
+							<h4 class="h4">교육인원
+								<sup class="require" aria-label="필수입력항목"><i class="ms-icon fill" aria-label="hidden">fiber_manual_record</i></sup>
+							</h4>
+						</div>
+					</header>
+					<!--//section-sub-header-->
+
+					<!--hrd011-->
+					<div class="hrd011">
+						<div class="hrd011__item">
+							<label class="chip-outline"><input type="radio" name="a1" checked=""><span>무제한</span></label>
+						</div>
+						<div class="hrd011__item">
+							<!--직접입력 클릭 시 input 태그에 disabled 삭제-->
+							<label class="chip-outline"><input type="radio" name="a1"><span>직접입력</span></label>
+							<label class="align-items-center gap-2">
+								<input type="text" class="width-6em flex-grow-1" aria-label="교육인원 입력하세요" placeholder="0" disabled>
+								<span>명</span>
+							</label>
+						</div>
+					</div>
+					<!--//hrd011-->
+						
+
+					<!--section-sub-header-->
+					<header class="section-sub-header">
+						<div class="title">
+							<h4 class="h4">교육비용
+								<sup class="require" aria-label="필수입력항목"><i class="ms-icon fill" aria-label="hidden">fiber_manual_record</i></sup>
+							</h4>
+						</div>
+					</header>
+					<!--//section-sub-header-->
+
+					<!--hrd011-->
+					<div class="hrd011">
+						<div class="hrd011__item">
+							<label class="chip-outline"><input type="radio" name="a2"><span>무료</span></label>	
+						</div>
+						<div class="hrd011__item">
+							<!--직접입력 클릭 시 class="hrd008 hidden" 태그d에 hidden 클래스 삭제-->
+							<label class="chip-outline"><input type="radio" name="a2" checked=""><span>직접입력</span></label>
+						</div>
+					</div>
+					<!--//hrd011-->
+
+					<!--hrd008-->
+					<div class="hrd008 " > <!-- hidden -->
+						<div class="hrd007">
+							<label class="gap-2">
+								<span class="label">정가</span>
+								<input type="text" class="width-6em flex-fill" aria-label="비용을 입력하세요" placeholder="0">
+								<span>원</span>
+							</label>
+							<!-- <small class="hint-msg d-block">힌트 메시지</small> -->
+						</div>
+
+						<div class="hrd007">
+							<label class="gap-2">
+								<span class="label">할인가</span>
+								<input type="text" class="width-6em flex-fill" aria-label="비용을 입력하세요" placeholder="0">
+								<span>원</span>
+							</label>
+							<!-- <small class="hint-msg d-block">힌트 메시지</small> -->
+						</div>
+
+					</div>
+					<!--//hrd008-->
+
+					
+					
+							
+
+					<!--section-sub-header-->
+					<header class="section-sub-header">
+						<div class="title">
+							<h4 class="h4">일일 차시 진도 제한
+								<sup class="require" aria-label="필수입력항목"><i class="ms-icon fill" aria-label="hidden">fiber_manual_record</i></sup>
+							</h4>
+							<small class="hint-msg fcGray">내용이 있는경우 과정 상세페이지에 조회 됩니다.​</small>
+						</div>
+					</header>
+					<!--//section-sub-header-->
+
+					<!--hrd011-->
+					<div class="hrd011">
+						<div class="hrd011__item">
+							<label class="chip-outline"><input type="radio" name="a1" checked=""><span>제한없음</span></label>
+						</div>
+						<div class="hrd011__item">
+							<!--직접입력 클릭 시 input 태그에 disabled 삭제-->
+							<label class="chip-outline"><input type="radio" name="a1"><span>직접입력</span></label>
+							<label class="align-items-center gap-2">
+								<span>하루 최대</span>
+								<input type="text" class="width-6em flex-grow-1" aria-label="교육인원 입력하세요" placeholder="0" disabled>
+								<span>차시까지만 학습 가능</span>
+							</label>
+						</div>
+					</div>
+					<!--//hrd011-->
+
+
+					<!--section-sub-header-->
+					<header class="section-sub-header">
+						<div class="title">
+							<h4 class="h4">강사 설정
+								<sup class="require" aria-label="필수입력항목"><i class="ms-icon fill" aria-label="hidden">fiber_manual_record</i></sup>
+							</h4>
+							<small class="hind-msg fcGray">개설된 과정의 메인강사, 보조강사를 선택해 주세요. (여러 명 선택 가능)​</small>
+						</div>
+					</header>
+					<!--//section-sub-header-->
+
+					<!--hrd006-->
+					<div class="hrd006">
+
+						<!--hrd006__item-->
+						<dl class="hrd006__item align-items-baseline">
+							<dt>메인강사</dt>
+							<dd>
+								<div class="hrd003">
+									<div class="selected-chip-list mb-3">
+										<div class="selected-chip-list__item">김강사 (kimprof)<i class="ms-icon" role="button"
+												aria-label="항목 삭제하기">close_small</i></div>
+										<div class="selected-chip-list__item">길강사 (kimprof)<i class="ms-icon" role="button"
+												aria-label="항목 삭제하기">close_small</i></div>
+									</div>
+								
+									<div class="chip-list">
+										<label class="chip-outline"><input type="checkbox" name="b1" checked>김강사 (kimprof)</label>
+										<label class="chip-outline"><input type="checkbox" name="b1">한글입숨1 (kimprof)1</label>
+										<label class="chip-outline"><input type="checkbox" name="b1" checked>길강사 (kimprof)</label>
+										<label class="chip-outline"><input type="checkbox" name="b1">한글 (kimprof)</label>
+										<label class="chip-outline"><input type="checkbox" name="b1">한 (kimprof)</label>
+									</div>
+								</div>
+							</dd>
+						</dl>
+						<!--//hrd006__item-->
+
+						<!--hrd006__item-->
+						<dl class="hrd006__item align-items-baseline">
+							<dt>보조강사</dt>
+							<dd>
+								<div class="hrd003">
+									<div class="selected-chip-list mb-3">
+										<div class="selected-chip-list__item">김강사 (kimprof)<i class="ms-icon" role="button"
+												aria-label="항목 삭제하기">close_small</i></div>
+										<div class="selected-chip-list__item">길강사 (kimprof)<i class="ms-icon" role="button"
+												aria-label="항목 삭제하기">close_small</i></div>
+									</div>
+								
+									<div class="chip-list">
+										<label class="chip-outline"><input type="checkbox" name="b1" checked>김강사 (kimprof)</label>
+										<label class="chip-outline"><input type="checkbox" name="b1">한글입숨1 (kimprof)1</label>
+										<label class="chip-outline"><input type="checkbox" name="b1" checked>길강사 (kimprof)</label>
+										<label class="chip-outline"><input type="checkbox" name="b1">한글 (kimprof)</label>
+										<label class="chip-outline"><input type="checkbox" name="b1">한 (kimprof)</label>
+									</div>
+								</div>
+							</dd>
+						</dl>
+						<!--//hrd006__item-->
+
+					</div>
+					<!--//hrd006-->
+
+
+					<!--section-sub-header-->
+					<header class="section-sub-header">
+						<div class="title">
+							<h4 class="h4">성적
+								<sup class="require" aria-label="필수입력항목"><i class="ms-icon fill" aria-label="hidden">fiber_manual_record</i></sup>
+							</h4>
+							<small class="hint-msg fcGray">내용이 있는경우 과정 상세페이지에 조회 됩니다.</small>
+						</div>
+					</header>
+					<!--//section-sub-header-->
+
+					<!--hrd008-->
+					<div class="hrd008 " > <!-- hidden -->
+						<div class="hrd007">
+							<label class="gap-2">
+								<span class="label">출석률</span>
+								<input type="text" class="width-6em flex-fill" aria-label="비용을 입력하세요" placeholder="00" disabled>
+								<span>%</span>
+							</label>
+							<small class="hint-msg d-block"><i class="ms-icon" aria-hidden="true">info</i>수료가 가능한 출석 진도율은 80% (산업인력관리공단 기준) 입니다.</small>
+						</div>
+
+						<div class="hrd007">
+							<label class="gap-2">
+								<span class="label">수료 기준 점수</span>
+								<input type="text" class="width-6em flex-fill" aria-label="비용을 입력하세요" placeholder="0">
+								<span>점</span>
+							</label>
+							<!-- <small class="hint-msg d-block">힌트 메시지</small> -->
+						</div>
+					</div>
+					<!--//hrd008-->
+
+					<!--hrd009-->
+					<dl class="hrd009 " > <!-- hidden -->
+						<div>
+							<dt>성적비율</dt>
+							<dd>
+								<div class="hrd007 p-2 bcWhite">
+									<label class="gap-2">
+										<span class="label">시험</span>
+										<input type="text" class="width-3em flex-fill" aria-label="비용을 입력하세요" placeholder="00" disabled>
+										<span>%</span>
+									</label>
+								</div>
+
+								<div class="hrd007 p-2 bcWhite">
+									<label class="gap-2">
+										<span class="label">과제</span>
+										<input type="text" class="width-3em flex-fill" aria-label="비용을 입력하세요" placeholder="0">
+										<span>%</span>
+									</label>
+								</div>
+
+								<div class="hrd007 p-2 bcWhite">
+									<label class="gap-2">
+										<span class="label">과제</span>
+										<input type="text" class="width-3em flex-fill" aria-label="비용을 입력하세요" placeholder="0">
+										<span>%</span>
+									</label>
+								</div>
+
+							</dd>
+						</div>
+						<div>
+							<dt>총 성적비율</dt>
+							<dd>
+								<div class="hrd007 p-2">
+									<label class="gap-2">
+										<input type="text" class="width-3em flex-fill" aria-label="비용을 입력하세요" placeholder="00" disabled>
+										<span>%</span>
+									</label>
+								</div>
+
+							</dd>
+						</div>
+							
+					</dl>
+					<!--//hrd009-->
+
+
+					<!--section-sub-header-->
+					<header class="section-sub-header">
+						<div class="title">
+							<h4 class="h4">커리큘럼
+								<sup class="require" aria-label="필수입력항목"><i class="ms-icon fill" aria-label="hidden">fiber_manual_record</i></sup>
+							</h4>
+							<small class="hint-msg fcGray">내용이 있는경우 과정 상세페이지에 조회 됩니다.</small>
+						</div>
+					</header>
+					<!--//section-sub-header-->
+					<small class="hint-msg"><i class="ms-icon" aria-hidden="true">info</i>아래의 내용이 작성되면 홈페이지 -> 과정 상세 페이지에  작성된 내용으로 커리큘럼이 조회 됩니다. <br>만약 내용이 없으면 커리큘럼 관리를 통해 생성된 커리큘럼이 자동으로 조회 됩니다.</small>
+
+					
+					<!--에디터-->
+					<div id="summernote"></div>
+					<script defer src="../assets/summernote/lang/summernote-ko-KR.js"></script>
+					<script src="../assets/summernote/summernote-lite.js"></script>
+					<script>
+						$('#summernote').summernote({
+							lang: 'ko-KR',
+							placeholder: '입력하세요', 
+							height: 200,
+							fontNames: ['맑은 고딕','궁서','굴림체','굴림','돋움체','바탕체','Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Verdana','Tahoma','Times New Roamn'],
+							toolbar: [
+								['fontname', ['fontname']],
+								['fontsize', ['fontsize']],
+								['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+								['color', ['forecolor','backcolor']],
+								['table', ['table']],
+								['para', ['ul', 'ol', 'paragraph']],
+								['height', ['height']],
+								['insert',['picture','link','video']],
+								['view', ['codeview','fullscreen']]
+							],
+							
+						});   
+					</script>
+					<!--//에디터-->
+				</div>
+				<hr class="dashed vertical desktop-elem">
+				<div class="hrd004__contents right">
+
+					<!--section-sub-header-->
+					<header class="section-sub-header">
+						<div class="title">
+							<h4 class="h4">추가 옵션</h4>
+						</div>
+					</header>
+					<!--//section-sub-header-->
+
+					<!--hrd006-->
+					<div class="hrd006">
+
+						<!--hrd006__item-->
+						<dl class="hrd006__item align-items-baseline flex-column">
+							<dt class="flex-basis-auto mb-2">ZOOM ID</dt>
+							<dd>
+								<div class="hrd003">
+									<div class="selected-chip-list mb-3">
+										<div class="selected-chip-list__item">id (kimprof)​<i class="ms-icon" role="button" aria-label="항목 삭제하기">close_small</i></div>
+										<div class="selected-chip-list__item">user (kimprof)​<i class="ms-icon" role="button" aria-label="항목 삭제하기">close_small</i></div>
+									</div>
+
+									<div class="chip-list">
+										<label class="chip-outline"><input type="checkbox" name="b1" checked="">id (kimprof)</label>
+										<label class="chip-outline"><input type="checkbox" name="b1">한글입숨1 (kimprof)1</label>
+										<label class="chip-outline"><input type="checkbox" name="b1" checked="">user (kimprof)​</label>
+										<label class="chip-outline"><input type="checkbox" name="b1">한글 (kimprof)</label>
+										<label class="chip-outline"><input type="checkbox" name="b1">한 (kimprof)</label>
+									</div>
+								</div>
+							</dd>
+						</dl>
+						<!--//hrd006__item-->
+
+						<!--hrd006__item-->
+						<dl class="hrd006__item align-items-baseline flex-column">
+							<dt class="flex-basis-auto mb-2">강의실 옵션</dt>
+							<dd>
+								<div class="d-flex gap-2 flex-wrap">
+									<label class="chip-outline"><input type="checkbox" name="f1"><span>공지사항</span></label>
+									<label class="chip-outline"><input type="checkbox" name="f1"><span>자료실</span></label>
+									<label class="chip-outline"><input type="checkbox" name="f1"><span>Q&A</span></label>
+									<label class="chip-outline"><input type="checkbox" name="f1"><span>시험</span></label>
+									<label class="chip-outline"><input type="checkbox" name="f1"><span>과제</span></label>
+									<label class="chip-outline"><input type="checkbox" name="f1"><span>토론</span></label>
+								</div>
+								<small class="hint-msg d-block mt-2"><i class="ms-icon" aria-hidden="true">info</i>학습자 강의실에서 사용될 기능을 선택해 주세요.​</small>
+								
+							</dd>
+						</dl>
+						<!--//hrd006__item-->
+
+					</div>
+					<!--//hrd006-->
+
+
+				</div>
+			</div>
+			<!--//hrd004-->
+
+
+
+			<!--section 하단 버튼 목록-->
+			<div class="bottom-buttons-wrap">
+				<button type="button" class="btn default">이전</button>
+				<button type="button" class="btn default ml-auto">취소</button>
+				<button type="button" class="btn default">다음</button>
+				<button type="button" class="btn primary">저장</button>
+			</div>
+			<!--//section 하단 버튼 목록-->			
+		</section>
+		<!--//섹션-->
+
+
+
+
+		<!--//===CONTENT===-->
+	</div>
+	<!--//common__content-wrap-->
+
+</main>
+<!--//공통main-->
+
+
+</body>
+</html>
