@@ -95,7 +95,7 @@ function setCssStyle(){
 	padding: 5px 11px;
 	line-height: 1;
 	background-color: hsl(207 16% 68% / .3);
-	border-radius: 1em 4px 1em 4px;
+	border-radius: 4px;
 	font-size: 13px;
 	color: #1f2c3e;
 	font-weight: 300;
@@ -118,7 +118,7 @@ function setCssStyle(){
 	background-image: url(/assets/img/common2/background_noise.png); */
 
 
-	border: 1px dotted var(--item-border-color);
+	border: 1px solid var(--item-border-color);
 	color: rgb(22, 30, 41);
 	background-color: hsl(200 6% 50% / .03);
 
@@ -498,6 +498,7 @@ const MarkUp = {
 	}
 
 }
+
 
 
 
