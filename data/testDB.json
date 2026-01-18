@@ -72,50 +72,8 @@
 			"webUrl": "bmh1750777200021/preview/after.png"
 		}
 	},
-    "mainimage": [
-      {
-        "alt": "",
-        "name": "아이디-비밀번호찾기.png",
-        "size": 2309812,
-        "type": "image/png",
-        "lastModified": 1743958251529,
-        "webUrl": "bmh1750777200021/preview/아이디-비밀번호찾기.png"
-      }
-    ],
-    "subimage": [
-      {
-        "alt": "",
-        "name": "전체공지사항.png",
-        "size": 158968,
-        "type": "image/png",
-        "lastModified": 1743958251496,
-        "webUrl": "bmh1750777200021/preview/전체공지사항.png"
-      },
-      {
-        "alt": "",
-        "name": "메인페이지.png",
-        "size": 244817,
-        "type": "image/png",
-        "lastModified": 1743958251501,
-        "webUrl": "bmh1750777200021/preview/메인페이지.png"
-      },
-      {
-        "alt": "",
-        "name": "게시글 상세보기-공통.png",
-        "size": 235063,
-        "type": "image/png",
-        "lastModified": 1743958251503,
-        "webUrl": "bmh1750777200021/preview/게시글 상세보기-공통.png"
-      },
-      {
-        "alt": "",
-        "name": "수강신청 & 확인.png",
-        "size": 215395,
-        "type": "image/png",
-        "lastModified": 1743958251504,
-        "webUrl": "bmh1750777200021/preview/수강신청 & 확인.png"
-      }
-    ],
+    "mainimage": [],
+    "subimage": [],
     "sampleName": "ssu",
     "samplePage": [
       {
