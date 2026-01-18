@@ -472,7 +472,7 @@ ${ item.tools ? `<div class="tool-name-list">
 
 					${(item.mainimage.length + item.subimage.length) > 0 ? `<button type="button" class="btn" data-action="modal" data-ui-util="zoomIn">${ICONSET.zoomIn}크게보기</button>` : ''}
 
-					
+					${item.externalLink.outlink ? `<a href="${item.externalLink.outlink}" target="_blank" class="btn">${ICONSET.outlink}홈페이지</a>` : ''}
 					${ item.externalLink.github ? `<a href="${item.externalLink.github}" target="_blank" class="btn">${ICONSET.github}소스보기</a>` : '' }
 
 					${ item.samplePage.length ? `<button type="button" class="btn" data-action="modal"  data-ui-util="pagePreView">${ICONSET.mockup}목업</button>` : '' }
@@ -493,6 +493,7 @@ ${ item.tools ? `<div class="tool-name-list">
 
 
 }
+
 
 
 
