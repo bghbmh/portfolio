@@ -187,7 +187,7 @@ const cssText = `
 }
 .extraInfo-wrap > .info > dd,
 .extraInfo-wrap > .info > dt{ margin: 0; padding: 0 }
-.extraInfo-wrap > .info > dt{ color: rgb(62, 72, 118); font-weight: 700; }
+.extraInfo-wrap > .info > dt{ color: rgb(22, 30, 41); font-weight: 700; }
 .extraInfo-wrap > .info > dd{ color: hsla(230, 26%, 22%, 1.00);  font-weight: 700; font-weight: 300; }
 .extraInfo-wrap > .info > dt + dd{ margin-left: 4px }
 
@@ -493,6 +493,7 @@ ${ item.tools ? `<div class="tool-name-list">
 
 
 }
+
 
 
 
