@@ -1,0 +1,286 @@
+// =================================================================
+// 1. SCSS Variables
+// =================================================================
+$table-font-size: 15px;
+$table-font-color: hsl(198, 100%, 9%);
+$table-th-bg: #F4F6F7;
+$table-td-line-color: hsl(192, 10%, 90%);
+$table-border-bottom-color: hsl(0, 0%, 91%);
+$table-top-line-color: $table-border-bottom-color;
+$border-radius-small: 4px;
+
+// 기존 CSS 변수 유지 (전역 변수에 의존하는 값)
+$text-dark-2: var(--text-dark-2);
+$text-dark-3: var(--text-dark-3);
+
+
+// =================================================================
+// 2. Mixins
+// =================================================================
+
+// 2.1. 쿼리 유형 및 너비를 감싸는 믹스인 (Query Wrapper)
+@mixin query-wrapper($width, $type: 'media') {
+    @if $type == 'media' {
+        @media(max-width: $width) { 
+            @content; 
+        }
+    } @else if $type == 'container' {
+        @container tableWrap (max-width: $width) { 
+            @content; 
+        }
+    } @else {
+        @media(max-width: $width) { 
+            @content; 
+        }
+    }
+}
+
+// 2.2. 테이블 기본 구조 스타일 (공통 스타일)
+@mixin table-base-style {
+    table-layout: fixed;
+    width: 100%;
+    font-size: $table-font-size;
+
+    tr > * {
+        padding: 4px 8px;
+    }
+
+    thead tr > * {
+        font-size: $table-font-size;
+        font-weight: 600;
+        color: $table-font-color;
+        background-color: $table-th-bg;
+    }
+
+    tbody {
+        tr {
+            th {
+                background-color: $table-th-bg;
+                border-bottom: 1px solid #fff;
+            }
+            td {
+                color: $table-font-color;
+                padding: calc(1em + 2px) 8px;
+                border-bottom: 1px solid $table-td-line-color;
+            }
+        }
+    }
+
+    a {
+        &.title {
+            display: inline-block;
+            vertical-align: middle;
+            max-width: 90%;
+            .comment + & { max-width: 80%; }
+        }
+    }
+
+    .comment {
+        color: $text-dark-2;
+    }
+}
+
+// 2.3. 반응형 테이블 기본 스타일 (1024px 이하)
+@mixin responsive-table-base($label-width: 6em, $query-type: 'media') {
+    @include query-wrapper(1024px, $query-type) {
+        
+        colgroup, thead { display: none; }
+        &, tbody { display: block; width: 100%; max-width: 100%; }
+
+        border-top: 1px solid $table-top-line-color;
+
+        tr {
+            position: relative;
+            display: flex; 
+            flex-wrap: wrap; 
+            width: 100%;
+            border-bottom: 1px solid $table-td-line-color;
+
+            &:has(.check) { padding-left: 24px; }
+            .check {
+                position: absolute;
+                left: 0; top: 0;
+                padding-left: 0; padding-right: 0;
+                border: 0;
+                padding-top: calc(1em + 8px); 
+            }
+            
+            & > *:not(.check) {
+                flex: 0 1 33%; // type2의 기본 flex-basis
+                display: block;
+                width: 1px;
+                margin-bottom: -1px;
+                border-style: dotted;
+                
+                --plw : #{$label-width};
+                padding-left: var(--plw);
+
+                &[data-th]:before {
+                    content: attr(data-th);
+                    position: absolute;
+                    display: inline-block;
+                    font-weight: 700;
+                    width: var(--plw);
+                    padding: 0 8px;
+                    transform: translateX(-100%);
+                    box-sizing: border-box;
+                }
+            }
+        }
+        @content; // 추가적인 1024px 이하 스타일을 위한 컨텐츠 영역
+    }
+}
+
+// 2.4. 반응형 테이블 Collapse/Mobile 스타일 (768px 이하)
+@mixin responsive-table-collapse($query-type: 'media') {
+    @include query-wrapper(768px, $query-type) {
+        tr {
+            padding: 1em 0;
+            &:has([data-ui-action="collapse"]) { padding-bottom: 36px; }
+
+            & > *:not(.check) {
+                flex: 1 1 100%;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                border-bottom-color: $table-border-bottom-color;
+
+                &:last-of-type { border-bottom-color: transparent; }
+            }
+
+            [data-ui-action="collapse"] {
+                position: absolute;
+                display: inline-flex;
+                left: 0; bottom: 0;
+                width: 100%;
+                justify-content: center;
+                padding: 6px;
+                color: $text-dark-3;
+
+                &:after { content: attr(data-off-label); }
+                &.expanded:after { content: attr(data-on-label); }
+                &.expanded i { transform: rotate(180deg); }
+            }
+
+            & > *:has([data-ui-action="collapse"]) ~ * { display: none; }
+            & > *:has([data-ui-action="collapse"].expanded) ~ * { display: block; }
+        }
+        @content; // 추가적인 768px 이하 스타일을 위한 컨텐츠 영역
+    }
+}
+
+
+// =================================================================
+// 3. Global Styles (Reset & Buttons)
+// =================================================================
+thead, tbody, tfoot, tr, td, th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+
+.table-wrap{
+    &:has(.no-content){ margin-bottom: 1em }
+    // type2에 필요한 overflow 설정
+    &:has(>[class*="min-width-"]),
+    &[class*="max-height-"]{
+        overflow: auto;
+        -webkit-overflow-scrolling: touch; 
+    }
+}
+
+// Buttons in Table
+table {
+    .btn, .btn2 {
+        &.primary, &.secondary, &.default, &.gray {
+            min-height: auto !important;
+            font-size: calc(1em - 1px) !important;
+            margin: 2px;
+            white-space: nowrap;
+        }
+    }
+    .btn {
+        &.primary, &.secondary, &.default, &.gray {
+            padding: .3em .5em !important;
+            --border-radius-6px: #{$border-radius-small};
+        }
+    }
+    .btn2 {
+        &.primary, &.secondary, &.default, &.gray {
+            min-width: auto !important;
+        }
+    }
+}
+
+// =================================================================
+// 4. Table Type 1 (기본형)
+// =================================================================
+.table-type1 {
+    @include table-base-style;
+
+    &:not(:has(thead)){ border-top: 1px solid $table-top-line-color }
+    tr .desktop-elem{ display: table-cell !important; } // type2와 동일한 코드
+}
+
+// =================================================================
+// 5. Table Type 2 (Container Query 반응형)
+// =================================================================
+.table-type2 {
+    @include table-base-style;
+    font-weight: 400; // base-style의 td-font-weight를 덮어씀
+    word-break: break-all; // type2에만 있는 속성
+
+    tbody tr {
+        th { border-bottom: 1px solid #fff; }
+        &:nth-last-of-type(1) th { border-bottom-color: $table-th-bg !important; }
+    }
+    
+    [data-ui-action="collapse"]{ display: none; }
+    tr .desktop-elem{ display: table-cell !important; }
+
+    // 1024px 이하 스타일 (Container Query)
+    @include responsive-table-base($label-width: 7em, $query-type: 'container') {
+        tr {
+            & > *:not(.check) { flex: 0 1 33%; } // 1024px에서 flex-basis 33% 설정
+            &:has(thead) > *:not(.check) { min-height: calc(calc( ( 1em + 2px ) + ( 1em + 2px ) + 1em * 1.5)); }
+
+            &:not(:has(thead)) {
+                tr > *:not(.check) { padding: 8px; flex:1; }
+                tr > th { flex:0 1 15% !important; border-bottom: 1px solid hsl(0, 0%, 100%) !important; }
+                tr > *:not(.check)[data-th]:before { display: none; }
+            }
+        }
+        tbody tr > *:has(.no-content) { padding: 8px; flex-grow: 1; }
+    }
+    
+    // 900px 이하 스타일 (Container Query)
+    @container tableWrap (max-width: 900px) {
+        tr > *:not(.check) { border-bottom-color: $table-border-bottom-color; flex-basis: 50%; }
+        &:not(:has(thead)) tr > th:not(.check) { border-bottom: 1px solid #fff; }
+    }
+
+    // 768px 이하 스타일 (Container Query)
+    @include responsive-table-collapse($query-type: 'container') {
+        &:has(thead) tr > *:not(.check) { min-height: calc(1em + 8px + 8px * 1.5); }
+        
+        &:not(:has(thead)) {
+            tr {
+                padding: 0; border: 0;
+                & > *:not(.check) { padding: 0px 4px; flex-basis: 100%; }
+
+                & > th:not(.check) {
+                    flex-basis: 9em !important;
+                    padding: 6px 8px;
+                    border-bottom: 1px solid #fff;
+                    &:nth-last-of-child(1) { border-bottom: 1px solid $table-th-bg; }
+
+                    +td {
+                        padding: 6px 8px;
+                        flex-basis: calc(100% - 9em);
+                        flex-grow: 0;
+                        border-bottom: 1px solid $table-border-bottom-color;
+                    }
+                }
+            }
+        }
+    }
+}

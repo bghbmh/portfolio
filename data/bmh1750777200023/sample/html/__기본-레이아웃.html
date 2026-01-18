@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="date=no">
+	<meta name="format-detection" content="address=no">
+	<meta name="format-detection" content="email=no">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+
+	<meta name="author" content="hrd" />
+	<meta name="description" content="hrd" />
+
+	<!--파비콘-->
+	<link rel="shortcut icon" href="../assets/img/favicon/favicon.ico">
+	<!--//파비콘-->
+	
+	<!--기본_css-->
+	<link rel="stylesheet" type="text/css" href="../assets/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/css/common.css" />
+	<!--//기본_css-->
+
+	<!--기본_scripts-->
+	<script src="../assets/jquery-ui-1.13.0/external/jquery/jquery.js"></script>
+	<script src="../assets/jquery-ui-1.13.0/jquery-ui.js"></script>
+	<script src="../assets/js/common-ui.js"></script>
+	<!--//기본_scripts -->
+
+	<title>기본-레이아웃</title>
+
+</head>
+<body>
+
+<!--공통헤더 및 skipNav-->
+<div id="skipNav">
+	<div class="blind">바로가기 메뉴</div>
+    <ul>
+        <li><a href="#loginout" title="로그인, 로그아웃 위치로 바로가기">로그인, 로그아웃 바로가기</a></li>
+        <li><a href="#common-gnb" title="주메뉴 위치로 바로가기">주메뉴 바로가기</a></li>
+		<li><a href="#common-lnb" title="주메뉴 위치로 바로가기">서브메뉴 바로가기</a></li>
+        <li><a href="#container" title="본문 위치로 바로가기">본문 바로가기</a></li>
+    </ul>
+</div>
+<header class="common">
+	<button type="button" class="btn ctrl-nav" data-hrd-target=".common-gnb" aria-label="모바일 메뉴 전체 펼쳐보기 버튼"><i class="ms-icon" aria-hidden="true">dehaze</i></button>
+
+	<div class="logo">
+		<h1><a href="#0"><img src="../assets/img/common/brand.svg" alt="로고"></a></h1>
+	</div>
+
+	<!--공통gnb-->	
+	<nav id="common-gnb" class="common-gnb">
+
+		<div class="option-control-wrap">
+			<!--버튼 클릭시 <nav id="common-gnb" ~> 태그에 expanded 클래스가 토글돼야함 -->
+			<button type="button" class="btn border-0 btn-close ctrl-nav" data-hrd-target=".common-gnb">
+				<i class="ms-icon" aria-hidden="true">close</i>
+				<span class="ctrl-nav__title">모바일 메뉴 열고 닫는 버튼</span>
+			</button>
+		</div>
+
+		<div class="common-gnb__list">
+
+			<div class="gnb-item gnb-home">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">home</i>
+					<span>대시보드</span>
+				</a>
+			</div>
+
+			<div class="gnb-item "> 
+				<a href="https://www.naver.com/" class="current"> <!-- 현재페이지인 경우 current 클래스 추가 -->
+					<i class="ms-icon" aria-hidden="true">folder_data</i> <!--데스크탑에서는 안보임-->
+					<span>과정관리</span>
+				</a>
+
+				<!--2d 이상 메뉴_데스크탑에서 안보임-->
+				<ul>
+					<li>
+						<a href="#0">
+							<span>문제은행 관리__2d</span>
+						</a>
+					</li>
+					<li>
+						<a href="#0" class="">  <!-- 현재페이지일 때 a 태그에 current 클래스 추가 -->
+							<span>섦문은행 관리__2d</span>
+						</a>
+						<ul>
+							<li><a href="#0"  class="current"><span>ox__3d</span></a></li>   <!-- 현재페이지일 때 a 태그에 current 클래스 추가 -->
+							<li><a href="#0"><span>선다형__3d</span></a></li>
+						</ul>
+					</li>
+				</ul>
+				<!--//2d 이상 메뉴_데스크탑에서 안보임-->
+			</div>
+
+			<div class="gnb-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">user_attributes</i>
+					<span>회원관리</span>
+				</a>
+			</div>
+
+			<div class="gnb-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">payments</i>
+					<span>결제관리</span>
+				</a>
+			</div><div class="gnb-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">flowsheet</i>
+					<span>게시판관리</span>
+				</a>
+			</div><div class="gnb-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">shape_line</i>
+					<span>통계/모니터링</span>
+				</a>
+			</div>
+			<div class="gnb-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">inbox_customize</i>
+					<span>홈페이지관리</span>
+				</a>
+			</div>
+			
+			
+		</div>
+
+	</nav>
+	<!--//공통gnb-->
+
+	<!--util-->
+	<div class="util">
+		<div class="util-item  dropdown">
+			<button type="button" class="btn user dropdown-toggle" id="testH1">
+				<!-- <img src="../assets/img/common/sample-user.jpg" alt="사용자 사진"> -->
+				<img src="../assets/img/common/icon-svg-person.svg" alt="등록한 사진이 없습니다">
+			</button>
+			<div class="dropdown-menu  "> <!-- show 클래스가 붙으면 메뉴가 보임 -->
+				<a class="dropdown-item" href="#">드롭 다운1</a>
+				<a class="dropdown-item" href="#">드롭 다운2</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		document.querySelector("#testH1").addEventListener("click", e => e.currentTarget.nextElementSibling.classList.toggle("show") )
+	</script>
+	<!--util-->
+
+</header>
+<!--//공통헤더 및 skipNav-->
+
+<!--공통main-->
+<main class="common">
+
+	<!--공통lnb-->
+	<aside id="common-lnb" class="common-lnb expanded"> <!-- expanded 클래스를 삭제하면 메뉴가 접힘 -->
+
+		<div class="option-control-wrap">
+			<!--버튼 클릭시 <aside id="gnb" ~> 태그에 expanded 클래스가 토글돼야함 -->
+			<button type="button" class="btn border-0 btn-close ctrl-nav" data-hrd-target=".common-lnb">
+				<i class="icon-png-ctrl-collapse" aria-hidden="true"></i>
+				<span class="ctrl-nav__title">메뉴접기</span>
+			</button>
+		</div>
+
+		<!--lnb 메뉴-->
+		<nav class="nav-lnb">
+
+			<div class="nav-item">
+				<a href="#0">
+					<i class="ms-icon" aria-hidden="true">edit_document</i>
+					<span>문제은행 관리__2d</span>
+				</a>
+			</div>
+			<div class="nav-item">
+				<a href="#0" class="">  <!-- 현재페이지일 때 a 태그에 current 클래스 추가 -->
+					<i class="ms-icon" aria-hidden="true">description</i>
+					<span>섦문은행 관리__2d</span>
+				</a>
+				<ul>
+					<li><a href="#0"  class="current"><span>ox__3d</span></a></li>   <!-- 현재페이지일 때 a 태그에 current 클래스 추가 -->
+					<li><a href="#0"><span>선다형__3d</span></a></li>
+				</ul>
+			</div>
+
+			<div class="nav-item">
+				<a href="#0" class="">
+					<i class="ms-icon" aria-hidden="true">description</i>
+					<span>메뉴__2d</span>
+				</a>
+				<ul>
+					<li><a href="#0"  class=""><span>m1__3d</span></a></li>   <!-- 현재페이지일 때 a 태그에 current 클래스 추가 -->
+					<li><a href="#0"><span>m2__3d</span></a></li>
+				</ul>
+			</div>
+		</nav>
+		<!--//lnb 메뉴-->
+
+	</aside>
+	<!--//공통lnb-->
+
+	<!--common__content-wrap-->
+	<div id="common-container" class="common-container">
+
+		<!--페이지 정보-->
+		<div class="page-info">
+			<nav class="breadcrumb" aria-label="breadcrumb">
+				<ol>
+					<li class="breadcrumb-item"><i class="ms-icon fill mr-1" aria-hidden="true">home</i> 홈</li>
+					<li class="breadcrumb-item"><i class="ms-icon">folder</i>메뉴1__1depth</li>
+					<li class="breadcrumb-item current">메뉴1-1</li>
+				</ol>
+			</nav>
+
+			<!--//페이지 제목-->
+			<h2 class="page-title">과정관리</h2>
+			<!--//페이지 제목-->
+		</div>
+		<!--//페이지 정보-->
+
+		<!--===CONTENT====-->
+
+
+		<!--hrd005-->
+		<aside class="hrd005 temp1">
+			<!--section-sub-header-->
+			<header class="section-sub-header pt-0">
+				<div class="title">
+					<h4 class="h4">개설단계</h4>
+				</div>
+			</header>
+			<!--//section-sub-header-->		
+
+			<ol class="process-step">
+				<li>
+					<button type="button" class="btn step end">
+						<i>01</i>
+						<span>기본정보</span>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn step active">
+						<i>02</i>
+						<span>개설정보</span>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn step">
+						<i>03</i>
+						<span>커리큘럼</span>
+					</button>
+				</li>
+			</ol>
+
+			<hr class="solid ">
+
+			<!--section-sub-header-->
+			<header class="section-sub-header pt-0">
+				<div class="title">
+					<h4 class="h4">과정운영</h4>
+				</div>
+			</header>
+			<!--//section-sub-header-->	
+
+			<ol class="process-step desktop-elem">
+				<li>
+					<button type="button" class="btn step end">
+						<i>01</i>
+						<span>수강생 관리</span>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn step active">
+						<i>02</i>
+						<span>시험관리</span>
+					</button>
+
+					<ol>
+						<li>
+							<button type="button" class="btn step end">
+								<span>시험정보</span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="btn step active">
+								<span>시험문제</span>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="btn step ">
+								<span>성적조회</span>
+							</button>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<button type="button" class="btn step">
+						<i>03</i>
+						<span>평가 관리</span>
+					</button>
+				</li>
+			</ol>
+
+		</aside>
+		<!--//hrd005-->
+
+
+		<!--섹션-->
+		<section class="section"  >
+			<!--섹션용 헤더-->
+			<header class="section-header">
+				<div class="title">
+					<h3 class="h3">개설정보</h3>
+				</div>
+
+				<!--하단 선이 필요할 때-->
+				<hr class="solid width-100per m-0">
+			</header>
+			<!--//섹션용 헤더-->
+
+			<!--section 상단 옵션-->
+			<div class="top-option-contents">
+				<div class="text-info-list">
+					<div class="text-info-list__item">항목 총 개수 <b>123</b> 단위</div>
+				</div>
+				
+				<button type="button" class="btn default ml-auto">11버튼</button>
+
+				<div class="control-wrap">	
+					
+					<div class="buttons-wrap">
+						<button type="button" class="btn primary">버튼</button>
+						<button type="button" class="btn default">과정분류 관리</button>
+						<button type="button" class="btn default">과정분류 관리</button>
+						<button type="button" class="btn default">과정분류 관리</button>
+					</div>
+					
+				</div>
+			</div>
+			<!--//section 상단 옵션-->
+
+			
+
+
+			<!--section 하단 버튼 목록-->
+			<div class="bottom-buttons-wrap">
+				<button type="button" class="btn default">목록 default</button>
+				<button type="button" class="btn primary ml-auto">버튼 primary</button>
+			</div>
+			<!--//section 하단 버튼 목록-->			
+		</section>
+		<!--//섹션-->
+
+
+			
+
+		<!--//===CONTENT===-->
+	</div>
+	<!--//common__content-wrap-->
+
+</main>
+<!--//공통main-->
+
+
+</body>
+</html>

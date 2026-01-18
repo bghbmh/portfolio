@@ -1,0 +1,469 @@
+@charset "UTF-8";
+/* CSS Document - layout.scss ㅋㅌㅊ */
+body {
+  --common-header-height: 72px;
+}
+
+main.common {
+  display: flex;
+  padding-bottom: 100px;
+}
+
+.common-container {
+  flex: 1;
+  padding: 0 40px;
+}
+
+header.common {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: var(--common-header-height);
+  padding: 0 40px 0 24px;
+  border-bottom: solid 1px #dedede;
+  background-color: #fff;
+  z-index: 10;
+}
+header.common > .ctrl-nav {
+  display: none;
+}
+header.common .logo,
+header.common .util {
+  flex: 0 1 200px;
+}
+header.common .logo *,
+header.common .util * {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  display: block;
+}
+header.common .common-gnb {
+  display: inline-flex;
+  height: 100%;
+}
+header.common .common-gnb .option-control-wrap {
+  display: none;
+}
+header.common .common-gnb__list {
+  display: inline-flex;
+  height: 100%;
+  column-gap: 1em;
+}
+header.common .common-gnb__list .gnb-item {
+  height: 100%;
+  padding: 0 0.5em;
+}
+header.common .common-gnb__list .gnb-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: currentColor;
+  text-decoration: none;
+  --line-width: 4px;
+  padding-top: var(--line-width, 4px);
+  border-bottom: var(--line-width, 4px) solid transparent;
+}
+header.common .common-gnb__list .gnb-item a:hover {
+  border-bottom-color: var(--primary-100);
+}
+header.common .common-gnb__list .gnb-item a.current {
+  color: var(--primary-700);
+  border-bottom-color: var(--primary-500);
+}
+header.common .common-gnb__list .gnb-item a i {
+  display: none;
+}
+header.common .common-gnb__list .gnb-item ul {
+  display: none;
+}
+header.common .util {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8em;
+}
+header.common .util .util-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 1 2em;
+  justify-content: center;
+}
+header.common .util .user {
+  width: 36px;
+  aspect-ratio: 1;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+header.common .util .user::after {
+  display: none;
+}
+header.common .util .user img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100em;
+  background-color: #606060;
+}
+header.common .util .user img[src*=".svg"] {
+  padding: 5px;
+}
+header.common .util .user + .dropdown-menu {
+  --hrd-dropdown-zindex:7;
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+}
+header.common .util .user + .dropdown-menu.show {
+  display: block;
+}
+header.common .util .user + .dropdown-menu .dropdown-item {
+  padding: 1em;
+}
+header.common .util .user + .dropdown-menu .dropdown-item + .dropdown-item {
+  border-top: 1px solid var(--border-color, #eee);
+}
+
+@media (max-width: 1024px) {
+  header.common {
+    padding: 0 20px 0 20px;
+    z-index: 10;
+  }
+  header.common > .ctrl-nav {
+    display: flex;
+    width: 36px;
+    aspect-ratio: 1;
+    justify-content: center;
+    align-items: center;
+  }
+  header.common .common-gnb {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 340px;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: all 0.3s;
+    z-index: 10;
+    box-shadow: 4px 0 2em hsla(0, 0%, 0%, 0.2);
+    --padding-left-width: 40px;
+  }
+  header.common .common-gnb .option-control-wrap {
+    flex: none;
+    display: flex;
+    padding: 1em;
+  }
+  header.common .common-gnb .option-control-wrap .ctrl-nav {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    justify-content: center;
+  }
+  header.common .common-gnb .option-control-wrap .ctrl-nav__title {
+    display: none;
+  }
+  header.common .common-gnb__list {
+    display: block;
+    width: 100%;
+    height: 1px;
+    flex: 1;
+    padding-bottom: 60px;
+    overflow: auto;
+  }
+  header.common .common-gnb__list .gnb-item {
+    height: auto;
+    padding: 0 0.5em;
+  }
+  header.common .common-gnb__list .gnb-item a {
+    --line-width: 8px;
+    justify-content: left;
+    gap: 0.5em;
+    border-color: transparent !important;
+    height: auto;
+    color: currentColor;
+    text-decoration: none;
+  }
+  header.common .common-gnb__list .gnb-item a:hover {
+    border-bottom-color: var(--primary-100);
+  }
+  header.common .common-gnb__list .gnb-item a.current {
+    color: var(--primary-700);
+    border-bottom-color: var(--primary-500);
+  }
+  header.common .common-gnb__list .gnb-item a i {
+    display: inline-flex;
+    width: var(--padding-left-width, 40px);
+    aspect-ratio: 1;
+    background-color: #fff;
+    border-radius: 100em;
+  }
+  header.common .common-gnb__list .gnb-item a.current {
+    font-weight: 600;
+  }
+  header.common .common-gnb__list .gnb-item ul {
+    display: block;
+    padding-left: calc(var(--padding-left-width, 40px) + 0.5em);
+  }
+  header.common .common-gnb__list .gnb-item ul ul {
+    padding-left: calc(var(--padding-left-width, 40px) / 2);
+    background-color: var(--primary-50);
+  }
+  header.common .common-gnb__list .gnb-item:has(.current) > a {
+    color: var(--primary-700);
+  }
+  header.common .common-gnb__list .gnb-item:has(.current) > a i {
+    background-color: var(--primary-500);
+    color: #fff;
+  }
+  header.common .common-gnb.expanded {
+    transform: translateX(0%);
+  }
+  header.common .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  header.common .logo img {
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  header.common {
+    padding: 0 16px 0 16px;
+  }
+}
+aside.common-lnb {
+  --lnb-width: 80px;
+  --lnb-top: var(--common-header-height);
+  flex: 0 1 auto;
+  position: sticky;
+  top: var(--lnb-top);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--lnb-width);
+  height: calc(100vh - var(--lnb-top));
+  padding: 8px 12px 32px 12px;
+  background-color: #fff;
+  transition: all 0.3s;
+  z-index: 4;
+}
+aside.common-lnb .option-control-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px;
+}
+aside.common-lnb .ctrl-nav {
+  justify-content: center;
+  white-space: nowrap;
+  color: var(--dark-900);
+  line-height: 1;
+  gap: 4px;
+  width: auto;
+  min-width: 3em;
+  min-height: 2em;
+  flex: 0 1 auto;
+  background: none;
+}
+aside.common-lnb .ctrl-nav__title {
+  display: inline-block;
+  max-width: 0px;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+aside.common-lnb .ctrl-nav .icon-png-ctrl-collapse {
+  --ic-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 18 18' fill='none'%3E%3Cpath d='M7.37575 8.8744L17 8.8744M17 8.8744L12.1879 4.06228M17 8.8744L12.1879 13.6865' stroke='%2367777E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='0.213867' y='2' width='5.59956' height='14.0645' rx='1' fill='%2367777E'/%3E%3C/svg%3E");
+}
+aside.common-lnb .ctrl-nav .icon-png-ctrl-collapse::before {
+  content: "";
+  display: block;
+  width: 1.2em;
+  height: 1em;
+  background-image: var(--ic-img);
+  background-repeat: no-repeat;
+}
+aside.common-lnb .nav-lnb {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 1px;
+  min-height: 80%;
+  gap: 4px;
+  padding: 0 0px 4em 0px;
+  padding-left: 0px;
+  scollbar-color: gray darkgray;
+  scollbar-width: thin;
+  scrollbar-width: none;
+}
+aside.common-lnb .nav-lnb a {
+  position: relative;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0em;
+  padding: 1em;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--text-dark-0);
+  border-radius: var(--border-radius-4px);
+  word-break: keep-all;
+  overflow: visible;
+  line-height: 1.2em;
+  max-height: 3.6em;
+  text-decoration: none;
+}
+aside.common-lnb .nav-lnb a > span {
+  flex: 1;
+  max-width: calc(0% - 0px);
+  white-space: nowrap;
+  overflow: hidden;
+}
+aside.common-lnb .nav-lnb a:hover {
+  color: var(--primary-700);
+}
+aside.common-lnb .nav-lnb a.current {
+  background-color: var(--primary-50);
+  color: var(--primary-700);
+}
+aside.common-lnb .nav-lnb .nav-item {
+  position: relative;
+}
+aside.common-lnb .nav-lnb .nav-item > ul {
+  display: none;
+}
+aside.common-lnb .nav-lnb .nav-item > ul li > a {
+  padding-left: calc(2em + 6px + 1em);
+}
+aside.common-lnb:not(.expanded) .nav-lnb {
+  overflow: visible;
+}
+aside.common-lnb:not(.expanded) .nav-lnb a {
+  max-height: var(--hh);
+}
+aside.common-lnb:not(.expanded) .nav-lnb a:hover span {
+  position: absolute;
+  display: block;
+  min-width: 3em;
+  max-width: 10em;
+  max-height: 40px;
+  border-radius: 3px;
+  padding: 4px;
+  left: 100%;
+  top: 50%;
+  background-color: hsla(198.3, 100%, 9%, 0.9);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  word-break: break-all;
+  text-align: center;
+  color: #fff;
+  transform: translate(-4px, -50%);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.2em;
+  box-shadow: 0px 0px 10px 1px hsla(0, 0%, 0%, 0.2);
+}
+aside.common-lnb:not(.expanded) .nav-lnb .nav-item:has(a.current) > a {
+  background-color: var(--primary-500);
+}
+aside.common-lnb:not(.expanded) .nav-lnb .nav-item:has(a.current) > a .ms-icon {
+  color: #fff;
+}
+aside.common-lnb.expanded {
+  --lnb-width: 260px;
+}
+aside.common-lnb.expanded .ctrl-nav i {
+  transform: rotate(180deg);
+}
+aside.common-lnb.expanded .ctrl-nav__title {
+  max-width: 100%;
+}
+aside.common-lnb.expanded .nav-lnb a {
+  gap: 1em;
+}
+aside.common-lnb.expanded .nav-lnb a > span {
+  max-width: calc(100% - 0px);
+}
+aside.common-lnb.expanded .nav-lnb .nav-item > ul {
+  display: block;
+}
+aside.common-lnb.expanded .nav-lnb .nav-item > ul > li > a:has(+ ul .current) {
+  background-color: transparent;
+}
+aside.common-lnb.expanded .nav-lnb .nav-item > ul > li > a:has(+ ul .current) svg {
+  fill: currentColor;
+}
+
+section.section {
+  padding: 16px 32px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+section.section ~ section.section {
+  margin-top: 16px;
+}
+
+@media (max-width: 1024px) {
+  section.section {
+    border-radius: 0px;
+  }
+}
+@media (max-width: 768px) {
+  section.section {
+    padding: 12px 16px;
+  }
+  section.section ~ section.section {
+    margin-top: 12px;
+  }
+}
+@media (max-width: 1280px) {
+  aside.common-lnb {
+    position: fixed;
+    z-index: 6;
+    box-shadow: 2px 8px 20px hsla(0, 0%, 0%, 0);
+  }
+  aside.common-lnb.expanded {
+    box-shadow: 2px 8px 20px hsla(0, 0%, 0%, 0.2);
+  }
+  .nav-lnb {
+    padding: 0 0px 160px 0px;
+  }
+  .common-container {
+    padding-left: 120px;
+  }
+  body:not(:has(aside.common-lnb)) .common-container {
+    padding-left: 40px;
+  }
+}
+@media (max-width: 1024px) {
+  aside.common-lnb {
+    display: none;
+  }
+  .common-container {
+    padding: 0;
+  }
+  body:not(:has(aside.common-lnb)) .common-container {
+    padding-left: 0px;
+  }
+}/*# sourceMappingURL=layout.css.map */

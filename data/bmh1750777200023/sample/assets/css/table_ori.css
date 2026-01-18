@@ -1,0 +1,265 @@
+thead, tbody, tfoot, tr, td, th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+.table-wrap:has(.no-content) {
+  margin-bottom: 1em;
+}
+.table-wrap:has(> [class*=min-width-]), .table-wrap[class*=max-height-] {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table .btn.primary, table .btn.secondary, table .btn.default, table .btn.gray, table .btn2.primary, table .btn2.secondary, table .btn2.default, table .btn2.gray {
+  min-height: auto !important;
+  font-size: calc(1em - 1px) !important;
+  margin: 2px;
+  white-space: nowrap;
+}
+table .btn.primary, table .btn.secondary, table .btn.default, table .btn.gray {
+  padding: 0.3em 0.5em !important;
+  --border-radius-6px: 4px;
+}
+table .btn2.primary, table .btn2.secondary, table .btn2.default, table .btn2.gray {
+  min-width: auto !important;
+}
+
+.table-type1 {
+  table-layout: fixed;
+  width: 100%;
+  font-size: 15px;
+}
+.table-type1 tr > * {
+  padding: 4px 8px;
+}
+.table-type1 thead tr > * {
+  font-size: 15px;
+  font-weight: 600;
+  color: hsl(198, 100%, 9%);
+  background-color: #F4F6F7;
+}
+.table-type1 tbody tr th {
+  background-color: #F4F6F7;
+  border-bottom: 1px solid #fff;
+}
+.table-type1 tbody tr td {
+  color: hsl(198, 100%, 9%);
+  padding: calc(1em + 2px) 8px;
+  border-bottom: 1px solid hsl(192, 10%, 90%);
+}
+.table-type1 a.title {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 90%;
+}
+.comment + .table-type1 a.title {
+  max-width: 80%;
+}
+.table-type1 .comment {
+  color: var(--text-dark-2);
+}
+.table-type1:not(:has(thead)) {
+  border-top: 1px solid hsl(0, 0%, 91%);
+}
+.table-type1 tr .desktop-elem {
+  display: table-cell !important;
+}
+
+.table-type2 {
+  table-layout: fixed;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 400;
+  word-break: break-all;
+}
+.table-type2 tr > * {
+  padding: 4px 8px;
+}
+.table-type2 thead tr > * {
+  font-size: 15px;
+  font-weight: 600;
+  color: hsl(198, 100%, 9%);
+  background-color: #F4F6F7;
+}
+.table-type2 tbody tr th {
+  background-color: #F4F6F7;
+  border-bottom: 1px solid #fff;
+}
+.table-type2 tbody tr td {
+  color: hsl(198, 100%, 9%);
+  padding: calc(1em + 2px) 8px;
+  border-bottom: 1px solid hsl(192, 10%, 90%);
+}
+.table-type2 a.title {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 90%;
+}
+.comment + .table-type2 a.title {
+  max-width: 80%;
+}
+.table-type2 .comment {
+  color: var(--text-dark-2);
+}
+.table-type2 tbody tr th {
+  border-bottom: 1px solid #fff;
+}
+.table-type2 tbody tr:nth-last-of-type(1) th {
+  border-bottom-color: #F4F6F7 !important;
+}
+.table-type2 [data-ui-action=collapse] {
+  display: none;
+}
+.table-type2 tr .desktop-elem {
+  display: table-cell !important;
+}
+@container tableWrap (max-width: $width) {
+  .table-type2 {
+    border-top: 1px solid hsl(0, 0%, 91%);
+  }
+  .table-type2 colgroup, .table-type2 thead {
+    display: none;
+  }
+  .table-type2, .table-type2 tbody {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+  .table-type2 tr {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 1px solid hsl(192, 10%, 90%);
+  }
+  .table-type2 tr:has(.check) {
+    padding-left: 24px;
+  }
+  .table-type2 tr .check {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border: 0;
+    padding-top: calc(1em + 8px);
+  }
+  .table-type2 tr > *:not(.check) {
+    flex: 0 1 33%;
+    display: block;
+    width: 1px;
+    margin-bottom: -1px;
+    border-style: dotted;
+    --plw: 7em;
+    padding-left: var(--plw);
+  }
+  .table-type2 tr > *:not(.check)[data-th]:before {
+    content: attr(data-th);
+    position: absolute;
+    display: inline-block;
+    font-weight: 700;
+    width: var(--plw);
+    padding: 0 8px;
+    transform: translateX(-100%);
+    box-sizing: border-box;
+  }
+  .table-type2 tr > *:not(.check) {
+    flex: 0 1 33%;
+  }
+  .table-type2 tr:has(thead) > *:not(.check) {
+    min-height: calc(1em + 2px + 1em + 2px + 1.5em);
+  }
+  .table-type2 tr:not(:has(thead)) tr > *:not(.check) {
+    padding: 8px;
+    flex: 1;
+  }
+  .table-type2 tr:not(:has(thead)) tr > th {
+    flex: 0 1 15% !important;
+    border-bottom: 1px solid hsl(0, 0%, 100%) !important;
+  }
+  .table-type2 tr:not(:has(thead)) tr > *:not(.check)[data-th]:before {
+    display: none;
+  }
+  .table-type2 tbody tr > *:has(.no-content) {
+    padding: 8px;
+    flex-grow: 1;
+  }
+}
+@container tableWrap (max-width: 900px) {
+  .table-type2 tr > *:not(.check) {
+    border-bottom-color: hsl(0, 0%, 91%);
+    flex-basis: 50%;
+  }
+  .table-type2:not(:has(thead)) tr > th:not(.check) {
+    border-bottom: 1px solid #fff;
+  }
+}
+@container tableWrap (max-width: $width) {
+  .table-type2 tr {
+    padding: 1em 0;
+  }
+  .table-type2 tr:has([data-ui-action=collapse]) {
+    padding-bottom: 36px;
+  }
+  .table-type2 tr > *:not(.check) {
+    flex: 1 1 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom-color: hsl(0, 0%, 91%);
+  }
+  .table-type2 tr > *:not(.check):last-of-type {
+    border-bottom-color: transparent;
+  }
+  .table-type2 tr [data-ui-action=collapse] {
+    position: absolute;
+    display: inline-flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 6px;
+    color: var(--text-dark-3);
+  }
+  .table-type2 tr [data-ui-action=collapse]:after {
+    content: attr(data-off-label);
+  }
+  .table-type2 tr [data-ui-action=collapse].expanded:after {
+    content: attr(data-on-label);
+  }
+  .table-type2 tr [data-ui-action=collapse].expanded i {
+    transform: rotate(180deg);
+  }
+  .table-type2 tr > *:has([data-ui-action=collapse]) ~ * {
+    display: none;
+  }
+  .table-type2 tr > *:has([data-ui-action=collapse].expanded) ~ * {
+    display: block;
+  }
+  .table-type2:has(thead) tr > *:not(.check) {
+    min-height: calc(1em + 8px + 12px);
+  }
+  .table-type2:not(:has(thead)) tr {
+    padding: 0;
+    border: 0;
+  }
+  .table-type2:not(:has(thead)) tr > *:not(.check) {
+    padding: 0px 4px;
+    flex-basis: 100%;
+  }
+  .table-type2:not(:has(thead)) tr > th:not(.check) {
+    flex-basis: 9em !important;
+    padding: 6px 8px;
+    border-bottom: 1px solid #fff;
+  }
+  .table-type2:not(:has(thead)) tr > th:not(.check):nth-last-of-child(1) {
+    border-bottom: 1px solid #F4F6F7;
+  }
+  .table-type2:not(:has(thead)) tr > th:not(.check) + td {
+    padding: 6px 8px;
+    flex-basis: calc(100% - 9em);
+    flex-grow: 0;
+    border-bottom: 1px solid hsl(0, 0%, 91%);
+  }
+}/*# sourceMappingURL=table_ori.css.map */

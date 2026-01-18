@@ -1,0 +1,301 @@
+// 1. 기본 설정 및 변수 정의 (전역 또는 최상위 수준)
+// :root 또는 해당 컴포넌트의 최상위 부모에 정의
+
+
+.table-wrap {
+    --table-font-size: 15px;
+    --table-font-color : hsl(198, 100%, 9%);
+    --table-th-bg : #F4F6F7;
+    --table-td-line-color : hsl(192 10% 90%);
+    --table-border-bottom-color : hsl(0, 0%, 91%);
+    --table-top-line-color : var(--table-border-bottom-color);
+
+    /* 기존 스타일 */
+    &:has(.no-content){
+        margin-bottom: 1em;
+    }
+}
+
+// 2. 테이블 기본 엘리먼트 초기화
+thead, tbody, tfoot, tr, td, th {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+
+// 3. 버튼 스타일 오버라이드
+@mixin table-button-override {
+    padding: .3em .5em !important;
+    min-height: auto !important;
+    font-size: calc(1em - 1px) !important;
+    margin: 2px;
+    white-space: nowrap;
+    --border-radius-6px: 4px;
+}
+
+table {
+    .btn.primary,
+    .btn.secondary,
+    .btn.default,
+    .btn.gray {
+        @include table-button-override;
+    }
+
+    .btn2.primary,
+    .btn2.secondary,
+    .btn2.default,
+    .btn2.gray {
+        min-height: auto !important;
+        font-size: calc(1em - 1px) !important;
+        margin: 2px;
+        white-space: nowrap;
+        min-width: auto !important;
+    }
+
+	.hidden{ display: none; }
+}
+
+// 4. 반응형 컨테이너 설정 (CSS 문법 유지)
+*:has(>.table-wrap){
+    container-type : inline-size;
+    container-name: tableWrap;
+}
+.table-wrap:has(>[class*="min-width-"]),
+.table-wrap[class*="max-height-"]{
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+// 5. 공통 테이블 기본 스타일 믹스인
+@mixin base-table-style {
+    table-layout: fixed;
+    width: 100%;
+    font-size: var(--table-font-size);
+
+    tr > * {
+        padding: 4px 8px;
+    }
+
+    thead tr > * {
+        font-size: var(--table-font-size);
+        font-weight: 600;
+        color: var(--table-font-color);
+        background-color: var(--table-th-bg);
+    }
+
+    tbody tr th {
+        background-color: var(--table-th-bg);
+        border-bottom: 1px solid #fff;
+    }
+
+    tbody tr td {
+        color: var(--table-font-color);
+        padding: calc(1em + 2px) 8px;
+        border-bottom: 1px solid var(--table-td-line-color);
+        word-break: break-all; // type2, type3, type5에만 있었지만, 공통으로 포함하여 일관성 유지
+    }
+
+    a.title {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 90%;
+    }
+
+    .title .comment + a,
+    .comment + a { // type1, type2, type3, type5 모두 해당
+        max-width: 80%;
+    }
+
+    .comment {
+        color: var(--text-dark-2);
+    }
+
+    &[data-ui-action="collapse"] { // type2, type3, type5 모두 해당
+        display: none;
+    }
+}
+
+
+// 6. 기본형 테이블 스타일
+@mixin table-type1-style {
+    @include base-table-style;
+
+    table-layout: fixed; // base-table-style에 포함되어 있지만 명시적으로 유지
+    word-break: normal; // type1은 word-break: break-all이 없었으므로 재정의
+
+    &:not(:has(thead)) {
+        border-top: 1px solid var(--table-top-line-color);
+    }
+
+    // thead 스타일은 base-table-style에 포함되어 있어서 삭제
+
+    tbody tr td {
+        // base-table-style에서 word-break: break-all이 추가되었지만,
+        // type1의 기존 CSS에는 없었으므로 여기서는 word-break 속성을 제거하거나 유지할 수 있습니다.
+        // 현재는 base-table-style의 값을 유지합니다.
+    }
+    
+    a.title{
+        // base-table-style에 포함되어 있음
+    }
+
+    .title .comment + a { max-width: 80%; } // base-table-style에 포함
+    
+    .comment{ color: var(--text-dark-2);} // base-table-style에 포함
+}
+
+.table-type1 {
+    @include table-type1-style;
+}
+
+.footable-type{
+	@include base-table-style;
+
+	.footable-idx{ width: 80px; max-width: 80px; }
+	
+}
+
+div.footable-loader {
+	vertical-align:middle;
+	text-align:center;
+	height:100px;
+	position:relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+div.footable-loader>span.fooicon {
+	display:inline-block;
+	opacity:1;
+	font-size:1em;
+	line-height:100px;
+	width:24px;
+	height: 24px;
+	margin-top:0;
+	margin-left:0;
+	position:static;
+
+	// -webkit-animation:fooicon-spin-r 2s infinite linear;
+	// animation:fooicon-spin-r 2s infinite linear;
+
+	animation: none;
+	color: var(--primary-500);
+	--animated-img: url("../img/common/aa.svg");
+}
+.fooicon-loader:before {
+
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: currentColor;
+	-webkit-mask-size: contain;
+	-webkit-mask-position-x: 50%;
+	-webkit-mask-position-y: calc(50% - 0px);
+	-webkit-mask-repeat: no-repeat;
+	mask-size: contain;
+	mask-position-x: 50%;
+	mask-position-y: 50%;
+	mask-repeat: no-repeat;
+
+	-webkit-mask-image: var(--animated-img);
+	mask-image: var(--animated-img);
+}
+
+.fooicon{ 
+	font-size: 1em;
+	width: 1em;
+	height: 1em;
+	opacity: 1 !important;
+	line-height: 1;
+}
+.fooicon::before{
+	display: block;
+	width: 100%;
+	height: 100%;
+
+
+	background-image: var(--aa-img, none);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 1em;
+}
+.fooicon-plus::before,
+.fooicon-minus::before {
+	 content:""; 
+  --aa-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+.fooicon-minus::before{ content:""; transform: rotate(180deg); }
+
+.fooicon-sort:before {
+	content:"";
+	--aa-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%231f1f1f'%3E%3Cpath d='M320-440v-287L217-624l-57-56 200-200 200 200-57 56-103-103v287h-80ZM600-80 400-280l57-56 103 103v-287h80v287l103-103 57 56L600-80Z'/%3E%3C/svg%3E");
+}
+.fooicon-sort-asc:before,
+.fooicon-sort-desc:before {
+	content:"";
+	--aa-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%231f1f1f'%3E%3Cpath d='M120-240v-80h240v80H120Zm0-200v-80h480v80H120Zm0-200v-80h720v80H120Z'/%3E%3C/svg%3E");
+}
+.fooicon-sort-asc:before { transform: rotate(180deg); }
+
+table.footable > tbody > tr.footable-empty > td {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1em;
+}
+
+.footable .dropdown-menu {
+
+  left: 100%;
+  transform: translateX(-100%);
+
+  float: none;
+  padding: 2px 0 0;
+  margin: 0px 0 0;
+  font-size: 1em;
+
+  .dropdown-item { padding: .8em 1em }
+
+   .dropdown-item + .dropdown-item {  border-top: 0; }
+}
+
+table.footable > tbody > tr[data-expanded="true"] > td{ border-bottom: 0; }
+table.footable > tbody > tr.footable-detail-row > td, 
+table.footable > tbody > tr.footable-detail-row > th {
+  background-color: hsl( 0 0% 95%);
+  padding: 1em;
+}
+
+table.footable-details {
+	--table-th-bg : #fff;
+  position: relative;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  padding: 8px;
+
+  display: block;
+  background-color: #fff;
+}
+table.footable-details > tbody { display: block; }
+table.footable-details > tbody > tr{display: flex; }
+table.footable-details > tbody > tr > th:nth-child(1) {
+	flex: none;
+  min-width: 2.5em;
+  border-bottom: 1px solid var(--table-td-line-color);
+  padding: 8px 8px;
+}
+table.footable-details > tbody > tr > td:nth-child(2){ 
+	flex:1;
+	background-color: #fff; padding: 8px 8px; 
+}
+
+
+table.footable .desktop-elem{ }
+table.footable .mobile-elem{ display: none !important; }
+@media(max-width: 1024px ){
+	table.footable .desktop-elem{ display: none !important; }
+	table.footable .mobile-elem{  display: block !important;}
+}
