@@ -287,8 +287,7 @@
     "description": "",
     "extraInfo": {
       "디자인": "",
-      "프론트앤드": "웹컴포넌트, javascript",
-	  "백엔드" :" nodejs 사용,"
+      "마크업": "웹컴포넌트, js, nodejs"
     },
     "externalLink": {
       "샘플보기2": "https://wowadmin.onrender.com/",
