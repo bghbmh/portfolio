@@ -468,9 +468,9 @@ ${ item.tools ? `<div class="tool-name-list">
 				<div class="list-item-btn-wrap">
 					${ item.externalLink.figma ? `<a href="${item.externalLink.figma}" target="_blank" class="btn">${ICONSET.figma}디자인</a>` : '' }
 				
-					<button type="button" class="btn" data-action="modal" data-ui-util="zoomIn">
-						${ICONSET.zoomIn}크게보기
-					</button>
+			
+
+					${(item.mainimage.length + item.subimage.length) > 0 ? `<button type="button" class="btn" data-action="modal" data-ui-util="zoomIn">${ICONSET.zoomIn}크게보기</button>` : ''}
 
 					
 					${ item.externalLink.github ? `<a href="${item.externalLink.github}" target="_blank" class="btn">${ICONSET.github}소스보기</a>` : '' }
@@ -493,6 +493,7 @@ ${ item.tools ? `<div class="tool-name-list">
 
 
 }
+
 
 
 
