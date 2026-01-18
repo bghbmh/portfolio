@@ -4,6 +4,62 @@
 		"mainOpenImages": [
 			{
 				"alt": "",
+				"name": "grs-main.png",
+				"size": 1180581,
+				"type": "image/png",
+				"lastModified": 1745753986188,
+				"webUrl": "bmh1750777200024/preview/grs-main.png"
+			}
+		],
+		"category": [
+			{
+				"name": "웹",
+				"type": "1",
+				"label": "main"
+			},
+			{
+				"name": "구축",
+				"type": "2",
+				"label": "sub"
+			}
+		],
+		"hash": [
+			"디자인",
+			"마크업",
+			"반응형",
+			"웹"
+		],
+		"tools": [
+			"figma",
+			"html",
+			"css",
+			"javascript"
+		],
+		"title": "GRS 아카데미",
+		"description": "",
+		"extraInfo": {
+			"디자인": "100% 참여",
+			"마크업": "100% 참여"
+		},
+		"mainimage": [],
+		"subimage": [],
+		"sampleName": "grs",
+		"samplePage": [],
+		"order": 20,
+		"externalLink": {
+			"figma": "https://www.figma.com/proto/AtxlWIs0p43Ymb3UUgq5sz/%EB%A1%AF%EB%8D%B0-grs-academy?node-id=60-5016&p=f&viewport=544%2C337%2C0.08&t=oKcr5JlSMsoYFC5y-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=60%3A5016&show-proto-sidebar=1",
+			"outlink": "https://grsdesign.hullaro.com/userMain/goUserMain?lang=ko"
+		},
+		"projectNum": 1750777200024,
+		"ID": "bmh1750777200024",
+		"projectState": "complete",
+		"member": []
+	},	
+	{
+		"mainOpen": false,
+		"mainOpenImages": [
+			{
+				"alt": "",
 				"name": "mainOpen99.png",
 				"size": 147799,
 				"type": "image/png",
