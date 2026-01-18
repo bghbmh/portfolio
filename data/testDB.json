@@ -1,4 +1,80 @@
 [
+	{
+		"mainOpen": false,
+		"mainOpenImages": [
+			{
+				"alt": "",
+				"name": "mainOpen99.png",
+				"size": 147799,
+				"type": "image/png",
+				"lastModified": 1743958251474,
+				"webUrl": "bmh1750777200023/preview/mainOpen99.png"
+			}
+		],
+		"summary": "UI/UX 개선, 반응형 웹 적용",
+		"category": [
+			{
+				"name": "웹",
+				"type": "1",
+				"label": "main"
+			},
+			{
+				"name": "리뉴얼",
+				"type": "3",
+				"label": "sub"
+			}
+		],
+		"hash": [
+			"디자인",
+			"마크업",
+			"반응형"
+		],
+		"tools": [
+			"figma",
+			"html/css/js",
+			"react",
+			"nextjs",
+			"nodejs"
+		],
+		"title": "평생교육 고도화",
+		"description": "",
+		"extraInfo": {
+			"디자인": "100% 참여",
+			"마크업": "100% 참여"
+		},
+		"externalLink": {
+			"figma": "https://www.figma.com/proto/iPBDrNFefjIxsCYoCuYAs4/%ED%8F%89%EC%83%9D%EA%B5%90%EC%9C%A1_%EA%B4%80%EB%A6%AC%EC%9E%90-%EA%B0%95%EC%82%AC?node-id=0-1&p=f&viewport=-824%2C-4626%2C0.61&t=KrCQoc7re6mfw3O1-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=2069%3A9832&show-proto-sidebar=1",
+			"github": "https://github.com/bghbmh/simple-ui-test/tree/main/hrd-admin-test"
+		},
+		"mainimage": [],
+		"subimage": [],
+		"sampleName": "dashboard2",
+		"samplePage": [
+			{
+				"label": "기본-레이아웃",
+				"alt": "",
+				"name": "__기본-레이아웃.html",
+				"size": 13820,
+				"type": "text/html",
+				"lastModified": 1743958251503,
+				"webUrl": "bmh1750777200023/sample/html/__기본-레이아웃.html"
+			},
+			{
+				"label": "과정개설_개설정보",
+				"alt": "",
+				"name": "과정개설_개설정보.html",
+				"size": 13820,
+				"type": "text/html",
+				"lastModified": 1743958251503,
+				"webUrl": "bmh1750777200023/sample/html/과정개설_개설정보.html"
+			}
+		],
+		"order": 99,
+		"projectNum": 1750777200023,
+		"ID": "bmh1750777200023",
+		"projectState": "before",
+		"member": []
+	},
   {
     "mainOpen": true,
     "mainOpenImages": [
