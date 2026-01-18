@@ -32,11 +32,11 @@ const cssText = `
 	display: inline-flex;
 	padding: 5px 11px;
 	line-height: 1;
-	background-color: hsl(207 16% 68% / .3);
-	border-radius: 1em 4px 1em 4px;
+	background-color: hsl(207 16% 68% / .2);
+	border-radius:  4px;
 	font-size: 13px;
 	color: #1f2c3e;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 @media (min-width: 768px) {
@@ -63,7 +63,7 @@ const cssText = `
 	transition: all .3s;
 
 	color: rgb(22, 30, 41);
-	background-color: hsl(200 6% 50% / .03);
+	background-color: hsl(200 6% 50% / 0);
 
 	box-sizing: border-box;
 }
@@ -271,8 +271,8 @@ const cssText = `
 	.list-item {
 		grid-template-columns: minmax(18px, 80px) minmax(360px, auto) 1fr;
 		margin: 0 auto;
-		border-left: 1px dotted var(--item-border-color);
-		border-right: 1px dotted var(--item-border-color);
+		border-left: 1px solid var(--item-border-color);
+		border-right: 1px solid var(--item-border-color);
 	}
 
 }
@@ -493,6 +493,7 @@ ${ item.tools ? `<div class="tool-name-list">
 
 
 }
+
 
 
 
