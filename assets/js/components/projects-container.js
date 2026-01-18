@@ -16,12 +16,12 @@ const cssText = `
 			display: flex;
 		flex-direction: column;
 		
-		border-top: 1px dotted var(--item-border-color);
+		border-top: 1px solid var(--item-border-color);
 		
-		border-bottom: 1px dotted var(--item-border-color);
+		border-bottom: 1px solid var(--item-border-color);
 	} 
 	project-item + project-item{
-		border-top: 1px dotted var(--item-border-color);
+		border-top: 1px solid var(--item-border-color);
 	}
 
 	.noitem{
@@ -34,8 +34,8 @@ const cssText = `
 		margin: auto;
 		justify-content: center;
 		min-height: 65vh;
-		border-left: 1px dotted var(--item-border-color);
-  border-right: 1px dotted var(--item-border-color);
+		border-left: 1px solid var(--item-border-color);
+  border-right: 1px solid var(--item-border-color);
 		font-weight: 400;
 		font-size: 24px;
 		font-family: "Paperlogy";
@@ -148,4 +148,5 @@ async function jsonDB(router) {
 	}
 
 }
+
 
