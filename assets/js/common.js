@@ -73,6 +73,17 @@ async function setPage(pageType = 'main'){
 
 	console.log('pageType ',pageType);
 
+	// --- [GA4 코드 추가 시작] ---
+    // 현재 변경된 URL 정보를 구글 애널리틱스에 수동으로 전송합니다.
+    if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+            page_title: pageType,
+            page_location: window.location.href,
+            page_path: window.location.pathname + window.location.search
+        });
+    }
+    // --- [GA4 코드 추가 끝] ---
+
 	if( pageType === 'main' ){
 		helloEveryone();
 		mainItem();
