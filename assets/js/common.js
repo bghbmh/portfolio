@@ -43,6 +43,15 @@ function initSetView(){   console.log("initSetView - ", 		location.href);
 	header.classList.add("observeItem");// 임시
 	header.addEventListener("clicked-global-nav", e => {
 		console.log("common js - ", e.detail.value);
+
+		// --- [클릭 이벤트 전송 코드 추가] ---
+	    if (typeof gtag === 'function') {
+	        gtag('event', 'select_content', {
+	            'content_type': 'modal_button',
+	            'item_id': e.detail.value  // 'contact' 또는 'me'가 기록됨
+	        });
+	    }
+	    // ----------------------------------
 		
 		setPage(e.detail.value);
 
