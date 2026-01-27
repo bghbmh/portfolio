@@ -462,7 +462,7 @@ ${ item.tools ? `<div class="tool-name-list">
 
 
 				${
-					Object.keys(item.extraInfo).length ? '<dl class="extraInfo-wrap">' + Object.entries(item.extraInfo).map( arr => `<div class="info"><dt>${arr[0] === "마크업" ? arr[0] + "/JS" : arr[0]}</dt><dd>${arr[1]}</dd></div>`).join('') + '</dl>' : ''
+					Object.keys(item.extraInfo).length ? '<dl class="extraInfo-wrap">' + Object.entries(item.extraInfo).map( arr => `<div class="info"><dt>${arr[0] === "마크업" ? arr[0] + "+js" : arr[0]}</dt><dd>${arr[1]}</dd></div>`).join('') + '</dl>' : ''
 				}
 
 				<div class="list-item-btn-wrap">
@@ -493,6 +493,7 @@ ${ item.tools ? `<div class="tool-name-list">
 
 
 }
+
 
 
 
