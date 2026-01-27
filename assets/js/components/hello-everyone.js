@@ -286,7 +286,7 @@ class HelloEveryone extends HTMLElement {
 					<p><small>UXUI</small> <strong>development</strong></p>
 				</div>
 				<div class="overview">
-					UX/UI 디자이너이자 웹 퍼블리셔로, 구조 설계와 반응형 UI, 접근성 개선에 강점을 갖고 있습니다. Figma, HTML/CSS, JavaScript를 주로 사용하며, 사용자 경험 중심의 문제 해결에 집중합니다.
+					UX/UI 디자이너이자 웹 퍼블리셔로, 구조 설계와 반응형 UI, 접근성 개선에 강점을 갖고 있습니다. Figma, Html/css, JavaScript, React를 사용활 수 있으며, 사용자 경험 중심의 문제 해결에 집중합니다.
 				</div>
 			</div>
 
@@ -327,4 +327,5 @@ class HelloEveryone extends HTMLElement {
 }
 
 customElements.define('hello-everyone', HelloEveryone);
+
 
