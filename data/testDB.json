@@ -35,7 +35,7 @@
 			"css",
 			"javascript"
 		],
-		"title": "GRS 아카데미",
+		"title": "롯데 GRS 아카데미 홈페이지 구축",
 		"description": "",
 		"extraInfo": {
 			"디자인": "100% 참여",
@@ -92,7 +92,7 @@
 			"nextjs",
 			"nodejs"
 		],
-		"title": "평생교육 고도화",
+		"title": "HRD 평생교육 시스템 고도화",
 		"description": "",
 		"extraInfo": {
 			"디자인": "100% 참여",
@@ -177,7 +177,7 @@
       "반응형",
       "웹"
     ],
-    "title": "글로벌미래교육원",
+    "title": "숭실대 글로벌미래교육원 LMS 리뉴얼",
     "description": "",
     "extraInfo": {
       "디자인": "100% 참여",
@@ -746,7 +746,7 @@
       "웹"
     ],
 	"tools" : [ "html", "css", "javascript"],
-    "title": "HYCU",
+    "title": "한양사이버대학교 LMS 구축",
     "description": "",
     "extraInfo": {
       "마크업": "90% 참여"
