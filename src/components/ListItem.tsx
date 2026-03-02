@@ -19,7 +19,7 @@ export default function ListItem({ item }: Props) {
 
 	useEffect(() => {
 		if (modalType === 'mockup' && item.mockup.length > 0) {
-			setIframeLink(`/uploads/${item.mockup[0].url}`);
+			setIframeLink(item.mockup[0].url);
 		}
 	}, [modalType, item.mockup]);
 
@@ -107,7 +107,7 @@ export default function ListItem({ item }: Props) {
 										type="button"
 										className="btn text-start"
 										data-link={m.url}
-										onClick={() => setIframeLink(`/uploads/${m.url}`)}>{m.label}</button>)}
+										onClick={() => setIframeLink(m.url)}>{m.label}</button>)}
 								</nav>
 							</div>
 

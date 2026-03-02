@@ -772,7 +772,7 @@
                 "name": "mainOpen12.png",
                 "size": 95275,
                 "type": "image/png",
-                "lastModified": 1772467186771,
+                "lastModified": 1772472055222,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772100740/projects/yjqpjmbdhch80j36f2b6.png"
             }
         ],
@@ -782,11 +782,36 @@
                 "name": "me11.png",
                 "size": 705542,
                 "type": "image/png",
-                "lastModified": 1772467186771,
+                "lastModified": 1772472055222,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772100741/projects/g56ootw0ubmqnj5vlfuf.png"
             }
         ],
-        "mockup": [],
+        "mockup": [
+            {
+                "id": "3bae4224-7a5c-43f9-924b-a067908c5a41",
+                "type": "link",
+                "label": "가이드",
+                "url": "https://bghbmh.github.io/my-mockups/cdms/html/components.html"
+            },
+            {
+                "id": "936f34f0-b4c7-47bc-9245-1c08262d35c5",
+                "type": "link",
+                "label": "메인",
+                "url": "https://bghbmh.github.io/my-mockups/cdms/html/main.html"
+            },
+            {
+                "id": "b718cd20-9d1c-43f2-b8a7-344e3c707a5e",
+                "type": "link",
+                "label": "게시글쓰기",
+                "url": "https://bghbmh.github.io/my-mockups/cdms/html/sub_%EA%B2%8C%EC%8B%9C%ED%8C%90%EA%B3%B5%ED%86%B5_%EA%B8%80%EC%93%B0%EA%B8%B0.html"
+            },
+            {
+                "id": "a576a18c-905e-424b-aed6-bc8b579e326d",
+                "type": "link",
+                "label": "진행상태",
+                "url": "https://bghbmh.github.io/my-mockups/cdms/html/sub_%EB%A7%88%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A7%84%ED%96%89%EC%83%81%ED%83%9C.html"
+            }
+        ],
         "externalLink": [],
         "projectNum": 1772100565046,
         "currentState": "complete",
@@ -797,7 +822,8 @@
         "modifyDate": [
             1772100565081,
             1772100742083,
-            1772467186801
+            1772467186801,
+            1772472055263
         ]
     },
     {
@@ -843,12 +869,19 @@
                 "name": "mainOpen13.png",
                 "size": 21419,
                 "type": "image/png",
-                "lastModified": 1772467174023,
+                "lastModified": 1772471921709,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772100989/projects/zlly2qsqbakpt7mvtoih.png"
             }
         ],
         "subimage": [],
-        "mockup": [],
+        "mockup": [
+            {
+                "id": "fb8eddca-87c7-4919-afb3-794be4e688e4",
+                "type": "link",
+                "label": "샘플",
+                "url": "https://bghbmh.github.io/my-mockups/%EA%B0%9C%EC%9D%B8%EC%9E%91%EC%97%85-%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C/html/index.html"
+            }
+        ],
         "externalLink": [],
         "projectNum": 1772100988934,
         "currentState": "complete",
@@ -859,7 +892,8 @@
         "modifyDate": [
             1772100990519,
             1772100996395,
-            1772467174095
+            1772467174095,
+            1772471921741
         ]
     },
     {
@@ -913,12 +947,25 @@
                 "name": "mainOpen14.png",
                 "size": 157348,
                 "type": "image/png",
-                "lastModified": 1772467153639,
+                "lastModified": 1772471864887,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101176/projects/zyxxa5tgygfi2iomng8h.png"
             }
         ],
         "subimage": [],
-        "mockup": [],
+        "mockup": [
+            {
+                "id": "82097437-c079-487e-b763-583c7fe3b568",
+                "type": "link",
+                "label": "가이드",
+                "url": "https://bghbmh.github.io/my-mockups/kfia/html/0_%EA%B3%B5%ED%86%B5_%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8_%EA%B0%80%EC%9D%B4%EB%93%9C.html"
+            },
+            {
+                "id": "83e62d89-6d45-4c82-a475-97bbdcd450da",
+                "type": "link",
+                "label": "메인",
+                "url": "https://bghbmh.github.io/my-mockups/kfia/html/0_%EB%A9%94%EC%9D%B8.html"
+            }
+        ],
         "externalLink": [],
         "projectNum": 1772101175007,
         "currentState": "complete",
@@ -928,7 +975,8 @@
         "registerDate": 1772101175007,
         "modifyDate": [
             1772101176897,
-            1772467153671
+            1772467153671,
+            1772471864918
         ]
     },
     {
@@ -980,7 +1028,7 @@
                 "name": "mainOpen15.png",
                 "size": 258037,
                 "type": "image/png",
-                "lastModified": 1772467136133,
+                "lastModified": 1772471788192,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101405/projects/ew2zqs9in0436hztpi82.png"
             }
         ],
@@ -990,7 +1038,7 @@
                 "name": "me19_1.JPG",
                 "size": 1220095,
                 "type": "image/jpeg",
-                "lastModified": 1772467136133,
+                "lastModified": 1772471788192,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101407/projects/cjdq4nkofnmyj0orh2yq.jpg"
             },
             {
@@ -998,11 +1046,30 @@
                 "name": "me19_2.JPG",
                 "size": 1045980,
                 "type": "image/jpeg",
-                "lastModified": 1772467136133,
+                "lastModified": 1772471788192,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101408/projects/bdb5svjxeogbednoejsz.jpg"
             }
         ],
-        "mockup": [],
+        "mockup": [
+            {
+                "id": "a4942122-2310-4d72-82d3-7f7b96ed4e84",
+                "type": "link",
+                "label": "가이드",
+                "url": "https://bghbmh.github.io/my-mockups/%ED%95%9C%EC%96%91%EC%82%AC%EC%9D%B4%EB%B2%84%EB%8C%80/html/main_components.html"
+            },
+            {
+                "id": "750a9c58-e042-4702-9558-611b51b0a949",
+                "type": "link",
+                "label": "메인",
+                "url": "https://bghbmh.github.io/my-mockups/%ED%95%9C%EC%96%91%EC%82%AC%EC%9D%B4%EB%B2%84%EB%8C%80/html/main.html"
+            },
+            {
+                "id": "6385d8b9-780b-4981-9f02-9fe24587be8d",
+                "type": "link",
+                "label": "서브",
+                "url": "https://bghbmh.github.io/my-mockups/%ED%95%9C%EC%96%91%EC%82%AC%EC%9D%B4%EB%B2%84%EB%8C%80/html/sub.html"
+            }
+        ],
         "externalLink": [],
         "projectNum": 1772101404596,
         "currentState": "complete",
@@ -1012,7 +1079,8 @@
         "registerDate": 1772101404596,
         "modifyDate": [
             1772101409471,
-            1772467136169
+            1772467136169,
+            1772471788224
         ]
     },
     {
@@ -1174,7 +1242,7 @@
                 "name": "mainOpen18.png",
                 "size": 305482,
                 "type": "image/png",
-                "lastModified": 1772467119202,
+                "lastModified": 1772471627239,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101833/projects/k5xkw5evt0v7f72fwt5l.png"
             }
         ],
@@ -1184,11 +1252,24 @@
                 "name": "kmcu_sub_레이아웃.png",
                 "size": 220585,
                 "type": "image/png",
-                "lastModified": 1772467119202,
+                "lastModified": 1772471627239,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101834/projects/kckvmbjhxj5daktgtchn.png"
             }
         ],
-        "mockup": [],
+        "mockup": [
+            {
+                "id": "5c3267b7-43cf-4c5d-8a3b-aa1749b2a711",
+                "type": "link",
+                "label": "메인",
+                "url": "https://bghbmh.github.io/my-mockups/%EA%B3%84%EB%AA%85%EB%AC%B8%ED%99%94%EB%8C%80/html/main.html"
+            },
+            {
+                "id": "7add404c-99bb-4509-b5bc-2ccb0e31c186",
+                "type": "link",
+                "label": "서브",
+                "url": "https://bghbmh.github.io/my-mockups/%EA%B3%84%EB%AA%85%EB%AC%B8%ED%99%94%EB%8C%80/html/sub.html"
+            }
+        ],
         "externalLink": [],
         "projectNum": 1772101831956,
         "currentState": "complete",
@@ -1199,7 +1280,8 @@
         "modifyDate": [
             1772101834687,
             1772103608009,
-            1772467119237
+            1772467119237,
+            1772471627271
         ]
     },
     {
@@ -1258,7 +1340,7 @@
                 "name": "mainOpen19.png",
                 "size": 140941,
                 "type": "image/png",
-                "lastModified": 1772467102778,
+                "lastModified": 1772471534105,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772102102/projects/zo2cgmb3fih6fsuboiwe.png"
             }
         ],
@@ -1268,7 +1350,7 @@
                 "name": "3-2_데스크탑11.png",
                 "size": 1180581,
                 "type": "image/png",
-                "lastModified": 1772467102778,
+                "lastModified": 1772471534105,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772102104/projects/uf72msvlcqggx7hopqrp.png"
             },
             {
@@ -1276,7 +1358,7 @@
                 "name": "나의학습_내학습과정.png",
                 "size": 147812,
                 "type": "image/png",
-                "lastModified": 1772467102778,
+                "lastModified": 1772471534105,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772102111/projects/ao0zfartuuvkrukswius.png"
             },
             {
@@ -1284,11 +1366,36 @@
                 "name": "나의학습_내학습현황.png",
                 "size": 94451,
                 "type": "image/png",
-                "lastModified": 1772467102778,
+                "lastModified": 1772471534105,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772102104/projects/voknbdooxmukq8lq4vkg.png"
             }
         ],
-        "mockup": [],
+        "mockup": [
+            {
+                "id": "75e28219-c2ce-48f2-a139-a3dd63c38d9a",
+                "type": "link",
+                "label": "메인",
+                "url": "https://bghbmh.github.io/my-mockups/%EC%97%B0%EC%84%B8%EC%9D%98%EB%A3%8C%EC%9B%90/html/0_%EB%A9%94%EC%9D%B8.html"
+            },
+            {
+                "id": "932e2277-ff24-4b15-91c2-849e9ef539a5",
+                "type": "link",
+                "label": "커뮤니티",
+                "url": "https://bghbmh.github.io/my-mockups/%EC%97%B0%EC%84%B8%EC%9D%98%EB%A3%8C%EC%9B%90/html/cum_component_sample.html"
+            },
+            {
+                "id": "19571ccb-d518-4dbd-b5c5-de72f2c444dd",
+                "type": "link",
+                "label": "학습현황",
+                "url": "https://bghbmh.github.io/my-mockups/%EC%97%B0%EC%84%B8%EC%9D%98%EB%A3%8C%EC%9B%90/html/%EB%82%98%EC%9D%98%ED%95%99%EC%8A%B5_UI-HRD-F001_%EB%82%B4%ED%95%99%EC%8A%B5%ED%98%84%ED%99%A9.html"
+            },
+            {
+                "id": "c26793fa-bb02-4f16-8403-e95b50a24b69",
+                "type": "link",
+                "label": "학습과정",
+                "url": "https://bghbmh.github.io/my-mockups/%EC%97%B0%EC%84%B8%EC%9D%98%EB%A3%8C%EC%9B%90/html/%EB%82%98%EC%9D%98%ED%95%99%EC%8A%B5_UI-HRD-F009_%EB%82%B4%ED%95%99%EC%8A%B5%EA%B3%BC%EC%A0%95.html"
+            }
+        ],
         "externalLink": [],
         "projectNum": 1772102101307,
         "currentState": "complete",
@@ -1298,7 +1405,8 @@
         "registerDate": 1772102101307,
         "modifyDate": [
             1772102139630,
-            1772467102812
+            1772467102812,
+            1772471534139
         ]
     },
     {
@@ -1340,12 +1448,19 @@
                 "name": "mainOpen20.png",
                 "size": 9808,
                 "type": "image/png",
-                "lastModified": 1772467085897,
+                "lastModified": 1772471682966,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772102331/projects/rxzfzukwyoq2q4oqfwdd.png"
             }
         ],
         "subimage": [],
-        "mockup": [],
+        "mockup": [
+            {
+                "id": "e862d7cd-6507-4265-aec4-92d1847e3382",
+                "type": "link",
+                "label": "샘플",
+                "url": "https://bghbmh.github.io/my-mockups/%EA%B0%9C%EC%9D%B8%EC%9E%91%EC%97%85-%ED%83%80%EC%9E%84%ED%94%BC%EC%BB%A4/html/index.html"
+            }
+        ],
         "externalLink": [],
         "projectNum": 1772102330588,
         "currentState": "complete",
@@ -1355,7 +1470,8 @@
         "registerDate": 1772102330588,
         "modifyDate": [
             1772102332336,
-            1772467085930
+            1772467085930,
+            1772471682997
         ]
     },
     {
@@ -1472,6 +1588,7 @@
                     "name": "before.png",
                     "size": 298334,
                     "type": "image/png",
+                    "lastModified": 1772471395865,
                     "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772108716/projects/b2dphi8ebcdgp3k29rhs.png"
                 }
             ],
@@ -1481,6 +1598,7 @@
                     "name": "after.png",
                     "size": 310848,
                     "type": "image/png",
+                    "lastModified": 1772471395865,
                     "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772108716/projects/g3bqfvwczhyd6b9ihg9s.png"
                 }
             ]
@@ -1509,7 +1627,7 @@
                 "name": "mainOpen21.png",
                 "size": 255327,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772471395865,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772103568/projects/pwjrmc7zvos2p8lffhpb.png"
             }
         ],
@@ -1519,7 +1637,7 @@
                 "name": "메인페이지.png",
                 "size": 244817,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772471395865,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772103569/projects/suwxkyksp2rfz0gbr1su.png"
             },
             {
@@ -1527,11 +1645,36 @@
                 "name": "수강신청 & 확인.png",
                 "size": 215395,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772471395865,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772103570/projects/wfjstoakalqshbdiarsh.png"
             }
         ],
-        "mockup": [],
+        "mockup": [
+            {
+                "id": "9f2ea5db-cc23-4d58-9145-922ab2c1ba64",
+                "type": "link",
+                "label": "가이드",
+                "url": "https://bghbmh.github.io/my-mockups/%EC%88%AD%EC%8B%A4%EB%8C%80/html/00_%EA%B8%B0%EB%B3%B8_ui_%EC%8A%A4%ED%83%80%EC%9D%BC_%EB%94%94%EC%9E%90%EC%9D%B8%EA%B0%80%EC%9D%B4%EB%93%9C_%EC%88%98%EC%A0%95%EC%A4%91.html"
+            },
+            {
+                "id": "10eeb5f9-df08-450e-bd51-5444c310b628",
+                "type": "link",
+                "label": "메인",
+                "url": "https://bghbmh.github.io/my-mockups/%EC%88%AD%EC%8B%A4%EB%8C%80/html/main.html"
+            },
+            {
+                "id": "3d9783b7-4130-441c-9ed7-9537f4074084",
+                "type": "link",
+                "label": "게시판",
+                "url": "https://bghbmh.github.io/my-mockups/%EC%88%AD%EC%8B%A4%EB%8C%80/html/%EC%A0%84%EC%B2%B4%EA%B3%B5%EC%A7%80%EC%82%AC%ED%95%AD.html"
+            },
+            {
+                "id": "da31266f-d28d-4e3e-9abc-f7cd8c6d245e",
+                "type": "link",
+                "label": "글상세보기",
+                "url": "https://bghbmh.github.io/my-mockups/%EC%88%AD%EC%8B%A4%EB%8C%80/html/%EA%B2%8C%EC%8B%9C%ED%8C%90_%EA%B8%80%EC%83%81%EC%84%B8%EB%B3%B4%EA%B8%B0_%EA%B3%B5%ED%86%B5%EC%8A%A4%ED%83%80%EC%9D%BC.html"
+            }
+        ],
         "externalLink": [
             {
                 "id": "7c2f5f16-ecf3-48f6-ac1d-0775bd4de337",
@@ -1553,7 +1696,9 @@
             1772105597720,
             1772106171706,
             1772108717564,
-            1772160865148
+            1772160865148,
+            1772471335424,
+            1772471395895
         ]
     },
     {
@@ -1627,12 +1772,25 @@
                 "name": "mainOpen99.png",
                 "size": 82714,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772471140418,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772103858/projects/pmsvsxyu4zo9fzbyxgi5.png"
             }
         ],
         "subimage": [],
-        "mockup": [],
+        "mockup": [
+            {
+                "id": "65637fe0-46fc-406e-82f2-d738149ce661",
+                "type": "link",
+                "label": "레이아웃",
+                "url": "https://bghbmh.github.io/my-mockups/hrd%EA%B3%A0%EB%8F%84%ED%99%94/html/layout-1.html"
+            },
+            {
+                "id": "ddb5dac5-cc35-4d29-ad20-3b5853fd62f8",
+                "type": "link",
+                "label": "페이지",
+                "url": "https://bghbmh.github.io/my-mockups/hrd%EA%B3%A0%EB%8F%84%ED%99%94/html/%EA%B3%BC%EC%A0%95%EA%B0%9C%EC%84%A4_%EA%B0%9C%EC%84%A4%EC%A0%95%EB%B3%B4.html"
+            }
+        ],
         "externalLink": [
             {
                 "id": "c322b235-3d3a-496e-bdab-0162110cc566",
@@ -1655,7 +1813,9 @@
         "registerDate": 1772103857133,
         "modifyDate": [
             1772103858741,
-            1772160709541
+            1772160709541,
+            1772471070711,
+            1772471140451
         ]
     },
     {
@@ -1820,12 +1980,19 @@
                 "name": "뉴욕타임스.png",
                 "size": 21356,
                 "type": "image/png",
-                "lastModified": 1772466577771,
+                "lastModified": 1772471186632,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772264583/projects/pqty5ahz0b3ejjwugstz.png"
             }
         ],
         "subimage": [],
-        "mockup": [],
+        "mockup": [
+            {
+                "id": "49ce0fd8-08b5-4ee0-a601-ef8d4b199ee2",
+                "type": "link",
+                "label": "test",
+                "url": "https://bghbmh.github.io/simple-ui-test/UploadFiles/"
+            }
+        ],
         "externalLink": [
             {
                 "id": "7ed08405-e2bc-4408-9df4-7cdd7030b4c1",
@@ -1854,7 +2021,11 @@
             1772385270726,
             1772438604694,
             1772448461232,
-            1772466577943
+            1772466577943,
+            1772469860545,
+            1772470056405,
+            1772470133638,
+            1772471186661
         ]
     }
 ]
