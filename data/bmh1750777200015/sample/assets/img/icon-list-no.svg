@@ -1,7 +1,0 @@
-<svg id="icon-list-no" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <rect id="사각형_228" data-name="사각형 228" width="32" height="32" fill="#ff1313" opacity="0"/>
-  <g id="그룹_1946" data-name="그룹 1946" transform="translate(-891.072 -696.173)">
-    <path id="file-plus-02" d="M18.923,9.928V6.477a6.951,6.951,0,0,0-.3-2.949A2.8,2.8,0,0,0,17.4,2.3,6.951,6.951,0,0,0,14.446,2H8.477a6.951,6.951,0,0,0-2.949.3A2.8,2.8,0,0,0,4.3,3.528,6.951,6.951,0,0,0,4,6.477v9.7a6.951,6.951,0,0,0,.3,2.949,2.8,2.8,0,0,0,1.223,1.223,6.951,6.951,0,0,0,2.949.3h2.985m1.865-10.259h-5.6M9.6,14.125H7.731m7.461-7.461H7.731" transform="translate(895.072 701.173)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-    <path id="file-plus-02-2" data-name="file-plus-02" d="M17.057,19.721v-5.6m-2.8,2.8h5.6" transform="translate(913.703 696.068) rotate(45)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
-  </g>
-</svg>
