@@ -772,7 +772,7 @@
                 "name": "mainOpen12.png",
                 "size": 95275,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467186771,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772100740/projects/yjqpjmbdhch80j36f2b6.png"
             }
         ],
@@ -782,21 +782,11 @@
                 "name": "me11.png",
                 "size": 705542,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467186771,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772100741/projects/g56ootw0ubmqnj5vlfuf.png"
             }
         ],
-        "mockup": [
-            {
-                "alt": "main.html",
-                "name": "main.html",
-                "size": 26852,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772100565046/files/main.html",
-                "label": "메인"
-            }
-        ],
+        "mockup": [],
         "externalLink": [],
         "projectNum": 1772100565046,
         "currentState": "complete",
@@ -806,7 +796,8 @@
         "registerDate": 1772100565046,
         "modifyDate": [
             1772100565081,
-            1772100742083
+            1772100742083,
+            1772467186801
         ]
     },
     {
@@ -852,22 +843,12 @@
                 "name": "mainOpen13.png",
                 "size": 21419,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467174023,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772100989/projects/zlly2qsqbakpt7mvtoih.png"
             }
         ],
         "subimage": [],
-        "mockup": [
-            {
-                "alt": "index.html",
-                "name": "index.html",
-                "size": 4070,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772100988934/files/index.html",
-                "label": "샘플"
-            }
-        ],
+        "mockup": [],
         "externalLink": [],
         "projectNum": 1772100988934,
         "currentState": "complete",
@@ -877,7 +858,8 @@
         "registerDate": 1772100988934,
         "modifyDate": [
             1772100990519,
-            1772100996395
+            1772100996395,
+            1772467174095
         ]
     },
     {
@@ -931,31 +913,12 @@
                 "name": "mainOpen14.png",
                 "size": 157348,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467153639,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101176/projects/zyxxa5tgygfi2iomng8h.png"
             }
         ],
         "subimage": [],
-        "mockup": [
-            {
-                "alt": "0_메인.html",
-                "name": "0_메인.html",
-                "size": 7174,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772101175007/files/0_메인.html",
-                "label": "메인"
-            },
-            {
-                "alt": "0_공통_컴포넌트_가이드.html",
-                "name": "0_공통_컴포넌트_가이드.html",
-                "size": 28814,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772101175007/files/0_공통_컴포넌트_가이드.html",
-                "label": "가이드"
-            }
-        ],
+        "mockup": [],
         "externalLink": [],
         "projectNum": 1772101175007,
         "currentState": "complete",
@@ -964,7 +927,8 @@
         "member": [],
         "registerDate": 1772101175007,
         "modifyDate": [
-            1772101176897
+            1772101176897,
+            1772467153671
         ]
     },
     {
@@ -1016,7 +980,7 @@
                 "name": "mainOpen15.png",
                 "size": 258037,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467136133,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101405/projects/ew2zqs9in0436hztpi82.png"
             }
         ],
@@ -1026,7 +990,7 @@
                 "name": "me19_1.JPG",
                 "size": 1220095,
                 "type": "image/jpeg",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467136133,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101407/projects/cjdq4nkofnmyj0orh2yq.jpg"
             },
             {
@@ -1034,39 +998,11 @@
                 "name": "me19_2.JPG",
                 "size": 1045980,
                 "type": "image/jpeg",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467136133,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101408/projects/bdb5svjxeogbednoejsz.jpg"
             }
         ],
-        "mockup": [
-            {
-                "alt": "main.html",
-                "name": "main.html",
-                "size": 117359,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772101404596/files/main.html",
-                "label": "메인"
-            },
-            {
-                "alt": "main_components.html",
-                "name": "main_components.html",
-                "size": 70784,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772101404596/files/main_components.html",
-                "label": "가이드"
-            },
-            {
-                "alt": "sub.html",
-                "name": "sub.html",
-                "size": 30995,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772101404596/files/sub.html",
-                "label": "서브"
-            }
-        ],
+        "mockup": [],
         "externalLink": [],
         "projectNum": 1772101404596,
         "currentState": "complete",
@@ -1075,7 +1011,8 @@
         "member": [],
         "registerDate": 1772101404596,
         "modifyDate": [
-            1772101409471
+            1772101409471,
+            1772467136169
         ]
     },
     {
@@ -1237,7 +1174,7 @@
                 "name": "mainOpen18.png",
                 "size": 305482,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467119202,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101833/projects/k5xkw5evt0v7f72fwt5l.png"
             }
         ],
@@ -1247,30 +1184,11 @@
                 "name": "kmcu_sub_레이아웃.png",
                 "size": 220585,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467119202,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772101834/projects/kckvmbjhxj5daktgtchn.png"
             }
         ],
-        "mockup": [
-            {
-                "alt": "main.html",
-                "name": "main.html",
-                "size": 29213,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772101831956/files/main.html",
-                "label": "메인"
-            },
-            {
-                "alt": "sub.html",
-                "name": "sub.html",
-                "size": 55844,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772101831956/files/sub.html",
-                "label": "서브"
-            }
-        ],
+        "mockup": [],
         "externalLink": [],
         "projectNum": 1772101831956,
         "currentState": "complete",
@@ -1280,7 +1198,8 @@
         "registerDate": 1772101831956,
         "modifyDate": [
             1772101834687,
-            1772103608009
+            1772103608009,
+            1772467119237
         ]
     },
     {
@@ -1339,7 +1258,7 @@
                 "name": "mainOpen19.png",
                 "size": 140941,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467102778,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772102102/projects/zo2cgmb3fih6fsuboiwe.png"
             }
         ],
@@ -1349,7 +1268,7 @@
                 "name": "3-2_데스크탑11.png",
                 "size": 1180581,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467102778,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772102104/projects/uf72msvlcqggx7hopqrp.png"
             },
             {
@@ -1357,7 +1276,7 @@
                 "name": "나의학습_내학습과정.png",
                 "size": 147812,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467102778,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772102111/projects/ao0zfartuuvkrukswius.png"
             },
             {
@@ -1365,48 +1284,11 @@
                 "name": "나의학습_내학습현황.png",
                 "size": 94451,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467102778,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772102104/projects/voknbdooxmukq8lq4vkg.png"
             }
         ],
-        "mockup": [
-            {
-                "alt": "0_메인.html",
-                "name": "0_메인.html",
-                "size": 43024,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772102101307/files/0_메인.html",
-                "label": "메인"
-            },
-            {
-                "alt": "나의학습_UI-HRD-F001_내학습현황.html",
-                "name": "나의학습_UI-HRD-F001_내학습현황.html",
-                "size": 24351,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772102101307/files/나의학습_UI-HRD-F001_내학습현황.html",
-                "label": "서브1"
-            },
-            {
-                "alt": "나의학습_UI-HRD-F009_내학습과정.html",
-                "name": "나의학습_UI-HRD-F009_내학습과정.html",
-                "size": 23660,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772102101307/files/나의학습_UI-HRD-F009_내학습과정.html",
-                "label": "서브2"
-            },
-            {
-                "alt": "cum_component_sample.html",
-                "name": "cum_component_sample.html",
-                "size": 55022,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772102101307/files/cum_component_sample.html",
-                "label": "서브3"
-            }
-        ],
+        "mockup": [],
         "externalLink": [],
         "projectNum": 1772102101307,
         "currentState": "complete",
@@ -1415,7 +1297,8 @@
         "member": [],
         "registerDate": 1772102101307,
         "modifyDate": [
-            1772102139630
+            1772102139630,
+            1772467102812
         ]
     },
     {
@@ -1457,22 +1340,12 @@
                 "name": "mainOpen20.png",
                 "size": 9808,
                 "type": "image/png",
-                "lastModified": 1770881272000,
+                "lastModified": 1772467085897,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772102331/projects/rxzfzukwyoq2q4oqfwdd.png"
             }
         ],
         "subimage": [],
-        "mockup": [
-            {
-                "alt": "index.html",
-                "name": "index.html",
-                "size": 3562,
-                "type": "text/html",
-                "lastModified": 1770881272000,
-                "url": "bmh1772102330588/files/index.html",
-                "label": "sample"
-            }
-        ],
+        "mockup": [],
         "externalLink": [],
         "projectNum": 1772102330588,
         "currentState": "complete",
@@ -1481,7 +1354,8 @@
         "member": [],
         "registerDate": 1772102330588,
         "modifyDate": [
-            1772102332336
+            1772102332336,
+            1772467085930
         ]
     },
     {

@@ -28,22 +28,27 @@ export default async function Home({
 	// 서버에서 직접 최신 DB 파일 읽기
 	const fileContent = await fs.readFile(DB_PATH, "utf-8");
 	const allProjects: ProjectDataType[] = JSON.parse(fileContent);
-	allProjects.sort((a, b) => (b.registerDate || 0) - (a.registerDate || 0));
+	const list = allProjects
+		.sort((a, b) => (b.registerDate || 0) - (a.registerDate || 0))
+		.filter(p => {
+			if (p.category[0].type !== "6" && p.category[1].type !== "6")
+				return p;
+		});
 
 	// URL 파라미터 읽기
 	const currentView = resolvedSearchParams.current;
 	const selectedCat = (resolvedSearchParams.category as string) || 'all';
 
 	// 필터링 로직 수정 (단일 값 비교로 성능/가독성 향상)
-	const filteredProjects = allProjects.filter((item) => {
+	const filteredProjects = list.filter((item) => {
 		if (selectedCat === 'all') return true;
 		return item.category.some(cat => cat.name === selectedCat);
 	});
 
 	// 홈 화면용 메인 프로젝트 (currentView가 없을 때 사용)
-	const mainProjects = allProjects.filter(item => item.mainOpen);
+	const mainProjects = list.filter(item => item.mainOpen);
 
-	console.log("서버에서 데이터를 읽었습니다:", allProjects.length, "건");
+	console.log("서버에서 데이터를 읽었습니다:", list.length, "건");
 
 
 	return (
