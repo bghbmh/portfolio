@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
+import { Suspense } from "react"; // 1. Suspense 임포트
+
+
 import "@/styles/bootstrap.css";
 import "@/styles/reset.css";
 import "@/styles/layout.scss";
@@ -43,7 +47,10 @@ export default function RootLayout({
 		<html lang="ko">
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 				{/* 2. 레이아웃 구조 설정 */}
-				<Header gnb={gnbList} />
+				{/* 2. Header가 useSearchParams를 쓰므로 Suspense로 감싸줍니다 */}
+				<Suspense fallback={<header>Loading...</header>}>
+					<Header gnb={gnbList} />
+				</Suspense>
 
 				{/* 페이지 콘텐츠가 들어가는 영역 */}
 				<Container>
