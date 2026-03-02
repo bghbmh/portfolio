@@ -1,0 +1,364 @@
+.list-item {
+	--sssas: 5/3;
+
+	display: flex;
+	flex-direction: column;
+	border-radius: 0px;
+	overflow: hidden;
+	margin: 0 1rem;
+
+	width: calc(100% - 24px);
+	max-width: 1280px;
+	margin: 0 12px;
+	padding: 1.5em 8px;
+
+	/* background-color: #121314;
+	background-image: url(./images/background_noise.png); */
+	transition: all .3s;
+
+	color: rgb(22, 30, 41);
+	background-color: hsl(200 6% 50% / 0);
+
+	box-sizing: border-box;
+
+
+	.btn {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background-color: transparent;
+		margin: 0;
+		font-size: 1em;
+		padding: .5em 1em;
+		display: inline-flex;
+		color: currentColor;
+		border: 0;
+		cursor: pointer;
+	}
+
+	.list-item-label-wrap {
+		margin-bottom: 12px;
+
+		.list-item-label {
+			display: inline-flex;
+			gap: 4px;
+			align-items: center;
+			font-size: 1em;
+			font-weight: 400;
+			color: #333;
+			padding: 0;
+			line-height: 1;
+
+			span {
+				flex: none;
+			}
+
+			b {
+				flex: none;
+				display: inline-flex;
+				padding: 3px 6px;
+				background-color: #333;
+				border-radius: 10em;
+				color: #fff;
+				font-weight: 200;
+				font-size: calc(1em - 1px);
+
+				&[data-type="1"] {
+					background-color: rgb(231, 108, 102);
+				}
+
+				&[data-type="2"] {
+					background-color: rgb(77, 177, 112);
+				}
+
+				&[data-type="3"] {
+					background-color: rgb(248, 176, 29);
+				}
+
+				&[data-type="4"] {
+					background-color: hsla(205, 94%, 38%, 1.00);
+				}
+			}
+		}
+
+
+	}
+
+	.tool-name-list {
+		display: flex;
+		gap: 4px;
+		margin: 8px 0 8px;
+		flex-wrap: wrap;
+
+		.tool {
+			display: inline-flex;
+			padding: 5px 11px;
+			line-height: 1;
+			background-color: hsl(207 16% 68% / .2);
+			border-radius: 4px;
+			font-size: 13px;
+			color: #1f2c3e;
+			font-weight: 400;
+		}
+	}
+
+
+	.list-item-image-wrap {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		/* background-color: hsl( 0 100% 100% / .3); */
+
+		.image {
+			width: 100%;
+			max-width: 100%;
+			aspect-ratio: var(--sssas);
+			/*  background-color: hsl( 0 100% 100% / .3);   */
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center top;
+				border-radius: 4px;
+				transition: all .3s;
+			}
+		}
+	}
+
+
+	.list-item-header {
+		padding-top: 16px;
+
+		.list-item-title {
+			font-weight: 200;
+			line-height: 1.2;
+			font-size: 20px;
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+
+	.list-item-info-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		/* gap: 1em; */
+		padding-top: 12px;
+
+		min-height: 5em;
+	}
+
+	.list-item-btn-wrap {
+		display: flex;
+		gap: 4px 1em;
+		margin-top: auto;
+
+		.btn {
+			align-items: center;
+			gap: 4px;
+			padding: .5em .5em;
+			line-height: 1;
+
+			svg {
+				display: block;
+				width: 22px;
+				height: 22px;
+			}
+
+		}
+	}
+
+	.synopsis {
+		margin: 0;
+		padding: 0;
+		line-height: 1.5;
+	}
+
+	.extraInfo-wrap {
+		margin: 0 0 auto 0;
+		padding-bottom: 1.5em;
+
+		.info {
+			display: inline-flex;
+			padding-right: 1em;
+
+			&:before {
+				content: "";
+				display: inline-flex;
+				width: 3px;
+				height: 3px;
+				background-color: rgba(120, 119, 119, 1);
+				font-weight: bold;
+				margin: .5em .5em 0 .5em;
+				margin-top: calc(.5em + 2px);
+				line-height: 0;
+			}
+
+			dd,
+			dt {
+				margin: 0;
+				padding: 0
+			}
+
+			dt {
+				color: rgb(22, 30, 41);
+				font-weight: 700;
+			}
+
+			dd {
+				color: hsla(230, 26%, 22%, 1.00);
+				font-weight: 700;
+				font-weight: 300;
+			}
+
+			dt+dd {
+				margin-left: 4px
+			}
+		}
+	}
+
+	@media (min-width: 768px) {
+		display: grid;
+		column-gap: 1.5em;
+		align-items: start;
+		// grid-template-rows: repeat(auto-fill, auto);
+		grid-auto-rows: auto;
+		grid-template-columns: minmax(300px, 300px) 1fr;
+		align-items: center; // start. 자식이 내용물보다 커지지 않게 함
+		padding: 2.5em 8px 1.5em 0px;
+
+
+		.tool-name-list {
+			.tool {
+				font-size: 15px;
+			}
+		}
+
+		.list-item-label-wrap {
+			grid-column: 1 / span 2;
+			grid-row: 1 / 1;
+		}
+
+		.list-item-image-wrap {
+			grid-column: 1 / 1;
+			grid-row: 2 / span 3;
+			height: 100%;
+		}
+
+		.list-item-header {
+			grid-column: 2 / 2;
+			grid-row: 2 / 2;
+			padding-top: 0;
+		}
+
+		.list-item-info-container {
+			grid-column: 2 / 2;
+			grid-row: auto;
+		}
+
+		.list-item-header {
+
+			.list-item-title {
+				font-size: 28px;
+			}
+		}
+
+		.list-item-image-wrap {
+			/* 이미지 영역이 텍스트 영역의 높이를 방해하지 않도록 함 */
+
+			display: flex;
+			align-items: flex-start;
+			min-height: auto; // 고정된 min-height가 늘어나는 것을 방해할 수 있음
+		}
+
+		.list-item-info-container {
+			height: auto; // 높이를 auto로 강제
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+	}
+
+	@media (min-width:1024px) {
+
+		grid-template-columns: minmax(30px, 80px) minmax(360px, auto) 1fr;
+		column-gap: 2.5em;
+		padding: 3.5em 2.5em 2.5em 0px;
+
+
+		.list-item-label-wrap {
+			grid-column: 1 / 1;
+			grid-row: 1 / span 2;
+		}
+
+		.list-item-image-wrap {
+			grid-column: 2 / 2;
+			grid-row: 1 / span 2;
+		}
+
+		.list-item-header {
+			grid-column: 3 / 3;
+			grid-row: 1 / 1;
+		}
+
+		.list-item-info-container {
+			grid-column: 3 / 3;
+		}
+
+
+		.list-item-label-wrap {
+			margin-bottom: 0;
+
+			position: relative;
+			height: 100%;
+		}
+
+		.list-item-label {
+			flex-direction: row-reverse;
+			transform-origin: center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			transform-origin: right top;
+			transform: rotate(-90deg) translateX(-16px) translateY(-40px);
+		}
+
+		.list-item-image-wrap {
+			height: 15em;
+			max-width: 360px;
+		}
+
+		.list-item-info-container {
+			/* 내용이 많아지면 이 영역이 전체 grid의 높이를 결정하게 됨 */
+			align-self: start;
+			padding-top: 0; // 이미지와 높이를 맞추기 위해 조정
+		}
+
+		.list-item-header {
+
+			.list-item-title {
+				font-size: 28px;
+			}
+		}
+
+	}
+
+	@media (min-width: 1200px) {
+
+		grid-template-columns: minmax(18px, 80px) minmax(360px, auto) 1fr;
+		margin: 0 auto;
+		border-left: 1px solid var(--item-border-color);
+		border-right: 1px solid var(--item-border-color);
+		word-break: keep-all;
+
+		.list-item-header {
+
+			.list-item-title {
+				font-size: 32px;
+			}
+		}
+	}
+
+	@media (min-width: 1440px) {}
+}

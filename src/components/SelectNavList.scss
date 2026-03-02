@@ -1,0 +1,173 @@
+.select-nav-list {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	max-width: 1280px;
+	--p-bottom: 24px;
+	padding: var(--p-bottom) 12px;
+	margin: 0 auto;
+	font-size: 18px; // 기존 16px에서 2px 키움
+	overflow-x: auto;
+	scrollbar-width: none;
+
+	position: relative;
+	top: 0;
+
+
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+
+
+	.moving-indicator {
+		position: absolute;
+
+
+		display: block;
+		width: 7px; // 폰트 크기에 맞춰 소폭 키움
+		height: 7px;
+		background-color: rgb(255, 121, 114); // GNB와 동일한 붉은 점
+		border-radius: 50%;
+		border-color: transparent;
+		padding: 0;
+		bottom: var(--p-bottom);
+		left: 0;
+		opacity: 1;
+		pointer-events: none;
+		transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+		transform: translateX(-50%);
+	}
+
+	.btn {
+		flex: none;
+		position: relative;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+		transition: all 0.3s;
+		font-weight: 400;
+		color: #666;
+		padding: .375em 1.8em;
+		text-decoration: none;
+
+		// 메뉴 사이의 슬래시 (기본 상태)
+		&::after,
+		&::before {
+			content: '/';
+			position: absolute;
+			display: block;
+			width: 1em;
+			font-weight: 200; // 기본은 얇게
+			line-height: 1;
+			color: #222;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: all 0.3s;
+		}
+
+		&::before {
+			left: 0;
+			transform: translate(-50%, -50%);
+		}
+
+		&+.btn::before {
+			left: 0;
+			transform: translate(-60%, -50%);
+		}
+
+		&::after {
+			right: 0;
+			transform: translate(50%, -50%);
+		}
+
+
+		input {
+			position: absolute;
+			appearance: none;
+			width: 0;
+			height: 0;
+			opacity: 0;
+			margin: 0;
+			bottom: -2px;
+			left: 100%;
+			transform: translate(-50%, -50%);
+			padding: 0;
+			border-color: transparent;
+			transition: all .2s;
+
+			display: none;
+		}
+
+		// 선택되었을 때 스타일
+		&.active {
+			color: #222;
+			font-weight: 800;
+
+			// 선택된 메뉴의 '뒤' 슬래시 두껍게
+			&::after,
+			&::before {
+				font-weight: 900;
+				color: #222;
+				opacity: 1;
+			}
+
+
+			// 글자 바로 앞 동그란 인디케이터
+			// input {
+			// 	appearance: none;
+			// 	display: block;
+			// 	width: 7px; // 폰트 크기에 맞춰 소폭 키움
+			// 	height: 7px;
+			// 	background-color: rgb(255, 121, 114); // GNB와 동일한 붉은 점
+			// 	border-radius: 50%;
+			// 	border-color: transparent;
+			// 	padding: 0;
+			// 	left: 50%;
+			// 	opacity: 1;
+			// 	transition: all .5s;
+			// }
+		}
+	}
+
+
+	@media(min-width: 1024px) {
+
+		&.is-scrolled {
+			position: fixed;
+			width: auto;
+			top: -100px;
+			left: 0;
+			animation: slideDown 0.5s forwards;
+
+			z-index: 999;
+			max-width: 100%;
+			transition: left .5s;
+
+		}
+	}
+
+	@media(min-width: 1550px) {
+
+		&.is-scrolled {
+			width: 1280px;
+			left: calc(50% - 640px);
+			padding-top: 20px;
+			transition: left .5s;
+		}
+	}
+}
+
+// 아래에서 위로 내려오는 애니메이션 정의
+@keyframes slideDown {
+	from {
+		top: -100px;
+	}
+
+	to {
+		top: 0;
+	}
+}

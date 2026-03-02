@@ -1,0 +1,286 @@
+.main-item {
+	--smw: calc(100vw - 2rem - 24px);
+	--sssas: 5/3;
+
+	--slider-img-aspect-ratio: var(--sssas);
+	--slider-max-width: var(--smw);
+
+	display: flex;
+	flex-direction: column;
+	border-radius: 0px;
+	overflow: hidden;
+
+	/* background-color: #121314;
+	background-image: url(/img/common2/background_noise.png); */
+
+
+	border: 1px dotted var(--item-border-color);
+	color: rgb(22, 30, 41);
+	background-color: hsl(200 6% 50% / .03);
+
+	.image-wrap {
+		text-align: center;
+		width: 100%;
+		padding: 12px;
+
+		.image {
+			width: 100%;
+			max-width: 100%;
+			aspect-ratio: var(--sssas);
+			/* background-color: hsl( 0 100% 100% / .3); */
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center top;
+				border-radius: 4px;
+				transition: all .3s;
+			}
+		}
+	}
+
+	.item-header,
+	.info-container {
+		padding: 0 1em
+	}
+
+	.item-header {
+		display: flex;
+		flex-direction: column;
+		gap: 8px 12px;
+		margin: 8px 0 0px;
+
+		.option-label-wrap {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 8px;
+
+
+			.title-label {
+				display: inline-flex;
+				gap: 4px;
+				align-items: center;
+				font-size: 1em;
+				font-weight: 400;
+				color: #333;
+				padding: 0;
+				line-height: 1;
+
+				b {
+					display: inline-flex;
+					padding: 3px 6px;
+					background-color: #333;
+					border-radius: 10em;
+					color: #fff;
+					font-weight: 200;
+					font-size: calc(1em - 1px);
+
+				}
+			}
+
+			.tool-name-list {
+				flex-basis: 100%;
+				display: flex;
+				gap: 4px;
+
+				.tool {
+					display: inline-flex;
+					padding: 5px 11px;
+					line-height: 1;
+					background-color: rgba(160, 175, 186, 0.3);
+					border-radius: 4px;
+					font-size: 13px;
+					color: rgb(31, 44, 62);
+					font-weight: 300;
+				}
+			}
+
+
+		}
+
+		.item-title {
+			font-weight: 200;
+			line-height: 1.2;
+			font-size: 20px;
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+
+	.info-container {
+		padding-bottom: 1em;
+		padding-top: 1em;
+
+		.summary {
+			font-size: 15px;
+			margin-bottom: 1em;
+			color: #2a2f48;
+			opacity: .8;
+
+			display: block;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			font-size: 1em;
+		}
+
+		li {
+			display: flex;
+			gap: 8px 1em;
+			padding: .7em .5em .7em 20px;
+			position: relative;
+			font-size: 1em;
+			flex-direction: column;
+			row-gap: 3px;
+			font-weight: 400;
+
+			&::before {
+				content: "•";
+				position: absolute;
+				left: 2px;
+				color: #555;
+				font-weight: bold;
+			}
+
+			&+li {
+				border-top: 1px dotted hsl(0 0% 0% / .2);
+			}
+
+			b {
+				display: block;
+				font-weight: 600;
+				font-weight: 700;
+			}
+		}
+
+
+	}
+
+
+	.btn-wrap {
+		display: flex;
+		gap: 4px 1em;
+
+		.btn {
+			appearance: none;
+			background-color: transparent;
+			margin: 0px;
+			font-size: 1em;
+			padding: 0.5em 1em;
+			display: inline-flex;
+			color: currentcolor;
+			border: 0px;
+			cursor: pointer;
+
+
+			align-items: center;
+			gap: 4px;
+			padding: .5em .5em;
+			line-height: 1;
+
+			svg {
+				display: block;
+				width: 22px;
+				height: 22px;
+			}
+		}
+
+	}
+
+	// @media (min-width: 600px) {
+	// 	--slider-max-width: 360px;
+	// }
+
+	@media (min-width: 768px) {
+		--slider-max-width: 320px;
+
+		display: grid;
+		grid-template-columns: minmax(300px, 300px) 1fr;
+		grid-auto-rows: auto;
+		align-items: center;
+
+		// grid-template-areas: "image header "
+		// 	"image info ";
+
+		/* 그리드 요소 간 간격 */
+		align-items: center;
+		padding: 18px 18px;
+
+		.image-wrap {
+			grid-column: 1 / 1;
+			grid-row: 1 / span 2;
+			height: 100%;
+		}
+
+		.item-header {
+			grid-column: 2 / auto;
+			grid-row: 1 / 1;
+		}
+
+		.info-container {
+			grid-column: 2 / auto;
+			grid-row: 2 / auto;
+		}
+
+		.item-header {
+
+			.option-label-wrap {}
+
+			.item-title {
+				font-size: 28px;
+			}
+		}
+
+	}
+
+	@media (min-width: 1024px) {
+
+		--slider-max-width: 400px;
+
+		grid-template-columns: minmax(400px, 400px) 1fr;
+		column-gap: 1em;
+
+		.item-header {
+			.option-label-wrap {
+
+				.tool-name-list {
+					flex-basis: auto;
+				}
+			}
+		}
+
+		.info-container .overview li {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+
+	@media (min-width: 1200px) {
+
+		--slider-max-width: 420px;
+
+		grid-template-columns: minmax(420px, 420px) 1fr;
+		column-gap: 2.5em;
+		padding: 36px 36px;
+
+		.image-wrap {
+			display: flex;
+			align-items: center;
+			box-sizing: content-box;
+		}
+
+		.item-header {
+			.item-title {
+				font-size: 32px;
+			}
+		}
+
+	}
+
+
+
+
+
+}

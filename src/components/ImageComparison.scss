@@ -1,0 +1,113 @@
+.slider-before-after-container {
+
+	--smw: calc(100vw - 2rem - 24px);
+	--sssas: 5/3;
+	--slider-img-aspect-ratio: var(--sssas);
+	--slider-max-width: calc(100vw - 2rem - 24px);
+
+	display: block;
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	--position: 50%;
+
+	width: 100%;
+	max-width: 100%;
+	aspect-ratio: var(--sssas);
+
+
+	.slider-image-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+
+		.slider-image {
+			width: 100%;
+			overflow: hidden;
+
+			img {
+				display: block;
+				width: var(--slider-max-width); // min-width 보다는 직접 width를 고정하는 게 확실합니다.
+				height: 100%;
+				object-fit: cover;
+				object-position: left center;
+				max-width: none;
+			}
+
+			&.image-before {
+				position: absolute;
+				inset: 0;
+				width: var(--position);
+				/*
+				filter: grayscale(100%)
+				*/
+			}
+		}
+	}
+
+	.slider-button-container {
+		position: absolute;
+		inset: 0;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			left: 0px;
+			width: .2rem;
+			height: 100%;
+			background-color: #222;
+			z-index: 10;
+			left: var(--position);
+			transform: translateX(-50%);
+			pointer-events: none;
+		}
+
+		input[type="range"] {
+			position: absolute;
+			inset: 0;
+			cursor: pointer;
+			opacity: 0;
+			/* for Firefox */
+			width: 100%;
+			height: 100%;
+		}
+
+		.slider-button {
+			position: absolute;
+			background-color: #222;
+			color: #fafafa;
+			padding: .5rem;
+			border-radius: 100vw;
+			display: grid;
+			place-items: center;
+			top: 50%;
+			left: var(--position);
+			transform: translate(-50%, -50%);
+			pointer-events: none;
+			z-index: 20;
+			/* */
+			box-shadow: 1px 1px 1px hsl(0, 50%, 2%, .5);
+		}
+
+	}
+
+	@media (min-width: 768px) {
+
+		--slider-max-width: 320px;
+
+	}
+
+	@media (min-width: 1024px) {
+
+		--slider-max-width: 400px;
+
+	}
+
+	@media (min-width: 1200px) {
+
+		--slider-max-width: 420px;
+
+	}
+
+}

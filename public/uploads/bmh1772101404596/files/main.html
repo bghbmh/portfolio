@@ -1,0 +1,1500 @@
+
+<!DOCTYPE html>
+<html lang="ko" data-title="교수메인"> <!-- data-title="" 이 속성값은 퍼블 확인을 위해 넣어둔 것입니다 개발시 필요없음 -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="author" content="한양사이버대학" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <title>HYCU</title>
+
+    <!--[if lt IE 9]> <script src="경로명/html5shiv.js"></script> <![endif]-->
+
+
+    <!-- Favicon ie/ie외 브라우저/apple/android -->
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+    <link rel="icon" type="image/png" href="#">
+    <link rel="apple-touch-icon" href="#">
+    <link rel="icon" type="image/png" href="#">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery-ui-slider-pips.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/new/footable.standalone.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/new/semantic.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/ionicons.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/xeicon.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/plyr.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/new/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/new/element-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/new/element-ui-dark.css" />
+    <!-- Summernote Editor
+    <link rel="stylesheet" type="text/css" href="../data/summernote/summernote-lite.css" />
+    <link rel="stylesheet" type="text/css" href="../data/summernote/plugin/math/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../data/summernote/plugin/emoji/css/emoji.css" />
+ -->
+    <!-- Scripts -->
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery-ui-slider-pips.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="../assets/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="../assets/js/classie.js"></script>
+    <script type="text/javascript" src="../assets/js/semantic.min.js"></script>
+    <script type="text/javascript" src="../assets/js/semantic-ui-calendar.min.js"></script>
+    <script type="text/javascript" src="../assets/js/footable.min.js"></script>
+    <script type="text/javascript" src="../assets/js/iframe.js"></script>
+    <script type="text/javascript" src="../assets/js/chart.min.js"></script>
+    <script type="text/javascript" src="../assets/js/Chart.PieceLabel.min.js"></script>
+    <script type="text/javascript" src="../assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="../assets/js/modal.js"></script>
+    <script type="text/javascript" src="../assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="../assets/js/timeline.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.dynamiclist.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.star-rating-svg.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.knob.min.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.treeview.js"></script>
+    <script type="text/javascript" src="../assets/js/jquery.video-layers.min.js"></script>
+    <script type="text/javascript" src="../assets/js/plyr.js"></script>
+    <script type="text/javascript" src="../assets/js/hls.min.js"></script>
+
+	<script type="text/javascript" src="../assets/js/common.js"></script>
+	<!-- <script type="text/javascript" src="../temp_asset/js/common_tempAsset.js"></script> -->
+
+    <!-- Summernote Editor
+    <script type="text/javascript" src="../data/summernote/summernote-lite.js"></script>
+    <script type="text/javascript" src="../data/summernote/lang/summernote-ko-KR.js"></script>
+    <script type="text/javascript" src="../data/summernote/plugin/math/katex.min.js"></script>
+    <script type="text/javascript" src="../data/summernote/plugin/math/summernote-math.js"></script>
+    <script type="text/javascript" src="../data/summernote/plugin/emoji/js/config.js"></script>
+    <script type="text/javascript" src="../data/summernote/plugin/emoji/js/tam-emoji.js"></script>
+    <script type="text/javascript" src="../data/summernote/plugin/uploadcare.js"></script>
+ -->
+ <link rel="stylesheet" type="text/css" href="../assets/css/new/main_default.css" />
+</head>
+
+    
+
+    <body class="dark"> <!-- dark 클래스로 접근할때는 body에 붙이기_230329 -->
+        <!-- <h1 class="blind">바로가기 메뉴</h1>
+<div id="key_access">
+    <ul>
+        <li><a href="#loginForm" title="로그인 위치로 바로가기">로그인 바로가기</a></li>
+        <li><a href="#main_menu" title="주메뉴 위치로 바로가기">주메뉴 바로가기</a></li>
+        <li><a href="#container" title="본문 위치로 바로가기">본문 바로가기</a></li>
+        <li><a href="#bottom" title="하단 위치로 바로가기">하단 바로가기</a></li>
+    </ul>
+</div>
+<div id="loading_page">
+    <p><i class="notched circle loading icon"></i></p>
+</div> -->
+        <div id="wrap" class="main"> <!-- 클래스 변경_235017 -->
+            <!-- class_top 인클루드  -->
+            
+                <!-- id="container" 밖에 있던 헤더는 컨테이너 안으로 이동_230517 -->
+
+                <!-- main_menu 영역 부분 --> 
+                <nav class="gnb  "> <!-- 태그 및 클래스 변경 변경_230517 -->
+                    <button type="button" class="menu_btn on" title="메뉴 열고 닫는 버튼" data-medi-ui="gnbmenu"><i class="ion-navicon" aria-hidden="true"></i></button> <!-- aria-hidden 추가_230517 -->
+                    <div id="main_menu" class="menu_box">
+                        <div class="top"> <!-- 태그 및 클래스 추가_230517 -->
+
+                            <h1 class="logo"> <!-- header에 있던 로고 위치 이동_230517 -->
+                                <a href="#0">
+                                    <img src="../assets/img/logo.svg" alt="한양사이버대학로고">
+                                </a>
+                            </h1>
+
+                            <!-- 사용자정보 -->
+                            <div class="user_info">
+
+                                <!-- header 에 있던 셀렉트박스 위치 이동_230517-->
+                                <select class="ui dropdown compact  select_sm" id="insti_box" name="insti_box">  <!-- compact  클래스 추가_230517 -->
+                                    <option value="전체">전체</option>
+                                    <option value="대학원">대학원</option>
+                                    <option value="대학교">대학교</option>
+                                </select>
+                                <!-- //header 에 있던 셀렉트박스 위치 이동_230517-->
+
+                                <!-- header 에 있던 사용자 이미지/드롭다운  위치 이동_230517-->
+                                <div class="user-img ui dropdown">
+                                    <div class="initial-img sm"> <!-- 등록이미지 없을때_230616-->
+                                        <img src="../assets/img/icon-hycu-symbol-grey.svg" alt="기본 이미지">
+                                    </div>
+                                    <!--<div class="initial-img sm">  c-4  클래스 삭제_230526
+                                        <img src="../data/img/bg_light1.jpg" alt="사용자 이미지">
+                                    </div>-->
+                                    <div class="initial-img sm"> <!-- c-4  클래스 삭제_230526-->
+                                        test
+                                    </div>
+
+                                    <div class="menu">
+                                        <div class="item profile">
+                                            <div class="initial-img sm c-4">석현</div>
+                                            <ul>
+                                                <li>김석현 (prof1)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="divider m0"></div>
+                                        <div class="item"><a href="#0"><i class="user circle icon"></i>내정보</a></div>
+                                        <div class="divider m0"></div>
+                                        <div class="item"><a href="#0"><i class="sign-out icon"></i>로그아웃</a></div>
+                                    </div>
+                                </div>
+                                <!-- //header 에 있던 사용자 이미지/드롭다운  위치 이동_230517-->
+                            </div>
+
+                            <!-- //사용자정보 -->
+
+                        </div>
+
+                        <!-- 메뉴 영역 -->
+                        <div class="scrollarea">
+
+                            <!-- 메인대시 메뉴 -->
+
+                            <!-- 일정_위치 이동 및 ui 스타일 탭 메뉴로 변경_230517 -->
+                            <div class="tempTab"> <!-- 감싸는 태그 추가 및 data 속성 추가_230517 -->
+                                <div class="listTab2"  data-target="tab_contents22"> <!-- 탭메뉴 추가_230517 -->
+                                    <div data-target="#tab1" class="active">금주 일정</div> <!-- 태그 변경 및 data 속성 추가_230517 -->
+                                    <div data-target="#tab2" class="">차주 일정</div>
+                                </div>
+                                <div class="tab_contents22"> <!-- 탭 콘텐츠 영역 추가_230517 -->
+                                    <div id="tab1" class="tab_content on"> <!-- w_sche -> tab_content 클래스 변경,아이디 추가_230517 -->
+                                        <!-- <strong class="w_tit">금주 일정</strong> 삭제_230517-->
+                                        <!-- <div class="chp_list">  삭제_230517-->
+                                            <div class="item on"> <!-- chp_box class_info -> item on 클래스 변경_230517 -->
+                                                <small>05-02 ~ 05-02</small> <!-- 날짜 위치이동 및 태그 변경_230517 -->
+
+                                                <div class="ci_item_box">
+                                                    <div class="ci_item">
+                                                        <p>[유럽문화탐방(1반)]</p>
+                                                        <p>
+                                                            <small>5주차 토론 채점</small> <!-- 태그 변경_230517 -->
+                                                            <small>20</small>
+                                                        </p> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item"> <!-- chp_box class_info -> item on 클래스 변경_230517 -->
+                                                <small>05-02 ~ 05-02</small> <!-- 날짜 위치이동 및 태그 변경_230517 -->
+
+                                                <div class="ci_item_box">
+                                                    <div class="ci_item">
+                                                        <p>[유럽문화탐방(1반)]</p>
+                                                        <p>
+                                                            <small>5주차 토론 채점</small> <!-- 태그 변경_230517 -->
+                                                            <small>20</small>
+                                                        </p> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <!-- </div> 삭제_230517 -->
+                                    </div>
+                                    <div id="tab2" class="tab_content"><!-- w_sche -> tab_content 클래스 변경_230517 -->
+                                    <div class="flex-container">
+                                            <div class="cont-none"><i class="icon-list-no ico"></i><span>등록된 일정이 없습니다</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>        
+                            <!-- 일정 -->       
+                                
+                        
+                            <!-- 교수 메뉴 ============================================= -->
+                            <!-- <div class="">  태그 삭제_230517 -->
+                            <p><br><br><br>__교수메뉴_이 문구는 목업확인용입니다______</p>
+                            <div class="menu"> <!-- user_cont -> menu 클래스 변경_230517 -->
+                                <ul class="c_item"> <!-- 각 메뉴에 아이콘 추가_230517 -->
+                                    <li><a href="#0"><i class="icon-mail ico" aria-hidden="true"></i>메일</a></li>
+                                    <li><a href="#0" class="active"><i class="icon-draw ico" aria-hidden="true"></i>전자결재</a></li> <!-- 현재 열려있는 페이지 클래스 추가_230517_ -->
+                                    <li><a href="#0"><i class="icon-chair-rolling ico" aria-hidden="true"></i>LCDMS</a></li>
+                                    <li><a href="#0"><i class="icon-laptop ico" aria-hidden="true"></i>EMS</a></li>
+                                    <li><a href="#0"><i class="icon-search-web ico" aria-hidden="true"></i>포탈</a></li>
+                                    <li><a href="#0"><i class="icon-laptop ico" aria-hidden="true"></i>대학원EMS</a></li>
+                                </ul>
+                                <ul class="c_item">
+                                    <li><a href="#0"><i class="icon-floppy-diskette ico" aria-hidden="true"></i>LMS자료실</a></li>
+                                    <li><a href="#0"><i class="icon-paper3 ico" aria-hidden="true"></i>수업계획서</a></li>
+                                    <li><a href="#0"><i class="icon-board-checked ico" aria-hidden="true"></i>강의평가</a></li>
+                                    <li><a href="#0"><i class="icon-presentation-chart-01 ico" aria-hidden="true"></i>종합성적</a></li>
+                                    
+                                    <!-- <li><a href="#0"><i class="icon-wallet-card ico" aria-hidden="true"></i>법인카드정산</a></li> -->
+                                </ul>
+                                <ul class="c_item">
+                                    <li><a href="#0"><i class="icon-statistics ico" aria-hidden="true"></i>학습통계</a></li>
+                                    <li><a href="#0"><i class="icon-setting ico" aria-hidden="true"></i>일정관리</a></li>   
+                                    <li><a href="#0"><i class="icon-calculator ico" aria-hidden="true"></i>운영비관리</a></li>
+                                </ul>
+
+                                <ul class="c_item">
+                                    <li><a href="#"><i class="icon-paper-pencil ico" aria-hidden="true"></i>시험지원</a></li>
+                                    <li><a href="#"><i class="icon-user-no ico" aria-hidden="true"></i>결시원</a></li>
+                                </ul>
+
+                                <!-- 배너 있던 영역 삭제 -->
+                            </div>
+                            <!-- </div>  태그 삭제_230517 -->
+
+
+
+
+                            <!-- 학생 메뉴 ============================================= -->
+
+                            <p><br><br><br>__학생메뉴_이 문구는 목업확인용입니다______</p>
+                            <div class="menu"> <!-- user_cont -> menu 클래스 변경_230517 -->
+                                <ul class="c_item"> <!-- 각 메뉴에 아이콘 추가_230517 -->
+                                    <li><a href="#0"><i class="icon-search-web ico" aria-hidden="true"></i>포탈</a></li>
+                                    <li><a href="#0"><i class="icon-mail ico" aria-hidden="true"></i>메일</a></li>
+                                    <li><a href="#0"><i class="icon-talk-to-talk22 ico" aria-hidden="true"></i>학과커뮤니티</a></li>
+                                    <li><a href="#0"><i class="icon-floppy-diskette ico" aria-hidden="true"></i>개인자료실</a></li>
+                                </ul>
+
+                                <ul class="c_item">
+                                    <li><a href="#0"><i class="icon-calendar-dots ico" aria-hidden="true"></i>학사일정</a></li>
+                                    <li><a href="#0"><i class="icon-graduation-cap ico" aria-hidden="true"></i>장학신청</a></li>
+                                    <li><a href="#0"><i class="icon-paper-rollup ico" aria-hidden="true"></i>수업계획서</a></li>
+                                </ul>
+
+                                <ul class="c_item">
+                                    <li><a href="#0"><i class="icon-find-list ico" aria-hidden="true"></i>성적조회</a></li>
+                                    <li><a href="#0"><i class="icon-linegraph-beat ico" aria-hidden="true"></i>졸업진단</a></li>
+                                    <li><a href="#0"><i class="icon-info-my ico" aria-hidden="true"></i>내정보</a></li>
+                                    
+                                    
+                                </ul>
+                                <ul class="c_item">
+                                    <li><a href="#0"><i class="icon-remote-support ico" aria-hidden="true"></i>원격지원</a></li>
+                                    
+                                </ul>
+                            </div>
+                            <!-- //메인대시 메뉴 -->
+
+
+                            <!-- 과목홈 메뉴 -->
+
+
+                            <!-- //과목홈 메뉴 -->
+
+
+
+
+                        </div>
+                        <!-- //메뉴 영역 -->
+                            
+                    </div>
+                </nav>
+
+                <div id="container" class="ui form"> <!-- 클래스 추가_235017 -->
+                    
+                        <!-- Header 영역 부분 -->
+                        <header class="common"> <!-- 클래스 추가_230517 -->
+
+                            <!-- location 위치 이동함_230517 -->
+                            <div class="location-wrap">
+                                <!-- <div class="inner"> 삭제_230517-->
+                                <!-- 페이지 정보 -->
+                                <div class="ui menu">
+                                    <a href="#" class="home r_btn"><img src="../assets/img/location_home.gif" alt="홈으로"></a>
+                                    <div class="pageTit_wrap">                
+                                        <ul class="page_locat"> 
+                                            <li>강의실 홈</li>
+                                        </ul>
+                                        <div class="r_btn_wrap flex-item">
+                                            <p class="desktop-elem">
+                                                <small>
+                                                    <span>이전로그인</span> <span>2022.07.18 15:17 (211.157.234.211)</span>
+                                                </small>
+                                            </p>
+                                            <a href="#" class="">
+                                                <small class="flex-item">
+                                                    <i class="icon-stuff-ruler ico"></i>
+                                                    <span class="desktop-elem">수업운영도구</span> <!-- 태그 및 클래스 추가_230517 -->
+                                                </small>
+                                            </a>                    
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //페이지 정보 -->
+                                <!-- </div> -->
+                            
+                                <!-- 강의실홈_학기/강의실 선택하기 -->
+                            <!--     <div class="option-content">
+                                    <select id="u_seme" class="ui dropdown ">
+                                        <option value="">학기 선택</option>
+                                        <option value="2022년도 2학기">2022년도 2학기</option>
+                                        <option value="2022년도 1학기">2022년도 1학기</option>
+                                        <option value="2021년도 2학기">2021년도 2학기</option>
+                                        <option value="2021년도 1학기">2021년도 1학기</option>
+                                    </select>
+                            
+                                    
+                                    <select id="a1" class="ui dropdown my-class">
+                                        <option value="">강의실 바로가기</option>
+                                        <option value="중급 영어 회화 및 고급 영어로 가는 길 중급 영어 회화 및 고급 영어로 가는 길">중급 영어 회화 및 고급 영어로 가는 길 중급 영어 회화 및 고급 영어로 가는 길</option>
+                                        <option value="문리학의 원리">문리학의 원리</option>
+                                    </select>
+                                </div> -->
+                                <!-- //강의실홈_학기/강의실 선택하기 -->
+                            </div>  
+                            <!-- //location 위치 이동함_230517 -->
+
+                            <!-- <div class="inner"> 삭제_230517-->
+                                <!-- 로고 셀렉트 박스 삭제_230517-->
+                                <ul class="util">
+
+                                    <!-- <li class="mail "></li>  하나로 합쳐짐 , 태그 삭제_230717 -->
+
+                                    <li class="alrim"> 
+                                        <a href="#0"  data-medi-ui="mail" title="최근에 수신한 SMS,PUSH,E-Mail을 확인합니다."><i class="icon-bell ico" aria-hidden="true"></i></a> <!-- 아이콘변경_230517-->
+                                        <label class="count">999</label>
+
+                                        <div class="menu"> <!-- 스크롤 영역 분리를 위해 감싸는 태그 추가_230717 -->
+
+                                            <!-- 탭메뉴 추가_230717 -->
+                                            <div class=" ui pointing secondary tabmenu tMenubar ml8 mr8"> <!-- 클래스 flex p8 gap4 변경_230717  -->
+                                                <a class="tmItem active" data-tab="tabcont1">PUSH<small class="msg_num">99</small></a>
+                                                <a class="tmItem" data-tab="tabcont2">쪽지<small class="msg_num">99</small></a>
+                                                <a class="tmItem" data-tab="tabcont3">test_내용없음</a>
+                                            </div>
+                                            <!-- //탭메뉴 추가_230717 -->
+
+                                            <div class="scrollbox_inside ">  <!--  클래스 수정 _230717 -->
+
+                                                <!-- <div class="flex p8 gap4">
+                                                    <a href="" class="ui basic small button">버튼</a>
+                                                </div>  태그 삭제_230717 -->
+
+                                                <!-- <div class="ui divider m0"></div> 태그 삭제_230717 -->
+
+                                                <!-- push_230717 -->
+                                                <div class="p8 ui tab active" data-tab="tabcont1">  <!--  클래스 수정 dataset 추가 _230717 -->
+
+                                                    <div class="item">
+                                                        <a href="#0" onclick="goSysmsgList('S');return false;" title="내용보기">
+                                                            <p class="item-title text-truncate">[S] test수업 진행 안내 사항을 말씀드립니다. 반드시 지정된 강의기간에 강의내용이 오픈될 수 있도록 작업해주세요.</p> 
+                                                            <div class="flex pt8">
+                                                                <small class="f075 mra">이름</small>
+                                                                <small class="f075">2023-03-24 15:30:51</small>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <a href="#0" onclick="goSysmsgList('S');return false;" title="내용보기">
+                                                            <p class="item-title text-truncate">[S] 말주임표클래스 text-truncate 추가.</p>
+                                                            <div class="flex pt8">
+                                                                <small class="f075 mra">이름</small>
+                                                                <small class="f075">2023-03-24 15:30:51</small>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="item">
+                                                        <a href="#0">test</a>
+                                                    </div>
+
+                                                </div>
+                                                <!-- //push_230717 -->
+
+                                                <!-- 쪽지_230717 -->
+                                                <div class="p8 ui tab " data-tab="tabcont2"> 
+
+                                                    <div class="item"> 
+                                                        <div class="flex">  <!-- 박스 추가_230327  -->
+                                                            <a href="#0"  onclick="goSysmsgList('N');return false;" title="내용보기">
+                                                                <p class="item-title">[M] asdfasdf asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf</p>
+                                                                <div class="flex pt8">
+                                                                    <small class="f075 mra">이름</small>
+                                                                    <small class="f075">2023-03-24 15:30:51</small>
+                                                                </div>
+                                                            </a>                                               
+                                                            <button type="button" class="ui basic mini button boxShadowNone mla flex-shrink0" onclick="viewSysmsgSendBox('N0')" title="답장"><i class="xi-reply"></i></button> 
+                                                        </div>
+                                                                                    
+
+                                                        <div id="sysmsg_sendbox_N0" class="field flex flex-column gap4 mt10" >
+
+                                                            <!-- 첨부된파일_230717 -->
+                                                            <div class="ui segment p0 m0">
+                                                                <div class="mb5 opacity7 file-txt">
+                                                                    <a href="javascript:void(0)" class="btn border0" onclick="fileDown('')">
+                                                                        <i class="xi-download mr3" aria-hidden="true"></i>
+                                                                        4-1-01 직제 규정.hwp (66 KB)
+                                                                    </a>
+                                                                    <a href="javascript:void(0)" class="btn border0" onclick="fileDown('')">
+                                                                        <i class="xi-download mr3" aria-hidden="true"></i>
+                                                                        9086f74a4072a8.jpg (7 MB)
+                                                                    </a>
+                                                                    <a href="javascript:void(0)" class="btn border0" onclick="fileDown('')">
+                                                                        <i class="xi-download mr3" aria-hidden="true"></i>
+                                                                        4267235fdfb8f7.jpg (6 MB)                                                    
+                                                                    </a>                                  
+                                                                </div>
+                                                            </div>
+                                                            <!-- //첨부된파일_230717 -->
+
+                                                            <textarea id="sysmsg_N0" rows="2"></textarea> 
+
+                                                            <!-- 버튼 추가_230717 -->
+                                                            <div class="flex">
+                                                                <button class="ui basic icon small button mra" title="파일첨부" aria-label="파일첨부"><i class="save icon"></i></button>
+                                                                <button class="ui basic small button" >전송</button>
+                                                            </div>
+                                                            <!-- //버튼 추가_230717 -->
+
+                                                            <!-- 첨부한 파일_230717 -->
+                                                            <div class="ui segment p0 m0">
+                                                                <div class="mb5 opacity7 file-txt">
+                                                                    <div class="btn border0" >
+                                                                        <i class="paperclip icon f080" aria-hidden="true"></i>
+                                                                        4-1-01 직제 규정.hwp (66 KB)
+                                                                        <button type="button" class="del" title="파일삭제" aria-label="파일삭제"></button>
+                                                                    </div>
+                                                                    <div class="btn border0" >
+                                                                        <i class="paperclip icon f080" aria-hidden="true"></i>
+                                                                        9086f74a4072a8.jpg (7 MB)
+                                                                        <button type="button" class="del" title="파일삭제" aria-label="파일삭제"></button>
+                                                                    </div>
+                                                                    <div class="btn border0" >
+                                                                        <i class="paperclip icon f080" aria-hidden="true"></i>
+                                                                        4267235fdfb8f7.jpg (6 MB)   
+                                                                        <button type="button" class="del" title="파일삭제" aria-label="파일삭제"></button>                                                 
+                                                                    </div>                                  
+                                                                </div>
+                                                            </div>
+                                                            <!-- //첨부한 파일_230717 -->
+
+                                                        </div>                      
+                                                    </div> 
+                                                    <div class="item">  
+                                                        <div class="flex">
+                                                            <a href="#0"  onclick="goSysmsgList('N');return false;" title="내용보기">
+                                                                <p class="item-title">[M] asdfasdf</p>
+                                                                <small class="f075">2023-03-27 09:57:56</small>
+                                                            </a>                                               
+                                                            <button type="button" class="ui basic mini button boxShadowNone mla flex-shrink0" onclick="viewSysmsgSendBox('N0')" title="답장"><i class="xi-reply"></i></button>
+                                                        </div>
+
+                                                        <div id="sysmsg_sendbox_N0" class="field flex flex-column gap4 mt10" style="display: none !important;">
+                                                            <textarea id="sysmsg_N0" rows="2"></textarea> 
+                                                            <button class="ui basic mini button mla" onclick="sendSysmsg('N',0,'9020015','젼인숙');return false;">보내기</button>
+                                                        </div>                      
+                                                    </div>  
+                                                </div>
+                                                <!-- //쪽지_230717 -->
+
+                                                <!-- 탭 내용없을때_230717 -->
+                                                <div class="p8 ui tab " data-tab="tabcont3"> 
+                                                    <div class="flex-container m-hAuto">
+                                                        <div class="no_content">
+                                                            <!-- <i class="paper plane outline icon f170"></i> -->
+                                                            <span>test_새로운 메시지 없음</span>
+                                                            <div class="flex tc mt10 gap4">
+                                                                <a href="" class="ui basic small button">버튼</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //탭 내용없을때_230717 -->
+
+                                            </div>
+
+                                            <div class="flex p8">
+                                                <button type="button" class="ui basic button small mra">모두 읽음 처리</button>
+                                                <button type="button" class="ui basic button small">전체 목록</button>
+                                            </div>
+
+                                        </div>
+
+                                            
+                                        <script> 
+                                            //초기화 방법 1__일반적인 형식
+                                            $('.tabmenu.tMenubar .tmItem').tab(); 
+
+                                            //초기화 방법 2__탭을 선택해 초기화 할 경우
+                                            //$('.tabmenu.tMenubar .tmItem').tab('change tab', 'tabcont2'); 
+
+                                            // 탭 콘텐츠 변경
+                                            //$('.tabmenu.tMenubar .tmItem').tab('change tab', 'tabcont3'); // 탭콘텐츠 
+                                            //$('.tabmenu.tMenubar .tmItem').tab('change tab', 'tabcont2 _data-tab 값입력하는곳');
+                                        </script>
+
+                                    </li>
+                                    
+
+                                    <li class="mode">
+                                        <a href="#0" data-medi-ui="mode"><i class="theme-light-dark ico" aria-hidden="true"></i></a>    
+
+                                        <div class="menu">
+                                            <div class="title">설정</div>
+                                            <div class="item"> 
+                                                <div class="option-content">
+                                                    <div class="sec_head">화면모드</div>
+                                                    <div class="flex">
+                                                        <button type="button" class="ui basic button"><i class="ion-checkmark icon f075 m0" aria-hidden="true"></i> 다크</button>
+                                                        <button type="button" class="ui blue button"><i class="ion-checkmark icon f075 m0" aria-hidden="true"></i> 라이트</button>
+                                                        
+                                                    </div>
+                                                </div> 
+                                                <div class="option-content">
+                                                    <div class="sec_head">언어</div>
+                                                    <div class="flex">
+                                                        <button type="button" class="ui blue button"><i class="ion-checkmark icon f075 m0" aria-hidden="true"></i> Kor</button>
+                                                        <button type="button" class="ui basic button"><i class="ion-checkmark icon f075 m0" aria-hidden="true"></i> Eng</button>
+                                                    </div>
+                                                </div>                    
+                                            </div> 
+                                        </div>                                        
+                                    </li>
+
+                                    <!-- 언어설정 추가_230919 -->
+                                    <li class="mode">
+                                        <a href="#headerUtil" onclick="" title="언어변경"><i class="ico icon-translate-kor-eng" aria-hidden="true"></i><span class="blind">언어변경</span></a>
+                                    </li>
+                                    <!-- //언어설정 추가_230919 -->
+
+                                    <!-- 사용자 정보 위치 lnb 로 이동함_230517 -->
+                                    <!-- <script> 화면 확대 축소 스크립트 삭제_230517 -->
+                                </ul>
+                            <!-- </div> 삭제_230517-->
+
+
+                        </header><!-- 헤더 위치 이동_230517 -->
+                        <!--%@ include file="../inc/location_last.jsp" %--> <!-- location 위치 header 로  이동_230517 -->
+
+
+                        <!-- 본문 content 부분 -->
+                        <!-- <div class="content"> 태그 삭제_230517-->
+
+                            <main class="common"> <!-- <div class="ui form"> 태그 변경 및 클래스 변경_230517 -->
+
+                                <!-- col-left -->
+                                <div class="col-left"> 
+
+                                    <!-- 정보+아이콘 -->
+                                    <ul class="infoIconSet">  <!-- 클래스 수정_230517-->
+                                        <li class="info bcPurpleAlpha85">
+                                            <div class="flex-item">
+                                                <div class="alt_icon">
+                                                    <i class="icon-calender-check ico" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="alt_txt ">
+                                                    6<small class="">주차</small>
+                                                </div>
+                                            </div>                                                
+                                            <small class="">2022.05.09 ~ 05.20</small>  
+                                        </li>
+                                        <li class="info bcDarkblueAlpha85">    
+                                            <div class="flex-item">                                        
+                                                <div class="alt_icon"><i class="icon-users ico " aria-hidden="true"></i></div>
+                                                <div class="tooltiptext tooltip-top alertToggle">접속<br>현황 <i class="ion-ios-arrow-down"></i></div>
+                                            </div>
+                                            <div class="alt_txt">17<span>200</span></div>                            
+                                            <!-- alert_modal -->
+                                            <div class="alert_modal">
+
+                                                <!-- 버튼 수정됨_230725 -->
+                                                <div class="flex mb5"> <!-- 감싸는태그 추가_230725 -->
+                                                    <div class="sort_btn mra"> <!-- 클래스 추가_230725 -->
+                                                        <button type="button">정렬<i class="sort amount down icon" aria-hidden="true"></i></button>
+                                                        <button type="button">정렬<i class="sort amount up icon" aria-hidden="true"></i></button>
+                                                    </div>
+                                                    <button type="button" class="p2 flex-item flex-none">전체알림 <i class="icon-bell ico" aria-hidden="true"></i></button><!-- 추가한 버튼_230725 -->
+                                                </div>
+                                                <!-- //버튼 수정됨_230725 -->
+                                                
+                                                <div class="scrollbox">
+                                                    <!-- style="height:200px" -->
+                                                    <ul class="u_list">
+                                                        <li>
+                                                            <div class="initial-img sm bcBlue">석현</div>
+                                                            <div> <!-- 항목 묶는 태그 추가_230605 -->
+                                                                <span class="u_name">홍길동</span>
+                                                                <span class="fcGrey">UST9020015</span>
+                                                                <p>정보와 기술 1반</p> <!-- 일단놔둠..230623-->
+                                                            </div>
+                                                            <div class="btn_wrap">
+                                                                <button type="button" class=""><i class="ico icon-info"></i></button> <!-- 아이콘 수정_230526 -->
+                                                                <button type="button" class=""><i class="icon-bell ico"></i></button> <!-- 아이콘 수정_230526 -->
+                                                        </li>
+                                                        <li>
+                                                            <div class="initial-img sm bcGraduSch">석현</div> <!-- 대학원 색상 -->
+                                                            <div> <!-- 항목 묶는 태그 추가_230605 -->
+                                                                <span class="u_name">홍길동</span>
+                                                                <span class="fcGrey">UST9020015</span>
+                                                                <!-- <p>정보와 기술 1반</p> 안쓴다고..230623-->
+                                                            </div>
+                                                            <div class="btn_wrap">
+                                                                <button type="button" class=""><i class="ico icon-info"></i></button> <!-- 아이콘 수정_230526 -->
+                                                                <button type="button" class=""><i class="icon-bell ico"></i></button> <!-- 아이콘 수정_230526 -->
+                                                            </div>
+                                                        </li>  
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- //alert_modal -->                                                                           
+                                        </li>
+                                        <li class="info">  
+                                            <div class="flex-item">                                          
+                                                <div class="alt_icon"><i class="icon-alert-triangle ico" aria-hidden="true"></i></div>
+                                                <span class="tooltiptext tooltip-top">이수위험</span>
+                                            </div>
+                                            <div class="alt_txt">3<span>50</span></div>
+                                        </li>
+                                        <li class="info">    
+                                            <div class="flex-item">                                        
+                                                <div class="alt_icon"><i class="icon-user-no ico" aria-hidden="true"></i></div>
+                                                <span class="tooltiptext tooltip-top">결시원</span>
+                                            </div>
+                                            <div class="alt_txt">2<span>4</span></div>
+                                        </li>
+                                        <li class="info">   
+                                            <div class="flex-item">                                        
+                                                <div class="alt_icon"><i class="icon-user-question ico" aria-hidden="true"></i></div>
+                                                <span class="tooltiptext tooltip-top">이의신청</span>
+                                            </div>
+                                            <div class="alt_txt">2<span>3</span></div>
+                                        </li>
+                                        <li class="info">  
+                                            <div class="flex-item">                                         
+                                                <div class="alt_icon"><i class="icon-wheelchair ico" aria-hidden="true"></i></div>
+                                                <span class="tooltiptext tooltip-top">장애인지원</span>
+                                            </div>
+                                            <div class="alt_txt">2<span>2</span></div>
+                                        </li>
+                                    </ul>
+                                    <!-- //정보+아이콘 -->
+
+
+                                    <!-- 교수_일정_230517 -->
+                                    <div class="component22"> <!-- 클래스 수정_230517-->                                                
+                                        <div class="option-content"> <!-- 클래스 수정_230517-->
+                                            <!-- sort 버튼 삭제_230517-->
+                                            <div class="sec_head">이달의 수업일정</div>
+                                            <!-- <div class="scheCtrl">
+                                                <button class="ui basic mini button today">오늘</button> -->
+                                                <div class="panel-head">
+                                                    <a class="btn-prev" href="#"><i class="ion-ios-arrow-back"></i></a>
+                                                    <div class="this-month">8<small>월</small></div>
+                                                    <a class="btn-next" href="#"><i class="ion-ios-arrow-forward"></i></a>
+                                                </div>
+                                            <!-- </div> -->
+
+                                            <!-- <div class="select_area">
+                                                <div class="btn_area">
+                                                    <button type="button" class="active">전체</button>                                                         
+                                                    <button type="button">과목</button>
+                                                    <button type="button">개인</button>
+                                                    <button type="button" class="more" title="더보기"><i class="plus icon"></i></button>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                        <ul class=""> <!-- sche_list 클래스 삭제_230517 -->
+                                            <li>
+                                                
+                                                    <small class="s_date">08.01 ~ 08.04</small>
+                                                    <div class="s_txt">
+                                                        <p class="">재입학</p>
+                                                        <p class="">재입학</p>
+                                                    </div>
+                                                
+                                            </li>
+                                            <li>
+                                                
+                                                <small class="s_date">08.01 ~ 08.04</small> 
+                                                <div class="s_txt"> 
+                                                    <p class="">재입학</p>
+                                                    <p class="">재입학</p>
+                                                </div>
+                                                
+                                            </li>
+                                            <li>                                                            
+                                                <small class="s_date">08.08 ~ 08.11</small>
+                                                <div class="s_txt">
+                                                    <p class="">후기등록, 학기조정</p>
+                                                </div>                                                            
+                                            </li>
+                                            <li>                                                            
+                                                <small class="s_date">08.12</small>
+                                                <div class="s_txt">
+                                                    <p class="">21학년도 졸업사정</p>
+                                                </div>                                                            
+                                            </li>
+                                            <li>                                                            
+                                                <small class="s_date">08.16 ~ 08.18</small>
+                                                <div class="s_txt">
+                                                    <p class="">후기등록, 학기조정</p>
+                                                </div>                                                            
+                                            </li>
+                                            <li>                                                            
+                                                <small class="s_date">08.16 ~ 08.22</small>
+                                                <div class="s_txt">
+                                                    <p class="">22학년도 휴학/자퇴</p>
+                                                </div>                                                            
+                                            </li>
+                                            <li>                                                            
+                                                <small class="s_date">08.22 ~ 08.26</small>
+                                                <div class="s_txt">
+                                                    <p class="">2학기 등록기간</p>
+                                                </div>                                                            
+                                            </li>
+                                            <li>                                                            
+                                                <small class="s_date">08.31</small>
+                                                <div class="s_txt">
+                                                    <p class="">휴복학신청기간</p>
+                                                </div>                                                            
+                                            </li>
+                                        </ul>
+                                        <!-- </div> -->
+                                    </div>
+                                    <!-- //교수_일정_230517 -->
+                                </div>
+                                <!-- //col-left -->
+
+
+
+                                <!-- mainCnt -->
+                                <div class="mainCnt">
+
+                                    <!-- 수업운영점수_추가된 요소_230517 -->
+                                    <div class="component66">
+                                        <div class="option-content">
+                                            <div class="sec_head">수업운영점수</div>
+                                            <div class="button-area">
+                                                <a href="#0" class="txt-link">수업운영 평가기준 보기 <i class="ion-ios-arrow-forward" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="area2">
+                                            <div>
+                                                <i class="icon-state-course ico" aria-hidden="true"></i>
+                                                <span>나의 수업운영 현황</span>
+                                            </div>
+                                            <div>
+                                                <p>총접속일수 <b>33회</b></p>
+                                                <p>금주접속일수 <b>5회</b></p>
+                                            </div>
+                                        </div>
+
+                                        <!-- 수정_230727 -->
+                                        <ul class="score-area">
+                                            <!-- <li> 사용하지 않는 영역 모두 주석처리함_230727
+                                                <dl>
+                                                    <dt>상벌점현황</dt>
+                                                    <dd>벌점 <span>0</span></dd>
+                                                    <dd>상점 <span>0</span></dd>
+                                                </dl>
+                                            </li> -->
+                                            <li>
+                                                <dl>
+                                                    <dt>강의 Q&amp;A 현황</dt>
+                                                    <dd>항목이름 <span>0</span></dd>
+                                                    <!-- <dd>내응답시간 <span>0</span></dd>
+                                                    <dd>전체평균 <span>0</span></dd> -->
+                                                </dl>
+                                            </li>
+                                            <li>
+                                                <dl>
+                                                    <dt>1:1 상담</dt>
+                                                    <dd>항목이름 <span>0</span></dd>
+                                                    <!-- <dd>내응답시간 <span>0</span></dd>
+                                                    <dd>전체평균 <span>0</span></dd> -->
+                                                </dl>
+                                            </li>
+                                        </ul>
+                                        <!-- //수정_230727 -->
+
+                                    </div>
+                                    <!-- //수업운영점수_추가된 요소_230517 -->
+
+                                    <!-- 공지글 -->
+                                    <div class="component33 off" data-medi-ui="more-off" data-ctrl-off="testBtn">
+
+                                        <!-- 탭메뉴 -->
+                                        <div class="listTab2 noti" data-target="tab_contents1">
+                                            <div data-target="#tab1" class="active">전체공지 <span class="msg_num">3</span></div>
+                                            <div data-target="#tab2">강의공지 <span class="msg_num">11</span></div>
+                                            <div data-target="#tab3">강의Q&A <span class="msg_num">11</span></div>
+                                            <div data-target="#tab4">1:1상담 <span class="msg_num">11</span></div>
+                                        </div>  
+                                        <!-- //탭메뉴 -->
+
+                                        <!-- 탭메뉴_콘텐츠 -->
+                                        <div class="tab_contents1"> 
+                                            <div id="tab1" class="tab_content on">
+                                                <div class="cont_header">
+                                                    <button class="btn-icon more" aria-label="더보기"><i class="ion-plus"></i></button>
+                                                </div>
+                                                <div class="cont_body">
+                                                    <ul class="list_line_S2">
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="n_tit">
+                                                                    <p class="head">
+                                                                        <span>
+                                                                            사이트 이용약관 변경 사이트 이용약관 변경 사이트 이용약관 변경 사이트 이용약관 변경 사이트 이용약관 변경
+                                                                        </span>
+                                                                        <i class="ui pink circular mini label">N</i>
+                                                                    </p>
+                                                                    <!-- <p class="sub">
+                                                                        <small class="">유럽문화탐방(1반)</small>
+                                                                        <small class="bullet_vertical">3주차</small>
+                                                                    </p> -->
+                                                                </div>
+                                                                <div class="n_date">
+                                                                    <small class="ui orange small label">미답변</small>
+                                                                    <!-- <small>2022.07.29</small> -->
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="n_tit">
+                                                                    <p class="head">
+                                                                        <span>사이트 이용약관 변경</span>
+                                                                        <i class="ui pink circular mini label">N</i>
+                                                                    </p>
+                                                                    <!-- <p class="sub">
+                                                                        <small class="">유럽문화탐방(1반)</small>
+                                                                        <small class="bullet_vertical">3주차</small>
+                                                                    </p> -->
+                                                                </div>
+                                                                <div class="n_date">
+                                                                    <small class="ui orange small label">대기</small>
+                                                                    <small>2022.07.29</small>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="n_tit">
+                                                                    <p class="head">
+                                                                        <span>사이트 이용약관 변경</span>
+                                                                        <i class="ui pink circular mini label">N</i>
+                                                                    </p>
+                                                                    <!-- <p class="sub">
+                                                                        <small class="">유럽문화탐방(1반)</small>
+                                                                        <small class="bullet_vertical">3주차</small>
+                                                                    </p> -->
+                                                                </div>
+                                                                <div class="n_date">
+                                                                    <small class="ui green small label">답변</small>
+                                                                    <small>2022.07.29</small>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <div class="n_tit">
+                                                                    <p class="head">
+                                                                        <span>사이트 이용약관 변경</span>
+                                                                        <i class="ui pink circular mini label">N</i>
+                                                                    </p>
+                                                                    <p class="sub">
+                                                                        <small class="">유럽문화탐방(1반)</small>
+                                                                        <small class="bullet_vertical">3주차</small>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="n_date">
+                                                                    <small>조회 : 25</small>
+                                                                    <small>2022.07.29</small>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div id="tab2" class="tab_content">
+                                                <div class="flex-container">
+                                                    <div class="cont-none"><i class="icon-list-no ico"></i><span>등록된 내용이 없습니다</span></div>
+                                                </div>
+                                            </div>
+                                            <div id="tab3" class="tab_content">
+                                                <div class="flex-container">
+                                                    <div class="cont-none"><i class="icon-list-no ico"></i><span>33 ____등록된 내용이 없습니다</span></div>
+                                                </div>
+                                            </div>
+                                            <div id="tab4" class="tab_content">
+                                                <div class="flex-container">
+                                                    <div class="cont-none"><i class="icon-list-no ico"></i><span>44 ____등록된 내용이 없습니다</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //탭메뉴_콘텐츠 -->
+                                            
+                                    </div>
+                                    <!-- //공지글 -->
+
+
+
+                                    <!-- 과목, 수시평가 추가_230626 -->
+                                    <div class="col-12 component55">
+                                        <div class="option-content header2">                                                    
+                                            
+                                            <div class="listTab2" data-target="tab_contents2">
+                                                <a data-target="#tab5" class="active"><h3>정규 과목</h3></a>
+                                                <a data-target="#tab6" class=""><h3>모니터링 과목</h3></a> 
+                                                <a data-target="#tab7" class=""><h3>수시평가</h3></a> 
+                                            </div>
+                                            <div class="select_area">
+                                                <select class="ui dropdown mr5">
+                                                    <option value="">2021년 2학기</option>
+                                                    <option value="전체">전체</option>
+                                                    <option value="2021년 1학기">2021년 1학기</option>
+                                                    <option value="2021년 2학기">2021년 2학기</option>
+                                                    <option value="2022년 1학기">2022년 1학기</option>
+                                                </select>                                             
+                                            </div>
+                                        </div>      
+                                        <div class="tab_contents2"> <!-- 클래스 수정_230517 -->
+                                            <div id="tab5" class="tab_content on">  
+                                                <!-- item, 교수_과목리스트 레이아웃 변경_230517-->
+                                                <section class="item">
+                                                    <div class="header">                
+                                                        <div class="option-content">                                  
+                                                            <a href="" class="h4 graduSch"><!-- 대학원 클래스 추가_230602-->
+                                                                컴퓨터프로그래밍기초
+                                                            </a> 
+                                                            <a href="#0" class="ui small button" title="수업계획서" aria-label="수업계획서"><i class="icon-paper3 ico" aria-hidden="true"></i></a>
+                                                        </div>
+                                                        <div class="extra1"> <!-- 수강 청강 태그 변경 및 위치 이동_230517 -->
+                                                            <dl><dt>수강</dt><dd>50명</dd></dl> 
+                                                            <dl><dt>청강</dt><dd>13명</dd></dl> 
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="cnt"> <!-- 클래스 수정_230517 -->
+                                                        <a class="box noti" data-label="공지사항">999</a>
+                                                        <a class="box qna" data-label="Q&A">1</a>
+                                                        <a class="box qna" data-label="1:1상담">1</a>
+
+                                                        <a class="box" data-label="과제평가"><span>3<small>99</small></span></a>
+                                                        <a class="box" data-label="토론평가"><span>2<small>99</small></span></a>
+                                                        <a class="box" data-label="퀴즈평가"><span>5<small>99</small></span></a>
+                                                        <a class="box" data-label="설문"><span>1<small>0</small></span></a>  
+                                                        <a class="box" data-label="수시평가"><span>2<small>99</small></span></a>
+                                                        
+                                                        <a class="box" data-label="세미나">4</a>         
+                                                    </div>
+                                                    <div class="extra2">
+                                                        <dl>
+                                                            <dt>중간고사</dt>
+                                                            <dd>2022.04.16 18:00</dd>
+                                                            <dd>30분</dd>
+                                                            <dd>성적공개</dd>
+                                                            <dd>시험지비공개</dd>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt>기말고사</dt>
+                                                            <dd>2022.04.16 18:00</dd>
+                                                            <dd>30분</dd>
+                                                            <dd>성적공개</dd>
+                                                            <dd>시험지비공개</dd>
+                                                        </dl>
+                                                        <!-- <div class="item-btn">
+                                                            <button type="button" class="btn">참여하기</button>
+                                                            <button type="button" class="btn">수정하기</button>
+                                                            <button type="button" class="btn">평가결과</button>
+                                                            <div class="tip1 right on">
+                                                                <button type="button" class="close ico icon-info" data-medi-ui="tip" data-target="tip1" title="말풍선 열고 닫는 버튼"></button>
+                                                                <div class="description">
+                                                                    <p class="title">
+                                                                        강의평가 <button type="button" class="close ico icon-cross" data-medi-ui="tip" data-target="tip1" title="말풍선 열고 닫는 버튼"></button>
+                                                                    </p>
+                                                                    <p>2022.04.16 16:00 ~ 2022.04.16 18:00</p>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                    </div>
+                                                </section>
+                                                <!-- //item, 교수_과목리스트 레이아웃 변경_230517-->
+
+                                                <!-- item -->
+                                                <section class="item">
+                                                    <div class="header">   
+                                                        <div class="option-content">                                  
+                                                            <a href="" class="h4">
+                                                                1컴퓨터프로그래밍기초 컴퓨터프로그래밍기초컴퓨터프로그래밍기초컴퓨터
+                                                            </a>
+                                                            <a href="#0" class="ui small button" title="수업계획서" aria-label="수업계획서"><i class="icon-paper3 ico" aria-hidden="true"></i></a>
+                                                        </div>            
+                                                        
+                                                        <div class="extra1"> <!-- 수강 청강 태그 변경 및 위치 이동_230517 -->
+                                                            <dl><dt>수강</dt><dd>50명</dd></dl> 
+                                                            <dl><dt>청강</dt><dd>13명</dd></dl> 
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="cnt"> <!-- 클래스 수정_230517 -->
+                                                        <a class="box noti" data-label="공지사항">999</a>
+                                                        <a class="box qna" data-label="Q&A">1</a>
+                                                        <a class="box qna" data-label="1:1상담">1</a> 
+
+                                                        <a class="box" data-label="과제평가"><span>3<small>99</small></span></a>
+                                                        <a class="box" data-label="토론평가"><span>2<small>99</small></span></a>      
+                                                    </div>
+                                                    <div class="extra2">
+                                                        <dl>
+                                                            <dt>중간고사</dt>
+                                                            <dd>2022.04.16 18:00</dd>
+                                                            <dd>30분</dd>
+                                                            <dd>성적공개</dd>
+                                                            <dd>시험지비공개</dd>
+                                                            <dd>
+                                                                <div class="item-btn"><button type="button" class="btn">중간고사 재시험</button></div>
+                                                            </dd>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt>기말고사</dt>
+                                                            <dd>2022.04.16 18:00</dd>
+                                                            <dd>30분</dd>
+                                                            <dd>성적공개</dd>
+                                                            <dd>시험지비공개</dd>
+                                                            <dd>
+                                                                <div class="item-btn"><button type="button" class="btn">기말고사 재시험</button></div>
+                                                            </dd>
+                                                        </dl>
+                                                        <div class="item-btn">
+                                                            <!-- <button type="button" class="btn">참여하기</button>
+                                                            <button type="button" class="btn">수정하기</button> -->
+                                                            <button type="button" class="btn">강의평가 참여</button>
+                                                            <div class="tip1 on">
+                                                                <button type="button" class="close ico icon-info" data-medi-ui="tip" data-target="tip1" title="말풍선 열고 닫는 버튼"></button>
+                                                                <div class="description">
+                                                                    <p class="title">
+                                                                        강의평가 <button type="button" class="close ico icon-cross" data-medi-ui="tip" data-target="tip1" title="말풍선 열고 닫는 버튼"></button>
+                                                                    </p>
+                                                                    <p>2022.04.16 16:00 ~ 2022.04.16 18:00</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                                <!-- //item -->
+
+                                                <!-- 학생_과목리스트 레이아웃 변경_230517-->
+                                                <section class="item">
+                                                    <div class="header">  
+                                                        <div class="option-content">
+                                                            <a href="" class="h4">
+                                                                컴퓨터프로그래밍기초
+                                                            </a>
+                                                        </div>     
+                                                        <div class="extra1"> <!-- 수강 청강 태그 변경 및 위치 이동_230517 -->
+                                                            <dl><dt>수강</dt><dd>50명</dd></dl> 
+                                                            <dl><dt>청강</dt><dd>13명</dd></dl> 
+                                                        </div>                                                        
+                                                    </div>
+
+                                                    <div class="cnt"> <!-- 클래스 수정_230517 -->
+                                                        <a class="box noti" data-label="공지사항">999</a>
+                                                        <a class="box qna" data-label="Q&A">1</a>
+                                                        <a class="box qna" data-label="1:1상담">1</a>
+
+                                                        <a class="box" data-label="과제평가"><span>3<small>99</small></span></a>
+                                                        <a class="box" data-label="토론평가"><span>2<small>99</small></span></a>
+                                                        <a class="box" data-label="퀴즈평가"><span>5<small>99</small></span></a>
+                                                        <a class="box" data-label="설문"><span>1<small>0</small></span></a>  
+                                                        <a class="box" data-label="수시평가"><span>2<small>99</small></span></a>
+                                                        
+                                                        <a class="box" data-label="세미나">4</a>
+                                                                  
+                                                    </div>
+                                                    <div class="extra2">  <!-- 태그 수정_230526 -->
+                                                        <dl>  <!-- 태그 수정_230526 -->
+                                                            <dt>중간고사</dt>
+                                                            <dd>2022.04.16 18:00</dd>
+                                                            <dd>30분</dd>
+                                                            <dd>성적공개</dd>
+                                                            <dd>시험지비공개</dd>
+                                                        </dl>
+                                                        <dl>
+                                                            <dt>기말고사</dt>
+                                                            <dd>2022.04.16 18:00</dd>
+                                                            <dd>30분</dd>
+                                                            <dd>성적공개</dd>
+                                                            <dd>시험지비공개</dd>
+                                                        </dl>
+                                                        <div class="item-btn">  <!-- 위치 이동_230526 -->
+                                                            <button type="button" class="btn ok">평가완료</button>
+                                                            <button type="button" class="btn">강의평가 참여</button>
+                                                            <button type="button" class="btn">참여하기</button>
+                                                            <button type="button" class="btn">수정하기</button>
+                                                           <!--  <button type="button" class="btn">평가결과</button> -->
+                                                            <div class="tip1 right on">  <!-- 내용 추가_230526 -->
+                                                                <button type="button" class="close ico icon-info" data-medi-ui="tip" data-target="tip1" title="말풍선 열고 닫는 버튼"></button>
+                                                                <div class="description">
+                                                                    <p class="title">
+                                                                        강의평가 <button type="button" class="close ico icon-cross" data-medi-ui="tip" data-target="tip1" title="말풍선 열고 닫는 버튼"></button>
+                                                                    </p>
+                                                                    <p>2022.04.16 16:00 ~ 2022.04.16 18:00</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="list-table card-table"> -->
+                                                    <div class="sch2"> <!-- 클래스 수정_230517 -->
+                                                        <!-- <div class="cardItem tl mb4" data-label="학습진행현황"></div> -->
+                                                        <div class="td state_ok" data-label="1"><i class="ico"></i></div>
+                                                        <div class="td state_bad" data-label="2"><i class="ico"></i></div>
+                                                        <div class="td state_norm" data-label="3"><i class="ico"></i></div>
+                                                        <div class="td state_now state_ing" data-label="4"><i class="ico"></i></div>
+                                                        <div class="td state_now state_open" data-label="5"><i class="ico"></i></div>
+                                                        <div class="td" data-label="6"><i class="ico"></i></div>
+                                                        <div class="td" data-label="7"><i class="ico"></i></div>
+                                                        <div class="td" data-label="9"><i class="ico"></i></div>
+                                                        <div class="td" data-label="10"><i class="ico"></i></div>
+                                                        <div class="td" data-label="11"><i class="ico"></i></div>
+                                                        <div class="td" data-label="12"><i class="ico"></i></div>
+                                                        <div class="td" data-label="13"><i class="ico"></i></div>
+                                                        <div class="td" data-label="14"><i class="ico"></i></div>
+                                                        <!-- <div class="td" data-label="/"><i class="ico"></i></div> -->
+                                                    </div>
+                                                    <!-- </div> -->
+                                                </section>
+                                                <!-- //학생_과목리스트 레이아웃 변경_230517-->  
+                                            </div>
+                                            <div id="tab6" class="tab_content">
+                                                tab2, column2
+                                                <div class="flex-container">
+                                                    <div class="cont-none"><i class="icon-list-no ico"></i><span>33 ____등록된 내용이 없습니다</span></div>
+                                                </div>
+                                            </div>
+                                            <div id="tab7" class="tab_content">
+
+                                                <!-- 수시평가 -->
+                                                <!-- item -->
+                                                <section class="item">
+                                                    <div class="header max-width-none flex-item flex1 flex-wrap gap4"> <!-- 클래스 추가_230626 -->
+                                                        <div class="option-content mra">   
+                                                            <a href="" class="h4">
+                                                               유럽 문화 탐방 (01반)
+                                                            </a>
+                                                        </div>    
+                                                        <div class="item-btn">
+                                                            <button type="button" class="btn">EMS 미리보기</button>
+                                                            <button type="button" class="btn">시험지보기</button>
+                                                        </div>                                             
+                                                    </div>
+                                                    <div class="extra2 columngap16">  <!-- 클래스 추가_230626 -->
+                                                        <dl class="p_m-w30 mr0"><dt>수시평가명</dt><dd><a href="#0" class="">상담이론</a></dd></dl> <!-- 클래스 추가_230626 -->
+                                                        <dl class="p_m-w30 mr0"><dt>수시평가명</dt><dd><a href="#0" class="">학습이론</a></dd></dl> 
+                                                        <dl class="p_m-w30 mr0"><dt>수시평가명</dt><dd><a href="#0" class="">버튼, 링크</a></dd></dl> 
+                                                        <dl class="p_m-w30 mr0"><dt>시험유형</dt><dd>실시간시험</dd></dl>
+                                                        <dl class="p_m-w30 mr0"><dt>성적반영비율</dt><dd>25%</dd></dl>
+                                                        <dl class="p_m-w30 mr0"><dt>시험 일시</dt><dd>2022.08.12 14:00, 30분</dd></dl>
+                                                        <dl class="p_m-w30 mr0"><dt>성적 공개</dt><dd>공개</dd></dl>
+                                                        <dl class="p_m-w30 mr0"><dt>성적 공개</dt><dd class="fcRed">비공개</dd></dl>
+                                                        <dl class="p_m-w30 mr0"><dt>음성/동영상 포함</dt><dd class="fcRed">N</dd></dl>
+                                                    </div>
+                                                </section>
+                                                <!-- //item -->
+                                                <!-- //수시평가 -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- //과목 -->
+
+
+                                    <!-- 법정교육/인사교육 -->
+                                    <div class="col-12 component55">
+                                        <div class="option-content header2">             
+                                            
+                                            <div class="listTab2" data-target="tab_contents4">
+                                                <a data-target="#tab5" class="active"><h3>법정교육</h3></a>
+                                                <a data-target="#tab6" class=""><h3>test</h3></a> 
+                                            </div>
+                                            <div class="select_area">
+                                                <select class="ui dropdown mr5">
+                                                    <option value="">2021년 2학기</option>
+                                                    <option value="전체">전체</option>
+                                                    <option value="2021년 1학기">2021년 1학기</option>
+                                                    <option value="2021년 2학기">2021년 2학기</option>
+                                                    <option value="2022년 1학기">2022년 1학기</option>
+                                                </select>                                  
+                                            </div>
+                                        </div>      
+                                        <div class="tab_contents4"> <!-- 클래스 수정_230517 -->
+                                            <div id="tab5" class="tab_content on">  
+
+                                                <!-- item-->
+                                                <section class="item">
+                                                    <div class="header">      
+                                                        <div class="option-content">          
+                                                            <a href="" class="h4 ">
+                                                                1년에 1번 필수 법정교육<span class="bullet_vertical">10분</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="extra1">
+                                                            <dl><dt class="blind">구분</dt><dd aria-label="구분">법정교육</dd></dl>
+                                                            <dl><dt class="blind">기간</dt><dd aria-label="기간">2022.08.01 09:00 ~ 2022.09.31 22:00</dd></dl> 
+                                                            <!-- <div><dt>추가항목</dt><dd>test</dd></div>  -->
+                                                        </div>
+                                                        <!-- <div class="item-btn">
+                                                            <button type="button" class="btn">평가수정</button>
+                                                            <button type="button" class="btn">평가완료</button>
+                                                        </div> -->
+                                                    </div>
+
+                                                    <div class="cnt"> <!-- 클래스 수정_230517 -->
+                                                        <div class="box noti" data-label="수강">100%</div>      
+                                                    </div>
+                                                </section>
+                                                
+                                                <!-- //item-->
+                                                            
+                                                    
+                                            </div>
+                                            <div id="tab6" class="tab_content">
+                                                <div class="flex-container">
+                                                    <div class="cont-none"><i class="icon-list-no ico"></i><span>33 ____등록된 교육이 없습니다</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- //법정교육/인사교육 -->
+
+                                    <!-- 복습과목/공개강좌 -->
+                                    <div class="col-12 component77">
+                                        <div class="option-content header2">    
+                                            <div class="listTab2" data-target="tab_contents3">
+                                                <a data-target="#tab5" class="active"><h3>공개강좌</h3></a>
+                                                <!-- <a data-target="#tab6" class=""><h3>test tab_2222</h3></a> -->
+                                            </div>
+                                            <div class="select_area">
+                                                <select class="ui dropdown mr5">
+                                                    <option value="과목명">과목명</option>
+                                                    <option value="test_aaaaaaaaaaaaa">test_aaaaaaaaaaaaa</option>
+                                                </select>     
+                                                <!-- 검색 -->
+                                                <div class="ui action input search-box">
+                                                    <input id="searchValue" type="text" placeholder="작성자/제목/키워드" value="">
+                                                    <button class="ui icon button" type="button" onclick="listPaging(1)">
+                                                        <i class="search icon"></i>
+                                                    </button>
+                                                </div>                                           
+                                            </div>
+                                        </div>      
+                                        <div class="tab_contents3">
+                                            <div id="tab5" class="tab_content on">  
+                                                <ul class="irreg_list">
+                                                    <li>
+                                                        <a href="#0">                                                
+                                                            <div class="irreg_cont">
+                                                                <img src="../data/img/irreg_img01.png" alt="언어의 세계">
+                                                                <p class="img_tit">언어의 세계 언어의 세계 언어의 세계<span class="elp_sm">엄익상 교수</span></p>
+                                                            </div>
+                                                            <div class="flex-item gap4">
+                                                                <span class="ui mini grey label">수강완료</span>
+                                                                <span class="ui mini green label">수강전</span>
+                                                                <span class="ui mini blue label">개강예정</span>
+                                                            </div>
+                                                            <div class="irreg_tit">언어의 세계 : 중국 (15분)</div>
+                                                            <div class="flex_wrap ">
+                                                                <small class="opacity7">법정교육 15분</small>
+                                                                <small class="bullet_vertical opacity7">2022.09.15 ~ 2022.12.30</small>
+                                                                <small class="opacity7">한양사이버대학교</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#0">                                                
+                                                            <div class="irreg_cont">
+                                                                <img src="../data/img/irreg_img02.png" alt="언어의 세계">
+                                                                <p class="img_tit">언어의 세계 <span class="elp_sm">엄익상 교수</span></p>
+                                                            </div>
+                                                            <div class="flex-item gap4">
+                                                                <span class="ui mini grey label">수강완료</span>
+                                                                <small class="flex-inline-item p5 mla"><i class="progressState mr5"><span class="circletype" style="--value:70"></span></i> 70% 완료 </small>
+                                                            </div>
+                                                            <div class="irreg_tit">언어의 세계 : 중국 (15분)</div>
+                                                            <div class="flex_wrap ">
+                                                                <small class="opacity7">법정교육 15분</small>
+                                                                <small class="bullet_vertical opacity7">2022.09.15 ~ 2022.12.30</small>
+                                                                <small class="opacity7">한양사이버대학교</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#0">                                                
+                                                            <div class="irreg_cont">
+                                                                <img src="../data/img/irreg_img03.png" alt="언어의 세계">
+                                                                <p class="img_tit">언어의 세계 <span class="elp_sm">엄익상 교수</span></p>
+                                                            </div>
+                                                            <div class="flex-item gap4">
+                                                                <span class="ui mini green label">수강전</span>
+                                                            </div>
+                                                            <div class="irreg_tit">언어의 세계 : 중국 (15분)</div>
+                                                            <div class="flex_wrap ">
+                                                                <small class="opacity7">법정교육 15분</small>
+                                                                <small class="bullet_vertical opacity7">2022.09.15 ~ 2022.12.30</small>
+                                                                <small class="opacity7">한양사이버대학교</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#0">                                                
+                                                            <div class="irreg_cont">
+                                                                <img src="../data/img/irreg_img04.png" alt="언어의 세계">
+                                                                <p class="img_tit">언어의 세계 <span class="elp_sm">엄익상 교수</span></p>
+                                                            </div>
+                                                            <div class="flex-item gap4">
+                                                                <span class="ui mini blue label">개강예정</span>
+                                                            </div>
+                                                            <div class="irreg_tit">언어의 세계 : 중국 (15분)</div>
+                                                            <div class="flex_wrap ">
+                                                                <small class="opacity7">법정교육 15분</small>
+                                                                <small class="bullet_vertical opacity7">2022.09.15 ~ 2022.12.30</small>
+                                                                <small class="opacity7">한양사이버대학교</small>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- <div id="tab6" class="tab_content">
+                                                <div class="flex-container">
+                                                    <div class="cont-none"><i class="icon-list-no ico"></i><span>33 ____등록된 교육이 없습니다</span></div>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <!-- //복습과목 -->
+
+
+                                    <!-- 전체설문 -->
+                                    <div class="col-12 component55">
+                                        <div class="option-content header2">             
+                                            
+                                            <div class="listTab2" data-target="tab_contents8">
+                                                <a data-target="#tab5" class="active"><h3>전체설문</h3></a>
+                                            </div>
+                                            <div class="select_area">
+                                                <a href="" class="ui basic button flex-none">더보기</a>                                 
+                                            </div>
+                                        </div>      
+                                        <div class="tab_contents8"> <!-- 클래스 수정_230517 -->
+                                            <div id="tab5" class="tab_content on">  
+
+                                                <!-- item-->
+                                                <section class="item">
+                                                    <div class="header max-width-none flex-item flex1 flex-wrap gap4"> 
+                                                        <div class="option-content mra">
+                                                            <a href="" class="h4"><!-- 대학원 클래스 추가_230602-->
+                                                                전체설문 전체설문 전체설문 01
+                                                            </a>
+                                                        </div>               
+                                                            
+                                                        <div class="item-btn">
+                                                            <button type="button" class="btn">설문참여</button>
+                                                            <button type="button" class="btn">설문수정</button>
+                                                            <button type="button" class="btn">설문결과</button>
+                                                        </div> <!-- -->  
+                                                        
+                                                    </div>
+                                                    <div class="extra2">
+                                                        <dl><dt>설문기간</dt><dd>2022.08.01 09:00 ~ 2022.09.31 22:00</dd></dl> 
+                                                        <dl><dt>문항수</dt><dd>10</dd></dl> 
+                                                        <dl><dt>설문결과</dt><dd>전체 공개</dd></dl>
+                                                        <dl><dt>설문결과</dt><dd>비공개</dd></dl>
+                                                    </div>
+                                                </section>
+                                                <!-- //item-->
+                                                            
+                                                    
+                                            </div>
+                                            <div id="tab6" class="tab_content">
+                                                tab2, column2
+
+                                                <div class="flex-container">
+                                                    <div class="cont-none"><i class="icon-list-no ico"></i><span>33 ____등록된 내용이 없습니다</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- //전체설문 -->
+
+
+                                </div>
+                                <!-- //mainCnt -->
+                            </main>
+
+                            
+                                    
+                            <script type="text/javascript">
+
+                                
+                                $(".listTab2 > * ").on('click', function(e) {
+                                    this.parentNode.querySelectorAll(".listTab2 > * ").forEach( elem => { elem.classList.remove("active"); });
+                                    $(this).addClass("active");
+
+                                    [...document.querySelector("." + this.parentNode.dataset.target).children].map(elem => elem.classList.remove("on") );
+                                    [...document.querySelector("." + this.parentNode.dataset.target).children].map(elem => {
+                                        "#"+elem.id === $(this).data('target') ? elem.classList.add("on") : ' ' ;
+                                    });
+                                    //임시_추가_230605
+                                    if( this.parentNode.parentNode.classList.contains("off") ){
+                                        this.parentNode.parentNode.classList.remove("off");
+                                    }
+                                });
+
+                                $(".alertToggle").unbind('click').bind('click', function (e) {
+                                    $(this).toggleClass("on");
+                                    $('.alert_modal').slideToggle();
+                                });
+
+                            </script>
+                      
+                        <!-- </div>  태그 삭제_230517-->
+                        <!-- //본문 content 부분 -->
+
+                        <!-- footer 영역 부분 -->
+                        <footer id="bottom">
+                            <button class="go_top" data-medi-ui="gotop"> <!-- 탑 버튼 추가_230525 -->
+                                <i class="ico icon-upload"></i>
+                                <!-- <span class="text">TOP</span> -->
+                            </button>
+                            <div class="inner">
+                                <div class="fr_cont">
+                                    <ul class="copy">
+                                        <li>
+                                            <address>(04763) 서울시 성동구 왕십리로 220 한양사이버대학교</address>
+                                            <span class="tel_info">
+                                                <span class="info_tab">|</span>고객지원팀 : 02-2290-0114
+                                            </span>
+                                            <span class="tel_info">
+                                                <span class="info_tab">|</span>팩스 : 02-2290-0600
+                                            </span>
+                                            <span class="tel_info">
+                                                <span class="info_tab">|</span>등록번호 : 206-82-06345
+                                            </span>
+                                        </li>
+                                        <li>©2018 MEDIOPIA TECH. All rights reserved.</li>
+                                    </ul>
+                                    <div class="exc_copy">
+                                        <a href="#" class="ui basic small blue button">개인정보처리방침</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- //footer 영역 부분 --><!-- 푸터 위치 이동_235017 -->
+                </div>
+
+                <!-- </div> 오류_필요없는 닫힘태그 삭제_221208 --> 
+                
+        </div>
+
+
+<!-- 목업 확인을 위한 파일입니다 개발 시에는 무시해도 됩니다-->
+<script type="text/javascript" src="../mockup/test.js"></script> 
+<!-- //목업 확인을 위한 파일입니다 개발 시에는 무시해도 됩니다 -->
+
+    </body>
+
+</html>

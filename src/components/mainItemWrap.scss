@@ -1,0 +1,11 @@
+.main-item-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 100%;
+	max-width: calc(var(--contents-container-width) + 12px + 12px);
+	margin: 0px auto;
+	padding: 100px 12px;
+
+
+}

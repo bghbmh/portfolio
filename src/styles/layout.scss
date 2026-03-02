@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+/* @import url("reset.css");
+
+ */
+
+
+.common-header {
+	position: sticky;
+	z-index: 3;
+	top: -8px;
+	transition: 1s;
+	display: flex;
+	align-items: center;
+	padding: 24px 8px 24px;
+	box-sizing: border-box;
+	background-color: transparent; // 처음엔 투명하게
+	font-size: 14px;
+
+	/* 임시 */
+	position: sticky;
+	z-index: 3;
+	top: -8px;
+	transition: all 1s;
+
+
+	&.is-scrolled {
+		background-color: hsl(0, 0%, 93%);
+		background-color: hsl(0 0% 93% / .05); // 반투명 배경 (필수)
+		// border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+		// 💡 핵심: 백드롭 필터
+		-webkit-backdrop-filter: blur(10px); // 사파리 브라우저 지원
+		backdrop-filter: blur(10px);
+		// 													
+	}
+
+
+
+
+
+	.btn {
+		position: relative;
+		display: inline-flex;
+		padding: 0px;
+		color: var(--bs-body-color);
+		gap: 8px;
+		font-size: 1em;
+		font-weight: 800;
+		text-decoration: none;
+		border: 0px;
+		background-color: transparent;
+		cursor: pointer;
+		letter-spacing: 11%;
+
+		&::after {
+			position: absolute;
+			content: "";
+			display: inline-block;
+			width: 1px;
+			height: 1px;
+			background-color: var(--text-dark0);
+			border-radius: 100em;
+			margin-left: 4px;
+			bottom: 1px;
+			right: 0px;
+			opacity: 0;
+			transition: 1s;
+		}
+
+		.option {
+			font-size: calc(1em - 1px);
+			opacity: 0;
+			transition: opacity .5s;
+		}
+
+		&:hover {
+			.option {
+				animation: twinkle 1s 0s infinite alternate;
+			}
+		}
+
+		&.current {
+			.option {
+				opacity: 1;
+				transition: opacity .2s;
+			}
+
+			&::after {
+				right: calc(100% - 8px);
+				background-color: rgb(255, 121, 114);
+				width: 12px;
+				height: 12px;
+				opacity: 1;
+				transition: 0.2s;
+				z-index: -1;
+			}
+		}
+	}
+
+	.logo {
+		display: inline-flex;
+		margin-right: auto;
+		gap: 8px;
+		margin-top: 0;
+		transition: margin-top .3s;
+
+		.btn {
+			line-height: 1.2;
+			text-align: left;
+			justify-content: left;
+			align-items: center;
+
+			br {
+				display: block;
+			}
+		}
+	}
+
+	.global-nav {
+		display: flex;
+		gap: 0px;
+	}
+
+	@media(min-width: 768px) {
+		font-size: 16px;
+		padding: 36px 16px 24px;
+
+		.logo {
+
+			.btn {
+				br {
+					display: none;
+				}
+			}
+		}
+
+		.global-nav {
+			gap: 16px;
+		}
+
+		h1 {
+			opacity: 1;
+			font-size: 20px;
+			font-weight: 900;
+			left: 50%;
+			bottom: 24px;
+			transform: translateX(-50%);
+		}
+	}
+
+	@media(min-width: 1024px) {
+		body:has(.select-nav-list) &.is-scrolled {
+			.logo {
+				margin-top: -8em;
+			}
+		}
+
+
+	}
+
+	@media(min-width: 1560px) {
+		body:has(.select-nav-list) &.is-scrolled {
+			.logo {
+				margin-top: 0em;
+			}
+		}
+
+
+	}
+
+
+	@keyframes twinkle {
+		0% {
+			opacity: 0;
+		}
+
+		50% {
+			opacity: .5;
+		}
+
+		100% {
+			opacity: 0;
+		}
+	}
+}
+
+
+
+
+footer.common {
+	position: relative;
+	width: 100%;
+	--hh: 300px;
+	height: var(--hh);
+	display: block;
+	z-index: -1;
+	background-color: var(--bs-body-color);
+
+	.contents-wrap {
+		position: -webkit-sticky;
+		position: fixed;
+		bottom: var(--hh);
+		transform: translateY(150%);
+		left: 5%;
+		width: 95%;
+		display: block;
+		overflow: visible;
+
+		color: #fff;
+		display: flex;
+		justify-content: space-between;
+
+		a[href*="mailto"] {
+			color: #fff;
+			font-size: 1.5em;
+			font-family: 'Oceanwide';
+			font-weight: 600;
+			transition: all .2s;
+		}
+
+		.madein {
+			display: inline-flex;
+			transform: rotate(-90deg) translate(-20%, 250%);
+			transform-origin: 0 0;
+			flex: none;
+			align-self: end;
+			font-size: 12px;
+		}
+
+	}
+
+	@media(min-width: 768px) {
+		--hh: 400px;
+
+		.contents-wrap {
+			bottom: 2em;
+			transform: translateY(0%);
+
+			a[href*="mailto"] {
+				font-size: 4.5em;
+			}
+		}
+	}
+}
+
+
+
+
+.common-container {
+	display: block;
+
+	background-attachment: fixed;
+	background-color: hsl(200, 6%, 90%);
+	background-size: 3px 3px;
+	background-image: linear-gradient(0deg, hsla(0, 0%, 0%, 0) 0, hsla(0, 0%, 88%, 1) 3px), linear-gradient(90deg, hsla(0, 0%, 0%, 0) 0, hsla(0, 0%, 68%, 1) 5px);
+}
