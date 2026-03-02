@@ -1892,14 +1892,14 @@
         "mainOpen": false,
         "category": [
             {
-                "type": "5",
-                "name": "sample",
-                "label": "sub"
+                "type": "6",
+                "name": "알 수 없음",
+                "label": "main"
             },
             {
-                "type": "5",
-                "name": "UI",
-                "label": "main"
+                "type": "6",
+                "name": "알 수 없음",
+                "label": "sub"
             }
         ],
         "hash": [
@@ -1946,7 +1946,7 @@
                 "name": "뉴욕타임스.png",
                 "size": 21356,
                 "type": "image/png",
-                "lastModified": 1772448461135,
+                "lastModified": 1772466577771,
                 "url": "https://res.cloudinary.com/dhym4swda/image/upload/v1772264583/projects/pqty5ahz0b3ejjwugstz.png"
             }
         ],
@@ -1979,7 +1979,8 @@
             1772384104782,
             1772385270726,
             1772438604694,
-            1772448461232
+            1772448461232,
+            1772466577943
         ]
     }
 ]
