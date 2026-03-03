@@ -83,56 +83,61 @@ export default function ListItem({ item }: Props) {
 			</article>
 			{
 				modalType === 'mockup' && (
-					<Modal
-						isOpen={!!modalType}
-						onClose={() => {
-							setModalType(null);
-							setExpanded(true);
-						}}
-						type="pagePreView">
-						<div className="modal-header">
-							<div className="d-flex">
-								<h5 className="modal-title">
-									<span>{item.title}</span>
-								</h5>
-								<button
-									type="button"
-									className="btn ttt"
-									aria-label="접고펼치는버튼"
-									data-on="접기"
-									data-off="펼치기"
-									onClick={() => setExpanded(prev => !prev)}
-								></button>
-							</div>
-
-							<div className={`extraInfo ${expanded ? 'expanded' : ''}`}>
-								<div className="labels">
-									{item.category.map((c, idx) => <span key={idx} className="info main" data-type={c.type}>{c.name}</span>)}
-								</div>
-								{
-									item.extraInfo.length > 0 && (
-										<dl className="extraInfo-wrap">
-											{
-												item.extraInfo.map((ei, idx) => <dd key={idx} className="info" aria-label={ei.label}>{ei.value}</dd>)
-											}
-										</dl>
-									)
-								}
-								<nav className="buttons ctrl-pagePreView">
-									{item.mockup.map((m, idx) => <button
-										key={idx}
+					<>
+						{console.log("iframeLink:", iframeLink)}
+						<Modal
+							isOpen={!!modalType}
+							onClose={() => {
+								setModalType(null);
+								setExpanded(true);
+							}}
+							type="pagePreView">
+							<div className="modal-header">
+								<div className="d-flex">
+									<h5 className="modal-title">
+										<span>{item.title}</span>
+									</h5>
+									<button
 										type="button"
-										className="btn text-start"
-										data-link={m.url}
-										onClick={() => setIframeLink(m.url)}>{m.label}</button>)}
-								</nav>
-							</div>
+										className="btn ttt"
+										aria-label="접고펼치는버튼"
+										data-on="접기"
+										data-off="펼치기"
+										onClick={() => setExpanded(prev => !prev)}
+									></button>
+								</div>
 
-						</div>
-						<div className='modal-body' >
-							<iframe src={iframeLink} title="Sample" />
-						</div>
-					</Modal>)
+								<div className={`extraInfo ${expanded ? 'expanded' : ''}`}>
+									<div className="labels">
+										{item.category.map((c, idx) => <span key={idx} className="info main" data-type={c.type}>{c.name}</span>)}
+									</div>
+									{
+										item.extraInfo.length > 0 && (
+											<dl className="extraInfo-wrap">
+												{
+													item.extraInfo.map((ei, idx) => <dd key={idx} className="info" aria-label={ei.label}>{ei.value}</dd>)
+												}
+											</dl>
+										)
+									}
+									<nav className="buttons ctrl-pagePreView">
+										{item.mockup.map((m, idx) => <button
+											key={idx}
+											type="button"
+											className="btn text-start"
+											data-link={m.url}
+											onClick={() => setIframeLink(m.url)}>{m.label}</button>)}
+									</nav>
+								</div>
+
+							</div>
+							<div className='modal-body' >
+								<iframe src={iframeLink} title="Sample" />
+							</div>
+						</Modal>
+
+					</>
+				)
 			}
 
 			{
