@@ -1531,7 +1531,7 @@
         "mockup": [
             {
                 "id": "e862d7cd-6507-4265-aec4-92d1847e8762",
-                "type": "link",
+                "type": "outlink",
                 "label": "샘플",
                 "url": "https://my-admin-fawn.vercel.app/"
             }
