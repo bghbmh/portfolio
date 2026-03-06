@@ -29,6 +29,11 @@ export default function Header({ gnb }: props) {
 	}, []);
 
 	const handleMenuClick = (menu: any) => {
+		sendGAEvent({
+			event: 'menu_click',
+			value: menu.name,
+			menu_id: menu.id
+		});
 		if (menu.id === 'profile' || menu.id === 'contact') {
 			// 1. 모달 띄우기
 			setModalType(menu.id);
@@ -59,10 +64,7 @@ export default function Header({ gnb }: props) {
 						<button
 							key={menu.id}
 							className={`btn ${activeId === menu.id ? 'current' : ''}`}
-							onClick={() => {
-								handleMenuClick(menu);
-								sendGAEvent({ event: 'menu_click', value: menu.name });
-							}}
+							onClick={() => handleMenuClick(menu)}
 						>
 							<span className='option'>[ </span>{menu.name}<span className='option'> ]</span>
 						</button>
