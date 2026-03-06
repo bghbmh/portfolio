@@ -53,29 +53,8 @@ export default function ListItem({ item }: Props) {
 					<div className="list-item-btn-wrap">
 						{item.externalLink.map((link) => <Link key={link.id} href={link.url} className='btn' target="_blank" rel="noopener noreferrer"><ICONSET type={link.type} />{link.label}</Link>)}
 
-						{item.mockup.length > 0 && (
-							item.mockup[0].type === "outlink" ? (
-								/* type이 outlink일 때: 새 탭 열기 */
-								<a
-									href={item.mockup[0].url || "#"}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="btn"
-									style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
-								>
-									<ICONSET type='mockup' /> 목업
-								</a>
-							) : (
-								/* 그 외의 경우: 기존 모달 띄우기 */
-								<button
-									type="button"
-									className="btn"
-									onClick={() => setModalType('mockup')}
-								>
-									<ICONSET type='mockup' /> 목업
-								</button>
-							)
-						)}
+						{item.mockup.length > 0 && <button type="button" className="btn" onClick={() => setModalType('mockup')}><ICONSET type='mockup' />목업</button>}
+
 
 						{(item.subimage.length > 0) && <button type="button" className="btn" onClick={() => setModalType('zoomIn')}><ICONSET type='zoomIn' />크게보기</button>}
 					</div>

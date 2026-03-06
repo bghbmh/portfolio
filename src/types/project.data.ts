@@ -26,13 +26,10 @@ export interface DefaultFileType {
 	url: string;
 }
 
-export interface MockupFileType {
-	label: string;
-	alt: string;
-	name: string;
-	size: number | null;
+export interface MockupLinkType {
+	id: string;
 	type: string;
-	lastModified: number | null;
+	label: string;
 	url: string;
 }
 
@@ -69,7 +66,7 @@ export interface ProjectDataType {
 	extraInfo: ExtraInfoItemType[];
 	titleImage: DefaultFileType[];
 	subimage: DefaultFileType[];
-	mockup: MockupFileType[];
+	mockup: MockupLinkType[];
 	externalLink: ExternalLinkType[];
 	projectNum: number;
 	currentState: string;
@@ -78,6 +75,8 @@ export interface ProjectDataType {
 	member: any[];
 	registerDate: number;
 	modifyDate: number[];
+	isDeleted: boolean;       // 삭제 여부 (기본값 false)
+	deletedAt: string | null;  // 삭제된 시각 (ISO string 형식)
 }
 
 export const DEFAULT_PROJECT_DATA: ProjectDataType = {
@@ -104,5 +103,7 @@ export const DEFAULT_PROJECT_DATA: ProjectDataType = {
 	endDate: "",
 	member: [],
 	registerDate: 0,
-	modifyDate: []
+	modifyDate: [],
+	isDeleted: false,
+	deletedAt: null
 };
