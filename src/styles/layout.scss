@@ -4,6 +4,15 @@
 
  */
 
+:root {
+	--hh: 300px;
+}
+
+@media(min-width: 768px) {
+	:root {
+		--hh: 400px;
+	}
+}
 
 .common-header {
 	position: sticky;
@@ -189,23 +198,25 @@
 
 
 footer.common {
-	position: relative;
+	position: fixed;
+	bottom: 0;
+	z-index: -1;
 	width: 100%;
-	--hh: 300px;
+
 	height: var(--hh);
 	display: block;
-	z-index: 0;
+	z-index: -1;
 	background-color: var(--bs-body-color);
 
 	.contents-wrap {
-		position: -webkit-sticky;
-		position: fixed;
-		bottom: var(--hh);
-		transform: translateY(150%);
+		position: relative;
+		top: 100%;
+		transform: translateY(-150%);
 		left: 5%;
-		width: 95%;
+		width: 94%;
 		display: block;
 		overflow: visible;
+		padding-bottom: 5em;
 
 		color: #fff;
 		display: flex;
@@ -221,7 +232,7 @@ footer.common {
 
 		.madein {
 			display: inline-flex;
-			transform: rotate(-90deg) translate(-20%, 250%);
+			transform: rotate(-90deg) translate(-150px, 250%);
 			transform-origin: 0 0;
 			flex: none;
 			align-self: end;
@@ -234,11 +245,14 @@ footer.common {
 		--hh: 400px;
 
 		.contents-wrap {
-			bottom: 2em;
-			transform: translateY(0%);
+			transform: translateY(-100%);
 
 			a[href*="mailto"] {
 				font-size: 4.5em;
+			}
+
+			.madein {
+				transform: rotate(-90deg) translate(-20%, 250%);
 			}
 		}
 	}
@@ -248,10 +262,8 @@ footer.common {
 
 
 .common-container {
-	position: relative;
-	z-index: 1;
 	display: block;
-
+	margin-bottom: var(--hh);
 	background-attachment: fixed;
 	background-color: hsl(200, 6%, 90%);
 	background-size: 3px 3px;
