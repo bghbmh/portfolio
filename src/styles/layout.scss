@@ -194,7 +194,7 @@ footer.common {
 	--hh: 300px;
 	height: var(--hh);
 	display: block;
-	z-index: -1;
+	z-index: 0;
 	background-color: var(--bs-body-color);
 
 	.contents-wrap {
@@ -248,6 +248,8 @@ footer.common {
 
 
 .common-container {
+	position: relative;
+	z-index: 1;
 	display: block;
 
 	background-attachment: fixed;

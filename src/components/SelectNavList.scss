@@ -153,7 +153,7 @@
 	@media(min-width: 1550px) {
 
 		&.is-scrolled {
-			width: 1280px;
+			width: auto;
 			left: calc(50% - 640px);
 			padding-top: 20px;
 			transition: left .5s;
