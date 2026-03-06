@@ -4,6 +4,8 @@ import { useRouter, useSearchParams } from 'next/navigation'; // Next.js 라우�
 import Modal from '@/components/Modal';
 import HelloEveryone from "@/components/HelloEveryone";
 
+import { sendGAEvent } from '@next/third-parties/google';
+
 interface props {
 	gnb: any[]
 }
@@ -43,7 +45,10 @@ export default function Header({ gnb }: props) {
 			<header className={`common-header ${isScrolled ? 'is-scrolled' : ''}`}>
 				<div className="logo">
 					<button
-						onClick={() => router.push('/')}
+						onClick={() => {
+							sendGAEvent({ event: 'logo_click', value: "로고클릭" });
+							router.push('/');
+						}}
 						className={`btn ${activeId === 'home' ? 'current' : ''}`}
 					>
 						<span className='option'>[ </span><b>Port<br />folio</b><span className='option'> ]</span>
@@ -54,7 +59,10 @@ export default function Header({ gnb }: props) {
 						<button
 							key={menu.id}
 							className={`btn ${activeId === menu.id ? 'current' : ''}`}
-							onClick={() => handleMenuClick(menu)}
+							onClick={() => {
+								handleMenuClick(menu);
+								sendGAEvent({ event: 'menu_click', value: menu.name });
+							}}
 						>
 							<span className='option'>[ </span>{menu.name}<span className='option'> ]</span>
 						</button>

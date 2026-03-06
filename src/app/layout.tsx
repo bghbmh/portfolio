@@ -14,6 +14,7 @@ import Header from "@/components/layout/Header";
 import Container from "@/components/layout/Container";
 import Footer from "@/components/layout/Footer";
 
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react'; // 👈 라이브러리 가져오기
 
 const geistSans = Geist({
@@ -59,7 +60,7 @@ export default function RootLayout({
 
 				<Footer />
 				<div id="modal-root" />
-
+				<GoogleAnalytics gaId="G-0Q3Q8N26W4" /> {/* 👈 Google Analytics 컴포넌트 추가 */}
 				<Analytics /> {/* 👈 Analytics 컴포넌트 추가 */}
 			</body>
 		</html>
