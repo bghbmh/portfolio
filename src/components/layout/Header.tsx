@@ -4,7 +4,6 @@ import { useRouter, useSearchParams } from 'next/navigation'; // Next.js 라우�
 import Modal from '@/components/Modal';
 import HelloEveryone from "@/components/HelloEveryone";
 
-import { sendGAEvent } from '@next/third-parties/google';
 
 interface props {
 	gnb: any[]
@@ -29,11 +28,13 @@ export default function Header({ gnb }: props) {
 	}, []);
 
 	const handleMenuClick = (menu: any) => {
-		sendGAEvent({
-			event: 'menu_click',
-			value: menu.name,
-			menu_id: menu.id
-		});
+		// 🚀 수정된 부분: 표준 gtag 방식으로 변경
+		if (typeof window !== 'undefined' && (window as any).gtag) {
+			(window as any).gtag('event', 'menu_click', {
+				'menu_name': menu.name,
+				'menu_id': menu.id
+			});
+		}
 		if (menu.id === 'profile' || menu.id === 'contact') {
 			// 1. 모달 띄우기
 			setModalType(menu.id);
@@ -51,7 +52,11 @@ export default function Header({ gnb }: props) {
 				<div className="logo">
 					<button
 						onClick={() => {
-							sendGAEvent({ event: 'logo_click', value: "로고클릭" });
+							if (typeof window !== 'undefined' && (window as any).gtag) {
+								(window as any).gtag('event', 'logo_click', {
+									'event_label': '로고클릭'
+								});
+							}
 							router.push('/');
 						}}
 						className={`btn ${activeId === 'home' ? 'current' : ''}`}
@@ -92,7 +97,17 @@ export default function Header({ gnb }: props) {
 					</div>
 					<div className="modal-body" slot="modal-body">
 						<div className="c">
-							<a className="btn mailto" href="mailto:bghbmh@gmail.com">bghbmh@gmail.com</a>
+							<a
+								className="btn mailto"
+								href="mailto:bghbmh@gmail.com"
+								onClick={() => {
+									if (typeof window !== 'undefined' && (window as any).gtag) {
+										(window as any).gtag('event', 'contact_click', {
+											'event_label': 'modal_email'
+										});
+									}
+								}}
+							>bghbmh@gmail.com</a>
 							<p><small>html + css + javascript + react = 박민희</small></p>
 							<p><small>{"{ typescript, nodejs }  ⊂  beginner"}</small></p>
 							<img src="/img/common/me.png" className="me" />

@@ -1,5 +1,5 @@
 "use client";
-import { sendGAEvent } from '@next/third-parties/google';
+
 export default function Footer() {
 
 	return (
@@ -9,7 +9,13 @@ export default function Footer() {
 					<a
 						className="btn btn-link"
 						href="mailto:bghbmh@gmail.com"
-						onClick={() => sendGAEvent({ event: 'contact_click', value: 'email' })}
+						onClick={() => {
+							if (typeof window !== 'undefined' && (window as any).gtag) {
+								(window as any).gtag('event', 'contact_click', {
+									'event_label': 'email'
+								});
+							}
+						}}
 					>bghbmh@gmail.com</a>
 
 					<p><small>html + css + javascript + react = 박민희</small></p>
